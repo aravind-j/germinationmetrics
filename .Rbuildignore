@@ -1,0 +1,9 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^docs$
+^Release\.R$
+^germinationmetrics\.pdf$
+^vignettes/Indices\.xlsx$
+^vignettes/Introduction\.tex$
+^vignettes/Introduction\.aux$
+^vignettes/Introduction\.out$

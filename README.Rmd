@@ -1,0 +1,79 @@
+---
+output: rmarkdown::github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "",
+  fig.path = "inst/extdata/"
+)
+```
+
+## `germinationmetrics`: Seed Germination Indices and Curve Fitting
+
+```{r,echo = FALSE, message = FALSE}
+devtools::load_all(".")
+
+```
+
+###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-3](https://www.r-project.org/Licenses/)
+
+
+##### *J. Aravind, J. Radhamani, S. Vimala Devi and Kalyani Srinivasan*
+
+ICAR-National Bureau of Plant Genetic Resources, New Delhi
+
+***
+
+[![minimal R version](https://img.shields.io/badge/R>%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
+[![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
+<!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics) -->
+[![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
+<!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
+[![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics)
+<!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/kennedyoliveira/github-basic-badges/total.svg)] -->
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
+<!-- [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics) -->
+<!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
+<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) -->
+
+***
+
+## Detailed tutorial
+For a detailed tutorial on how to used this package type:
+
+```{r, eval=FALSE}
+browseVignettes(package = 'germinationmetrics')
+```
+
+## What's new
+To know whats new in this version type:
+
+```{r, eval=FALSE}
+news(package='germinationmetrics')
+```
+
+## Links
+
+## Citing `germinationmetrics`
+To cite the methods in the package use:
+
+```{r, eval = FALSE}
+citation("germinationmetrics")
+```
+
+```{r, echo = FALSE}
+cit <- citation("germinationmetrics")
+yr <- format(Sys.Date(), "%Y")
+cit[1]$year <- yr
+oc <- class(cit)
+
+cit <- unclass(cit)
+attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+                                     paste("\\(", yr, "\\)", sep = ""),
+                                     attr(cit[[1]],"textVersion"))
+class(cit) <- oc
+cit
+```
