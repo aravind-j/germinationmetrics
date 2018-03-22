@@ -1,0 +1,26 @@
+template:
+  params:
+    bootswatch: cerulean
+    ganalytics: UA-116205606-2
+
+navbar:
+  title: germinationmetrics
+  type: default
+  left:
+    - icon: fa-home fa-lg
+      text: Home
+      href: /index.html
+    - icon: fa-code
+      text: Reference
+      href: reference/index.html
+    - icon: fa-file-o
+      text: Introduction
+      href: articles/Introduction.html
+    - icon: fa-newspaper-o
+      text: News
+      href: news/index.html
+  right:
+    - icon: fa-github-alt
+      text: Github
+      href: https://github.com/aravind-j/germinationmetrics
+      

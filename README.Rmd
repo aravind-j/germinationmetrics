@@ -37,9 +37,14 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
-<!-- [![Analytics](https://pro-pulsar-193905.appspot.com/UA-112827210-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon) -->
+[![Analytics](https://pro-pulsar-193905.appspot.com/UA-116205606-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
 
 ***
+
+## Installation
+
+### Install development version from Github
+devtools::install_github("aravind-j/germinationmetrics")
 
 ## Detailed tutorial
 For a detailed tutorial on how to used this package type:
