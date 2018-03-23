@@ -1,5 +1,15 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^README\.utf8.Rmd$
+^README\.Rmd$
+^README\.html$
+^README-*\.png$
+^cran-comments\.md$
+^.*\.dropbox$
+^\.dropbox\.attr$
+^desktop\.ini$
+^.*\.Rhistory$
+^.*\.git$
 ^docs$
 ^Release\.R$
 ^germinationmetrics\.pdf$
@@ -7,3 +17,4 @@
 ^vignettes/Introduction\.tex$
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
+^_pkgdown\.yml$

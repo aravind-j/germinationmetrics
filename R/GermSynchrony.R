@@ -75,6 +75,18 @@
 #'
 #'@name GermSynchrony
 #'
+#'@references
+#'
+#'\insertRef{shannon_mathematical_1948}{germinationmetrics}
+#'
+#'\insertRef{labouriau_germination_1976}{germinationmetrics}
+#'
+#'\insertRef{labouriau_uma_1983}{germinationmetrics}
+#'
+#'\insertRef{primack_longevity_1985}{germinationmetrics}
+#'
+#'\insertRef{ranal_how_2006}{germinationmetrics}
+#'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
 #' y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)

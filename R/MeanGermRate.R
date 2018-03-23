@@ -26,8 +26,9 @@
 #'\item Standard error of germination rate (\ifelse{html}{\out{<em>s<sub><span
 #'style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
 #'\item Coefficient of velocity/rate of germination or Kotowski's coefficient of
-#'velocity (\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}}) \item Germination rate
-#'as reciprocal of median time
+#'velocity
+#'(\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
+#'\item Germination rate as reciprocal of median time
 #'(\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}}) }
 #'
 #'\code{MeanGermRate} computes the mean germination rate
@@ -45,11 +46,12 @@
 #'\frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}}}
 #'
 #'Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-#'the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
-#'\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#'germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
-#'correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
-#'germination.
+#'the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+#'observation, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the
+#'number of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+#'time (not the accumulated number, but the number correspondent to the
+#'\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
+#'\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 #'
 #'It is the inverse of mean germination time (\ifelse{html}{\out{<em><span
 #'style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}).
@@ -91,14 +93,16 @@
 #'\sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
 #'
 #'Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of
-#'seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the
-#'number correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last
-#'time of germination.
+#'seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
+#'accumulated number, but the number correspondent to the
+#'\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
+#'\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 #'
 #'\code{CVG} computes the coefficient of velocity/rate of germination or
-#'Kotowski's coefficient of velocity (\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}) according to the following
-#'formula (Kotowski, 1926; Labouriau, 1983; Scott et al., 1984; Bewley and
-#'Black, 1985).
+#'Kotowski's coefficient of velocity
+#'(\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}) according to the following
+#'formula (Kotowski, 1926; Nichols and Heydecker, 1968; Labouriau, 1983; Scott
+#'et al., 1984; Bewley and Black, 1985).
 #'
 #'\ifelse{html}{\out{<p style="text-align: center;"><em>CVG =
 #'[<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
@@ -112,11 +116,12 @@
 #'\overline{V} \times 100}}
 #'
 #'Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-#'the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
-#'\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#'germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
-#'correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
-#'germination.
+#'the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+#'observation, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the
+#'number of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+#'time (not the accumulated number, but the number correspondent to the
+#'\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
+#'\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 #'
 #'\code{GermRateRecip} computes the germination rate
 #'(\ifelse{html}{\out{<em>v<sub>50</sub></em>}}{\eqn{v_{50}}}) as the reciprocal

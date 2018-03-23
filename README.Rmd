@@ -44,7 +44,9 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 ## Installation
 
 ### Install development version from Github
+```{r, eval=FALSE}
 devtools::install_github("aravind-j/germinationmetrics")
+```
 
 ## Detailed tutorial
 For a detailed tutorial on how to used this package type:

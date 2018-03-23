@@ -46,6 +46,10 @@
 #' @return The germination percentage (\%) value.
 #' @export
 #'
+#'@references
+#'
+#'\insertRef{ista_chapter_2015}{germinationmetrics}
+#'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
 #' y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)

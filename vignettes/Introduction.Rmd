@@ -4,7 +4,7 @@ header-includes:
 - \usepackage{fancyhdr}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{An Introduction to germinationmetrics package}
+- \fancyhead[LO,RE]{The germinationmetrics package{:} A brief introduction}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -68,6 +68,9 @@ The package can be installed using the following functions:
 # Install from CRAN
 install.packages('germinationmetrics', dependencies=TRUE)
 
+# Install development version from Github
+devtools::install_github("aravind-j/germinationmetrics")
+
 ```
 
 Then the package can be loaded using the function
@@ -92,7 +95,7 @@ knitr::kable(data)
 
 The time-course of germination can be plotted as follows:
 
-```{r}
+```{r, eval = TRUE}
 data <- data.frame(intervals = 1:14,
                    counts = c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0))
 
@@ -161,7 +164,8 @@ getCode <- function(myFunction, myPackage) {
   
   return(out)
 }
-library("germinationmetrics")
+library(germinationmetrics)
+require(germinationmetrics)
 ```
 
 #### `GermPercent()`

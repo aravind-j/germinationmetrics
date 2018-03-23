@@ -105,5 +105,7 @@ PeakGermTime(germ.counts = cumsum(z), intervals = int, partial = FALSE)
 
 \insertRef{quintanilla_effect_2000}{germinationmetrics}
 
+\insertRef{kader_comparison_2005}{germinationmetrics}
+
 \insertRef{ranal_how_2006}{germinationmetrics}
 }

@@ -91,3 +91,14 @@ GermSynchrony(germ.counts = y, intervals = int, partial = FALSE)
 GermUncertainty(germ.counts = y, intervals = int, partial = FALSE)
 
 }
+\references{
+\insertRef{shannon_mathematical_1948}{germinationmetrics}
+
+\insertRef{labouriau_germination_1976}{germinationmetrics}
+
+\insertRef{labouriau_uma_1983}{germinationmetrics}
+
+\insertRef{primack_longevity_1985}{germinationmetrics}
+
+\insertRef{ranal_how_2006}{germinationmetrics}
+}

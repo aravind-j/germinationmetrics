@@ -67,6 +67,7 @@
 #'@return A list with the following components:  \item{Germination Value}{The
 #'  germination value} \item{Calculations}{The data frame of calculations.}
 #'  \item{testend}{The end of test value (Only for method \code{dp}).}
+#'
 #'@references
 #'
 #'\insertRef{czabator_germination_1962}{germinationmetrics}

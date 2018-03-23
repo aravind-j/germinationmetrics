@@ -24,7 +24,7 @@ Description: Provides functions to compute various germination indices such as
     etc. from germination count data. Includes functions for fitting cumulative
     seed germination curves using four-parameter hill function and computation
     of associated parameters.
-Copyright: 2018, ICAR-NBPGR
+Copyright: 2017-2018, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true

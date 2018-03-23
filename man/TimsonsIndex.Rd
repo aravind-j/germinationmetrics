@@ -97,7 +97,7 @@ N<sub>i</sub>K<sub>i</sub></em></p>}}{\deqn{GR = \sum_{i=1}^{t}N_{i}K_{i}}}
 Where \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} is the number
 of seeds germinated by \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval and
 \ifelse{html}{\out{<em>K<sub>i</sub></em>}}{\eqn{K_{i}}} is the number of
-intervals(eg. days) until the end of the test.
+intervals(e.g. days) until the end of the test.
 
 This index uses number of seeds germinated instead of germination percentage.
 

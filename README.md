@@ -31,7 +31,9 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 
 ### Install development version from Github
 
-devtools::install\_github(“aravind-j/germinationmetrics”)
+``` r
+devtools::install_github("aravind-j/germinationmetrics")
+```
 
 ## Detailed tutorial
 

@@ -54,3 +54,6 @@ GermPercent(germ.counts = y, total.seeds = 50, partial = FALSE)
 GermPercent(germinated.seeds = 40, total.seeds = 50)
 
 }
+\references{
+\insertRef{ista_chapter_2015}{germinationmetrics}
+}

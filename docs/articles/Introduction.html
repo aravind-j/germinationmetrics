@@ -115,7 +115,10 @@
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>The package can be installed using the following functions:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># Install from CRAN</span></a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">'germinationmetrics'</span>, <span class="dt">dependencies=</span><span class="ot">TRUE</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">install.packages</span>(<span class="st">'germinationmetrics'</span>, <span class="dt">dependencies=</span><span class="ot">TRUE</span>)</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4"><span class="co"># Install development version from Github</span></a>
+<a class="sourceLine" id="cb1-5" data-line-number="5">devtools<span class="op">::</span><span class="kw"><a href="http://www.rdocumentation.org/packages/devtools/topics/install_github">install_github</a></span>(<span class="st">"aravind-j/germinationmetrics"</span>)</a></code></pre></div>
 <p>Then the package can be loaded using the function</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(germinationmetrics)</a></code></pre></div>
 <pre><code>
@@ -305,7 +308,7 @@ Where, <span class="math inline">\(N_{g}\)</span> is the number of germinated se
 <td align="left">It is the time in which highest frequency of germinated seeds are observed and need not be unique.</td>
 <td align="left">time</td>
 <td align="left">Germination time</td>
-<td align="left"><span class="citation">Ranal and de Santana (2006)</span></td>
+<td align="left"><span class="citation">Ranal and Santana (2006)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Median germination time (Coolbear)</td>
@@ -337,7 +340,7 @@ It is the inverse of mean germination rate (<span class="math inline">\(\overlin
 <td align="left">time</td>
 <td align="left">Germination time</td>
 <td align="left">
-<span class="citation">Edmond and Drapala (1958)</span>; <span class="citation">Czabator (1962)</span>; <span class="citation">Ellis and Roberts (1980)</span> <span class="citation">Labouriau (1983a)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Edmond and Drapala (1958)</span>; <span class="citation">Czabator (1962)</span>; <span class="citation">Ellis and Roberts (1980)</span> <span class="citation">Labouriau (1983a)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -349,7 +352,7 @@ Where, <span class="math inline">\(T_{i}\)</span> is the time from the start of 
 <td align="left">time</td>
 <td align="left">Germination time</td>
 <td align="left">
-<span class="citation">Labouriau (1983a)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Labouriau (1983a)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="even">
@@ -362,7 +365,7 @@ Where, <span class="math inline">\(N_{i}\)</span> is the number of seeds germina
 <td align="left">time</td>
 <td align="left">Germination time</td>
 <td align="left">
-<span class="citation">Labouriau (1983a)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Labouriau (1983a)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -377,7 +380,7 @@ It is the inverse of mean germination rate (<span class="math inline">\(\overlin
 </td>
 <td align="left">Germination rate</td>
 <td align="left">
-<span class="citation">Labouriau and Viladares (1976)</span>; <span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Labouriau and Viladares (1976)</span>; <span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="even">
@@ -391,7 +394,7 @@ Where, <span class="math inline">\(T_{i}\)</span> is the time from the start of 
 </td>
 <td align="left">Germination rate</td>
 <td align="left">
-<span class="citation">Kotowski (1926)</span>, <span class="citation">Bewley and Black (1994)</span>; <span class="citation">Labouriau (1983b)</span>; <span class="citation">Scott et al. (1984)</span>
+<span class="citation">Kotowski (1926)</span>, <span class="citation">Nichols and Heydecker (1968)</span>; <span class="citation">Bewley and Black (1994)</span>; <span class="citation">Labouriau (1983b)</span>; <span class="citation">Scott et al. (1984)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -403,7 +406,7 @@ Where, <span class="math inline">\(s_{T}^{2}\)</span> is the variance of germina
 </td>
 <td align="left">Germination rate</td>
 <td align="left">
-<span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="even">
@@ -416,7 +419,7 @@ Where, <span class="math inline">\(N_{i}\)</span> is the number of seeds germina
 </td>
 <td align="left">Germination rate</td>
 <td align="left">
-<span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -428,7 +431,7 @@ Where, <span class="math inline">\(N_{i}\)</span> is the number of seeds germina
 </td>
 <td align="left">Germination rate</td>
 <td align="left">
-<span class="citation">Went (1957)</span>; <span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Went (1957)</span>; <span class="citation">Labouriau (1983b)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 <tr class="even">
@@ -458,7 +461,7 @@ Where, <span class="math inline">\(N_{1}\)</span>, <span class="math inline">\(N
 </td>
 <td align="left">Mixed</td>
 <td align="left">
-<span class="citation">Bradbeer (1988)</span>; <span class="citation">Wardle et al. (1991)</span>; <span class="citation">Haugland and Brandsaeter (1996)</span>; <span class="citation">de Santana and Ranal (2004)</span>
+<span class="citation">Bradbeer (1988)</span>; <span class="citation">Wardle et al. (1991)</span>; <span class="citation">Haugland and Brandsaeter (1996)</span>; <span class="citation">Santana and Ranal (2004)</span>
 </td>
 </tr>
 <tr class="even">
@@ -511,7 +514,7 @@ Where, <span class="math inline">\(g_{i}\)</span> is the germination (not cumula
 </td>
 <td align="left"></td>
 <td align="left">Mixed</td>
-<td align="left"><span class="citation">Ranal and de Santana (2006)</span></td>
+<td align="left"><span class="citation">Ranal and Santana (2006)</span></td>
 </tr>
 <tr class="odd">
 <td align="left">Modified Timson’s Index (Khan and Unger)</td>
@@ -580,7 +583,7 @@ Where, <span class="math inline">\(\overline{T}\)</span> is the the mean germina
 Where, <span class="math inline">\(s_{T}^{2}\)</span> is the variance of germination time and <span class="math inline">\(\overline{T}\)</span> is the mean germination time.</td>
 <td align="left"></td>
 <td align="left">Germinatin unifromity</td>
-<td align="left"><span class="citation">Ranal and de Santana (2006)</span></td>
+<td align="left"><span class="citation">Ranal and Santana (2006)</span></td>
 </tr>
 <tr class="even">
 <td align="left">Synchronization index (<span class="math inline">\(\overline{E}\)</span>) or Uncertainty of the germination process (<span class="math inline">\(U\)</span>) or informational entropy (<span class="math inline">\(H\)</span>)</td>
@@ -603,7 +606,7 @@ Where, <span class="math inline">\(C_{N_{i},2}\)</span> is the partial combinati
 <td align="left"></td>
 <td align="left">Germination synchrony</td>
 <td align="left">
-<span class="citation">Primack (1985)</span>; <span class="citation">Ranal and de Santana (2006)</span>
+<span class="citation">Primack (1985)</span>; <span class="citation">Ranal and Santana (2006)</span>
 </td>
 </tr>
 </tbody>
@@ -1425,6 +1428,7 @@ To cite package 'germinationmetrics' in publications use:
   J. Aravind, J. Radhamani, S. Vimala Devi and Kalyani Srinivasan
   (NA). germinationmetrics: Seed Germination Indices and Curve
   Fitting. R package version 0.0.0.9000.
+  https://github.com/aravind-j/germinationmetrics/tree/master
 
 A BibTeX entry for LaTeX users is
 
@@ -1432,6 +1436,7 @@ A BibTeX entry for LaTeX users is
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {{J. Aravind} and {J. Radhamani} and {S. Vimala Devi} and {Kalyani Srinivasan}},
     note = {R package version 0.0.0.9000},
+    url = {https://github.com/aravind-j/germinationmetrics/tree/master},
     year = {2018},
   }</code></pre>
 </div>
@@ -1495,7 +1500,7 @@ loaded via a namespace (and not attached):
 <p>Bewley, J. D., and Black, M. (1994). <em>Seeds: Physiology of Development and Germination.</em> New York, USA: Plenum Publishing Corporation Available at: <a href="https://www.cabdirect.org/cabdirect/abstract/19950315483" class="uri">https://www.cabdirect.org/cabdirect/abstract/19950315483</a>.</p>
 </div>
 <div id="ref-bradbeer_seed_1988">
-<p>Bradbeer, J. W. (1988). <em>Seed Dormancy and Germination</em>. Glasgow; London: Blackie Available at: <a href="www.springer.com/in/book/9780216916364" class="uri">www.springer.com/in/book/9780216916364</a>.</p>
+<p>Bradbeer, J. W. (1988). <em>Seed Dormancy and Germination</em>. Glasgow; London: Blackie Available at: <a href="www.springer.com/in/book/9780216916364" class="uri">www.springer.com/in/book/9780216916364</a> [Accessed January 15, 2018].</p>
 </div>
 <div id="ref-brown_representing_1988">
 <p>Brown, R. F., and Mayer, D. G. (1988). Representing cumulative germination. 1. A critical analysis of single-value germination indices. <em>Annals of Botany</em> 61, 117–125. doi:<a href="https://doi.org/10.1093/oxfordjournals.aob.a087534">10.1093/oxfordjournals.aob.a087534</a>.</p>
@@ -1505,9 +1510,6 @@ loaded via a namespace (and not attached):
 </div>
 <div id="ref-czabator_germination_1962">
 <p>Czabator, F. J. (1962). Germination value: An index combining speed and completeness of pine seed germination. <em>Forest Science</em> 8, 386–396. doi:<a href="https://doi.org/10.1093/forestscience/8.4.386">10.1093/forestscience/8.4.386</a>.</p>
-</div>
-<div id="ref-de_santana_alise_2004">
-<p>de Santana, D., and Ranal, M. A. (2004). <em>Análise Da Germinação: Um Enfoque Estatístico</em>. Brasília: Universidade de Brasília.</p>
 </div>
 <div id="ref-djavanshir_germination_1976">
 <p>Djavanshir, K., and Pourbeik, H. (1976). Germination value-A new formula. <em>Silvae genetica</em> 25, 79–83.</p>
@@ -1537,7 +1539,7 @@ loaded via a namespace (and not attached):
 <p>Goloff, A. A., and Bazzaz, F. A. (1975). A germination model for natural seed populations. <em>Journal of Theoretical Biology</em> 52, 259–283. doi:<a href="https://doi.org/10.1016/0022-5193(75)90001-6">10.1016/0022-5193(75)90001-6</a>.</p>
 </div>
 <div id="ref-goodchild_method_1971">
-<p>Goodchild, N. A., and Walker, M. G. (1971). A method of measuring seed germination in physiological studies. <em>Annals of Botany</em> 35, 615–621. Available at: <a href="http://www.jstor.org/stable/42908843" class="uri">http://www.jstor.org/stable/42908843</a>.</p>
+<p>Goodchild, N. A., and Walker, M. G. (1971). A method of measuring seed germination in physiological studies. <em>Annals of Botany</em> 35, 615–621. Available at: <a href="http://www.jstor.org/stable/42908843" class="uri">http://www.jstor.org/stable/42908843</a> [Accessed January 15, 2018].</p>
 </div>
 <div id="ref-haugland_experiments_1996">
 <p>Haugland, E., and Brandsaeter, L. O. (1996). Experiments on bioassay sensitivity in the study of allelopathy. <em>Journal of Chemical Ecology</em> 22, 1845–1859.</p>
@@ -1591,7 +1593,10 @@ loaded via a namespace (and not attached):
 <p>Ranal, M. A. (1999). Effects of temperature on spore germination in some fern species from semideciduous mesophytic forest. <em>American Fern Journal</em> 89, 149. doi:<a href="https://doi.org/10.2307/1547349">10.2307/1547349</a>.</p>
 </div>
 <div id="ref-ranal_how_2006">
-<p>Ranal, M. A., and de Santana, D. G. (2006). How and why to measure the germination process? <em>Brazilian Journal of Botany</em> 29, 1–11. doi:<a href="https://doi.org/10.1590/s0100-84042006000100002">10.1590/s0100-84042006000100002</a>.</p>
+<p>Ranal, M. A., and Santana, D. G. de (2006). How and why to measure the germination process? <em>Brazilian Journal of Botany</em> 29, 1–11. doi:<a href="https://doi.org/10.1590/s0100-84042006000100002">10.1590/s0100-84042006000100002</a>.</p>
+</div>
+<div id="ref-de_santana_alise_2004">
+<p>Santana, D. de, and Ranal, M. A. (2004). <em>Análise Da Germinação: Um Enfoque Estatístico</em>. Brasília: Universidade de Brasília.</p>
 </div>
 <div id="ref-scott_review_1984">
 <p>Scott, S. J., Jones, R. A., and Williams, W. A. (1984). Review of data analysis methods for seed germination. <em>Crop Science</em> 24, 1192–1199. doi:<a href="https://doi.org/10.2135/cropsci1984.0011183x002400060043x">10.2135/cropsci1984.0011183x002400060043x</a>.</p>
