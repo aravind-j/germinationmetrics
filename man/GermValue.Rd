@@ -61,8 +61,8 @@ style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}).
 A new estimation of germination value was given by Djavanshir and Pourbeik
 (1976) as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;">GV = [<sup>&sum;DGS</sup>
-&frasl; <sub>N</sub>] &times; GP &times; k</p>}}{\deqn{GV = \frac{\sum DGS}{N}
+\ifelse{html}{\out{<p style="text-align: center;"><i>GV = [<sup>&sum;DGS</sup>
+&frasl; <sub>N</sub>] &times; GP &times; k</i></p>}}{\deqn{GV = \frac{\sum DGS}{N}
 \times GP \times k}}
 
 Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination speed computed by dividing

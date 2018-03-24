@@ -44,5 +44,6 @@ Imports:
 Suggests:
     knitr
 RdMacros: Rdpack
-URL: https://github.com/aravind-j/germinationmetrics/tree/master
-BugReports: https://github.com/aravind-j/germinationmetrics/tree/master/issues
+URL: https://github.com/aravind-j/germinationmetrics,
+    https://aravind-j.github.io/PGRdup/
+BugReports: https://github.com/aravind-j/germinationmetrics/issues

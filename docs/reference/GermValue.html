@@ -11,7 +11,7 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -25,11 +25,15 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+  <link href="../extra.css" rel="stylesheet">
+  
 <meta property="og:title" content="Peak value and germination value — GermValue" />
 
 <meta property="og:description" content="Compute the peak value (Czabator, 1962) and germination value (Czabator, 1962;
 Djavanshir and Pourbeik, 1976)." />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -64,8 +68,12 @@ Djavanshir and Pourbeik, 1976)." />
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">germinationmetrics</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">germinationmetrics</a>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.0.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -118,7 +126,7 @@ Djavanshir and Pourbeik, 1976)." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Peak value and germination value</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/tree/master/blob/master/R/GermValue.R'><code>R/GermValue.R</code></a></small>
+    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermValue.R'><code>R/GermValue.R</code></a></small>
     </div>
 
     
@@ -131,7 +139,7 @@ Djavanshir and Pourbeik, 1976).</p>
 <span class='fu'>GermValue</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"czabator"</span>, <span class='st'>"dp"</span>), <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
@@ -191,8 +199,8 @@ percentage per unit time (<em><span
 style="text-decoration:overline">GP</span></em>).</p>
 <p>A new estimation of germination value was given by Djavanshir and Pourbeik
 (1976) as follows:</p>
-<p><p style="text-align: center;">GV = [<sup>&sum;DGS</sup>
-&frasl; <sub>N</sub>] &times; GP &times; k</p></p>
+<p><p style="text-align: center;"><i>GV = [<sup>&sum;DGS</sup>
+&frasl; <sub>N</sub>] &times; GP &times; k</i></p></p>
 <p>Where, <i>DGS</i> is the daily germination speed computed by dividing
 cumulative germination percentage by the number of days since the beginning of
 the test, <i>N</i> is the frequency or number of DGS calculated during the

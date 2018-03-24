@@ -20,7 +20,7 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
 [![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/kennedyoliveira/github-basic-badges/total.svg)] -->
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--03--22-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--03--24-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
 [![Analytics](https://pro-pulsar-193905.appspot.com/UA-116205606-2/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
@@ -71,15 +71,15 @@ citation("germinationmetrics")
     
       J. Aravind, J. Radhamani, S. Vimala Devi and Kalyani Srinivasan
       (NA). germinationmetrics: Seed Germination Indices and Curve
-      Fitting. R package version 0.0.0.9000.
-      https://github.com/aravind-j/germinationmetrics/tree/master
+      Fitting. https://github.com/aravind-j/germinationmetrics,
+      https://aravind-j.github.io/PGRdup/.
     
     A BibTeX entry for LaTeX users is
     
       @Manual{,
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {{J. Aravind} and {J. Radhamani} and {S. Vimala Devi} and {Kalyani Srinivasan}},
-        note = {R package version 0.0.0.9000},
-        url = {https://github.com/aravind-j/germinationmetrics/tree/master},
+        note = {https://github.com/aravind-j/germinationmetrics,
+    https://aravind-j.github.io/PGRdup/},
         year = {2018},
       }

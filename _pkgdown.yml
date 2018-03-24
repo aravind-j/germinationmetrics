@@ -1,7 +1,10 @@
 template:
   params:
-    bootswatch: cerulean
+    bootswatch: united
     ganalytics: UA-116205606-2
+
+development:
+  mode: unreleased
 
 navbar:
   title: germinationmetrics
@@ -23,4 +26,22 @@ navbar:
     - icon: fa-github-alt
       text: Github
       href: https://github.com/aravind-j/germinationmetrics
-      
+
+reference:
+    - title: Single-value germination indices
+      contents:
+         - '`GermPercent`'
+         - '`FirstGermTime`'
+         - '`t50`'
+         - '`MeanGermTime`'
+         - '`MeanGermRate`'
+         - '`GermSpeed`'
+         - '`MeanGermPercent`'
+         - '`TimsonsIndex`'
+         - '`PeakValue`'
+         - '`CUGerm`'
+         - '`GermSynchrony`'
+
+    - title: Curve fitting
+      contents:
+         - '`FourPHFfit`'

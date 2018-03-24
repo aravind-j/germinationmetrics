@@ -11,7 +11,7 @@
 <!-- jquery -->
 <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
-<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -25,6 +25,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+  <link href="../extra.css" rel="stylesheet">
+  
 <meta property="og:title" content="Time for first, last and peak germination — FirstGermTime" />
 
 <meta property="og:description" content="Compute the following metrics:
@@ -41,6 +43,8 @@ Peak time of germination or Modal time of germination
 (Ranal and de Santana, 2006)
 " />
 <meta name="twitter:card" content="summary" />
+
+
 <!-- mathjax -->
 <script src='https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
 
@@ -75,8 +79,12 @@ Peak time of germination or Modal time of germination
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="../index.html">germinationmetrics</a>
+      <span class="navbar-brand">
+        <a class="navbar-link" href="../index.html">germinationmetrics</a>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.0.0.9000</span>
+      </span>
     </div>
+
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
@@ -129,7 +137,7 @@ Peak time of germination or Modal time of germination
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Time for first, last and peak germination</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/tree/master/blob/master/R/FirstGermTime.R'><code>R/FirstGermTime.R</code></a></small>
+    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/FirstGermTime.R'><code>R/FirstGermTime.R</code></a></small>
     </div>
 
     
@@ -156,7 +164,7 @@ Labouriau, 1983; Ranal and de Santana, 2006)</p></li>
 
 <span class='fu'>TimeSpreadGerm</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
-    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a> Arguments</h2>
+    <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
