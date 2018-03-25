@@ -26,11 +26,13 @@ For \code{GermUncertainty}, the value of uncertainty of germination
  For \code{GermSynchrony}, the value of synchrony of germination.
 }
 \description{
-Compute the following metrics:\itemize{ \item Synchrony of germination
-(\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index) \item Synchronization index (\ifelse{html}{\out{<em><span
-style="text-decoration: overline">E</span></em>}}{\eqn{\overline{E}}}) or
-Uncertainty of the germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational entropy
-(\ifelse{html}{\out{<i>H</i>}}{\eqn{H}})}.
+Compute the following metrics:\describe{ \item{\code{GermSynchrony}}{
+Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index). }
+\item{\code{GermUncertainty}}{ Synchronization index
+(\ifelse{html}{\out{<em><span style="text-decoration:
+overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
+germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational
+entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}).} }
 }
 \details{
 \code{GermSynchrony} computes the value of synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}}

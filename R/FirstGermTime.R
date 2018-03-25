@@ -18,14 +18,16 @@
 
 #'Time for first, last and peak germination
 #'
-#'Compute the following metrics: \itemize{ \item Time of first germination or
-#'Germination time lag (\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}})
-#'(Edwards, 1932; Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983;
-#'Ranal, 1999; Quintanilla et al., 2000) \item Time of last germination
+#'Compute the following metrics: \describe{ \item{\code{FirstGermTime}}{Time of
+#'first germination or Germination time lag
+#'(\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}}) (Edwards, 1932;
+#'Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983; Ranal, 1999;
+#'Quintanilla et al., 2000).} \item{\code{LastGermTime}}{Time of last germination
 #'(\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}}) (Edwards, 1932;
-#'Labouriau, 1983; Ranal and de Santana, 2006) \item Time spread of germination
-#'(Al-Mudaris, 1998; Kader, 2005) \item Peak time of germination or Modal time of germination
-#'(Ranal and de Santana, 2006)}
+#'Labouriau, 1983; Ranal and de Santana, 2006).} \item{\code{PeakGermTime}}{Time
+#'spread of germination (Al-Mudaris, 1998; Kader, 2005).}
+#'\item{\code{TimeSpreadGerm}}{Peak time of germination or Modal time of
+#'germination (Ranal and de Santana, 2006).} }
 #'
 #'Time of first germination indicates time of germination of the faster seeds in
 #'a seedlot.

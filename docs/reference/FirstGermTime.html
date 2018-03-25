@@ -30,18 +30,16 @@
 <meta property="og:title" content="Time for first, last and peak germination — FirstGermTime" />
 
 <meta property="og:description" content="Compute the following metrics:
-Time of first germination or
-Germination time lag (t0)
-(Edwards, 1932; Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983;
-Ranal, 1999; Quintanilla et al., 2000)
-Time of last germination
+FirstGermTimeTime of
+first germination or Germination time lag
+(t0) (Edwards, 1932;
+Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983; Ranal, 1999;
+Quintanilla et al., 2000). LastGermTimeTime of last germination
 (tg) (Edwards, 1932;
-Labouriau, 1983; Ranal and de Santana, 2006)
-Time spread of germination
-(Al-Mudaris, 1998; Kader, 2005)
-Peak time of germination or Modal time of germination
-(Ranal and de Santana, 2006)
-" />
+Labouriau, 1983; Ranal and de Santana, 2006). PeakGermTimeTime
+spread of germination (Al-Mudaris, 1998; Kader, 2005).
+TimeSpreadGermPeak time of germination or Modal time of
+germination (Ranal and de Santana, 2006). " />
 <meta name="twitter:card" content="summary" />
 
 
@@ -141,19 +139,17 @@ Peak time of germination or Modal time of germination
     </div>
 
     
-    <p>Compute the following metrics:</p><ul>
-<li><p>Time of first germination or
-Germination time lag (<i>t<sub>0</sub></i>)
-(Edwards, 1932; Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983;
-Ranal, 1999; Quintanilla et al., 2000)</p></li>
-<li><p>Time of last germination
+    <p>Compute the following metrics:</p><dl class='dl-horizontal'>
+<dt><code>FirstGermTime</code></dt><dd><p>Time of
+first germination or Germination time lag
+(<i>t<sub>0</sub></i>) (Edwards, 1932;
+Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983; Ranal, 1999;
+Quintanilla et al., 2000).</p></dd> <dt><code>LastGermTime</code></dt><dd><p>Time of last germination
 (<i>t<sub>g</sub></i>) (Edwards, 1932;
-Labouriau, 1983; Ranal and de Santana, 2006)</p></li>
-<li><p>Time spread of germination
-(Al-Mudaris, 1998; Kader, 2005)</p></li>
-<li><p>Peak time of germination or Modal time of germination
-(Ranal and de Santana, 2006)</p></li>
-</ul>
+Labouriau, 1983; Ranal and de Santana, 2006).</p></dd> <dt><code>PeakGermTime</code></dt><dd><p>Time
+spread of germination (Al-Mudaris, 1998; Kader, 2005).</p></dd>
+<dt><code>TimeSpreadGerm</code></dt><dd><p>Peak time of germination or Modal time of
+germination (Ranal and de Santana, 2006).</p></dd> </dl>
     
 
     <pre class="usage"><span class='fu'>FirstGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)

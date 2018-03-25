@@ -49,18 +49,20 @@ For \code{MeanGermRate}, the mean germination rate value as
  \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 }
 \description{
-Compute the following metrics:\itemize{ \item Mean germination rate
-(\ifelse{html}{\out{<em><span
-style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}) \item
-Variance of germination rate (\ifelse{html}{\out{<em>s<sup>2</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}})
-\item Standard error of germination rate (\ifelse{html}{\out{<em>s<sub><span
-style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
-\item Coefficient of velocity/rate of germination or Kotowski's coefficient of
-velocity
-(\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
-\item Germination rate as reciprocal of median time
-(\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}}) }
+Compute the following metrics: \describe{ \item{\code{MeanGermRate}}{Mean
+germination rate (\ifelse{html}{\out{<em><span
+style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}).}
+\item{\code{VarGermRate}}{Variance of germination rate
+(\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}}). }
+\item{\code{SEGermRate}}{ Standard error of germination rate
+(\ifelse{html}{\out{<em>s<sub><span
+style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}}).
+} \item{\code{CVG}}{Coefficient of velocity/rate of germination or Kotowski's
+coefficient of velocity
+(\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}}).
+} \item{\code{GermRateRecip}}{Germination rate as reciprocal of median time
+(\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}}).} }
 }
 \details{
 \code{MeanGermRate} computes the mean germination rate

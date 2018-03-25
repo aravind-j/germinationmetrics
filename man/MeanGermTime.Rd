@@ -39,16 +39,17 @@ For \code{MeanGermTime}, the mean germination time value in the same
  germination time.
 }
 \description{
-Compute the following metrics:\itemize{ \item Mean germination time
-(\ifelse{html}{\out{<em><span
+Compute the following metrics:\describe{ \item{\code{MeanGermTime}}{Mean
+germination time (\ifelse{html}{\out{<em><span
 style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or Mean
-length of incubation time \item Variance of germination time
-(\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}}) \item Standard error of
-germination time (\ifelse{html}{\out{<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
-\item Coefficient of variation of the germination time
-(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}) }
+length of incubation time.} \item{\code{VarGermTime}}{Variance of germination
+time (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}}).}
+\item{\code{SEGermTime}}{Standard error of germination time
+(\ifelse{html}{\out{<em>s<sub><span
+style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}}).}
+\item{\code{CVSEGermTime}}{ Coefficient of variation of the germination time
+(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}).} }
 }
 \details{
 \code{MeanGermTime} computes the mean germination time according to the

@@ -30,16 +30,15 @@
 <meta property="og:title" content="Germination Rate — MeanGermRate" />
 
 <meta property="og:description" content="Compute the following metrics:
-Mean germination rate
-(V)
-Variance of germination rate (s2V)
-Standard error of germination rate (sV)
-Coefficient of velocity/rate of germination or Kotowski's coefficient of
-velocity
-(CVG)
-Germination rate as reciprocal of median time
-(v50)
-" />
+MeanGermRateMean
+germination rate (V).
+VarGermRateVariance of germination rate
+(s2V).
+SEGermRateStandard error of germination rate
+(sV). CVGCoefficient of velocity/rate of germination or Kotowski's
+coefficient of velocity
+(CVG). GermRateRecipGermination rate as reciprocal of median time
+(v50). " />
 <meta name="twitter:card" content="summary" />
 
 
@@ -139,20 +138,19 @@ Germination rate as reciprocal of median time
     </div>
 
     
-    <p>Compute the following metrics:</p><ul>
-<li><p>Mean germination rate
-(<em><span
-style="text-decoration:overline">V</span></em>)</p></li>
-<li><p>Variance of germination rate (<em>s<sup>2</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">V</sub></em>)</p></li>
-<li><p>Standard error of germination rate (<em>s<sub><span
-style="text-decoration:overline">V</span></sub></em>)</p></li>
-<li><p>Coefficient of velocity/rate of germination or Kotowski's coefficient of
-velocity
-(<i>CVG</i>)</p></li>
-<li><p>Germination rate as reciprocal of median time
-(<i>v<sub>50</sub></i>)</p></li>
-</ul>
+    <p>Compute the following metrics:</p><dl class='dl-horizontal'>
+<dt><code>MeanGermRate</code></dt><dd><p>Mean
+germination rate (<em><span
+style="text-decoration:overline">V</span></em>).</p></dd>
+<dt><code>VarGermRate</code></dt><dd><p>Variance of germination rate
+(<em>s<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">V</sub></em>).</p></dd>
+<dt><code>SEGermRate</code></dt><dd><p>Standard error of germination rate
+(<em>s<sub><span
+style="text-decoration:overline">V</span></sub></em>).</p></dd> <dt><code>CVG</code></dt><dd><p>Coefficient of velocity/rate of germination or Kotowski's
+coefficient of velocity
+(<i>CVG</i>).</p></dd> <dt><code>GermRateRecip</code></dt><dd><p>Germination rate as reciprocal of median time
+(<i>v<sub>50</sub></i>).</p></dd> </dl>
     
 
     <pre class="usage"><span class='fu'>MeanGermRate</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)

@@ -34,12 +34,13 @@ For \code{GermSpeed}, the value of germination speed as \%
  For \code{GermSpeedCorrected}, the corrected speed of germination.
 }
 \description{
-Compute the following metrics: \itemize{ \item Speed of germination or
-Germination rate index or Index of velocity of germination or Germination
-index (Kendrick and Frankland, 1969; AOSA, 1983) \item Speed of accumulated
-germination (Bradbeer, 1988; Wardle et al., 1991; Haugland and Brandsaeter,
-1996; Santana and Ranal, 2004) \item Corrected speed of germination or
-Corrected germination rate index }
+Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
+germination or Germination rate index or Index of velocity of germination or
+Germination index (Kendrick and Frankland, 1969; AOSA, 1983) }
+\item{\code{GermSpeedAccumulated}}{Speed of accumulated germination (Bradbeer,
+1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996; Santana and Ranal,
+2004) } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
+Corrected germination rate index} }
 }
 \details{
 \code{GermSpeed} computes the speed of germination according to the following

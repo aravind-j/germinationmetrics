@@ -18,11 +18,13 @@
 
 #'Mean germination percentage and number of seeds per time interval
 #'
-#'Compute the following metrics:\itemize{ \item Mean/average germination
-#'percentage per unit time (\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}) \item
-#'Number of seeds germinated per unit time (\ifelse{html}{\out{<em><span
-#'style="text-decoration: overline">N</span></em>}}{\eqn{\overline{N}}})}.
+#'Compute the following metrics:\describe{ \item{\code{MeanGermPercent}}{
+#'Mean/average germination percentage per unit time
+#'(\ifelse{html}{\out{<em><span
+#'style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}). }
+#'\item{\code{MeanGermNumber}}{ Number of seeds germinated per unit time
+#'(\ifelse{html}{\out{<em><span style="text-decoration:
+#'overline">N</span></em>}}{\eqn{\overline{N}}}).}}
 #'
 #'Mean germination percentage per unit time (\ifelse{html}{\out{<em><span
 #'style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}) is

@@ -30,16 +30,14 @@
 <meta property="og:title" content="Germination Time — MeanGermTime" />
 
 <meta property="og:description" content="Compute the following metrics:
-Mean germination time
-(T) or Mean
-length of incubation time
-Variance of germination time
-(s2T)
-Standard error of
-germination time (sT)
-Coefficient of variation of the germination time
-(CVT)
-" />
+MeanGermTimeMean
+germination time (T) or Mean
+length of incubation time. VarGermTimeVariance of germination
+time (s2T).
+SEGermTimeStandard error of germination time
+(sT).
+CVSEGermTimeCoefficient of variation of the germination time
+(CVT). " />
 <meta name="twitter:card" content="summary" />
 
 
@@ -139,20 +137,18 @@ Coefficient of variation of the germination time
     </div>
 
     
-    <p>Compute the following metrics:</p><ul>
-<li><p>Mean germination time
-(<em><span
+    <p>Compute the following metrics:</p><dl class='dl-horizontal'>
+<dt><code>MeanGermTime</code></dt><dd><p>Mean
+germination time (<em><span
 style="text-decoration:overline">T</span></em>) or Mean
-length of incubation time</p></li>
-<li><p>Variance of germination time
-(<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">T</sub></em>)</p></li>
-<li><p>Standard error of
-germination time (<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>)</p></li>
-<li><p>Coefficient of variation of the germination time
-(<i>CV<sub>T</sub></i>)</p></li>
-</ul>
+length of incubation time.</p></dd> <dt><code>VarGermTime</code></dt><dd><p>Variance of germination
+time (<em>s<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">T</sub></em>).</p></dd>
+<dt><code>SEGermTime</code></dt><dd><p>Standard error of germination time
+(<em>s<sub><span
+style="text-decoration:overline">T</span></sub></em>).</p></dd>
+<dt><code>CVSEGermTime</code></dt><dd><p>Coefficient of variation of the germination time
+(<i>CV<sub>T</sub></i>).</p></dd> </dl>
     
 
     <pre class="usage"><span class='fu'>MeanGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
