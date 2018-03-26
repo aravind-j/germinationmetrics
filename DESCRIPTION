@@ -6,11 +6,14 @@ Authors@R: c(
     email = "j.aravind@icar.gov.in",
     role = c("aut", "cre"),
     comment = c(ORCID = "0000-0002-4791-442X")),
+    person(c("S.", "Vimala Devi"),
+    email = "vimala.devi@icar.gov.in",
+    role = "aut"),
     person(c("J.", "Radhamani"),
     email = "jalli.radhamani@icar.gov.in",
     role = "aut"),
-    person(c("S.", "Vimala Devi"),
-    email = "vimala.devi@icar.gov.in",
+    person(c("Sherry Rachel", "Jacob"),
+    email = "Sherry.Jacob@icar.gov.in",
     role = "aut"),
     person(c("Kalyani", "Srinivasan"),
     email = "kalyani.srinivasan@icar.gov.in",
@@ -45,5 +48,5 @@ Suggests:
     knitr
 RdMacros: Rdpack
 URL: https://github.com/aravind-j/germinationmetrics,
-    https://aravind-j.github.io/PGRdup/
+    https://aravind-j.github.io/germinationmetrics/
 BugReports: https://github.com/aravind-j/germinationmetrics/issues

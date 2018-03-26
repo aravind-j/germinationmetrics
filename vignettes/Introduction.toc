@@ -1,6 +1,6 @@
 \contentsline {subsection}{Overview}{1}{section*.2}
 \contentsline {subsection}{Installation}{1}{section*.3}
-\contentsline {subsection}{Germination count data}{1}{section*.4}
+\contentsline {subsection}{Germination count data}{2}{section*.4}
 \contentsline {subsection}{Single-value germination indices}{3}{section*.5}
 \contentsline {paragraph}{Examples}{11}{section*.6}
 \contentsline {paragraph}{\texttt {GermPercent()}}{11}{section*.7}

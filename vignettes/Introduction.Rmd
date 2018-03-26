@@ -30,7 +30,7 @@ vignette: |
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
 \begin{center}
- {\it J. Aravind, J. Radhamani, S. Vimala Devi and Kalyani Srinivasan}
+ {\it J. Aravind, S. Vimala Devi, J. Radhamani, Sherry R. Jacob and Kalyani Srinivasan}
 \end{center}
 
 \begin{center}
