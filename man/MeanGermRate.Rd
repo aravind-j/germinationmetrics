@@ -215,5 +215,6 @@ GermRateRecip(germ.counts = y, intervals = int,
 \insertRef{ranal_how_2006}{germinationmetrics}
 }
 \seealso{
-\code{\link[germinationmetrics]{MeanGermTime}}
+\code{\link[germinationmetrics]{MeanGermTime}},
+ \code{\link[germinationmetrics]{t50}}
 }

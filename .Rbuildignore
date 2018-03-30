@@ -18,3 +18,4 @@
 ^vignettes/Introduction\.aux$
 ^vignettes/Introduction\.out$
 ^_pkgdown\.yml$
+^pkgdown$

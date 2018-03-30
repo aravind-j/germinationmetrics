@@ -104,6 +104,8 @@
 #' GermSynchrony(germ.counts = y, intervals = int, partial = FALSE)
 #' GermUncertainty(germ.counts = y, intervals = int, partial = FALSE)
 #'
+#'@seealso \code{\link[germinationmetrics]{CUGerm}}
+
 
 #' @rdname GermSynchrony
 #' @export

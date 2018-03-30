@@ -89,3 +89,6 @@ MeanGermPercent(germinated.seeds = 40, total.seeds = 50, intervals = int)
 
 \insertRef{djavanshir_germination_1976}{germinationmetrics}
 }
+\seealso{
+\code{\link[germinationmetrics]{GermPercent}}
+}

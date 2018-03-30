@@ -33,11 +33,13 @@
 #'Where, \ifelse{html}{\out{<i><span style="text-decoration:
 #'overline">T</span></i>}}{\eqn{\overline{T}}} is the the mean germination time,
 #'\ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from the
-#'start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation (day for the example);
+#'start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+#'observation (day for the example);
 #'\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#'germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
-#'correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation), and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
-#'germination.
+#'germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
+#'accumulated number, but the number correspondent to the
+#'\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation), and
+#'\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 #'
 #'@inheritParams MeanGermTime
 #'
@@ -65,7 +67,8 @@
 #' #----------------------------------------------------------------------------
 #' CUGerm(germ.counts = y, intervals = int, partial = FALSE)
 #'
-#'
+#'@seealso \code{\link[germinationmetrics]{GermSynchrony}},
+#'  \code{\link[germinationmetrics]{MeanGermTime}}
 #'
 CUGerm <- function(germ.counts, intervals, partial = TRUE) {
 

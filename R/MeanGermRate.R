@@ -203,7 +203,8 @@
 #' GermRateRecip(germ.counts = y, intervals = int,
 #'               method = "farooq", partial = FALSE)
 #'
-#'@seealso \code{\link[germinationmetrics]{MeanGermTime}}
+#'@seealso \code{\link[germinationmetrics]{MeanGermTime}},
+#'  \code{\link[germinationmetrics]{t50}}
 
 
 #' @rdname MeanGermRate

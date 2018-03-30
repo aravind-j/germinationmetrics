@@ -1,8 +1,8 @@
 .Rproj.user
 .Rhistory
 .RData
+.Ruserdata
 Release.R
-germinationmetrics.pdf
 vignettes/Introduction.tex
 vignettes/Introduction.aux
 vignettes/Introduction.out

@@ -85,7 +85,7 @@
 #' #----------------------------------------------------------------------------
 #' MeanGermPercent(germinated.seeds = 40, total.seeds = 50, intervals = int)
 #'
-
+#' @seealso \code{\link[germinationmetrics]{GermPercent}}
 
 #' @rdname MeanGermPercent
 #' @export

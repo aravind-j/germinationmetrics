@@ -104,3 +104,6 @@ GermUncertainty(germ.counts = y, intervals = int, partial = FALSE)
 
 \insertRef{ranal_how_2006}{germinationmetrics}
 }
+\seealso{
+\code{\link[germinationmetrics]{CUGerm}}
+}
