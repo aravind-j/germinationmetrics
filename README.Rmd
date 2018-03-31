@@ -17,7 +17,7 @@ devtools::load_all(".")
 
 ```
 
-###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
 
 ##### *J. Aravind, S. Vimala Devi, J. Radhamani, Sherry R. Jacob  and Kalyani Srinivasan*
@@ -34,7 +34,7 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![develVersion](https://img.shields.io/badge/devel%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 [![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
-[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+[![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
 <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics) -->
 <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) -->
