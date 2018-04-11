@@ -6,6 +6,8 @@ template:
 development:
   mode: unreleased
 
+url: https://aravind-j.github.io/germinationmetrics/
+
 navbar:
   title: germinationmetrics
   type: default
