@@ -28,7 +28,7 @@
 </script>
 </head>
 <body>
-    <div class="container template-vignette">
+    <div class="container template-article">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
@@ -92,18 +92,18 @@
 
       
       </header><div class="row">
-  <div class="col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>The <strong>germinationmetrics</strong> package: A brief introduction</h1>
             
       
       <small>Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
+      <div class="hidden name"><code>Introduction.Rmd</code></div>
 
     </div>
 
     
     
-<div class="contents">
 
 
 
@@ -242,7 +242,7 @@ Welcome to germinationmetrics version 0.0.0.9000
 <a class="sourceLine" id="cb4-9" data-line-number="9">int &lt;-<span class="st"> </span>data<span class="op">$</span>intervals</a>
 <a class="sourceLine" id="cb4-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="kw">plot</span>(int, <span class="kw">cumsum</span>(x))</a></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-5-1.png" width="672"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-5-1.png" width="700"></p>
 </div>
 <div id="single-value-germination-indices" class="section level2">
 <h2 class="hasAnchor">
@@ -1345,7 +1345,7 @@ $isConv
 [1] TRUE
 
 $plot</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-1.png" width="672"></p>
+<p><img src="Introduction_files/figure-html/runCode-1.png" width="700"></p>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="co"># From cumulative germination counts</span></a>
 <a class="sourceLine" id="cb169-2" data-line-number="2"><span class="co">#----------------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb169-3" data-line-number="3"><span class="kw"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">50</span>, <span class="dt">tmax =</span> <span class="dv">20</span>,</a>
@@ -1415,7 +1415,7 @@ $isConv
 [1] TRUE
 
 $plot</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-2.png" width="672"></p>
+<p><img src="Introduction_files/figure-html/runCode-2.png" width="700"></p>
 </div>
 </div>
 </div>
@@ -1478,15 +1478,16 @@ loaded via a namespace (and not attached):
 [25] knitr_1.20         gbRd_0.4-11        parallel_3.4.3    
 [28] highr_0.6          broom_0.4.3        Rcpp_0.12.16      
 [31] scales_0.5.0       backports_1.1.2    desc_1.1.1        
-[34] fs_1.2.2           mnormt_1.5-5       ggplot2_2.2.1     
-[37] digest_0.6.15      stringi_1.1.6      dplyr_0.7.4       
-[40] ggrepel_0.7.1      grid_3.4.3         rprojroot_1.3-2   
-[43] bibtex_0.4.2       Rdpack_0.5-5       tools_3.4.3       
-[46] magrittr_1.5       lazyeval_0.2.1     tibble_1.4.2      
-[49] crayon_1.3.4       tidyr_0.8.0        pkgconfig_2.0.1   
-[52] MASS_7.3-49        xml2_1.2.0         assertthat_0.2.0  
-[55] rmarkdown_1.9.7    roxygen2_6.0.1     rstudioapi_0.7    
-[58] R6_2.2.2           nlme_3.1-131.1     compiler_3.4.3    </code></pre>
+[34] jsonlite_1.5       fs_1.2.2           mnormt_1.5-5      
+[37] ggplot2_2.2.1      digest_0.6.15      stringi_1.1.6     
+[40] dplyr_0.7.4        ggrepel_0.7.1      grid_3.4.3        
+[43] rprojroot_1.3-2    bibtex_0.4.2       Rdpack_0.7-0      
+[46] tools_3.4.3        magrittr_1.5       lazyeval_0.2.1    
+[49] tibble_1.4.2       crayon_1.3.4       tidyr_0.8.0       
+[52] pkgconfig_2.0.1    MASS_7.3-49        xml2_1.2.0        
+[55] assertthat_0.2.0   rmarkdown_1.9.8    roxygen2_6.0.1    
+[58] rstudioapi_0.7     R6_2.2.2           nlme_3.1-131.1    
+[61] compiler_3.4.3    </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
@@ -1626,7 +1627,6 @@ loaded via a namespace (and not attached):
 </div>
 </div>
 </div>
-</div>
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -1645,6 +1645,8 @@ loaded via a namespace (and not attached):
 
       </footer>
 </div>
+
+  
 
   </body>
 </html>

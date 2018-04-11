@@ -54,6 +54,8 @@
 
 </script>
 
+
+
   </head>
 
   <body>
@@ -114,6 +116,7 @@
   </a>
 </li>
       </ul>
+      
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
 </div><!--/.navbar -->
@@ -121,11 +124,12 @@
       
       </header>
 
-      <div class="row">
+<div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Coefficient of uniformity of germination</h1>
     <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/CUGerm.R'><code>R/CUGerm.R</code></a></small>
+    <div class="hidden name"><code>CUGerm.Rd</code></div>
     </div>
 
     
@@ -171,11 +175,13 @@ T<sub>i</sub>)<sup>2</sup>N<sub>i</sub></sub></i></p></p>
 <p>Where, <i><span style="text-decoration:
 overline">T</span></i> is the the mean germination time,
 <i>T<sub>i</sub></i> is the time from the
-start of the experiment to the <i>i</i>th observation (day for the example);
+start of the experiment to the <i>i</i>th
+observation (day for the example);
 <i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time (not the accumulated number, but the number
-correspondent to the <i>i</i>th observation), and <i>k</i> is the last time of
-germination.</p>
+germinated in the <i>i</i>th time (not the
+accumulated number, but the number correspondent to the
+<i>i</i>th observation), and
+<i>k</i> is the last time of germination.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -186,6 +192,11 @@ Pennsylvania State University Press, University Park, USA.</p>
 <em>Seeds: Physiology of Development and Germination.</em>.
 Plenum Publishing Corporation, New York, USA.
 ISBN 0-306-44748-7, <a href='https://www.cabdirect.org/cabdirect/abstract/19950315483'>https://www.cabdirect.org/cabdirect/abstract/19950315483</a>.</p>
+    
+    <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
+
+    <div class='dont-index'><p><code><a href='GermSynchrony.html'>GermSynchrony</a></code>,
+ <code><a href='MeanGermTime.html'>MeanGermTime</a></code></p></div>
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
@@ -199,8 +210,6 @@ ISBN 0-306-44748-7, <a href='https://www.cabdirect.org/cabdirect/abstract/199503
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 <span class='fu'>CUGerm</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.05267935</div><div class='input'>
-
-
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -213,6 +222,8 @@ ISBN 0-306-44748-7, <a href='https://www.cabdirect.org/cabdirect/abstract/199503
       <li><a href="#details">Details</a></li>
 
       <li><a href="#references">References</a></li>
+
+      <li><a href="#see-also">See also</a></li>
       
       <li><a href="#examples">Examples</a></li>
     </ul>
@@ -231,6 +242,8 @@ ISBN 0-306-44748-7, <a href='https://www.cabdirect.org/cabdirect/abstract/199503
 
       </footer>
    </div>
+
+  
 
   </body>
 </html>
