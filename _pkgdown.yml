@@ -2,6 +2,9 @@ template:
   params:
     bootswatch: united
     ganalytics: UA-116205606-2
+    docsearch:
+      api_key: 1d899a3e8f9113a338324d703da9745d
+      index_name: germinationmetrics
 
 development:
   mode: unreleased
