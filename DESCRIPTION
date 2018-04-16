@@ -23,7 +23,7 @@ Authors@R: c(
 Description: Provides functions to compute various germination indices such as
     germinability, mean germination time, mean germination rate, speed of
     germination, Timson's index, germination value, coefficient of uniformity of
-    germination, uncertainity of germination process, synchrony of germination
+    germination, uncertainty of germination process, synchrony of germination
     etc. from germination count data. Includes functions for fitting cumulative
     seed germination curves using four-parameter hill function and computation
     of associated parameters.
@@ -36,7 +36,6 @@ VignetteBuilder: knitr
 RoxygenNote: 6.0.1
 Imports:
     broom,
-    data.table,
     ggplot2,
     ggrepel,
     minpack.lm,
@@ -45,7 +44,9 @@ Imports:
     utils,
     stats
 Suggests:
-    knitr
+    knitr,
+    rmarkdown,
+    pander
 RdMacros: Rdpack
 URL: https://github.com/aravind-j/germinationmetrics,
     https://aravind-j.github.io/germinationmetrics/
