@@ -12,12 +12,13 @@
 <script src="jquery.sticky-kit.min.js"></script><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Seed Germination Indices and Curve Fitting">
 <meta property="og:description" content="Provides functions to compute various germination indices such as
-    germinability, mean germination time, mean germination rate, speed of
+    germinability, median germination time, mean germination time, mean germination rate, speed of
     germination, Timson's index, germination value, coefficient of uniformity of
     germination, uncertainty of germination process, synchrony of germination
     etc. from germination count data. Includes functions for fitting cumulative
     seed germination curves using four-parameter hill function and computation
-    of associated parameters.">
+    of associated parameters. See the vignette for more, including full list of
+    citations for the methods implemented.">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -45,7 +46,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">germinationmetrics</a>
-        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.0.0.9000</span>
+        <span class="label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased package">0.1.0</span>
       </span>
     </div>
 
@@ -112,8 +113,8 @@
 <div id="germinationmetrics-seed-germination-indices-and-curve-fitting" class="section level2">
 <h2 class="hasAnchor">
 <a href="#germinationmetrics-seed-germination-indices-and-curve-fitting" class="anchor"></a><code>germinationmetrics</code>: Seed Germination Indices and Curve Fitting</h2>
-<div id="version-0-0-0-9000-copyright-c-2017-2018-icar-nbpgr-license-gpl2gpl-3" class="section level6">
-<h6>Version : <a href="https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history">0.0.0.9000</a>; Copyright (C) 2017-2018: <a href="http://www.nbpgr.ernet.in/">ICAR-NBPGR</a>; License: <a href="https://www.r-project.org/Licenses/">GPL2|GPL-3</a>
+<div id="version-0-1-0-copyright-c-2017-2018-icar-nbpgr-license-gpl2gpl-3" class="section level6">
+<h6>Version : <a href="https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history">0.1.0</a>; Copyright (C) 2017-2018: <a href="http://www.nbpgr.ernet.in/">ICAR-NBPGR</a>; License: <a href="https://www.r-project.org/Licenses/">GPL2|GPL-3</a>
 </h6>
 </div>
 <div id="j--aravind-s--vimala-devi-j--radhamani-sherry-r--jacob-and-kalyani-srinivasan" class="section level5">
@@ -122,14 +123,14 @@
 </h5>
 <p>ICAR-National Bureau of Plant Genetic Resources, New Delhi</p>
 <hr>
-<p><a href="https://cran.r-project.org/"><img src="https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg" alt="minimal R version"></a> <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a> <a href="https://cran.r-project.org/package=germinationmetrics"><img src="https://www.r-pkg.org/badges/version-last-release/germinationmetrics" alt="CRAN_Status_Badge"></a> <!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics) --> <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) --> <a href="https://github.com/aravind-j/germinationmetrics"><img src="https://img.shields.io/badge/devel%20version-0.0.0.9000-orange.svg" alt="develVersion"></a> <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] --> <a href="http://www.repostatus.org/#wip"><img src="http://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP"></a> <a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a> <a href="/commits/master"><img src="https://img.shields.io/badge/last%20change-2018--04--17-yellowgreen.svg" alt="Last-changedate"></a> <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics) --> <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) --> <a href="https://github.com/aravind-j/google-analytics-beacon"><img src="https://pro-pulsar-193905.appspot.com/UA-116205606-1/welcome-page" alt="Analytics"></a></p>
+<p><a href="https://cran.r-project.org/"><img src="https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg" alt="minimal R version"></a> <a href="https://www.gnu.org/licenses/gpl-3.0"><img src="https://img.shields.io/badge/License-GPL%20v3-blue.svg" alt="License: GPL v3"></a> <a href="https://cran.r-project.org/package=germinationmetrics"><img src="https://www.r-pkg.org/badges/version-last-release/germinationmetrics" alt="CRAN_Status_Badge"></a> <!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics) --> <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) --> <a href="https://github.com/aravind-j/germinationmetrics"><img src="https://img.shields.io/badge/devel%20version-0.1.0-orange.svg" alt="develVersion"></a> <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] --> <a href="http://www.repostatus.org/#wip"><img src="http://www.repostatus.org/badges/latest/wip.svg" alt="Project Status: WIP"></a> <a href="https://www.tidyverse.org/lifecycle/#maturing"><img src="https://img.shields.io/badge/lifecycle-maturing-blue.svg" alt="lifecycle"></a> <a href="/commits/master"><img src="https://img.shields.io/badge/last%20change-2018--04--17-yellowgreen.svg" alt="Last-changedate"></a> <!-- [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics) --> <!-- [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.841963.svg)](https://doi.org/10.5281/zenodo.841963) --> <a href="https://github.com/aravind-j/google-analytics-beacon"><img src="https://pro-pulsar-193905.appspot.com/UA-116205606-1/welcome-page" alt="Analytics"></a></p>
 <hr>
 </div>
 </div>
 <div id="description" class="section level2">
 <h2 class="hasAnchor">
 <a href="#description" class="anchor"></a>Description</h2>
-<p>Provides functions to compute various germination indices such as germinability, mean germination time, mean germination rate, speed of germination, Timson’s index, germination value, coefficient of uniformity of germination, uncertainty of germination process, synchrony of germination etc. from germination count data. Includes functions for fitting cumulative seed germination curves using four-parameter hill function and computation of associated parameters.</p>
+<p>Provides functions to compute various germination indices such as germinability, median germination time, mean germination time, mean germination rate, speed of germination, Timson’s index, germination value, coefficient of uniformity of germination, uncertainty of germination process, synchrony of germination etc. from germination count data. Includes functions for fitting cumulative seed germination curves using four-parameter hill function and computation of associated parameters. See the vignette for more, including full list of citations for the methods implemented.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
@@ -166,17 +167,16 @@
 To cite the R package 'germinationmetrics' in publications use:
 
   J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob
-  and Kalyani Srinivasan (2018).  germinationmetrics: Discover
-  Probable Duplicates in Plant Genetic Resources Collections. R
-  package version 0.0.0.9000,
+  and Kalyani Srinivasan (2018).  germinationmetrics: Seed
+  Germination Indices and Curve Fitting . R package version 0.1.0,
   https://aravind-j.github.io/germinationmetrics/.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {germinationmetrics: Discover Probable Duplicates in Plant Genetic Resources Collections},
+    title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {{Aravind J} and {Vimala Devi S} and {Radhamani J} and {Sherry Rachel Jacob} and {Kalyani Srinivasan}},
-    note = {R package version 0.0.0.9000},
+    note = {R package version 0.1.0},
     note = {https://aravind-j.github.io/germinationmetrics/},
     year = {2018},
   }
@@ -191,6 +191,8 @@ project by citing the package.</code></pre>
     <div class="links">
 <h2>Links</h2>
 <ul class="list-unstyled">
+<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=germinationmetrics">https://​cloud.r-project.org/​package=germinationmetrics</a>
+</li>
 <li>Browse source code at <br><a href="https://github.com/aravind-j/germinationmetrics">https://​github.com/​aravind-j/​germinationmetrics</a>
 </li>
 <li>Report a bug at <br><a href="https://github.com/aravind-j/germinationmetrics/issues">https://​github.com/​aravind-j/​germinationmetrics/​issues</a>

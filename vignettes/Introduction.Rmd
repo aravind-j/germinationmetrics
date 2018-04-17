@@ -23,6 +23,7 @@ output:
     df_print: paged
 csl: frontiers.csl
 bibliography: REFERENCES.bib
+link-citations: yes
 toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}

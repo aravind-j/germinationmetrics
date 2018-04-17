@@ -1,7 +1,7 @@
 
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting
 
-###### Version : [0.0.0.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.0](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *J. Aravind, S. Vimala Devi, J. Radhamani, Sherry R. Jacob and Kalyani Srinivasan*
 
@@ -16,7 +16,7 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
 <!-- [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics) -->
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-0.0.0.9000-orange.svg)](https://github.com/aravind-j/germinationmetrics)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.0-orange.svg)](https://github.com/aravind-j/germinationmetrics)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
@@ -31,12 +31,14 @@ WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org
 ## Description
 
 Provides functions to compute various germination indices such as
-germinability, mean germination time, mean germination rate, speed of
-germination, Timson’s index, germination value, coefficient of
-uniformity of germination, uncertainty of germination process, synchrony
-of germination etc. from germination count data. Includes functions for
-fitting cumulative seed germination curves using four-parameter hill
-function and computation of associated parameters.
+germinability, median germination time, mean germination time, mean
+germination rate, speed of germination, Timson’s index, germination
+value, coefficient of uniformity of germination, uncertainty of
+germination process, synchrony of germination etc. from germination
+count data. Includes functions for fitting cumulative seed germination
+curves using four-parameter hill function and computation of associated
+parameters. See the vignette for more, including full list of citations
+for the methods implemented.
 
 ## Installation
 
@@ -77,17 +79,16 @@ citation("germinationmetrics")
 To cite the R package 'germinationmetrics' in publications use:
 
   J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob
-  and Kalyani Srinivasan (2018).  germinationmetrics: Discover
-  Probable Duplicates in Plant Genetic Resources Collections. R
-  package version 0.0.0.9000,
+  and Kalyani Srinivasan (2018).  germinationmetrics: Seed
+  Germination Indices and Curve Fitting . R package version 0.1.0,
   https://aravind-j.github.io/germinationmetrics/.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
-    title = {germinationmetrics: Discover Probable Duplicates in Plant Genetic Resources Collections},
+    title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {{Aravind J} and {Vimala Devi S} and {Radhamani J} and {Sherry Rachel Jacob} and {Kalyani Srinivasan}},
-    note = {R package version 0.0.0.9000},
+    note = {R package version 0.1.0},
     note = {https://aravind-j.github.io/germinationmetrics/},
     year = {2018},
   }

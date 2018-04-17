@@ -5,7 +5,7 @@ year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
 vers <- paste("R package version", meta$Version)
 
 citEntry(entry  = "Manual",
-         title  = "germinationmetrics: Discover Probable Duplicates in Plant Genetic Resources Collections",
+         title  = "germinationmetrics: Seed Germination Indices and Curve Fitting",
          author = personList(person(c("Aravind", "J"),
                                     email = "aravindj@nbpgr.ernet.in",
                                     role = c("aut", "cre")),
@@ -20,7 +20,7 @@ citEntry(entry  = "Manual",
          year = year,
          textVersion = paste(
            "J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob and Kalyani Srinivasan (",
-           year, ").  germinationmetrics: Discover Probable Duplicates in Plant Genetic Resources Collections. ",
+           year, ").  germinationmetrics: Seed Germination Indices and Curve Fitting . ",
            vers, ", ", "https://aravind-j.github.io/germinationmetrics/",
            ".", sep=""),
          note = {c(paste(vers), "https://aravind-j.github.io/germinationmetrics/")})
