@@ -46,8 +46,14 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 `r gsub("\\n", " ", packageDescription("germinationmetrics", fields = "Description"))`
 
 ## Installation
+The package can be installed from CRAN as follows:
 
-### Install development version from Github
+```{r, eval=FALSE}
+install.packages('germinationmetrics', dependencies=TRUE)
+```
+
+The development version can be installed from github as follows:
+
 ```{r, eval=FALSE}
 devtools::install_github("aravind-j/germinationmetrics")
 ```
