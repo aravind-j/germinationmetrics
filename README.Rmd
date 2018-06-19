@@ -74,6 +74,15 @@ news(package='germinationmetrics')
 
 ## Links
 
+[CRAN page](https://cran.r-project.org/package=germinationmetrics)
+
+[Github page](https://github.com/aravind-j/germinationmetrics)
+
+[Github website](https://aravind-j.github.io/germinationmetrics/)
+
+[Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
+
+
 ## Citing `germinationmetrics`
 To cite the methods in the package use:
 
