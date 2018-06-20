@@ -13,7 +13,7 @@ Authors@R: c(
     email = "jalli.radhamani@icar.gov.in",
     role = "aut"),
     person(c("Sherry Rachel", "Jacob"),
-    email = "Sherry.Jacob@icar.gov.in",
+    email = "sherry.jacob@icar.gov.in",
     role = "aut"),
     person(c("Kalyani", "Srinivasan"),
     email = "kalyani.srinivasan@icar.gov.in",
