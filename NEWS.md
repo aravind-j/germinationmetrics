@@ -2,7 +2,9 @@
 # germinationmetrics  0.1.1
 
 * Fixed citation information.
-* Added zenodo and rdocumentation tags.
+* Added zenodo and rdocumentation badges.
+* Added CRAN installation instructions in Readme.
+* Added logo.
 
 # germinationmetrics  0.1.0
 

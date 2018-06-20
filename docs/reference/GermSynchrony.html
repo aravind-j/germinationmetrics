@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Synchrony and uncertainty of germination — GermSynchrony" />
@@ -47,22 +55,15 @@ entropy (H). " />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116205606-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116205606-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -127,7 +128,7 @@ entropy (H). " />
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -142,10 +143,11 @@ entropy (H). " />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Synchrony and uncertainty of germination</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermSynchrony.R'><code>R/GermSynchrony.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermSynchrony.R'><code>R/GermSynchrony.R</code></a></small>
     <div class="hidden name"><code>GermSynchrony.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Compute the following metrics:</p><dl class='dl-horizontal'>
 <dt><code>GermSynchrony</code></dt><dd><p>Synchrony of germination (<i>Z</i> index).</p></dd>
@@ -155,6 +157,7 @@ overline">E</span></em>) or Uncertainty of the
 germination process (<i>U</i>) or Informational
 entropy (<i>H</i>).</p></dd> </dl>
     
+    </div>
 
     <pre class="usage"><span class='fu'>GermSynchrony</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
@@ -226,20 +229,20 @@ germinated on the <i>i</i>th time and <i>k</i> is the last day of observation.</
 
     <p>Shannon CE (1948).
 &#8220;A mathematical theory of communication.&#8221;
-<em>Bell System Technical Journal</em>, <b>27</b>(3), pp. 379--423.</p>
-<p>Labouriau L and Viladares M (1976).
+<em>Bell System Technical Journal</em>, <b>27</b>(3), 379--423.</p>
+<p>Labouriau L, Viladares M (1976).
 &#8220;On the germination of seeds of <em>Calotropis procera</em> (Ait.) Ait. f.&#8221;
 <em>Anais da Academia Brasileira de Ciencias</em>, <b>48</b>(263-284).</p>
 <p>Labouriau L (1983).
 &#8220;Uma nova linha de pesquisa na fisiologia da germinacao das sementes.&#8221;
-<em>Anais do XXXIV Congresso Nacional de Botanica. SBB, Porto Alegre</em>, pp. 11--50.</p>
+<em>Anais do XXXIV Congresso Nacional de Botanica. SBB, Porto Alegre</em>, 11--50.</p>
 <p>Primack RB (1985).
 &#8220;Longevity of individual flowers.&#8221;
-<em>Annual Review of Ecology and Systematics</em>, <b>16</b>(1), pp. 15--37.</p>
-<p>Ranal MA and de
+<em>Annual Review of Ecology and Systematics</em>, <b>16</b>(1), 15--37.</p>
+<p>Ranal MA, de
 Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
-<em>Brazilian Journal of Botany</em>, <b>29</b>(1), pp. 1--11.</p>
+<em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -295,10 +298,16 @@ Santana DG (2006).
 <script>
   docsearch({
     
+    
     apiKey: '1d899a3e8f9113a338324d703da9745d',
     indexName: 'germinationmetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

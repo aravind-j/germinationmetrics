@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Peak value and germination value — GermValue" />
@@ -43,22 +51,15 @@ Djavanshir and Pourbeik, 1976)." />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116205606-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116205606-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -123,7 +124,7 @@ Djavanshir and Pourbeik, 1976)." />
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -138,14 +139,16 @@ Djavanshir and Pourbeik, 1976)." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Peak value and germination value</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermValue.R'><code>R/GermValue.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermValue.R'><code>R/GermValue.R</code></a></small>
     <div class="hidden name"><code>GermValue.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Compute the peak value (Czabator, 1962) and germination value (Czabator, 1962;
 Djavanshir and Pourbeik, 1976).</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>PeakValue</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
@@ -228,10 +231,10 @@ speed of germination (<em><sup>&sum;DGS</sup> &frasl;
 
     <p>Czabator FJ (1962).
 &#8220;Germination value: An index combining speed and completeness of pine seed germination.&#8221;
-<em>Forest Science</em>, <b>8</b>(4), pp. 386--396.</p>
-<p>Khamassi K, Harbaoui K, Silva Td, A J and Jeddi FB (2013).
+<em>Forest Science</em>, <b>8</b>(4), 386--396.</p>
+<p>Khamassi K, Harbaoui K, Silva Td, A J, Jeddi FB (2013).
 &#8220;Optimal germination temperature assessed by indices and models in field bean (<em>Vicia faba</em> L. var. <em>minor</em>).&#8221;
-<em>Agriculturae Conspectus Scientificus</em>, <b>78</b>(2), pp. 131--136.
+<em>Agriculturae Conspectus Scientificus</em>, <b>78</b>(2), 131--136.
 <a href='https://hrcak.srce.hr/104663'>https://hrcak.srce.hr/104663</a>.</p>
     
 
@@ -464,10 +467,16 @@ speed of germination (<em><sup>&sum;DGS</sup> &frasl;
 <script>
   docsearch({
     
+    
     apiKey: '1d899a3e8f9113a338324d703da9745d',
     indexName: 'germinationmetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

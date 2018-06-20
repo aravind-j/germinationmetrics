@@ -2,6 +2,7 @@
 title: "The **germinationmetrics** package: A brief introduction"
 header-includes:
 - \usepackage{fancyhdr}
+- \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
 - \fancyhead[LO,RE]{The germinationmetrics package{:} A brief introduction}
@@ -30,6 +31,7 @@ vignette: |
   %\usepackage[utf8]{inputenc}
   %\VignetteEngine{knitr::rmarkdown_notangle}
 ---
+
 \begin{center}
  {\it J. Aravind, S. Vimala Devi, J. Radhamani, Sherry R. Jacob and Kalyani Srinivasan}
 \end{center}
@@ -56,7 +58,15 @@ knitr::opts_chunk$set(
 
 \tableofcontents
 
-## Overview
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "germinationmetrics.png", package = "germinationmetrics")`}
+  \end{center}
+    \vspace{-20pt}
+\end{wrapfigure}
+
+## Overview <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 The package `germinationmetrics` is a collection of functions which implements various methods for describing the time-course of germination in terms of single-value germination indices as well as fitted curves.
 

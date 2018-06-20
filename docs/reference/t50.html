@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Median germination time — t50" />
@@ -44,22 +52,15 @@ germination time is the time to reach 50% of final/maximum germination." />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116205606-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116205606-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -124,7 +125,7 @@ germination time is the time to reach 50% of final/maximum germination." />
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -139,15 +140,17 @@ germination time is the time to reach 50% of final/maximum germination." />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Median germination time</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/t50.R'><code>R/t50.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/t50.R'><code>R/t50.R</code></a></small>
     <div class="hidden name"><code>t50.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Compute the median germination time
 (<em>t<sub>50</sub></em>). Median
 germination time is the time to reach 50% of final/maximum germination.</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>t50</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"coolbear"</span>,
   <span class='st'>"farooq"</span>))</pre>
@@ -219,12 +222,12 @@ of seeds germinated in adjacent counts at time
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Coolbear P, Francis A and Grierson D (1984).
+    <p>Coolbear P, Francis A, Grierson D (1984).
 &#8220;The effect of low temperature pre-sowing treatment on the germination performance and membrane integrity of artificially aged tomato seeds.&#8221;
-<em>Journal of Experimental Botany</em>, <b>35</b>(11), pp. 1609--1617.</p>
-<p>Farooq M, Basra SMA, Ahmad N and Hafeez K (2005).
+<em>Journal of Experimental Botany</em>, <b>35</b>(11), 1609--1617.</p>
+<p>Farooq M, Basra SMA, Ahmad N, Hafeez K (2005).
 &#8220;Thermal hardening: A new seed vigor enhancement tool in rice.&#8221;
-<em>Journal of Integrative Plant Biology</em>, <b>47</b>(2), pp. 187--193.</p>
+<em>Journal of Integrative Plant Biology</em>, <b>47</b>(2), 187--193.</p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
@@ -280,10 +283,16 @@ of seeds germinated in adjacent counts at time
 <script>
   docsearch({
     
+    
     apiKey: '1d899a3e8f9113a338324d703da9745d',
     indexName: 'germinationmetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

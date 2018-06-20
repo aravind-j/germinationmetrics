@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Speed of germination — GermSpeed" />
@@ -49,22 +57,15 @@ Corrected germination rate index " />
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116205606-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116205606-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -129,7 +130,7 @@ Corrected germination rate index " />
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -144,10 +145,11 @@ Corrected germination rate index " />
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Speed of germination</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermSpeed.R'><code>R/GermSpeed.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermSpeed.R'><code>R/GermSpeed.R</code></a></small>
     <div class="hidden name"><code>GermSpeed.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Compute the following metrics:</p><dl class='dl-horizontal'>
 <dt><code>GermSpeed</code></dt><dd><p>Speed of
@@ -158,6 +160,7 @@ Germination index (Kendrick and Frankland, 1969; AOSA, 1983)</p></dd>
 2004)</p></dd> <dt><code>GermSpeedCorrected</code></dt><dd><p>Corrected speed of germination or
 Corrected germination rate index</p></dd> </dl>
     
+    </div>
 
     <pre class="usage"><span class='fu'>GermSpeed</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
@@ -255,33 +258,33 @@ specific time).</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Throneberry GO and Smith FG (1955).
+    <p>Throneberry GO, Smith FG (1955).
 &#8220;Relation of respiratory and enzymatic activity to corn seed viability.&#8221;
-<em>Plant Physiology</em>, <b>30</b>(4), pp. 337--343.</p>
+<em>Plant Physiology</em>, <b>30</b>(4), 337--343.</p>
 <p>Maguire JD (1962).
 &#8220;Speed of germination - Aid in selection and evaluation for seedling emergence and vigor.&#8221;
-<em>Crop Science</em>, <b>2</b>(2), pp. 176--177.</p>
-<p>Kendrick RE and Frankland B (1969).
+<em>Crop Science</em>, <b>2</b>(2), 176--177.</p>
+<p>Kendrick RE, Frankland B (1969).
 &#8220;Photocontrol of germination in <em>Amaranthus caudatus</em>.&#8221;
-<em>Planta</em>, <b>85</b>(4), pp. 326--339.</p>
-<p>Evetts LL and Burnside OC (1972).
+<em>Planta</em>, <b>85</b>(4), 326--339.</p>
+<p>Evetts LL, Burnside OC (1972).
 &#8220;Germination and seedling development of common milkweed and other species.&#8221;
-<em>Weed Science</em>, <b>20</b>(4), pp. 371--378.</p>
-<p>Khandakar A and Bradbeer J (1983).
+<em>Weed Science</em>, <b>20</b>(4), 371--378.</p>
+<p>Khandakar A, Bradbeer J (1983).
 &#8220;Jute seed quality.&#8221;
 <em>Bangladesh Agricultural Research Council, Dhaka</em>.</p>
 <p>Bradbeer JW (1988).
 <em>Seed Dormancy and Germination</em>.
 Blackie, Glasgow and London.
 <a href='www.springer.com/in/book/9780216916364'>www.springer.com/in/book/9780216916364</a>.</p>
-<p>Wardle D, Ahmed M and Nicholson KS (1991).
+<p>Wardle D, Ahmed M, Nicholson KS (1991).
 &#8220;Allelopathic influence of nodding thistle (<em>Carduus nutans</em> L.) seeds on germination and radicle growth of pasture plants.&#8221;
-<em>New Zealand Journal of Agricultural Research</em>, <b>34</b>(2), pp. 185--191.</p>
-<p>Haugland E and Brandsaeter LO (1996).
+<em>New Zealand Journal of Agricultural Research</em>, <b>34</b>(2), 185--191.</p>
+<p>Haugland E, Brandsaeter LO (1996).
 &#8220;Experiments on bioassay sensitivity in the study of allelopathy.&#8221;
-<em>Journal of Chemical Ecology</em>, <b>22</b>(10), pp. 1845--1859.</p>
+<em>Journal of Chemical Ecology</em>, <b>22</b>(10), 1845--1859.</p>
 <p>de
-Santana D and Ranal MA (2004).
+Santana D, Ranal MA (2004).
 <em>Analise Da Germinacao: Um Enfoque Estatistico</em>.
 Universidade de Brasilia, Brasilia.</p>
     
@@ -333,10 +336,16 @@ Universidade de Brasilia, Brasilia.</p>
 <script>
   docsearch({
     
+    
     apiKey: '1d899a3e8f9113a338324d703da9745d',
     indexName: 'germinationmetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

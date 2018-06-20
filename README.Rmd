@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## `germinationmetrics`: Seed Germination Indices and Curve Fitting
+## `germinationmetrics`: Seed Germination Indices and Curve Fitting  <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 ```{r,echo = FALSE, message = FALSE}
 devtools::load_all(".")

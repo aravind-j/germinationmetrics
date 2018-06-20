@@ -25,6 +25,14 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../jquery.sticky-kit.min.js"></script>
 <script src="../pkgdown.js"></script>
+
+
+<!-- docsearch -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+<link href="../docsearch.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script>
+
+
   <link href="../extra.css" rel="stylesheet">
   
 <meta property="og:title" content="Coefficient of uniformity of germination — CUGerm" />
@@ -42,22 +50,15 @@
 <![endif]-->
 
 
-<!-- Google analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script>
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-  ga('create', 'UA-116205606-2', 'auto');
-  ga('send', 'pageview');
-
+  gtag('config', 'UA-116205606-2');
 </script>
-
-
-
-<!-- docsearch -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
 
   </head>
 
@@ -122,7 +123,7 @@
       
       <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
-          <input type="search" class="form-control" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
+          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
       </form>
       
@@ -137,13 +138,15 @@
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Coefficient of uniformity of germination</h1>
-    <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/CUGerm.R'><code>R/CUGerm.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/CUGerm.R'><code>R/CUGerm.R</code></a></small>
     <div class="hidden name"><code>CUGerm.Rd</code></div>
     </div>
 
+    <div class="ref-description">
     
     <p>Compute the coefficient of uniformity of germination (CUG).</p>
     
+    </div>
 
     <pre class="usage"><span class='fu'>CUGerm</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
     
@@ -197,7 +200,7 @@ accumulated number, but the number correspondent to the
     <p>Heydecker W (1972).
 <em>Seed Ecology. Proceedings of the Nineteenth Easter School in Agricultural Science, University of Nottingham, 1972</em>.
 Pennsylvania State University Press, University Park, USA.</p>
-<p>Bewley JD and Black M (1994).
+<p>Bewley JD, Black M (1994).
 <em>Seeds: Physiology of Development and Germination.</em>.
 Plenum Publishing Corporation, New York, USA.
 ISBN 0-306-44748-7, <a href='https://www.cabdirect.org/cabdirect/abstract/19950315483'>https://www.cabdirect.org/cabdirect/abstract/19950315483</a>.</p>
@@ -257,10 +260,16 @@ ISBN 0-306-44748-7, <a href='https://www.cabdirect.org/cabdirect/abstract/199503
 <script>
   docsearch({
     
+    
     apiKey: '1d899a3e8f9113a338324d703da9745d',
     indexName: 'germinationmetrics',
     inputSelector: 'input#search-input.form-control',
-    debug: false // Set debug to true if you want to inspect the dropdown
+    transformData: function(hits) {
+      return hits.map(function (hit) {
+        hit.url = updateHitURL(hit);
+        return hit;
+      });
+    }
   });
 </script>
 

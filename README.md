@@ -1,5 +1,5 @@
 
-## `germinationmetrics`: Seed Germination Indices and Curve Fitting
+## `germinationmetrics`: Seed Germination Indices and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
 ###### Version : [0.1.0.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
@@ -22,7 +22,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?colo
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--04--18-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--06--20-yellowgreen.svg)](/commits/master)
 [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
@@ -73,6 +73,14 @@ news(package='germinationmetrics')
 ```
 
 ## Links
+
+[CRAN page](https://cran.r-project.org/package=germinationmetrics)
+
+[Github page](https://github.com/aravind-j/germinationmetrics)
+
+[Github website](https://aravind-j.github.io/germinationmetrics/)
+
+[Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
 
 ## Citing `germinationmetrics`
 
