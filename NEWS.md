@@ -1,6 +1,10 @@
 
 # germinationmetrics  0.1.1
 
+## UPDATED FUNCTIONS:
+* `FourPHFfit` - Fixed code to accomodate changes in upcoming release of broom package.
+ 
+## OTHER NOTES:
 * Fixed citation information.
 * Added zenodo and rdocumentation badges.
 * Added CRAN installation instructions in Readme.

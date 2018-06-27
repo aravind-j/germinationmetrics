@@ -323,14 +323,14 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   fit <- glance(mod)
 
   # Asymptote or maximum cumulative germination percentage
-  a <- parameters[parameters$term == "a", "estimate"]
+  a <- unname(unlist(parameters[parameters$term == "a", "estimate"]))
   # Shape and steepness
-  b <- parameters[parameters$term == "b", "estimate"]
+  b <- unname(unlist(parameters[parameters$term == "b", "estimate"]))
   # Half-maximal activation level
   # Time required for 50% of viable seeds to germinate
-  c <- parameters[parameters$term == "c", "estimate"]
+  c <- unname(unlist(parameters[parameters$term == "c", "estimate"]))
   # Intercept on the y axis
-  y0 <- parameters[parameters$term == "y0", "estimate"]
+  y0 <- unname(unlist(parameters[parameters$term == "y0", "estimate"]))
 
   # Time at germination onset (lag); will be 0 if y0 is constrained to zero
   lag <- ((-y0*(c^b))/(a + y0))^(1/b)
@@ -488,7 +488,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
                        na.rm = TRUE, parse = TRUE)
   }
 
-  output <- list(Parameters = parameters, Fit = fit,
+  output <- list(Parameters = parameters, Fit = as.data.frame(fit),
                  a = a, b = b, c = c, y0 = y0,
                  lag = lag, Dlag50 = Dlag50,
                  t50.total = t50.total, txp.total = txp.total,
