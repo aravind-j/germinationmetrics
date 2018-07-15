@@ -31,7 +31,7 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-`r getNamespaceVersion("germinationmetrics")`-orange.svg)](https://github.com/aravind-j/germinationmetrics)
+[![develVersion](https://img.shields.io/badge/devel%20version-`r gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/germinationmetrics", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/germinationmetrics", "/master/DESCRIPTION")))])`-orange.svg)](https://github.com/aravind-j/germinationmetrics)
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 [![Project Status: WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
@@ -82,7 +82,6 @@ news(package='germinationmetrics')
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
 
-
 ## Citing `germinationmetrics`
 To cite the methods in the package use:
 
@@ -91,15 +90,17 @@ citation("germinationmetrics")
 ```
 
 ```{r, echo = FALSE}
+detach("package:germinationmetrics", unload=TRUE)
+suppressPackageStartupMessages(library(germinationmetrics))
 cit <- citation("germinationmetrics")
-yr <- format(Sys.Date(), "%Y")
-cit[1]$year <- yr
-oc <- class(cit)
-
-cit <- unclass(cit)
-attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-                                     paste("\\(", yr, "\\)", sep = ""),
-                                     attr(cit[[1]],"textVersion"))
-class(cit) <- oc
+# yr <- format(Sys.Date(), "%Y")
+# cit[1]$year <- yr
+# oc <- class(cit)
+# 
+# cit <- unclass(cit)
+# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+#                                      paste("\\(", yr, "\\)", sep = ""),
+#                                      attr(cit[[1]],"textVersion"))
+# class(cit) <- oc
 cit
 ```

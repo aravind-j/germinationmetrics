@@ -2,7 +2,7 @@
 # germinationmetrics  0.1.1
 
 ## UPDATED FUNCTIONS:
-* `FourPHFfit` - Fixed code to accomodate changes in upcoming release of broom package.
+* `FourPHFfit` - Fixed code to accomodate changes in the new release of `broom` package.
  
 ## OTHER NOTES:
 * Fixed citation information.

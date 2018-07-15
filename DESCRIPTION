@@ -51,4 +51,6 @@ Suggests:
 RdMacros: Rdpack
 URL: https://github.com/aravind-j/germinationmetrics,
     https://aravind-j.github.io/germinationmetrics/
+    https://CRAN.R-project.org/package=germinationmetrics
+    https://doi.org/10.5281/zenodo.1219630
 BugReports: https://github.com/aravind-j/germinationmetrics/issues
