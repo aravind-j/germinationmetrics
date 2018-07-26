@@ -164,15 +164,15 @@ different arguments.</p>
     </div>
 
     <pre class="usage"><span class='co'># S3 method for FourPHFfit</span>
-<span class='fu'>plot</span>(<span class='no'>fit</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>t50.total</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+<span class='fu'>plot</span>(<span class='no'>x</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>t50.total</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
   <span class='kw'>t50.germ</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>tmgr</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>mgt</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>uniformity</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>limits</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>plotlabels</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+  <span class='kw'>limits</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>plotlabels</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>...</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>fit</th>
+      <th>x</th>
       <td><p>An object of class <code>FourPHFfit</code> obtained as output from the
 <code><a href='FourPHFfit.html'>FourPHFfit</a></code> function.</p></td>
     </tr>
@@ -219,6 +219,10 @@ percentage) between 0 and 100 in the germination curve plot. If
       <th>plotlabels</th>
       <td><p>logical. If <code>TRUE</code>, adds labels to the germination
 curve plot. Default is <code>TRUE</code>.</p></td>
+    </tr>
+    <tr>
+      <th>&#8230;</th>
+      <td><p>Default plot arguments.</p></td>
     </tr>
     </table>
     

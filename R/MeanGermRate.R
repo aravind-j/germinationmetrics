@@ -35,7 +35,7 @@
 #' \code{MeanGermRate} computes the mean germination rate
 #' (\ifelse{html}{\out{<em><span
 #' style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
-#' according to the following formula (Labouriau and Viladares, 1976; Labouriau,
+#' according to the following formula (Labouriau and Valadares, 1976; Labouriau,
 #' 1983; Ranal and de Santana, 2006).
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em><span
