@@ -276,16 +276,18 @@ library("germinationmetrics")
 ## Citing `germinationmetrics`
 
 ```{r, echo = FALSE, collapse = TRUE}
-suppressMessages(cit <- citation("germinationmetrics"))
-yr <- format(Sys.Date(), "%Y")
-cit[1]$year <- yr
-oc <- class(cit)
-
-cit <- unclass(cit)
-attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
-                                     paste("\\(", yr, "\\)", sep = ""),
-                                     attr(cit[[1]],"textVersion"))
-class(cit) <- oc
+detach("package:germinationmetrics", unload=TRUE)
+suppressPackageStartupMessages(library(germinationmetrics))
+cit <- citation("germinationmetrics")
+# yr <- format(Sys.Date(), "%Y")
+# cit[1]$year <- yr
+# oc <- class(cit)
+# 
+# cit <- unclass(cit)
+# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+#                                      paste("\\(", yr, "\\)", sep = ""),
+#                                      attr(cit[[1]],"textVersion"))
+# class(cit) <- oc
 cit
 ```
 
