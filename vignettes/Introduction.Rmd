@@ -273,6 +273,10 @@ library("germinationmetrics")
 ```{r, runCode, code = getCode("FourPHFfit", "germinationmetrics")}
 ```
 
+```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit", "germinationmetrics")}
+```
+
+
 ## Citing `germinationmetrics`
 
 ```{r, echo = FALSE, collapse = TRUE}

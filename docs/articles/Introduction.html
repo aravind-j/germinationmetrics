@@ -1287,7 +1287,24 @@ It represents the point in time when the instantaneous rate of germination start
 <a class="sourceLine" id="cb167-6" data-line-number="6"><span class="co"># From partial germination counts</span></a>
 <a class="sourceLine" id="cb167-7" data-line-number="7"><span class="co">#----------------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb167-8" data-line-number="8"><span class="kw"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">50</span>, <span class="dt">tmax =</span> <span class="dv">20</span>)</a></code></pre></div>
-<pre><code>$Parameters
+<pre><code>$data
+   gp csgp intervals
+1   0    0         1
+2   0    0         2
+3   0    0         3
+4   0    0         4
+5   8    8         5
+6  34   42         6
+7  20   62         7
+8  14   76         8
+9   2   78         9
+10  0   78        10
+11  2   80        11
+12  0   80        12
+13  0   80        13
+14  0   80        14
+
+$Parameters
   term  estimate  std.error statistic      p.value
 1    a 80.000000 1.24158595  64.43372 1.973240e-14
 2    b  9.881947 0.70779379  13.96162 6.952322e-08
@@ -1331,7 +1348,8 @@ $txp.Germinated
 [1] 4.831809 6.287724
 
 $Uniformity
-[1] 2.70588
+        90         10 uniformity 
+  7.537688   4.831809   2.705880 
 
 $TMGR
 [1] 5.912195
@@ -1351,13 +1369,30 @@ $msg
 $isConv
 [1] TRUE
 
-$plot</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-1.png" width="700"></p>
+attr(,"class")
+[1] "FourPHFfit"</code></pre>
 <div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb169-1" data-line-number="1"><span class="co"># From cumulative germination counts</span></a>
 <a class="sourceLine" id="cb169-2" data-line-number="2"><span class="co">#----------------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb169-3" data-line-number="3"><span class="kw"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">50</span>, <span class="dt">tmax =</span> <span class="dv">20</span>,</a>
 <a class="sourceLine" id="cb169-4" data-line-number="4"><span class="dt">partial =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
-<pre><code>$Parameters
+<pre><code>$data
+   gp csgp intervals
+1   0    0         1
+2   0    0         2
+3   0    0         3
+4   0    0         4
+5   8    8         5
+6  34   42         6
+7  20   62         7
+8  14   76         8
+9   2   78         9
+10  0   78        10
+11  2   80        11
+12  0   80        12
+13  0   80        13
+14  0   80        14
+
+$Parameters
   term  estimate std.error statistic      p.value
 1    a 80.000000 1.2415867  64.43368 1.973252e-14
 2    b  9.881927 0.7077918  13.96163 6.952270e-08
@@ -1401,7 +1436,8 @@ $txp.Germinated
 [1] 4.831806 6.287723
 
 $Uniformity
-[1] 2.705885
+        90         10 uniformity 
+  7.537691   4.831806   2.705885 
 
 $TMGR
 [1] 5.912194
@@ -1421,8 +1457,45 @@ $msg
 $isConv
 [1] TRUE
 
-$plot</code></pre>
-<p><img src="Introduction_files/figure-html/runCode-2.png" width="700"></p>
+attr(,"class")
+[1] "FourPHFfit"</code></pre>
+<div class="sourceCode" id="cb171"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb171-1" data-line-number="1">x &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">17</span>, <span class="dv">10</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>)</a>
+<a class="sourceLine" id="cb171-2" data-line-number="2">y &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">4</span>, <span class="dv">21</span>, <span class="dv">31</span>, <span class="dv">38</span>, <span class="dv">39</span>, <span class="dv">39</span>, <span class="dv">40</span>, <span class="dv">40</span>, <span class="dv">40</span>, <span class="dv">40</span>)</a>
+<a class="sourceLine" id="cb171-3" data-line-number="3">int &lt;-<span class="st"> </span><span class="dv">1</span><span class="op">:</span><span class="kw">length</span>(x)</a>
+<a class="sourceLine" id="cb171-4" data-line-number="4">total.seeds =<span class="st"> </span><span class="dv">50</span></a>
+<a class="sourceLine" id="cb171-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb171-6" data-line-number="6"><span class="co"># From partial germination counts</span></a>
+<a class="sourceLine" id="cb171-7" data-line-number="7"><span class="co">#----------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb171-8" data-line-number="8">fit1 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int,</a>
+<a class="sourceLine" id="cb171-9" data-line-number="9">                   <span class="dt">total.seeds =</span> <span class="dv">50</span>, <span class="dt">tmax =</span> <span class="dv">20</span>)</a>
+<a class="sourceLine" id="cb171-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb171-11" data-line-number="11"><span class="co"># From cumulative germination counts</span></a>
+<a class="sourceLine" id="cb171-12" data-line-number="12"><span class="co">#----------------------------------------------------------------------------</span></a>
+<a class="sourceLine" id="cb171-13" data-line-number="13">fit2 &lt;-<span class="st"> </span><span class="kw"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int,</a>
+<a class="sourceLine" id="cb171-14" data-line-number="14">                   <span class="dt">total.seeds =</span> <span class="dv">50</span>, <span class="dt">tmax =</span> <span class="dv">20</span>, <span class="dt">partial =</span> <span class="ot">FALSE</span>)</a>
+<a class="sourceLine" id="cb171-15" data-line-number="15"></a>
+<a class="sourceLine" id="cb171-16" data-line-number="16"><span class="co"># Default plots</span></a>
+<a class="sourceLine" id="cb171-17" data-line-number="17"><span class="kw">plot</span>(fit1)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-1.png" width="576"></p>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="kw">plot</span>(fit2)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-2.png" width="576"></p>
+<div class="sourceCode" id="cb173"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb173-1" data-line-number="1"><span class="co"># No labels</span></a>
+<a class="sourceLine" id="cb173-2" data-line-number="2"><span class="kw">plot</span>(fit1, <span class="dt">plotlabels =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-3.png" width="576"></p>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb174-1" data-line-number="1"><span class="kw">plot</span>(fit2, <span class="dt">plotlabels =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-4.png" width="576"></p>
+<div class="sourceCode" id="cb175"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb175-1" data-line-number="1"><span class="co"># Only the FPHF curve</span></a>
+<a class="sourceLine" id="cb175-2" data-line-number="2"><span class="kw">plot</span>(fit1, <span class="dt">rog =</span> <span class="ot">FALSE</span>, <span class="dt">t50.total =</span> <span class="ot">FALSE</span>, <span class="dt">t50.germ =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb175-3" data-line-number="3">     <span class="dt">tmgr =</span> <span class="ot">FALSE</span>, <span class="dt">mgt =</span> <span class="ot">FALSE</span>, <span class="dt">uniformity =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-5.png" width="576"></p>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb176-1" data-line-number="1"><span class="kw">plot</span>(fit2, <span class="dt">rog =</span> <span class="ot">FALSE</span>, <span class="dt">t50.total =</span> <span class="ot">FALSE</span>, <span class="dt">t50.germ =</span> <span class="ot">FALSE</span>,</a>
+<a class="sourceLine" id="cb176-2" data-line-number="2">     <span class="dt">tmgr =</span> <span class="ot">FALSE</span>, <span class="dt">mgt =</span> <span class="ot">FALSE</span>, <span class="dt">uniformity =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-6.png" width="576"></p>
+<div class="sourceCode" id="cb177"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb177-1" data-line-number="1"><span class="co"># Without y axis limits adjustment</span></a>
+<a class="sourceLine" id="cb177-2" data-line-number="2"><span class="kw">plot</span>(fit1, <span class="dt">limits =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-7.png" width="576"></p>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb178-1" data-line-number="1"><span class="kw">plot</span>(fit2, <span class="dt">limits =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
+<p><img src="Introduction_files/figure-html/runCode-8.png" width="576"></p>
 </div>
 </div>
 </div>
@@ -1458,7 +1531,7 @@ project by citing the package.</code></pre>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
-<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb172-1" data-line-number="1"><span class="kw">sessionInfo</span>()</a></code></pre></div>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb180-1" data-line-number="1"><span class="kw">sessionInfo</span>()</a></code></pre></div>
 <pre><code>R version 3.5.1 (2018-07-02)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 17134)
@@ -1477,26 +1550,25 @@ other attached packages:
 [1] germinationmetrics_0.1.0.9000
 
 loaded via a namespace (and not attached):
- [1] minpack.lm_1.2-1      pander_0.6.1          purrr_0.2.5          
- [4] reshape2_1.4.3        lattice_0.20-35       colorspace_1.3-2     
- [7] htmltools_0.3.6       yaml_2.1.19           rlang_0.2.1          
-[10] pkgdown_1.1.0.9000    pillar_1.2.2          foreign_0.8-70       
-[13] glue_1.2.0            bindrcpp_0.2.2        plyr_1.8.4           
-[16] bindr_0.1.1           stringr_1.3.0         munsell_0.4.3        
-[19] commonmark_1.5        gtable_0.2.0          psych_1.8.3.3        
-[22] memoise_1.1.0         evaluate_0.10.1       labeling_0.3         
-[25] knitr_1.20            gbRd_0.4-11           parallel_3.5.1       
-[28] highr_0.6             broom_0.4.4           Rcpp_0.12.16         
-[31] scales_0.5.0          backports_1.1.2       desc_1.2.0           
-[34] fs_1.2.3              mnormt_1.5-5          ggplot2_2.2.1        
-[37] digest_0.6.15         stringi_1.1.7         dplyr_0.7.4          
-[40] ggrepel_0.7.0         grid_3.5.1            rprojroot_1.3-2      
-[43] bibtex_0.4.2          Rdpack_0.7-0          tools_3.5.1          
-[46] magrittr_1.5          lazyeval_0.2.1        tibble_1.4.2         
-[49] crayon_1.3.4          tidyr_0.8.0           pkgconfig_2.0.1      
-[52] MASS_7.3-50           xml2_1.2.0            assertthat_0.2.0     
-[55] rmarkdown_1.10        roxygen2_6.0.1        rstudioapi_0.7.0-9000
-[58] R6_2.2.2              nlme_3.1-137          compiler_3.5.1       </code></pre>
+ [1] Rcpp_0.12.18          highr_0.7             compiler_3.5.1       
+ [4] pillar_1.3.0          plyr_1.8.4            bindr_0.1.1          
+ [7] tools_3.5.1           digest_0.6.15         lattice_0.20-35      
+[10] nlme_3.1-137          evaluate_0.11         memoise_1.1.0        
+[13] tibble_1.4.2          gtable_0.2.0          pkgconfig_2.0.1      
+[16] rlang_0.2.1           bibtex_0.4.2          rstudioapi_0.7.0-9000
+[19] commonmark_1.5        ggrepel_0.8.0         yaml_2.2.0           
+[22] pkgdown_1.1.0.9000    bindrcpp_0.2.2        stringr_1.3.1        
+[25] dplyr_0.7.6           roxygen2_6.0.1        xml2_1.2.0           
+[28] knitr_1.20            desc_1.2.0            fs_1.2.4             
+[31] gbRd_0.4-11           rprojroot_1.3-2       grid_3.5.1           
+[34] tidyselect_0.2.4      glue_1.3.0            R6_2.2.2             
+[37] Rdpack_0.8-0          minpack.lm_1.2-1      rmarkdown_1.10       
+[40] pander_0.6.2          tidyr_0.8.1           purrr_0.2.5          
+[43] ggplot2_3.0.0         magrittr_1.5          backports_1.1.2      
+[46] scales_0.5.0          htmltools_0.3.6       MASS_7.3-50          
+[49] assertthat_0.2.0      colorspace_1.3-2      labeling_0.3         
+[52] stringi_1.2.4         lazyeval_0.2.1        munsell_0.5.0        
+[55] broom_0.5.0           crayon_1.3.4         </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">

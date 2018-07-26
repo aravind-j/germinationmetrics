@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,194 +9,177 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
-
-#'Fit four-parameter hill function
+#' Fit four-parameter hill function
 #'
-#'Fit a four-parameter hill function (El-Kassaby, et al. 2008) to cumulative
-#'germination count data and compute the associated parameters.
+#' Fit a four-parameter hill function (El-Kassaby, et al. 2008) to cumulative
+#' germination count data and compute the associated parameters.
 #'
-#'The cumulative germination count data of a seed lot can be modelled to fit a
-#'four-parameter hill function defined as follows (El-Kassaby, et al. 2008):
+#' The cumulative germination count data of a seed lot can be modelled to fit a
+#' four-parameter hill function defined as follows (El-Kassaby, et al. 2008):
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>y = y<sub>0</sub> +
-#'[<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
-#'x<sup>b</sup>)</sub>]</em></p>}}{\deqn{y = y_{0}+\frac{ax^{b}}{c^{b}+x^{b}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>y = y<sub>0</sub> +
+#' [<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
+#' x<sup>b</sup>)</sub>]</em></p>}}{\deqn{y = y_{0}+\frac{ax^{b}}{c^{b}+x^{b}}}}
 #'
-#'Where, \ifelse{html}{\out{<i>y</i>}}{\eqn{y}} is the cumulative germination
-#'percentage at time \ifelse{html}{\out{<i>x</i>}}{\eqn{x}},
-#'\ifelse{html}{\out{<i>y<sub>0</sub></i>}}{\eqn{y_{0}}} is the intercept on the
-#'y axis, \ifelse{html}{\out{<i>a</i>}}{\eqn{a}} is the asymptote, or maximum
-#'cumulative germination percentage, which is equivalent to germination
-#'capacity, \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} is a mathematical parameter
-#'controlling the shape and steepness of the germination curve (the larger the
-#'\ifelse{html}{\out{<i>b</i>}}{\eqn{b}} parameter, the steeper the rise toward
-#'the asymptote \ifelse{html}{\out{<i>a</i>}}{\eqn{a}}, and the shorter the time
-#'between germination onset and maximum germination) and
-#'\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is the "half-maximal activation level"
-#'and represents the time required for 50\% of viable seeds to germinate
-#'(\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is equivalent to the germination
-#'speed).
+#' Where, \ifelse{html}{\out{<i>y</i>}}{\eqn{y}} is the cumulative germination
+#' percentage at time \ifelse{html}{\out{<i>x</i>}}{\eqn{x}},
+#' \ifelse{html}{\out{<i>y<sub>0</sub></i>}}{\eqn{y_{0}}} is the intercept on
+#' the y axis, \ifelse{html}{\out{<i>a</i>}}{\eqn{a}} is the asymptote, or
+#' maximum cumulative germination percentage, which is equivalent to germination
+#' capacity, \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} is a mathematical parameter
+#' controlling the shape and steepness of the germination curve (the larger the
+#' \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} parameter, the steeper the rise toward
+#' the asymptote \ifelse{html}{\out{<i>a</i>}}{\eqn{a}}, and the shorter the
+#' time between germination onset and maximum germination) and
+#' \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is the "half-maximal activation level"
+#' and represents the time required for 50\% of viable seeds to germinate
+#' (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is equivalent to the germination
+#' speed).
 #'
-#'Once this function is fitted to the curve, \code{FourPHFfit} computes the time
-#'to 50\% germination of total seeds (\code{t50.total}) or viable seeds
-#'(\code{t50.Germinated}). Similarly the time at any percentage of germination
-#'(in terms of both total and viable seeds) as specified in argument \code{xp}
-#'can be computed.
+#' Once this function is fitted to the curve, \code{FourPHFfit} computes the
+#' time to 50\% germination of total seeds (\code{t50.total}) or viable seeds
+#' (\code{t50.Germinated}). Similarly the time at any percentage of germination
+#' (in terms of both total and viable seeds) as specified in argument \code{xp}
+#' can be computed.
 #'
-#'The time at germination onset (\ifelse{html}{\out{<i>lag</i>}}{\eqn{lag}}) can
-#'be computed as follows:
+#' The time at germination onset (\ifelse{html}{\out{<i>lag</i>}}{\eqn{lag}})
+#' can be computed as follows:
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>lag = b
-#'&radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
-#'y<sub>0</sub>)</sub>]<br /></em></p>}}{\deqn{lag = b\sqrt{\frac{-y_{0}c^{b}}{a
-#'+ y_{0}}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>lag = b
+#' &radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
+#' y<sub>0</sub>)</sub>]<br /></em></p>}}{\deqn{lag =
+#' b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}}}
 #'
-#'The value
-#'\ifelse{html}{\out{<i>D<sub>lag&minus;50</sub></i>}}{\eqn{D_{lag-50}}} is
-#'defined as the duration between the time at germination onset (lag) and that
-#'at 50\% germination (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}}).
+#' The value
+#' \ifelse{html}{\out{<i>D<sub>lag&minus;50</sub></i>}}{\eqn{D_{lag-50}}} is
+#' defined as the duration between the time at germination onset (lag) and that
+#' at 50\% germination (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}}).
 #'
-#'The time interval between the percentages of viable seeds specified in the
-#'arguments \code{umin} and \code{umin} to germinate is computed as
-#'uniformity(\ifelse{html}{\out{<em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub></em>}}{\eqn{U_{t_{max}-t_{min}}}}).
+#' The time interval between the percentages of viable seeds specified in the
+#' arguments \code{umin} and \code{umin} to germinate is computed as uniformity
+#' (\ifelse{html}{\out{<em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub></em>}}{\eqn{U_{t_{max}-t_{min}}}}).
 #'
-#'\ifelse{html}{\out{<p style="text-align:
-#'center;"><em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub> =
-#'t<sub>max</sub> &minus; t<sub>min</sub></em></p>}}{\deqn{U_{t_{max}-t_{min}} =
-#'t_{max} - t_{min}}}
+#' \ifelse{html}{\out{<p style="text-align:
+#' center;"><em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub> =
+#' t<sub>max</sub> &minus; t<sub>min</sub></em></p>}}{\deqn{U_{t_{max}-t_{min}}
+#' = t_{max} - t_{min}}}
 #'
-#'The partial derivative of the four-parameter hill function gives the
-#'instantaneous rate of germination (\ifelse{html}{\out{<i>s</i>}}{\eqn{s}}) as
-#'follows:
+#' The partial derivative of the four-parameter hill function gives the
+#' instantaneous rate of germination (\ifelse{html}{\out{<i>s</i>}}{\eqn{s}}) as
+#' follows:
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>s =
-#'<sup>&part;y</sup>&frasl;<sub>&part;x</sub> =
-#'<sup>abc<sup>b</sup>x<sup>b-1</sup></sup>&frasl;<sub>&radic;[(c<sup>b</sup> +
-#'x<sup>b</sup>)<sup>2</sup>]</sub></em></p>}}{\deqn{s = \frac{\partial
-#'y}{\partial x} = \frac{abc^{b}x^{b-1}}{(c^{b}+x^{b})^{2}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>s =
+#' <sup>&part;y</sup>&frasl;<sub>&part;x</sub> =
+#' <sup>abc<sup>b</sup>x<sup>b-1</sup></sup>&frasl;<sub>&radic;[(c<sup>b</sup> +
+#' x<sup>b</sup>)<sup>2</sup>]</sub></em></p>}}{\deqn{s = \frac{\partial
+#' y}{\partial x} = \frac{abc^{b}x^{b-1}}{(c^{b}+x^{b})^{2}}}}
 #'
-#'From this function for instantaneous rate of germination, the time at maximum
-#'germination rate (\ifelse{html}{\out{<i>TMGR</i>}}{\eqn{TMGR}}) can be
-#'estimated as follows:
+#' From this function for instantaneous rate of germination, the time at maximum
+#' germination rate (\ifelse{html}{\out{<i>TMGR</i>}}{\eqn{TMGR}}) can be
+#' estimated as follows:
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>TMGR = b
-#'&radic;[<sup>c<sup>b</sup>(b &minus; 1)</sup> &frasl;
-#'<sub>(b+1)</sub>]</em></p>}}{\deqn{TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>TMGR = b
+#' &radic;[<sup>c<sup>b</sup>(b &minus; 1)</sup> &frasl;
+#' <sub>(b+1)</sub>]</em></p>}}{\deqn{TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}}}
 #'
-#'TMGR represents the point in time when the instantaneous rate of germination
-#'starts to decline.
+#' TMGR represents the point in time when the instantaneous rate of germination
+#' starts to decline.
 #'
-#'The area under the curve (\ifelse{html}{\out{<i>AUC</i>}}{\eqn{AUC}}) is
-#'obtained by integration of the fitted curve between time 0 and time specified
-#'in the argument `tmax`.
+#' The area under the curve (\ifelse{html}{\out{<i>AUC</i>}}{\eqn{AUC}}) is
+#' obtained by integration of the fitted curve between time 0 and time specified
+#' in the argument `tmax`.
 #'
-#'Integration of the fitted curve gives the value of mean germination time
-#'(\ifelse{html}{\out{<i>MGT</i>}}{\eqn{MGT}}) and the skewness of the
-#'germination curve is computed as the ratio of
-#'\ifelse{html}{\out{<i>MGT</i>}}{\eqn{MGT}} and the time for 50\% of viable
-#'seeds to germinate
-#'(\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}).
+#' Integration of the fitted curve gives the value of mean germination time
+#' (\ifelse{html}{\out{<i>MGT</i>}}{\eqn{MGT}}) and the skewness of the
+#' germination curve is computed as the ratio of
+#' \ifelse{html}{\out{<i>MGT</i>}}{\eqn{MGT}} and the time for 50\% of viable
+#' seeds to germinate
+#' (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>Skewness =
-#'<sup>MGT</sup> &frasl; <sub>t<sub>50</sub></sub></em></p>}}{\deqn{Skewness =
-#'\frac{MGT}{t_{50}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>Skewness =
+#' <sup>MGT</sup> &frasl; <sub>t<sub>50</sub></sub></em></p>}}{\deqn{Skewness =
+#' \frac{MGT}{t_{50}}}}
 #'
-#'\code{FourPHFfit} plots the cumulative germination curve (FPHF curve) and the
-#'rate of germination curve (RoG curve) with different parameters annotated (if
-#'argument \code{plotlabels} is specified as \code{TRUE}).
+#' If final germination percentage is less than 10\%, a warning is given, as the
+#' results may not be informative.
 #'
-#'If final germination percentage is less than 10\%, a warning is given, as the
-#'results may not be informative.
+#' @inheritParams MeanGermTime
+#' @param total.seeds Total number of seeds.
+#' @param fix.y0 Force the intercept of the y axis through 0.
+#' @param fix.a Fix a as the actual maximum germination percentage at the end of
+#'   the experiment.
+#' @param tmax The time up to which AUC is to be computed.
+#' @param xp Germination percentage value(s) for which the corresponding time is
+#'   to be computed as a numeric vector. Default is \code{c(10, 60)}.
+#' @param umin The minimum germination percentage value for computing
+#'   uniformity. Default is \code{10}. Seed \strong{\code{Details}}.
+#' @param umax The maximum germination percentage value for computing
+#'   uniformity. Default is \code{90}. Seed \strong{\code{Details}}.
+#' @param tries The number of tries to be attempted to fit the curve. Default is
+#'   3.
 #'
-#'@inheritParams MeanGermTime
-#'@param total.seeds Total number of seeds.
-#'@param fix.y0 Force the intercept of the y axis through 0.
-#'@param fix.a Fix a as the actual maximum germination percentage at the end of
-#'  the experiment.
-#'@param tmax The time up to which AUC is to be computed.
-#'@param xp Germination percentage value(s) for which the corresponding time is
-#'  to be computed as a numeric vector. Default is \code{c(10, 60)}.
-#'@param umin The minimum germination percentage value for computing uniformity.
-#'  Default is \code{10}. Seed \strong{\code{Details}}.
-#'@param umax The maximum germination percentage value for computing uniformity.
-#'  Default is \code{90}. Seed \strong{\code{Details}}.
-#'@param tries The number of tries to be attempted to fit the curve. Default is
-#'  3.
-#'@param limits logical. If \code{TRUE}, set the limits of y axis (germination
-#'  percentage) between 0 and 100 in the germination curve plot. If
-#'  \code{FALSE}, limits are set according to the data. Default is \code{TRUE}.
-#'@param plotlabels logical. If \code{TRUE}, adds labels to the germination
-#'  curve plot. Default is \code{TRUE}.
+#' @return A list with the following components:  \item{Parameters}{A data.frame
+#'   of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
+#'   data frame with estimates of model fitness such as log likelyhoods, Akaike
+#'   Information Criterion, Bayesian Information Criterion, deviance and
+#'   residual degrees of freedom.}  \item{a}{The asymptote or the maximum
+#'   cumulative germination percentage.}  \item{b}{The mathematical parameter
+#'   controlling the shape and steepness of the germination curve.}
+#'   \item{c}{The half-maximal activation level}  \item{y0}{The intercept on the
+#'   y axis.} \item{lag}{Time at germination onset} \item{Dlag50}{duration
+#'   between the time at germination onset (lag) and that at 50\% germination.}
+#'   \item{t50.total}{time required for 50\% of total seeds to germinate.}
+#'   \item{txp.total}{time required for x\% (as specified in argument \code{xp})
+#'   of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
+#'   of viable/germinated seeds to germinate.} \item{txp.Germinated}{time
+#'   required for x\% (as specified in argument \code{xp}) of viable/germinated
+#'   seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
+#'   and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
+#'   maximum germination rate.} \item{AUC}{The estimate of area under the
+#'   curve.} \item{MGT}{Mean germination time} \item{Skewness}{Skewness of mean
+#'   germination time} \item{msg}{The message from \code{nls.lm}}
+#'   \item{isConv}{Logical value indicating whether convergence was achieved.}
 #'
-#'@return A list with the following components:  \item{Parameters}{A data.frame
-#'  of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
-#'  data frame with estimates of model fitness such as log likelyhoods, Akaike
-#'  Information Criterion, Bayesian Information Criterion, deviance and residual
-#'  degrees of freedom.}  \item{a}{The asymptote or the maximum cumulative
-#'  germination percentage.}  \item{b}{The mathematical parameter controlling
-#'  the shape and steepness of the germination curve.}  \item{c}{The
-#'  half-maximal activation level}  \item{y0}{The intercept on the y axis.}
-#'  \item{lag}{Time at germination onset} \item{Dlag50}{duration between the
-#'  time at germination onset (lag) and that at 50\% germination.}
-#'  \item{t50.total}{time required for 50\% of total seeds to germinate.}
-#'  \item{txp.total}{time required for x\% (as specified in argument \code{xp})
-#'  of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
-#'  of viable/germinated seeds to germinate.} \item{txp.Germinated}{time
-#'  required for x\% (as specified in argument \code{xp}) of viable/germinated
-#'  seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
-#'  and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at maximum
-#'  germination rate.} \item{AUC}{The estimate of area under the curve.}
-#'  \item{MGT}{Mean germination time} \item{Skewness}{Skewness of mean
-#'  germination time} \item{msg}{The message from \code{nls.lm}}
-#'  \item{isConv}{Logical value indicating whether convergence was achieved.}
-#'  \item{plot}{The plot of the cumulative germination curve as an object of
-#'  class \code{ggplot}.}
+#' @import minpack.lm
+#' @importFrom broom glance
+#' @importFrom broom tidy
+#' @importFrom plyr round_any
+#' @importFrom stats coef df integrate predict
+#' @importFrom utils globalVariables
 #'
-#'@import minpack.lm
-#'@import ggplot2
-#'@import ggrepel
-#'@importFrom broom glance
-#'@importFrom broom tidy
-#'@importFrom plyr round_any
-#'@importFrom stats coef df integrate predict
-#'@importFrom utils globalVariables
+#' @name FourPHFfit
 #'
-#'@name FourPHFfit
+#' @references
 #'
-#'@references
-#'
-#'\insertRef{el-kassaby_seed_2008}{germinationmetrics}
+#' \insertRef{el-kassaby_seed_2008}{germinationmetrics}
 #'
 #' @examples
 #'
-#'x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
-#'y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
-#'int <- 1:length(x)
-#'total.seeds = 50
+#' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
+#' y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
+#' int <- 1:length(x)
+#' total.seeds = 50
 #'
-#'# From partial germination counts
-#'#----------------------------------------------------------------------------
-#'FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, tmax = 20)
+#' # From partial germination counts
+#' #----------------------------------------------------------------------------
+#' FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, tmax = 20)
 #'
-#'# From cumulative germination counts
-#'#----------------------------------------------------------------------------
-#'FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
-#'partial = FALSE)
+#' # From cumulative germination counts
+#' #----------------------------------------------------------------------------
+#' FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
+#' partial = FALSE)
 #'
-
-#'@name FourPHFfit
+#' @name FourPHFfit
 #' @export
 FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
-                       fix.y0 = TRUE, fix.a = TRUE, tmax,
-                       xp = c(10, 60), umin = 10, umax = 90,
-                       tries = 3, limits = TRUE,
-                       plotlabels = TRUE) {
+                       fix.y0 = TRUE, fix.a = TRUE, tmax, xp = c(10, 60),
+                       umin = 10, umax = 90, tries = 3) {
 
   GP <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
               partial = partial)
@@ -243,7 +226,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   gp <- (germ.counts/total.seeds) * 100
   csgp <- cumsum(gp)
 
-  df <- data.frame(csgp, intervals)
+  df <- data.frame(gp, csgp, intervals)
 
   # Starting values for nls
   starta <- max(csgp)
@@ -373,12 +356,8 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   UfmMax <- (((umax - y0)/100*(c^b))/(1 - ((umax - y0)/100)))^(1/b)
   UfmMin <- (((umin - y0)/100*(c^b))/(1 - ((umin - y0)/100)))^(1/b)
   Ufm <- UfmMax - UfmMin
-  UfmMid <- UfmMax - (Ufm/2)
-
-  # Daily rate of germination function - partial derivative of 4PHF
-  RateofGerm <- function(x, a, b, c) {
-    (a*b*(c^b)*(x^(b - 1)))/(((c^b) + (x^b))^2)
-  }
+  uniformity = c(max = UfmMax, min = UfmMin, uniformity = Ufm)
+  names(uniformity) <- c(umax, umin, "uniformity")
 
   # Time at maximum germination rate - peak of plot of daily rate of germination
   TMGR <- (((c^b)*(b - 1))/(b + 1))^(1/b)
@@ -421,84 +400,21 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   # curve(RateofGerm(x, a=a, b=b, c=c), xlim = c(0, 13), type = "l",
   #       add = TRUE, col = "blue")
 
-  # labels and unifromity positions
-  if (limits == TRUE) {
-    ypos <-  90
-    ypos2 <-  80
-  } else {
-    ypos <-  plyr::round_any(max(df$csgp), 10, floor)
-    ypos2 <- plyr::round_any(max(df$csgp), 10, floor)
-  }
-
-  # curves + TMGR + MGT + t50.G + Ufm
-  Gplot <- ggplot(data = df, aes(x = intervals, y = csgp)) +
-    geom_point(alpha = 0.5) +
-    stat_function(fun = FourPHF, colour = "red2",
-                  args = list(a = a, b = b, c = c, y0 = 0)) +
-    stat_function(fun = RateofGerm, colour = "royalblue4",
-                  args = list(a = a, b = b, c = c)) +
-    geom_vline(xintercept = TMGR, colour = "royalblue4", linetype = "dashed") +
-    geom_vline(xintercept = MGT, colour = "green4", linetype = "dashed") +
-    geom_vline(xintercept = t50.Germinated, colour = "deeppink3",
-               linetype = "dashed") +
-    geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2),
-                 colour = "gray15", arrow = arrow(length = unit(0.2,"cm"))) +
-    geom_segment(aes(x = UfmMax, xend = UfmMin, y = ypos2, yend = ypos2),
-                 colour = "gray15", arrow = arrow(length = unit(0.2,"cm"))) +
-    labs(x = "Time", y = "Germination (%)") +
-    theme_bw()
-
-  # t50s
-  if (max(df$csgp) >= 50) {
-    Gplot <- Gplot +
-      geom_hline(yintercept = 50, colour = "black", linetype = "dotted") +
-      geom_vline(xintercept = t50.total, colour = "red2", linetype = "dashed")
-  }
-
-
-  # plot limits
-  if (limits == TRUE) {
-    Gplot <- Gplot + coord_cartesian(xlim = c(0, max(intervals)),
-                                     ylim = c(0, 100))
-  }
-
-  if (plotlabels == TRUE) {
-    labdf <- data.frame(rbind(c(x = max(intervals), y = max(predict(mod)),
-                                lab = "FPHF~curve", col = "red2"),
-                              c(x = max(intervals),
-                                y = RateofGerm(x = max(intervals),
-                                               a = a, b = b, c = c),
-                                lab = "RoG~curve", col = "royalblue4"),
-                              c(x = TMGR, y = ypos, lab = "TMGR",
-                                col = "royalblue4"),
-                              c(x = MGT, y = ypos, lab = "MGT",col = "green4"),
-                              c(x = t50.Germinated, y = ypos,
-                                lab = "t[50]~Germ", col = "deeppink3"),
-                              c(x = t50.total, y = ypos, lab = "t[50]~Total",
-                                col = "red2"),
-                              c(x = UfmMid, y = ypos2,
-                                lab =  paste("U","[", umax, "-", umin,"]",
-                                             sep = ""), col = "gray15")))
-    labdf$x <- as.numeric(as.character(as.factor((labdf$x))))
-    labdf$y <- as.numeric(as.character(as.factor((labdf$y))))
-
-    Gplot <- Gplot +
-      geom_label_repel(data = labdf, aes(x, y, label = lab), size = 3,
-                       nudge_x = 0, nudge_y = 0, colour = labdf$col,
-                       na.rm = TRUE, parse = TRUE)
-  }
-
-  output <- list(Parameters = parameters, Fit = as.data.frame(fit),
+  output <- list(data = df, Parameters = data.frame(parameters),
+                 Fit = as.data.frame(fit),
                  a = a, b = b, c = c, y0 = y0,
                  lag = lag, Dlag50 = Dlag50,
                  t50.total = t50.total, txp.total = txp.total,
                  t50.Germinated = t50.Germinated,
                  txp.Germinated = txp.Germinated,
-                 Uniformity = Ufm, TMGR = TMGR, AUC = AUC, MGT = MGT,
+                 Uniformity = uniformity, TMGR = TMGR, AUC = AUC, MGT = MGT,
                  #MGTg = MGTg,
                  Skewness = MGT/t50.Germinated,
-                 msg = msg, isConv = isConv, plot = Gplot)
+                 msg = msg, isConv = isConv)
 
+
+  # Set Class
+  class(output) <- "FourPHFfit"
 
   return(output)
   rm(mod)
@@ -509,4 +425,9 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 FourPHF <- function(x, a, b, c, y0)
 {
   y0 + ((a*(x^b))/(c^b + x^b))
+}
+
+# Daily rate of germination function - partial derivative of 4PHF
+RateofGerm <- function(x, a, b, c) {
+  (a*b*(c^b)*(x^(b - 1)))/(((c^b) + (x^b))^2)
 }

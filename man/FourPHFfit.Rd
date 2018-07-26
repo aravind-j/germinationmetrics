@@ -6,7 +6,7 @@
 \usage{
 FourPHFfit(germ.counts, intervals, total.seeds, partial = TRUE,
   fix.y0 = TRUE, fix.a = TRUE, tmax, xp = c(10, 60), umin = 10,
-  umax = 90, tries = 3, limits = TRUE, plotlabels = TRUE)
+  umax = 90, tries = 3)
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial or
@@ -30,46 +30,37 @@ the experiment.}
 \item{xp}{Germination percentage value(s) for which the corresponding time is
 to be computed as a numeric vector. Default is \code{c(10, 60)}.}
 
-\item{umin}{The minimum germination percentage value for computing uniformity.
-Default is \code{10}. Seed \strong{\code{Details}}.}
+\item{umin}{The minimum germination percentage value for computing
+uniformity. Default is \code{10}. Seed \strong{\code{Details}}.}
 
-\item{umax}{The maximum germination percentage value for computing uniformity.
-Default is \code{90}. Seed \strong{\code{Details}}.}
+\item{umax}{The maximum germination percentage value for computing
+uniformity. Default is \code{90}. Seed \strong{\code{Details}}.}
 
 \item{tries}{The number of tries to be attempted to fit the curve. Default is
 3.}
-
-\item{limits}{logical. If \code{TRUE}, set the limits of y axis (germination
-percentage) between 0 and 100 in the germination curve plot. If
-\code{FALSE}, limits are set according to the data. Default is \code{TRUE}.}
-
-\item{plotlabels}{logical. If \code{TRUE}, adds labels to the germination
-curve plot. Default is \code{TRUE}.}
 }
 \value{
 A list with the following components:  \item{Parameters}{A data.frame
- of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
- data frame with estimates of model fitness such as log likelyhoods, Akaike
- Information Criterion, Bayesian Information Criterion, deviance and residual
- degrees of freedom.}  \item{a}{The asymptote or the maximum cumulative
- germination percentage.}  \item{b}{The mathematical parameter controlling
- the shape and steepness of the germination curve.}  \item{c}{The
- half-maximal activation level}  \item{y0}{The intercept on the y axis.}
- \item{lag}{Time at germination onset} \item{Dlag50}{duration between the
- time at germination onset (lag) and that at 50\% germination.}
- \item{t50.total}{time required for 50\% of total seeds to germinate.}
- \item{txp.total}{time required for x\% (as specified in argument \code{xp})
- of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
- of viable/germinated seeds to germinate.} \item{txp.Germinated}{time
- required for x\% (as specified in argument \code{xp}) of viable/germinated
- seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
- and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at maximum
- germination rate.} \item{AUC}{The estimate of area under the curve.}
- \item{MGT}{Mean germination time} \item{Skewness}{Skewness of mean
- germination time} \item{msg}{The message from \code{nls.lm}}
- \item{isConv}{Logical value indicating whether convergence was achieved.}
- \item{plot}{The plot of the cumulative germination curve as an object of
- class \code{ggplot}.}
+  of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
+  data frame with estimates of model fitness such as log likelyhoods, Akaike
+  Information Criterion, Bayesian Information Criterion, deviance and
+  residual degrees of freedom.}  \item{a}{The asymptote or the maximum
+  cumulative germination percentage.}  \item{b}{The mathematical parameter
+  controlling the shape and steepness of the germination curve.}
+  \item{c}{The half-maximal activation level}  \item{y0}{The intercept on the
+  y axis.} \item{lag}{Time at germination onset} \item{Dlag50}{duration
+  between the time at germination onset (lag) and that at 50\% germination.}
+  \item{t50.total}{time required for 50\% of total seeds to germinate.}
+  \item{txp.total}{time required for x\% (as specified in argument \code{xp})
+  of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
+  of viable/germinated seeds to germinate.} \item{txp.Germinated}{time
+  required for x\% (as specified in argument \code{xp}) of viable/germinated
+  seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
+  and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
+  maximum germination rate.} \item{AUC}{The estimate of area under the
+  curve.} \item{MGT}{Mean germination time} \item{Skewness}{Skewness of mean
+  germination time} \item{msg}{The message from \code{nls.lm}}
+  \item{isConv}{Logical value indicating whether convergence was achieved.}
 }
 \description{
 Fit a four-parameter hill function (El-Kassaby, et al. 2008) to cumulative
@@ -85,32 +76,32 @@ x<sup>b</sup>)</sub>]</em></p>}}{\deqn{y = y_{0}+\frac{ax^{b}}{c^{b}+x^{b}}}}
 
 Where, \ifelse{html}{\out{<i>y</i>}}{\eqn{y}} is the cumulative germination
 percentage at time \ifelse{html}{\out{<i>x</i>}}{\eqn{x}},
-\ifelse{html}{\out{<i>y<sub>0</sub></i>}}{\eqn{y_{0}}} is the intercept on the
-y axis, \ifelse{html}{\out{<i>a</i>}}{\eqn{a}} is the asymptote, or maximum
-cumulative germination percentage, which is equivalent to germination
+\ifelse{html}{\out{<i>y<sub>0</sub></i>}}{\eqn{y_{0}}} is the intercept on
+the y axis, \ifelse{html}{\out{<i>a</i>}}{\eqn{a}} is the asymptote, or
+maximum cumulative germination percentage, which is equivalent to germination
 capacity, \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} is a mathematical parameter
 controlling the shape and steepness of the germination curve (the larger the
 \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} parameter, the steeper the rise toward
-the asymptote \ifelse{html}{\out{<i>a</i>}}{\eqn{a}}, and the shorter the time
-between germination onset and maximum germination) and
+the asymptote \ifelse{html}{\out{<i>a</i>}}{\eqn{a}}, and the shorter the
+time between germination onset and maximum germination) and
 \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is the "half-maximal activation level"
 and represents the time required for 50\% of viable seeds to germinate
 (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is equivalent to the germination
 speed).
 
-Once this function is fitted to the curve, \code{FourPHFfit} computes the time
-to 50\% germination of total seeds (\code{t50.total}) or viable seeds
+Once this function is fitted to the curve, \code{FourPHFfit} computes the
+time to 50\% germination of total seeds (\code{t50.total}) or viable seeds
 (\code{t50.Germinated}). Similarly the time at any percentage of germination
 (in terms of both total and viable seeds) as specified in argument \code{xp}
 can be computed.
 
-The time at germination onset (\ifelse{html}{\out{<i>lag</i>}}{\eqn{lag}}) can
-be computed as follows:
+The time at germination onset (\ifelse{html}{\out{<i>lag</i>}}{\eqn{lag}})
+can be computed as follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>lag = b
 &radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
-y<sub>0</sub>)</sub>]<br /></em></p>}}{\deqn{lag = b\sqrt{\frac{-y_{0}c^{b}}{a
-+ y_{0}}}}}
+y<sub>0</sub>)</sub>]<br /></em></p>}}{\deqn{lag =
+b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}}}
 
 The value
 \ifelse{html}{\out{<i>D<sub>lag&minus;50</sub></i>}}{\eqn{D_{lag-50}}} is
@@ -118,13 +109,13 @@ defined as the duration between the time at germination onset (lag) and that
 at 50\% germination (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}}).
 
 The time interval between the percentages of viable seeds specified in the
-arguments \code{umin} and \code{umin} to germinate is computed as
-uniformity(\ifelse{html}{\out{<em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub></em>}}{\eqn{U_{t_{max}-t_{min}}}}).
+arguments \code{umin} and \code{umin} to germinate is computed as uniformity
+(\ifelse{html}{\out{<em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub></em>}}{\eqn{U_{t_{max}-t_{min}}}}).
 
 \ifelse{html}{\out{<p style="text-align:
 center;"><em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub> =
-t<sub>max</sub> &minus; t<sub>min</sub></em></p>}}{\deqn{U_{t_{max}-t_{min}} =
-t_{max} - t_{min}}}
+t<sub>max</sub> &minus; t<sub>min</sub></em></p>}}{\deqn{U_{t_{max}-t_{min}}
+= t_{max} - t_{min}}}
 
 The partial derivative of the four-parameter hill function gives the
 instantaneous rate of germination (\ifelse{html}{\out{<i>s</i>}}{\eqn{s}}) as
@@ -161,10 +152,6 @@ seeds to germinate
 \ifelse{html}{\out{<p style="text-align: center;"><em>Skewness =
 <sup>MGT</sup> &frasl; <sub>t<sub>50</sub></sub></em></p>}}{\deqn{Skewness =
 \frac{MGT}{t_{50}}}}
-
-\code{FourPHFfit} plots the cumulative germination curve (FPHF curve) and the
-rate of germination curve (RoG curve) with different parameters annotated (if
-argument \code{plotlabels} is specified as \code{TRUE}).
 
 If final germination percentage is less than 10\%, a warning is given, as the
 results may not be informative.

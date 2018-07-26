@@ -1,8 +1,12 @@
 
 # germinationmetrics  0.1.1
 
+## NEW FUNCTIONS:
+* `plot.FourPHFfit` - plot method for `FourPHFfit`.
+
 ## UPDATED FUNCTIONS:
 * `FourPHFfit` - Fixed code to accomodate changes in the new release of `broom` package.
+* `FourPHFfit` - Separated plot method to new function `plot.FourPHFfit`.
  
 ## OTHER NOTES:
 * Fixed citation information.

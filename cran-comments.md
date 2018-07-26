@@ -1,3 +1,12 @@
+# Version 0.1.0 - First submission
+
+* Fixed code to accomodate changes in the new release of `broom` package.. 
+
+### Test environments
+* local Windows 10 Home v1803, R-release (R 3.5.1) & R-devel (R 3.6.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 3.5.1) & R-devel (R 3.6.0 Pre-release).
+* win-builder, R-release (R 3.5.1) & R-devel (R 3.6.0 Pre-release).
+
 # Version 0.1.0 - Third submission
 
 * Fixed spelling mistake in description (uncertainity).

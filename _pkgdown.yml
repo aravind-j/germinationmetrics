@@ -50,3 +50,4 @@ reference:
     - title: Curve fitting
       contents:
          - '`FourPHFfit`'
+         - '`plot.FourPHFfit`'
