@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,79 +9,78 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
-
-#'Time for first, last and peak germination
+#' Time for first, last and peak germination
 #'
-#'Compute the following metrics: \describe{ \item{\code{FirstGermTime}}{Time of
-#'first germination or Germination time lag
-#'(\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}}) (Edwards, 1932;
-#'Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983; Ranal, 1999;
-#'Quintanilla et al., 2000).} \item{\code{LastGermTime}}{Time of last germination
-#'(\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}}) (Edwards, 1932;
-#'Labouriau, 1983; Ranal and de Santana, 2006).} \item{\code{PeakGermTime}}{Time
-#'spread of germination (Al-Mudaris, 1998; Kader, 2005).}
-#'\item{\code{TimeSpreadGerm}}{Peak time of germination or Modal time of
-#'germination (Ranal and de Santana, 2006).} }
+#' Compute the following metrics: \describe{ \item{\code{FirstGermTime}}{Time of
+#' first germination or Germination time lag
+#' (\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}}) (Edwards, 1932;
+#' Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983; Ranal, 1999;
+#' Quintanilla et al., 2000).} \item{\code{LastGermTime}}{Time of last germination
+#' (\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}}) (Edwards, 1932;
+#' Labouriau, 1983; Ranal and de Santana, 2006).} \item{\code{PeakGermTime}}{Time
+#' spread of germination (Al-Mudaris, 1998; Kader, 2005).}
+#' \item{\code{TimeSpreadGerm}}{Peak time of germination or Modal time of
+#' germination (Ranal and de Santana, 2006).} }
 #'
-#'Time of first germination indicates time of germination of the faster seeds in
-#'a seedlot.
+#' Time of first germination indicates time of germination of the faster seeds in
+#' a seedlot.
 #'
-#'Lower value of time of first germination indicates faster initiation of
-#'germination and lower value of time of last germination indicates faster
-#'termination of germination.
+#' Lower value of time of first germination indicates faster initiation of
+#' germination and lower value of time of last germination indicates faster
+#' termination of germination.
 #'
-#'Time spread of germination (\ifelse{html}{\out{<i>t<sub>g</sub> &minus;
-#'t<sub>0</sub></i>}}{\eqn{t_{g}-t_{0}}}) indicates difference between faster
-#'and slower germinating members of a sample.
+#' Time spread of germination (\ifelse{html}{\out{<i>t<sub>g</sub> &minus;
+#' t<sub>0</sub></i>}}{\eqn{t_{g}-t_{0}}}) indicates difference between faster
+#' and slower germinating members of a sample.
 #'
-#'Peak time of germination is the time in which highest frequency of germinated
-#'seeds are observed. Multiple peak times of germination are possible and if
-#'detected are indicated by a warning message.
+#' Peak time of germination is the time in which highest frequency of germinated
+#' seeds are observed. Multiple peak times of germination are possible and if
+#' detected are indicated by a warning message.
 #'
-#'@inheritParams MeanGermTime
-#'@return For \code{FirstGermTime}, the time of first germination value in the
-#'  same unit of time as specified in the argument \code{intervals}.
+#' @inheritParams MeanGermTime
+#' @return For \code{FirstGermTime}, the time of first germination value in the
+#' same unit of time as specified in the argument \code{intervals}.
 #'
-#'  For \code{LastGermTime}, the time of last germination value in the same unit
-#'  of time as specified in the argument \code{intervals}.
+#' For \code{LastGermTime}, the time of last germination value in the same unit
+#' of time as specified in the argument \code{intervals}.
 #'
-#'  For \code{TimeSpreadGerm}, the time spread of germination value in the same
-#'  unit of time as specified in the argument \code{intervals}.
+#' For \code{TimeSpreadGerm}, the time spread of germination value in the same
+#' unit of time as specified in the argument \code{intervals}.
 #'
-#'  For \code{PeakGermTime}, the time(s) of peak germination value(s) as a
-#'  numeric vector in the same unit of time as specified in the argument
-#'  \code{intervals}.
+#' For \code{PeakGermTime}, the time(s) of peak germination value(s) as a
+#' numeric vector in the same unit of time as specified in the argument
+#' \code{intervals}.
 #'
-#'@importFrom Rdpack reprompt
+#' @importFrom Rdpack reprompt
 #'
-#'@references
+#' @references
 #'
-#'\insertRef{edwards_temperature_1932}{germinationmetrics}
+#' \insertRef{edwards_temperature_1932}{germinationmetrics}
 #'
-#'\insertRef{czabator_germination_1962}{germinationmetrics}
+#' \insertRef{czabator_germination_1962}{germinationmetrics}
 #'
-#'\insertRef{goloff_germination_1975}{germinationmetrics}
+#' \insertRef{goloff_germination_1975}{germinationmetrics}
 #'
-#'\insertRef{labouriau_germinacao_1983}{germinationmetrics}
+#' \insertRef{labouriau_germinacao_1983}{germinationmetrics}
 #'
-#'\insertRef{al-mudaris_notes_1998}{germinationmetrics}
+#' \insertRef{al-mudaris_notes_1998}{germinationmetrics}
 #'
-#'\insertRef{ranal_effects_1999}{germinationmetrics}
+#' \insertRef{ranal_effects_1999}{germinationmetrics}
 #'
-#'\insertRef{quintanilla_effect_2000}{germinationmetrics}
+#' \insertRef{quintanilla_effect_2000}{germinationmetrics}
 #'
-#'\insertRef{kader_comparison_2005}{germinationmetrics}
+#' \insertRef{kader_comparison_2005}{germinationmetrics}
 #'
-#'\insertRef{ranal_how_2006}{germinationmetrics}
+#' \insertRef{ranal_how_2006}{germinationmetrics}
 #'
 #'
-#'@name FirstGermTime
+#' @name FirstGermTime
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
@@ -111,7 +110,7 @@
 
 #' @rdname FirstGermTime
 #' @export
-FirstGermTime <-  function(germ.counts, intervals, partial = TRUE) {
+FirstGermTime <- function(germ.counts, intervals, partial = TRUE) {
   # Check if argument germ.counts is of type numeric
   if (!is.numeric(germ.counts)) {
     stop("'germ.counts' should be a numeric vector.")

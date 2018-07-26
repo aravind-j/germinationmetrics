@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,62 +9,62 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
 
-#'Mean germination percentage and number of seeds per time interval
+#' Mean germination percentage and number of seeds per time interval
 #'
-#'Compute the following metrics:\describe{ \item{\code{MeanGermPercent}}{
-#'Mean/average germination percentage per unit time
-#'(\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}). }
-#'\item{\code{MeanGermNumber}}{ Number of seeds germinated per unit time
-#'(\ifelse{html}{\out{<em><span style="text-decoration:
-#'overline">N</span></em>}}{\eqn{\overline{N}}}).}}
+#' Compute the following metrics:\describe{ \item{\code{MeanGermPercent}}{
+#' Mean/average germination percentage per unit time
+#' (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}). }
+#' \item{\code{MeanGermNumber}}{ Number of seeds germinated per unit time
+#' (\ifelse{html}{\out{<em><span style="text-decoration:
+#' overline">N</span></em>}}{\eqn{\overline{N}}}).}}
 #'
-#'Mean germination percentage per unit time (\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}) is
-#'computed as follows (Czabator, 1962).
+#' Mean germination percentage per unit time (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}) is
+#' computed as follows (Czabator, 1962).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em><span
-#'style="text-decoration: overline;">GP</span> = <sup>GP</sup> &frasl;
-#'<sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{G} = \frac{GP}{T_{n}}}{MGP
-#'= GP/Tf}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
+#' style="text-decoration: overline;">GP</span> = <sup>GP</sup> &frasl;
+#' <sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{G} = \frac{GP}{T_{n}}}{MGP
+#' = GP/Tf}}
 #'
-#'Where, \ifelse{html}{\out{<i>GP</i>}}{\eqn{GP}} is the final germination percentage and
-#'\ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is the total number
-#'of intervals(e.g. days) required for final germination.
+#' Where, \ifelse{html}{\out{<i>GP</i>}}{\eqn{GP}} is the final germination percentage and
+#' \ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is the total number
+#' of intervals(e.g. days) required for final germination.
 #'
-#'Mean number of seeds germinated per unit time (\ifelse{html}{\out{<em><span
-#'style="text-decoration: overline">N</span></em>}}{\eqn{\overline{N}}}) is
-#'computed as follows (Khamassi et al., 2013).
+#' Mean number of seeds germinated per unit time (\ifelse{html}{\out{<em><span
+#' style="text-decoration: overline">N</span></em>}}{\eqn{\overline{N}}}) is
+#' computed as follows (Khamassi et al., 2013).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em><span
-#'style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup> &frasl;
-#'<sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{N} = \frac{N_{g}}{T_{n}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
+#' style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup> &frasl;
+#' <sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{N} = \frac{N_{g}}{T_{n}}}}
 #'
-#'Where, \ifelse{html}{\out{<em>N<sub>g</sub></em>}}{\eqn{N_{g}}} is the number
-#'of germinated seeds and
-#'\ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is the total number
-#'of intervals (e.g. days) required for final germination.
+#' Where, \ifelse{html}{\out{<em>N<sub>g</sub></em>}}{\eqn{N_{g}}} is the number
+#' of germinated seeds and
+#' \ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is the total number
+#' of intervals (e.g. days) required for final germination.
 #'
-#'@inheritParams GermPercent
-#'@inheritParams MeanGermTime
+#' @inheritParams GermPercent
+#' @inheritParams MeanGermTime
 #'
-#'@return The value of mean germination percentage or mean number of seeds per
+#' @return The value of mean germination percentage or mean number of seeds per
 #'  time interval.
 #'
-#'@references
+#' @references
 #'
-#'\insertRef{czabator_germination_1962}{germinationmetrics}
+#' \insertRef{czabator_germination_1962}{germinationmetrics}
 #'
-#'\insertRef{djavanshir_germination_1976}{germinationmetrics}
+#' \insertRef{djavanshir_germination_1976}{germinationmetrics}
 #'
-#'@name MeanGermPercent
+#' @name MeanGermPercent
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

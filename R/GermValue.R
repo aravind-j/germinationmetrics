@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,80 +9,79 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
-
-#'Peak value and germination value
+#' Peak value and germination value
 #'
-#'Compute the peak value (Czabator, 1962) and germination value (Czabator, 1962;
-#'Djavanshir and Pourbeik, 1976).
+#' Compute the peak value (Czabator, 1962) and germination value (Czabator, 1962;
+#' Djavanshir and Pourbeik, 1976).
 #'
-#'Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) is the maximum quotient obtained by dividing successive
-#'cumulative germination values by the relevant incubation time (Czabator,
-#'1962). It represents the mean daily germination of the most vigorous component
-#'of the seed lot, and is a mathematical expression of the break, or shoulder,
-#'of a typical sigmoid  germination curve (Djavanshir and Pourbeik, 1976).
+#' Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) is the maximum quotient obtained by dividing successive
+#' cumulative germination values by the relevant incubation time (Czabator,
+#' 1962). It represents the mean daily germination of the most vigorous component
+#' of the seed lot, and is a mathematical expression of the break, or shoulder,
+#' of a typical sigmoid  germination curve (Djavanshir and Pourbeik, 1976).
 #'
-#'For daily germination counts, germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) is computed as
-#'follows (Czabator, 1962).
+#' For daily germination counts, germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) is computed as
+#' follows (Czabator, 1962).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>GV = PV &times;
-#'MDG</em></p>}}{\deqn{GV = PV \times MDG}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>GV = PV &times;
+#' MDG</em></p>}}{\deqn{GV = PV \times MDG}}
 #'
-#'Where, \ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}} is the peak value and \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} is the mean daily germination
-#'percentage.
+#' Where, \ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}} is the peak value and \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} is the mean daily germination
+#' percentage.
 #'
-#'\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}} can also be computed for other time intervals of successive
-#'germination counts, by replacing \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} with the mean germination
-#'percentage per unit time (\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}).
+#' \ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}} can also be computed for other time intervals of successive
+#' germination counts, by replacing \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} with the mean germination
+#' percentage per unit time (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}).
 #'
-#'A new estimation of germination value was given by Djavanshir and Pourbeik
-#'(1976) as follows:
+#' A new estimation of germination value was given by Djavanshir and Pourbeik
+#' (1976) as follows:
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><i>GV = [<sup>&sum;DGS</sup>
-#'&frasl; <sub>N</sub>] &times; GP &times; k</i></p>}}{\deqn{GV = \frac{\sum DGS}{N}
-#'\times GP \times k}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>GV = [<sup>&sum;DGS</sup>
+#' &frasl; <sub>N</sub>] &times; GP &times; k</i></p>}}{\deqn{GV = \frac{\sum DGS}{N}
+#' \times GP \times k}}
 #'
-#'Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination speed computed by dividing
-#'cumulative germination percentage by the number of days since the beginning of
-#'the test, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the frequency or number of DGS calculated during the
-#'test, \eqn{GP} is the germination percentage expressed over 100 and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is
-#'a constant. The value of \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is decided on the basis of average daily
-#'speed of germination (\ifelse{html}{\out{<em><sup>&sum;DGS</sup> &frasl;
-#'<sub>N</sub></em>}}{\eqn{\frac{\sum DGS}{N}}}). If it is less than 10, then
-#'\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} value of 10 can be used and if it is more than 10, then value of 7 or
-#'8 can be used for \ifelse{html}{\out{<i>k</i>}}{\eqn{k}}.
+#' Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination speed computed by dividing
+#' cumulative germination percentage by the number of days since the beginning of
+#' the test, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the frequency or number of DGS calculated during the
+#' test, \eqn{GP} is the germination percentage expressed over 100 and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is
+#' a constant. The value of \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is decided on the basis of average daily
+#' speed of germination (\ifelse{html}{\out{<em><sup>&sum;DGS</sup> &frasl;
+#' <sub>N</sub></em>}}{\eqn{\frac{\sum DGS}{N}}}). If it is less than 10, then
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} value of 10 can be used and if it is more than 10, then value of 7 or
+#' 8 can be used for \ifelse{html}{\out{<i>k</i>}}{\eqn{k}}.
 #'
-#'@inheritParams MeanGermTime
-#'@param total.seeds Total number of seeds.
-#'@param method The method for computing germination value. Either
+#' @inheritParams MeanGermTime
+#' @param total.seeds Total number of seeds.
+#' @param method The method for computing germination value. Either
 #'  \code{"czabator"} or \code{"dp"}.
-#'@param k Constant (See \strong{Details}). Default is 10.
+#' @param k Constant (See \strong{Details}). Default is 10.
 #'
-#'@return A list with the following components:  \item{Germination Value}{The
+#' @return A list with the following components:  \item{Germination Value}{The
 #'  germination value} \item{Calculations}{The data frame of calculations.}
 #'  \item{testend}{The end of test value (Only for method \code{dp}).}
 #'
-#'@references
+#' @references
 #'
-#'\insertRef{czabator_germination_1962}{germinationmetrics}
+#' \insertRef{czabator_germination_1962}{germinationmetrics}
 #'
-#'\insertRef{khamassi_optimal_2013}{germinationmetrics}
+#' \insertRef{khamassi_optimal_2013}{germinationmetrics}
 #'
-#'@name GermValue
+#' @name GermValue
 #'
 #' @examples
 #'
-#'x <- c(0, 0, 34, 40, 21, 10, 4, 5, 3, 5, 8, 7, 7, 6, 6, 4, 0, 2, 0, 2)
-#'y <- c(0, 0, 34, 74, 95, 105, 109, 114, 117, 122, 130, 137, 144, 150,
+#' x <- c(0, 0, 34, 40, 21, 10, 4, 5, 3, 5, 8, 7, 7, 6, 6, 4, 0, 2, 0, 2)
+#' y <- c(0, 0, 34, 74, 95, 105, 109, 114, 117, 122, 130, 137, 144, 150,
 #'       156, 160, 160, 162, 162, 164)
-#'int <- 1:length(x)
-#'total.seeds = 200
+#' int <- 1:length(x)
+#' total.seeds = 200
 #'
 #' # From partial germination counts
 #' #----------------------------------------------------------------------------

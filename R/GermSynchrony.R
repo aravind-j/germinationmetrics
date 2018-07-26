@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,85 +9,84 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
-
-#'Synchrony and uncertainty of germination
+#' Synchrony and uncertainty of germination
 #'
-#'Compute the following metrics:\describe{ \item{\code{GermSynchrony}}{
-#'Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index). }
-#'\item{\code{GermUncertainty}}{ Synchronization index
-#'(\ifelse{html}{\out{<em><span style="text-decoration:
-#'overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
-#'germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational
-#'entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}).} }
+#' Compute the following metrics:\describe{ \item{\code{GermSynchrony}}{
+#' Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index). }
+#' \item{\code{GermUncertainty}}{ Synchronization index
+#' (\ifelse{html}{\out{<em><span style="text-decoration:
+#' overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
+#' germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational
+#' entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}).} }
 #'
-#'\code{GermSynchrony} computes the value of synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}}
-#'index) as follows (Primack, 1980; Ranal and Santana, 2006).
+#' \code{GermSynchrony} computes the value of synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}}
+#' index) as follows (Primack, 1980; Ranal and Santana, 2006).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>Z =
-#'<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-#'-1ex;">i=1</sub>C<sub>N<sub>i</sub>,2</sub></sup>
-#'&frasl;<sub>C<sub>&sum;N<sub>i</sub>,2</sub></sub></em></p>}}{\deqn{Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma
-#'N_{i},2}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>Z =
+#' <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">i=1</sub>C<sub>N<sub>i</sub>,2</sub></sup>
+#' &frasl;<sub>C<sub>&sum;N<sub>i</sub>,2</sub></sub></em></p>}}{\deqn{Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma
+#' N_{i},2}}}}
 #'
-#'Where,
-#'\ifelse{html}{\out{<i>C<sub>N<sub>i</sub>,2</sub></i>}}{\eqn{C_{N_{i},2}}} is
-#'the partial combination of the two germinated seeds from among
-#'\ifelse{html}{\out{N<sub>i</sub>}}{\eqn{N_{i}}}, the number of seeds
-#'germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (estimated as
-#'\ifelse{html}{\out{<em>C<sub>N<sub>i</sub>,2</sub> =
-#'<sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
-#'<sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N{i}(N{i}-1)}{2}}}) and
-#'\ifelse{html}{\out{<em>C<sub>&sum;N<sub>i</sub>,2</sub></em>}}{\eqn{C_{\Sigma
-#'N_{i},2}}} is the partial combination of the two germinated seeds from among
-#'the total number of seeds germinated at the final count, assuming that all
-#'seeds that germinated did so simultaneously.
+#' Where,
+#' \ifelse{html}{\out{<i>C<sub>N<sub>i</sub>,2</sub></i>}}{\eqn{C_{N_{i},2}}} is
+#' the partial combination of the two germinated seeds from among
+#' \ifelse{html}{\out{N<sub>i</sub>}}{\eqn{N_{i}}}, the number of seeds
+#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (estimated as
+#' \ifelse{html}{\out{<em>C<sub>N<sub>i</sub>,2</sub> =
+#' <sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
+#' <sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N{i}(N{i}-1)}{2}}}) and
+#' \ifelse{html}{\out{<em>C<sub>&sum;N<sub>i</sub>,2</sub></em>}}{\eqn{C_{\Sigma
+#' N_{i},2}}} is the partial combination of the two germinated seeds from among
+#' the total number of seeds germinated at the final count, assuming that all
+#' seeds that germinated did so simultaneously.
 #'
-#'\code{GermUncertainty} computes the value of synchronization index
-#'(\ifelse{html}{\out{<em><span style="text-decoration:
-#'overline">E</span></em>}}{\eqn{\overline{E}}}) or uncertainty of the
-#'germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or informational entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}) as follows
-#'(Shannon, 1948; Labouriau and Valadares, 1976; Labouriau 1983).
+#' \code{GermUncertainty} computes the value of synchronization index
+#' (\ifelse{html}{\out{<em><span style="text-decoration:
+#' overline">E</span></em>}}{\eqn{\overline{E}}}) or uncertainty of the
+#' germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or informational entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}) as follows
+#' (Shannon, 1948; Labouriau and Valadares, 1976; Labouriau 1983).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em><span
-#'style="text-decoration: overline;">E</span> = &minus;&sum;<sup>k</sup><sub
-#'style="line-height: 1.8; margin-left: -1ex;">i=1</sub> f<sub>i</sub></em>log
-#'<sub>2</sub><em>f<sub>i</sub></em></p>}}{\deqn{\overline{E} =
-#'-\sum_{i=1}^{k}f_{i}\log_{2}f_{i}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
+#' style="text-decoration: overline;">E</span> = &minus;&sum;<sup>k</sup><sub
+#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub> f<sub>i</sub></em>log
+#' <sub>2</sub><em>f<sub>i</sub></em></p>}}{\deqn{\overline{E} =
+#' -\sum_{i=1}^{k}f_{i}\log_{2}f_{i}}}
 #'
-#'Where, \ifelse{html}{\out{<i>f<sub>i</sub></i>}}{\eqn{f_{i}}} is the relative
-#'frequency of germination (estimated as \ifelse{html}{\out{<em>f<sub>i</sub> =
-#'<sup>N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-#'style="line-height: 1.8; margin-left:
-#'-1ex;">i=1</sub>N<sub>i</sub></sub></em>}}{\eqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}}),
-#'\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#'germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last day of observation.
+#' Where, \ifelse{html}{\out{<i>f<sub>i</sub></i>}}{\eqn{f_{i}}} is the relative
+#' frequency of germination (estimated as \ifelse{html}{\out{<em>f<sub>i</sub> =
+#' <sup>N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
+#' style="line-height: 1.8; margin-left:
+#' -1ex;">i=1</sub>N<sub>i</sub></sub></em>}}{\eqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}}),
+#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
+#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last day of observation.
 #'
-#'@inheritParams MeanGermTime
+#' @inheritParams MeanGermTime
 #'
-#'@return For \code{GermUncertainty}, the value of uncertainty of germination
+#' @return For \code{GermUncertainty}, the value of uncertainty of germination
 #'  process.
 #'
 #'  For \code{GermSynchrony}, the value of synchrony of germination.
 #'
-#'@name GermSynchrony
+#' @name GermSynchrony
 #'
-#'@references
+#' @references
 #'
-#'\insertRef{shannon_mathematical_1948}{germinationmetrics}
+#' \insertRef{shannon_mathematical_1948}{germinationmetrics}
 #'
-#'\insertRef{labouriau_germination_1976}{germinationmetrics}
+#' \insertRef{labouriau_germination_1976}{germinationmetrics}
 #'
-#'\insertRef{labouriau_uma_1983}{germinationmetrics}
+#' \insertRef{labouriau_uma_1983}{germinationmetrics}
 #'
-#'\insertRef{primack_longevity_1985}{germinationmetrics}
+#' \insertRef{primack_longevity_1985}{germinationmetrics}
 #'
-#'\insertRef{ranal_how_2006}{germinationmetrics}
+#' \insertRef{ranal_how_2006}{germinationmetrics}
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
@@ -104,7 +103,7 @@
 #' GermSynchrony(germ.counts = y, intervals = int, partial = FALSE)
 #' GermUncertainty(germ.counts = y, intervals = int, partial = FALSE)
 #'
-#'@seealso \code{\link[germinationmetrics]{CUGerm}}
+#' @seealso \code{\link[germinationmetrics]{CUGerm}}
 
 
 #' @rdname GermSynchrony

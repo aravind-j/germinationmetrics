@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,12 +9,11 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
-
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
 
 if (getRversion() >= "2.15.1")  {

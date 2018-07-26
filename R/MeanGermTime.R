@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,122 +9,121 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
-
-#'Germination Time
+#' Germination Time
 #'
-#'Compute the following metrics:\describe{ \item{\code{MeanGermTime}}{Mean
-#'germination time (\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or Mean
-#'length of incubation time.} \item{\code{VarGermTime}}{Variance of germination
-#'time (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-#'margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}}).}
-#'\item{\code{SEGermTime}}{Standard error of germination time
-#'(\ifelse{html}{\out{<em>s<sub><span
-#'style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}}).}
-#'\item{\code{CVSEGermTime}}{ Coefficient of variation of the germination time
-#'(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}).} }
+#' Compute the following metrics:\describe{ \item{\code{MeanGermTime}}{Mean
+#' germination time (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or Mean
+#' length of incubation time.} \item{\code{VarGermTime}}{Variance of germination
+#' time (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
+#' margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}}).}
+#' \item{\code{SEGermTime}}{Standard error of germination time
+#' (\ifelse{html}{\out{<em>s<sub><span
+#' style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}}).}
+#' \item{\code{CVSEGermTime}}{ Coefficient of variation of the germination time
+#' (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}).} }
 #'
-#'\code{MeanGermTime} computes the mean germination time according to the
-#'following formula (Edmond and Drapala, 1958; Czabator, 1962; Ellis and
-#'Roberts, 1980; Labouriau, 1983; Ranal and de Santana, 2006).
+#' \code{MeanGermTime} computes the mean germination time according to the
+#' following formula (Edmond and Drapala, 1958; Czabator, 1962; Ellis and
+#' Roberts, 1980; Labouriau, 1983; Ranal and de Santana, 2006).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em><span
-#'style="text-decoration: overline;">T</span> = <sup>&sum;<sup>k</sup><sub
-#'style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-#'N<sub>i</sub>T<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-#'style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-#'N<sub>i</sub></sub></em></p>}}{\deqn{\overline{T} =
-#'\frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
+#' style="text-decoration: overline;">T</span> = <sup>&sum;<sup>k</sup><sub
+#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+#' N<sub>i</sub>T<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
+#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+#' N<sub>i</sub></sub></em></p>}}{\deqn{\overline{T} =
+#' \frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}}}
 #'
-#'Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-#'the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
-#'\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#'germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
-#'correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
-#'germination.
+#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
+#' the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
+#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
+#' correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
+#' germination.
 #'
-#'It is the inverse of mean germination rate (\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}).
+#' It is the inverse of mean germination rate (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em><span
-#'style="text-decoration: overline;">T</span> = <sup>1</sup> &frasl; <sub><span
-#'style="text-decoration:
-#'overline;">V</span></sub></em></p>}}{\deqn{\overline{T} =
-#'\frac{1}{\overline{V}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
+#' style="text-decoration: overline;">T</span> = <sup>1</sup> &frasl; <sub><span
+#' style="text-decoration:
+#' overline;">V</span></sub></em></p>}}{\deqn{\overline{T} =
+#' \frac{1}{\overline{V}}}}
 #'
-#'It indicates the average length of time required for maximum germination of a
-#'seed lot. Lower the \ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}, faster
-#'the sample has germinated and reflects seed vigor.
+#' It indicates the average length of time required for maximum germination of a
+#' seed lot. Lower the \ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}, faster
+#' the sample has germinated and reflects seed vigor.
 #'
-#'\code{VarGermTime} computes the variance of germination time according to the
-#'following formula.
+#' \code{VarGermTime} computes the variance of germination time according to the
+#' following formula.
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>s<sup>2</sup><sub
-#'style="line-height: 1.8; margin-left: -1ex;">T</sub> =
-#'<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-#'-1ex;">i=1</sub> N<sub>i</sub>(T<sub>i</sub> &minus; <span
-#'style="text-decoration: overline;">T</span>)<sup>2</sup></sup> &frasl; <sub>
-#'&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-#'N<sub>i</sub> &minus; 1</sub></em></p>}}{\deqn{s_{T}^{2} =
-#'\frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>s<sup>2</sup><sub
+#' style="line-height: 1.8; margin-left: -1ex;">T</sub> =
+#' <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">i=1</sub> N<sub>i</sub>(T<sub>i</sub> &minus; <span
+#' style="text-decoration: overline;">T</span>)<sup>2</sup></sup> &frasl; <sub>
+#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+#' N<sub>i</sub> &minus; 1</sub></em></p>}}{\deqn{s_{T}^{2} =
+#' \frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}}}
 #'
-#'Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-#'the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
-#'\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#'germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
-#'correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
-#'germination.
+#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
+#' the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
+#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the number
+#' correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of
+#' germination.
 #'
-#'\code{SEGermTime} computes the standard error of germination time
-#'(\ifelse{html}{\out{<em>s<sub><span
-#'style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
-#'according to the following formula.
+#' \code{SEGermTime} computes the standard error of germination time
+#' (\ifelse{html}{\out{<em>s<sub><span
+#' style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
+#' according to the following formula.
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>s<sub><span
-#'style="text-decoration: overline;">T</span></sub> = &radic;[
-#'<sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
-#'-1ex;">T</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-#'1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
-#']</em></p>}}{\deqn{s_{\overline{T}} =
-#'\sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>s<sub><span
+#' style="text-decoration: overline;">T</span></sub> = &radic;[
+#' <sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">T</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
+#' 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
+#' ]</em></p>}}{\deqn{s_{\overline{T}} =
+#' \sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
 #'
-#'Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of
-#'seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the
-#'number correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last
-#'time of germination.
+#' Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of
+#' seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the accumulated number, but the
+#' number correspondent to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last
+#' time of germination.
 #'
-#'It signifies the accuracy of the calculation of the mean germination time.
+#' It signifies the accuracy of the calculation of the mean germination time.
 #'
-#'\code{CVGermTime} computes the coefficient of variation of germination time
-#'(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}) according to the
-#'following formula (Ranal and de Santana, 2006).
+#' \code{CVGermTime} computes the coefficient of variation of germination time
+#' (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}) according to the
+#' following formula (Ranal and de Santana, 2006).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><em>CV<sub>T</sub> =
-#'&radic;[ <sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
-#'-1ex;">T</sub></sup> &frasl; <sub><span style="text-decoration:
-#'overline;">T</span></sub> ]</em></p>}}{\deqn{CV_{T} =
-#'\sqrt{\frac{s_{T}^{2}}{\overline{T}}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>CV<sub>T</sub> =
+#' &radic;[ <sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">T</sub></sup> &frasl; <sub><span style="text-decoration:
+#' overline;">T</span></sub> ]</em></p>}}{\deqn{CV_{T} =
+#' \sqrt{\frac{s_{T}^{2}}{\overline{T}}}}}
 #'
-#'This indicates the uniformity of germination and permits comparisons
-#'irrespective of the magnitude of mean germination time
-#'(\ifelse{html}{\out{<em><span
-#'style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}).
+#' This indicates the uniformity of germination and permits comparisons
+#' irrespective of the magnitude of mean germination time
+#' (\ifelse{html}{\out{<em><span
+#' style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}).
 #'
-#'@param germ.counts Germination counts at each time interval. Can be partial or
+#' @param germ.counts Germination counts at each time interval. Can be partial or
 #'  cumulative as specified in the argument \code{partial}.
-#'@param intervals The time intervals.
-#'@param partial logical. If \code{TRUE}, \code{germ.counts} is considered as
+#' @param intervals The time intervals.
+#' @param partial logical. If \code{TRUE}, \code{germ.counts} is considered as
 #'  partial and if \code{FALSE}, it is considered as cumulative. Default is
 #'  \code{TRUE}.
 #'
-#'@return For \code{MeanGermTime}, the mean germination time value in the same
+#' @return For \code{MeanGermTime}, the mean germination time value in the same
 #'  unit of time as specified in the argument \code{intervals}.
 #'
 #'  For \code{VarGermTime}, the variance of germination time value as
@@ -136,19 +135,19 @@
 #'  For \code{CVSEGermTime}, the value of coefficient of variation of the
 #'  germination time.
 #'
-#'@references
+#' @references
 #'
-#'\insertRef{edmond_effects_1958}{germinationmetrics}
+#' \insertRef{edmond_effects_1958}{germinationmetrics}
 #'
-#'\insertRef{czabator_germination_1962}{germinationmetrics}
+#' \insertRef{czabator_germination_1962}{germinationmetrics}
 #'
-#'\insertRef{ellis_improved_1980}{germinationmetrics}
+#' \insertRef{ellis_improved_1980}{germinationmetrics}
 #'
-#'\insertRef{labouriau_germinacao_1983}{germinationmetrics}
+#' \insertRef{labouriau_germinacao_1983}{germinationmetrics}
 #'
-#'\insertRef{ranal_how_2006}{germinationmetrics}
+#' \insertRef{ranal_how_2006}{germinationmetrics}
 #'
-#'@name MeanGermTime
+#' @name MeanGermTime
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
@@ -169,7 +168,7 @@
 #' SEGermTime(germ.counts = y, intervals = int, partial = FALSE)
 #' CVSEGermTime(germ.counts = y, intervals = int, partial = FALSE)
 #'
-#'@seealso \code{\link[germinationmetrics]{MeanGermRate}}
+#' @seealso \code{\link[germinationmetrics]{MeanGermRate}}
 
 #' @rdname MeanGermTime
 #' @export

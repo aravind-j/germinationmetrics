@@ -27,17 +27,17 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 For \code{FirstGermTime}, the time of first germination value in the
- same unit of time as specified in the argument \code{intervals}.
+same unit of time as specified in the argument \code{intervals}.
 
- For \code{LastGermTime}, the time of last germination value in the same unit
- of time as specified in the argument \code{intervals}.
+For \code{LastGermTime}, the time of last germination value in the same unit
+of time as specified in the argument \code{intervals}.
 
- For \code{TimeSpreadGerm}, the time spread of germination value in the same
- unit of time as specified in the argument \code{intervals}.
+For \code{TimeSpreadGerm}, the time spread of germination value in the same
+unit of time as specified in the argument \code{intervals}.
 
- For \code{PeakGermTime}, the time(s) of peak germination value(s) as a
- numeric vector in the same unit of time as specified in the argument
- \code{intervals}.
+For \code{PeakGermTime}, the time(s) of peak germination value(s) as a
+numeric vector in the same unit of time as specified in the argument
+\code{intervals}.
 }
 \description{
 Compute the following metrics: \describe{ \item{\code{FirstGermTime}}{Time of

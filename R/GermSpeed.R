@@ -1,6 +1,6 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017, ICAR-NBPGR.
+### Copyright (C) 2017-18, ICAR-NBPGR.
 #
 # germinationmetrics is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -9,95 +9,94 @@
 #
 # germinationmetrics is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
-#  A copy of the GNU General Public License is available at
-#  https://www.r-project.org/Licenses/
+# A copy of the GNU General Public License is available at
+# https://www.r-project.org/Licenses/
 
-
-#'Speed of germination
+#' Speed of germination
 #'
-#'Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
-#'germination or Germination rate index or Index of velocity of germination or
-#'Germination index (Kendrick and Frankland, 1969; AOSA, 1983) }
-#'\item{\code{GermSpeedAccumulated}}{Speed of accumulated germination (Bradbeer,
-#'1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996; Santana and Ranal,
-#'2004) } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
-#'Corrected germination rate index} }
+#' Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
+#' germination or Germination rate index or Index of velocity of germination or
+#' Germination index (Kendrick and Frankland, 1969; AOSA, 1983) }
+#' \item{\code{GermSpeedAccumulated}}{Speed of accumulated germination (Bradbeer,
+#' 1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996; Santana and Ranal,
+#' 2004) } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
+#' Corrected germination rate index} }
 #'
-#'\code{GermSpeed} computes the speed of germination according to the following
-#'formula (Throneberry and Smith, 1955; Maguire, 1962; Kendrick and Frankland,
-#'1969; AOSA, 1983; Khandakar and Bradbeer, 1983; Bradbeer, 1988; Wardle et al.,
-#'1991).
+#' \code{GermSpeed} computes the speed of germination according to the following
+#' formula (Throneberry and Smith, 1955; Maguire, 1962; Kendrick and Frankland,
+#' 1969; AOSA, 1983; Khandakar and Bradbeer, 1983; Bradbeer, 1988; Wardle et al.,
+#' 1991).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><i>S =
-#'<sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
-#'&hellip;+<sup>N<sub>n</sub></sup>&frasl;<sub>T<sub>n</sub></sub></i></p>}}{\deqn{S
-#'= \frac{N_{1}}{T_{1}} + \frac{N_{2}}{T_{2}} + \frac{N_{3}}{T_{3}} + \cdots +
-#'\frac{N_{n}}{T_{n}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>S =
+#' <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
+#' &hellip;+<sup>N<sub>n</sub></sup>&frasl;<sub>T<sub>n</sub></sub></i></p>}}{\deqn{S
+#' = \frac{N_{1}}{T_{1}} + \frac{N_{2}}{T_{2}} + \frac{N_{3}}{T_{3}} + \cdots +
+#' \frac{N_{n}}{T_{n}}}}
 #'
-#'Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
-#'\ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
-#'\ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
-#'\ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#'\ifelse{html}{\out{N<sub>n</sub>}}{\eqn{N_{n}}} are the number of germinated
-#'seeds observed at time (days or hours)
-#'\ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
-#'\ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
-#'\ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
-#'\ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#'\ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
-#'accumulated/cumulative number, but the number of seeds that germinated at the
-#'specific time).
+#' Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
+#' \ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
+#' \ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
+#' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
+#' \ifelse{html}{\out{N<sub>n</sub>}}{\eqn{N_{n}}} are the number of germinated
+#' seeds observed at time (days or hours)
+#' \ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
+#' \ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
+#' \ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
+#' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
+#' \ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
+#' accumulated/cumulative number, but the number of seeds that germinated at the
+#' specific time).
 #'
-#'Speed of germination expresses the rate of germination in terms of the total
-#'number of seeds that germinate in a time interval. Higher values indicate
-#'greater and faster germination. This is useful for comparisons only when
-#'samples or treatments possess similar germinabilities. This is overcome by
-#'using the corrected speed of germination.
+#' Speed of germination expresses the rate of germination in terms of the total
+#' number of seeds that germinate in a time interval. Higher values indicate
+#' greater and faster germination. This is useful for comparisons only when
+#' samples or treatments possess similar germinabilities. This is overcome by
+#' using the corrected speed of germination.
 #'
-#'\code{GermSpeedCorrected} computes the corrected speed of germination as
-#'follows (Evetts and Burnside, 1972).
+#' \code{GermSpeedCorrected} computes the corrected speed of germination as
+#' follows (Evetts and Burnside, 1972).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><i>S<sub>corrected</sub> =
-#'<sup>S</sup>&frasl;<sub>FGP</sub></i><p>}}{\deqn{S_{corrected} = \frac{S}{FGP}
-#'}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>S<sub>corrected</sub> =
+#' <sup>S</sup>&frasl;<sub>FGP</sub></i><p>}}{\deqn{S_{corrected} = \frac{S}{FGP}
+#' }}
 #'
-#'Where, \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the final germination
-#'percentage or germinability.
+#' Where, \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the final germination
+#' percentage or germinability.
 #'
-#'\code{GermSpeedAccumulated} computes the speed of accumulated germination as
-#'follows (Bradbeer, 1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996;
-#'Santana and Ranal, 2004).
+#' \code{GermSpeedAccumulated} computes the speed of accumulated germination as
+#' follows (Bradbeer, 1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996;
+#' Santana and Ranal, 2004).
 #'
-#'\ifelse{html}{\out{<p style="text-align: center;"><i>S =
-#'<sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub> +
-#'<sup>[N<sub>1</sub>+N<sub>2</sub>]</sup>&frasl;<sub>T<sub>2</sub></sub> +
-#'<sup>[N<sub>1</sub>+N<sub>2</sub>+N<sub>3</sub>]</sup>&frasl;<sub>T<sub>3</sub></sub>
-#'+ &hellip;+ <sup>[N<sub>1</sub>+N<sub>2</sub>+
-#'&hellip;+N<sub>n</sub>]</sup>&frasl;<sub>T<sub>n</sub></sub></i></p>}}{\deqn{S_{accumulated}
-#'= \frac{N_{1}}{T_{1}} + \frac{N_{1} + N_{2}}{T_{2}} + \frac{N_{1} + N_{2} +
-#'N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} + \cdots + N_{n}}{T_{n}}}}
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>S =
+#' <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub> +
+#' <sup>[N<sub>1</sub>+N<sub>2</sub>]</sup>&frasl;<sub>T<sub>2</sub></sub> +
+#' <sup>[N<sub>1</sub>+N<sub>2</sub>+N<sub>3</sub>]</sup>&frasl;<sub>T<sub>3</sub></sub>
+#' + &hellip;+ <sup>[N<sub>1</sub>+N<sub>2</sub>+
+#' &hellip;+N<sub>n</sub>]</sup>&frasl;<sub>T<sub>n</sub></sub></i></p>}}{\deqn{S_{accumulated}
+#' = \frac{N_{1}}{T_{1}} + \frac{N_{1} + N_{2}}{T_{2}} + \frac{N_{1} + N_{2} +
+#' N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} + \cdots + N_{n}}{T_{n}}}}
 #'
-#'Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
-#'\ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
-#'\ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
-#'\ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#'\ifelse{html}{\out{N<sub>n</sub>}}{\eqn{N_{n}}} are the number of germinated
-#'seeds observed at time (days or hours)
-#'\ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
-#'\ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
-#'\ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
-#'\ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#'\ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
-#'accumulated/cumulative number, but the number of seeds that germinated at the
-#'specific time).
+#' Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
+#' \ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
+#' \ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
+#' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
+#' \ifelse{html}{\out{N<sub>n</sub>}}{\eqn{N_{n}}} are the number of germinated
+#' seeds observed at time (days or hours)
+#' \ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
+#' \ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
+#' \ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
+#' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
+#' \ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
+#' accumulated/cumulative number, but the number of seeds that germinated at the
+#' specific time).
 #'
-#'@inheritParams MeanGermTime
-#'@param total.seeds Total number of seeds.
+#' @inheritParams MeanGermTime
+#' @param total.seeds Total number of seeds.
 #'
-#'@return For \code{GermSpeed}, the value of germination speed as \%
+#' @return For \code{GermSpeed}, the value of germination speed as \%
 #'  \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 #'
 #'  For \code{GermSpeedAccumulated}, the value of accumulated germination speed
@@ -105,27 +104,27 @@
 #'
 #'  For \code{GermSpeedCorrected}, the corrected speed of germination.
 #'
-#'@references
+#' @references
 #'
-#'\insertRef{throneberry_relation_1955}{germinationmetrics}
+#' \insertRef{throneberry_relation_1955}{germinationmetrics}
 #'
-#'\insertRef{maguire_speed_1962}{germinationmetrics}
+#' \insertRef{maguire_speed_1962}{germinationmetrics}
 #'
-#'\insertRef{kendrick_photocontrol_1969}{germinationmetrics}
+#' \insertRef{kendrick_photocontrol_1969}{germinationmetrics}
 #'
-#'\insertRef{evetts_germination_1972}{germinationmetrics}
+#' \insertRef{evetts_germination_1972}{germinationmetrics}
 #'
-#'\insertRef{khandakar_jute_1983}{germinationmetrics}
+#' \insertRef{khandakar_jute_1983}{germinationmetrics}
 #'
-#'\insertRef{bradbeer_seed_1988}{germinationmetrics}
+#' \insertRef{bradbeer_seed_1988}{germinationmetrics}
 #'
-#'\insertRef{wardle_allelopathic_1991}{germinationmetrics}
+#' \insertRef{wardle_allelopathic_1991}{germinationmetrics}
 #'
-#'\insertRef{haugland_experiments_1996}{germinationmetrics}
+#' \insertRef{haugland_experiments_1996}{germinationmetrics}
 #'
-#'\insertRef{de_santana_alise_2004}{germinationmetrics}
+#' \insertRef{de_santana_alise_2004}{germinationmetrics}
 #'
-#'@name GermSpeed
+#' @name GermSpeed
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
