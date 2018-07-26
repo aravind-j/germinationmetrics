@@ -5,12 +5,12 @@
 \title{Plot the four-parameter hill function fitted cumulative germination curve
 from a \code{FourPHFfit} object}
 \usage{
-\method{plot}{FourPHFfit}(fit, rog = TRUE, t50.total = TRUE,
+\method{plot}{FourPHFfit}(x, rog = TRUE, t50.total = TRUE,
   t50.germ = TRUE, tmgr = TRUE, mgt = TRUE, uniformity = TRUE,
-  limits = TRUE, plotlabels = TRUE)
+  limits = TRUE, plotlabels = TRUE, ...)
 }
 \arguments{
-\item{fit}{An object of class \code{FourPHFfit} obtained as output from the
+\item{x}{An object of class \code{FourPHFfit} obtained as output from the
 \code{\link[germinationmetrics]{FourPHFfit}} function.}
 
 \item{rog}{If \code{TRUE}, plots the Rate of Germination curve (RoG). Default
@@ -40,6 +40,8 @@ percentage) between 0 and 100 in the germination curve plot. If
 
 \item{plotlabels}{logical. If \code{TRUE}, adds labels to the germination
 curve plot. Default is \code{TRUE}.}
+
+\item{\dots}{Default plot arguments.}
 }
 \value{
 The plot of the cumulative germination curve as an object of class

@@ -24,7 +24,7 @@
 #' curve) is plotted and different parameters annotated as specified in the
 #' different arguments.
 #'
-#' @param fit An object of class \code{FourPHFfit} obtained as output from the
+#' @param x An object of class \code{FourPHFfit} obtained as output from the
 #'   \code{\link[germinationmetrics]{FourPHFfit}} function.
 #' @param rog If \code{TRUE}, plots the Rate of Germination curve (RoG). Default
 #'   is \code{TRUE}.
@@ -46,6 +46,7 @@
 #'   \code{FALSE}, limits are set according to the data. Default is \code{TRUE}.
 #' @param plotlabels logical. If \code{TRUE}, adds labels to the germination
 #'   curve plot. Default is \code{TRUE}.
+#' @param \dots Default plot arguments.
 #'
 #' @return The plot of the cumulative germination curve as an object of class
 #'   \code{ggplot}.
@@ -92,25 +93,25 @@
 #' plot(fit1, limits = FALSE)
 #' plot(fit2, limits = FALSE)
 #'
-plot.FourPHFfit <- function(fit, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
+plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
                             tmgr = TRUE, mgt = TRUE, uniformity = TRUE,
-                            limits = TRUE, plotlabels = TRUE){
+                            limits = TRUE, plotlabels = TRUE, ...){
 
-  df <- fit$data
-  a <- fit$a
-  b <- fit$b
-  c <- fit$c
-  y0 <- fit$y0
-  TMGR <- fit$TMGR
-  MGT <- fit$MGT
-  Ufm <- unname(fit$Uniformity[3])
-  UfmMax <- unname(fit$Uniformity[1])
-  UfmMin <- unname(fit$Uniformity[2])
+  df <- x$data
+  a <- x$a
+  b <- x$b
+  c <- x$c
+  y0 <- x$y0
+  TMGR <- x$TMGR
+  MGT <- x$MGT
+  Ufm <- unname(x$Uniformity[3])
+  UfmMax <- unname(x$Uniformity[1])
+  UfmMin <- unname(x$Uniformity[2])
   UfmMid <- UfmMax - (Ufm/2)
-  t50.Germinated <- fit$t50.Germinated
-  t50.totalseeds <- fit$t50.total
-  umax = names(fit$Uniformity)[1]
-  umin = names(fit$Uniformity)[2]
+  t50.Germinated <- x$t50.Germinated
+  t50.totalseeds <- x$t50.total
+  umax = names(x$Uniformity)[1]
+  umin = names(x$Uniformity)[2]
 
 
   # labels and unifromity positions

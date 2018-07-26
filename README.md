@@ -1,7 +1,7 @@
 
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
 
-###### Version : [0.1.0.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.1](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *J. Aravind, S. Vimala Devi, J. Radhamani, Sherry R. Jacob and Kalyani Srinivasan*
 
@@ -22,7 +22,7 @@ downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?colo
 [![Project Status:
 WIP](http://www.repostatus.org/badges/latest/wip.svg)](http://www.repostatus.org/#wip)
 [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--26-yellowgreen.svg)](/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2018--07--27-yellowgreen.svg)](/commits/master)
 [![Rdoc](http://www.rdocumentation.org/badges/version/germinationmetrics)](http://www.rdocumentation.org/packages/germinationmetrics)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
@@ -96,8 +96,7 @@ To cite the R package 'germinationmetrics' in publications use:
 
   J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob
   and Kalyani Srinivasan (2018).  germinationmetrics: Seed
-  Germination Indices and Curve Fitting. R package version
-  0.1.0.9000,
+  Germination Indices and Curve Fitting. R package version 0.1.1,
   https://cran.r-project.org/package=germinationmetrics,
   https://doi.org/10.5281/zenodo.1219630.
 
@@ -107,7 +106,7 @@ A BibTeX entry for LaTeX users is
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {{Aravind J} and {Vimala Devi S} and {Radhamani J} and {Sherry Rachel Jacob} and {Kalyani Srinivasan}},
     year = {2018},
-    note = {R package version 0.1.0.9000},
+    note = {R package version 0.1.1},
     note = {https://cran.r-project.org/package=germinationmetrics},
     note = {https://doi.org/10.5281/zenodo.1219630},
   }
