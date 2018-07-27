@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-## `germinationmetrics`: Seed Germination Indices and Curve Fitting  <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "border: none; float: right;">
+## `germinationmetrics`: Seed Germination Indices and Curve Fitting  <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
 ```{r,echo = FALSE, message = FALSE}
 devtools::load_all(".")
@@ -20,7 +20,7 @@ devtools::load_all(".")
 ###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2018: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
 
-##### *J. Aravind, S. Vimala Devi, J. Radhamani, Sherry R. Jacob  and Kalyani Srinivasan*
+##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan *
 
 ICAR-National Bureau of Plant Genetic Resources, New Delhi
 
@@ -59,11 +59,13 @@ devtools::install_github("aravind-j/germinationmetrics")
 ```
 
 ## Detailed tutorial
-For a detailed tutorial on how to used this package type:
+For a detailed tutorial (vignette) on how to used this package type:
 
 ```{r, eval=FALSE}
 browseVignettes(package = 'germinationmetrics')
 ```
+
+The vignette for the latest version is also available [online](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html).
 
 ## What's new
 To know whats new in this version type:
@@ -78,7 +80,7 @@ news(package='germinationmetrics')
 
 [Github page](https://github.com/aravind-j/germinationmetrics)
 
-[Github website](https://aravind-j.github.io/germinationmetrics/)
+[Documentation website](https://aravind-j.github.io/germinationmetrics/)
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
 

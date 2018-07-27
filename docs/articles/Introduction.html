@@ -5,14 +5,14 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The <strong>germinationmetrics</strong> package: A brief introduction • germinationmetrics</title>
+<title>The <code>germinationmetrics</code> Package: A Brief Introduction • germinationmetrics</title>
 <!-- jquery --><script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha384-nrOSfDHtoPMzJHjVTdCopGqIqeYETSXhZDFyniQ8ZHcVy08QesyHcnOUpMpqnmWq" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script><!-- Font Awesome icons --><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.7.1/clipboard.min.js" integrity="sha384-cV+rhyOuRHc9Ub/91rihWcGmMmCXDeksTtCihMupQHSsi8GIIRDG0ThDc3HGQFJ3" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
 <link href="../docsearch.css" rel="stylesheet">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="The &lt;strong&gt;germinationmetrics&lt;/strong&gt; package: A brief introduction">
+<meta property="og:title" content="The &lt;code&gt;germinationmetrics&lt;/code&gt; Package: A Brief Introduction">
 <meta property="og:description" content="">
 <meta name="twitter:card" content="summary">
 <!-- mathjax --><script src="https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!--[if lt IE 9]>
@@ -99,8 +99,10 @@
       </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
-      <h1>The <strong>germinationmetrics</strong> package: A brief introduction</h1>
+      <h1>The <code>germinationmetrics</code> Package: A Brief Introduction</h1>
+                        <h4 class="author">Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan</h4>
             
+            <h4 class="date">2018-08-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -109,15 +111,15 @@
 
     
     
-
-
-
+<p>
+ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+</p>
 
 
 
 <div id="overview" class="section level2">
 <h2 class="hasAnchor">
-<a href="#overview" class="anchor"></a>Overview <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height="200" style="border: none; float: right;">
+<a href="#overview" class="anchor"></a>Overview <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height="200" style="padding: 10px; border: none; float: right;">
 </h2>
 <p>The package <code>germinationmetrics</code> is a collection of functions which implements various methods for describing the time-course of germination in terms of single-value germination indices as well as fitted curves.</p>
 <p>The goal of this vignette is to introduce the users to these functions and get started in describing sequentially recorded germination count data. This document assumes a basic knowledge of <code>R</code> programming language.</p>
@@ -135,7 +137,7 @@
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(germinationmetrics)</a></code></pre></div>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to germinationmetrics version 0.1.1
+Welcome to germinationmetrics version 0.1.1.9000
 
 
 # To know how to use this package type:
@@ -152,6 +154,7 @@ Welcome to germinationmetrics version 0.1.1
 # To suppress this message use:
   suppressPackageStartupMessages(library(germinationmetrics))
 --------------------------------------------------------------------------------</code></pre>
+
 </div>
 <div id="version-history" class="section level2">
 <h2 class="hasAnchor">
@@ -266,7 +269,7 @@ Welcome to germinationmetrics version 0.1.1
 <a class="sourceLine" id="cb4-9" data-line-number="9">int &lt;-<span class="st"> </span>data<span class="op">$</span>intervals</a>
 <a class="sourceLine" id="cb4-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb4-11" data-line-number="11"><span class="kw">plot</span>(int, <span class="kw">cumsum</span>(x))</a></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-6-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
 </div>
 <div id="single-value-germination-indices" class="section level2">
 <h2 class="hasAnchor">
@@ -936,7 +939,7 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <a class="sourceLine" id="cb143-8" data-line-number="8"><span class="co">#----------------------------------------------------------------------------</span></a>
 <a class="sourceLine" id="cb143-9" data-line-number="9"><span class="kw"><a href="../reference/GermValue.html">PeakValue</a></span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>)</a></code></pre></div>
 <pre><code>[1] 9.5</code></pre>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw">GermValue</span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb145-1" data-line-number="1"><span class="kw"><a href="../reference/GermValue.html">GermValue</a></span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb145-2" data-line-number="2">          <span class="dt">method =</span> <span class="st">"czabator"</span>)</a></code></pre></div>
 <pre><code>$`Germination Value`
 [1] 38.95
@@ -980,7 +983,7 @@ FALSE): Multiple peak germination times exist.</code></pre>
 18 4.500000
 19 4.263158
 20 4.100000</code></pre>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="kw">GermValue</span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb147-1" data-line-number="1"><span class="kw"><a href="../reference/GermValue.html">GermValue</a></span>(<span class="dt">germ.counts =</span> x, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb147-2" data-line-number="2">          <span class="dt">method =</span> <span class="st">"dp"</span>, <span class="dt">k =</span> <span class="dv">10</span>)</a></code></pre></div>
 <pre><code>$`Germination Value`
 [1] 53.36595
@@ -1032,7 +1035,7 @@ $testend
 <a class="sourceLine" id="cb149-3" data-line-number="3"><span class="kw"><a href="../reference/GermValue.html">PeakValue</a></span>(<span class="dt">germ.counts =</span> y, <span class="dt">interval =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb149-4" data-line-number="4">          <span class="dt">partial =</span> <span class="ot">FALSE</span>)</a></code></pre></div>
 <pre><code>[1] 9.5</code></pre>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw">GermValue</span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb151-1" data-line-number="1"><span class="kw"><a href="../reference/GermValue.html">GermValue</a></span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb151-2" data-line-number="2">          <span class="dt">partial =</span> <span class="ot">FALSE</span>, <span class="dt">method =</span> <span class="st">"czabator"</span>)</a></code></pre></div>
 <pre><code>$`Germination Value`
 [1] 38.95
@@ -1076,7 +1079,7 @@ $testend
 18 4.500000
 19 4.263158
 20 4.100000</code></pre>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="kw">GermValue</span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb153-1" data-line-number="1"><span class="kw"><a href="../reference/GermValue.html">GermValue</a></span>(<span class="dt">germ.counts =</span> y, <span class="dt">intervals =</span> int, <span class="dt">total.seeds =</span> <span class="dv">200</span>,</a>
 <a class="sourceLine" id="cb153-2" data-line-number="2">          <span class="dt">partial =</span> <span class="ot">FALSE</span>, <span class="dt">method =</span> <span class="st">"dp"</span>, <span class="dt">k =</span> <span class="dv">10</span>)</a></code></pre></div>
 <pre><code>$`Germination Value`
 [1] 53.36595
@@ -1523,21 +1526,20 @@ attr(,"class")
 <pre><code>
 To cite the R package 'germinationmetrics' in publications use:
 
-  J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob
-  and Kalyani Srinivasan (2018).  germinationmetrics: Seed
-  Germination Indices and Curve Fitting. R package version 0.1.1,
-  https://cran.r-project.org/package=germinationmetrics,
-  https://doi.org/10.5281/zenodo.1219630.
+  Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
+  Kalyani Srinivasan (2018).  germinationmetrics: Seed Germination
+  Indices and Curve Fitting. R package version 0.1.1.9000,
+  https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
-    author = {{Aravind J} and {Vimala Devi S} and {Radhamani J} and {Sherry Rachel Jacob} and {Kalyani Srinivasan}},
+    author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
     year = {2018},
-    note = {R package version 0.1.1},
+    note = {R package version 0.1.1.9000},
+    note = {https://github.com/aravind-j/germinationmetrics},
     note = {https://cran.r-project.org/package=germinationmetrics},
-    note = {https://doi.org/10.5281/zenodo.1219630},
   }
 
 This free and open-source software implements academic research by
@@ -1563,7 +1565,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] germinationmetrics_0.1.1
+[1] germinationmetrics_0.1.1.9000
 
 loaded via a namespace (and not attached):
  [1] Rcpp_0.12.18          highr_0.7             compiler_3.5.1       
@@ -1571,11 +1573,11 @@ loaded via a namespace (and not attached):
  [7] tools_3.5.1           digest_0.6.15         lattice_0.20-35      
 [10] nlme_3.1-137          evaluate_0.11         memoise_1.1.0        
 [13] tibble_1.4.2          gtable_0.2.0          pkgconfig_2.0.1      
-[16] rlang_0.2.1           bibtex_0.4.2          rstudioapi_0.7.0-9000
+[16] rlang_0.2.1           bibtex_0.4.2          rstudioapi_0.7.0-9001
 [19] commonmark_1.5        ggrepel_0.8.0         yaml_2.2.0           
 [22] pkgdown_1.1.0.9000    bindrcpp_0.2.2        stringr_1.3.1        
-[25] dplyr_0.7.6           roxygen2_6.0.1        xml2_1.2.0           
-[28] knitr_1.20            desc_1.2.0            fs_1.2.4             
+[25] dplyr_0.7.6           roxygen2_6.1.0        xml2_1.2.0           
+[28] knitr_1.20            desc_1.2.0            fs_1.2.5             
 [31] gbRd_0.4-11           rprojroot_1.3-2       grid_3.5.1           
 [34] tidyselect_0.2.4      glue_1.3.0            R6_2.2.2             
 [37] Rdpack_0.8-0          XML_3.98-1.12         minpack.lm_1.2-1     

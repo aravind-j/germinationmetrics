@@ -2,24 +2,25 @@ Package: germinationmetrics
 Title: Seed Germination Indices and Curve Fitting
 Version: 0.1.1.9000
 Authors@R: c(
-    person(c("J.", "Aravind"),
-    email = "j.aravind@icar.gov.in",
-    role = c("aut", "cre"),
-    comment = c(ORCID = "0000-0002-4791-442X")),
-    person(c("S.", "Vimala Devi"),
-    email = "vimala.devi@icar.gov.in",
-    role = "aut"),
-    person(c("J.", "Radhamani"),
-    email = "jalli.radhamani@icar.gov.in",
-    role = "aut"),
-    person(c("Sherry Rachel", "Jacob"),
-    email = "sherry.jacob@icar.gov.in",
-    role = "aut"),
-    person(c("Kalyani", "Srinivasan"),
-    email = "kalyani.srinivasan@icar.gov.in",
-    role = "aut"),
+    person(given = "J.", family = "Aravind",
+           email = "j.aravind@icar.gov.in",
+           role = c("aut", "cre"),
+		       comment = c(ORCID = "0000-0002-4791-442X")),
+	  person(given = "S.", family = "Vimala Devi",
+           email = "vimala.devi@icar.gov.in",
+		       role = "aut"),
+    person(given = "J.", family = "Radhamani",
+           email = "jalli.radhamani@icar.gov.in",
+		       role = "aut"),
+	  person(given = c("Sherry", "Rachel"), family = "Jacob",
+           email = "sherry.jacob@icar.gov.in",
+		       role = "aut"),
+    person(given = c("Kalyani", "Srinivasan"),
+           email = "kalyani.srinivasan@icar.gov.in",
+		       role = "aut"),
     person("ICAR-NBGPR",
-    role = "cph"))
+           role = "cph",
+		       comment = c(url = "www.nbpgr.ernet.in")))
 Description: Provides functions to compute various germination indices such as
     germinability, median germination time, mean germination time, mean germination rate, speed of
     germination, Timson's index, germination value, coefficient of uniformity of
@@ -34,7 +35,7 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.0.1)
 VignetteBuilder: knitr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
 Imports:
     broom,
     ggplot2,

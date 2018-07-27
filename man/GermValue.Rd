@@ -3,7 +3,6 @@
 \name{GermValue}
 \alias{GermValue}
 \alias{PeakValue}
-\alias{GermValue}
 \title{Peak value and germination value}
 \usage{
 PeakValue(germ.counts, intervals, total.seeds, partial = TRUE)

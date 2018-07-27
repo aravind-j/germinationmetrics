@@ -16,8 +16,8 @@ VarGermRate(germ.counts, intervals, partial = TRUE)
 
 SEGermRate(germ.counts, intervals, partial = TRUE)
 
-GermRateRecip(germ.counts, intervals, partial = TRUE, method = c("coolbear",
-  "farooq"))
+GermRateRecip(germ.counts, intervals, partial = TRUE,
+  method = c("coolbear", "farooq"))
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial or
