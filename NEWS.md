@@ -1,5 +1,8 @@
 # germinationmetrics  0.1.2
 
+## OTHER NOTES: 
+* Removed non-ASCII symbols in `inst/REFERENCES.bib` being used by `Rdpack` macro to enforce UTF-8 encoding.
+
 # germinationmetrics  0.1.1
 
 ## NEW FUNCTIONS:
