@@ -18,13 +18,14 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 The value of the coefficient of uniformity of germination as
- \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
+  \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
 }
 \description{
 Compute the coefficient of uniformity of germination (CUG).
 }
 \details{
-CUG is computed as follows (Heydecker, 1973, Bewley and Black, 1994).
+CUG is computed as follows
+\insertCite{heydecker_seed_1972,bewley_seeds:_1994}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>CUG =
 <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
@@ -35,9 +36,9 @@ T<sub>i</sub>)<sup>2</sup>N<sub>i</sub></sub></i></p>}}{\deqn{CUG =
 \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}(\overline{T}-T_{i})^{2}N_{i}}}}
 
 Where, \ifelse{html}{\out{<i><span style="text-decoration:
-overline">T</span></i>}}{\eqn{\overline{T}}} is the the mean germination time,
-\ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from the
-start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+overline">T</span></i>}}{\eqn{\overline{T}}} is the the mean germination
+time, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
+the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
 observation (day for the example);
 \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
 germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
@@ -60,11 +61,9 @@ CUGerm(germ.counts = y, intervals = int, partial = FALSE)
 
 }
 \references{
-\insertRef{heydecker_seed_1972}{germinationmetrics}
-
-\insertRef{bewley_seeds:_1994}{germinationmetrics}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[germinationmetrics]{GermSynchrony}},
- \code{\link[germinationmetrics]{MeanGermTime}}
+  \code{\link[germinationmetrics]{MeanGermTime}}
 }

@@ -27,33 +27,34 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 For \code{FirstGermTime}, the time of first germination value in the
-same unit of time as specified in the argument \code{intervals}.
+  same unit of time as specified in the argument \code{intervals}.
 
-For \code{LastGermTime}, the time of last germination value in the same unit
-of time as specified in the argument \code{intervals}.
+  For \code{LastGermTime}, the time of last germination value in the same
+  unit of time as specified in the argument \code{intervals}.
 
-For \code{TimeSpreadGerm}, the time spread of germination value in the same
-unit of time as specified in the argument \code{intervals}.
+  For \code{TimeSpreadGerm}, the time spread of germination value in the same
+  unit of time as specified in the argument \code{intervals}.
 
-For \code{PeakGermTime}, the time(s) of peak germination value(s) as a
-numeric vector in the same unit of time as specified in the argument
-\code{intervals}.
+  For \code{PeakGermTime}, the time(s) of peak germination value(s) as a
+  numeric vector in the same unit of time as specified in the argument
+  \code{intervals}.
 }
 \description{
 Compute the following metrics: \describe{ \item{\code{FirstGermTime}}{Time of
 first germination or Germination time lag
-(\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}}) (Edwards, 1932;
-Czabator, 1962; Goloff and Bazzaz, 1975; Labouriau, 1983; Ranal, 1999;
-Quintanilla et al., 2000).} \item{\code{LastGermTime}}{Time of last germination
-(\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}}) (Edwards, 1932;
-Labouriau, 1983; Ranal and de Santana, 2006).} \item{\code{PeakGermTime}}{Time
-spread of germination (Al-Mudaris, 1998; Kader, 2005).}
+(\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}})
+\insertCite{edwards_temperature_1932,czabator_germination_1962,goloff_germination_1975,labouriau_germinacao_1983,ranal_effects_1999,quintanilla_effect_2000}{germinationmetrics}.}
+\item{\code{LastGermTime}}{Time of last germination
+(\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}})
+\insertCite{edwards_temperature_1932,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
+\item{\code{PeakGermTime}}{Time spread of germination
+\insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}.}
 \item{\code{TimeSpreadGerm}}{Peak time of germination or Modal time of
-germination (Ranal and de Santana, 2006).} }
+germination \insertCite{ranal_how_2006}{germinationmetrics}.} }
 }
 \details{
-Time of first germination indicates time of germination of the faster seeds in
-a seedlot.
+Time of first germination indicates time of germination of the faster seeds
+in a seedlot.
 
 Lower value of time of first germination indicates faster initiation of
 germination and lower value of time of last germination indicates faster
@@ -93,21 +94,5 @@ PeakGermTime(germ.counts = cumsum(z), intervals = int, partial = FALSE)
 
 }
 \references{
-\insertRef{edwards_temperature_1932}{germinationmetrics}
-
-\insertRef{czabator_germination_1962}{germinationmetrics}
-
-\insertRef{goloff_germination_1975}{germinationmetrics}
-
-\insertRef{labouriau_germinacao_1983}{germinationmetrics}
-
-\insertRef{al-mudaris_notes_1998}{germinationmetrics}
-
-\insertRef{ranal_effects_1999}{germinationmetrics}
-
-\insertRef{quintanilla_effect_2000}{germinationmetrics}
-
-\insertRef{kader_comparison_2005}{germinationmetrics}
-
-\insertRef{ranal_how_2006}{germinationmetrics}
+\insertAllCited{}
 }
