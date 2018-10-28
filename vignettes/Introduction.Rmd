@@ -7,7 +7,6 @@ header-includes:
 - \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 - \fancyfoot[C]{\thepage}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
@@ -18,16 +17,18 @@ header-includes:
 - \usepackage[table]{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
+- \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 output:
   pdf_document:
     dev: cairo_pdf
     fig_caption: no
+    toc: no
   html_document:
     df_print: paged
+    toc: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
 link-citations: yes
-toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
@@ -36,6 +37,12 @@ vignette: |
 
 ```{r, echo=FALSE}
 out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
 ```
 
 ```{r, results='asis', echo=FALSE}
@@ -176,7 +183,7 @@ indices$`function` <- paste("`", indices$`function`, "`", sep = "")
 
 # indices$Details <- gsub("\\r\\n\\r\\n", "$$\\\\, $$", indices$Details)
 # indices$Details <- gsub("$$\\, $$$$", "$$", indices$Details, fixed = TRUE)
-#indices$Details <- paste(indices$Details, "$$\\\\, $$", sep = "")
+# indices$Details <- paste(indices$Details, "$$\\\\, $$", sep = "")
 
 indices$Details <- gsub("\\r\\n", "\\\\\n", indices$Details)
 
