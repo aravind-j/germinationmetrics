@@ -18,15 +18,19 @@
 #' Synchrony and uncertainty of germination
 #'
 #' Compute the following metrics:\describe{ \item{\code{GermSynchrony}}{
-#' Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index). }
+#' Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index)
+#' \insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics}. }
 #' \item{\code{GermUncertainty}}{ Synchronization index
 #' (\ifelse{html}{\out{<em><span style="text-decoration:
 #' overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
 #' germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational
-#' entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}).} }
+#' entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}})
+#' \insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}.}
+#' }
 #'
-#' \code{GermSynchrony} computes the value of synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}}
-#' index) as follows (Primack, 1980; Ranal and Santana, 2006).
+#' \code{GermSynchrony} computes the value of synchrony of germination
+#' (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index) as follows
+#' \insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics}.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>Z =
 #' <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
@@ -50,8 +54,9 @@
 #' \code{GermUncertainty} computes the value of synchronization index
 #' (\ifelse{html}{\out{<em><span style="text-decoration:
 #' overline">E</span></em>}}{\eqn{\overline{E}}}) or uncertainty of the
-#' germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or informational entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}) as follows
-#' (Shannon, 1948; Labouriau and Valadares, 1976; Labouriau 1983).
+#' germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or informational
+#' entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}) as follows
+#' \insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em><span
 #' style="text-decoration: overline;">E</span> = &minus;&sum;<sup>k</sup><sub
@@ -65,28 +70,21 @@
 #' style="line-height: 1.8; margin-left:
 #' -1ex;">i=1</sub>N<sub>i</sub></sub></em>}}{\eqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}}),
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last day of observation.
+#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last day of observation.
 #'
 #' @inheritParams MeanGermTime
 #'
 #' @return For \code{GermUncertainty}, the value of uncertainty of germination
-#'  process.
+#'   process.
 #'
-#'  For \code{GermSynchrony}, the value of synchrony of germination.
+#'   For \code{GermSynchrony}, the value of synchrony of germination.
 #'
 #' @name GermSynchrony
 #'
 #' @references
 #'
-#' \insertRef{shannon_mathematical_1948}{germinationmetrics}
-#'
-#' \insertRef{labouriau_germination_1976}{germinationmetrics}
-#'
-#' \insertRef{labouriau_uma_1983}{germinationmetrics}
-#'
-#' \insertRef{primack_longevity_1985}{germinationmetrics}
-#'
-#' \insertRef{ranal_how_2006}{germinationmetrics}
+#' \insertAllCited{}
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

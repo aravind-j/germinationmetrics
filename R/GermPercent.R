@@ -19,7 +19,7 @@
 #'
 #' Compute the germination percentage or germinability.
 #'
-#' Germination percentage is computed as follows:
+#' Germination percentage is computed as follows \insertCite{ista_chapter_2015}{germinationmetrics}:
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><i>GP = [N<sub>g</sub>
 #' &frasl; N<sub>t</sub>] &times; 100</i><p>}}{\deqn{GP = \frac{N_{g}}{N_{t}}
@@ -47,7 +47,7 @@
 #'
 #' @references
 #'
-#' \insertRef{ista_chapter_2015}{germinationmetrics}
+#' \insertAllCited{}
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

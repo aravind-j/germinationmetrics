@@ -21,8 +21,9 @@
 #' (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}). Median
 #' germination time is the time to reach 50\% of final/maximum germination.
 #'
-#' With argument \code{method} specified as \code{"coolbear"}, median germination
-#' time is computed according to the formula by Coolbear et al., 1984 as follows:
+#' With argument \code{method} specified as \code{"coolbear"}, median
+#' germination time is computed according to the formula by
+#' \insertCite{coolbear_effect_1984;textual}{germinationmetrics} as follows:
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>t<sub>50</sub> =
 #' T<sub>i</sub> + [ <sup>(((<sup>(N+1)</sup> &frasl; <sub>2</sub> ) &minus;
@@ -32,7 +33,8 @@
 #' \frac{(\frac{N+1}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}}}
 #'
 #' Where, \ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}} is the
-#' median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final number of germinated seeds and
+#' median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final
+#' number of germinated seeds and
 #' \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} and
 #' \ifelse{html}{\out{<em>N<sub>j</sub></em>}}{\eqn{N_{j}}} are the total number
 #' of seeds germinated in adjacent counts at time
@@ -42,8 +44,8 @@
 #' < \frac{N + 1}{2} < N_{j}}}.
 #'
 #' Similarly with argument \code{method} specified as \code{"farooq"}, median
-#' germination time is computed according to the formula by  by Farooq et al.,
-#' 2005 as follows:
+#' germination time is computed according to the formula by  by
+#' \insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows:
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>t<sub>50</sub> =
 #' T<sub>i</sub> + [ <sup>(((<sup>N</sup> &frasl; <sub>2</sub> ) &minus;
@@ -53,7 +55,8 @@
 #' \frac{(\frac{N}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}}}
 #'
 #' Where, \ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}} is the
-#' median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final number of germinated seeds and
+#' median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final
+#' number of germinated seeds and
 #' \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} and
 #' \ifelse{html}{\out{<em>N<sub>j</sub></em>}}{\eqn{N_{j}}} are the total number
 #' of seeds germinated in adjacent counts at time
@@ -64,19 +67,17 @@
 #'
 #' @inheritParams MeanGermTime
 #' @param method The method for computing median germination time. Either
-#'  \code{"coolbear"} or \code{"farooq"}.
+#'   \code{"coolbear"} or \code{"farooq"}.
 #'
 #' @return The median germination time
-#'  (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}) value in the
-#'  same unit of time as specified in the argument \code{intervals}.
+#'   (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}) value in the
+#'   same unit of time as specified in the argument \code{intervals}.
 #'
 #' @export
 #'
 #' @references
 #'
-#' \insertRef{coolbear_effect_1984}{germinationmetrics}
-#'
-#' \insertRef{farooq_thermal_2005}{germinationmetrics}
+#' \insertAllCited{}
 #'
 #' @examples
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

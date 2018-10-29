@@ -1,3 +1,5 @@
+^germinationmetrics_0\.1\.1\.9000\.zip$
+^germinationmetrics_*\.zip$
 ^.*\.Rproj$
 ^\.Rproj\.user$
 ^README\.utf8.Rmd$

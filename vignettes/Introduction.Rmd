@@ -19,15 +19,16 @@ header-includes:
 - \newcommand{\elandscape}{\end{landscape}}
 - \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 output:
-  html_document:
-    df_print: paged
   pdf_document:
     dev: cairo_pdf
     fig_caption: no
+    toc: no
+  html_document:
+    df_print: paged
+    toc: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
 link-citations: yes
-toc: no
 vignette: |
   %\VignetteIndexEntry{Introduction}
   %\usepackage[utf8]{inputenc}
@@ -76,7 +77,9 @@ knitr::opts_chunk$set(
     \vspace{-20pt}
 \end{wrapfigure}
 
-## Overview <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+<img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
+## Overview
 
 The package `germinationmetrics` is a collection of functions which implements various methods for describing the time-course of germination in terms of single-value germination indices as well as fitted curves.
 
@@ -107,11 +110,14 @@ The current version of the package is `r as.vector(available.packages()["germina
 **Table 1.** Version history of `germinationmetrics` `R` package.
 
 ```{r, echo=FALSE, message=FALSE}
-if (requireNamespace("XML", quietly = TRUE)) {
+if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
 pkg <- "germinationmetrics"
-link <- paste0("http://cran.r-project.org/src/contrib/Archive/", pkg)
+link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
+cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+page <- httr::GET(link, httr::config(cainfo = cafile))
+page <- httr::content(page, as = 'text')
 
-VerHistory <- XML::readHTMLTable(link)[[1]][,2:3]
+VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
 colnames(VerHistory) <- c("Version", "Date")
 VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
 VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
@@ -122,7 +128,7 @@ VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
 VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
 rownames(VerHistory) <- NULL
 } else {
-print("package 'XML' is required to generate this table")
+print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table")
 }
 
 knitr::kable(VerHistory)

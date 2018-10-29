@@ -16,8 +16,8 @@ PeakGermTime(germ.counts, intervals, partial = TRUE)
 TimeSpreadGerm(germ.counts, intervals, partial = TRUE)
 }
 \arguments{
-\item{germ.counts}{Germination counts at each time interval. Can be partial or
-cumulative as specified in the argument \code{partial}.}
+\item{germ.counts}{Germination counts at each time interval. Can be partial
+or cumulative as specified in the argument \code{partial}.}
 
 \item{intervals}{The time intervals.}
 

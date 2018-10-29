@@ -17,11 +17,13 @@
 
 #' Fit four-parameter hill function
 #'
-#' Fit a four-parameter hill function (El-Kassaby, et al. 2008) to cumulative
+#' Fit a four-parameter hill function
+#' \insertCite{el-kassaby_seed_2008}{germinationmetrics} to cumulative
 #' germination count data and compute the associated parameters.
 #'
 #' The cumulative germination count data of a seed lot can be modelled to fit a
-#' four-parameter hill function defined as follows (El-Kassaby, et al. 2008):
+#' four-parameter hill function defined as follows
+#' \insertCite{el-kassaby_seed_2008}{germinationmetrics}:
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>y = y<sub>0</sub> +
 #' [<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
@@ -130,10 +132,10 @@
 #'   Information Criterion, Bayesian Information Criterion, deviance and
 #'   residual degrees of freedom.}  \item{a}{The asymptote or the maximum
 #'   cumulative germination percentage.}  \item{b}{The mathematical parameter
-#'   controlling the shape and steepness of the germination curve.}
-#'   \item{c}{The half-maximal activation level}  \item{y0}{The intercept on the
-#'   y axis.} \item{lag}{Time at germination onset} \item{Dlag50}{duration
-#'   between the time at germination onset (lag) and that at 50\% germination.}
+#'   controlling the shape and steepness of the germination curve.} \item{c}{The
+#'   half-maximal activation level}  \item{y0}{The intercept on the y axis.}
+#'   \item{lag}{Time at germination onset} \item{Dlag50}{duration between the
+#'   time at germination onset (lag) and that at 50\% germination.}
 #'   \item{t50.total}{time required for 50\% of total seeds to germinate.}
 #'   \item{txp.total}{time required for x\% (as specified in argument \code{xp})
 #'   of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
@@ -157,7 +159,7 @@
 #'
 #' @references
 #'
-#' \insertRef{el-kassaby_seed_2008}{germinationmetrics}
+#' \insertAllCited{}
 #'
 #' @examples
 #'

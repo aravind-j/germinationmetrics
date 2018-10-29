@@ -13,8 +13,8 @@ GermSpeedAccumulated(germ.counts, intervals, partial = TRUE)
 GermSpeedCorrected(germ.counts, intervals, partial = TRUE, total.seeds)
 }
 \arguments{
-\item{germ.counts}{Germination counts at each time interval. Can be partial or
-cumulative as specified in the argument \code{partial}.}
+\item{germ.counts}{Germination counts at each time interval. Can be partial
+or cumulative as specified in the argument \code{partial}.}
 
 \item{intervals}{The time intervals.}
 
@@ -26,27 +26,28 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 For \code{GermSpeed}, the value of germination speed as \%
- \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+  \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 
- For \code{GermSpeedAccumulated}, the value of accumulated germination speed
- as \% \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+  For \code{GermSpeedAccumulated}, the value of accumulated germination speed
+  as \% \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 
- For \code{GermSpeedCorrected}, the corrected speed of germination.
+  For \code{GermSpeedCorrected}, the corrected speed of germination.
 }
 \description{
 Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
 germination or Germination rate index or Index of velocity of germination or
-Germination index (Kendrick and Frankland, 1969; AOSA, 1983) }
-\item{\code{GermSpeedAccumulated}}{Speed of accumulated germination (Bradbeer,
-1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996; Santana and Ranal,
-2004) } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
-Corrected germination rate index} }
+Germination index
+\insertCite{kendrick_photocontrol_1969,aosa_seed_1983}{germinationmetrics} }
+\item{\code{GermSpeedAccumulated}}{Speed of accumulated germination
+\insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}
+} \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
+Corrected germination rate index
+\insertCite{evetts_germination_1972}{germinationmetrics}} }
 }
 \details{
 \code{GermSpeed} computes the speed of germination according to the following
-formula (Throneberry and Smith, 1955; Maguire, 1962; Kendrick and Frankland,
-1969; AOSA, 1983; Khandakar and Bradbeer, 1983; Bradbeer, 1988; Wardle et al.,
-1991).
+formula
+\insertCite{throneberry_relation_1955,maguire_speed_1962,kendrick_photocontrol_1969,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>S =
 <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
@@ -75,18 +76,18 @@ samples or treatments possess similar germinabilities. This is overcome by
 using the corrected speed of germination.
 
 \code{GermSpeedCorrected} computes the corrected speed of germination as
-follows (Evetts and Burnside, 1972).
+follows \insertCite{evetts_germination_1972}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>S<sub>corrected</sub> =
-<sup>S</sup>&frasl;<sub>FGP</sub></i><p>}}{\deqn{S_{corrected} = \frac{S}{FGP}
-}}
+<sup>S</sup>&frasl;<sub>FGP</sub></i><p>}}{\deqn{S_{corrected} =
+\frac{S}{FGP} }}
 
 Where, \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the final germination
 percentage or germinability.
 
 \code{GermSpeedAccumulated} computes the speed of accumulated germination as
-follows (Bradbeer, 1988; Wardle et al., 1991; Haugland and Brandsaeter, 1996;
-Santana and Ranal, 2004).
+follows
+\insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>S =
 <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub> +
@@ -130,21 +131,5 @@ GermSpeedCorrected(germ.counts = y, intervals = int,
                    partial = FALSE, total.seeds = 50)
 }
 \references{
-\insertRef{throneberry_relation_1955}{germinationmetrics}
-
-\insertRef{maguire_speed_1962}{germinationmetrics}
-
-\insertRef{kendrick_photocontrol_1969}{germinationmetrics}
-
-\insertRef{evetts_germination_1972}{germinationmetrics}
-
-\insertRef{khandakar_jute_1983}{germinationmetrics}
-
-\insertRef{bradbeer_seed_1988}{germinationmetrics}
-
-\insertRef{wardle_allelopathic_1991}{germinationmetrics}
-
-\insertRef{haugland_experiments_1996}{germinationmetrics}
-
-\insertRef{de_santana_alise_2004}{germinationmetrics}
+\insertAllCited{}
 }

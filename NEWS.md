@@ -2,6 +2,10 @@
 
 ## OTHER NOTES: 
 * Removed non-ASCII symbols in `inst/REFERENCES.bib` being used by `Rdpack` macro to enforce UTF-8 encoding.
+* Added inline citations in documentation with Rdpack `\insertCite{}{}` and replaced all `\insertRef{}{}` with `\insertAllCited{}`.
+* Fixed https link issue in vignette.
+* Added mirror set command in vignette.
+* Added `XML`, `RCurl` and `httr` to suggests.
 
 # germinationmetrics  0.1.1
 

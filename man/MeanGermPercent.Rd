@@ -26,38 +26,42 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 The value of mean germination percentage or mean number of seeds per
- time interval.
+  time interval.
 }
 \description{
 Compute the following metrics:\describe{ \item{\code{MeanGermPercent}}{
 Mean/average germination percentage per unit time
 (\ifelse{html}{\out{<em><span
-style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}). }
+style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}})
+\insertCite{czabator_germination_1962}{germinationmetrics}. }
 \item{\code{MeanGermNumber}}{ Number of seeds germinated per unit time
 (\ifelse{html}{\out{<em><span style="text-decoration:
-overline">N</span></em>}}{\eqn{\overline{N}}}).}}
+overline">N</span></em>}}{\eqn{\overline{N}}})
+\insertCite{khamassi_optimal_2013}{germinationmetrics}.}}
 }
 \details{
 Mean germination percentage per unit time (\ifelse{html}{\out{<em><span
 style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}) is
-computed as follows (Czabator, 1962).
+computed as follows
+\insertCite{czabator_germination_1962}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em><span
 style="text-decoration: overline;">GP</span> = <sup>GP</sup> &frasl;
-<sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{G} = \frac{GP}{T_{n}}}{MGP
-= GP/Tf}}
+<sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{G} =
+\frac{GP}{T_{n}}}{MGP = GP/Tf}}
 
-Where, \ifelse{html}{\out{<i>GP</i>}}{\eqn{GP}} is the final germination percentage and
-\ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is the total number
-of intervals(e.g. days) required for final germination.
+Where, \ifelse{html}{\out{<i>GP</i>}}{\eqn{GP}} is the final germination
+percentage and \ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is
+the total number of intervals(e.g. days) required for final germination.
 
 Mean number of seeds germinated per unit time (\ifelse{html}{\out{<em><span
 style="text-decoration: overline">N</span></em>}}{\eqn{\overline{N}}}) is
-computed as follows (Khamassi et al., 2013).
+computed as follows \insertCite{khamassi_optimal_2013}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em><span
-style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup> &frasl;
-<sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{N} = \frac{N_{g}}{T_{n}}}}
+style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup>
+&frasl; <sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{N} =
+\frac{N_{g}}{T_{n}}}}
 
 Where, \ifelse{html}{\out{<em>N<sub>g</sub></em>}}{\eqn{N_{g}}} is the number
 of germinated seeds and
@@ -85,9 +89,7 @@ MeanGermPercent(germinated.seeds = 40, total.seeds = 50, intervals = int)
 
 }
 \references{
-\insertRef{czabator_germination_1962}{germinationmetrics}
-
-\insertRef{djavanshir_germination_1976}{germinationmetrics}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[germinationmetrics]{GermPercent}}

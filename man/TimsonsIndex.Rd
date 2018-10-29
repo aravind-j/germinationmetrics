@@ -11,8 +11,8 @@ TimsonsIndex(germ.counts, intervals, partial = TRUE, total.seeds, max,
 GermRateGeorge(germ.counts, intervals, partial = TRUE, max)
 }
 \arguments{
-\item{germ.counts}{Germination counts at each time interval. Can be partial or
-cumulative as specified in the argument \code{partial}.}
+\item{germ.counts}{Germination counts at each time interval. Can be partial
+or cumulative as specified in the argument \code{partial}.}
 
 \item{intervals}{The time intervals.}
 
@@ -32,16 +32,20 @@ germination rate is to be computed.}
 \value{
 For \code{TimsonsIndex} The value of Timson's index.
 
- For \code{GermRateGeorge} The value of George's germination rate.
+  For \code{GermRateGeorge} The value of George's germination rate.
 }
 \description{
-Compute George's index, Timson's index or Timson's germination velocity index
-and it's modifications by Labouriau (Ranal and de Santana, 2006) and Khan and
-Unger (1984).
+Compute George's index
+\insertCite{george_influence_1961;textual}{germinationmetrics}, Timson's
+index or Timson's germination velocity index
+\insertCite{timson_new_1965}{germinationmetrics} and it's modifications by
+Labouriau \insertCite{ranal_how_2006}{germinationmetrics} and
+\insertCite{khan_effect_1984}{germinationmetrics}.
 }
 \details{
-Timson's index (Timson, 1965) is computed as follows (Brown and Mayer, 1988;
-Baskin and Baskin, 1998).
+Timson's index \insertCite{timson_new_1965}{germinationmetrics} is computed
+as follows
+\insertCite{brown_representing_1988,baskin_seeds:_1998}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>&sum;n =
 &sum;<sup>t</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1
@@ -54,8 +58,8 @@ cumulative germination percentage in time interval
 
 For example ten summation (\eqn{\Sigma 10}) is expressed as follows:
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>&sum; 10 = G<sub>1</sub>
-+ G<sub>2</sub> + G<sub>3</sub> +&hellip;+
+\ifelse{html}{\out{<p style="text-align: center;"><em>&sum; 10 =
+G<sub>1</sub> + G<sub>2</sub> + G<sub>3</sub> +&hellip;+
 G<sub>10</sub></em></p>}}{\deqn{\sum 10 = G_{1}+G_{2}+\cdots+G_{10}}}
 
 Where \ifelse{html}{\out{<em>G<sub>1</sub>, G<sub>2</sub>, G<sub>3</sub>,
@@ -72,8 +76,8 @@ specific intervals for a set period of time.  It combines onset, rate and
 total percentage of germination and estimates the area under the cumulative
 germination percentage curve.
 
-Goodchild and Walker (1971), described the same in terms of partial
-germination percentage as follows:
+\insertCite{goodchild_method_1971;textual}{germinationmetrics}, described the
+same in terms of partial germination percentage as follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>&sum;n =
 &sum;<sup>t</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
@@ -81,14 +85,16 @@ g<sub>i</sub>(t-j)</em></p>}}{\deqn{\sum n = \sum_{i=1}^{t}g_{i}(t-j)}}
 
 Where, \ifelse{html}{\out{<i>g<sub>i</sub></i>}}{\eqn{g_{i}}} is the
 germination (not cumulative, but partial germination) in time interval
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}} (\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}
-varying from \ifelse{html}{\out{<i>0</i>}}{\eqn{0}} to
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}
+(\ifelse{html}{\out{<i>i</i>}}{\eqn{i}} varying from
+\ifelse{html}{\out{<i>0</i>}}{\eqn{0}} to
 \ifelse{html}{\out{<i>t</i>}}{\eqn{t}}) and
 \ifelse{html}{\out{<i>t</i>}}{\eqn{t}} is the total number of time intervals
 and \ifelse{html}{\out{<i>j = i - 1</i>}}{\eqn{j = i - 1}}.
 
-Timson's index is similar to the germination rate proposed by George (1961) as
-follows (Tucker and Wright, 1965; Nichols and Heydecker, 1968).
+Timson's index is similar to the germination rate proposed by
+\insertCite{george_influence_1961;textual}{germinationmetrics} as follows
+\insertCite{tucker_estimating_1965,nichols_two_1968}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>GR =
 &sum;<sup>t</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
@@ -103,19 +109,20 @@ This index uses number of seeds germinated instead of germination percentage.
 
 As Timson's index is useful for comparison only when samples have similar
 germinabilities or final germination percentage, the following modification
-was suggested by Labouriau (Ranal and de Santana, 2006).
+was suggested by Labouriau \insertCite{ranal_how_2006}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;">T<sub>mod</sub> =
 <sup>T</sup> &frasl; <sub>&sum;<sup>t</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">i=1 </sub>g<sub>i</sub></sub></p>}}{\deqn{T_{mod} =
 \frac{T}{\sum_{i=1}^{t}g_{i}}}}
 
-Here Timson's index (\ifelse{html}{\out{<i>t</i>}}{\eqn{t}}) is divided by the
-sum of partial germination percentages.
+Here Timson's index (\ifelse{html}{\out{<i>t</i>}}{\eqn{t}}) is divided by
+the sum of partial germination percentages.
 
-Similarly another modification was proposed by Khan and Unger (1984), where
-Timson's index (\ifelse{html}{\out{<i>t</i>}}{\eqn{t}}) is divided by number
-of intervals (\ifelse{html}{\out{<i>t</i>}}{\eqn{t}}).
+Similarly another modification was proposed by
+\insertCite{khan_effect_1984}{germinationmetrics}, where Timson's index
+(\ifelse{html}{\out{<i>t</i>}}{\eqn{t}}) is divided by number of intervals
+(\ifelse{html}{\out{<i>t</i>}}{\eqn{t}}).
 
 \ifelse{html}{\out{<p style="text-align: center;">T<sub>mod</sub> =
 <sup>T</sup> &frasl; <sub>t</sub></p>}}{\deqn{T_{mod} = \frac{T}{t}}}
@@ -161,21 +168,5 @@ GermRateGeorge(germ.counts = x, intervals = int, partial = TRUE, max = 10)
 GermRateGeorge(germ.counts = x, intervals = int, partial = TRUE, max = 14)
 }
 \references{
-\insertRef{george_influence_1961}{germinationmetrics}
-
-\insertRef{timson_new_1965}{germinationmetrics}
-
-\insertRef{tucker_estimating_1965}{germinationmetrics}
-
-\insertRef{nichols_two_1968}{germinationmetrics}
-
-\insertRef{goodchild_method_1971}{germinationmetrics}
-
-\insertRef{khan_effect_1984}{germinationmetrics}
-
-\insertRef{brown_representing_1988}{germinationmetrics}
-
-\insertRef{baskin_seeds:_1998}{germinationmetrics}
-
-\insertRef{ranal_how_2006}{germinationmetrics}
+\insertAllCited{}
 }

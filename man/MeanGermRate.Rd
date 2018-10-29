@@ -20,8 +20,8 @@ GermRateRecip(germ.counts, intervals, partial = TRUE,
   method = c("coolbear", "farooq"))
 }
 \arguments{
-\item{germ.counts}{Germination counts at each time interval. Can be partial or
-cumulative as specified in the argument \code{partial}.}
+\item{germ.counts}{Germination counts at each time interval. Can be partial
+or cumulative as specified in the argument \code{partial}.}
 
 \item{intervals}{The time intervals.}
 
@@ -34,42 +34,48 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 For \code{MeanGermRate}, the mean germination rate value as
- \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+  \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 
- For \code{VarGermTime}, the variance of germination rate value as
- \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
+  For \code{VarGermTime}, the variance of germination rate value as
+  \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
 
- For \code{SEGermTime}, the standard error of germination rate as
- \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+  For \code{SEGermTime}, the standard error of germination rate as
+  \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 
- For \code{CVG}, the value of Coefficient of of velocity/rate of germination
- or Kotowski's coefficient of velocity.
+  For \code{CVG}, the value of Coefficient of of velocity/rate of germination
+  or Kotowski's coefficient of velocity.
 
- For \code{GermRateRecip}, the value of germination rate as
- \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+  For \code{GermRateRecip}, the value of germination rate as
+  \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
 }
 \description{
 Compute the following metrics: \describe{ \item{\code{MeanGermRate}}{Mean
 germination rate (\ifelse{html}{\out{<em><span
-style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}).}
+style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
+\insertCite{labouriau_germination_1976,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.}
 \item{\code{VarGermRate}}{Variance of germination rate
 (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}}). }
+margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}})
+\insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}. }
 \item{\code{SEGermRate}}{ Standard error of germination rate
 (\ifelse{html}{\out{<em>s<sub><span
-style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}}).
-} \item{\code{CVG}}{Coefficient of velocity/rate of germination or Kotowski's
+style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
+\insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}. }
+\item{\code{CVG}}{Coefficient of velocity/rate of germination or Kotowski's
 coefficient of velocity
-(\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}}).
+(\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
+\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds:_1994}{germinationmetrics}.
 } \item{\code{GermRateRecip}}{Germination rate as reciprocal of median time
-(\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}}).} }
+(\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}})
+\insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.}
+}
 }
 \details{
 \code{MeanGermRate} computes the mean germination rate
 (\ifelse{html}{\out{<em><span
 style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
-according to the following formula (Labouriau and Valadares, 1976; Labouriau,
-1983; Ranal and de Santana, 2006).
+according to the following formula
+\insertCite{labouriau_germination_1976,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em><span
 style="text-decoration: overline;">V</span> = <sup>&sum;<sup>k</sup><sub
@@ -79,11 +85,12 @@ style="line-height: 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sup>
 N<sub>i</sub>T<sub>i</sub></sub></em></p>}}{\deqn{\overline{V} =
 \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}}}
 
-Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-observation, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the
-number of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-time (not the accumulated number, but the number correspondent to the
+Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
+from the start of the experiment to the
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
+germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
+accumulated number, but the number correspondent to the
 \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 
@@ -99,7 +106,8 @@ overline;">T</span></sub></em></p>}}{\deqn{\overline{V} =
 \code{VarGermRate} computes the variance of germination rate
 (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}}) according to the
-following formula (Labouriau, 1983; Ranal and de Santana, 2006).
+following formula
+\insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>s<sup>2</sup><sub
 style="line-height: 1.8; margin-left: -1ex;">V</sub> = <span
@@ -115,8 +123,8 @@ germination time.
 \code{SEGermRate} computes the standard error of germination time
 (\ifelse{html}{\out{<em>s<sub><span
 style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
-according to the following formula (Labouriau, 1983; Ranal and de Santana,
-2006).
+according to the following formula
+\insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>s<sub><span
 style="text-decoration: overline;">V</span></sub> = &radic;[
@@ -126,17 +134,17 @@ style="text-decoration: overline;">V</span></sub> = &radic;[
 ]</em></p>}}{\deqn{s_{\overline{V}} =
 \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
 
-Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of
-seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
-accumulated number, but the number correspondent to the
+Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
+of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not
+the accumulated number, but the number correspondent to the
 \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 
 \code{CVG} computes the coefficient of velocity/rate of germination or
 Kotowski's coefficient of velocity
 (\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}) according to the following
-formula (Kotowski, 1926; Nichols and Heydecker, 1968; Labouriau, 1983; Scott
-et al., 1984; Bewley and Black, 1985).
+formula
+\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds:_1994}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>CVG =
 [<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
@@ -146,23 +154,26 @@ N<sub>i</sub>T<sub>i</sub></sub>] &times; 100</em></p>}}{\deqn{CVG =
 \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}} \times 100}}
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>CVG = <span
-style="text-decoration: overline;">V</span> &times; 100</em></p>}}{\deqn{CVG =
-\overline{V} \times 100}}
+style="text-decoration: overline;">V</span> &times; 100</em></p>}}{\deqn{CVG
+= \overline{V} \times 100}}
 
-Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-observation, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the
-number of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-time (not the accumulated number, but the number correspondent to the
+Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
+from the start of the experiment to the
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
+germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
+accumulated number, but the number correspondent to the
 \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 
 \code{GermRateRecip} computes the germination rate
-(\ifelse{html}{\out{<em>v<sub>50</sub></em>}}{\eqn{v_{50}}}) as the reciprocal
-of the median germination time
-(\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}) (Went, 1957;
-Labouriau, 1983a; Ranal and de Santana, 2006) computed according to the
-methods of Coolbear et al., 1984 or Farooq et al., 2005 as follows:
+(\ifelse{html}{\out{<em>v<sub>50</sub></em>}}{\eqn{v_{50}}}) as the
+reciprocal of the median germination time
+(\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}})
+\insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}
+computed according to the methods of
+\insertCite{coolbear_effect_1984;textual}{germinationmetrics} or
+\insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>v<sub>50</sub> =
 <sup>1</sup> &frasl;
@@ -196,25 +207,9 @@ GermRateRecip(germ.counts = y, intervals = int,
 
 }
 \references{
-\insertRef{kotowski_temperature_1926}{germinationmetrics}
-
-\insertRef{went_experimental_1957}{germinationmetrics}
-
-\insertRef{nichols_two_1968}{germinationmetrics}
-
-\insertRef{labouriau_uma_1983}{germinationmetrics}
-
-\insertRef{coolbear_effect_1984}{germinationmetrics}
-
-\insertRef{scott_review_1984}{germinationmetrics}
-
-\insertRef{bewley_seeds:_1994}{germinationmetrics}
-
-\insertRef{farooq_thermal_2005}{germinationmetrics}
-
-\insertRef{ranal_how_2006}{germinationmetrics}
+\insertAllCited{}
 }
 \seealso{
 \code{\link[germinationmetrics]{MeanGermTime}},
- \code{\link[germinationmetrics]{t50}}
+  \code{\link[germinationmetrics]{t50}}
 }
