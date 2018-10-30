@@ -116,6 +116,7 @@ link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
 cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
 page <- httr::GET(link, httr::config(cainfo = cafile))
 page <- httr::content(page, as = 'text')
+# page <- RCurl::getURL(link)
 
 VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
 colnames(VerHistory) <- c("Version", "Date")
