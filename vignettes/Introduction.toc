@@ -1,0 +1,25 @@
+\contentsline {subsection}{Overview}{1}{section*.2}
+\contentsline {subsection}{Installation}{1}{section*.3}
+\contentsline {subsection}{Version History}{2}{section*.4}
+\contentsline {subsection}{Germination count data}{2}{section*.5}
+\contentsline {subsection}{Single-value germination indices}{3}{section*.6}
+\contentsline {paragraph}{Examples}{11}{section*.7}
+\contentsline {paragraph}{\texttt {GermPercent()}}{11}{section*.8}
+\contentsline {paragraph}{\texttt {FirstGermTime(),\ LastGermTime(),\ PeakGermTime(),\ TimeSpreadGerm()}}{11}{section*.9}
+\contentsline {paragraph}{\texttt {t50()}}{12}{section*.10}
+\contentsline {paragraph}{\texttt {MeanGermTime(),\ VarGermTime(),\ SEGermTime(),\ CVSEGermTime()}}{12}{section*.11}
+\contentsline {paragraph}{\texttt {MeanGermRate(),\ CVG(),\ VarGermRate(),\ SEGermRate(),\ GermRateRecip()}}{13}{section*.12}
+\contentsline {paragraph}{\texttt {GermSpeed(),\ GermSpeedAccumulated(),\ GermSpeedCorrected()}}{14}{section*.13}
+\contentsline {paragraph}{\texttt {GermSpeed(),\ GermSpeedAccumulated(),\ GermSpeedCorrected()}}{14}{section*.14}
+\contentsline {paragraph}{\texttt {MeanGermPercent(),\ MeanGermNumber()}}{15}{section*.15}
+\contentsline {paragraph}{\texttt {TimsonsIndex(),\ GermRateGeorge()}}{16}{section*.16}
+\contentsline {paragraph}{\texttt {PeakValue(),\ GermValue()}}{17}{section*.17}
+\contentsline {paragraph}{\texttt {CUGerm()}}{21}{section*.18}
+\contentsline {paragraph}{\texttt {GermSynchrony(),\ GermUncertainty()}}{21}{section*.19}
+\contentsline {subsection}{Curve fitting}{22}{section*.20}
+\contentsline {subsubsection}{Four-parameter hill function}{22}{section*.21}
+\contentsline {paragraph}{Examples}{23}{section*.22}
+\contentsline {paragraph}{\texttt {FourPHFfit()}}{23}{section*.23}
+\contentsline {subsection}{Citing \texttt {germinationmetrics}}{32}{section*.24}
+\contentsline {subsection}{Session Info}{32}{section*.25}
+\contentsline {subsection}{References}{33}{section*.26}

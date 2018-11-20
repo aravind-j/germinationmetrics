@@ -2,6 +2,7 @@
 title: "The `germinationmetrics` Package: A Brief Introduction"
 author: "Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan"
 date: "`r Sys.Date()`"
+classoption: table
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
@@ -14,7 +15,6 @@ header-includes:
 - \hypersetup{linkcolor=blue}
 - \usepackage{pdflscape}
 - \usepackage{booktabs}
-- \usepackage[table]{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
 - \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
