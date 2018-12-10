@@ -4,7 +4,7 @@
 \alias{MeanGermTime}
 \alias{VarGermTime}
 \alias{SEGermTime}
-\alias{CVSEGermTime}
+\alias{CVGermTime}
 \title{Germination Time}
 \usage{
 MeanGermTime(germ.counts, intervals, partial = TRUE)
@@ -13,7 +13,7 @@ VarGermTime(germ.counts, intervals, partial = TRUE)
 
 SEGermTime(germ.counts, intervals, partial = TRUE)
 
-CVSEGermTime(germ.counts, intervals, partial = TRUE)
+CVGermTime(germ.counts, intervals, partial = TRUE)
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial
@@ -35,7 +35,7 @@ For \code{MeanGermTime}, the mean germination time value in the same
   For \code{SEGermTime}, the standard error of germination time in the same
   unit of time specified in the argument \code{intervals}.
 
-  For \code{CVSEGermTime}, the value of coefficient of variation of the
+  For \code{CVGermTime}, the value of coefficient of variation of the
   germination time.
 }
 \description{
@@ -52,7 +52,7 @@ margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}})
 (\ifelse{html}{\out{<em>s<sub><span
 style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
 \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
-\item{\code{CVSEGermTime}}{ Coefficient of variation of the germination time
+\item{\code{CVGermTime}}{Coefficient of variation of the germination time
 (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
 \insertCite{ranal_how_2006}{germinationmetrics}.} }
 }
@@ -161,14 +161,14 @@ int <- 1:length(x)
 MeanGermTime(germ.counts = x, intervals = int)
 VarGermTime(germ.counts = x, intervals = int)
 SEGermTime(germ.counts = x, intervals = int)
-CVSEGermTime(germ.counts = x, intervals = int)
+CVGermTime(germ.counts = x, intervals = int)
 
 # From cumulative germination counts
 #----------------------------------------------------------------------------
 MeanGermTime(germ.counts = y, intervals = int, partial = FALSE)
 VarGermTime(germ.counts = y, intervals = int, partial = FALSE)
 SEGermTime(germ.counts = y, intervals = int, partial = FALSE)
-CVSEGermTime(germ.counts = y, intervals = int, partial = FALSE)
+CVGermTime(germ.counts = y, intervals = int, partial = FALSE)
 
 }
 \references{

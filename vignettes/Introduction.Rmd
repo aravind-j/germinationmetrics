@@ -241,7 +241,7 @@ require(germinationmetrics)
 ```{r, runCode, code = getCode("t50", "germinationmetrics")}
 ```
 
-#### `MeanGermTime(), VarGermTime(), SEGermTime(), CVSEGermTime()`
+#### `MeanGermTime(), VarGermTime(), SEGermTime(), CVGermTime()`
 ```{r, runCode, code = getCode("MeanGermTime", "germinationmetrics")}
 ```
 

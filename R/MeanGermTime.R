@@ -30,7 +30,7 @@
 #' (\ifelse{html}{\out{<em>s<sub><span
 #' style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
 #' \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
-#' \item{\code{CVSEGermTime}}{ Coefficient of variation of the germination time
+#' \item{\code{CVGermTime}}{Coefficient of variation of the germination time
 #' (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
 #' \insertCite{ranal_how_2006}{germinationmetrics}.} }
 #'
@@ -144,7 +144,7 @@
 #'   For \code{SEGermTime}, the standard error of germination time in the same
 #'   unit of time specified in the argument \code{intervals}.
 #'
-#'   For \code{CVSEGermTime}, the value of coefficient of variation of the
+#'   For \code{CVGermTime}, the value of coefficient of variation of the
 #'   germination time.
 #'
 #' @references
@@ -163,14 +163,14 @@
 #' MeanGermTime(germ.counts = x, intervals = int)
 #' VarGermTime(germ.counts = x, intervals = int)
 #' SEGermTime(germ.counts = x, intervals = int)
-#' CVSEGermTime(germ.counts = x, intervals = int)
+#' CVGermTime(germ.counts = x, intervals = int)
 #'
 #' # From cumulative germination counts
 #' #----------------------------------------------------------------------------
 #' MeanGermTime(germ.counts = y, intervals = int, partial = FALSE)
 #' VarGermTime(germ.counts = y, intervals = int, partial = FALSE)
 #' SEGermTime(germ.counts = y, intervals = int, partial = FALSE)
-#' CVSEGermTime(germ.counts = y, intervals = int, partial = FALSE)
+#' CVGermTime(germ.counts = y, intervals = int, partial = FALSE)
 #'
 #' @seealso \code{\link[germinationmetrics]{MeanGermRate}}
 
@@ -237,7 +237,7 @@ SEGermTime <- function(germ.counts, intervals, partial = TRUE) {
 
 #' @rdname MeanGermTime
 #' @export
-CVSEGermTime <- function(germ.counts, intervals, partial = TRUE) {
+CVGermTime <- function(germ.counts, intervals, partial = TRUE) {
 
   MGT <- MeanGermTime(germ.counts, intervals, partial)
   VGT <- VarGermTime(germ.counts, intervals, partial)
