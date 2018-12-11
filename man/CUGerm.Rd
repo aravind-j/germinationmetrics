@@ -21,7 +21,7 @@ The value of the coefficient of uniformity of germination as
   \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
 }
 \description{
-Compute the coefficient of uniformity of germination (CUG).
+Compute the Coefficient of uniformity of germination (CUG).
 }
 \details{
 CUG is computed as follows

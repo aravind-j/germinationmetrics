@@ -23,7 +23,7 @@
 #' (\ifelse{html}{\out{<em><span
 #' style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}})
 #' \insertCite{czabator_germination_1962}{germinationmetrics}. }
-#' \item{\code{MeanGermNumber}}{ Number of seeds germinated per unit time
+#' \item{\code{MeanGermNumber}}{Number of seeds germinated per unit time
 #' (\ifelse{html}{\out{<em><span style="text-decoration:
 #' overline">N</span></em>}}{\eqn{\overline{N}}})
 #' \insertCite{khamassi_optimal_2013}{germinationmetrics}.}}

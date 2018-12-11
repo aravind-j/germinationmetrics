@@ -20,7 +20,7 @@
 #' Compute the following metrics:\describe{ \item{\code{GermSynchrony}}{
 #' Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index)
 #' \insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics}. }
-#' \item{\code{GermUncertainty}}{ Synchronization index
+#' \item{\code{GermUncertainty}}{Synchronization index
 #' (\ifelse{html}{\out{<em><span style="text-decoration:
 #' overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
 #' germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational

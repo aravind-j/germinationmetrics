@@ -37,12 +37,12 @@ For \code{GermSpeed}, the value of germination speed as \%
 Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
 germination or Germination rate index or Index of velocity of germination or
 Germination index
-\insertCite{kendrick_photocontrol_1969,aosa_seed_1983}{germinationmetrics} }
+\insertCite{kendrick_photocontrol_1969,aosa_seed_1983}{germinationmetrics}. }
 \item{\code{GermSpeedAccumulated}}{Speed of accumulated germination
-\insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}
+\insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}.
 } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
 Corrected germination rate index
-\insertCite{evetts_germination_1972}{germinationmetrics}} }
+\insertCite{evetts_germination_1972}{germinationmetrics}.} }
 }
 \details{
 \code{GermSpeed} computes the speed of germination according to the following

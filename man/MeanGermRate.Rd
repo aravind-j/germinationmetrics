@@ -57,7 +57,7 @@ style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
 (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}})
 \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}. }
-\item{\code{SEGermRate}}{ Standard error of germination rate
+\item{\code{SEGermRate}}{Standard error of germination rate
 (\ifelse{html}{\out{<em>s<sub><span
 style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
 \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}. }

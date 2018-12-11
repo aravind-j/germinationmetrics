@@ -18,7 +18,7 @@
 
 #' Coefficient of uniformity of germination
 #'
-#' Compute the coefficient of uniformity of germination (CUG).
+#' Compute the Coefficient of uniformity of germination (CUG).
 #'
 #' CUG is computed as follows
 #' \insertCite{heydecker_seed_1972,bewley_seeds:_1994}{germinationmetrics}.
