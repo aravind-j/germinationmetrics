@@ -17,8 +17,8 @@
 
 #' Peak value and germination value
 #'
-#' Compute the peak value
-#' \insertCite{czabator_germination_1962}{germinationmetrics} and germination
+#' Compute the Peak value
+#' \insertCite{czabator_germination_1962}{germinationmetrics} and Germination
 #' value
 #' \insertCite{czabator_germination_1962,djavanshir_germination_1976}{germinationmetrics}.
 #'
@@ -28,7 +28,9 @@
 #' It represents the mean daily germination of the most vigorous component of
 #' the seed lot, and is a mathematical expression of the break, or shoulder, of
 #' a typical sigmoid  germination curve
-#' \insertCite{djavanshir_germination_1976}{germinationmetrics}.
+#' \insertCite{djavanshir_germination_1976}{germinationmetrics}. It is the
+#' accumulated number of seeds germinated at the point on the germination curve
+#' at which the rate of germination starts to decrease.
 #'
 #' For daily germination counts, germination value
 #' (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) is computed as follows

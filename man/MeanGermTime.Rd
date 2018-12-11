@@ -78,6 +78,12 @@ accumulated number, but the number correspondent to the
 \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
 
+It is the same as Sprouting Index described by
+\insertCite{smith_germinating_1964;textual}{germinationmetrics}
+(\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}}) and Germination Resistance
+(\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}}) described by
+\insertCite{gordon_observations_1969,gordon_germination_1971;textual}{germinationmetrics}.
+
 It is the inverse of mean germination rate (\ifelse{html}{\out{<em><span
 style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}).
 

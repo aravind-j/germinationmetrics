@@ -6,7 +6,7 @@
 \title{Timson's index}
 \usage{
 TimsonsIndex(germ.counts, intervals, partial = TRUE, total.seeds, max,
-  modification = c("none", "labouriau", "khanunger"))
+  modification = c("none", "labouriau", "khanungar"))
 
 GermRateGeorge(germ.counts, intervals, partial = TRUE, max)
 }
@@ -26,7 +26,7 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 germination rate is to be computed.}
 
 \item{modification}{The modification to be applied. Either \code{"none"},
-\code{"labouriau"} or \code{"khanunger"}. Default is \code{"none"} (see
+\code{"labouriau"} or \code{"khanungar"}. Default is \code{"none"} (see
 \strong{Details}).}
 }
 \value{
@@ -92,6 +92,10 @@ germination (not cumulative, but partial germination) in time interval
 \ifelse{html}{\out{<i>t</i>}}{\eqn{t}} is the total number of time intervals
 and \ifelse{html}{\out{<i>j = i - 1</i>}}{\eqn{j = i - 1}}.
 
+Timson's index is equivalent to the Germination Energy Index
+\ifelse{html}{\out{<i>GEI</i>}}{\eqn{GEI}}proposed by
+\insertCite{grose_laboratory_1958;textual}{germinationmetrics}.
+
 Timson's index is similar to the germination rate proposed by
 \insertCite{george_influence_1961;textual}{germinationmetrics} as follows
 \insertCite{tucker_estimating_1965,nichols_two_1968}{germinationmetrics}.
@@ -141,7 +145,7 @@ TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
              modification = "labouriau")
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
-             modification = "khanunger")
+             modification = "khanungar")
 # With max specified
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50, max = 10)
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
@@ -149,7 +153,7 @@ TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
              max = 10, modification = "labouriau")
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
-             max = 10, modification = "khanunger")
+             max = 10, modification = "khanungar")
 
 # Wihout max specified
 GermRateGeorge(germ.counts = x, intervals = int)
