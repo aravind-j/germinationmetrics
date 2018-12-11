@@ -8,13 +8,14 @@ germination.indices(data, total.seeds.col, counts.intervals.cols,
   intervals, partial = TRUE, FirstGermTime = TRUE,
   LastGermTime = TRUE, PeakGermTime = TRUE, TimeSpreadGerm = TRUE,
   t50 = TRUE, MeanGermTime = TRUE, VarGermTime = TRUE,
-  SEGermTime = TRUE, CVSEGermTime = TRUE, MeanGermRate = TRUE,
+  SEGermTime = TRUE, CVGermTime = TRUE, MeanGermRate = TRUE,
   CVG = TRUE, VarGermRate = TRUE, SEGermRate = TRUE,
   GermRateRecip = TRUE, GermSpeed = TRUE,
   GermSpeedAccumulated = TRUE, GermSpeedCorrected = TRUE,
   MeanGermPercent = TRUE, MeanGermNumber = TRUE, TimsonsIndex = TRUE,
-  GermRateGeorge = TRUE, PeakValue = TRUE, GermValue = TRUE,
-  CUGerm = TRUE, GermSynchrony = TRUE, GermUncertainty = TRUE)
+  GermRateGeorge = TRUE, max.int, PeakValue = TRUE, GermValue = TRUE,
+  gv.constant = 10, CUGerm = TRUE, GermSynchrony = TRUE,
+  GermUncertainty = TRUE)
 }
 \arguments{
 \item{data}{A data frame with the germination count data. It should possess
@@ -23,12 +24,13 @@ time interval (to be indicated by the argument \code{counts.intervals.cols}
 and \item Total number of seeds tested (to be indicated by the argument
 \code{total.seeds.col}). }}
 
-\item{total.seeds.col}{The name of the column with the total number of seeds
-tested.}
+\item{total.seeds.col}{The name of the column in \code{data} with the total
+number of seeds tested.}
 
-\item{counts.intervals.cols}{The names of columns with the germination counts
-(partial or cumulative, as indicated by the argument \code{partial}) per
-time interval (indicated by the argument \code{intervals}).}
+\item{counts.intervals.cols}{The names of columns in \code{data} with the
+germination counts (partial or cumulative, as indicated by the argument
+\code{partial}) per time interval (indicated by the argument
+\code{intervals}).}
 
 \item{intervals}{The time intervals at which germination counts (in the
 columns specified in argument \code{counts.intervals.cols})  were recorded.}
@@ -36,29 +38,169 @@ columns specified in argument \code{counts.intervals.cols})  were recorded.}
 \item{partial}{logical. If \code{TRUE}, germination counts in
 \code{counts.intervals.cols} is considered as partial and if \code{FALSE},
 it is considered as cumulative. Default is \code{TRUE}.}
+
+\item{FirstGermTime}{logical. If \code{TRUE}, the Time of first germination
+or Germination time lag
+(\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}})
+\insertCite{edwards_temperature_1932,czabator_germination_1962,goloff_germination_1975,labouriau_germinacao_1983,ranal_effects_1999,quintanilla_effect_2000}{germinationmetrics}
+ is computed. Default is \code{TRUE}.}
+
+\item{LastGermTime}{logical. If \code{TRUE}, the Time of last germination
+(\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}})
+\insertCite{edwards_temperature_1932,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
+ is computed. Default is \code{TRUE}.}
+
+\item{PeakGermTime}{logical. If \code{TRUE}, the Peak time of germination or
+Modal time of germination \insertCite{ranal_how_2006}{germinationmetrics}
+is computed. Default is \code{TRUE}.}
+
+\item{TimeSpreadGerm}{logical. If \code{TRUE}, the Time spread of germination
+\insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}.
+ is computed. Default is \code{TRUE}.}
+
+\item{t50}{logical. If \code{TRUE}, the Median germination time
+(\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}})
+\insertCite{coolbear_effect_1984,farooq_thermal_2005}{germinationmetrics}
+is computed. Default is \code{TRUE}.}
+
+\item{MeanGermTime}{logical. If \code{TRUE}, the Mean germination time
+(\ifelse{html}{\out{<em><span
+style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or
+Mean length of incubation time
+\insertCite{edmond_effects_1958,czabator_germination_1962,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
+ is computed. Default is \code{TRUE}.}
+
+\item{VarGermTime}{logical. If \code{TRUE}, the Variance of germination time
+(\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}})
+\insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}
+is computed. Default is \code{TRUE}.}
+
+\item{SEGermTime}{logical. If \code{TRUE}, the Standard error of germination
+time (\ifelse{html}{\out{<em>s<sub><span
+style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
+ \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
+is computed. Default is \code{TRUE}.}
+
+\item{CVGermTime}{logical. If \code{TRUE}, the Coefficient of variation of
+the germination time
+(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
+\insertCite{ranal_how_2006}{germinationmetrics} is computed. Default is
+\code{TRUE}.}
+
+\item{MeanGermRate}{logical. If \code{TRUE}, the Mean germination rate
+(\ifelse{html}{\out{<em><span
+style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
+\insertCite{labouriau_germination_1976,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
+ is computed. Default is \code{TRUE}.}
+
+\item{CVG}{logical. If \code{TRUE}, the Coefficient of velocity/rate of
+germination or Kotowski's coefficient of velocity
+(\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
+\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds:_1994}{germinationmetrics}.
+ is computed. Default is \code{TRUE}.}
+
+\item{VarGermRate}{logical. If \code{TRUE}, the Variance of germination rate
+(\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}})
+\insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics} is
+computed. Default is \code{TRUE}.}
+
+\item{SEGermRate}{logical. If \code{TRUE}, the Standard error of germination
+rate (\ifelse{html}{\out{<em>s<sub><span
+style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
+ \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics} is
+computed. Default is \code{TRUE}.}
+
+\item{GermRateRecip}{logical. If \code{TRUE}, the Germination rate as
+reciprocal of median time
+(\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}})
+\insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}
+ is computed.}
+
+\item{GermSpeed}{logical. If \code{TRUE}, the Speed of germination or
+Germination rate index or Index of velocity of germination or Germination
+index
+\insertCite{kendrick_photocontrol_1969,aosa_seed_1983}{germinationmetrics}
+is computed.}
+
+\item{GermSpeedAccumulated}{logical. If \code{TRUE}, the Speed of accumulated
+germination
+\insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}
+ is computed.}
+
+\item{GermSpeedCorrected}{logical. If \code{TRUE}, the Corrected speed of
+germination or Corrected germination rate index
+\insertCite{evetts_germination_1972}{germinationmetrics} is computed.}
+
+\item{MeanGermPercent}{logical. If \code{TRUE}, the Mean/average germination
+percentage per unit time (\ifelse{html}{\out{<em><span
+style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}})
+\insertCite{czabator_germination_1962}{germinationmetrics} is computed.}
+
+\item{MeanGermNumber}{logical. If \code{TRUE}, the Number of seeds germinated
+per unit time (\ifelse{html}{\out{<em><span style="text-decoration:
+overline">N</span></em>}}{\eqn{\overline{N}}})
+\insertCite{khamassi_optimal_2013}{germinationmetrics} is computed.}
+
+\item{TimsonsIndex}{logical. If \code{TRUE}, the Timson's index or Timson's
+germination velocity index \insertCite{timson_new_1965}{germinationmetrics}
+and it's modifications by Labouriau
+\insertCite{ranal_how_2006}{germinationmetrics} and
+\insertCite{khan_effect_1984}{germinationmetrics} is computed.}
+
+\item{GermRateGeorge}{logical. If \code{TRUE}, the George's index
+\insertCite{george_influence_1961;textual}{germinationmetrics} is computed.}
+
+\item{max.int}{The maximum interval value up to which Timson's index/George's
+germination rate is to be computed.}
+
+\item{PeakValue}{logical. If \code{TRUE}, the Peak value
+\insertCite{czabator_germination_1962}{germinationmetrics} is computed.}
+
+\item{GermValue}{logical. If \code{TRUE}, the Germination value
+\insertCite{czabator_germination_1962,djavanshir_germination_1976}{germinationmetrics}
+ is computed.}
+
+\item{CUGerm}{logical. If \code{TRUE}, the Coefficient of uniformity of
+germination (CUG)
+\insertCite{heydecker_seed_1972,bewley_seeds:_1994}{germinationmetrics} is
+computed.}
+
+\item{GermSynchrony}{logical. If \code{TRUE}, the Synchrony of germination
+(\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index)
+\insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics} is
+computed.}
+
+\item{GermUncertainty}{logical. If \code{TRUE}, the Synchronization index
+(\ifelse{html}{\out{<em><span style="text-decoration:
+overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
+germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or
+Informational entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}})
+\insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}
+ is computed.}
+
+\item{gv.k}{The k Constant for computation of germination value. Default is
+10.}
 }
 \value{
 A data frame with the original data along with the various
   single-value germination indices specified in the function arguments.
 }
 \description{
-Compute the following germination indices from a data frame of germination
-counts recorded at specific time intervals for multiple samples in batch.
-\itemize{ \item Mean germination time (\ifelse{html}{\out{<em><span
-style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or Mean
-length of incubation time
-\insertCite{edmond_effects_1958,czabator_germination_1962,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
-\item Variance of germination time (\ifelse{html}{\out{<em>s<sup>2</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}})
-\insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
-\item Standard error of germination time (\ifelse{html}{\out{<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
-\insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
-\item Coefficient of variation of the germination time
-(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
-\insertCite{ranal_how_2006}{germinationmetrics}. }
+Compute germination indices from a data frame of germination counts recorded
+at specific time intervals for multiple samples in batch.
 }
 \examples{
+
+data(gcdata)
+
+counts.per.intervals <- c("Day1", "Day2", "Day3", "Day4", "Day5",
+                          "Day6", "Day7", "Day8", "Day9", "Day10", "Day11",
+                          "Day12", "Day13", "Day14")
+germination.indices(gcdata, total.seeds.col = "Total Seeds",
+                    counts.intervals.cols = counts.per.intervals,
+                    intervals = 1:14, partial = TRUE, max.int = 5)
 
 }
 \references{
@@ -68,6 +210,30 @@ style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
 This function is a wrapper around the different functions for
   computation of single-value germination indices in
   \href{https://cran.r-project.org/package=germinationmetrics}{germinationmetrics}
-   (\code{\link[germinationmetrics]{MeanGermTime}},
-  \code{\link[germinationmetrics]{t50}})
+   (\code{\link[germinationmetrics]{FirstGermTime}},
+  \code{\link[germinationmetrics:FirstGermTime]{LastGermTime}},
+  \code{\link[germinationmetrics:FirstGermTime]{PeakGermTime}},
+  \code{\link[germinationmetrics:FirstGermTime]{TimeSpreadGerm}},
+  \code{\link[germinationmetrics]{t50}},
+  \code{\link[germinationmetrics]{MeanGermTime}},
+  \code{\link[germinationmetrics:MeanGermTime]{VarGermTime}},
+  \code{\link[germinationmetrics:MeanGermTime]{SEGermTime}},
+  \code{\link[germinationmetrics:MeanGermTime]{CVGermTime}},
+  \code{\link[germinationmetrics]{MeanGermRate}},
+  \code{\link[germinationmetrics:MeanGermRate]{CVG}},
+  \code{\link[germinationmetrics:MeanGermRate]{VarGermRate}},
+  \code{\link[germinationmetrics:MeanGermRate]{SEGermRate}},
+  \code{\link[germinationmetrics:MeanGermRate]{GermRateRecip}},
+  \code{\link[germinationmetrics]{GermSpeed}},
+  \code{\link[germinationmetrics:GermSpeed]{GermSpeedAccumulated}},
+  \code{\link[germinationmetrics:GermSpeed]{GermSpeedCorrected}},
+  \code{\link[germinationmetrics]{MeanGermPercent}},
+  \code{\link[germinationmetrics:GermSpeed]{MeanGermPercent}},
+  \code{\link[germinationmetrics]{TimsonsIndex}},
+  \code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}},
+  \code{\link[germinationmetrics]{PeakValue}},
+  \code{\link[germinationmetrics:PeakValue]{GermValue}},
+  \code{\link[germinationmetrics]{CUGerm}},
+  \code{\link[germinationmetrics]{GermSynchrony}},
+  \code{\link[germinationmetrics:GermSynchrony]{GermUncertainty}})
 }
