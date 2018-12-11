@@ -17,5 +17,14 @@ An example germination count dataset. It includes germination count data over
 }
 \examples{
 
+data(gcdata)
+
+counts.per.intervals <- c("Day1", "Day2", "Day3", "Day4", "Day5",
+                          "Day6", "Day7", "Day8", "Day9", "Day10", "Day11",
+                          "Day12", "Day13", "Day14")
+germination.indices(gcdata, total.seeds.col = "Total Seeds",
+                    counts.intervals.cols = counts.per.intervals,
+                    intervals = 1:14, partial = TRUE, max.int = 5)
+
 }
 \keyword{datasets}
