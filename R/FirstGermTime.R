@@ -24,9 +24,10 @@
 #' \item{\code{LastGermTime}}{Time of last germination
 #' (\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}})
 #' \insertCite{edwards_temperature_1932,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
-#' \item{\code{PeakGermTime}}{Time spread of germination
-#' \insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}.}
-#' \item{\code{TimeSpreadGerm}}{Peak time of germination or Modal time of
+#' \item{\code{TimeSpreadGerm}}{Time spread of germination
+#' \insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}
+#' or Germination distribution \insertCite{schrader_seed_2000}{germinationmetrics}.}
+#' \item{\code{PeakGermTime}}{Peak time of germination or Modal time of
 #' germination \insertCite{ranal_how_2006}{germinationmetrics}.} }
 #'
 #' Time of first germination indicates time of germination of the faster seeds
