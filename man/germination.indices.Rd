@@ -12,10 +12,10 @@ germination.indices(data, total.seeds.col, counts.intervals.cols,
   CVG = TRUE, VarGermRate = TRUE, SEGermRate = TRUE,
   GermRateRecip = TRUE, GermSpeed = TRUE,
   GermSpeedAccumulated = TRUE, GermSpeedCorrected = TRUE,
-  MeanGermPercent = TRUE, MeanGermNumber = TRUE, TimsonsIndex = TRUE,
-  GermRateGeorge = TRUE, max.int, PeakValue = TRUE, GermValue = TRUE,
-  gv.constant = 10, CUGerm = TRUE, GermSynchrony = TRUE,
-  GermUncertainty = TRUE)
+  WeightGermPercent = TRUE, MeanGermPercent = TRUE,
+  MeanGermNumber = TRUE, TimsonsIndex = TRUE, GermRateGeorge = TRUE,
+  max.int, PeakValue = TRUE, GermValue = TRUE, gv.constant = 10,
+  CUGerm = TRUE, GermSynchrony = TRUE, GermUncertainty = TRUE)
 }
 \arguments{
 \item{data}{A data frame with the germination count data. It should possess
@@ -55,8 +55,10 @@ Modal time of germination \insertCite{ranal_how_2006}{germinationmetrics}
 is computed. Default is \code{TRUE}.}
 
 \item{TimeSpreadGerm}{logical. If \code{TRUE}, the Time spread of germination
-\insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}.
- is computed. Default is \code{TRUE}.}
+\insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}
+ or Germination distribution
+\insertCite{schrader_seed_2000}{germinationmetrics}. is computed. Default
+is \code{TRUE}.}
 
 \item{t50}{logical. If \code{TRUE}, the Median germination time
 (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}})
@@ -68,6 +70,10 @@ is computed. Default is \code{TRUE}.}
 style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or
 Mean length of incubation time
 \insertCite{edmond_effects_1958,czabator_germination_1962,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
+ or Sprouting index (\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}})
+\insertCite{smith_germinating_1964}{germinationmetrics} or Germination
+Resistance (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}})
+\insertCite{gordon_observations_1969,gordon_germination_1971;textual}{germinationmetrics}
  is computed. Default is \code{TRUE}.}
 
 \item{VarGermTime}{logical. If \code{TRUE}, the Variance of germination time
@@ -120,18 +126,24 @@ reciprocal of median time
 
 \item{GermSpeed}{logical. If \code{TRUE}, the Speed of germination or
 Germination rate index or Index of velocity of germination or Germination
-index
-\insertCite{kendrick_photocontrol_1969,aosa_seed_1983}{germinationmetrics}
-is computed.}
+index or Emergence rate index
+\insertCite{throneberry_relation_1955,maguire_speed_1962,allan_seedling_1962,kendrick_photocontrol_1969,bouton_germination_1976,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}
+ considering both counts and percentages is computed.}
 
 \item{GermSpeedAccumulated}{logical. If \code{TRUE}, the Speed of accumulated
 germination
 \insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}
- is computed.}
+ considering both counts and percentages is computed.}
 
 \item{GermSpeedCorrected}{logical. If \code{TRUE}, the Corrected speed of
-germination or Corrected germination rate index
+germination or Corrected germination rate index and the Corrected speed of
+accumulated germination
 \insertCite{evetts_germination_1972}{germinationmetrics} is computed.}
+
+\item{WeightGermPercent}{logical. If \code{TRUE}, the Weighted germination
+percentage \ifelse{html}{\out{<i>WGP</i>}}{\eqn{WGP}} or Weighted
+germination index \ifelse{html}{\out{<i>WGI</i>}}{\eqn{WGI}}
+\insertCite{reddy_effect_1978}{germinationmetrics} is computed.}
 
 \item{MeanGermPercent}{logical. If \code{TRUE}, the Mean/average germination
 percentage per unit time (\ifelse{html}{\out{<em><span
@@ -144,8 +156,9 @@ overline">N</span></em>}}{\eqn{\overline{N}}})
 \insertCite{khamassi_optimal_2013}{germinationmetrics} is computed.}
 
 \item{TimsonsIndex}{logical. If \code{TRUE}, the Timson's index or Timson's
-germination velocity index \insertCite{timson_new_1965}{germinationmetrics}
-and it's modifications by Labouriau
+germination velocity index
+\insertCite{grose_laboratory_1958,timson_new_1965,brown_representing_1988,baskin_seeds:_1998}{germinationmetrics}
+ and it's modifications by Labouriau
 \insertCite{ranal_how_2006}{germinationmetrics} and
 \insertCite{khan_effect_1984}{germinationmetrics} is computed.}
 
@@ -156,11 +169,16 @@ and it's modifications by Labouriau
 germination rate is to be computed.}
 
 \item{PeakValue}{logical. If \code{TRUE}, the Peak value
-\insertCite{czabator_germination_1962}{germinationmetrics} is computed.}
+(\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) or Emergence Energy
+(\ifelse{html}{\out{<i>EE</i>}}{\eqn{EE}})
+\insertCite{czabator_germination_1962,bonner_ideal_1967}{germinationmetrics}
+ is computed.}
 
 \item{GermValue}{logical. If \code{TRUE}, the Germination value
 \insertCite{czabator_germination_1962,djavanshir_germination_1976}{germinationmetrics}
- is computed.}
+ and its modification considering duration from start of test instead of
+from onset of germination
+\insertCite{brown_representing_1988}{germinationmetrics} is computed.}
 
 \item{CUGerm}{logical. If \code{TRUE}, the Coefficient of uniformity of
 germination (CUG)
@@ -227,6 +245,7 @@ This function is a wrapper around the different functions for
   \code{\link[germinationmetrics]{GermSpeed}},
   \code{\link[germinationmetrics:GermSpeed]{GermSpeedAccumulated}},
   \code{\link[germinationmetrics:GermSpeed]{GermSpeedCorrected}},
+  \code{\link[germinationmetrics]{WeightGermPercent}},
   \code{\link[germinationmetrics]{MeanGermPercent}},
   \code{\link[germinationmetrics:GermSpeed]{MeanGermPercent}},
   \code{\link[germinationmetrics]{TimsonsIndex}},
