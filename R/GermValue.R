@@ -17,9 +17,10 @@
 
 #' Peak value and germination value
 #'
-#' Compute the Peak value
-#' \insertCite{czabator_germination_1962}{germinationmetrics} and Germination
-#' value
+#' Compute the Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) or
+#' Emergence Energy (\ifelse{html}{\out{<i>EE</i>}}{\eqn{EE}})
+#' \insertCite{czabator_germination_1962,bonner_ideal_1967}{germinationmetrics}
+#' and Germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}})
 #' \insertCite{czabator_germination_1962,djavanshir_germination_1976}{germinationmetrics}.
 #'
 #' Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) is the maximum quotient
@@ -30,7 +31,8 @@
 #' a typical sigmoid  germination curve
 #' \insertCite{djavanshir_germination_1976}{germinationmetrics}. It is the
 #' accumulated number of seeds germinated at the point on the germination curve
-#' at which the rate of germination starts to decrease.
+#' at which the rate of germination starts to decrease. It is also described as
+#' Emergence energy \insertCite{bonner_ideal_1967}{germinationmetrics}.
 #'
 #' For daily germination counts, germination value
 #' (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) is computed as follows
@@ -41,7 +43,7 @@
 #'
 #' Where, \ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}} is the peak value and
 #' \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} is the mean daily germination
-#' percentage.
+#' percentage from the onset of germination.
 #'
 #' Germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) can also be
 #' computed for other time intervals of successive germination counts, by
@@ -59,7 +61,7 @@
 #'
 #' Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination
 #' speed computed by dividing cumulative germination percentage by the number of
-#' days since the beginning of the test, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}}
+#' days since the onset of germination, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}}
 #' is the frequency or number of DGS calculated during the test, \eqn{GP} is the
 #' germination percentage expressed over 100 and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is a constant. The value of
@@ -70,10 +72,21 @@
 #' if it is more than 10, then value of 7 or 8 can be used for
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}}.
 #'
+#' For both methods of computing \ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}, only
+#' the duration from the onset of germination is considered by default.
+#' Alternatively, modified \ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}
+#' (\ifelse{html}{\out{<i>GV</sub>mod<sub></i>}}{\eqn{GV_{mod}}}), where the
+#' entire duration from the beginning of the test is considered can be obtained
+#' by using the argument \code{from.onset = FALSE}
+#' \insertCite{brown_representing_1988}{germinationmetrics}.
+#'
 #' @inheritParams MeanGermTime
 #' @param total.seeds Total number of seeds.
 #' @param method The method for computing germination value. Either
 #'   \code{"czabator"} or \code{"dp"}.
+#' @param from.onset logical. If \code{TRUE}, duration is considered only from
+#'   the onset of germination. If \code{FALSE}, full duration of germination
+#'   test is considered. Default is \code{TRUE}.
 #' @param k Constant (See \strong{Details}). Default is 10.
 #'
 #' @return A list with the following components:  \item{Germination Value}{The
@@ -101,6 +114,10 @@
 #'           method = "czabator")
 #' GermValue(germ.counts = x, intervals = int, total.seeds = 200,
 #'           method = "dp", k = 10)
+#' GermValue(germ.counts = x, intervals = int, total.seeds = 200,
+#'           method = "czabator", from.onset = FALSE)
+#' GermValue(germ.counts = x, intervals = int, total.seeds = 200,
+#'           method = "dp", k = 10, from.onset = FALSE)
 #'
 #' # From cumulative germination counts
 #' #----------------------------------------------------------------------------
@@ -110,6 +127,10 @@
 #'           partial = FALSE, method = "czabator")
 #' GermValue(germ.counts = y, intervals = int, total.seeds = 200,
 #'           partial = FALSE, method = "dp", k = 10)
+#' GermValue(germ.counts = y, intervals = int, total.seeds = 200,
+#'           partial = FALSE, method = "czabator", from.onset = FALSE)
+#' GermValue(germ.counts = y, intervals = int, total.seeds = 200,
+#'           partial = FALSE, method = "dp", k = 10, from.onset = FALSE)
 #'
 
 #' @rdname GermValue
@@ -161,7 +182,7 @@ PeakValue <- function(germ.counts, intervals, total.seeds, partial = TRUE) {
 #' @rdname GermValue
 #' @export
 GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
-                              method = c("czabator", "dp"), k = 10) {
+                      method = c("czabator", "dp"), from.onset = TRUE, k = 10) {
   # Check if argument germ.counts is of type numeric
   if (!is.numeric(germ.counts)) {
     stop("'germ.counts' should be a numeric vector.")
@@ -208,15 +229,16 @@ GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
   df <- data.frame(germ.counts, intervals)
 
-  # Fetch only data from start of germination
-  startindex <- min(which(df$germ.counts != 0))
-  df <- df[startindex:nrow(df),]
+  if (from.onset) {
+    # Fetch only data from start of germination
+    startindex <- min(which(df$germ.counts != 0))
+    df <- df[startindex:nrow(df), ]
+  }
 
   x <- df$germ.counts
   csx <- cumsum(x)
   csxp <- (csx/total.seeds) * 100
   DGS <-  csxp/df$intervals
-
 
   if (method == "czabator") {
     PV <- PeakValue(germ.counts, intervals, total.seeds, partial)
