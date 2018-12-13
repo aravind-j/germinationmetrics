@@ -41,7 +41,7 @@ Compute the Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) or
 Emergence Energy (\ifelse{html}{\out{<i>EE</i>}}{\eqn{EE}})
 \insertCite{czabator_germination_1962,bonner_ideal_1967}{germinationmetrics}
 and Germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}})
-\insertCite{czabator_germination_1962,djavanshir_germination_1976}{germinationmetrics}.
+\insertCite{czabator_germination_1962,djavanshir_germination_1976,brown_representing_1988}{germinationmetrics}.
 }
 \details{
 Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) is the maximum quotient

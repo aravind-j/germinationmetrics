@@ -38,14 +38,14 @@ For \code{TimsonsIndex} The value of Timson's index.
 Compute George's index
 \insertCite{george_influence_1961;textual}{germinationmetrics}, Timson's
 index or Timson's germination velocity index
-\insertCite{timson_new_1965}{germinationmetrics} and it's modifications by
+\insertCite{grose_laboratory_1958,timson_new_1965}{germinationmetrics} and it's modifications by
 Labouriau \insertCite{ranal_how_2006}{germinationmetrics} and
 \insertCite{khan_effect_1984}{germinationmetrics}.
 }
 \details{
 Timson's index \insertCite{timson_new_1965}{germinationmetrics} is computed
 as follows
-\insertCite{brown_representing_1988,baskin_seeds:_1998}{germinationmetrics}.
+\insertCite{grose_laboratory_1958,brown_representing_1988,baskin_seeds:_1998}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>&sum;n =
 &sum;<sup>t</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1
