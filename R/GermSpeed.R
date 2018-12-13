@@ -285,7 +285,8 @@ GermSpeedCorrected <- function(germ.counts, intervals, partial = TRUE,
     speed <- GermSpeedAccumulated(germ.counts, intervals, partial)
   }
 
-  gp <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds)
+  gp <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
+                    partial = partial)
   cspeed <- speed/gp
 
   return(cspeed)
