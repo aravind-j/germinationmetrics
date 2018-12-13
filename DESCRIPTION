@@ -50,6 +50,7 @@ Imports:
 Suggests:
     knitr,
     rmarkdown,
+    reshape2,
     pander,
     XML,
     httr,
