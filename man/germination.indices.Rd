@@ -251,7 +251,7 @@ This function is a wrapper around the different functions for
   \code{\link[germinationmetrics]{TimsonsIndex}},
   \code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}},
   \code{\link[germinationmetrics]{GermValue}},
-  \code{\link[germinationmetrics:PeakValue]{GermValue}},
+  \code{\link[germinationmetrics:GermValue]{PeakValue}},
   \code{\link[germinationmetrics]{CUGerm}},
   \code{\link[germinationmetrics]{GermSynchrony}},
   \code{\link[germinationmetrics:GermSynchrony]{GermUncertainty}})
