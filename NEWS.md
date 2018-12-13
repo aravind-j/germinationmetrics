@@ -1,5 +1,22 @@
 # germinationmetrics  0.1.3
 
+## NEW FUNCTIONS:
+* `WeightGermPercent` - Compute the Weighted germination percentage.
+* `germination.indices` - wrapper function to compute germination indices in batch.
+
+## UPDATED FUNCTIONS:
+* `CVGermTime` - Fixed error in function name (`CVSEGermTime`).
+* `TimsonsIndex` - Fixed error in method name (`khanungar`).
+* `GermSpeed` and `GermSpeedAccumulated` - Updated with option to use percentage germination in addition to germinaton counts.
+* `GermSpeedCorrected` - Updated with option to use `GermSpeedAccumulated` in addition to `GermSpeed`.
+* `GermValue` - Updated with option to consider time from start of test in addition to time from onset of germination.
+
+## VIGNETTE:
+* Fixed LATEX xcolor options clash issue in vignette.
+
+## OTHER NOTES: 
+* Updated documentation - `GermValue`, `MeanGermTime` and `TimsonsIndex`.
+
 # germinationmetrics  0.1.2
 
 ## OTHER NOTES: 

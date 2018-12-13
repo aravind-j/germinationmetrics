@@ -176,6 +176,7 @@ The details about the single-value germination indices implemented in `germinati
 
 \newpage
 \blandscape
+\begin{small}
 
 \rowcolors{2}{gray!25}{white}
 \renewcommand{\arraystretch}{1.3}
@@ -209,6 +210,7 @@ pander::pander(indices, style='multiline',
                use.hyphening = FALSE, missing = "")
 ```
 
+\end{small}
 \elandscape
 
 \newpage
@@ -255,6 +257,10 @@ require(germinationmetrics)
 
 #### `GermSpeed(), GermSpeedAccumulated(), GermSpeedCorrected() `
 ```{r, runCode, code = getCode("GermSpeed", "germinationmetrics")}
+```
+
+#### `WeightGermPercent()`
+```{r, runCode, code = getCode("WeightGermPercent", "germinationmetrics")}
 ```
 
 #### `MeanGermPercent(), MeanGermNumber()`
@@ -326,6 +332,11 @@ library("germinationmetrics")
 ```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit", "germinationmetrics")}
 ```
 
+## Wrapper function
+
+#### `germination.indices()`
+```{r, runCode, code = getCode("germination.indices", "germinationmetrics")}
+```
 
 ## Citing `germinationmetrics`
 

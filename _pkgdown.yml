@@ -41,13 +41,22 @@ reference:
          - '`MeanGermTime`'
          - '`MeanGermRate`'
          - '`GermSpeed`'
+         - '`WeightGermPercent`'
          - '`MeanGermPercent`'
          - '`TimsonsIndex`'
          - '`PeakValue`'
          - '`CUGerm`'
          - '`GermSynchrony`'
 
-    - title: Curve fitting
+    - title: Non-linear regression analysis
       contents:
          - '`FourPHFfit`'
          - '`plot.FourPHFfit`'
+
+    - title: Wrapper
+      contents:
+         - '`germination.indices`'
+
+    - title: Data
+      contents:
+         - '`gcdata`'
