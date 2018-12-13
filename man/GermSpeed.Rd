@@ -6,11 +6,14 @@
 \alias{GermSpeedCorrected}
 \title{Speed of germination}
 \usage{
-GermSpeed(germ.counts, intervals, partial = TRUE)
+GermSpeed(germ.counts, intervals, partial = TRUE, percent = FALSE,
+  total.seeds = NULL)
 
-GermSpeedAccumulated(germ.counts, intervals, partial = TRUE)
+GermSpeedAccumulated(germ.counts, intervals, partial = TRUE,
+  percent = FALSE, total.seeds = NULL)
 
-GermSpeedCorrected(germ.counts, intervals, partial = TRUE, total.seeds)
+GermSpeedCorrected(germ.counts, intervals, partial = TRUE, total.seeds,
+  method = c("normal", "accumulated"))
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial
@@ -22,7 +25,15 @@ or cumulative as specified in the argument \code{partial}.}
 partial and if \code{FALSE}, it is considered as cumulative. Default is
 \code{TRUE}.}
 
-\item{total.seeds}{Total number of seeds.}
+\item{percent}{logical. If \code{TRUE}, germination percentage is used instead of
+counts for computation. Default is \code{FALSE}.}
+
+\item{total.seeds}{Total number of seeds. Mandatory for computation when
+\code{percent = TRUE}.}
+
+\item{method}{The method for computing germination speed in
+\code{GermSpeedCorrected}. Either \code{"normal"} (\code{GermSpeed}) or
+\code{"accumulated"} (\code{GermSpeedAccumulated}).}
 }
 \value{
 For \code{GermSpeed}, the value of germination speed as \%
@@ -37,8 +48,8 @@ For \code{GermSpeed}, the value of germination speed as \%
 Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
 germination or Germination rate index or Index of velocity of germination or
 Germination index
-\insertCite{kendrick_photocontrol_1969,aosa_seed_1983}{germinationmetrics}. }
-\item{\code{GermSpeedAccumulated}}{Speed of accumulated germination
+\insertCite{throneberry_relation_1955,maguire_speed_1962,kendrick_photocontrol_1969,bouton_germination_1976,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
+} \item{\code{GermSpeedAccumulated}}{Speed of accumulated germination
 \insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}.
 } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
 Corrected germination rate index
@@ -47,7 +58,7 @@ Corrected germination rate index
 \details{
 \code{GermSpeed} computes the speed of germination according to the following
 formula
-\insertCite{throneberry_relation_1955,maguire_speed_1962,kendrick_photocontrol_1969,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
+\insertCite{throneberry_relation_1955,maguire_speed_1962,kendrick_photocontrol_1969,bouton_germination_1976,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>S =
 <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
@@ -68,22 +79,6 @@ seeds observed at time (days or hours)
 \ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
 accumulated/cumulative number, but the number of seeds that germinated at the
 specific time).
-
-Speed of germination expresses the rate of germination in terms of the total
-number of seeds that germinate in a time interval. Higher values indicate
-greater and faster germination. This is useful for comparisons only when
-samples or treatments possess similar germinabilities. This is overcome by
-using the corrected speed of germination.
-
-\code{GermSpeedCorrected} computes the corrected speed of germination as
-follows \insertCite{evetts_germination_1972}{germinationmetrics}.
-
-\ifelse{html}{\out{<p style="text-align: center;"><i>S<sub>corrected</sub> =
-<sup>S</sup>&frasl;<sub>FGP</sub></i><p>}}{\deqn{S_{corrected} =
-\frac{S}{FGP} }}
-
-Where, \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the final germination
-percentage or germinability.
 
 \code{GermSpeedAccumulated} computes the speed of accumulated germination as
 follows
@@ -111,6 +106,26 @@ seeds observed at time (days or hours)
 \ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
 accumulated/cumulative number, but the number of seeds that germinated at the
 specific time).
+
+Speed of germination expresses the rate of germination in terms of the total
+number of seeds that germinate in a time interval. Higher values indicate
+greater and faster germination. This is useful for comparisons only when
+samples or treatments possess similar germinabilities. This is overcome by
+either using the corrected speed of germination or by using germination
+percentages instead of counts for computing speed.
+
+\code{GermSpeedCorrected} computes the corrected speed of germination as
+follows \insertCite{evetts_germination_1972}{germinationmetrics}.
+
+\ifelse{html}{\out{<p style="text-align: center;"><i>S<sub>corrected</sub> =
+<sup>S</sup>&frasl;<sub>FGP</sub></i><p>}}{\deqn{S_{corrected} =
+\frac{S}{FGP} }}
+
+Where, \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the final germination
+percentage or germinability.
+
+With \code{percent = TRUE}, germination percentage is used instead of counts
+for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
@@ -121,14 +136,33 @@ int <- 1:length(x)
 #----------------------------------------------------------------------------
 GermSpeed(germ.counts = x, intervals = int)
 GermSpeedAccumulated(germ.counts = x, intervals = int)
-GermSpeedCorrected(germ.counts = x, intervals = int, total.seeds = 50)
+GermSpeedCorrected(germ.counts = x, intervals = int, total.seeds = 50,
+                   method = "normal")
+GermSpeedCorrected(germ.counts = x, intervals = int, total.seeds = 50,
+                   method = "accumulated")
+
+# From partial germination counts (with percentages instead of counts)
+#----------------------------------------------------------------------------
+GermSpeed(germ.counts = x, intervals = int,
+          percent = TRUE, total.seeds = 50)
+GermSpeedAccumulated(germ.counts = x, intervals = int,
+                     percent = TRUE, total.seeds = 50)
 
 # From cumulative germination counts
 #----------------------------------------------------------------------------
 GermSpeed(germ.counts = y, intervals = int, partial = FALSE)
 GermSpeedAccumulated(germ.counts = y, intervals = int, partial = FALSE)
 GermSpeedCorrected(germ.counts = y, intervals = int,
-                   partial = FALSE, total.seeds = 50)
+                   partial = FALSE, total.seeds = 50, method = "normal")
+GermSpeedCorrected(germ.counts = y, intervals = int,
+                   partial = FALSE, total.seeds = 50, method = "accumulated")
+
+# From cumulative germination counts (with percentages instead of counts)
+#----------------------------------------------------------------------------
+GermSpeed(germ.counts = y, intervals = int, partial = FALSE,
+          percent = TRUE, total.seeds = 50)
+GermSpeedAccumulated(germ.counts = y, intervals = int, partial = FALSE,
+                     percent = TRUE, total.seeds = 50)
 }
 \references{
 \insertAllCited{}
