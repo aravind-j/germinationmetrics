@@ -213,8 +213,8 @@
 #'   \code{\link[germinationmetrics:GermSpeed]{MeanGermPercent}},
 #'   \code{\link[germinationmetrics]{TimsonsIndex}},
 #'   \code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}},
-#'   \code{\link[germinationmetrics]{PeakValue}},
-#'   \code{\link[germinationmetrics:PeakValue]{GermValue}},
+#'   \code{\link[germinationmetrics]{GermValue}},
+#'   \code{\link[germinationmetrics:GermValue]{PeakValue}},
 #'   \code{\link[germinationmetrics]{CUGerm}},
 #'   \code{\link[germinationmetrics]{GermSynchrony}},
 #'   \code{\link[germinationmetrics:GermSynchrony]{GermUncertainty}})
@@ -236,7 +236,7 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
                                 MeanGermPercent = TRUE, MeanGermNumber = TRUE,
                                 TimsonsIndex = TRUE, GermRateGeorge = TRUE,
                                 max.int, PeakValue = TRUE, GermValue = TRUE,
-                                gv.constant = 10,
+                                gv.k = 10,
                                 CUGerm = TRUE, GermSynchrony = TRUE,
                                 GermUncertainty = TRUE) {
   # Check if data.frame

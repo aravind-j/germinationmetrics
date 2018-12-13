@@ -14,7 +14,7 @@ germination.indices(data, total.seeds.col, counts.intervals.cols,
   GermSpeedAccumulated = TRUE, GermSpeedCorrected = TRUE,
   WeightGermPercent = TRUE, MeanGermPercent = TRUE,
   MeanGermNumber = TRUE, TimsonsIndex = TRUE, GermRateGeorge = TRUE,
-  max.int, PeakValue = TRUE, GermValue = TRUE, gv.constant = 10,
+  max.int, PeakValue = TRUE, GermValue = TRUE, gv.k = 10,
   CUGerm = TRUE, GermSynchrony = TRUE, GermUncertainty = TRUE)
 }
 \arguments{
@@ -180,6 +180,9 @@ germination rate is to be computed.}
 from onset of germination
 \insertCite{brown_representing_1988}{germinationmetrics} is computed.}
 
+\item{gv.k}{The k Constant for computation of germination value. Default is
+10.}
+
 \item{CUGerm}{logical. If \code{TRUE}, the Coefficient of uniformity of
 germination (CUG)
 \insertCite{heydecker_seed_1972,bewley_seeds:_1994}{germinationmetrics} is
@@ -197,9 +200,6 @@ germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or
 Informational entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}})
 \insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}
  is computed.}
-
-\item{gv.k}{The k Constant for computation of germination value. Default is
-10.}
 }
 \value{
 A data frame with the original data along with the various
@@ -250,7 +250,7 @@ This function is a wrapper around the different functions for
   \code{\link[germinationmetrics:GermSpeed]{MeanGermPercent}},
   \code{\link[germinationmetrics]{TimsonsIndex}},
   \code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}},
-  \code{\link[germinationmetrics]{PeakValue}},
+  \code{\link[germinationmetrics]{GermValue}},
   \code{\link[germinationmetrics:PeakValue]{GermValue}},
   \code{\link[germinationmetrics]{CUGerm}},
   \code{\link[germinationmetrics]{GermSynchrony}},
