@@ -5,7 +5,7 @@
 \alias{VarGermTime}
 \alias{SEGermTime}
 \alias{CVGermTime}
-\title{Germination Time}
+\title{Germination time}
 \usage{
 MeanGermTime(germ.counts, intervals, partial = TRUE)
 

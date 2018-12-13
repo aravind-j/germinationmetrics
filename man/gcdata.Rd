@@ -3,7 +3,7 @@
 \docType{data}
 \name{gcdata}
 \alias{gcdata}
-\title{Germination Count Data}
+\title{Germination count data}
 \format{A data frame with 17 columns: \describe{ \item{Genotype}{The
   genotype.} \item{Rep}{Replication.} \item{Day1 to Day14}{Number of seeds
   that germinated (germination counts) on a particular day.} \item{Total

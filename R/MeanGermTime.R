@@ -15,7 +15,7 @@
 # A copy of the GNU General Public License is available at
 # https://www.r-project.org/Licenses/
 
-#' Germination Time
+#' Germination time
 #'
 #' Compute the following metrics:\describe{ \item{\code{MeanGermTime}}{Mean
 #' germination time (\ifelse{html}{\out{<em><span

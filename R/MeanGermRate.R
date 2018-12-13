@@ -15,7 +15,7 @@
 # A copy of the GNU General Public License is available at
 # https://www.r-project.org/Licenses/
 
-#' Germination Rate
+#' Germination rate
 #'
 #' Compute the following metrics: \describe{ \item{\code{MeanGermRate}}{Mean
 #' germination rate (\ifelse{html}{\out{<em><span

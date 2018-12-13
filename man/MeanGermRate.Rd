@@ -6,7 +6,7 @@
 \alias{VarGermRate}
 \alias{SEGermRate}
 \alias{GermRateRecip}
-\title{Germination Rate}
+\title{Germination rate}
 \usage{
 MeanGermRate(germ.counts, intervals, partial = TRUE)
 

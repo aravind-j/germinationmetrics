@@ -1,4 +1,4 @@
-#' Germination Count Data
+#' Germination count data
 #'
 #' An example germination count dataset. It includes germination count data over
 #' 14 days from five genotypes (G1 to G5) in three replications
