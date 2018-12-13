@@ -4,7 +4,7 @@
 \alias{WeightGermPercent}
 \title{Weighted germination percentage}
 \usage{
-WeightGermPercent(germ.counts, total.seeds, partial = TRUE)
+WeightGermPercent(germ.counts, total.seeds, intervals, partial = TRUE)
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial
@@ -12,12 +12,14 @@ or cumulative as specified in the argument \code{partial}.}
 
 \item{total.seeds}{Total number of seeds tested.}
 
+\item{intervals}{The time intervals.}
+
 \item{partial}{logical. If \code{TRUE}, \code{germ.counts} is considered as
 partial and if \code{FALSE}, it is considered as cumulative. Default is
 \code{TRUE}.}
 }
 \value{
-The germination percentage (\%) value.
+The weighted germination percentage (\%) value.
 }
 \description{
 Compute the Weighted germination percentage

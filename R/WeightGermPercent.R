@@ -44,7 +44,7 @@
 #' @inheritParams MeanGermTime
 #' @param total.seeds Total number of seeds tested.
 #'
-#' @return The germination percentage (\%) value.
+#' @return The weighted germination percentage (\%) value.
 #' @export
 #'
 #' @references
@@ -66,7 +66,7 @@
 #'                   partial = FALSE)
 #'
 #'
-WeightGermPercent <- function(germ.counts, total.seeds,
+WeightGermPercent <- function(germ.counts, total.seeds, intervals,
                         partial = TRUE) {
   # Check if argument total.seeds is of type numeric with unit length
   if (!is.numeric(total.seeds) || length(total.seeds) != 1) {
