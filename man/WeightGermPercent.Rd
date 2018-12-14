@@ -25,13 +25,13 @@ The weighted germination percentage (\%) value.
 Compute the Weighted germination percentage
 \ifelse{html}{\out{<i>WGP</i>}}{\eqn{WGP}} or Weighted germination index
 \ifelse{html}{\out{<i>WGI</i>}}{\eqn{WGI}}
-\insertCite{reddy_effect_1978}{germinationmetrics}.
+\insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics}.
 }
 \details{
 Weighted germination percentage was calculated by giving maximum weight to
 the seeds that germinate first and decreasing weight to the seeds that
 germinate subsequently. It is computed as follows
-\insertCite{reddy_effect_1978}{germinationmetrics}:
+\insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics}:
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>WGP =   <big>[</big>
 <sup> [&sum;<sup>t</sup><sub style="line-height: 1.8; margin-left:

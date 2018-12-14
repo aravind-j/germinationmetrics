@@ -123,7 +123,7 @@
 #' @param WeightGermPercent logical. If \code{TRUE}, the Weighted germination
 #'   percentage \ifelse{html}{\out{<i>WGP</i>}}{\eqn{WGP}} or Weighted
 #'   germination index \ifelse{html}{\out{<i>WGI</i>}}{\eqn{WGI}}
-#'   \insertCite{reddy_effect_1978}{germinationmetrics} is computed.
+#'   \insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics} is computed.
 #' @param MeanGermPercent logical. If \code{TRUE}, the Mean/average germination
 #'   percentage per unit time (\ifelse{html}{\out{<em><span
 #'   style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}})
