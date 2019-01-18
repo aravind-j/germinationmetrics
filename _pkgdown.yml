@@ -17,7 +17,7 @@ navbar:
   left:
     - icon: fa-home fa-lg
       text: Home
-      href: /index.html
+      href: index.html
     - icon: fa-code
       text: Reference
       href: reference/index.html
