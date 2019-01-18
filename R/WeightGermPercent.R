@@ -67,7 +67,7 @@
 #'
 #'
 WeightGermPercent <- function(germ.counts, total.seeds, intervals,
-                        partial = TRUE) {
+                              partial = TRUE) {
   # Check if argument total.seeds is of type numeric with unit length
   if (!is.numeric(total.seeds) || length(total.seeds) != 1) {
     stop("'total.seeds' should be a numeric vector of length 1.")

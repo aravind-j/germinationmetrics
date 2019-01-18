@@ -354,7 +354,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   # or time to reach x%  of germination
   txp.Germinated <- (((xp - y0)/100*(c^b))/(1 - ((xp - y0)/100)))^(1/b)
 
-  # Unifromity
+  # Uniformity
   UfmMax <- (((umax - y0)/100*(c^b))/(1 - ((umax - y0)/100)))^(1/b)
   UfmMin <- (((umin - y0)/100*(c^b))/(1 - ((umin - y0)/100)))^(1/b)
   Ufm <- UfmMax - UfmMin
