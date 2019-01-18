@@ -5,9 +5,23 @@
 \alias{gcdata}
 \title{Germination count data}
 \format{A data frame with 17 columns: \describe{ \item{Genotype}{The
-  genotype.} \item{Rep}{Replication.} \item{Day1 to Day14}{Number of seeds
-  that germinated (germination counts) on a particular day.} \item{Total
-  Seeds}{Total number of seeds tested.} }}
+  genotype.} \item{Rep}{Replication.} \item{Day01}{Number of seeds that
+  germinated (germination counts) on Day 1.} \item{Day02}{Number of seeds
+  that germinated (germination counts) on Day 2.} \item{Day03}{Number of
+  seeds that germinated (germination counts) on Day 3.} \item{Day04}{Number
+  of seeds that germinated (germination counts) on Day 4.}
+  \item{Day05}{Number of seeds that germinated (germination counts) on Day
+  5.} \item{Day06}{Number of seeds that germinated (germination counts) on
+  Day 6.} \item{Day07}{Number of seeds that germinated (germination counts)
+  on Day 7.} \item{Day08}{Number of seeds that germinated (germination
+  counts) on Day 8.} \item{Day09}{Number of seeds that germinated
+  (germination counts) on Day 9.} \item{Day10}{Number of seeds that
+  germinated (germination counts) on Day 10.} \item{Day11}{Number of seeds
+  that germinated (germination counts) on Day 11.} \item{Day12}{Number of
+  seeds that germinated (germination counts) on Day 12.} \item{Day13}{Number
+  of seeds that germinated (germination counts) on Day 13.}
+  \item{Day14}{Number of seeds that germinated (germination counts) on Day
+  14.} \item{Total Seeds}{Total number of seeds tested.} }}
 \usage{
 gcdata
 }
@@ -61,9 +75,9 @@ ggplot(gcdatamelt2, aes(x = variable, y = value,
 # Compute germination indices
 #----------------------------------------------------------------------------
 
-counts.per.intervals <- c("Day1", "Day2", "Day3", "Day4", "Day5",
-                          "Day6", "Day7", "Day8", "Day9", "Day10", "Day11",
-                          "Day12", "Day13", "Day14")
+counts.per.intervals <- c("Day01", "Day02", "Day03", "Day04", "Day05",
+                          "Day06", "Day07", "Day08", "Day09", "Day10",
+                          "Day11", "Day12", "Day13", "Day14")
 germination.indices(gcdata, total.seeds.col = "Total Seeds",
                     counts.intervals.cols = counts.per.intervals,
                     intervals = 1:14, partial = TRUE, max.int = 5)
