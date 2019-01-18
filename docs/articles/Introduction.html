@@ -39,14 +39,14 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.2.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.3</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
 <li>
-  <a href="..//index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
     Home
@@ -83,7 +83,7 @@
   </a>
 </li>
       </ul>
-<form class="navbar-form navbar-right" role="search">
+<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
         <div class="form-group">
           <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
@@ -103,7 +103,7 @@
       <h1>The <code>germinationmetrics</code> Package: A Brief Introduction</h1>
                         <h4 class="author">Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan</h4>
             
-            <h4 class="date">2018-12-14</h4>
+            <h4 class="date">2019-01-18</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -143,7 +143,7 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi.
   print.quosures rlang</code></pre>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to germinationmetrics version 0.1.2.9000
+Welcome to germinationmetrics version 0.1.3
 
 
 # To know how to use this package type:
@@ -165,7 +165,7 @@ Welcome to germinationmetrics version 0.1.2.9000
 <div id="version-history" class="section level2">
 <h2 class="hasAnchor">
 <a href="#version-history" class="anchor"></a>Version History</h2>
-<p>The current version of the package is 0.1.2. The previous versions are as follows.</p>
+<p>The current version of the package is 0.1.3. The previous versions are as follows.</p>
 <p><strong>Table 1.</strong> Version history of <code>germinationmetrics</code> <code>R</code> package.</p>
 <table class="table">
 <thead><tr class="header">
@@ -184,6 +184,10 @@ Welcome to germinationmetrics version 0.1.2.9000
 <tr class="odd">
 <td align="left">0.1.1.1</td>
 <td align="left">2018-10-16</td>
+</tr>
+<tr class="even">
+<td align="left">0.1.2</td>
+<td align="left">2018-10-31</td>
 </tr>
 </tbody>
 </table>
@@ -285,7 +289,7 @@ Welcome to germinationmetrics version 0.1.2.9000
 <a class="sourceLine" id="cb5-9" data-line-number="9">int &lt;-<span class="st"> </span>data<span class="op">$</span>intervals</a>
 <a class="sourceLine" id="cb5-10" data-line-number="10"></a>
 <a class="sourceLine" id="cb5-11" data-line-number="11"><span class="kw"><a href="https://www.rdocumentation.org/packages/graphics/topics/plot">plot</a></span>(int, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/cumsum">cumsum</a></span>(x))</a></code></pre></div>
-<p><img src="Introduction_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+<p><img src="Introduction_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
 </div>
 <div id="single-value-germination-indices" class="section level2">
 <h2 class="hasAnchor">
@@ -1820,210 +1824,211 @@ attr(,"class")
 <div id="wrapper-function" class="section level2">
 <h2 class="hasAnchor">
 <a href="#wrapper-function" class="anchor"></a>Wrapper function</h2>
+<p>The wrapper function <code><a href="../reference/germination.indices.html">germination.indices()</a></code> can be used to compute multiple germination indices from a data frame of germination counts recorded at specific time intervals for multiple samples in batch.</p>
 <div id="germination-indices" class="section level4">
 <h4 class="hasAnchor">
 <a href="#germination-indices" class="anchor"></a><code><a href="../reference/germination.indices.html">germination.indices()</a></code>
 </h4>
 <div class="sourceCode" id="cb216"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb216-1" data-line-number="1"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/data">data</a></span>(gcdata)</a>
 <a class="sourceLine" id="cb216-2" data-line-number="2"></a>
-<a class="sourceLine" id="cb216-3" data-line-number="3">counts.per.intervals &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Day1"</span>, <span class="st">"Day2"</span>, <span class="st">"Day3"</span>, <span class="st">"Day4"</span>, <span class="st">"Day5"</span>,</a>
-<a class="sourceLine" id="cb216-4" data-line-number="4">                          <span class="st">"Day6"</span>, <span class="st">"Day7"</span>, <span class="st">"Day8"</span>, <span class="st">"Day9"</span>, <span class="st">"Day10"</span>, <span class="st">"Day11"</span>,</a>
-<a class="sourceLine" id="cb216-5" data-line-number="5">                          <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span>)</a>
+<a class="sourceLine" id="cb216-3" data-line-number="3">counts.per.intervals &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</a>
+<a class="sourceLine" id="cb216-4" data-line-number="4">                          <span class="st">"Day06"</span>, <span class="st">"Day07"</span>, <span class="st">"Day08"</span>, <span class="st">"Day09"</span>, <span class="st">"Day10"</span>,</a>
+<a class="sourceLine" id="cb216-5" data-line-number="5">                          <span class="st">"Day11"</span>, <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span>)</a>
 <a class="sourceLine" id="cb216-6" data-line-number="6"><span class="kw"><a href="../reference/germination.indices.html">germination.indices</a></span>(gcdata, <span class="dt">total.seeds.col =</span> <span class="st">"Total Seeds"</span>,</a>
 <a class="sourceLine" id="cb216-7" data-line-number="7">                    <span class="dt">counts.intervals.cols =</span> counts.per.intervals,</a>
 <a class="sourceLine" id="cb216-8" data-line-number="8">                    <span class="dt">intervals =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">14</span>, <span class="dt">partial =</span> <span class="ot">TRUE</span>, <span class="dt">max.int =</span> <span class="dv">5</span>)</a></code></pre></div>
-<pre><code>   Genotype Rep Day1 Day2 Day3 Day4 Day5 Day6 Day7 Day8 Day9 Day10 Day11
-1        G1   1    0    0    0    0    4   17   10    7    1     0     1
-2        G2   1    0    0    0    1    3   15   13    6    2     1     0
-3        G3   1    0    0    0    2    3   18    9    8    2     1     1
-4        G4   1    0    0    0    0    4   19   12    6    2     1     1
-5        G5   1    0    0    0    0    5   20   12    8    1     0     0
-6        G1   2    0    0    0    0    3   21   11    7    1     1     1
-7        G2   2    0    0    0    0    4   18   11    7    1     0     1
-8        G3   2    0    0    0    1    3   14   12    6    2     1     0
-9        G4   2    0    0    0    1    3   19   10    8    1     1     1
-10       G5   2    0    0    0    0    4   18   13    6    2     1     0
-11       G1   3    0    0    0    0    5   21   11    8    1     0     0
-12       G2   3    0    0    0    0    3   20   10    7    1     1     1
-13       G3   3    0    0    0    0    4   19   12    8    1     1     0
-14       G4   3    0    0    0    0    3   21   11    6    1     0     1
-15       G5   3    0    0    0    0    4   17   10    8    1     1     1
-   Day12 Day13 Day14 Total Seeds GermPercent FirstGermTime LastGermTime
-1      0     0     0          50    80.00000             5           11
-2      1     0     0          51    82.35294             4           12
-3      1     0     0          48    93.75000             4           12
-4      1     0     0          51    90.19608             5           12
-5      1     1     0          50    96.00000             5           13
-6      1     0     0          49    93.87755             5           12
-7      0     0     0          48    87.50000             5           11
-8      1     0     0          47    85.10638             4           12
-9      1     0     0          52    86.53846             4           12
-10     1     0     0          50    90.00000             5           12
-11     1     1     0          51    94.11765             5           13
-12     1     0     0          51    86.27451             5           12
-13     1     1     0          49    95.91837             5           13
-14     1     0     0          48    91.66667             5           12
-15     0     0     0          48    87.50000             5           11
-   PeakGermTime TimeSpreadGerm t50_Coolbear t50_Farooq MeanGermTime
-1             6              6     5.970588   5.941176     6.700000
-2             6              8     6.192308   6.153846     6.857143
-3             6              8     6.000000   5.972222     6.866667
-4             6              7     6.041667   6.000000     6.891304
-5             6              8     5.975000   5.950000     6.812500
-6             6              7     5.976190   5.952381     6.869565
-7             6              6     5.972222   5.944444     6.690476
-8             6              8     6.208333   6.166667     6.875000
-9             6              8     6.000000   5.973684     6.866667
-10            6              7     6.076923   6.038462     6.822222
-11            6              8     5.928571   5.904762     6.791667
-12            6              7     5.975000   5.950000     6.886364
-13            6              8     6.083333   6.041667     6.936170
-14            6              7     5.928571   5.904762     6.772727
-15            6              6     6.050000   6.000000     6.809524
-   VarGermTime SEGermTime CVGermTime MeanGermRate  VarGermRate  SEGermRate
-1     1.446154  0.1901416  0.1794868    0.1492537 0.0007176543 0.004235724
-2     2.027875  0.2197333  0.2076717    0.1458333 0.0009172090 0.004673148
-3     2.572727  0.2391061  0.2335882    0.1456311 0.0011572039 0.005071059
-4     2.187923  0.2180907  0.2146419    0.1451104 0.0009701218 0.004592342
-5     2.368351  0.2221275  0.2259002    0.1467890 0.0010995627 0.004786184
-6     2.071498  0.2122088  0.2095140    0.1455696 0.0009301809 0.004496813
-7     1.389663  0.1818989  0.1761967    0.1494662 0.0006935558 0.004063648
-8     2.112179  0.2297923  0.2113940    0.1454545 0.0009454531 0.004861721
-9     2.300000  0.2260777  0.2208604    0.1456311 0.0010345321 0.004794747
-10    1.831313  0.2017321  0.1983606    0.1465798 0.0008453940 0.004334343
-11    2.381206  0.2227295  0.2272072    0.1472393 0.0011191581 0.004828643
-12    2.149577  0.2210295  0.2129053    0.1452145 0.0009558577 0.004660905
-13    2.539315  0.2324392  0.2297410    0.1441718 0.0010970785 0.004831366
-14    1.900634  0.2078370  0.2035568    0.1476510 0.0009033254 0.004531018
-15    1.670151  0.1994129  0.1897847    0.1468531 0.0007767634 0.004300508
-        CVG GermRateRecip_Coolbear GermRateRecip_Farooq GermSpeed_Count
-1  14.92537              0.1674877            0.1683168        6.138925
-2  14.58333              0.1614907            0.1625000        6.362698
-3  14.56311              0.1666667            0.1674419        6.882179
-4  14.51104              0.1655172            0.1666667        6.927417
-5  14.67890              0.1673640            0.1680672        7.318987
-6  14.55696              0.1673307            0.1680000        6.931782
-7  14.94662              0.1674419            0.1682243        6.448449
-8  14.54545              0.1610738            0.1621622        6.053175
-9  14.56311              0.1666667            0.1674009        6.830592
-10 14.65798              0.1645570            0.1656051        6.812698
-11 14.72393              0.1686747            0.1693548        7.342796
-12 14.52145              0.1673640            0.1680672        6.622258
-13 14.41718              0.1643836            0.1655172        7.052320
-14 14.76510              0.1686747            0.1693548        6.706782
-15 14.68531              0.1652893            0.1666667        6.363925
-   GermSpeed_Percent GermSpeedAccumulated_Count
-1           12.27785                   34.61567
-2           12.47588                   35.54058
-3           14.33787                   38.29725
-4           13.58317                   38.68453
-5           14.63797                   41.00786
-6           14.14649                   38.77620
-7           13.43427                   36.38546
-8           12.87909                   33.77079
-9           13.13575                   38.11511
-10          13.62540                   38.19527
-11          14.39764                   41.17452
-12          12.98482                   37.00640
-13          14.39249                   39.29399
-14          13.97246                   37.69490
-15          13.25818                   35.69697
-   GermSpeedAccumulated_Percent GermSpeedCorrected_Normal
-1                      69.23134                0.07673656
-2                      69.68741                0.07726134
-3                      79.78594                0.07340991
-4                      75.85202                0.07680397
-5                      82.01571                0.07623944
-6                      79.13509                0.07383855
-7                      75.80304                0.07369656
-8                      71.85275                0.07112480
-9                      73.29829                0.07893128
-10                     76.39054                0.07569665
-11                     80.73436                0.07801721
-12                     72.56158                0.07675799
-13                     80.19182                0.07352419
-14                     78.53103                0.07316490
-15                     74.36868                0.07273057
-   GermSpeedCorrected_Accumulated WeightGermPercent MeanGermPercent
-1                       0.4326958          47.42857        5.714286
-2                       0.4315642          47.89916        5.882353
-3                       0.4085040          54.46429        6.696429
-4                       0.4288937          52.24090        6.442577
-5                       0.4271652          56.14286        6.857143
-6                       0.4130508          54.51895        6.705539
-7                       0.4158338          51.93452        6.250000
-8                       0.3968068          49.39210        6.079027
-9                       0.4404413          50.27473        6.181319
-10                      0.4243919          52.57143        6.428571
-11                      0.4374793          55.18207        6.722689
-12                      0.4289379          50.00000        6.162465
-13                      0.4096608          55.24781        6.851312
-14                      0.4112171          53.86905        6.547619
-15                      0.4079653          51.19048        6.250000
-   MeanGermNumber TimsonsIndex TimsonsIndex_Labouriau
-1        2.857143     8.000000                   1.00
-2        3.000000     9.803922                   1.25
-3        3.214286    14.583333                   1.40
-4        3.285714     7.843137                   1.00
-5        3.428571    10.000000                   1.00
-6        3.285714     6.122449                   1.00
-7        3.000000     8.333333                   1.00
-8        2.857143    10.638298                   1.25
-9        3.214286     9.615385                   1.25
-10       3.214286     8.000000                   1.00
-11       3.428571     9.803922                   1.00
-12       3.142857     5.882353                   1.00
-13       3.357143     8.163265                   1.00
-14       3.142857     6.250000                   1.00
-15       3.000000     8.333333                   1.00
-   TimsonsIndex_KhanUngar GermRateGeorge PeakValue GermValue_Czabator
-1               0.5714286              4  9.500000           54.28571
-2               0.7002801              5  9.313725           54.78662
-3               1.0416667              7 10.416667           69.75446
-4               0.5602241              4 10.049020           64.74158
-5               0.7142857              5 11.250000           77.14286
-6               0.4373178              3 10.714286           71.84506
-7               0.5952381              4 10.416667           65.10417
-8               0.7598784              5  9.574468           58.20345
-9               0.6868132              5  9.855769           60.92165
-10              0.5714286              4 10.250000           65.89286
-11              0.7002801              5 11.029412           74.14731
-12              0.4201681              3  9.803922           60.41632
-13              0.5830904              4 10.969388           75.15470
-14              0.4464286              3 10.677083           69.90947
-15              0.5952381              4 10.156250           63.47656
-   GermValue_DP GermValue_Czabator_mod GermValue_DP_mod    CUGerm
-1      57.93890               54.28571         39.56076 0.7092199
-2      52.58713               54.78662         40.99260 0.5051546
-3      68.62289               69.75446         53.42809 0.3975265
-4      70.43331               64.74158         48.86825 0.4672113
-5      80.16914               77.14286         56.23935 0.4312184
-6      76.51983               71.84506         53.06435 0.4934701
-7      69.41325               65.10417         47.37690 0.7371500
-8      56.00669               58.20345         43.67948 0.4855842
-9      58.13477               60.92165         45.30801 0.4446640
-10     70.91875               65.89286         49.10820 0.5584666
-11     77.39782               74.14731         54.27520 0.4288905
-12     64.44988               60.41632         44.71582 0.4760266
-13     78.16335               75.15470         54.94192 0.4023679
-14     74.40140               69.90947         51.41913 0.5383760
-15     67.62031               63.47656         46.48043 0.6133519
-   GermSynchrony GermUncertainty
-1      0.2666667        2.062987
-2      0.2346109        2.321514
-3      0.2242424        2.462012
-4      0.2502415        2.279215
-5      0.2606383        2.146051
-6      0.2792271        2.160545
-7      0.2729384        2.040796
-8      0.2256410        2.357249
-9      0.2494949        2.321080
-10     0.2555556        2.187983
-11     0.2686170        2.128670
-12     0.2737844        2.185245
-13     0.2506938        2.241181
-14     0.2991543        2.037680
-15     0.2497096        2.185028</code></pre>
+<pre><code>   Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09
+1        G1   1     0     0     0     0     4    17    10     7     1
+2        G2   1     0     0     0     1     3    15    13     6     2
+3        G3   1     0     0     0     2     3    18     9     8     2
+4        G4   1     0     0     0     0     4    19    12     6     2
+5        G5   1     0     0     0     0     5    20    12     8     1
+6        G1   2     0     0     0     0     3    21    11     7     1
+7        G2   2     0     0     0     0     4    18    11     7     1
+8        G3   2     0     0     0     1     3    14    12     6     2
+9        G4   2     0     0     0     1     3    19    10     8     1
+10       G5   2     0     0     0     0     4    18    13     6     2
+11       G1   3     0     0     0     0     5    21    11     8     1
+12       G2   3     0     0     0     0     3    20    10     7     1
+13       G3   3     0     0     0     0     4    19    12     8     1
+14       G4   3     0     0     0     0     3    21    11     6     1
+15       G5   3     0     0     0     0     4    17    10     8     1
+   Day10 Day11 Day12 Day13 Day14 Total Seeds GermPercent FirstGermTime
+1      0     1     0     0     0          50    80.00000             5
+2      1     0     1     0     0          51    82.35294             4
+3      1     1     1     0     0          48    93.75000             4
+4      1     1     1     0     0          51    90.19608             5
+5      0     0     1     1     0          50    96.00000             5
+6      1     1     1     0     0          49    93.87755             5
+7      0     1     0     0     0          48    87.50000             5
+8      1     0     1     0     0          47    85.10638             4
+9      1     1     1     0     0          52    86.53846             4
+10     1     0     1     0     0          50    90.00000             5
+11     0     0     1     1     0          51    94.11765             5
+12     1     1     1     0     0          51    86.27451             5
+13     1     0     1     1     0          49    95.91837             5
+14     0     1     1     0     0          48    91.66667             5
+15     1     1     0     0     0          48    87.50000             5
+   LastGermTime PeakGermTime TimeSpreadGerm t50_Coolbear t50_Farooq
+1            11            6              6     5.970588   5.941176
+2            12            6              8     6.192308   6.153846
+3            12            6              8     6.000000   5.972222
+4            12            6              7     6.041667   6.000000
+5            13            6              8     5.975000   5.950000
+6            12            6              7     5.976190   5.952381
+7            11            6              6     5.972222   5.944444
+8            12            6              8     6.208333   6.166667
+9            12            6              8     6.000000   5.973684
+10           12            6              7     6.076923   6.038462
+11           13            6              8     5.928571   5.904762
+12           12            6              7     5.975000   5.950000
+13           13            6              8     6.083333   6.041667
+14           12            6              7     5.928571   5.904762
+15           11            6              6     6.050000   6.000000
+   MeanGermTime VarGermTime SEGermTime CVGermTime MeanGermRate
+1      6.700000    1.446154  0.1901416  0.1794868    0.1492537
+2      6.857143    2.027875  0.2197333  0.2076717    0.1458333
+3      6.866667    2.572727  0.2391061  0.2335882    0.1456311
+4      6.891304    2.187923  0.2180907  0.2146419    0.1451104
+5      6.812500    2.368351  0.2221275  0.2259002    0.1467890
+6      6.869565    2.071498  0.2122088  0.2095140    0.1455696
+7      6.690476    1.389663  0.1818989  0.1761967    0.1494662
+8      6.875000    2.112179  0.2297923  0.2113940    0.1454545
+9      6.866667    2.300000  0.2260777  0.2208604    0.1456311
+10     6.822222    1.831313  0.2017321  0.1983606    0.1465798
+11     6.791667    2.381206  0.2227295  0.2272072    0.1472393
+12     6.886364    2.149577  0.2210295  0.2129053    0.1452145
+13     6.936170    2.539315  0.2324392  0.2297410    0.1441718
+14     6.772727    1.900634  0.2078370  0.2035568    0.1476510
+15     6.809524    1.670151  0.1994129  0.1897847    0.1468531
+    VarGermRate  SEGermRate      CVG GermRateRecip_Coolbear
+1  0.0007176543 0.004235724 14.92537              0.1674877
+2  0.0009172090 0.004673148 14.58333              0.1614907
+3  0.0011572039 0.005071059 14.56311              0.1666667
+4  0.0009701218 0.004592342 14.51104              0.1655172
+5  0.0010995627 0.004786184 14.67890              0.1673640
+6  0.0009301809 0.004496813 14.55696              0.1673307
+7  0.0006935558 0.004063648 14.94662              0.1674419
+8  0.0009454531 0.004861721 14.54545              0.1610738
+9  0.0010345321 0.004794747 14.56311              0.1666667
+10 0.0008453940 0.004334343 14.65798              0.1645570
+11 0.0011191581 0.004828643 14.72393              0.1686747
+12 0.0009558577 0.004660905 14.52145              0.1673640
+13 0.0010970785 0.004831366 14.41718              0.1643836
+14 0.0009033254 0.004531018 14.76510              0.1686747
+15 0.0007767634 0.004300508 14.68531              0.1652893
+   GermRateRecip_Farooq GermSpeed_Count GermSpeed_Percent
+1             0.1683168        6.138925          12.27785
+2             0.1625000        6.362698          12.47588
+3             0.1674419        6.882179          14.33787
+4             0.1666667        6.927417          13.58317
+5             0.1680672        7.318987          14.63797
+6             0.1680000        6.931782          14.14649
+7             0.1682243        6.448449          13.43427
+8             0.1621622        6.053175          12.87909
+9             0.1674009        6.830592          13.13575
+10            0.1656051        6.812698          13.62540
+11            0.1693548        7.342796          14.39764
+12            0.1680672        6.622258          12.98482
+13            0.1655172        7.052320          14.39249
+14            0.1693548        6.706782          13.97246
+15            0.1666667        6.363925          13.25818
+   GermSpeedAccumulated_Count GermSpeedAccumulated_Percent
+1                    34.61567                     69.23134
+2                    35.54058                     69.68741
+3                    38.29725                     79.78594
+4                    38.68453                     75.85202
+5                    41.00786                     82.01571
+6                    38.77620                     79.13509
+7                    36.38546                     75.80304
+8                    33.77079                     71.85275
+9                    38.11511                     73.29829
+10                   38.19527                     76.39054
+11                   41.17452                     80.73436
+12                   37.00640                     72.56158
+13                   39.29399                     80.19182
+14                   37.69490                     78.53103
+15                   35.69697                     74.36868
+   GermSpeedCorrected_Normal GermSpeedCorrected_Accumulated
+1                 0.07673656                      0.4326958
+2                 0.07726134                      0.4315642
+3                 0.07340991                      0.4085040
+4                 0.07680397                      0.4288937
+5                 0.07623944                      0.4271652
+6                 0.07383855                      0.4130508
+7                 0.07369656                      0.4158338
+8                 0.07112480                      0.3968068
+9                 0.07893128                      0.4404413
+10                0.07569665                      0.4243919
+11                0.07801721                      0.4374793
+12                0.07675799                      0.4289379
+13                0.07352419                      0.4096608
+14                0.07316490                      0.4112171
+15                0.07273057                      0.4079653
+   WeightGermPercent MeanGermPercent MeanGermNumber TimsonsIndex
+1           47.42857        5.714286       2.857143     8.000000
+2           47.89916        5.882353       3.000000     9.803922
+3           54.46429        6.696429       3.214286    14.583333
+4           52.24090        6.442577       3.285714     7.843137
+5           56.14286        6.857143       3.428571    10.000000
+6           54.51895        6.705539       3.285714     6.122449
+7           51.93452        6.250000       3.000000     8.333333
+8           49.39210        6.079027       2.857143    10.638298
+9           50.27473        6.181319       3.214286     9.615385
+10          52.57143        6.428571       3.214286     8.000000
+11          55.18207        6.722689       3.428571     9.803922
+12          50.00000        6.162465       3.142857     5.882353
+13          55.24781        6.851312       3.357143     8.163265
+14          53.86905        6.547619       3.142857     6.250000
+15          51.19048        6.250000       3.000000     8.333333
+   TimsonsIndex_Labouriau TimsonsIndex_KhanUngar GermRateGeorge PeakValue
+1                    1.00              0.5714286              4  9.500000
+2                    1.25              0.7002801              5  9.313725
+3                    1.40              1.0416667              7 10.416667
+4                    1.00              0.5602241              4 10.049020
+5                    1.00              0.7142857              5 11.250000
+6                    1.00              0.4373178              3 10.714286
+7                    1.00              0.5952381              4 10.416667
+8                    1.25              0.7598784              5  9.574468
+9                    1.25              0.6868132              5  9.855769
+10                   1.00              0.5714286              4 10.250000
+11                   1.00              0.7002801              5 11.029412
+12                   1.00              0.4201681              3  9.803922
+13                   1.00              0.5830904              4 10.969388
+14                   1.00              0.4464286              3 10.677083
+15                   1.00              0.5952381              4 10.156250
+   GermValue_Czabator GermValue_DP GermValue_Czabator_mod GermValue_DP_mod
+1            54.28571     57.93890               54.28571         39.56076
+2            54.78662     52.58713               54.78662         40.99260
+3            69.75446     68.62289               69.75446         53.42809
+4            64.74158     70.43331               64.74158         48.86825
+5            77.14286     80.16914               77.14286         56.23935
+6            71.84506     76.51983               71.84506         53.06435
+7            65.10417     69.41325               65.10417         47.37690
+8            58.20345     56.00669               58.20345         43.67948
+9            60.92165     58.13477               60.92165         45.30801
+10           65.89286     70.91875               65.89286         49.10820
+11           74.14731     77.39782               74.14731         54.27520
+12           60.41632     64.44988               60.41632         44.71582
+13           75.15470     78.16335               75.15470         54.94192
+14           69.90947     74.40140               69.90947         51.41913
+15           63.47656     67.62031               63.47656         46.48043
+      CUGerm GermSynchrony GermUncertainty
+1  0.7092199     0.2666667        2.062987
+2  0.5051546     0.2346109        2.321514
+3  0.3975265     0.2242424        2.462012
+4  0.4672113     0.2502415        2.279215
+5  0.4312184     0.2606383        2.146051
+6  0.4934701     0.2792271        2.160545
+7  0.7371500     0.2729384        2.040796
+8  0.4855842     0.2256410        2.357249
+9  0.4446640     0.2494949        2.321080
+10 0.5584666     0.2555556        2.187983
+11 0.4288905     0.2686170        2.128670
+12 0.4760266     0.2737844        2.185245
+13 0.4023679     0.2506938        2.241181
+14 0.5383760     0.2991543        2.037680
+15 0.6133519     0.2497096        2.185028</code></pre>
 </div>
 </div>
 <div id="citing-germinationmetrics" class="section level2">
@@ -2034,8 +2039,8 @@ attr(,"class")
 To cite the R package 'germinationmetrics' in publications use:
 
   Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
-  Kalyani Srinivasan (2018).  germinationmetrics: Seed Germination
-  Indices and Curve Fitting. R package version 0.1.2.9000,
+  Kalyani Srinivasan (2019).  germinationmetrics: Seed Germination
+  Indices and Curve Fitting. R package version 0.1.3,
   https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
 A BibTeX entry for LaTeX users is
@@ -2043,8 +2048,8 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-    year = {2018},
-    note = {R package version 0.1.2.9000},
+    year = {2019},
+    note = {R package version 0.1.3},
     note = {https://github.com/aravind-j/germinationmetrics},
     note = {https://cran.r-project.org/package=germinationmetrics},
   }
@@ -2072,13 +2077,13 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] germinationmetrics_0.1.2.9000
+[1] germinationmetrics_0.1.3
 
 loaded via a namespace (and not attached):
  [1] minpack.lm_1.2-1   tidyselect_0.2.5   purrr_0.2.5       
  [4] pander_0.6.3       lattice_0.20-38    colorspace_1.3-2  
  [7] htmltools_0.3.6    yaml_2.2.0         XML_3.98-1.16     
-[10] rlang_0.3.0.1      pkgdown_1.2.0.9000 pillar_1.3.0      
+[10] rlang_0.3.0.1      pkgdown_1.3.0.9000 pillar_1.3.0      
 [13] glue_1.3.0         bindrcpp_0.2.2     bindr_0.1.1       
 [16] plyr_1.8.4         stringr_1.3.1      munsell_0.5.0     
 [19] commonmark_1.7     gtable_0.2.0       memoise_1.1.0     
@@ -2294,7 +2299,7 @@ loaded via a namespace (and not attached):
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.2.0.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.9000.</p>
 </div>
       </footer>
 </div>

@@ -31,7 +31,13 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics)
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
-[![develVersion](https://img.shields.io/badge/devel%20version-`r gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/germinationmetrics", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/germinationmetrics", "/master/DESCRIPTION")))])`-orange.svg)](https://github.com/aravind-j/germinationmetrics)
+```{r, results='asis', echo=FALSE}
+dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germinationmetrics")) != "",
+               yes = getNamespaceVersion("germinationmetrics"),
+               no = gsub("Version:\\s*", "", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/germinationmetrics", "/master/DESCRIPTION"))[grep("Version:", readLines(paste0("https://raw.githubusercontent.com/", "aravind-j/germinationmetrics", "/master/DESCRIPTION")))]))
+
+cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/germinationmetrics)", sep = ""))
+```
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 [![Project Status: Active](http://www.repostatus.org/badges/latest/active.svg)](http://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://www.tidyverse.org/lifecycle/#stable)
