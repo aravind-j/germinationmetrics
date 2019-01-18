@@ -22,5 +22,6 @@
 ^vignettes/Introduction\.out$
 ^vignettes/Introduction\.log$
 ^vignettes/Introduction\.html$
+^vignettes/Introduction\.toc$
 ^_pkgdown\.yml$
 ^pkgdown$
