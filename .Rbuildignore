@@ -1,4 +1,4 @@
-^data\.xlsx$
+^dat\.xlsx$
 ^germinationmetrics_0\.1\.1\.9000\.zip$
 ^germinationmetrics_*\.zip$
 ^.*\.Rproj$
