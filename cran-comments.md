@@ -1,6 +1,8 @@
 # Version 0.1.3 - Third submission
 
 * Fixed LATEX xcolor options clash issue in vignette.
+* Fixed issue with missing pandoc in case of r-release-osx-x86_64.
+* The error in case of r-oldrel-osx-x86_64 (R v 3.4.*) is because the R package dependency is >= 3.5.0.
 
 ### Test environments
 * local Windows 10 Home v1803, R-release (R 3.5.1) & R-devel (R 3.6.0 Pre-release).

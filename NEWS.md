@@ -35,6 +35,10 @@
 * `FourPHFfit` - Fixed code to accommodate changes in the new release of `broom` package.
 * `FourPHFfit` - Separated plot method to new function `plot.FourPHFfit`.
  
+## VIGNETTE:
+* Fixed LATEX xcolor options clash issue in vignette.
+* Fixed issue with missing pandoc in case of r-release-osx-x86_64.
+
 ## OTHER NOTES:
 * Fixed citation information.
 * Added zenodo and rdocumentation badges.
