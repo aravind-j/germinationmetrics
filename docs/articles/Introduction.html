@@ -103,7 +103,7 @@
       <h1>The <code>germinationmetrics</code> Package: A Brief Introduction</h1>
                         <h4 class="author">Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan</h4>
             
-            <h4 class="date">2019-01-18</h4>
+            <h4 class="date">2019-01-19</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -296,7 +296,6 @@ Welcome to germinationmetrics version 0.1.3
 <a href="#single-value-germination-indices" class="anchor"></a>Single-value germination indices</h2>
 <p>The details about the single-value germination indices implemented in <code>germinationmetrics</code> are described in Table 3.</p>
 
-<p>\begin{small}</p>
 
 <p><strong>Table 3 :</strong> Single-value germination indices implemented in <code>germinationmetrics</code>. </p>
 <table class="table">
@@ -304,385 +303,383 @@ Welcome to germinationmetrics version 0.1.3
 <col width="12%">
 <col width="13%">
 <col width="42%">
+<col width="6%">
 <col width="7%">
-<col width="7%">
-<col width="16%">
+<col width="17%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">Germination index</th>
-<th align="left">function</th>
-<th align="left">Details</th>
-<th align="left">Unit</th>
-<th align="left">Measures</th>
-<th align="left">Reference</th>
+<th>Germination index</th>
+<th>function</th>
+<th>Details</th>
+<th>Unit</th>
+<th>Measures</th>
+<th>Reference</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">Germination percentage or Germinability (<span class="math inline">\(GP\)</span>)</td>
-<td align="left"><code>GermPercent</code></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[GP = \frac{N_{g}}{N_{t}} \times 100\]</span><br>
+<td>Germination percentage or Germinability (<span class="math inline">\(GP\)</span>)</td>
+<td><code>GermPercent</code></td>
+<td>It is computed as follows:<br><span class="math display">\[GP = \frac{N_{g}}{N_{t}} \times 100\]</span><br>
 Where, <span class="math inline">\(N_{g}\)</span> is the number of germinated seeds and <span class="math inline">\(N_{t}\)</span> is the total number of seeds.</td>
-<td align="left">Percentage (%)</td>
-<td align="left">Germination capacity</td>
-<td align="left"><span class="citation">ISTA (<a href="#ref-ista_chapter_2015">2015</a>)</span></td>
+<td>Percentage (%)</td>
+<td>Germination capacity</td>
+<td><span class="citation">ISTA (<a href="#ref-ista_chapter_2015">2015</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Time for the first germination or Germination time lag (<span class="math inline">\(t_{0}\)</span>)</td>
-<td align="left"><code>FirstGermTime</code></td>
-<td align="left">It is the time for first germination to occur (e.g. First day of germination)</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left">
+<td>Time for the first germination or Germination time lag (<span class="math inline">\(t_{0}\)</span>)</td>
+<td><code>FirstGermTime</code></td>
+<td>It is the time for first germination to occur (e.g. First day of germination)</td>
+<td>time</td>
+<td>Germination time</td>
+<td>
 <span class="citation">Edwards (<a href="#ref-edwards_temperature_1932">1932</a>)</span>; <span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Goloff and Bazzaz (<a href="#ref-goloff_germination_1975">1975</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983</a><a href="#ref-labouriau_germinacao_1983">a</a>)</span>; <span class="citation">Ranal (<a href="#ref-ranal_effects_1999">1999</a>)</span>; <span class="citation">Quintanilla et al. (<a href="#ref-quintanilla_effect_2000">2000</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Time for the last germination (<span class="math inline">\(t_{g}\)</span>)</td>
-<td align="left"><code>LastGermTime</code></td>
-<td align="left">It is the time for last germination to occur ( e.g. Last day of germination)</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left"><span class="citation">Edwards (<a href="#ref-edwards_temperature_1932">1932</a>)</span></td>
+<td>Time for the last germination (<span class="math inline">\(t_{g}\)</span>)</td>
+<td><code>LastGermTime</code></td>
+<td>It is the time for last germination to occur ( e.g. Last day of germination)</td>
+<td>time</td>
+<td>Germination time</td>
+<td><span class="citation">Edwards (<a href="#ref-edwards_temperature_1932">1932</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Time spread of germination or Germination distribution</td>
-<td align="left"><code>TimeSpreadGerm</code></td>
-<td align="left">It is the difference between time for last germination (<span class="math inline">\(t_{g}\)</span>) and time for first germination (<span class="math inline">\(t_{0}\)</span>).<br><span class="math display">\[Time\,spread\,of\, germination = t_{g}-t_{0}\]</span>
+<td>Time spread of germination or Germination distribution</td>
+<td><code>TimeSpreadGerm</code></td>
+<td>It is the difference between time for last germination (<span class="math inline">\(t_{g}\)</span>) and time for first germination (<span class="math inline">\(t_{0}\)</span>).<br><span class="math display">\[Time\,spread\,of\, germination = t_{g}-t_{0}\]</span>
 </td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left">
+<td>time</td>
+<td>Germination time</td>
+<td>
 <span class="citation">Al-Mudaris (<a href="#ref-al-mudaris_notes_1998">1998</a>)</span>; <span class="citation">Schrader and Graves (<a href="#ref-schrader_seed_2000">2000</a>)</span>; <span class="citation">Kader (<a href="#ref-kader_comparison_2005">2005</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Peak period of germination or Modal time of germination</td>
-<td align="left"><code>PeakGermTime</code></td>
-<td align="left">It is the time in which highest frequency of germinated seeds are observed and need not be unique.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left"><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
+<td>Peak period of germination or Modal time of germination</td>
+<td><code>PeakGermTime</code></td>
+<td>It is the time in which highest frequency of germinated seeds are observed and need not be unique.</td>
+<td>time</td>
+<td>Germination time</td>
+<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Median germination time (<span class="math inline">\(t_{50}\)</span>) (Coolbear)</td>
-<td align="left"><code>t50</code></td>
-<td align="left">It is the time to reach 50% of final/maximum germination.<br>
+<td>Median germination time (<span class="math inline">\(t_{50}\)</span>) (Coolbear)</td>
+<td><code>t50</code></td>
+<td>It is the time to reach 50% of final/maximum germination.<br>
 With argument method specified as <code>"coolbear"</code>, it is computed according to the formula by <span class="citation">(Coolbear et al., <a href="#ref-coolbear_effect_1984">1984</a>)</span> as follows:<br><span class="math display">\[t_{50}=T_{i}+\frac{(\frac{N+1}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}\]</span><br>
 Where, <span class="math inline">\(t_{50}\)</span> is the median germination time, <span class="math inline">\(N\)</span> is the final number of germinated seeds and <span class="math inline">\(N_{i}\)</span> and <span class="math inline">\(N_{j}\)</span> are the total number of seeds germinated in adjacent counts at time <span class="math inline">\(T_{i}\)</span> and <span class="math inline">\(T_{j}\)</span> respectively, when <span class="math inline">\(N_{i} &lt; \frac{N + 1}{2} &lt; N_{j}\)</span>.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left"><span class="citation">Coolbear et al. (<a href="#ref-coolbear_effect_1984">1984</a>)</span></td>
+<td>time</td>
+<td>Germination time</td>
+<td><span class="citation">Coolbear et al. (<a href="#ref-coolbear_effect_1984">1984</a>)</span></td>
 </tr>
 <tr class="odd">
-<td align="left">Median germination time (<span class="math inline">\(t_{50}\)</span>) (Farooq)</td>
-<td align="left"><code>t50</code></td>
-<td align="left">With argument method specified as <code>"farooq"</code>, it is computed according to the formula by <span class="citation">(Coolbear et al., <a href="#ref-coolbear_effect_1984">1984</a>)</span> as follows:<br><span class="math display">\[t_{50}=T_{i}+\frac{(\frac{N}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}\]</span><br>
+<td>Median germination time (<span class="math inline">\(t_{50}\)</span>) (Farooq)</td>
+<td><code>t50</code></td>
+<td>With argument method specified as <code>"farooq"</code>, it is computed according to the formula by <span class="citation">(Coolbear et al., <a href="#ref-coolbear_effect_1984">1984</a>)</span> as follows:<br><span class="math display">\[t_{50}=T_{i}+\frac{(\frac{N}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}\]</span><br>
 Where, <span class="math inline">\(t_{50}\)</span> is the median germination time, <span class="math inline">\(N\)</span> is the final number of germinated seeds and <span class="math inline">\(N_{i}\)</span> and <span class="math inline">\(N_{j}\)</span> are the total number of seeds germinated in adjacent counts at time <span class="math inline">\(T_{i}\)</span> and <span class="math inline">\(T_{j}\)</span> respectively, when <span class="math inline">\(N_{i} &lt; \frac{N}{2} &lt; N_{j}\)</span>.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left"><span class="citation">Farooq et al. (<a href="#ref-farooq_thermal_2005">2005</a>)</span></td>
+<td>time</td>
+<td>Germination time</td>
+<td><span class="citation">Farooq et al. (<a href="#ref-farooq_thermal_2005">2005</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Mean germination time or Mean length of incubation time (<span class="math inline">\(\overline{T}\)</span>) or Germination resistance (<span class="math inline">\(GR\)</span>) or Sprouting index (<span class="math inline">\(SI\)</span>)</td>
-<td align="left"><code>MeanGermTime</code></td>
-<td align="left">It is the average length of time required for maximum germination of a seed lot and is estimated according to the following formula.<br><span class="math display">\[\overline{T} =
+<td>Mean germination time or Mean length of incubation time (<span class="math inline">\(\overline{T}\)</span>) or Germination resistance (<span class="math inline">\(GR\)</span>) or Sprouting index (<span class="math inline">\(SI\)</span>)</td>
+<td><code>MeanGermTime</code></td>
+<td>It is the average length of time required for maximum germination of a seed lot and is estimated according to the following formula.<br><span class="math display">\[\overline{T} =
 \frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}\]</span><br>
 Where, <span class="math inline">\(T_{i}\)</span> is the time from the start of the experiment to the <span class="math inline">\(i\)</span>th observation, <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation) and <span class="math inline">\(k\)</span> is the last time of germination.<br>
 It is the inverse of mean germination rate (<span class="math inline">\(\overline{V}\)</span>).<br><span class="math display">\[\overline{T} = \frac{1}{\overline{V}}\]</span>
 </td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left">
+<td>time</td>
+<td>Germination time</td>
+<td>
 <span class="citation">Edmond and Drapala (<a href="#ref-edmond_effects_1958">1958</a>)</span>; <span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Smith and Millet (<a href="#ref-smith_germinating_1964">1964</a>)</span>; <span class="citation">Gordon (<a href="#ref-gordon_observations_1969">1969</a>)</span>; <span class="citation">Gordon (<a href="#ref-gordon_germination_1971">1971</a>)</span>; <span class="citation">Ellis and Roberts (<a href="#ref-ellis_improved_1980">1980</a>)</span> <span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983</a><a href="#ref-labouriau_germinacao_1983">a</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Variance of germination time (<span class="math inline">\(s_{T}^{2}\)</span>)</td>
-<td align="left"><code>VarGermTime</code></td>
-<td align="left">It is computed according to the following formula.<br><span class="math display">\[s_{T}^{2} =
+<td>Variance of germination time (<span class="math inline">\(s_{T}^{2}\)</span>)</td>
+<td><code>VarGermTime</code></td>
+<td>It is computed according to the following formula.<br><span class="math display">\[s_{T}^{2} =
 \frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}\]</span><br>
 Where, <span class="math inline">\(T_{i}\)</span> is the time from the start of the experiment to the <span class="math inline">\(i\)</span>th observation, <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation) and <span class="math inline">\(k\)</span> is the last time of germination.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left">
+<td>time</td>
+<td>Germination time</td>
+<td>
 <span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983</a><a href="#ref-labouriau_germinacao_1983">a</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Standard error of germination time (<span class="math inline">\(s_{\overline{T}}\)</span>)</td>
-<td align="left"><code>SEGermTime</code></td>
-<td align="left">It signifies the accuracy of the calculation of the mean germination time.<br>
+<td>Standard error of germination time (<span class="math inline">\(s_{\overline{T}}\)</span>)</td>
+<td><code>SEGermTime</code></td>
+<td>It signifies the accuracy of the calculation of the mean germination time.<br>
 It is estimated according to the following formula:<br><span class="math display">\[s_{\overline{T}} =
 \sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}\]</span><br>
 Where, <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation) and <span class="math inline">\(k\)</span> is the last time of germination.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
-<td align="left">
+<td>time</td>
+<td>Germination time</td>
+<td>
 <span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983</a><a href="#ref-labouriau_germinacao_1983">a</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Mean germination rate (<span class="math inline">\(\overline{V}\)</span>)</td>
-<td align="left"><code>MeanGermRate</code></td>
-<td align="left">It is computed according to the following formula:<br><span class="math display">\[\overline{V} =
+<td>Mean germination rate (<span class="math inline">\(\overline{V}\)</span>)</td>
+<td><code>MeanGermRate</code></td>
+<td>It is computed according to the following formula:<br><span class="math display">\[\overline{V} =
 \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}\]</span><br>
 Where, <span class="math inline">\(T_{i}\)</span> is the time from the start of the experiment to the <span class="math inline">\(i\)</span>th observation, <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation) and <span class="math inline">\(k\)</span> is the last time of germination.<br>
 It is the inverse of mean germination time (<span class="math inline">\(\overline{T}\)</span>).<br><span class="math display">\[\overline{V} = \frac{1}{\overline{T}}\]</span>
 </td>
-<td align="left">time<sup>-1</sup>
+<td>time<sup>-1</sup>
 </td>
-<td align="left">Germination rate</td>
-<td align="left">
+<td>Germination rate</td>
+<td>
 <span class="citation">Labouriau and Valadares (<a href="#ref-labouriau_germination_1976">1976</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983</a><a href="#ref-labouriau_uma_1983">b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Coefficient of velocity of germination (<span class="math inline">\(CVG\)</span>) or Coefficient of rate of germination (<span class="math inline">\(CRG\)</span>) or Kotowski’s coefficient of velocity</td>
-<td align="left"><code>CVG</code></td>
-<td align="left">It is estimated according to the following formula.<br><span class="math display">\[CVG =
+<td>Coefficient of velocity of germination (<span class="math inline">\(CVG\)</span>) or Coefficient of rate of germination (<span class="math inline">\(CRG\)</span>) or Kotowski’s coefficient of velocity</td>
+<td><code>CVG</code></td>
+<td>It is estimated according to the following formula.<br><span class="math display">\[CVG =
 \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}
 \times 100\]</span><br><span class="math display">\[CVG = \overline{V} \times 100\]</span><br>
 Where, <span class="math inline">\(T_{i}\)</span> is the time from the start of the experiment to the <span class="math inline">\(i\)</span>th observation, <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation) and <span class="math inline">\(k\)</span> is the last time of germination.</td>
-<td align="left">% day <sup>-1</sup>
+<td>% day <sup>-1</sup>
 </td>
-<td align="left">Germination rate</td>
-<td align="left">
+<td>Germination rate</td>
+<td>
 <span class="citation">Kotowski (<a href="#ref-kotowski_temperature_1926">1926</a>)</span>, <span class="citation">Nichols and Heydecker (<a href="#ref-nichols_two_1968">1968</a>)</span>; <span class="citation">Bewley and Black (<a href="#ref-bewley_seeds:_1994">1994</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983</a><a href="#ref-labouriau_uma_1983">b</a>)</span>; <span class="citation">Scott et al. (<a href="#ref-scott_review_1984">1984</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Variance of germination rate (<span class="math inline">\(s_{V}^{2}\)</span>)</td>
-<td align="left"><code>VarGermRate</code></td>
-<td align="left">It is calculated according to the following formula.<br><span class="math display">\[s_{V}^{2} = \overline{V}^{4} \times s_{T}^{2}\]</span><br>
+<td>Variance of germination rate (<span class="math inline">\(s_{V}^{2}\)</span>)</td>
+<td><code>VarGermRate</code></td>
+<td>It is calculated according to the following formula.<br><span class="math display">\[s_{V}^{2} = \overline{V}^{4} \times s_{T}^{2}\]</span><br>
 Where, <span class="math inline">\(s_{T}^{2}\)</span> is the variance of germination time.</td>
-<td align="left">time<sup>-2</sup>
+<td>time<sup>-2</sup>
 </td>
-<td align="left">Germination rate</td>
-<td align="left">
+<td>Germination rate</td>
+<td>
 <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983</a><a href="#ref-labouriau_uma_1983">b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Standard error of germination rate (<span class="math inline">\(s_{\overline{V}}\)</span>)</td>
-<td align="left"><code>SEGermRate</code></td>
-<td align="left">It is estimated according to the following formula.<br><span class="math display">\[s_{\overline{V}} =
+<td>Standard error of germination rate (<span class="math inline">\(s_{\overline{V}}\)</span>)</td>
+<td><code>SEGermRate</code></td>
+<td>It is estimated according to the following formula.<br><span class="math display">\[s_{\overline{V}} =
 \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}\]</span><br>
 Where, <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation) and <span class="math inline">\(k\)</span> is the last time of germination.</td>
-<td align="left">time<sup>-1</sup>
+<td>time<sup>-1</sup>
 </td>
-<td align="left">Germination rate</td>
-<td align="left">
+<td>Germination rate</td>
+<td>
 <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983</a><a href="#ref-labouriau_uma_1983">b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Germination rate as the reciprocal of the median time (<span class="math inline">\(v_{50}\)</span>)</td>
-<td align="left"><code>GermRateRecip</code></td>
-<td align="left">It is the reciprocal of the median germination time (<span class="math inline">\(t_{50}\)</span>).<br><span class="math display">\[v_{50} = \frac{1}{t_{50}}\]</span>
+<td>Germination rate as the reciprocal of the median time (<span class="math inline">\(v_{50}\)</span>)</td>
+<td><code>GermRateRecip</code></td>
+<td>It is the reciprocal of the median germination time (<span class="math inline">\(t_{50}\)</span>).<br><span class="math display">\[v_{50} = \frac{1}{t_{50}}\]</span>
 </td>
-<td align="left">time<sup>-1</sup>
+<td>time<sup>-1</sup>
 </td>
-<td align="left">Germination rate</td>
-<td align="left">
+<td>Germination rate</td>
+<td>
 <span class="citation">Went (<a href="#ref-went_experimental_1957">1957</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983</a><a href="#ref-labouriau_uma_1983">b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Speed of germination or Germination rate Index or index of velocity of germination or Emergence rate index (Germination index according to AOSA)</td>
-<td align="left"><code>GermSpeed</code></td>
-<td align="left">It is the rate of germination in terms of the total number of seeds that germinate in a time interval.<br>
+<td>Speed of germination or Germination rate Index or index of velocity of germination or Emergence rate index (Germination index according to AOSA)</td>
+<td><code>GermSpeed</code></td>
+<td>It is the rate of germination in terms of the total number of seeds that germinate in a time interval.<br>
 It is estimated as follows:<br><span class="math display">\[S = \frac{N_{1}}{T_{1}} + \frac{N_{2}}{T_{2}} +
 \frac{N_{3}}{T_{3}} + \cdots +
 \frac{N_{n}}{T_{n}}\]</span><br>
 Where, <span class="math inline">\(N_{1}\)</span>, <span class="math inline">\(N_{2}\)</span>, <span class="math inline">\(N_{3}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(N_{n}\)</span> are the number of germinated seeds observed at time (days or hours) <span class="math inline">\(T_{1}\)</span>, <span class="math inline">\(T_{2}\)</span>, <span class="math inline">\(T_{3}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(T_{n}\)</span> after sowing. (Not accumulated/cumulative number, but the number of seeds that germinated at the specific time).<br>
 Instead of germination counts, germination percentages may also be used for computation of speed of germination.</td>
-<td align="left">% time<sup>-1</sup>
+<td>% time<sup>-1</sup>
 </td>
-<td align="left">Mixed</td>
-<td align="left">
+<td>Mixed</td>
+<td>
 <span class="citation">Throneberry and Smith (<a href="#ref-throneberry_relation_1955">1955</a>)</span>; <span class="citation">Maguire (<a href="#ref-maguire_speed_1962">1962</a>)</span>; <span class="citation">Allan et al. (<a href="#ref-allan_seedling_1962">1962</a>)</span>; <span class="citation">Kendrick and Frankland (<a href="#ref-kendrick_photocontrol_1969">1969</a>)</span>; <span class="citation">Bouton et al. (<a href="#ref-bouton_germination_1976">1976</a>)</span>; <span class="citation">AOSA (<a href="#ref-aosa_seed_1983">1983</a>)</span>; <span class="citation">Khandakar and Bradbeer (<a href="#ref-khandakar_jute_1983">1983</a>)</span>; <span class="citation">Bradbeer (<a href="#ref-bradbeer_seed_1988">1988</a>)</span>; <span class="citation">Wardle et al. (<a href="#ref-wardle_allelopathic_1991">1991</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Speed of accumulated germination</td>
-<td align="left"><code>GermSpeedAccumulated</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[S_{accumulated} = \frac{N_{1}}{T_{1}} +
+<td>Speed of accumulated germination</td>
+<td><code>GermSpeedAccumulated</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[S_{accumulated} = \frac{N_{1}}{T_{1}} +
 \frac{N_{1} + N_{2}}{T_{2}} + \frac{N_{1} + N_{2}
 + N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} +
 \cdots + N_{n}}{T_{n}}\]</span><br>
 Where, <span class="math inline">\(N_{1}\)</span>, <span class="math inline">\(N_{2}\)</span>, <span class="math inline">\(N_{3}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(N_{n}\)</span> are the number of germinated seeds observed at time (days or hours) <span class="math inline">\(T_{1}\)</span>, <span class="math inline">\(T_{2}\)</span>, <span class="math inline">\(T_{3}\)</span>, <span class="math inline">\(\cdots\)</span>, <span class="math inline">\(T_{n}\)</span> after sowing. (Not accumulated/cumulative number, but the number of seeds that germinated at the specific time).<br>
 Instead of germination counts, germination percentages may also be used for computation of speed of germination.</td>
-<td align="left">% time<sup>-1</sup>
+<td>% time<sup>-1</sup>
 </td>
-<td align="left">Mixed</td>
-<td align="left">
+<td>Mixed</td>
+<td>
 <span class="citation">Bradbeer (<a href="#ref-bradbeer_seed_1988">1988</a>)</span>; <span class="citation">Wardle et al. (<a href="#ref-wardle_allelopathic_1991">1991</a>)</span>; <span class="citation">Haugland and Brandsaeter (<a href="#ref-haugland_experiments_1996">1996</a>)</span>; <span class="citation">Santana and Ranal (<a href="#ref-de_santana_alise_2004">2004</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Corrected germination rate index</td>
-<td align="left"><code>GermSpeedCorrected</code></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[S_{corrected} = \frac{S}{FGP}\]</span><br>
+<td>Corrected germination rate index</td>
+<td><code>GermSpeedCorrected</code></td>
+<td>It is computed as follows:<br><span class="math display">\[S_{corrected} = \frac{S}{FGP}\]</span><br>
 Where, <span class="math inline">\(FGP\)</span>: the final germination percentage or germinability.</td>
-<td align="left">time<sup>-1</sup>
+<td>time<sup>-1</sup>
 </td>
-<td align="left">Mixed</td>
-<td align="left"><span class="citation">Evetts and Burnside (<a href="#ref-evetts_germination_1972">1972</a>)</span></td>
+<td>Mixed</td>
+<td><span class="citation">Evetts and Burnside (<a href="#ref-evetts_germination_1972">1972</a>)</span></td>
 </tr>
 <tr class="odd">
-<td align="left">Weighted germination percentage (<span class="math inline">\(WGP\)</span>)</td>
-<td align="left"><code>WeightGermPercent</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[WGP = \frac{\sum_{i=1}^{t}(t-i+1)N_{i}}{t \times
+<td>Weighted germination percentage (<span class="math inline">\(WGP\)</span>)</td>
+<td><code>WeightGermPercent</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[WGP = \frac{\sum_{i=1}^{t}(t-i+1)N_{i}}{t \times
 N} \times 100\]</span><br>
 Where, <span class="math inline">\(N_{i}\)</span> is the number of seeds that germinated in the time interval <span class="math inline">\(i\)</span> (not cumulative, but partial count), <span class="math inline">\(N\)</span> is the total number of seeds tested and <span class="math inline">\(t\)</span> is the total number of time intervals.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left">
+<td></td>
+<td>Mixed</td>
+<td>
 <span class="citation">Reddy et al. (<a href="#ref-reddy_effect_1985">1985</a>)</span>; <span class="citation">Reddy (<a href="#ref-reddy_effect_1978">1978</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Mean germination percentage per unit time (<span class="math inline">\(\overline{GP}\)</span>)</td>
-<td align="left"><code>MeanGermPercent</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[\overline{G} = \frac{GP}{T_{n}}\]</span><br>
+<td>Mean germination percentage per unit time (<span class="math inline">\(\overline{GP}\)</span>)</td>
+<td><code>MeanGermPercent</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[\overline{G} = \frac{GP}{T_{n}}\]</span><br>
 Where, <span class="math inline">\(GP\)</span> is the final germination percentage and <span class="math inline">\(T_{n}\)</span> is the total number of intervals( e.g. days) required for final germination.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left"><span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span></td>
+<td></td>
+<td>Mixed</td>
+<td><span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span></td>
 </tr>
 <tr class="odd">
-<td align="left">Number of seeds germinated per unit time <span class="math inline">\(\overline{N}\)</span>
+<td>Number of seeds germinated per unit time <span class="math inline">\(\overline{N}\)</span>
 </td>
-<td align="left"><code>MeanGermNumber</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[\overline{N} = \frac{N_{g}}{T_{n}}\]</span><br>
+<td><code>MeanGermNumber</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[\overline{N} = \frac{N_{g}}{T_{n}}\]</span><br>
 Where, <span class="math inline">\(N_{g}\)</span> is the number of germinated seeds and <span class="math inline">\(T_{n}\)</span>is the total number of intervals ( e.g. days) required for final germination.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left"><span class="citation">Khamassi et al. (<a href="#ref-khamassi_optimal_2013">2013</a>)</span></td>
+<td></td>
+<td>Mixed</td>
+<td><span class="citation">Khamassi et al. (<a href="#ref-khamassi_optimal_2013">2013</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Timson’s index [<span class="math inline">\(\sum 10\)</span> (Ten summation), <span class="math inline">\(\sum 5\)</span> or <span class="math inline">\(\sum 20\)</span>] or Germination energy index (<span class="math inline">\(GEI\)</span>)</td>
-<td align="left"><code>TimsonsIndex</code></td>
-<td align="left">It is the progressive total of cumulative germination percentage recorded at specific intervals for a set period of time and is estimated in terms of cumulative germination percentage (<span class="math inline">\(G_{i}\)</span>) as follows:<br><span class="math display">\[\sum n = \sum_{i=1}^{t}G_{i}\]</span><br>
+<td>Timson’s index [<span class="math inline">\(\sum 10\)</span> (Ten summation), <span class="math inline">\(\sum 5\)</span> or <span class="math inline">\(\sum 20\)</span>] or Germination energy index (<span class="math inline">\(GEI\)</span>)</td>
+<td><code>TimsonsIndex</code></td>
+<td>It is the progressive total of cumulative germination percentage recorded at specific intervals for a set period of time and is estimated in terms of cumulative germination percentage (<span class="math inline">\(G_{i}\)</span>) as follows:<br><span class="math display">\[\sum n = \sum_{i=1}^{t}G_{i}\]</span><br>
 Where, <span class="math inline">\(G_{i}\)</span> is the cumulative germination percentage in time interval <span class="math inline">\(i\)</span> and <span class="math inline">\(t\)</span> is the total number of time intervals.<br>
 It also estimated in terms of partial germination percentage as follows:<br><span class="math display">\[\sum n = \sum_{i=1}^{t}g_{i}(t-j)\]</span><br>
 Where, <span class="math inline">\(g_{i}\)</span> is the germination (not cumulative, but partial germination) in time interval <span class="math inline">\(i\)</span> (<span class="math inline">\(i\)</span> varying from <span class="math inline">\(0\)</span> to <span class="math inline">\(t\)</span>) and <span class="math inline">\(t\)</span> is the total number of time intervals and <span class="math inline">\(j = i - 1\)</span>.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left">
+<td></td>
+<td>Mixed</td>
+<td>
 <span class="citation">Grose and Zimmer (<a href="#ref-grose_laboratory_1958">1958</a>)</span>; <span class="citation">Timson (<a href="#ref-timson_new_1965">1965</a>)</span>; <span class="citation">Brown and Mayer (<a href="#ref-brown_representing_1988">1988</a>)</span>; <span class="citation">Baskin and Baskin (<a href="#ref-baskin_seeds:_1998">1998</a>)</span>; <span class="citation">Goodchild and Walker (<a href="#ref-goodchild_method_1971">1971</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Modified Timson’s index (Labouriau)</td>
-<td align="left"><code>TimsonsIndex</code></td>
-<td align="left">It is estimated as Timson’s index <span class="math inline">\(T\)</span> divided by the sum of partial germination percentages.<br><span class="math display">\[T_{mod} = \frac{T}{\sum_{i=1}^{t}g_{i}}\]</span>
+<td>Modified Timson’s index (Labouriau)</td>
+<td><code>TimsonsIndex</code></td>
+<td>It is estimated as Timson’s index <span class="math inline">\(T\)</span> divided by the sum of partial germination percentages.<br><span class="math display">\[T_{mod} = \frac{T}{\sum_{i=1}^{t}g_{i}}\]</span>
 </td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left"><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
+<td></td>
+<td>Mixed</td>
+<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Modified Timson’s index (Khan and Unger)</td>
-<td align="left"><code>TimsonsIndex</code></td>
-<td align="left">It is estimated as Timson’s index (<span class="math inline">\(T\)</span>) divided by the number of intervals (<span class="math inline">\(t\)</span>).<br><span class="math display">\[T_{mod} = \frac{T}{t}\]</span>
+<td>Modified Timson’s index (Khan and Unger)</td>
+<td><code>TimsonsIndex</code></td>
+<td>It is estimated as Timson’s index (<span class="math inline">\(T\)</span>) divided by the number of intervals (<span class="math inline">\(t\)</span>).<br><span class="math display">\[T_{mod} = \frac{T}{t}\]</span>
 </td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left"><span class="citation">Khan and Ungar (<a href="#ref-khan_effect_1984">1984</a>)</span></td>
+<td></td>
+<td>Mixed</td>
+<td><span class="citation">Khan and Ungar (<a href="#ref-khan_effect_1984">1984</a>)</span></td>
 </tr>
 <tr class="odd">
-<td align="left">George’s index</td>
-<td align="left"><code>GermRateGeorge</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[GR = \sum_{i=1}^{t}N_{i}K_{i}\]</span><br>
+<td>George’s index</td>
+<td><code>GermRateGeorge</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[GR = \sum_{i=1}^{t}N_{i}K_{i}\]</span><br>
 Where <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated by <span class="math inline">\(i\)</span>th interval and <span class="math inline">\(K_{i}\)</span> is the number of intervals(eg. days) until the end of the test.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left">
+<td></td>
+<td>Mixed</td>
+<td>
 <span class="citation">George (<a href="#ref-george_influence_1961">1961</a>)</span>; <span class="citation">Tucker and Wright (<a href="#ref-tucker_estimating_1965">1965</a>)</span>; <span class="citation">Nichols and Heydecker (<a href="#ref-nichols_two_1968">1968</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Peak value(<span class="math inline">\(PV\)</span>) (Czabator) or Emergence Energy (<span class="math inline">\(EE\)</span>)</td>
-<td align="left"><code>PeakValue</code></td>
-<td align="left">It is the accumulated number of seeds germinated at the point on the germination curve at which the rate of germination starts to decrease. It is computed as the maximum quotient obtained by dividing successive cumulative germination values by the relevant incubation time.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left">
+<td>Peak value(<span class="math inline">\(PV\)</span>) (Czabator) or Emergence Energy (<span class="math inline">\(EE\)</span>)</td>
+<td><code>PeakValue</code></td>
+<td>It is the accumulated number of seeds germinated at the point on the germination curve at which the rate of germination starts to decrease. It is computed as the maximum quotient obtained by dividing successive cumulative germination values by the relevant incubation time.</td>
+<td></td>
+<td>Mixed</td>
+<td>
 <span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Bonner (<a href="#ref-bonner_ideal_1967">1967</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Germination value (<span class="math inline">\(GV\)</span>) (Czabator)</td>
-<td align="left"><code>GermValue</code></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[GV = PV \times MDG\]</span><br>
+<td>Germination value (<span class="math inline">\(GV\)</span>) (Czabator)</td>
+<td><code>GermValue</code></td>
+<td>It is computed as follows:<br><span class="math display">\[GV = PV \times MDG\]</span><br>
 Where, <span class="math inline">\(PV\)</span> is the peak value and <span class="math inline">\(MDG\)</span> is the mean daily germination percentage from the onset of germination.<br>
 It can also be computed for other time intervals of successive germination counts, by replacing <span class="math inline">\(MDG\)</span> with the mean germination percentage per unit time (<span class="math inline">\(\overline{GP}\)</span>).</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left"><span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span></td>
+<td></td>
+<td>Mixed</td>
+<td><span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span></td>
 </tr>
 <tr class="even">
-<td align="left">Germination value (<span class="math inline">\(GV\)</span>) (Diavanshir and Pourbiek)</td>
-<td align="left"><code>GermValue</code></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[GV = \frac{\sum DGS}{N} \times GP \times k\]</span><br>
+<td>Germination value (<span class="math inline">\(GV\)</span>) (Diavanshir and Pourbiek)</td>
+<td><code>GermValue</code></td>
+<td>It is computed as follows:<br><span class="math display">\[GV = \frac{\sum DGS}{N} \times GP \times k\]</span><br>
 Where, <span class="math inline">\(DGS\)</span> is the daily germination speed computed by dividing cumulative germination percentage by the number of days since the since the onset of germination, <span class="math inline">\(N\)</span> is the frequency or number of DGS calculated during the test, <span class="math inline">\(GP\)</span> is the germination percentage expressed over 100 and <span class="math inline">\(k\)</span> is a constant. The value of <span class="math inline">\(k\)</span> is decided on the basis of average daily speed of germination (<span class="math inline">\(\frac{\sum DGS}{N}\)</span>). If it is less than 10, then <span class="math inline">\(k\)</span> value of 10 can be used and if it is more than 10, then value of 7 or 8 can be used for <span class="math inline">\(k\)</span>.<br><span class="math inline">\(GV\)</span> value can be modified (<span class="math inline">\(GV_{mod}\)</span>), to consider the entire duration from the beginning of the test instead of just from the onset of germination.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
-<td align="left">
+<td></td>
+<td>Mixed</td>
+<td>
 <span class="citation">Djavanshir and Pourbeik (<a href="#ref-djavanshir_germination_1976">1976</a>)</span>; <span class="citation">Brown and Mayer (<a href="#ref-brown_representing_1988">1988</a>)</span>
 </td>
 </tr>
 <tr class="odd">
-<td align="left">Coefficient of uniformity of germination (<span class="math inline">\(CUG\)</span>)</td>
-<td align="left"><code>CUGerm</code></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[CV_{T} =
+<td>Coefficient of uniformity of germination (<span class="math inline">\(CUG\)</span>)</td>
+<td><code>CUGerm</code></td>
+<td>It is computed as follows:<br><span class="math display">\[CV_{T} =
 \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}(\overline{T}-T_{i})^{2}N_{i}}\]</span><br>
 Where, <span class="math inline">\(\overline{T}\)</span> is the the mean germination time, <span class="math inline">\(T_{i}\)</span> is the time from the start of the experiment to the <span class="math inline">\(i\)</span>th observation (day for the example); <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated in the <span class="math inline">\(i\)</span>th time (not the accumulated number, but the number correspondent to the <span class="math inline">\(i\)</span>th observation), and <span class="math inline">\(k\)</span> is the last time of germination.</td>
-<td align="left"></td>
-<td align="left">Germinatin unifromity</td>
-<td align="left">
+<td></td>
+<td>Germinatin unifromity</td>
+<td>
 <span class="citation">Heydecker (<a href="#ref-heydecker_seed_1972">1972</a>)</span>; <span class="citation">Bewley and Black (<a href="#ref-bewley_seeds:_1994">1994</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Coefficient of variation of the germination time (<span class="math inline">\(CV_{T}\)</span>)</td>
-<td align="left"><code>CVGermTime</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[CV_{T} =
+<td>Coefficient of variation of the germination time (<span class="math inline">\(CV_{T}\)</span>)</td>
+<td><code>CVGermTime</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[CV_{T} =
 \sqrt{\frac{s_{T}^{2}}{\overline{T}}}\]</span><br>
 Where, <span class="math inline">\(s_{T}^{2}\)</span> is the variance of germination time and <span class="math inline">\(\overline{T}\)</span> is the mean germination time.</td>
-<td align="left"></td>
-<td align="left">Germinatin unifromity</td>
-<td align="left"><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
+<td></td>
+<td>Germinatin unifromity</td>
+<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
 </tr>
 <tr class="odd">
-<td align="left">Synchronization index (<span class="math inline">\(\overline{E}\)</span>) or Uncertainty of the germination process (<span class="math inline">\(U\)</span>) or informational entropy (<span class="math inline">\(H\)</span>)</td>
-<td align="left"><code>GermUncertainty</code></td>
-<td align="left">It is estimated as follows:<br><span class="math display">\[\overline{E} =
+<td>Synchronization index (<span class="math inline">\(\overline{E}\)</span>) or Uncertainty of the germination process (<span class="math inline">\(U\)</span>) or informational entropy (<span class="math inline">\(H\)</span>)</td>
+<td><code>GermUncertainty</code></td>
+<td>It is estimated as follows:<br><span class="math display">\[\overline{E} =
 -\sum_{i=1}^{k}f_{i}\log_{2}f_{i}\]</span><br>
 Where, <span class="math inline">\(f_{i}\)</span> is the relative frequency of germination (<span class="math inline">\(f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}\)</span>), <span class="math inline">\(N_{i}\)</span> is the number of seeds germinated on the <span class="math inline">\(i\)</span>th time and <span class="math inline">\(k\)</span> is the last day of observation.</td>
-<td align="left">bit</td>
-<td align="left">Germination synchrony</td>
-<td align="left">
+<td>bit</td>
+<td>Germination synchrony</td>
+<td>
 <span class="citation">Shannon (<a href="#ref-shannon_mathematical_1948">1948</a>)</span>; <span class="citation">Labouriau and Valadares (<a href="#ref-labouriau_germination_1976">1976</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983</a><a href="#ref-labouriau_uma_1983">b</a>)</span>
 </td>
 </tr>
 <tr class="even">
-<td align="left">Synchrony of germination (<span class="math inline">\(Z\)</span> index)</td>
-<td align="left"><code>GermSynchrony</code></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma
+<td>Synchrony of germination (<span class="math inline">\(Z\)</span> index)</td>
+<td><code>GermSynchrony</code></td>
+<td>It is computed as follows:<br><span class="math display">\[Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma
 N_{i},2}}\]</span><br>
 Where, <span class="math inline">\(C_{N_{i},2}\)</span> is the partial combination of the two germinated seeds from among <span class="math inline">\(N_{i}\)</span>, the number of seeds germinated on the <span class="math inline">\(i\)</span>th time (estimated as <span class="math inline">\(C_{N_{i},2}=\frac{N{i}(N{i}-1)}{2}\)</span>) and <span class="math inline">\(C_{\Sigma N_{i},2}\)</span> is the partial combination of the two germinated seeds from among the total number of seeds germinated at the final count, assuming that all seeds that germinated did so simultaneously.</td>
-<td align="left"></td>
-<td align="left">Germination synchrony</td>
-<td align="left">
+<td></td>
+<td>Germination synchrony</td>
+<td>
 <span class="citation">Primack (<a href="#ref-primack_longevity_1985">1985</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 </tbody>
 </table>
-<p>\end{small} </p>
-
 <div id="examples" class="section level4">
 <h4 class="hasAnchor">
 <a href="#examples" class="anchor"></a>Examples</h4>
@@ -1487,109 +1484,109 @@ f(x) = y = y_0 + \frac{ax^b}{x^b+c^b}
 <col width="26%">
 <col width="53%">
 <col width="7%">
-<col width="13%">
+<col width="14%">
 </colgroup>
 <thead><tr class="header">
-<th align="left">Germination parameters</th>
-<th align="left">Details</th>
-<th align="left">Unit</th>
-<th align="left">Measures</th>
+<th>Germination parameters</th>
+<th>Details</th>
+<th>Unit</th>
+<th>Measures</th>
 </tr></thead>
 <tbody>
 <tr class="odd">
-<td align="left">y intercept (<span class="math inline">\(y_{0}\)</span>)</td>
-<td align="left">The intercept on the y axis.</td>
-<td align="left"></td>
-<td align="left"></td>
+<td>y intercept (<span class="math inline">\(y_{0}\)</span>)</td>
+<td>The intercept on the y axis.</td>
+<td></td>
+<td></td>
 </tr>
 <tr class="even">
-<td align="left">Asymptote (<span class="math inline">\(a\)</span>)</td>
-<td align="left">It is the maximum cumulative germination percentage, which is equivalent to germination capacity.</td>
-<td align="left">%</td>
-<td align="left">Germination capacity</td>
+<td>Asymptote (<span class="math inline">\(a\)</span>)</td>
+<td>It is the maximum cumulative germination percentage, which is equivalent to germination capacity.</td>
+<td>%</td>
+<td>Germination capacity</td>
 </tr>
 <tr class="odd">
-<td align="left">Shape and steepness (<span class="math inline">\(b\)</span>)</td>
-<td align="left">Mathematical parameter controlling the shape and steepness of the germination curve. The larger the <span class="math inline">\(b\)</span> , the steeper the rise toward the asymptote <span class="math inline">\(a\)</span>, and the shorter the time between germination onset and maximum germination.</td>
-<td align="left"></td>
-<td align="left">Germination rate</td>
+<td>Shape and steepness (<span class="math inline">\(b\)</span>)</td>
+<td>Mathematical parameter controlling the shape and steepness of the germination curve. The larger the <span class="math inline">\(b\)</span> , the steeper the rise toward the asymptote <span class="math inline">\(a\)</span>, and the shorter the time between germination onset and maximum germination.</td>
+<td></td>
+<td>Germination rate</td>
 </tr>
 <tr class="even">
-<td align="left">Half-maximal activation level (<span class="math inline">\(c\)</span>)</td>
-<td align="left">Time required for 50% of viable seeds to germinate.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td>Half-maximal activation level (<span class="math inline">\(c\)</span>)</td>
+<td>Time required for 50% of viable seeds to germinate.</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(lag\)</span></td>
-<td align="left">It is the time at germination onset and is computed by solving four-parameter hill function after setting y to 0 as follows:<br><span class="math display">\[lag = b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}\]</span>
+<td><span class="math inline">\(lag\)</span></td>
+<td>It is the time at germination onset and is computed by solving four-parameter hill function after setting y to 0 as follows:<br><span class="math display">\[lag = b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}\]</span>
 </td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(D_{lag-50}\)</span></td>
-<td align="left">The duration between the time at germination onset (<span class="math inline">\(lag\)</span>) and that at 50% germination (<span class="math inline">\(c\)</span>).</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td><span class="math inline">\(D_{lag-50}\)</span></td>
+<td>The duration between the time at germination onset (<span class="math inline">\(lag\)</span>) and that at 50% germination (<span class="math inline">\(c\)</span>).</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(t_{50_{total}}\)</span></td>
-<td align="left">Time required for 50% of total seeds to germinate.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td><span class="math inline">\(t_{50_{total}}\)</span></td>
+<td>Time required for 50% of total seeds to germinate.</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(t_{50_{germinated}}\)</span></td>
-<td align="left">Time required for 50% of viable/germinated seeds to germinate</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td><span class="math inline">\(t_{50_{germinated}}\)</span></td>
+<td>Time required for 50% of viable/germinated seeds to germinate</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(t_{x_{total}}\)</span></td>
-<td align="left">Time required for <span class="math inline">\(x\)</span>% of total seeds to germinate.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td><span class="math inline">\(t_{x_{total}}\)</span></td>
+<td>Time required for <span class="math inline">\(x\)</span>% of total seeds to germinate.</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(t_{x_{germinated}}\)</span></td>
-<td align="left">Time required for <span class="math inline">\(x\)</span>% of viable/germinated seeds to germinate</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td><span class="math inline">\(t_{x_{germinated}}\)</span></td>
+<td>Time required for <span class="math inline">\(x\)</span>% of viable/germinated seeds to germinate</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="odd">
-<td align="left">Uniformity (<span class="math inline">\(U_{t_{max}-t_{min}}\)</span>)</td>
-<td align="left">It is the time interval between the percentages of viable seeds specified in the arguments <code>umin</code> and <code>umin</code> to germinate.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td>Uniformity (<span class="math inline">\(U_{t_{max}-t_{min}}\)</span>)</td>
+<td>It is the time interval between the percentages of viable seeds specified in the arguments <code>umin</code> and <code>umin</code> to germinate.</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="even">
-<td align="left">Time at maximum germination rate (<span class="math inline">\(TMGR\)</span>)</td>
-<td align="left">The partial derivative of the four-parameter hill function gives the instantaneous rate of germination (<span class="math inline">\(s\)</span>) as follows:<br><span class="math display">\[s = \frac{\partial y}{\partial x} =
+<td>Time at maximum germination rate (<span class="math inline">\(TMGR\)</span>)</td>
+<td>The partial derivative of the four-parameter hill function gives the instantaneous rate of germination (<span class="math inline">\(s\)</span>) as follows:<br><span class="math display">\[s = \frac{\partial y}{\partial x} =
 \frac{abc^{b}x^{b-1}}{(c^{b}+x^{b})^{2}}\]</span><br>
 From this function for instantaneous rate of germination, <span class="math inline">\(TMGR\)</span> can be estimated as follows:<br><span class="math display">\[TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}\]</span><br>
 It represents the point in time when the instantaneous rate of germination starts to decline.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="odd">
-<td align="left">Area under the curve (<span class="math inline">\(AUC\)</span>)</td>
-<td align="left">It is obtained by integration of the fitted curve between time 0 and time specified in the argument <code>tmax</code>.</td>
-<td align="left"></td>
-<td align="left">Mixed</td>
+<td>Area under the curve (<span class="math inline">\(AUC\)</span>)</td>
+<td>It is obtained by integration of the fitted curve between time 0 and time specified in the argument <code>tmax</code>.</td>
+<td></td>
+<td>Mixed</td>
 </tr>
 <tr class="even">
-<td align="left"><span class="math inline">\(MGT\)</span></td>
-<td align="left">Calculated by integration of the fitted curve and proper normalisation.</td>
-<td align="left">time</td>
-<td align="left">Germination time</td>
+<td><span class="math inline">\(MGT\)</span></td>
+<td>Calculated by integration of the fitted curve and proper normalisation.</td>
+<td>time</td>
+<td>Germination time</td>
 </tr>
 <tr class="odd">
-<td align="left"><span class="math inline">\(Skewness\)</span></td>
-<td align="left">It is computed as follows:<br><span class="math display">\[\frac{MGT}{t_{50_{germinated}}}\]</span>
+<td><span class="math inline">\(Skewness\)</span></td>
+<td>It is computed as follows:<br><span class="math display">\[\frac{MGT}{t_{50_{germinated}}}\]</span>
 </td>
-<td align="left"></td>
-<td align="left"></td>
+<td></td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -2080,27 +2077,28 @@ other attached packages:
 [1] germinationmetrics_0.1.3
 
 loaded via a namespace (and not attached):
- [1] minpack.lm_1.2-1   tidyselect_0.2.5   purrr_0.2.5       
- [4] pander_0.6.3       lattice_0.20-38    colorspace_1.3-2  
- [7] htmltools_0.3.6    yaml_2.2.0         XML_3.98-1.16     
-[10] rlang_0.3.0.1      pkgdown_1.3.0.9000 pillar_1.3.0      
-[13] glue_1.3.0         bindrcpp_0.2.2     bindr_0.1.1       
-[16] plyr_1.8.4         stringr_1.3.1      munsell_0.5.0     
-[19] commonmark_1.7     gtable_0.2.0       memoise_1.1.0     
-[22] evaluate_0.12      labeling_0.3       knitr_1.20        
-[25] gbRd_0.4-11        curl_3.2           highr_0.7         
-[28] broom_0.5.0        Rcpp_1.0.0         scales_1.0.0      
-[31] backports_1.1.2    desc_1.2.0         fs_1.2.6          
-[34] ggplot2_3.1.0      digest_0.6.18      stringi_1.2.4     
-[37] dplyr_0.7.8        ggrepel_0.8.0      grid_3.6.0        
-[40] rprojroot_1.3-2    bibtex_0.4.2       Rdpack_0.10-3     
-[43] tools_3.6.0        bitops_1.0-6       magrittr_1.5      
-[46] lazyeval_0.2.1     RCurl_1.95-4.11    tibble_1.4.2      
-[49] crayon_1.3.4       tidyr_0.8.2        pkgconfig_2.0.2   
-[52] MASS_7.3-51.1      data.table_1.11.8  xml2_1.2.0        
-[55] assertthat_0.2.0   rmarkdown_1.10     roxygen2_6.1.1    
-[58] httr_1.3.1         rstudioapi_0.8     R6_2.3.0          
-[61] nlme_3.1-137       compiler_3.6.0    </code></pre>
+ [1] minpack.lm_1.2-1   tidyselect_0.2.5   xfun_0.4          
+ [4] pander_0.6.3       purrr_0.2.5        lattice_0.20-38   
+ [7] colorspace_1.4-0   generics_0.0.2     htmltools_0.3.6   
+[10] yaml_2.2.0         XML_3.98-1.16      rlang_0.3.1       
+[13] pkgdown_1.3.0.9000 pillar_1.3.1       glue_1.3.0        
+[16] bindrcpp_0.2.2     bindr_0.1.1        plyr_1.8.4        
+[19] stringr_1.3.1      munsell_0.5.0      commonmark_1.7    
+[22] gtable_0.2.0       memoise_1.1.0      evaluate_0.12     
+[25] labeling_0.3       knitr_1.21         gbRd_0.4-11       
+[28] curl_3.3           highr_0.7          broom_0.5.1       
+[31] Rcpp_1.0.0         scales_1.0.0       backports_1.1.3   
+[34] desc_1.2.0         fs_1.2.6           ggplot2_3.1.0     
+[37] digest_0.6.18      stringi_1.2.4      dplyr_0.7.8       
+[40] ggrepel_0.8.0      grid_3.6.0         rprojroot_1.3-2   
+[43] bibtex_0.4.2       Rdpack_0.10-3      tools_3.6.0       
+[46] bitops_1.0-6       magrittr_1.5       lazyeval_0.2.1    
+[49] RCurl_1.95-4.11    tibble_2.0.1       crayon_1.3.4      
+[52] tidyr_0.8.2        pkgconfig_2.0.2    MASS_7.3-51.1     
+[55] data.table_1.12.0  xml2_1.2.0         assertthat_0.2.0  
+[58] rmarkdown_1.11     roxygen2_6.1.1     httr_1.4.0        
+[61] rstudioapi_0.9.0   R6_2.3.0           nlme_3.1-137      
+[64] compiler_3.6.0    </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
