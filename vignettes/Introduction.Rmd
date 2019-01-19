@@ -44,6 +44,9 @@ r["CRAN"] = "https://cran.rstudio.com/"
 #r["CRAN"] = "https://cloud.r-project.org/"
 #r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
 options(repos = r)
+
+# Workaround for missing pandoc in CRAN OSX build machines
+out_type <- ifelse(out_type == "", "latex", out_type)
 ```
 
 ```{r, results='asis', echo=FALSE}
