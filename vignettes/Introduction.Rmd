@@ -214,10 +214,15 @@ indices$Reference <- gsub("\\[|\\]", "", indices$Reference)
 
 
 ```{r, echo = FALSE, eval = TRUE}
-pander::pander(indices, style='grid',
+if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+  pander::pander(indices, style='grid',
                split.cell = c(15, 18, 50, 10, 12, 8),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
                use.hyphening = FALSE, missing = "")
+} else {
+  print("Package 'pander' and pandoc are required to generate this table")
+}
+
 ```
 
 \elandscape
@@ -313,10 +318,14 @@ The details of various parameters that are computed from this function are given
 ```{r, echo = FALSE, eval = TRUE}
 load("Indices.rda")
 fphf$Details <- gsub("\\r\\n", "\\\\\n", fphf$Details)
-pander::pander(fphf, style='grid',
+if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+  pander::pander(fphf, style='grid',
                split.cell = c(15, 50, 10, 10),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
                use.hyphening = FALSE, missing = "")
+} else {
+  print("Package 'pander' and pandoc are required to generate this table")
+}
 ```
 
 #### Examples
