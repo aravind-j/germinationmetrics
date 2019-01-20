@@ -1,3 +1,4 @@
+.Rd2pdf*
 .Rproj.user
 .Rhistory
 .RData
@@ -9,4 +10,5 @@ vignettes/Introduction.out
 vignettes/Introduction.log
 vignettes/Introduction.html
 vignettes/Introduction.toc
+vignettes/Introduction_files/
 dat.xlsx

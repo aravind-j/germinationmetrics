@@ -25,3 +25,4 @@
 ^vignettes/Introduction\.toc$
 ^_pkgdown\.yml$
 ^pkgdown$
+^.Rd2pdf*$
