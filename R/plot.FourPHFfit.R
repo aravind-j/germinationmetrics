@@ -221,6 +221,8 @@ plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
                        na.rm = TRUE, parse = TRUE)
   }
 
+  Gplot <- Gplot +
+    theme(axis.text = element_text(colour = "black"))
 
     # rm(df, a, b, c, y0, TMGR, MGT, Ufm,
     #    t50.Germinated, t50.totalseeds, umax, umin)

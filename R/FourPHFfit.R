@@ -126,7 +126,8 @@
 #' @param tries The number of tries to be attempted to fit the curve. Default is
 #'   3.
 #'
-#' @return A list with the following components:  \item{Parameters}{A data.frame
+#' @return A list with the following components: \item{data}{A data frame with
+#'   the data used for computing the model} \item{Parameters}{A data.frame
 #'   of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
 #'   data frame with estimates of model fitness such as log likelyhoods, Akaike
 #'   Information Criterion, Bayesian Information Criterion, deviance and
