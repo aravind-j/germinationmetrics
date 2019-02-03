@@ -193,7 +193,7 @@ TimsonsIndex <- function(germ.counts, intervals, partial = TRUE,
 
   # Check if intervals are uniform
   if (length(unique(diff(intervals))) != 1) {
-    stop("'intervals' are not uniform.")
+    warning("'intervals' are not uniform.")
   }
 
   # Check if germ.counts and intervals are of equal length
@@ -271,7 +271,7 @@ GermRateGeorge <- function(germ.counts, intervals, partial = TRUE, max) {
 
   # Check if intervals are uniform
   if (length(unique(diff(intervals))) != 1) {
-    stop("'intervals' are not uniform.")
+    warning("'intervals' are not uniform.")
   }
 
   # Check if germ.counts and intervals are of equal length

@@ -139,7 +139,7 @@ MeanGermPercent <- function(germinated.seeds, germ.counts, total.seeds, interval
 
   # Check if intervals are uniform
   if (length(unique(diff(intervals))) != 1) {
-    stop("'intervals' are not uniform.")
+    warning("'intervals' are not uniform.")
   }
 
   MGP <- GP/intervals[length(intervals)]
@@ -163,7 +163,7 @@ MeanGermNumber <- function(germ.counts, intervals, partial = TRUE) {
 
   # Check if intervals are uniform
   if (length(unique(diff(intervals))) != 1) {
-    stop("'intervals' are not uniform.")
+    warning("'intervals' are not uniform.")
   }
 
   # Check if germ.counts and intervals are of equal length
