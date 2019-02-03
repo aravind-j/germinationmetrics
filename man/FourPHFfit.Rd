@@ -40,7 +40,8 @@ uniformity. Default is \code{90}. Seed \strong{\code{Details}}.}
 3.}
 }
 \value{
-A list with the following components:  \item{Parameters}{A data.frame
+A list with the following components: \item{data}{A data frame with
+  the data used for computing the model} \item{Parameters}{A data.frame
   of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
   data frame with estimates of model fitness such as log likelyhoods, Akaike
   Information Criterion, Bayesian Information Criterion, deviance and
