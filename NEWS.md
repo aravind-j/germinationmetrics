@@ -1,5 +1,8 @@
 # germinationmetrics  0.1.4
 
+## OTHER NOTES: 
+* Error in case of non-uniform intervals converted to warning.
+
 # germinationmetrics  0.1.3
 
 ## NEW FUNCTIONS:

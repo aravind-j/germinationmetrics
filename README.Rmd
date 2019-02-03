@@ -55,6 +55,7 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 The package can be installed from CRAN as follows:
 
 ```{r, eval=FALSE}
+if (!require('devtools')) install.packages('devtools')
 install.packages('germinationmetrics', dependencies=TRUE)
 ```
 
