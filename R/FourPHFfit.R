@@ -216,15 +216,81 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     stop("'total.seeds' should be a numeric vector of length 1.")
   }
 
-  # Check if argument partial is of type logical with unit length
-  if (!is.logical(partial) || length(partial) != 1) {
-    stop("'partial' should be a logical vector of length 1.")
+  # Check if umax is of type numeric with unit length
+  if (!is.numeric(umax) || length(umax) != 1) {
+    stop("'umax' should be a numeric vector of length 1.")
   }
 
-  # Convert cumulative to partial
-  if (!partial) {
-    germ.counts <- c(germ.counts[1], diff(germ.counts))
+  # Check if umin is of type numeric with unit length
+  if (!is.numeric(umin) || length(umin) != 1) {
+    stop("'umin' should be a numeric vector of length 1.")
   }
+
+  # Check if argument xp is of type numeric
+  if (!is.numeric(xp)) {
+    stop("'xp' should be a numeric vector.")
+  }
+
+  # check if 0 < umax < 100
+  if (umax > 100 || umax < 0) {
+    stop('"umax" is not within range',
+         ' (0 <= "umax" <= 100).')
+
+    # check if 0 < umin < 100
+    if (umin > 100 || umin < 0) {
+      stop('"umin" is not within range',
+           ' (0 <= "umin" <= 100).')
+      # check if umax < umin
+      if (umin > umax) {
+        stop('"umin" is greater than "umax"')
+      }
+
+      if (umin == umax) {
+        stop('"umin" and "umax" have same values')
+      }
+
+    }
+  }
+
+  # check if 0 < xp < 100
+  if (any(!findInterval(xp, c(0, 100),
+                        rightmost.closed = TRUE) == 1)) {
+    stop('Values in "xp" are not within range',
+         ' (0 <= "xp" <= 100).')
+  }
+
+  # name xp
+    names(xp) <- xp
+
+  # Check if tmax is of type numeric with unit length
+    if (!is.numeric(tmax) || length(tmax) != 1) {
+      stop("'tmax' should be a numeric vector of length 1.")
+    }
+
+  # Check if tmax is > 0
+    if (tmax < 0) {
+      stop("'tmax' should be greater than 0.")
+    }
+
+  # Check if tries is of type numeric with unit length
+    if (!is.numeric(tries) || length(tries) != 1) {
+      stop("'tries' should be a numeric vector of length 1.")
+    }
+
+  # Check if tries is > 0
+    if (tries < 0) {
+      stop("'tries' should be greater than 0.")
+    }
+
+  # Check if argument partial is of type logical with unit length
+    if (!is.logical(partial) || length(partial) != 1) {
+      stop("'partial' should be a logical vector of length 1.")
+    }
+
+  # Convert cumulative to partial
+    if (!partial) {
+      germ.counts <- c(germ.counts[1], diff(germ.counts))
+    }
 
   gp <- (germ.counts/total.seeds) * 100
   csgp <- cumsum(gp)
