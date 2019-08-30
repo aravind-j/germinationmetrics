@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Coefficient of uniformity of germination — CUGerm • germinationmetrics</title>
+<title>Fit four-parameter hill function for multiple samples — FourPHFfit.bulk • germinationmetrics</title>
 
 
 <!-- jquery -->
@@ -43,8 +43,9 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Coefficient of uniformity of germination — CUGerm" />
-<meta property="og:description" content="Compute the Coefficient of uniformity of germination (CUG)." />
+<meta property="og:title" content="Fit four-parameter hill function for multiple samples — FourPHFfit.bulk" />
+<meta property="og:description" content="Fit four-parameter hill function from a data frame of germination counts
+recorded at specific time intervals for multiple samples in batch." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -149,24 +150,45 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Coefficient of uniformity of germination</h1>
-    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/CUGerm.R'><code>R/CUGerm.R</code></a></small>
-    <div class="hidden name"><code>CUGerm.Rd</code></div>
+    <h1>Fit four-parameter hill function for multiple samples</h1>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/FourPHFfit.bulk.R'><code>R/FourPHFfit.bulk.R</code></a></small>
+    <div class="hidden name"><code>FourPHFfit.bulk.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Compute the Coefficient of uniformity of germination (CUG).</p>
+    <p>Fit four-parameter hill function from a data frame of germination counts
+recorded at specific time intervals for multiple samples in batch.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>CUGerm</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>FourPHFfit.bulk</span>(<span class='no'>data</span>, <span class='no'>total.seeds.col</span>, <span class='no'>counts.intervals.cols</span>, <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>tmax</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>,
+  <span class='fl'>60</span>), <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>, <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>germ.counts</th>
-      <td><p>Germination counts at each time interval. Can be partial
-or cumulative as specified in the argument <code>partial</code>.</p></td>
+      <th>data</th>
+      <td><p>A data frame with the germination count data. It should possess
+columns with</p><ul>
+<li><p>Partial or cumulative germination counts per
+time interval (to be indicated by the argument <code>counts.intervals.cols</code>
+and</p></li>
+<li><p>Total number of seeds tested (to be indicated by the argument
+<code>total.seeds.col</code>).</p></li>
+</ul></td>
+    </tr>
+    <tr>
+      <th>total.seeds.col</th>
+      <td><p>The name of the column in <code>data</code> with the total
+number of seeds tested.</p></td>
+    </tr>
+    <tr>
+      <th>counts.intervals.cols</th>
+      <td><p>The names of columns in <code>data</code> with the
+germination counts (partial or cumulative, as indicated by the argument
+<code>partial</code>) per time interval (indicated by the argument
+<code>intervals</code>).</p></td>
     </tr>
     <tr>
       <th>intervals</th>
@@ -178,57 +200,69 @@ or cumulative as specified in the argument <code>partial</code>.</p></td>
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></td>
     </tr>
+    <tr>
+      <th>fix.y0</th>
+      <td><p>Force the intercept of the y axis through 0.</p></td>
+    </tr>
+    <tr>
+      <th>fix.a</th>
+      <td><p>Fix a as the actual maximum germination percentage at the end of
+the experiment.</p></td>
+    </tr>
+    <tr>
+      <th>tmax</th>
+      <td><p>The time up to which AUC is to be computed.</p></td>
+    </tr>
+    <tr>
+      <th>xp</th>
+      <td><p>Germination percentage value(s) for which the corresponding time is
+to be computed as a numeric vector. Default is <code><a href='https://rdrr.io/r/base/c.html'>c(10, 60)</a></code>.</p></td>
+    </tr>
+    <tr>
+      <th>umin</th>
+      <td><p>The minimum germination percentage value for computing
+uniformity. Default is <code>10</code>. Seed <strong><code>Details</code></strong>.</p></td>
+    </tr>
+    <tr>
+      <th>umax</th>
+      <td><p>The maximum germination percentage value for computing
+uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></strong>.</p></td>
+    </tr>
+    <tr>
+      <th>tries</th>
+      <td><p>The number of tries to be attempted to fit the curve. Default is
+3.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The value of the coefficient of uniformity of germination as
-  time<sup>-2</sup>.</p>
-    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
-
-    <p>CUG is computed as follows
-(Heydecker 1972; Bewley and Black 1994)
-.</p>
-<p><p style="text-align: center;"><i>CUG =
-<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub> N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub>(<span
-style="text-decoration:overline">T</span> &minus;
-T<sub>i</sub>)<sup>2</sup>N<sub>i</sub></sub></i></p></p>
-<p>Where, <i><span style="text-decoration:
-overline">T</span></i> is the the mean germination
-time, <i>T<sub>i</sub></i> is the time from
-the start of the experiment to the <i>i</i>th
-observation (day for the example);
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time (not the
-accumulated number, but the number correspondent to the
-<i>i</i>th observation), and
-<i>k</i> is the last time of germination.</p>
+    <p>A data frame with the original data along with the various parameters
+  of the respective fitted four-parameter hill function.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Bewley JD, Black M (1994).
-<em>Seeds: Physiology of Development and Germination.</em>.
-Plenum Publishing Corporation, New York, USA.
-ISBN 0-306-44748-7.<br /><br /> Heydecker W (1972).
-<em>Seed Ecology. Proceedings of the Nineteenth Easter School in Agricultural Science, University of Nottingham, 1972</em>.
-Pennsylvania State University Press, University Park, USA.</p>
+    <p>El-Kassaby YA, Moss I, Kolotelo D, Stoehr M (2008).
+&#8220;Seed germination: Mathematical representation and parameters extraction.&#8221;
+<em>Forest Science</em>, <b>54</b>(2), 220--227.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='GermSynchrony.html'>GermSynchrony</a></code>,
-  <code><a href='MeanGermTime.html'>MeanGermTime</a></code></p></div>
+    <div class='dont-index'><p>This function is a wrapper around the
+  <code><a href='FourPHFfit.html'>FourPHFfit</a></code> function for fitting
+  four-parameter hill curve.</p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+    <pre class="examples"><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>gcdata</span>)
 
-<span class='co'># From partial germination counts</span>
-<span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>CUGerm</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.7092199</div><div class='input'>
-<span class='co'># From cumulative germination counts</span>
-<span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>CUGerm</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.05267935</div><div class='input'>
+<span class='no'>counts.per.intervals</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Day01"</span>, <span class='st'>"Day02"</span>, <span class='st'>"Day03"</span>, <span class='st'>"Day04"</span>, <span class='st'>"Day05"</span>,
+                          <span class='st'>"Day06"</span>, <span class='st'>"Day07"</span>, <span class='st'>"Day08"</span>, <span class='st'>"Day09"</span>, <span class='st'>"Day10"</span>,
+                          <span class='st'>"Day11"</span>, <span class='st'>"Day12"</span>, <span class='st'>"Day13"</span>, <span class='st'>"Day14"</span>)
+
+<span class='fu'>FourPHFfit.bulk</span>(<span class='no'>gcdata</span>, <span class='kw'>total.seeds.col</span> <span class='kw'>=</span> <span class='st'>"Total Seeds"</span>,
+                    <span class='kw'>counts.intervals.cols</span> <span class='kw'>=</span> <span class='no'>counts.per.intervals</span>,
+                    <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>14</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+                    <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>),
+                    <span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt; <span class='error'>Error in FourPHFfit.bulk(gcdata, total.seeds.col = "Total Seeds", counts.intervals.cols = counts.per.intervals,     intervals = 1:14, partial = TRUE, fix.y0 = TRUE, fix.a = TRUE,     xp = c(10, 60), tmax = 20, tries = 3, umax = 90, umin = 10): could not find function "FourPHFfit.bulk"</span></div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -236,7 +270,6 @@ Pennsylvania State University Press, University Park, USA.</p>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
       <li><a href="#value">Value</a></li>
-      <li><a href="#details">Details</a></li>
       <li><a href="#references">References</a></li>
       <li><a href="#see-also">See also</a></li>
       <li><a href="#examples">Examples</a></li>

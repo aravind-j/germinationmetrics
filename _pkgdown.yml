@@ -56,6 +56,7 @@ reference:
     - title: Wrapper
       contents:
          - '`germination.indices`'
+         - '`FourPHFfit.bulk`'
 
     - title: Data
       contents:
