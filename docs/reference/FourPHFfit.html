@@ -8,25 +8,21 @@
 
 <title>Fit four-parameter hill function — FourPHFfit • germinationmetrics</title>
 
-
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 <!-- Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script>
 
 <!-- Font Awesome icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
 
 <!-- clipboard.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script>
 
-<!-- headroom.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script>
+<!-- sticky kit -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
 <link href="../pkgdown.css" rel="stylesheet">
@@ -42,14 +38,13 @@
 
   <link href="../extra.css" rel="stylesheet">
   
-
 <meta property="og:title" content="Fit four-parameter hill function — FourPHFfit" />
+
 <meta property="og:description" content="Fit a four-parameter hill function
 (El-Kassaby et al. 2008)
  to cumulative
 germination count data and compute the associated parameters." />
 <meta name="twitter:card" content="summary" />
-
 
 
 
@@ -72,7 +67,6 @@ germination count data and compute the associated parameters." />
 
   gtag('config', 'UA-116205606-2');
 </script>
-
 
   </head>
 
@@ -125,6 +119,7 @@ germination count data and compute the associated parameters." />
   </a>
 </li>
       </ul>
+      
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
@@ -135,7 +130,7 @@ germination count data and compute the associated parameters." />
 </li>
       </ul>
       
-      <form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
+      <form class="navbar-form navbar-right" role="search">
         <div class="form-group">
           <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
         </div>
@@ -146,7 +141,6 @@ germination count data and compute the associated parameters." />
 </div><!--/.navbar -->
 
       
-
       </header>
 
 <div class="row">
@@ -158,16 +152,18 @@ germination count data and compute the associated parameters." />
     </div>
 
     <div class="ref-description">
+    
     <p>Fit a four-parameter hill function
 (El-Kassaby et al. 2008)
  to cumulative
 germination count data and compute the associated parameters.</p>
+    
     </div>
 
     <pre class="usage"><span class='fu'>FourPHFfit</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>tmax</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>), <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>tmax</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>), <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>,
   <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>)</pre>
-
+    
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
@@ -206,7 +202,7 @@ the experiment.</p></td>
     <tr>
       <th>xp</th>
       <td><p>Germination percentage value(s) for which the corresponding time is
-to be computed as a numeric vector. Default is <code><a href='https://rdrr.io/r/base/c.html'>c(10, 60)</a></code>.</p></td>
+to be computed as a numeric vector. Default is <code><a href='https://www.rdocumentation.org/packages/base/topics/c'>c(10, 60)</a></code>.</p></td>
     </tr>
     <tr>
       <th>umin</th>
@@ -224,7 +220,7 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
 3.</p></td>
     </tr>
     </table>
-
+    
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>A list with the following components:</p>
@@ -251,6 +247,7 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
   germination time</p></dd> <dt>msg</dt><dd><p>The message from <code>nls.lm</code></p></dd>
   <dt>isConv</dt><dd><p>Logical value indicating whether convergence was achieved.</p></dd>
 
+    
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>The cumulative germination count data of a seed lot can be modelled to fit a
@@ -322,17 +319,19 @@ seeds to germinate
 <sup>MGT</sup> &frasl; <sub>t<sub>50</sub></sub></em></p></p>
 <p>If final germination percentage is less than 10%, a warning is given, as the
 results may not be informative.</p>
+    
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>El-Kassaby YA, Moss I, Kolotelo D, Stoehr M (2008).
 &#8220;Seed germination: Mathematical representation and parameters extraction.&#8221;
 <em>Forest Science</em>, <b>54</b>(2), 220--227.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
+<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
+<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/length'>length</a></span>(<span class='no'>x</span>)
 <span class='no'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>
 
 <span class='co'># From partial germination counts</span>
@@ -387,13 +386,15 @@ results may not be informative.</p>
 #&gt; [1] 6.355122
 #&gt; 
 #&gt; $txp.total
-#&gt; [1] 4.956266 6.744598
+#&gt;       10       60 
+#&gt; 4.956266 6.744598 
 #&gt; 
 #&gt; $t50.Germinated
 #&gt; [1] 6.034954
 #&gt; 
 #&gt; $txp.Germinated
-#&gt; [1] 4.831809 6.287724
+#&gt;       10       60 
+#&gt; 4.831809 6.287724 
 #&gt; 
 #&gt; $Uniformity
 #&gt;         90         10 uniformity 
@@ -472,13 +473,15 @@ results may not be informative.</p>
 #&gt; [1] 6.355121
 #&gt; 
 #&gt; $txp.total
-#&gt; [1] 4.956263 6.744599
+#&gt;       10       60 
+#&gt; 4.956263 6.744599 
 #&gt; 
 #&gt; $t50.Germinated
 #&gt; [1] 6.034953
 #&gt; 
 #&gt; $txp.Germinated
-#&gt; [1] 4.831806 6.287723
+#&gt;       10       60 
+#&gt; 4.831806 6.287723 
 #&gt; 
 #&gt; $Uniformity
 #&gt;         90         10 uniformity 
@@ -510,15 +513,18 @@ results may not be informative.</p>
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
+      
       <li><a href="#value">Value</a></li>
+
       <li><a href="#details">Details</a></li>
+
       <li><a href="#references">References</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
   </div>
 </div>
-
 
       <footer>
       <div class="copyright">
@@ -526,9 +532,8 @@ results may not be informative.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.9900.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
 </div>
-
       </footer>
    </div>
 
@@ -551,8 +556,6 @@ results may not be informative.</p>
 </script>
 
 
-
   </body>
 </html>
-
 

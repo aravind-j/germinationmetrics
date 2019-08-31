@@ -8,17 +8,17 @@ header-includes:
 - \usepackage{wrapfig}
 - \pagestyle{fancy}
 - \fancyhead[LE,RO]{\slshape \rightmark}
-- \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 - \fancyfoot[C]{\thepage}
-- \usepackage{xcolor}
 - \usepackage{hyperref}
 - \hypersetup{colorlinks=true}
 - \hypersetup{linktoc=all}
 - \hypersetup{linkcolor=blue}
 - \usepackage{pdflscape}
 - \usepackage{booktabs}
+- \usepackage{xcolor}
 - \newcommand{\blandscape}{\begin{landscape}}
 - \newcommand{\elandscape}{\end{landscape}}
+- \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 output:
   pdf_document:
     dev: cairo_pdf
@@ -350,20 +350,12 @@ library("germinationmetrics")
 ```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit", "germinationmetrics")}
 ```
 
-## Wrapper functions
+## Wrapper function
 
-Wrapper functions `germination.indices()` and `FourPHFfit.bulk()` are available in the package for computing results for multiple samples in batch from a data frame of germination counts recorded at specific time intervals.
+The wrapper function `germination.indices()` can be used to compute multiple germination indices from a data frame of germination counts recorded at specific time intervals for multiple samples in batch.
 
 #### `germination.indices()`
-This wrapper function can be used to compute several germination indices simultaneously for multiple samples in batch.
-
 ```{r, runCode, code = getCode("germination.indices", "germinationmetrics")}
-```
-
-#### `FourPHFfit.bulk()`
-This wrapper function can be used to fit the four-parameter hill function for multiple samples in batch.
-
-```{r, runCode, code = getCode("FourPHFfit.bulk", "germinationmetrics")}
 ```
 
 ## Citing `germinationmetrics`

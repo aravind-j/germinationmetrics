@@ -1,11 +1,5 @@
 # germinationmetrics  0.1.4
 
-## NEW FUNCTIONS:
-* `FourPHFfit.bulk` - Wrapper function around `FourPHFfit` for multiple samples.
-
-## UPDATED FUNCTIONS:
-* `FourPHFfit` - Added more checks for the input arguments `umax`, `umin`, `xp`, `tries` and `tmax`.
-
 ## OTHER NOTES: 
 * Error in case of non-uniform intervals converted to warning.
 
