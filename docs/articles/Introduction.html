@@ -1819,14 +1819,15 @@ attr(,"class")
 </div>
 </div>
 </div>
-<div id="wrapper-function" class="section level2">
+<div id="wrapper-functions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#wrapper-function" class="anchor"></a>Wrapper function</h2>
-<p>The wrapper function <code><a href="../reference/germination.indices.html">germination.indices()</a></code> can be used to compute multiple germination indices from a data frame of germination counts recorded at specific time intervals for multiple samples in batch.</p>
+<a href="#wrapper-functions" class="anchor"></a>Wrapper functions</h2>
+<p>Wrapper functions <code><a href="../reference/germination.indices.html">germination.indices()</a></code> and <code><a href="../reference/FourPHFfit.bulk.html">FourPHFfit.bulk()</a></code> are available in the package for computing results for multiple samples in batch from a data frame of germination counts recorded at specific time intervals.</p>
 <div id="germination-indices" class="section level4">
 <h4 class="hasAnchor">
 <a href="#germination-indices" class="anchor"></a><code>germination.indices()</code>
 </h4>
+<p>This wrapper function can be used to compute several germination indices simultaneously for multiple samples in batch.</p>
 <div class="sourceCode" id="cb215"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb215-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(gcdata)</a>
 <a class="sourceLine" id="cb215-2" title="2"></a>
 <a class="sourceLine" id="cb215-3" title="3">counts.per.intervals &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</a>
@@ -2028,6 +2029,119 @@ attr(,"class")
 14 0.5383760     0.2991543        2.037680
 15 0.6133519     0.2497096        2.185028</code></pre>
 </div>
+<div id="fourphffit-bulk" class="section level4">
+<h4 class="hasAnchor">
+<a href="#fourphffit-bulk" class="anchor"></a><code>FourPHFfit.bulk()</code>
+</h4>
+<p>This wrapper function can be used to fit the four-parameter hill function for multiple samples in batch.</p>
+<div class="sourceCode" id="cb217"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb217-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(gcdata)</a>
+<a class="sourceLine" id="cb217-2" title="2"></a>
+<a class="sourceLine" id="cb217-3" title="3">counts.per.intervals &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</a>
+<a class="sourceLine" id="cb217-4" title="4">                          <span class="st">"Day06"</span>, <span class="st">"Day07"</span>, <span class="st">"Day08"</span>, <span class="st">"Day09"</span>, <span class="st">"Day10"</span>,</a>
+<a class="sourceLine" id="cb217-5" title="5">                          <span class="st">"Day11"</span>, <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span>)</a>
+<a class="sourceLine" id="cb217-6" title="6"></a>
+<a class="sourceLine" id="cb217-7" title="7"><span class="kw"><a href="../reference/FourPHFfit.bulk.html">FourPHFfit.bulk</a></span>(gcdata, <span class="dt">total.seeds.col =</span> <span class="st">"Total Seeds"</span>,</a>
+<a class="sourceLine" id="cb217-8" title="8">                    <span class="dt">counts.intervals.cols =</span> counts.per.intervals,</a>
+<a class="sourceLine" id="cb217-9" title="9">                    <span class="dt">intervals =</span> <span class="dv">1</span><span class="op">:</span><span class="dv">14</span>, <span class="dt">partial =</span> <span class="ot">TRUE</span>,</a>
+<a class="sourceLine" id="cb217-10" title="10">                    <span class="dt">fix.y0 =</span> <span class="ot">TRUE</span>, <span class="dt">fix.a =</span> <span class="ot">TRUE</span>, <span class="dt">xp =</span> <span class="kw"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="dv">10</span>, <span class="dv">60</span>),</a>
+<a class="sourceLine" id="cb217-11" title="11">                    <span class="dt">tmax =</span> <span class="dv">20</span>, <span class="dt">tries =</span> <span class="dv">3</span>, <span class="dt">umax =</span> <span class="dv">90</span>, <span class="dt">umin =</span> <span class="dv">10</span>)</a></code></pre></div>
+<pre><code>    Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09
+ 1:       G1   1     0     0     0     0     4    17    10     7     1
+ 2:       G2   1     0     0     0     1     3    15    13     6     2
+ 3:       G3   1     0     0     0     2     3    18     9     8     2
+ 4:       G4   1     0     0     0     0     4    19    12     6     2
+ 5:       G5   1     0     0     0     0     5    20    12     8     1
+ 6:       G1   2     0     0     0     0     3    21    11     7     1
+ 7:       G2   2     0     0     0     0     4    18    11     7     1
+ 8:       G3   2     0     0     0     1     3    14    12     6     2
+ 9:       G4   2     0     0     0     1     3    19    10     8     1
+10:       G5   2     0     0     0     0     4    18    13     6     2
+11:       G1   3     0     0     0     0     5    21    11     8     1
+12:       G2   3     0     0     0     0     3    20    10     7     1
+13:       G3   3     0     0     0     0     4    19    12     8     1
+14:       G4   3     0     0     0     0     3    21    11     6     1
+15:       G5   3     0     0     0     0     4    17    10     8     1
+    Day10 Day11 Day12 Day13 Day14 Total Seeds        a         b        c
+ 1:     0     1     0     0     0          50 80.00000  9.881947 6.034954
+ 2:     1     0     1     0     0          51 82.35294  9.227667 6.175193
+ 3:     1     1     1     0     0          48 93.75000  7.793055 6.138110
+ 4:     1     1     1     0     0          51 90.19608  8.925668 6.125172
+ 5:     0     0     1     1     0          50 96.00000  9.419194 6.049641
+ 6:     1     1     1     0     0          49 93.87755  9.450187 6.097412
+ 7:     0     1     0     0     0          48 87.50000 10.172466 6.029851
+ 8:     1     0     1     0     0          47 85.10638  8.940702 6.189774
+ 9:     1     1     1     0     0          52 86.53846  8.617395 6.125121
+10:     1     0     1     0     0          50 90.00000  9.608849 6.109503
+11:     0     0     1     1     0          51 94.11765  9.400248 6.018759
+12:     1     1     1     0     0          51 86.27451  9.162558 6.108449
+13:     1     0     1     1     0          49 95.91837  8.995233 6.149011
+14:     0     1     1     0     0          48 91.66667 10.391898 6.015907
+15:     1     1     0     0     0          48 87.50000  9.136762 6.121580
+    y0 lag   Dlag50 t50.total t50.Germinated     TMGR      AUC      MGT
+ 1:  0   0 6.034954  6.355122       6.034954 5.912195 1108.975 6.632252
+ 2:  0   0 6.175193  6.473490       6.175193 6.031282 1128.559 6.784407
+ 3:  0   0 6.138110  6.244190       6.138110 5.938179 1283.693 6.772742
+ 4:  0   0 6.125172  6.276793       6.125172 5.972686 1239.887 6.739665
+ 5:  0   0 6.049641  6.103433       6.049641 5.914289 1328.328 6.654980
+ 6:  0   0 6.097412  6.182276       6.097412 5.961877 1294.463 6.702470
+ 7:  0   0 6.029851  6.202812       6.029851 5.914057 1213.908 6.622417
+ 8:  0   0 6.189774  6.439510       6.189774 6.036193 1164.346 6.804000
+ 9:  0   0 6.125121  6.352172       6.125121 5.961631 1188.793 6.745241
+10:  0   0 6.109503  6.253042       6.109503 5.978115 1240.227 6.711899
+11:  0   0 6.018759  6.099434       6.018759 5.883558 1305.200 6.624247
+12:  0   0 6.108449  6.326181       6.108449 5.964079 1188.021 6.718636
+13:  0   0 6.149011  6.207500       6.149011 5.998270 1316.407 6.762272
+14:  0   0 6.015907  6.122385       6.015907 5.905179 1273.386 6.604963
+15:  0   0 6.121580  6.317392       6.121580 5.976088 1203.664 6.732267
+    Skewness                                                          msg
+ 1: 1.098973 #1. Relative error in the sum of squares is at most `ftol'. 
+ 2: 1.098655 #1. Relative error in the sum of squares is at most `ftol'. 
+ 3: 1.103392 #1. Relative error in the sum of squares is at most `ftol'. 
+ 4: 1.100323 #1. Relative error in the sum of squares is at most `ftol'. 
+ 5: 1.100062 #1. Relative error in the sum of squares is at most `ftol'. 
+ 6: 1.099232 #1. Relative error in the sum of squares is at most `ftol'. 
+ 7: 1.098272 #1. Relative error in the sum of squares is at most `ftol'. 
+ 8: 1.099232 #1. Relative error in the sum of squares is at most `ftol'. 
+ 9: 1.101242 #1. Relative error in the sum of squares is at most `ftol'. 
+10: 1.098600 #1. Relative error in the sum of squares is at most `ftol'. 
+11: 1.100600 #1. Relative error in the sum of squares is at most `ftol'. 
+12: 1.099892 #1. Relative error in the sum of squares is at most `ftol'. 
+13: 1.099733 #1. Relative error in the sum of squares is at most `ftol'. 
+14: 1.097916 #1. Relative error in the sum of squares is at most `ftol'. 
+15: 1.099760 #1. Relative error in the sum of squares is at most `ftol'. 
+    isConv txp.total_10 txp.total_60 Uniformity_90 Uniformity_10
+ 1:   TRUE     4.956266     6.744598      7.537688      4.831809
+ 2:   TRUE     4.983236     6.872603      7.835407      4.866755
+ 3:   TRUE     4.673022     6.608437      8.137340      4.630062
+ 4:   TRUE     4.850876     6.614967      7.834806      4.788598
+ 5:   TRUE     4.814126     6.386788      7.639025      4.790947
+ 6:   TRUE     4.868635     6.477594      7.693458      4.832474
+ 7:   TRUE     4.930423     6.510495      7.483642      4.858477
+ 8:   TRUE     4.940058     6.823299      7.914162      4.841106
+ 9:   TRUE     4.836659     6.733275      7.904040      4.746574
+10:   TRUE     4.920629     6.566505      7.679176      4.860681
+11:   TRUE     4.798630     6.391288      7.603603      4.764249
+12:   TRUE     4.893597     6.684521      7.763844      4.806015
+13:   TRUE     4.841310     6.509952      7.850339      4.816395
+14:   TRUE     4.915143     6.397486      7.432360      4.869401
+15:   TRUE     4.892505     6.667247      7.785804      4.813086
+    Uniformity
+ 1:   2.705880
+ 2:   2.968652
+ 3:   3.507277
+ 4:   3.046208
+ 5:   2.848078
+ 6:   2.860984
+ 7:   2.625165
+ 8:   3.073056
+ 9:   3.157466
+10:   2.818494
+11:   2.839354
+12:   2.957830
+13:   3.033943
+14:   2.562960
+15:   2.972718</code></pre>
+</div>
 </div>
 <div id="citing-germinationmetrics" class="section level2">
 <h2 class="hasAnchor">
@@ -2059,7 +2173,7 @@ project by citing the package.</code></pre>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
-<div class="sourceCode" id="cb218"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb218-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
+<div class="sourceCode" id="cb220"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb220-1" title="1"><span class="kw"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</a></code></pre></div>
 <pre><code>R Under development (unstable) (2019-07-17 r76847)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
 Running under: Windows 10 x64 (build 17763)
@@ -2281,7 +2395,7 @@ loaded via a namespace (and not attached):
       <li><a href="#germination-count-data">Germination count data</a></li>
       <li><a href="#single-value-germination-indices">Single-value germination indices</a></li>
       <li><a href="#curve-fitting">Curve fitting</a></li>
-      <li><a href="#wrapper-function">Wrapper function</a></li>
+      <li><a href="#wrapper-functions">Wrapper functions</a></li>
       <li><a href="#citing-germinationmetrics">Citing <code>germinationmetrics</code></a></li>
       <li><a href="#session-info">Session Info</a></li>
       <li><a href="#references">References</a></li>
