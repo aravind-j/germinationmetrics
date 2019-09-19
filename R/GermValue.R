@@ -147,7 +147,8 @@ PeakValue <- function(germ.counts, intervals, total.seeds, partial = TRUE) {
   }
 
   # Check if intervals are uniform
-  if (length(unique(diff(intervals))) != 1) {
+  idiff <- diff(intervals)
+  if (!all(abs(idiff - idiff[[1]]) < .Machine$double.eps ^ 0.5)) {
     warning("'intervals' are not uniform.")
   }
 
@@ -194,7 +195,8 @@ GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   }
 
   # Check if intervals are uniform
-  if (length(unique(diff(intervals))) != 1) {
+  idiff <- diff(intervals)
+  if (!all(abs(idiff - idiff[[1]]) < .Machine$double.eps ^ 0.5)) {
     warning("'intervals' are not uniform.")
   }
 

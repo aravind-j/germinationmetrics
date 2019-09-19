@@ -5,6 +5,7 @@
 
 ## UPDATED FUNCTIONS:
 * `FourPHFfit` - Added more checks for the input arguments `umax`, `umin`, `xp`, `tries` and `tmax`.
+* `MeanGermPercent`, `MeanGermNumber`, `GermSynchrony`, `GermUncertainty`, `TimsonsIndex`, `GermRateGeorge`, `GermSpeed`, `GermSpeedAccumulated`, `FirstGermTime`, `GermValue`, `PeakValue`, `WeightGermPercent`, `t50`, `MeanGermRate`, `MeanGermTime`, `germination.indices`, `FourPHFfit` and `FourPHFfit.bulk` - Fixed the check for uniformity of intervals to handle non-integer values correclty. Closes issue #3.(Thanks to Jonas Ohlsson [@jonasoh])
 
 ## OTHER NOTES: 
 * Error in case of non-uniform intervals converted to warning.

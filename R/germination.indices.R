@@ -275,8 +275,9 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
   }
 
   # Check if intervals are uniform
-  if (length(unique(diff(intervals))) != 1) {
-    stop('"intervals" are not uniform.')
+  idiff <- diff(intervals)
+  if (!all(abs(idiff - idiff[[1]]) < .Machine$double.eps ^ 0.5)) {
+    warning("'intervals' are not uniform.")
   }
 
   # Check if total.seeds.col is of type numeric
@@ -314,7 +315,7 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
   inttraitcols <- unlist(lapply(data[, counts.intervals.cols],
                                 function(x) FALSE %in% (is.vector(x, mode = "integer") | is.vector(x, mode = "numeric"))))
   if (TRUE %in% inttraitcols) {
-    stop(paste('The following column(s) specified as germination count per interval in "data" are not of type integer:\n',
+    stop(paste('The following column(s) specified as germination count per interval in "data" are not of type numeric:\n',
                paste(names(inttraitcols[inttraitcols]), collapse = ", ")))
   }
 
