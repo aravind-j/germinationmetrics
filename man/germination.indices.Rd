@@ -4,18 +4,42 @@
 \alias{germination.indices}
 \title{Germination Indices}
 \usage{
-germination.indices(data, total.seeds.col, counts.intervals.cols,
-  intervals, partial = TRUE, FirstGermTime = TRUE,
-  LastGermTime = TRUE, PeakGermTime = TRUE, TimeSpreadGerm = TRUE,
-  t50 = TRUE, MeanGermTime = TRUE, VarGermTime = TRUE,
-  SEGermTime = TRUE, CVGermTime = TRUE, MeanGermRate = TRUE,
-  CVG = TRUE, VarGermRate = TRUE, SEGermRate = TRUE,
-  GermRateRecip = TRUE, GermSpeed = TRUE,
-  GermSpeedAccumulated = TRUE, GermSpeedCorrected = TRUE,
-  WeightGermPercent = TRUE, MeanGermPercent = TRUE,
-  MeanGermNumber = TRUE, TimsonsIndex = TRUE, GermRateGeorge = TRUE,
-  max.int, PeakValue = TRUE, GermValue = TRUE, gv.k = 10,
-  CUGerm = TRUE, GermSynchrony = TRUE, GermUncertainty = TRUE)
+germination.indices(
+  data,
+  total.seeds.col,
+  counts.intervals.cols,
+  intervals,
+  partial = TRUE,
+  FirstGermTime = TRUE,
+  LastGermTime = TRUE,
+  PeakGermTime = TRUE,
+  TimeSpreadGerm = TRUE,
+  t50 = TRUE,
+  MeanGermTime = TRUE,
+  VarGermTime = TRUE,
+  SEGermTime = TRUE,
+  CVGermTime = TRUE,
+  MeanGermRate = TRUE,
+  CVG = TRUE,
+  VarGermRate = TRUE,
+  SEGermRate = TRUE,
+  GermRateRecip = TRUE,
+  GermSpeed = TRUE,
+  GermSpeedAccumulated = TRUE,
+  GermSpeedCorrected = TRUE,
+  WeightGermPercent = TRUE,
+  MeanGermPercent = TRUE,
+  MeanGermNumber = TRUE,
+  TimsonsIndex = TRUE,
+  GermRateGeorge = TRUE,
+  max.int,
+  PeakValue = TRUE,
+  GermValue = TRUE,
+  gv.k = 10,
+  CUGerm = TRUE,
+  GermSynchrony = TRUE,
+  GermUncertainty = TRUE
+)
 }
 \arguments{
 \item{data}{A data frame with the germination count data. It should possess

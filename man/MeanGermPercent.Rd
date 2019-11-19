@@ -5,8 +5,13 @@
 \alias{MeanGermNumber}
 \title{Mean germination percentage and number of seeds per time interval}
 \usage{
-MeanGermPercent(germinated.seeds, germ.counts, total.seeds, intervals,
-  partial = TRUE)
+MeanGermPercent(
+  germinated.seeds,
+  germ.counts,
+  total.seeds,
+  intervals,
+  partial = TRUE
+)
 
 MeanGermNumber(germ.counts, intervals, partial = TRUE)
 }

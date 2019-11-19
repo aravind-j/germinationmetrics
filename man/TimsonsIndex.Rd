@@ -5,8 +5,14 @@
 \alias{GermRateGeorge}
 \title{Timson's index}
 \usage{
-TimsonsIndex(germ.counts, intervals, partial = TRUE, total.seeds, max,
-  modification = c("none", "labouriau", "khanungar"))
+TimsonsIndex(
+  germ.counts,
+  intervals,
+  partial = TRUE,
+  total.seeds,
+  max,
+  modification = c("none", "labouriau", "khanungar")
+)
 
 GermRateGeorge(germ.counts, intervals, partial = TRUE, max)
 }

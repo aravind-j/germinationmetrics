@@ -4,9 +4,20 @@
 \alias{FourPHFfit.bulk}
 \title{Fit four-parameter hill function for multiple samples}
 \usage{
-FourPHFfit.bulk(data, total.seeds.col, counts.intervals.cols, intervals,
-  partial = TRUE, fix.y0 = TRUE, fix.a = TRUE, tmax, xp = c(10,
-  60), umin = 10, umax = 90, tries = 3)
+FourPHFfit.bulk(
+  data,
+  total.seeds.col,
+  counts.intervals.cols,
+  intervals,
+  partial = TRUE,
+  fix.y0 = TRUE,
+  fix.a = TRUE,
+  tmax,
+  xp = c(10, 60),
+  umin = 10,
+  umax = 90,
+  tries = 3
+)
 }
 \arguments{
 \item{data}{A data frame with the germination count data. It should possess

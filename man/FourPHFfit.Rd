@@ -4,9 +4,19 @@
 \alias{FourPHFfit}
 \title{Fit four-parameter hill function}
 \usage{
-FourPHFfit(germ.counts, intervals, total.seeds, partial = TRUE,
-  fix.y0 = TRUE, fix.a = TRUE, tmax, xp = c(10, 60), umin = 10,
-  umax = 90, tries = 3)
+FourPHFfit(
+  germ.counts,
+  intervals,
+  total.seeds,
+  partial = TRUE,
+  fix.y0 = TRUE,
+  fix.a = TRUE,
+  tmax,
+  xp = c(10, 60),
+  umin = 10,
+  umax = 90,
+  tries = 3
+)
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial

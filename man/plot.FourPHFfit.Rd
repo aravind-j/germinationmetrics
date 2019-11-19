@@ -5,9 +5,18 @@
 \title{Plot the four-parameter hill function fitted cumulative germination curve
 from a \code{FourPHFfit} object}
 \usage{
-\method{plot}{FourPHFfit}(x, rog = TRUE, t50.total = TRUE,
-  t50.germ = TRUE, tmgr = TRUE, mgt = TRUE, uniformity = TRUE,
-  limits = TRUE, plotlabels = TRUE, ...)
+\method{plot}{FourPHFfit}(
+  x,
+  rog = TRUE,
+  t50.total = TRUE,
+  t50.germ = TRUE,
+  tmgr = TRUE,
+  mgt = TRUE,
+  uniformity = TRUE,
+  limits = TRUE,
+  plotlabels = TRUE,
+  ...
+)
 }
 \arguments{
 \item{x}{An object of class \code{FourPHFfit} obtained as output from the

@@ -6,14 +6,29 @@
 \alias{GermSpeedCorrected}
 \title{Speed of germination}
 \usage{
-GermSpeed(germ.counts, intervals, partial = TRUE, percent = FALSE,
-  total.seeds = NULL)
+GermSpeed(
+  germ.counts,
+  intervals,
+  partial = TRUE,
+  percent = FALSE,
+  total.seeds = NULL
+)
 
-GermSpeedAccumulated(germ.counts, intervals, partial = TRUE,
-  percent = FALSE, total.seeds = NULL)
+GermSpeedAccumulated(
+  germ.counts,
+  intervals,
+  partial = TRUE,
+  percent = FALSE,
+  total.seeds = NULL
+)
 
-GermSpeedCorrected(germ.counts, intervals, partial = TRUE, total.seeds,
-  method = c("normal", "accumulated"))
+GermSpeedCorrected(
+  germ.counts,
+  intervals,
+  partial = TRUE,
+  total.seeds,
+  method = c("normal", "accumulated")
+)
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial

@@ -7,8 +7,15 @@
 \usage{
 PeakValue(germ.counts, intervals, total.seeds, partial = TRUE)
 
-GermValue(germ.counts, intervals, total.seeds, partial = TRUE,
-  method = c("czabator", "dp"), from.onset = TRUE, k = 10)
+GermValue(
+  germ.counts,
+  intervals,
+  total.seeds,
+  partial = TRUE,
+  method = c("czabator", "dp"),
+  from.onset = TRUE,
+  k = 10
+)
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial

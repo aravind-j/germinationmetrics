@@ -4,8 +4,7 @@
 \alias{t50}
 \title{Median germination time}
 \usage{
-t50(germ.counts, intervals, partial = TRUE, method = c("coolbear",
-  "farooq"))
+t50(germ.counts, intervals, partial = TRUE, method = c("coolbear", "farooq"))
 }
 \arguments{
 \item{germ.counts}{Germination counts at each time interval. Can be partial
