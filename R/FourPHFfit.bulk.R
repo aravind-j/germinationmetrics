@@ -180,47 +180,47 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
        by = 1:nrow(data)]
 
 
-  ulist <- data[,.(Ulist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
-                                           intervals = intervals,
-                                           partial = TRUE, fix.y0 = fix.y0,
-                                           fix.a = fix.a, tmax = tmax,
-                                           xp = xp, umin = umin, umax = umax, tries = tries,
-                                           total.seeds = unlist(mget(total.seeds.col)))["Uniformity"])),
+  ulist <- data[, .(Ulist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
+                                            intervals = intervals,
+                                            partial = TRUE, fix.y0 = fix.y0,
+                                            fix.a = fix.a, tmax = tmax,
+                                            xp = xp, umin = umin, umax = umax, tries = tries,
+                                            total.seeds = unlist(mget(total.seeds.col)))["Uniformity"])),
                 by=1:nrow(data)]
 
   ulist <- rbindlist(lapply(ulist$Ulist, function(x) as.data.frame.list(unlist(x))))
 
-  xptlist <- data[,.(xptlist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
-                                           intervals = intervals,
-                                           partial = TRUE, fix.y0 = fix.y0,
-                                           fix.a = fix.a, tmax = tmax,
-                                           xp = xp, umin = umin, umax = umax, tries = tries,
-                                           total.seeds = unlist(mget(total.seeds.col)))["txp.total"])),
-                by=1:nrow(data)]
+  xptlist <- data[, .(xptlist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                intervals = intervals,
+                                                partial = TRUE, fix.y0 = fix.y0,
+                                                fix.a = fix.a, tmax = tmax,
+                                                xp = xp, umin = umin, umax = umax, tries = tries,
+                                                total.seeds = unlist(mget(total.seeds.col)))["txp.total"])),
+                  by=1:nrow(data)]
 
   xptlist <- rbindlist(lapply(xptlist$xptlist, function(x) as.data.frame.list(unlist(x))))
 
-  xpglist <- data[,.(xpglist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
-                                               intervals = intervals,
-                                               partial = TRUE, fix.y0 = fix.y0,
-                                               fix.a = fix.a, tmax = tmax,
-                                               xp = xp, umin = umin, umax = umax, tries = tries,
-                                               total.seeds = unlist(mget(total.seeds.col)))["txp.germinated"])),
+  xpglist <- data[, .(xpglist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                intervals = intervals,
+                                                partial = TRUE, fix.y0 = fix.y0,
+                                                fix.a = fix.a, tmax = tmax,
+                                                xp = xp, umin = umin, umax = umax, tries = tries,
+                                                total.seeds = unlist(mget(total.seeds.col)))["txp.germinated"])),
                   by=1:nrow(data)]
 
   xpglist <- rbindlist(lapply(xpglist$xpglist, function(x) as.data.frame.list(unlist(x))))
 
-data <- cbind(data, xptlist, xpglist, ulist)
+  data <- cbind(data, xptlist, xpglist, ulist)
 
-setnames(data, old = "Uniformity.uniformity", new = "Uniformity")
-setnames(data, old = colnames(data),
-         new = gsub("Uniformity.", "Uniformity_", colnames(data)))
-setnames(data, old = colnames(data),
-         new = gsub("txp.total.", "txp.total_", colnames(data)))
-setnames(data, old = colnames(data),
-         new = gsub("txp.Germinated.", "txp.Germinated_", colnames(data)))
+  setnames(data, old = "Uniformity.uniformity", new = "Uniformity")
+  setnames(data, old = colnames(data),
+           new = gsub("Uniformity.", "Uniformity_", colnames(data)))
+  setnames(data, old = colnames(data),
+           new = gsub("txp.total.", "txp.total_", colnames(data)))
+  setnames(data, old = colnames(data),
+           new = gsub("txp.Germinated.", "txp.Germinated_", colnames(data)))
 
-return(data)
+  return(data)
 
 
 }
