@@ -71,12 +71,12 @@ N<sub>i</sub></sub></em></p>}}{\deqn{\overline{T} =
 
 Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
 from the start of the experiment to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
 \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
-accumulated number, but the number correspondent to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
+germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
+the accumulated number, but the number corresponding to the
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 
 It is the same as Sprouting Index described by
 \insertCite{smith_germinating_1964;textual}{germinationmetrics}
@@ -113,12 +113,12 @@ N<sub>i</sub> &minus; 1</sub></em></p>}}{\deqn{s_{T}^{2} =
 
 Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
 from the start of the experiment to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
 \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
-accumulated number, but the number correspondent to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
+germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
+the accumulated number, but the number corresponding to the
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 
 \code{SEGermTime} computes the standard error of germination time
 (\ifelse{html}{\out{<em>s<sub><span
@@ -135,10 +135,10 @@ style="text-decoration: overline;">T</span></sub> = &radic;[
 \sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
 
 Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
-of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not
-the accumulated number, but the number correspondent to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
+of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
+interval (not the accumulated number, but the number corresponding to the
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 
 It signifies the accuracy of the calculation of the mean germination time.
 
