@@ -68,7 +68,7 @@ style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
 \item{\code{CVG}}{Coefficient of velocity/rate of germination or Kotowski's
 coefficient of velocity
 (\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
-\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds:_1994}{germinationmetrics}.
+\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 } \item{\code{GermRateRecip}}{Germination rate as reciprocal of median time
 (\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}})
 \insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.}
@@ -148,7 +148,7 @@ the accumulated number, but the number correspondent to the
 Kotowski's coefficient of velocity
 (\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}) according to the following
 formula
-\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds:_1994}{germinationmetrics}.
+\insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>CVG =
 [<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:

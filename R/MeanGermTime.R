@@ -121,13 +121,14 @@
 #'
 #' \code{CVGermTime} computes the coefficient of variation of germination time
 #' (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}) according to the
-#' following formula \insertCite{ranal_how_2006}{germinationmetrics}.
+#' following formula
+#' \insertCite{gomes_curso_1960,ranal_how_2006}{germinationmetrics}.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>CV<sub>T</sub> =
-#' &radic;[ <sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">T</sub></sup> &frasl; <sub><span style="text-decoration:
-#' overline;">T</span></sub> ]</em></p>}}{\deqn{CV_{T} =
-#' \sqrt{\frac{s_{T}^{2}}{\overline{T}}}}}
+#' <sup>&radic;[s<sup>2</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">T</sub>]</sup> &frasl; <sub><span style="text-decoration:
+#' overline;">T</span></sub> </em></p>}}{\deqn{CV_{T} =
+#' \frac{\sqrt{s_{T}^{2}}}{\overline{T}}}}
 #'
 #' This indicates the uniformity of germination and permits comparisons
 #' irrespective of the magnitude of mean germination time

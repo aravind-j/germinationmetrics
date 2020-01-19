@@ -101,7 +101,7 @@
 #' @param CVG logical. If \code{TRUE}, the Coefficient of velocity/rate of
 #'   germination or Kotowski's coefficient of velocity
 #'   (\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
-#'   \insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds:_1994}{germinationmetrics}.
+#'   \insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 #'    is computed. Default is \code{TRUE}.
 #' @param GermRateRecip logical. If \code{TRUE}, the Germination rate as
 #'   reciprocal of median time
@@ -135,7 +135,7 @@
 #'   \insertCite{khamassi_optimal_2013}{germinationmetrics} is computed.
 #' @param TimsonsIndex logical. If \code{TRUE}, the Timson's index or Timson's
 #'   germination velocity index
-#'   \insertCite{grose_laboratory_1958,timson_new_1965,brown_representing_1988,baskin_seeds:_1998}{germinationmetrics}
+#'   \insertCite{grose_laboratory_1958,timson_new_1965,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}
 #'    and it's modifications by Labouriau
 #'   \insertCite{ranal_how_2006}{germinationmetrics} and
 #'   \insertCite{khan_effect_1984}{germinationmetrics} is computed.
@@ -157,7 +157,7 @@
 #'   10.
 #' @param CUGerm logical. If \code{TRUE}, the Coefficient of uniformity of
 #'   germination (CUG)
-#'   \insertCite{heydecker_seed_1972,bewley_seeds:_1994}{germinationmetrics} is
+#'   \insertCite{heydecker_seed_1972,bewley_seeds_1994}{germinationmetrics} is
 #'   computed.
 #' @param GermSynchrony logical. If \code{TRUE}, the Synchrony of germination
 #'   (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index)

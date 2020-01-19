@@ -25,7 +25,7 @@ Compute the Coefficient of uniformity of germination (CUG).
 }
 \details{
 CUG is computed as follows
-\insertCite{heydecker_seed_1972,bewley_seeds:_1994}{germinationmetrics}.
+\insertCite{heydecker_seed_1972,bewley_seeds_1994}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>CUG =
 <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:

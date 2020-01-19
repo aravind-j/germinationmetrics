@@ -51,7 +51,7 @@ Labouriau \insertCite{ranal_how_2006}{germinationmetrics} and
 \details{
 Timson's index \insertCite{timson_new_1965}{germinationmetrics} is computed
 as follows
-\insertCite{grose_laboratory_1958,brown_representing_1988,baskin_seeds:_1998}{germinationmetrics}.
+\insertCite{grose_laboratory_1958,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>&sum;n =
 &sum;<sup>t</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1
