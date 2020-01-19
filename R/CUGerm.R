@@ -35,11 +35,10 @@
 #' overline">T</span></i>}}{\eqn{\overline{T}}} is the the mean germination
 #' time, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
 #' the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-#' interval;
-#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not the
-#' accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
+#' interval; \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the
+#' number of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
+#' time interval (not the accumulated number, but the number corresponding to
+#' the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' @inheritParams MeanGermTime
