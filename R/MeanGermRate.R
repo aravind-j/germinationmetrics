@@ -54,12 +54,12 @@
 #'
 #' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
 #' from the start of the experiment to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
-#' accumulated number, but the number correspondent to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
+#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
+#' the accumulated number, but the number corresponding to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' It is the inverse of mean germination time (\ifelse{html}{\out{<em><span
 #' style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}).
@@ -102,10 +102,10 @@
 #' \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
 #'
 #' Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
-#' of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not
-#' the accumulated number, but the number correspondent to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
+#' of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
+#' interval (not the accumulated number, but the number corresponding to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' \code{CVG} computes the coefficient of velocity/rate of germination or
 #' Kotowski's coefficient of velocity
@@ -126,12 +126,12 @@
 #'
 #' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
 #' from the start of the experiment to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation,
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (not the
-#' accumulated number, but the number correspondent to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th observation) and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last time of germination.
+#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
+#' the accumulated number, but the number corresponding to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' \code{GermRateRecip} computes the germination rate
 #' (\ifelse{html}{\out{<em>v<sub>50</sub></em>}}{\eqn{v_{50}}}) as the
