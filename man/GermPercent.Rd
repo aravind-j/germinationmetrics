@@ -22,10 +22,12 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 The germination percentage (\%) value.
 }
 \description{
-Compute the germination percentage or germinability.
+Compute the germination percentage or final germination percentage or
+germinability.
 }
 \details{
-Germination percentage is computed as follows \insertCite{ista_chapter_2015}{germinationmetrics}:
+Germination percentage is computed as follows
+\insertCite{ista_chapter_2015}{germinationmetrics}:
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>GP = [N<sub>g</sub>
 &frasl; N<sub>t</sub>] &times; 100</i><p>}}{\deqn{GP = \frac{N_{g}}{N_{t}}
