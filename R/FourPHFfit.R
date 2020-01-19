@@ -178,7 +178,6 @@
 #' FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
 #' partial = FALSE)
 #'
-#' @name FourPHFfit
 #' @export
 FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
                        fix.y0 = TRUE, fix.a = TRUE, tmax, xp = c(10, 60),
