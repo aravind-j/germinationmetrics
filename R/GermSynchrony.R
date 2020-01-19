@@ -1,16 +1,16 @@
 ### This file is part of 'germinationmetrics' package for R.
 
-### Copyright (C) 2017-18, ICAR-NBPGR.
+# # Copyright (C) 2017-18, ICAR-NBPGR.
 #
-# germinationmetrics is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 2 of the License, or
-# (at your option) any later version.
+# germinationmetrics is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published by the Free
+# Software Foundation, either version 2 of the License, or (at your option) any
+# later version.
 #
-# germinationmetrics is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-# GNU General Public License for more details.
+# germinationmetrics is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+# FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
+# details.
 #
 # A copy of the GNU General Public License is available at
 # https://www.r-project.org/Licenses/
@@ -42,7 +42,7 @@
 #' \ifelse{html}{\out{<i>C<sub>N<sub>i</sub>,2</sub></i>}}{\eqn{C_{N_{i},2}}} is
 #' the partial combination of the two germinated seeds from among
 #' \ifelse{html}{\out{N<sub>i</sub>}}{\eqn{N_{i}}}, the number of seeds
-#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (estimated as
+#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (estimated as
 #' \ifelse{html}{\out{<em>C<sub>N<sub>i</sub>,2</sub> =
 #' <sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
 #' <sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N{i}(N{i}-1)}{2}}}) and
@@ -70,8 +70,8 @@
 #' style="line-height: 1.8; margin-left:
 #' -1ex;">i=1</sub>N<sub>i</sub></sub></em>}}{\eqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}}),
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last day of observation.
+#' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' @inheritParams MeanGermTime
 #'

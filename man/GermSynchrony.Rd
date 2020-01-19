@@ -52,7 +52,7 @@ Where,
 \ifelse{html}{\out{<i>C<sub>N<sub>i</sub>,2</sub></i>}}{\eqn{C_{N_{i},2}}} is
 the partial combination of the two germinated seeds from among
 \ifelse{html}{\out{N<sub>i</sub>}}{\eqn{N_{i}}}, the number of seeds
-germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time (estimated as
+germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (estimated as
 \ifelse{html}{\out{<em>C<sub>N<sub>i</sub>,2</sub> =
 <sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
 <sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N{i}(N{i}-1)}{2}}}) and
@@ -80,8 +80,8 @@ frequency of germination (estimated as \ifelse{html}{\out{<em>f<sub>i</sub> =
 style="line-height: 1.8; margin-left:
 -1ex;">i=1</sub>N<sub>i</sub></sub></em>}}{\eqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}}),
 \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the last day of observation.
+germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval and
+\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
