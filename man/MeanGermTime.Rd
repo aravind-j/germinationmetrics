@@ -54,7 +54,7 @@ style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
 \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
 \item{\code{CVGermTime}}{Coefficient of variation of the germination time
 (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
-\insertCite{ranal_how_2006}{germinationmetrics}.} }
+\insertCite{gomes_curso_1960,ranal_how_2006}{germinationmetrics}.} }
 }
 \details{
 \code{MeanGermTime} computes the mean germination time according to the

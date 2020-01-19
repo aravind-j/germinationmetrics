@@ -32,7 +32,7 @@
 #' \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
 #' \item{\code{CVGermTime}}{Coefficient of variation of the germination time
 #' (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
-#' \insertCite{ranal_how_2006}{germinationmetrics}.} }
+#' \insertCite{gomes_curso_1960,ranal_how_2006}{germinationmetrics}.} }
 #'
 #' \code{MeanGermTime} computes the mean germination time according to the
 #' following formula
