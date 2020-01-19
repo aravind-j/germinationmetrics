@@ -33,23 +33,40 @@
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><i>S =
 #' <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
-#' &hellip;+<sup>N<sub>n</sub></sup>&frasl;<sub>T<sub>n</sub></sub></i></p>}}{\deqn{S
+#' &hellip;+<sup>N<sub>k</sub></sup>&frasl;<sub>T<sub>k</sub></sub></i></p>}}{\deqn{S
 #' = \frac{N_{1}}{T_{1}} + \frac{N_{2}}{T_{2}} + \frac{N_{3}}{T_{3}} + \cdots +
-#' \frac{N_{n}}{T_{n}}}}
+#' \frac{N_{k}}{T_{k}}}}
 #'
 #' Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
 #' \ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
 #' \ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
 #' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#' \ifelse{html}{\out{N<sub>n</sub>}}{\eqn{N_{n}}} are the number of germinated
+#' \ifelse{html}{\out{N<sub>k</sub>}}{\eqn{N_{k}}} are the number of germinated
 #' seeds observed at time (days or hours)
 #' \ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
 #' \ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
 #' \ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
 #' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#' \ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
+#' \ifelse{html}{\out{T<sub>k</sub>}}{\eqn{T_{k}}} after sowing (Not
 #' accumulated/cumulative number, but the number of seeds that germinated at the
-#' specific time).
+#' specific time) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number
+#' of time intervals.
+#'
+#' The formula can also be described as follows.
+#'
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>S =
+#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+#' [ <sup>N<sub>i</sub></sup> &frasl; <sub>T<sub>i</sub></sub> ]
+#' </i></p>}}{\deqn{S = \sum_{i=1}^{k}\frac{N_{i}}{T_{i}}}}
+#'
+#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
+#' from the start of the experiment to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
+#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
+#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
+#' the accumulated number, but the number corresponding to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' \code{GermSpeedAccumulated} computes the speed of accumulated germination as
 #' follows
@@ -60,23 +77,42 @@
 #' <sup>[N<sub>1</sub>+N<sub>2</sub>]</sup>&frasl;<sub>T<sub>2</sub></sub> +
 #' <sup>[N<sub>1</sub>+N<sub>2</sub>+N<sub>3</sub>]</sup>&frasl;<sub>T<sub>3</sub></sub>
 #' + &hellip;+ <sup>[N<sub>1</sub>+N<sub>2</sub>+
-#' &hellip;+N<sub>n</sub>]</sup>&frasl;<sub>T<sub>n</sub></sub></i></p>}}{\deqn{S_{accumulated}
+#' &hellip;+N<sub>k</sub>]</sup>&frasl;<sub>T<sub>k</sub></sub></i></p>}}{\deqn{S_{accumulated}
 #' = \frac{N_{1}}{T_{1}} + \frac{N_{1} + N_{2}}{T_{2}} + \frac{N_{1} + N_{2} +
-#' N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} + \cdots + N_{n}}{T_{n}}}}
+#' N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} + \cdots + N_{k}}{T_{k}}}}
 #'
 #' Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
 #' \ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
 #' \ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
 #' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#' \ifelse{html}{\out{N<sub>n</sub>}}{\eqn{N_{n}}} are the number of germinated
+#' \ifelse{html}{\out{N<sub>k</sub>}}{\eqn{N_{k}}} are the number of germinated
 #' seeds observed at time (days or hours)
 #' \ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
 #' \ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
 #' \ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
 #' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-#' \ifelse{html}{\out{T<sub>n</sub>}}{\eqn{T_{n}}} after sowing. (Not
+#' \ifelse{html}{\out{T<sub>k</sub>}}{\eqn{T_{k}}} after sowing (Not
 #' accumulated/cumulative number, but the number of seeds that germinated at the
-#' specific time).
+#' specific time) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number
+#' of time intervals.
+#'
+#' The formula can also be described as follows.
+#'
+#' \ifelse{html}{\out{<p style="text-align: center;"><i>S<sub>accumulated</sub>
+#' = &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
+#' -1ex;">i=1</sub> [ <sup>(&sum;<sup>i</sup><sub style="line-height: 1.8;
+#' margin-left: -1ex;">j=1</sub>N<sub>i</sub>)</sup> &frasl;
+#' <sub>T<sub>i</sub></sub> ] </i></p>}}{\eqn{S_{accumulated} =
+#' \sum_{i=1}^{k}\frac{\sum_{j=1}^{i}N_{i}}{T_{i}}}}
+#'
+#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
+#' from the start of the experiment to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
+#' \ifelse{html}{\out{<i>&sum;<sup>i</sup><sub style="line-height: 1.8;
+#' margin-left: -1ex;">j=1</sub>N<sub>i</sub></i>}}{\eqn{\sum_{j=1}^{i}N_{i}}}
+#' is the cumuative/accumulated number of seeds germinated in the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval and
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' Speed of germination expresses the rate of germination in terms of the total
 #' number of seeds that germinate in a time interval. Higher values indicate
@@ -99,8 +135,8 @@
 #' for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}.
 #'
 #' @inheritParams MeanGermTime
-#' @param percent logical. If \code{TRUE}, germination percentage is used instead of
-#'   counts for computation. Default is \code{FALSE}.
+#' @param percent logical. If \code{TRUE}, germination percentage is used
+#'   instead of counts for computation. Default is \code{FALSE}.
 #' @param total.seeds Total number of seeds. Mandatory for computation when
 #'   \code{percent = TRUE}.
 #' @param method The method for computing germination speed in
