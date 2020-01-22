@@ -236,12 +236,13 @@ TimsonsIndex <- function(germ.counts, intervals, partial = TRUE,
   cgp <- cumsum(x)/total.seeds * 100
   pgp <- x/total.seeds * 100
 
-  interval <- unique(diff(intervals))
+  # interval <- unique(diff(intervals))
 
   #GI <- sum(cumsum(x))
 
   TI <- sum(cgp)
-  TI <- sum(pgp*(max - (intervals[1:maxgc] - interval)))
+  # TI <- sum(pgp*(max - (intervals[1:maxgc] - interval)))
+  TI <- sum(pgp*(length(intervals) - (seq_along(intervals) - 1)))
 
 
   if (modification == "labouriau") {
