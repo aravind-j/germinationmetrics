@@ -310,8 +310,9 @@ GermRateGeorge <- function(germ.counts, intervals, partial = TRUE, max) {
   maxgc <- which(intervals == max)
   x <- germ.counts[1:maxgc]
 
-  GI <- sum(cumsum(x))
+  GR <- sum(cumsum(x))
+  GR <- sum(x*(length(intervals) - (seq_along(intervals) - 1)))
 
-  return(GI)
+  return(GR)
 }
 
