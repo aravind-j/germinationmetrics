@@ -26,6 +26,22 @@
 #' Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) is the maximum quotient
 #' obtained by dividing successive cumulative germination values by the relevant
 #' incubation time \insertCite{czabator_germination_1962}{germinationmetrics}.
+#'
+#' \ifelse{html}{\out{<p style="text-align: center;"><em>PV = </em>max
+#' <em><big>( </big><sup>G<sub>1</sub></sup> &frasl; <sub>T<sub>1</sub></sub> ,
+#' <sup>G<sub>2</sub></sup> &frasl; <sub>T<sub>2</sub></sub>, &hellip;
+#' <sup>G<sub>k</sub></sup> &frasl; <sub>T<sub>k</sub></sub><big>
+#' )</big></em></p>}}{\deqn{PV = \max\left (
+#' \frac{G_{1}}{T_{1}},\frac{G_{2}}{T_{2}},\cdots \frac{G_{k}}{T_{k}} \right )}}
+#'
+#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
+#' from the start of the experiment to the
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
+#' \ifelse{html}{\out{<i>G<sub>i</sub></i>}}{\eqn{G_{i}}} is the cumulative
+#' germination percentage in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
+#' interval and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of
+#' time intervals.
+#'
 #' It represents the mean daily germination of the most vigorous component of
 #' the seed lot, and is a mathematical expression of the break, or shoulder, of
 #' a typical sigmoid  germination curve
