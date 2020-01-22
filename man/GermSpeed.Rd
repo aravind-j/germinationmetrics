@@ -146,7 +146,7 @@ The formula can also be described as follows.
 = &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
 -1ex;">i=1</sub> [ <sup>(&sum;<sup>i</sup><sub style="line-height: 1.8;
 margin-left: -1ex;">j=1</sub>N<sub>i</sub>)</sup> &frasl;
-<sub>T<sub>i</sub></sub> ] </i></p>}}{\eqn{S_{accumulated} =
+<sub>T<sub>i</sub></sub> ] </i></p>}}{\deqn{S_{accumulated} =
 \sum_{i=1}^{k}\frac{\sum_{j=1}^{i}N_{i}}{T_{i}}}}
 
 Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
