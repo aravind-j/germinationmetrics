@@ -52,12 +52,11 @@ computed as follows
 
 \ifelse{html}{\out{<p style="text-align: center;"><em><span
 style="text-decoration: overline;">GP</span> = <sup>GP</sup> &frasl;
-<sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{G} =
-\frac{GP}{T_{n}}}{MGP = GP/Tf}}
+<sub>k</sub></em></p>}}{\deqn{\overline{GP} = \frac{GP}{k}}}
 
 Where, \ifelse{html}{\out{<i>GP</i>}}{\eqn{GP}} is the final germination
-percentage and \ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is
-the total number of intervals(e.g. days) required for final germination.
+percentage and \ifelse{html}{\out{<em>k</em>}}{\eqn{k}} is the total number
+of time intervals (e.g. days) required for final germination.
 
 Mean number of seeds germinated per unit time (\ifelse{html}{\out{<em><span
 style="text-decoration: overline">N</span></em>}}{\eqn{\overline{N}}}) is
@@ -65,13 +64,12 @@ computed as follows \insertCite{khamassi_optimal_2013}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em><span
 style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup>
-&frasl; <sub>T<sub>n</sub></sub></em></p>}}{\deqn{\overline{N} =
-\frac{N_{g}}{T_{n}}}}
+&frasl; <sub>k</sub></em></p>}}{\deqn{\overline{N} = \frac{N_{g}}{k}}}
 
 Where, \ifelse{html}{\out{<em>N<sub>g</sub></em>}}{\eqn{N_{g}}} is the number
-of germinated seeds and
-\ifelse{html}{\out{<em>T<sub>n</sub></em>}}{\eqn{T_{n}}} is the total number
-of intervals (e.g. days) required for final germination.
+of germinated seeds at the end of the germination test and
+\ifelse{html}{\out{<em>k</em>}}{\eqn{k}} is the total number of time
+intervals (e.g. days) required for final germination.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
