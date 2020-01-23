@@ -62,8 +62,8 @@ For \code{GermSpeed}, the value of germination speed as \%
 \description{
 Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
 germination or Germination rate index or Index of velocity of germination or
-Germination index or Emergence Rate Index
-\insertCite{throneberry_relation_1955,maguire_speed_1962,allan_seedling_1962,kendrick_photocontrol_1969,bouton_germination_1976,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
+Germination index or Emergence rate index
+\insertCite{throneberry_relation_1955,maguire_speed_1962,allan_seedling_1962,kendrick_photocontrol_1969,bouton_germination_1976,erbachTillageContinuousCorn1982,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
 } \item{\code{GermSpeedAccumulated}}{Speed of accumulated germination
 \insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}.
 } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
@@ -73,7 +73,7 @@ Corrected germination rate index
 \details{
 \code{GermSpeed} computes the speed of germination according to the following
 formula
-\insertCite{throneberry_relation_1955,maguire_speed_1962,allan_seedling_1962,kendrick_photocontrol_1969,bouton_germination_1976,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
+\insertCite{throneberry_relation_1955,maguire_speed_1962,allan_seedling_1962,kendrick_photocontrol_1969,bouton_germination_1976,erbachTillageContinuousCorn1982,aosa_seed_1983,khandakar_jute_1983,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>S =
 <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
@@ -81,20 +81,27 @@ formula
 = \frac{N_{1}}{T_{1}} + \frac{N_{2}}{T_{2}} + \frac{N_{3}}{T_{3}} + \cdots +
 \frac{N_{k}}{T_{k}}}}
 
-Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
-\ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
-\ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
+Where, \ifelse{html}{\out{<i>N<sub>1</sub></i>}}{\eqn{N_{1}}},
+\ifelse{html}{\out{<i>N<sub>2</sub></i>}}{\eqn{N_{2}}},
+\ifelse{html}{\out{<i>N<sub>3</sub></i>}}{\eqn{N_{3}}},
 \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-\ifelse{html}{\out{N<sub>k</sub>}}{\eqn{N_{k}}} are the number of germinated
+\ifelse{html}{\out{N<i><sub>k</sub></i>}}{\eqn{N_{k}}} are the number of germinated
 seeds observed at time (days or hours)
-\ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
-\ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
-\ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
+\ifelse{html}{\out{<i>T<sub>1</sub></i>}}{\eqn{T_{1}}},
+\ifelse{html}{\out{<i>T<sub>2</sub></i>}}{\eqn{T_{2}}},
+\ifelse{html}{\out{<i>T<sub>3</sub></i>}}{\eqn{T_{3}}},
 \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-\ifelse{html}{\out{T<sub>k</sub>}}{\eqn{T_{k}}} after sowing (Not
+\ifelse{html}{\out{<i>T<sub>k</sub></i>}}{\eqn{T_{k}}} after sowing (Not
 accumulated/cumulative number, but the number of seeds that germinated at the
 specific time) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number
 of time intervals.
+
+It is the same as Emergence Rate Index
+(\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) described by
+\insertCite{allan_seedling_1962;textual}{germinationmetrics} and
+\insertCite{erbachTillageContinuousCorn1982;textual}{germinationmetrics} as
+well as Germination Index (\ifelse{html}{\out{<i>GI</i>}}{\eqn{GI}})
+according to \insertCite{aosa_seed_1983;textual}{germinationmetrics}.
 
 The formula can also be described as follows.
 
@@ -125,17 +132,17 @@ follows
 = \frac{N_{1}}{T_{1}} + \frac{N_{1} + N_{2}}{T_{2}} + \frac{N_{1} + N_{2} +
 N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} + \cdots + N_{k}}{T_{k}}}}
 
-Where, \ifelse{html}{\out{N<sub>1</sub>}}{\eqn{N_{1}}},
-\ifelse{html}{\out{N<sub>2</sub>}}{\eqn{N_{2}}},
-\ifelse{html}{\out{N<sub>3</sub>}}{\eqn{N_{3}}},
+Where, \ifelse{html}{\out{<i>N<sub>1</sub></i>}}{\eqn{N_{1}}},
+\ifelse{html}{\out{<i>N<sub>2</sub></i>}}{\eqn{N_{2}}},
+\ifelse{html}{\out{<i>N<sub>3</sub></i>}}{\eqn{N_{3}}},
 \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-\ifelse{html}{\out{N<sub>k</sub>}}{\eqn{N_{k}}} are the number of germinated
+\ifelse{html}{\out{<i>N<sub>k</sub></i>}}{\eqn{N_{k}}} are the number of germinated
 seeds observed at time (days or hours)
-\ifelse{html}{\out{T<sub>1</sub>}}{\eqn{T_{1}}},
-\ifelse{html}{\out{T<sub>2</sub>}}{\eqn{T_{2}}},
-\ifelse{html}{\out{T<sub>3</sub>}}{\eqn{T_{3}}},
+\ifelse{html}{\out{<i>T<sub>1</sub></i>}}{\eqn{T_{1}}},
+\ifelse{html}{\out{<i>T<sub>2</sub></i>}}{\eqn{T_{2}}},
+\ifelse{html}{\out{<i>T<sub>3</sub></i>}}{\eqn{T_{3}}},
 \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
-\ifelse{html}{\out{T<sub>k</sub>}}{\eqn{T_{k}}} after sowing (Not
+\ifelse{html}{\out{<i>T<sub>k</sub></i>}}{\eqn{T_{k}}} after sowing (Not
 accumulated/cumulative number, but the number of seeds that germinated at the
 specific time) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number
 of time intervals.

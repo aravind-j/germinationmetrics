@@ -21,7 +21,7 @@
 #' germination time (\ifelse{html}{\out{<em><span
 #' style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or Mean
 #' length of incubation time
-#' \insertCite{edmond_effects_1958,czabator_germination_1962,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
+#' \insertCite{edmond_effects_1958,czabator_germination_1962,mockColdToleranceAdapted1972,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
 #' \item{\code{VarGermTime}}{Variance of germination time
 #' (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
 #' margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}})
@@ -36,7 +36,7 @@
 #'
 #' \code{MeanGermTime} computes the mean germination time according to the
 #' following formula
-#' \insertCite{edmond_effects_1958,czabator_germination_1962,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
+#' \insertCite{edmond_effects_1958,czabator_germination_1962,smith_germinating_1964,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em><span
 #' style="text-decoration: overline;">T</span> = <sup>&sum;<sup>k</sup><sub
@@ -55,10 +55,12 @@
 #' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
-#' It is the same as Sprouting Index described by
-#' \insertCite{smith_germinating_1964;textual}{germinationmetrics}
-#' (\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}}) and Germination Resistance
-#' (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}}) described by
+#' It is the same as Sprouting Index (\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}})
+#' or Emergence Index (\ifelse{html}{\out{<i>EI</i>}}{\eqn{EI}}) described by
+#' \insertCite{smith_germinating_1964;textual}{germinationmetrics} and
+#' \insertCite{mockColdToleranceAdapted1972;textual}{germinationmetrics} as well
+#' as Germination Resistance (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}})
+#' described by
 #' \insertCite{gordon_observations_1969,gordon_germination_1971;textual}{germinationmetrics}.
 #'
 #' It is the inverse of mean germination rate (\ifelse{html}{\out{<em><span
