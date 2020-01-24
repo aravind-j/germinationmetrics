@@ -101,20 +101,20 @@ follows:
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>GV =
 [<sup>&sum;DGS</sup> &frasl; <sub>N</sub>] &times; GP &times;
-k</i></p>}}{\deqn{GV = \frac{\sum DGS}{N} \times GP \times k}}
+c</i></p>}}{\deqn{GV = \frac{\sum DGS}{N} \times GP \times c}}
 
 Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination
 speed computed by dividing cumulative germination percentage by the number of
 days since the onset of germination, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}}
 is the frequency or number of DGS calculated during the test, \eqn{GP} is the
 germination percentage expressed over 100 and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is a constant. The value of
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is decided on the basis of average
+\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is a constant. The value of
+\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is decided on the basis of average
 daily speed of germination (\ifelse{html}{\out{<em><sup>&sum;DGS</sup>
 &frasl; <sub>N</sub></em>}}{\eqn{\frac{\sum DGS}{N}}}). If it is less than
-10, then \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} value of 10 can be used and
+10, then \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} value of 10 can be used and
 if it is more than 10, then value of 7 or 8 can be used for
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}}.
+\ifelse{html}{\out{<i>c</i>}}{\eqn{c}}.
 
 For both methods of computing \ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}, only
 the duration from the onset of germination is considered by default.
