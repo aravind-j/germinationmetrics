@@ -45,7 +45,7 @@
 #' germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (estimated as
 #' \ifelse{html}{\out{<em>C<sub>N<sub>i</sub>,2</sub> =
 #' <sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
-#' <sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N{i}(N{i}-1)}{2}}}) and
+#' <sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N_{i}(N_{i}-1)}{2}}}) and
 #' \ifelse{html}{\out{<em>C<sub>&sum;N<sub>i</sub>,2</sub></em>}}{\eqn{C_{\Sigma
 #' N_{i},2}}} is the partial combination of the two germinated seeds from among
 #' the total number of seeds germinated at the final count, assuming that all
