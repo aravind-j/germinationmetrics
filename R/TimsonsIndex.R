@@ -180,6 +180,8 @@
 #'              modification = "labouriau")
 #' TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
 #'              modification = "khanungar")
+#' GermRateGeorge(germ.counts = x, intervals = int)
+#'
 #' # With max specified
 #' TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50, max = 10)
 #' TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
@@ -188,20 +190,42 @@
 #'              max = 10, modification = "labouriau")
 #' TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
 #'              max = 10, modification = "khanungar")
-#'
-#' # Wihout max specified
-#' GermRateGeorge(germ.counts = x, intervals = int)
-#' # With max specified
 #' GermRateGeorge(germ.counts = x, intervals = int, max = 10)
 #' GermRateGeorge(germ.counts = x, intervals = int, max = 14)
+#'
 #'
 #' # From cumulative germination counts
 #' #----------------------------------------------------------------------------
 #' # Wihout max specified
-#' GermRateGeorge(germ.counts = x, intervals = int, partial = TRUE)
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50)
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50,
+#'              modification = "none")
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50,
+#'              modification = "labouriau")
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50,
+#'              modification = "khanungar")
+#' GermRateGeorge(germ.counts = y, intervals = int, partial = FALSE,)
+#'
 #' # With max specified
-#' GermRateGeorge(germ.counts = x, intervals = int, partial = TRUE, max = 10)
-#' GermRateGeorge(germ.counts = x, intervals = int, partial = TRUE, max = 14)
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50, max = 10)
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50,
+#'              max = 10, modification = "none")
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50,
+#'              max = 10, modification = "labouriau")
+#' TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
+#'              total.seeds = 50,
+#'              max = 10, modification = "khanungar")
+#' GermRateGeorge(germ.counts = y, intervals = int, partial = FALSE,
+#'                max = 10)
+#' GermRateGeorge(germ.counts = y, intervals = int, partial = FALSE,
+#'                max = 14)
 
 #' @rdname TimsonsIndex
 #' @export
