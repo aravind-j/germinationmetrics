@@ -31,7 +31,7 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 The value of the Germination index.
 }
 \description{
-Compute the germination index according to
+Compute the Germination index according to
 \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} and
 its modification by
 \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
@@ -74,6 +74,11 @@ remove the effect of sample size
 <sub>N<sub>g</sub></sub></em></p>}}{\deqn{GI_{mod} =
 \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right ) N_{i}\right
 |}{N_{g}}}}
+
+The term Germination index (\ifelse{html}{\out{<i>GI</i>}}{\eqn{GI}}) has
+also been used to describe the mathematical expression for Speed of
+germination (\code{\link[germinationmetrics]{GermSpeed}}) by
+\insertCite{aosa_seed_1983;textual}{germinationmetrics}.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
@@ -102,4 +107,7 @@ GermIndex(germ.counts = y, intervals = int, partial = FALSE,
 }
 \references{
 \insertAllCited{}
+}
+\seealso{
+\code{\link[germinationmetrics]{GermSpeed}}
 }

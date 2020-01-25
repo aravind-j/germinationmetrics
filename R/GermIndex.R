@@ -17,7 +17,7 @@
 
 #' Germination Index
 #'
-#' Compute the germination index according to
+#' Compute the Germination index according to
 #' \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} and
 #' its modification by
 #' \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
@@ -60,6 +60,11 @@
 #' \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right ) N_{i}\right
 #' |}{N_{g}}}}
 #'
+#' The term Germination index (\ifelse{html}{\out{<i>GI</i>}}{\eqn{GI}}) has
+#' also been used to describe the mathematical expression for Speed of
+#' germination (\code{\link[germinationmetrics]{GermSpeed}}) by
+#' \insertCite{aosa_seed_1983;textual}{germinationmetrics}.
+#'
 #' @inheritParams MeanGermTime
 #' @param modification The modification to be applied. Either \code{"none"} or
 #'   \code{"santanaranal"}. Default is \code{"none"} (see \strong{Details}).
@@ -94,6 +99,8 @@
 #' GermIndex(germ.counts = y, intervals = int, partial = FALSE,
 #'           total.seeds = 50,
 #'           modification = "santanaranal")
+#'
+#' @seealso \code{\link[germinationmetrics]{GermSpeed}}
 #'
 #' @rdname GermIndex
 #' @export
@@ -142,12 +149,10 @@ GermIndex <- function(germ.counts, intervals, partial = TRUE,
 
   Tk <- tail(intervals, n = 1)
 
-  if (modification == "none") {
-    GI <- sum(abs((Tk - intervals) * germ.counts)/total.seeds)
-  }
-
   if (modification == "santanaranal") {
     GI <- sum(abs((Tk - intervals) * germ.counts)/sum(germ.counts))
+  } else { # modification == "none"
+    GI <- sum(abs((Tk - intervals) * germ.counts)/total.seeds)
   }
 
   return(GI)
