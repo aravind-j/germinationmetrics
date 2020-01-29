@@ -58,7 +58,7 @@
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
 #' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
 #' the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' It is the inverse of mean germination time (\ifelse{html}{\out{<em><span
@@ -104,7 +104,7 @@
 #' Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
 #' of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
 #' interval (not the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' \code{CVG} computes the coefficient of velocity/rate of germination or
@@ -130,7 +130,7 @@
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
 #' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
 #' the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' \code{GermRateRecip} computes the germination rate
@@ -140,7 +140,7 @@
 #' \insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}
 #' computed according to the methods of
 #' \insertCite{coolbear_effect_1984;textual}{germinationmetrics} or
-#' \insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows:
+#' \insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>v<sub>50</sub> =
 #' <sup>1</sup> &frasl;

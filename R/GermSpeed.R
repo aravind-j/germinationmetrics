@@ -73,7 +73,7 @@
 #' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
 #' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
 #' the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' \code{GermSpeedAccumulated} computes the speed of accumulated germination as
@@ -101,7 +101,7 @@
 #' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}},
 #' \ifelse{html}{\out{<i>T<sub>k</sub></i>}}{\eqn{T_{k}}} after sowing (Not
 #' accumulated/cumulative number, but the number of seeds that germinated at the
-#' specific time) and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number
+#' specific time), and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number
 #' of time intervals.
 #'
 #' The formula can also be described as follows.
@@ -119,7 +119,7 @@
 #' \ifelse{html}{\out{<i>&sum;<sup>i</sup><sub style="line-height: 1.8;
 #' margin-left: -1ex;">j=1</sub>N<sub>j</sub></i>}}{\eqn{\sum_{j=1}^{i}N_{j}}}
 #' is the cumuative/accumulated number of seeds germinated in the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval and
+#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval, and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' Speed of germination expresses the rate of germination in terms of the total

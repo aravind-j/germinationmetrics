@@ -23,7 +23,7 @@
 #'
 #' The cumulative germination count data of a seed lot can be modelled to fit a
 #' four-parameter hill function defined as follows
-#' \insertCite{el-kassaby_seed_2008}{germinationmetrics}:
+#' \insertCite{el-kassaby_seed_2008}{germinationmetrics}.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>y = y<sub>0</sub> +
 #' [<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
@@ -38,9 +38,9 @@
 #' controlling the shape and steepness of the germination curve (the larger the
 #' \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} parameter, the steeper the rise toward
 #' the asymptote \ifelse{html}{\out{<i>a</i>}}{\eqn{a}}, and the shorter the
-#' time between germination onset and maximum germination) and
+#' time between germination onset and maximum germination), and
 #' \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is the "half-maximal activation level"
-#' and represents the time required for 50\% of viable seeds to germinate
+#' which represents the time required for 50\% of viable seeds to germinate
 #' (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is equivalent to the germination
 #' speed).
 #'
@@ -51,7 +51,7 @@
 #' can be computed.
 #'
 #' The time at germination onset (\ifelse{html}{\out{<i>lag</i>}}{\eqn{lag}})
-#' can be computed as follows:
+#' can be computed as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>lag = b
 #' &radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
@@ -74,7 +74,7 @@
 #'
 #' The partial derivative of the four-parameter hill function gives the
 #' instantaneous rate of germination (\ifelse{html}{\out{<i>s</i>}}{\eqn{s}}) as
-#' follows:
+#' follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>s =
 #' <sup>&part;y</sup>&frasl;<sub>&part;x</sub> =
@@ -84,7 +84,7 @@
 #'
 #' From this function for instantaneous rate of germination, the time at maximum
 #' germination rate (\ifelse{html}{\out{<i>TMGR</i>}}{\eqn{TMGR}}) can be
-#' estimated as follows:
+#' estimated as follows.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>TMGR = b
 #' &radic;[<sup>c<sup>b</sup>(b &minus; 1)</sup> &frasl;

@@ -27,7 +27,7 @@ germinability.
 }
 \details{
 Germination percentage is computed as follows
-\insertCite{ista_chapter_2015}{germinationmetrics}:
+\insertCite{ista_chapter_2015}{germinationmetrics}.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>GP = [N<sub>g</sub>
 &frasl; N<sub>t</sub>] &times; 100</i><p>}}{\deqn{GP = \frac{N_{g}}{N_{t}}

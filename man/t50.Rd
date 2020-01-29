@@ -32,7 +32,7 @@ germination time is the time to reach 50\% of final/maximum germination.
 \details{
 With argument \code{method} specified as \code{"coolbear"}, median
 germination time is computed according to the formula by
-\insertCite{coolbear_effect_1984;textual}{germinationmetrics} as follows:
+\insertCite{coolbear_effect_1984;textual}{germinationmetrics} as follows.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>t<sub>50</sub> =
 T<sub>i</sub> + [ <sup>(((<sup>(N+1)</sup> &frasl; <sub>2</sub> ) &minus;
@@ -43,7 +43,7 @@ N<sub>i</sub>)</sub>]</em></p>}}{\deqn{t_{50}=T_{i}+
 
 Where, \ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}} is the
 median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final
-number of germinated seeds and
+number of germinated seeds, and
 \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} and
 \ifelse{html}{\out{<em>N<sub>j</sub></em>}}{\eqn{N_{j}}} are the total number
 of seeds germinated in adjacent counts at time
@@ -54,7 +54,7 @@ of seeds germinated in adjacent counts at time
 
 Similarly with argument \code{method} specified as \code{"farooq"}, median
 germination time is computed according to the formula by  by
-\insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows:
+\insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows.
 
 \ifelse{html}{\out{<p style="text-align: center;"><em>t<sub>50</sub> =
 T<sub>i</sub> + [ <sup>(((<sup>N</sup> &frasl; <sub>2</sub> ) &minus;
@@ -65,7 +65,7 @@ N<sub>i</sub>)</sub>]</em></p>}}{\deqn{t_{50}=T_{i}+
 
 Where, \ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}} is the
 median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final
-number of germinated seeds and
+number of germinated seeds, and
 \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} and
 \ifelse{html}{\out{<em>N<sub>j</sub></em>}}{\eqn{N_{j}}} are the total number
 of seeds germinated in adjacent counts at time

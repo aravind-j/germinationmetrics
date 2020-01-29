@@ -80,7 +80,7 @@
 #' (\ifelse{html}{\out{<i>i</i>}}{\eqn{i}} varying from
 #' \ifelse{html}{\out{<i>0</i>}}{\eqn{0}} to
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}}),
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals
+#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals,
 #' and \ifelse{html}{\out{<i>j = i - 1</i>}}{\eqn{j = i - 1}}.
 #'
 #' Timson's index is equivalent to the Germination Energy Index
@@ -121,7 +121,7 @@
 #' Where \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} is the number
 #' of seeds germinated by \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
 #' \ifelse{html}{\out{<em>K<sub>i</sub></em>}}{\eqn{K_{i}}} is the number of
-#' intervals(e.g. days) until the end of the test and
+#' intervals(e.g. days) until the end of the test, and
 #' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 #'
 #' This index uses number of seeds germinated instead of germination percentage.

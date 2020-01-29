@@ -67,7 +67,7 @@ from the start of the experiment to the
 \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
 \ifelse{html}{\out{<i>G<sub>i</sub></i>}}{\eqn{G_{i}}} is the cumulative
 germination percentage in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-interval and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of
+interval, and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of
 time intervals.
 
 It represents the mean daily germination of the most vigorous component of
@@ -85,7 +85,7 @@ For daily germination counts, germination value
 \ifelse{html}{\out{<p style="text-align: center;"><em>GV = PV &times;
 MDG</em></p>}}{\deqn{GV = PV \times MDG}}
 
-Where, \ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}} is the peak value and
+Where, \ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}} is the peak value, and
 \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} is the mean daily germination
 percentage from the onset of germination.
 
@@ -97,7 +97,7 @@ style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}).
 
 A new estimation of germination value was given by
 \insertCite{djavanshir_germination_1976;textual}{germinationmetrics} as
-follows:
+follows.
 
 \ifelse{html}{\out{<p style="text-align: center;"><i>GV =
 [<sup>&sum;DGS</sup> &frasl; <sub>N</sub>] &times; GP &times;
@@ -107,7 +107,7 @@ Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination
 speed computed by dividing cumulative germination percentage by the number of
 days since the onset of germination, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}}
 is the frequency or number of DGS calculated during the test, \eqn{GP} is the
-germination percentage expressed over 100 and
+germination percentage expressed over 100, and
 \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is a constant. The value of
 \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is decided on the basis of average
 daily speed of germination (\ifelse{html}{\out{<em><sup>&sum;DGS</sup>

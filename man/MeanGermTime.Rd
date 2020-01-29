@@ -75,7 +75,7 @@ from the start of the experiment to the
 \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
 germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
 the accumulated number, but the number corresponding to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 
 It is the same as Sprouting Index (\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}})
@@ -119,7 +119,7 @@ from the start of the experiment to the
 \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
 germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
 the accumulated number, but the number corresponding to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 
 \code{SEGermTime} computes the standard error of germination time
@@ -139,7 +139,7 @@ style="text-decoration: overline;">T</span></sub> = &radic;[
 Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
 of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
 interval (not the accumulated number, but the number corresponding to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval) and
+\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
 \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
 
 It signifies the accuracy of the calculation of the mean germination time.

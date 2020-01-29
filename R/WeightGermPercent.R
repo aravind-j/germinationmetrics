@@ -26,7 +26,7 @@
 #' Weighted germination percentage was calculated by giving maximum weight to
 #' the seeds that germinate first and decreasing weight to the seeds that
 #' germinate subsequently. It is computed as follows
-#' \insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics}:
+#' \insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics}.
 #'
 #' \ifelse{html}{\out{<p style="text-align: center;"><em>WGP =   <big>[</big>
 #' <sup> [&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
@@ -37,7 +37,7 @@
 #' Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}}  is the  number
 #' of seeds that germinated in the time interval
 #' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}} (not cumulative, but partial count),
-#' \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the total number of seeds tested
+#' \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the total number of seeds tested,
 #' and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the  total number of time
 #' intervals.
 #'

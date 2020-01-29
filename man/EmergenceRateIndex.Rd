@@ -128,7 +128,7 @@ and
   (\code{\link[germinationmetrics]{GermSpeed}})
   \insertCite{allan_seedling_1962,erbachTillageContinuousCorn1982}{germinationmetrics},
    Timson's index (\code{\link[germinationmetrics]{TimsonsIndex}})
-  \insertCite{chaudharyEffectTemperatureAssociated1970}{germinationmetrics}
+  \insertCite{chaudharyEffectTemperatureAssociated1970}{germinationmetrics},
   and George's index (\code{\link[germinationmetrics]{GermRateGeorge}})
   \insertCite{chopraEffectSoilTemperature1980}{germinationmetrics}. }
 }

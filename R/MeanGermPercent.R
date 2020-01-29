@@ -39,7 +39,7 @@
 #'
 #' Where, \ifelse{html}{\out{<i>GP</i>}}{\eqn{GP}} is the final germination
 #' percentage, \ifelse{html}{\out{<em>T<sub>k</sub></em>}}{\eqn{T_{k}}} is the
-#' time at the \ifelse{html}{\out{<em>k</em>}}{\eqn{k}}th time interval and
+#' time at the \ifelse{html}{\out{<em>k</em>}}{\eqn{k}}th time interval, and
 #' \ifelse{html}{\out{<em>k</em>}}{\eqn{k}} is the total number of time
 #' intervals required for final germination.
 #'
@@ -55,7 +55,7 @@
 #' Where, \ifelse{html}{\out{<em>N<sub>g</sub></em>}}{\eqn{N_{g}}} is the number
 #' of germinated seeds at the end of the germination test,
 #' \ifelse{html}{\out{<em>T<sub>k</sub></em>}}{\eqn{T_{k}}} is the time at the
-#' \ifelse{html}{\out{<em>k</em>}}{\eqn{k}}th time interval and
+#' \ifelse{html}{\out{<em>k</em>}}{\eqn{k}}th time interval, and
 #' \ifelse{html}{\out{<em>k</em>}}{\eqn{k}} is the total number of time
 #' intervals required for final germination.
 #'
