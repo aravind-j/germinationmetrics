@@ -299,7 +299,8 @@ TimsonsIndex <- function(germ.counts, intervals, partial = TRUE,
 
   TI <- sum(cgp)
   # TI <- sum(pgp*(max - (intervals[1:maxgc] - interval)))
-  TI <- sum(pgp*(length(intervals) - (seq_along(intervals) - 1)))
+  TI <- sum(pgp*(length(intervals[1:maxgc]) -
+                   (seq_along(intervals[1:maxgc]) - 1)))
 
 
   if (modification == "labouriau") {
@@ -368,7 +369,8 @@ GermRateGeorge <- function(germ.counts, intervals, partial = TRUE, max) {
   x <- germ.counts[1:maxgc]
 
   GR <- sum(cumsum(x))
-  GR <- sum(x*(length(intervals) - (seq_along(intervals) - 1)))
+  GR <- sum(x*(length(intervals[1:maxgc]) -
+                 (seq_along(intervals[1:maxgc]) - 1)))
 
   return(GR)
 }
