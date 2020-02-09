@@ -180,8 +180,13 @@ overline">N</span></em>)
 
     </div>
 
-    <pre class="usage"><span class='fu'>MeanGermPercent</span>(<span class='no'>germinated.seeds</span>, <span class='no'>germ.counts</span>, <span class='no'>total.seeds</span>, <span class='no'>intervals</span>,
-  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>MeanGermPercent</span>(
+  <span class='no'>germinated.seeds</span>,
+  <span class='no'>germ.counts</span>,
+  <span class='no'>total.seeds</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)
 
 <span class='fu'>MeanGermNumber</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
 
@@ -226,21 +231,25 @@ computed as follows
 .</p>
 <p><p style="text-align: center;"><em><span
 style="text-decoration: overline;">GP</span> = <sup>GP</sup> &frasl;
-<sub>T<sub>n</sub></sub></em></p></p>
+<sub>T<sub>k</sub></sub></em></p></p>
 <p>Where, <i>GP</i> is the final germination
-percentage and <em>T<sub>n</sub></em> is
-the total number of intervals(e.g. days) required for final germination.</p>
+percentage, <em>T<sub>k</sub></em> is the
+time at the <em>k</em>th time interval, and
+<em>k</em> is the total number of time
+intervals required for final germination.</p>
 <p>Mean number of seeds germinated per unit time (<em><span
 style="text-decoration: overline">N</span></em>) is
 computed as follows (Khamassi et al. 2013)
 .</p>
 <p><p style="text-align: center;"><em><span
 style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup>
-&frasl; <sub>T<sub>n</sub></sub></em></p></p>
+&frasl; <sub>T<sub>k</sub></sub></em></p></p>
 <p>Where, <em>N<sub>g</sub></em> is the number
-of germinated seeds and
-<em>T<sub>n</sub></em> is the total number
-of intervals (e.g. days) required for final germination.</p>
+of germinated seeds at the end of the germination test,
+<em>T<sub>k</sub></em> is the time at the
+<em>k</em>th time interval, and
+<em>k</em> is the total number of time
+intervals required for final germination.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Czabator FJ (1962).

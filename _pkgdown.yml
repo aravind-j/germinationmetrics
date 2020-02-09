@@ -44,6 +44,8 @@ reference:
          - '`WeightGermPercent`'
          - '`MeanGermPercent`'
          - '`TimsonsIndex`'
+         - '`GermIndex`'
+         - '`EmergenceRateIndex`'
          - '`PeakValue`'
          - '`CUGerm`'
          - '`GermSynchrony`'
@@ -56,6 +58,7 @@ reference:
     - title: Wrapper
       contents:
          - '`germination.indices`'
+         - '`FourPHFfit.bulk`'
 
     - title: Data
       contents:

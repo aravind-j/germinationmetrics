@@ -48,7 +48,7 @@
 MeanGermTimeMean
 germination time (T) or Mean
 length of incubation time
-(Edmond and Drapala 1958; Czabator 1962; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
+(Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .
 VarGermTimeVariance of germination time
@@ -63,7 +63,7 @@ Santana 2006)
 .
 CVGermTimeCoefficient of variation of the germination time
 (CVT)
-(Ranal and de
+(Gomes 1960; Ranal and de
 Santana 2006)
 . 
 
@@ -183,7 +183,7 @@ Santana 2006)
 germination time (<em><span
 style="text-decoration:overline">T</span></em>) or Mean
 length of incubation time
-(Edmond and Drapala 1958; Czabator 1962; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
+(Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 <dt><code>VarGermTime</code></dt><dd><p>Variance of germination time
@@ -200,7 +200,7 @@ Santana 2006)
 .</p></dd>
 <dt><code>CVGermTime</code></dt><dd><p>Coefficient of variation of the germination time
 (<i>CV<sub>T</sub></i>)
-(Ranal and de
+(Gomes 1960; Ranal and de
 Santana 2006)
 .</p></dd> 
 </dl>
@@ -249,7 +249,7 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 
     <p><code>MeanGermTime</code> computes the mean germination time according to the
 following formula
-(Edmond and Drapala 1958; Czabator 1962; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
+(Edmond and Drapala 1958; Czabator 1962; Smith and Millet 1964; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
 <p><p style="text-align: center;"><em><span
@@ -260,17 +260,20 @@ style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
 N<sub>i</sub></sub></em></p></p>
 <p>Where, <i>T<sub>i</sub></i> is the time
 from the start of the experiment to the
-<i>i</i>th observation,
+<i>i</i>th interval,
 <i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time (not the
-accumulated number, but the number correspondent to the
-<i>i</i>th observation) and
-<i>k</i> is the last time of germination.</p>
-<p>It is the same as Sprouting Index described by
+germinated in the <i>i</i>th time interval (not
+the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
+<p>It is the same as Sprouting Index (<i>SI</i>)
+or Emergence Index (<i>EI</i>) described by
 Smith and Millet (1964)
-
-(<i>SI</i>) and Germination Resistance
-(<i>GR</i>) described by
+ and
+Mock and Eberhart (1972)
+ as well
+as Germination Resistance (<i>GR</i>)
+described by
 Gordon (1969, 1971)
 .</p>
 <p>It is the inverse of mean germination rate (<em><span
@@ -297,12 +300,12 @@ style="text-decoration: overline;">T</span>)<sup>2</sup></sup> &frasl; <sub>
 N<sub>i</sub> &minus; 1</sub></em></p></p>
 <p>Where, <i>T<sub>i</sub></i> is the time
 from the start of the experiment to the
-<i>i</i>th observation,
+<i>i</i>th interval,
 <i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time (not the
-accumulated number, but the number correspondent to the
-<i>i</i>th observation) and
-<i>k</i> is the last time of germination.</p>
+germinated in the <i>i</i>th time interval (not
+the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
 <p><code>SEGermTime</code> computes the standard error of germination time
 (<em>s<sub><span
 style="text-decoration:overline">T</span></sub></em>)
@@ -317,20 +320,21 @@ style="text-decoration: overline;">T</span></sub> = &radic;[
 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
 ]</em></p></p>
 <p>Where, <i>N<sub>i</sub></i> is the number
-of seeds germinated in the <i>i</i>th time (not
-the accumulated number, but the number correspondent to the
-<i>i</i>th observation) and
-<i>k</i> is the last time of germination.</p>
+of seeds germinated in the <i>i</i>th time
+interval (not the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
 <p>It signifies the accuracy of the calculation of the mean germination time.</p>
 <p><code>CVGermTime</code> computes the coefficient of variation of germination time
 (<i>CV<sub>T</sub></i>) according to the
-following formula (Ranal and de
+following formula
+(Gomes 1960; Ranal and de
 Santana 2006)
 .</p>
 <p><p style="text-align: center;"><em>CV<sub>T</sub> =
-&radic;[ <sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">T</sub></sup> &frasl; <sub><span style="text-decoration:
-overline;">T</span></sub> ]</em></p></p>
+<sup>&radic;[s<sup>2</sup><sub style="line-height: 1.8; margin-left:
+-1ex;">T</sub>]</sup> &frasl; <sub><span style="text-decoration:
+overline;">T</span></sub> </em></p></p>
 <p>This indicates the uniformity of germination and permits comparisons
 irrespective of the magnitude of mean germination time
 (<em><span
@@ -343,13 +347,17 @@ style="text-decoration:overline">T</span></em>).</p>
 &#8220;The effects of temperature, sand and soil, and acetone on germination of okra seed.&#8221;
 <em>Proceedings of the American Society for Horticultural Science</em>, <b>71</b>, 428--434.<br /><br /> Ellis RH, Roberts EH (1980).
 &#8220;Improved equations for the prediction of seed longevity.&#8221;
-<em>Annals of Botany</em>, <b>45</b>(1), 13--30.<br /><br /> Gordon AG (1969).
+<em>Annals of Botany</em>, <b>45</b>(1), 13--30.<br /><br /> Gomes FP (1960).
+<em>Curso De Estatistica Experimental</em>.
+Escola Superior de Agricultura Luiz de Queiroz, Universidade de Sao Paulo.<br /><br /> Gordon AG (1969).
 &#8220;Some observations on the germination energy tests for cereals.&#8221;
 <em>Proceedings of the Association of Official Seed Analysts</em>, <b>59</b>, 58--72.<br /><br /> Gordon AG (1971).
 &#8220;The germination resistance test - A new test for measuring germination quality of cereals.&#8221;
 <em>Canadian Journal of Plant Science</em>, <b>51</b>(2), 181--183.<br /><br /> Labouriau LG (1983).
 <em>A Germinacao Das Sementes</em>.
-Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientifico e Tecnologico. Serie de Biologia. Monografia 24.<br /><br /> Ranal MA, de
+Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientifico e Tecnologico. Serie de Biologia. Monografia 24.<br /><br /> Mock JJ, Eberhart SA (1972).
+&#8220;Cold tolerance in adapted maize populations.&#8221;
+<em>Crop Science</em>, <b>12</b>(4), 466--469.<br /><br /> Ranal MA, de
 Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
 <em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Smith PG, Millet AH (1964).

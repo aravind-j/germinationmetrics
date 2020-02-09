@@ -198,14 +198,14 @@
 <span class='no'>gcdatamelt</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/reshape2/man/melt.html'>melt</a></span>(<span class='no'>gcdata</span>[, !<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>gcdata</span>) <span class='kw'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Total Seeds"</span>)],
                    <span class='kw'>id.vars</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Genotype"</span>, <span class='st'>"Rep"</span>))
 
-<span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggplot.html'>ggplot</a></span>(<span class='no'>gcdatamelt</span>, <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/aes.html'>aes</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>variable</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>value</span>,
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>gcdatamelt</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>variable</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>value</span>,
                        <span class='kw'>group</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/interaction.html'>interaction</a></span>(<span class='no'>Genotype</span>, <span class='no'>Rep</span>),
                        <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Genotype</span>)) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_point.html'>geom_point</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_path.html'>geom_line</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>ylab</a></span>(<span class='st'>"Germination count (Partial)"</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>xlab</a></span>(<span class='st'>"Intervals"</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='gcdata-1.png' alt='' width='700' height='433' /></div><div class='input'>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span>(<span class='st'>"Germination count (Partial)"</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span>(<span class='st'>"Intervals"</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='gcdata-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot partial germination counts over time</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 
@@ -219,14 +219,14 @@
 <span class='no'>gcdatamelt2</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/pkg/reshape2/man/melt.html'>melt</a></span>(<span class='no'>gcdata2</span>[, !<span class='fu'><a href='https://rdrr.io/r/base/names.html'>names</a></span>(<span class='no'>gcdata2</span>) <span class='kw'>%in%</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Total Seeds"</span>)],
                     <span class='kw'>id.vars</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Genotype"</span>, <span class='st'>"Rep"</span>))
 
-<span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggplot.html'>ggplot</a></span>(<span class='no'>gcdatamelt2</span>, <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/aes.html'>aes</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>variable</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>value</span>,
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>gcdatamelt2</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>x</span> <span class='kw'>=</span> <span class='no'>variable</span>, <span class='kw'>y</span> <span class='kw'>=</span> <span class='no'>value</span>,
                         <span class='kw'>group</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/interaction.html'>interaction</a></span>(<span class='no'>Genotype</span>, <span class='no'>Rep</span>),
                         <span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>Genotype</span>)) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_point.html'>geom_point</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/geom_path.html'>geom_line</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>ylab</a></span>(<span class='st'>"Germination count (Cumulative)"</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/labs.html'>xlab</a></span>(<span class='st'>"Intervals"</span>) +
-  <span class='fu'><a href='https://rdrr.io/pkg/ggplot2/man/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='gcdata-2.png' alt='' width='700' height='433' /></div><div class='input'>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_path.html'>geom_line</a></span>(<span class='kw'>alpha</span> <span class='kw'>=</span> <span class='fl'>0.7</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>ylab</a></span>(<span class='st'>"Germination count (Cumulative)"</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>xlab</a></span>(<span class='st'>"Intervals"</span>) +
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggtheme.html'>theme_bw</a></span>()</div><div class='img'><img src='gcdata-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Compute germination indices</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
 
@@ -363,54 +363,86 @@
 #&gt; 13        6.851312       3.357143     8.163265                   1.00
 #&gt; 14        6.547619       3.142857     6.250000                   1.00
 #&gt; 15        6.250000       3.000000     8.333333                   1.00
-#&gt;    TimsonsIndex_KhanUngar GermRateGeorge PeakValue GermValue_Czabator
-#&gt; 1               0.5714286              4  9.500000           54.28571
-#&gt; 2               0.7002801              5  9.313725           54.78662
-#&gt; 3               1.0416667              7 10.416667           69.75446
-#&gt; 4               0.5602241              4 10.049020           64.74158
-#&gt; 5               0.7142857              5 11.250000           77.14286
-#&gt; 6               0.4373178              3 10.714286           71.84506
-#&gt; 7               0.5952381              4 10.416667           65.10417
-#&gt; 8               0.7598784              5  9.574468           58.20345
-#&gt; 9               0.6868132              5  9.855769           60.92165
-#&gt; 10              0.5714286              4 10.250000           65.89286
-#&gt; 11              0.7002801              5 11.029412           74.14731
-#&gt; 12              0.4201681              3  9.803922           60.41632
-#&gt; 13              0.5830904              4 10.969388           75.15470
-#&gt; 14              0.4464286              3 10.677083           69.90947
-#&gt; 15              0.5952381              4 10.156250           63.47656
-#&gt;    GermValue_DP GermValue_Czabator_mod GermValue_DP_mod    CUGerm GermSynchrony
-#&gt; 1      57.93890               54.28571         39.56076 0.7092199     0.2666667
-#&gt; 2      52.58713               54.78662         40.99260 0.5051546     0.2346109
-#&gt; 3      68.62289               69.75446         53.42809 0.3975265     0.2242424
-#&gt; 4      70.43331               64.74158         48.86825 0.4672113     0.2502415
-#&gt; 5      80.16914               77.14286         56.23935 0.4312184     0.2606383
-#&gt; 6      76.51983               71.84506         53.06435 0.4934701     0.2792271
-#&gt; 7      69.41325               65.10417         47.37690 0.7371500     0.2729384
-#&gt; 8      56.00669               58.20345         43.67948 0.4855842     0.2256410
-#&gt; 9      58.13477               60.92165         45.30801 0.4446640     0.2494949
-#&gt; 10     70.91875               65.89286         49.10820 0.5584666     0.2555556
-#&gt; 11     77.39782               74.14731         54.27520 0.4288905     0.2686170
-#&gt; 12     64.44988               60.41632         44.71582 0.4760266     0.2737844
-#&gt; 13     78.16335               75.15470         54.94192 0.4023679     0.2506938
-#&gt; 14     74.40140               69.90947         51.41913 0.5383760     0.2991543
-#&gt; 15     67.62031               63.47656         46.48043 0.6133519     0.2497096
-#&gt;    GermUncertainty
-#&gt; 1         2.062987
-#&gt; 2         2.321514
-#&gt; 3         2.462012
-#&gt; 4         2.279215
-#&gt; 5         2.146051
-#&gt; 6         2.160545
-#&gt; 7         2.040796
-#&gt; 8         2.357249
-#&gt; 9         2.321080
-#&gt; 10        2.187983
-#&gt; 11        2.128670
-#&gt; 12        2.185245
-#&gt; 13        2.241181
-#&gt; 14        2.037680
-#&gt; 15        2.185028</div><div class='input'>
+#&gt;    TimsonsIndex_KhanUngar GermRateGeorge GermIndex GermIndex_mod
+#&gt; 1               0.5714286              4  5.840000      7.300000
+#&gt; 2               0.7002801              5  5.882353      7.142857
+#&gt; 3               1.0416667              7  6.687500      7.133333
+#&gt; 4               0.5602241              4  6.411765      7.108696
+#&gt; 5               0.7142857              5  6.900000      7.187500
+#&gt; 6               0.4373178              3  6.693878      7.130435
+#&gt; 7               0.5952381              4  6.395833      7.309524
+#&gt; 8               0.7598784              5  6.063830      7.125000
+#&gt; 9               0.6868132              5  6.173077      7.133333
+#&gt; 10              0.5714286              4  6.460000      7.177778
+#&gt; 11              0.7002801              5  6.784314      7.208333
+#&gt; 12              0.4201681              3  6.137255      7.113636
+#&gt; 13              0.5830904              4  6.775510      7.063830
+#&gt; 14              0.4464286              3  6.625000      7.227273
+#&gt; 15              0.5952381              4  6.291667      7.190476
+#&gt;    EmergenceRateIndex_Melville EmergenceRateIndex_Melville_mod
+#&gt; 1                          292                        7.300000
+#&gt; 2                          300                        7.142857
+#&gt; 3                          321                        7.133333
+#&gt; 4                          327                        7.108696
+#&gt; 5                          345                        7.187500
+#&gt; 6                          328                        7.130435
+#&gt; 7                          307                        7.309524
+#&gt; 8                          285                        7.125000
+#&gt; 9                          321                        7.133333
+#&gt; 10                         323                        7.177778
+#&gt; 11                         346                        7.208333
+#&gt; 12                         313                        7.113636
+#&gt; 13                         332                        7.063830
+#&gt; 14                         318                        7.227273
+#&gt; 15                         302                        7.190476
+#&gt;    EmergenceRateIndex_BilbroWanjura EmergenceRateIndex_Fakorede PeakValue
+#&gt; 1                          5.970149                    8.375000  9.500000
+#&gt; 2                          6.125000                    8.326531  9.313725
+#&gt; 3                          6.553398                    7.324444 10.416667
+#&gt; 4                          6.675079                    7.640359 10.049020
+#&gt; 5                          7.045872                    7.096354 11.250000
+#&gt; 6                          6.696203                    7.317580 10.714286
+#&gt; 7                          6.277580                    7.646259 10.416667
+#&gt; 8                          5.818182                    8.078125  9.574468
+#&gt; 9                          6.553398                    7.934815  9.855769
+#&gt; 10                         6.596091                    7.580247 10.250000
+#&gt; 11                         7.067485                    7.216146 11.029412
+#&gt; 12                         6.389439                    7.981921  9.803922
+#&gt; 13                         6.776074                    7.231326 10.969388
+#&gt; 14                         6.496644                    7.388430 10.677083
+#&gt; 15                         6.167832                    7.782313 10.156250
+#&gt;    GermValue_Czabator GermValue_DP GermValue_Czabator_mod GermValue_DP_mod
+#&gt; 1            54.28571     57.93890               54.28571         39.56076
+#&gt; 2            54.78662     52.58713               54.78662         40.99260
+#&gt; 3            69.75446     68.62289               69.75446         53.42809
+#&gt; 4            64.74158     70.43331               64.74158         48.86825
+#&gt; 5            77.14286     80.16914               77.14286         56.23935
+#&gt; 6            71.84506     76.51983               71.84506         53.06435
+#&gt; 7            65.10417     69.41325               65.10417         47.37690
+#&gt; 8            58.20345     56.00669               58.20345         43.67948
+#&gt; 9            60.92165     58.13477               60.92165         45.30801
+#&gt; 10           65.89286     70.91875               65.89286         49.10820
+#&gt; 11           74.14731     77.39782               74.14731         54.27520
+#&gt; 12           60.41632     64.44988               60.41632         44.71582
+#&gt; 13           75.15470     78.16335               75.15470         54.94192
+#&gt; 14           69.90947     74.40140               69.90947         51.41913
+#&gt; 15           63.47656     67.62031               63.47656         46.48043
+#&gt;       CUGerm GermSynchrony GermUncertainty
+#&gt; 1  0.7092199     0.2666667        2.062987
+#&gt; 2  0.5051546     0.2346109        2.321514
+#&gt; 3  0.3975265     0.2242424        2.462012
+#&gt; 4  0.4672113     0.2502415        2.279215
+#&gt; 5  0.4312184     0.2606383        2.146051
+#&gt; 6  0.4934701     0.2792271        2.160545
+#&gt; 7  0.7371500     0.2729384        2.040796
+#&gt; 8  0.4855842     0.2256410        2.357249
+#&gt; 9  0.4446640     0.2494949        2.321080
+#&gt; 10 0.5584666     0.2555556        2.187983
+#&gt; 11 0.4288905     0.2686170        2.128670
+#&gt; 12 0.4760266     0.2737844        2.185245
+#&gt; 13 0.4023679     0.2506938        2.241181
+#&gt; 14 0.5383760     0.2991543        2.037680
+#&gt; 15 0.6133519     0.2497096        2.185028</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

@@ -164,9 +164,19 @@ germination count data and compute the associated parameters." />
 germination count data and compute the associated parameters.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>FourPHFfit</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>tmax</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>), <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>)</pre>
+    <pre class="usage"><span class='fu'>FourPHFfit</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='no'>total.seeds</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='no'>tmax</span>,
+  <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>),
+  <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>,
+  <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -256,7 +266,7 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
     <p>The cumulative germination count data of a seed lot can be modelled to fit a
 four-parameter hill function defined as follows
 (El-Kassaby et al. 2008)
-:</p>
+.</p>
 <p><p style="text-align: center;"><em>y = y<sub>0</sub> +
 [<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
 x<sup>b</sup>)</sub>]</em></p></p>
@@ -269,9 +279,9 @@ capacity, <i>b</i> is a mathematical parameter
 controlling the shape and steepness of the germination curve (the larger the
 <i>b</i> parameter, the steeper the rise toward
 the asymptote <i>a</i>, and the shorter the
-time between germination onset and maximum germination) and
+time between germination onset and maximum germination), and
 <i>c</i> is the "half-maximal activation level"
-and represents the time required for 50% of viable seeds to germinate
+which represents the time required for 50% of viable seeds to germinate
 (<i>c</i> is equivalent to the germination
 speed).</p>
 <p>Once this function is fitted to the curve, <code>FourPHFfit</code> computes the
@@ -280,7 +290,7 @@ time to 50% germination of total seeds (<code>t50.total</code>) or viable seeds
 (in terms of both total and viable seeds) as specified in argument <code>xp</code>
 can be computed.</p>
 <p>The time at germination onset (<i>lag</i>)
-can be computed as follows:</p>
+can be computed as follows.</p>
 <p><p style="text-align: center;"><em>lag = b
 &radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
 y<sub>0</sub>)</sub>]<br /></em></p></p>
@@ -296,14 +306,14 @@ center;"><em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub> =
 t<sub>max</sub> &minus; t<sub>min</sub></em></p></p>
 <p>The partial derivative of the four-parameter hill function gives the
 instantaneous rate of germination (<i>s</i>) as
-follows:</p>
+follows.</p>
 <p><p style="text-align: center;"><em>s =
 <sup>&part;y</sup>&frasl;<sub>&part;x</sub> =
 <sup>abc<sup>b</sup>x<sup>b-1</sup></sup>&frasl;<sub>&radic;[(c<sup>b</sup> +
 x<sup>b</sup>)<sup>2</sup>]</sub></em></p></p>
 <p>From this function for instantaneous rate of germination, the time at maximum
 germination rate (<i>TMGR</i>) can be
-estimated as follows:</p>
+estimated as follows.</p>
 <p><p style="text-align: center;"><em>TMGR = b
 &radic;[<sup>c<sup>b</sup>(b &minus; 1)</sup> &frasl;
 <sub>(b+1)</sub>]</em></p></p>

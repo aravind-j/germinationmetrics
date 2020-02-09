@@ -44,7 +44,8 @@
   
 
 <meta property="og:title" content="Germination percentage — GermPercent" />
-<meta property="og:description" content="Compute the germination percentage or germinability." />
+<meta property="og:description" content="Compute the germination percentage or final germination percentage or
+germinability." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -155,7 +156,8 @@
     </div>
 
     <div class="ref-description">
-    <p>Compute the germination percentage or germinability.</p>
+    <p>Compute the germination percentage or final germination percentage or
+germinability.</p>
     </div>
 
     <pre class="usage"><span class='fu'>GermPercent</span>(<span class='no'>germinated.seeds</span>, <span class='no'>germ.counts</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -189,8 +191,9 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
     <p>The germination percentage (%) value.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Germination percentage is computed as follows (ISTA 2015)
-:</p>
+    <p>Germination percentage is computed as follows
+(ISTA 2015)
+.</p>
 <p><p style="text-align: center;"><i>GP = [N<sub>g</sub>
 &frasl; N<sub>t</sub>] &times; 100</i><p></p>
 <p>Where, <i>N<sub>g</sub></i> is the number

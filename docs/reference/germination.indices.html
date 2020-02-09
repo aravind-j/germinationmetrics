@@ -160,18 +160,44 @@ at specific time intervals for multiple samples in batch." />
 at specific time intervals for multiple samples in batch.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>germination.indices</span>(<span class='no'>data</span>, <span class='no'>total.seeds.col</span>, <span class='no'>counts.intervals.cols</span>,
-  <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>FirstGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>LastGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>PeakGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>TimeSpreadGerm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>t50</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>MeanGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>VarGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>SEGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>CVGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>MeanGermRate</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>CVG</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>VarGermRate</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>SEGermRate</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>GermRateRecip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GermSpeed</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>GermSpeedAccumulated</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GermSpeedCorrected</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>WeightGermPercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>MeanGermPercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>MeanGermNumber</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>TimsonsIndex</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GermRateGeorge</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>max.int</span>, <span class='kw'>PeakValue</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GermValue</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>gv.k</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>CUGerm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GermSynchrony</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>GermUncertainty</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>germination.indices</span>(
+  <span class='no'>data</span>,
+  <span class='no'>total.seeds.col</span>,
+  <span class='no'>counts.intervals.cols</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>FirstGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>LastGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>PeakGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>TimeSpreadGerm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>t50</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>MeanGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>VarGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>SEGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>CVGermTime</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>MeanGermRate</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>CVG</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>VarGermRate</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>SEGermRate</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermRateRecip</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermSpeed</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermSpeedAccumulated</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermSpeedCorrected</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>WeightGermPercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>MeanGermPercent</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>MeanGermNumber</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>TimsonsIndex</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermRateGeorge</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='no'>max.int</span>,
+  <span class='kw'>GermIndex</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>EmergenceRateIndex</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>PeakValue</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermValue</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>gv.k</span> <span class='kw'>=</span> <span class='fl'>10</span>,
+  <span class='kw'>CUGerm</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermSynchrony</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>GermUncertainty</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -314,11 +340,12 @@ Santana 2006)
     <tr>
       <th>CVG</th>
       <td><p>logical. If <code>TRUE</code>, the Coefficient of velocity/rate of
-germination or Kotowski's coefficient of velocity
-(<i>CVG</i>)
-(Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
+  germination or Kotowski's coefficient of velocity
+  (<i>CVG</i>)</p>
+
+<p>(Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 .
- is computed. Default is <code>TRUE</code>.</p></td>
+   is computed. Default is <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>VarGermRate</th>
@@ -382,7 +409,8 @@ accumulated germination
 percentage <i>WGP</i> or Weighted
 germination index <i>WGI</i>
 (Reddy 1978; Reddy et al. 1985)
- is computed.</p></td>
+ is
+computed.</p></td>
     </tr>
     <tr>
       <th>MeanGermPercent</th>
@@ -423,6 +451,43 @@ George (1961)
       <th>max.int</th>
       <td><p>The maximum interval value up to which Timson's index/George's
 germination rate is to be computed.</p></td>
+    </tr>
+    <tr>
+      <th>GermIndex</th>
+      <td><p>logical. If <code>TRUE</code>, the Germination index according to
+Melville et al. (1980)
+
+and its modification by
+de
+Santana and Ranal (2004)
+
+(Ranal and de
+Santana 2006)
+ are computed.</p></td>
+    </tr>
+    <tr>
+      <th>EmergenceRateIndex</th>
+      <td><p>logical. If <code>TRUE</code>, the Emergence rate index or
+Germination rate index are computed according to</p><ul>
+<li><p>Shmueli and Goldberg (1971)
+
+and it's modification by
+de
+Santana and Ranal (2004)
+
+(Ranal and de
+Santana 2006)
+;</p></li>
+<li><p>Bilbro and Wanjura (1982)
+; and</p></li>
+<li><p>Fakorede and Ayoola (1980)
+,
+Fakorede and Ojo (1981)
+,
+ and
+Fakorede and Agbana (1983)
+.</p></li>
+</ul></td>
     </tr>
     <tr>
       <th>PeakValue</th>
@@ -496,7 +561,9 @@ Academic Press, San Diego.
 ISBN 0-12-080260-0.<br /><br /> Bewley JD, Black M (1994).
 <em>Seeds: Physiology of Development and Germination.</em>.
 Plenum Publishing Corporation, New York, USA.
-ISBN 0-306-44748-7.<br /><br /> Bonner FT (1967).
+ISBN 0-306-44748-7.<br /><br /> Bilbro JD, Wanjura DF (1982).
+&#8220;Soil crusts and cotton emergence relationships.&#8221;
+<em>Transactions of the ASAE</em>, <b>25</b>(6), 1484--1487.<br /><br /> Bonner FT (1967).
 &#8220;Ideal sowing depth for sweetgum seed.&#8221;
 <em>Tree Planters' Notes</em>, <b>18</b>(1), 1--1.<br /><br /> Bouton JH, Dudeck AE, Smith RL (1976).
 &#8220;Germination in freshly harvested seed of centipedegrass.&#8221;
@@ -521,7 +588,13 @@ Universidade de Brasilia, Brasilia.<br /><br /> Djavanshir K, Pourbeik H (1976).
 &#8220;Improved equations for the prediction of seed longevity.&#8221;
 <em>Annals of Botany</em>, <b>45</b>(1), 13--30.<br /><br /> Evetts LL, Burnside OC (1972).
 &#8220;Germination and seedling development of common milkweed and other species.&#8221;
-<em>Weed Science</em>, <b>20</b>(4), 371--378.<br /><br /> Farooq M, Basra SMA, Ahmad N, Hafeez K (2005).
+<em>Weed Science</em>, <b>20</b>(4), 371--378.<br /><br /> Fakorede MAB, Agbana SB (1983).
+&#8220;Heterotic effects and association of seedling vigour with mature characteristics and grain yield in some tropical maize cultivars.&#8221;
+<em>Maydica</em>, <b>28</b>, 327--338.<br /><br /> Fakorede MAB, Ayoola AO (1980).
+&#8220;Relation between seedling vigor and selection for yield improvement in maize.&#8221;
+<em>Maydica</em>, <b>25</b>(3), 135--147.<br /><br /> Fakorede MAB, Ojo DK (1981).
+&#8220;Variability for seedling vigour in maize.&#8221;
+<em>Experimental Agriculture</em>, <b>17</b>(2), 195--201.<br /><br /> Farooq M, Basra SMA, Ahmad N, Hafeez K (2005).
 &#8220;Thermal hardening: A new seed vigor enhancement tool in rice.&#8221;
 <em>Journal of Integrative Plant Biology</em>, <b>47</b>(2), 187--193.<br /><br /> George DW (1961).
 &#8220;Influence of germination temperature on the expression of post-harvest dormancy in wheat.&#8221;
@@ -557,7 +630,9 @@ Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientif
 &#8220;On the germination of seeds of <em>Calotropis procera</em> (Ait.) Ait. f.&#8221;
 <em>Anais da Academia Brasileira de Ciencias</em>, <b>48</b>(263-284).<br /><br /> Maguire JD (1962).
 &#8220;Speed of germination - Aid in selection and evaluation for seedling emergence and vigor.&#8221;
-<em>Crop Science</em>, <b>2</b>(2), 176--177.<br /><br /> Nichols MA, Heydecker W (1968).
+<em>Crop Science</em>, <b>2</b>(2), 176--177.<br /><br /> Melville AH, Galletta GJ, Draper AD, Ng TJ (1980).
+&#8220;Seed germination and early seedling vigor in progenies of inbred strawberry selections.&#8221;
+<em>HortScience</em>, <b>15</b>(6, I), 749--750.<br /><br /> Nichols MA, Heydecker W (1968).
 &#8220;Two approaches to the study of germination data.&#8221;
 <em>Proceedings of the International Seed Testing Association</em>, <b>33</b>(3), 531--540.<br /><br /> Primack RB (1985).
 &#8220;Longevity of individual flowers.&#8221;
@@ -578,7 +653,9 @@ Ph.D. Thesis, Oregon State University.<br /><br /> Reddy LV, Metzger RJ, Ching T
 &#8220;Review of data analysis methods for seed germination.&#8221;
 <em>Crop Science</em>, <b>24</b>(6), 1192--1199.<br /><br /> Shannon CE (1948).
 &#8220;A mathematical theory of communication.&#8221;
-<em>Bell System Technical Journal</em>, <b>27</b>(3), 379--423.<br /><br /> Smith PG, Millet AH (1964).
+<em>Bell System Technical Journal</em>, <b>27</b>(3), 379--423.<br /><br /> Shmueli M, Goldberg D (1971).
+&#8220;Emergence, early growth, and salinity of five vegetable crops germinated by sprinkle and trickle irrigation in an arid zone.&#8221;
+<em>HortScience</em>, <b>6</b>, 563--565.<br /><br /> Smith PG, Millet AH (1964).
 &#8220;Germinating and sprouting responses of the tomato at low temperatures.&#8221;
 <em>Journal of the American Society for Horticultural Science</em>, <b>84</b>, 480--484.<br /><br /> Throneberry GO, Smith FG (1955).
 &#8220;Relation of respiratory and enzymatic activity to corn seed viability.&#8221;
@@ -616,6 +693,8 @@ Chronica Botanica Co., Waltham, Mass., USA and The Ronald Press Co., New York.</
   <code><a href='GermSpeed.html'>MeanGermPercent</a></code>,
   <code><a href='TimsonsIndex.html'>TimsonsIndex</a></code>,
   <code><a href='TimsonsIndex.html'>GermRateGeorge</a></code>,
+  <code><a href='GermIndex.html'>GermIndex</a></code>,
+  <code><a href='EmergenceRateIndex.html'>EmergenceRateIndex</a></code>,
   <code><a href='GermValue.html'>GermValue</a></code>,
   <code><a href='GermValue.html'>PeakValue</a></code>,
   <code><a href='CUGerm.html'>CUGerm</a></code>,
@@ -759,54 +838,86 @@ Chronica Botanica Co., Waltham, Mass., USA and The Ronald Press Co., New York.</
 #&gt; 13        6.851312       3.357143     8.163265                   1.00
 #&gt; 14        6.547619       3.142857     6.250000                   1.00
 #&gt; 15        6.250000       3.000000     8.333333                   1.00
-#&gt;    TimsonsIndex_KhanUngar GermRateGeorge PeakValue GermValue_Czabator
-#&gt; 1               0.5714286              4  9.500000           54.28571
-#&gt; 2               0.7002801              5  9.313725           54.78662
-#&gt; 3               1.0416667              7 10.416667           69.75446
-#&gt; 4               0.5602241              4 10.049020           64.74158
-#&gt; 5               0.7142857              5 11.250000           77.14286
-#&gt; 6               0.4373178              3 10.714286           71.84506
-#&gt; 7               0.5952381              4 10.416667           65.10417
-#&gt; 8               0.7598784              5  9.574468           58.20345
-#&gt; 9               0.6868132              5  9.855769           60.92165
-#&gt; 10              0.5714286              4 10.250000           65.89286
-#&gt; 11              0.7002801              5 11.029412           74.14731
-#&gt; 12              0.4201681              3  9.803922           60.41632
-#&gt; 13              0.5830904              4 10.969388           75.15470
-#&gt; 14              0.4464286              3 10.677083           69.90947
-#&gt; 15              0.5952381              4 10.156250           63.47656
-#&gt;    GermValue_DP GermValue_Czabator_mod GermValue_DP_mod    CUGerm GermSynchrony
-#&gt; 1      57.93890               54.28571         39.56076 0.7092199     0.2666667
-#&gt; 2      52.58713               54.78662         40.99260 0.5051546     0.2346109
-#&gt; 3      68.62289               69.75446         53.42809 0.3975265     0.2242424
-#&gt; 4      70.43331               64.74158         48.86825 0.4672113     0.2502415
-#&gt; 5      80.16914               77.14286         56.23935 0.4312184     0.2606383
-#&gt; 6      76.51983               71.84506         53.06435 0.4934701     0.2792271
-#&gt; 7      69.41325               65.10417         47.37690 0.7371500     0.2729384
-#&gt; 8      56.00669               58.20345         43.67948 0.4855842     0.2256410
-#&gt; 9      58.13477               60.92165         45.30801 0.4446640     0.2494949
-#&gt; 10     70.91875               65.89286         49.10820 0.5584666     0.2555556
-#&gt; 11     77.39782               74.14731         54.27520 0.4288905     0.2686170
-#&gt; 12     64.44988               60.41632         44.71582 0.4760266     0.2737844
-#&gt; 13     78.16335               75.15470         54.94192 0.4023679     0.2506938
-#&gt; 14     74.40140               69.90947         51.41913 0.5383760     0.2991543
-#&gt; 15     67.62031               63.47656         46.48043 0.6133519     0.2497096
-#&gt;    GermUncertainty
-#&gt; 1         2.062987
-#&gt; 2         2.321514
-#&gt; 3         2.462012
-#&gt; 4         2.279215
-#&gt; 5         2.146051
-#&gt; 6         2.160545
-#&gt; 7         2.040796
-#&gt; 8         2.357249
-#&gt; 9         2.321080
-#&gt; 10        2.187983
-#&gt; 11        2.128670
-#&gt; 12        2.185245
-#&gt; 13        2.241181
-#&gt; 14        2.037680
-#&gt; 15        2.185028</div><div class='input'>
+#&gt;    TimsonsIndex_KhanUngar GermRateGeorge GermIndex GermIndex_mod
+#&gt; 1               0.5714286              4  5.840000      7.300000
+#&gt; 2               0.7002801              5  5.882353      7.142857
+#&gt; 3               1.0416667              7  6.687500      7.133333
+#&gt; 4               0.5602241              4  6.411765      7.108696
+#&gt; 5               0.7142857              5  6.900000      7.187500
+#&gt; 6               0.4373178              3  6.693878      7.130435
+#&gt; 7               0.5952381              4  6.395833      7.309524
+#&gt; 8               0.7598784              5  6.063830      7.125000
+#&gt; 9               0.6868132              5  6.173077      7.133333
+#&gt; 10              0.5714286              4  6.460000      7.177778
+#&gt; 11              0.7002801              5  6.784314      7.208333
+#&gt; 12              0.4201681              3  6.137255      7.113636
+#&gt; 13              0.5830904              4  6.775510      7.063830
+#&gt; 14              0.4464286              3  6.625000      7.227273
+#&gt; 15              0.5952381              4  6.291667      7.190476
+#&gt;    EmergenceRateIndex_Melville EmergenceRateIndex_Melville_mod
+#&gt; 1                          292                        7.300000
+#&gt; 2                          300                        7.142857
+#&gt; 3                          321                        7.133333
+#&gt; 4                          327                        7.108696
+#&gt; 5                          345                        7.187500
+#&gt; 6                          328                        7.130435
+#&gt; 7                          307                        7.309524
+#&gt; 8                          285                        7.125000
+#&gt; 9                          321                        7.133333
+#&gt; 10                         323                        7.177778
+#&gt; 11                         346                        7.208333
+#&gt; 12                         313                        7.113636
+#&gt; 13                         332                        7.063830
+#&gt; 14                         318                        7.227273
+#&gt; 15                         302                        7.190476
+#&gt;    EmergenceRateIndex_BilbroWanjura EmergenceRateIndex_Fakorede PeakValue
+#&gt; 1                          5.970149                    8.375000  9.500000
+#&gt; 2                          6.125000                    8.326531  9.313725
+#&gt; 3                          6.553398                    7.324444 10.416667
+#&gt; 4                          6.675079                    7.640359 10.049020
+#&gt; 5                          7.045872                    7.096354 11.250000
+#&gt; 6                          6.696203                    7.317580 10.714286
+#&gt; 7                          6.277580                    7.646259 10.416667
+#&gt; 8                          5.818182                    8.078125  9.574468
+#&gt; 9                          6.553398                    7.934815  9.855769
+#&gt; 10                         6.596091                    7.580247 10.250000
+#&gt; 11                         7.067485                    7.216146 11.029412
+#&gt; 12                         6.389439                    7.981921  9.803922
+#&gt; 13                         6.776074                    7.231326 10.969388
+#&gt; 14                         6.496644                    7.388430 10.677083
+#&gt; 15                         6.167832                    7.782313 10.156250
+#&gt;    GermValue_Czabator GermValue_DP GermValue_Czabator_mod GermValue_DP_mod
+#&gt; 1            54.28571     57.93890               54.28571         39.56076
+#&gt; 2            54.78662     52.58713               54.78662         40.99260
+#&gt; 3            69.75446     68.62289               69.75446         53.42809
+#&gt; 4            64.74158     70.43331               64.74158         48.86825
+#&gt; 5            77.14286     80.16914               77.14286         56.23935
+#&gt; 6            71.84506     76.51983               71.84506         53.06435
+#&gt; 7            65.10417     69.41325               65.10417         47.37690
+#&gt; 8            58.20345     56.00669               58.20345         43.67948
+#&gt; 9            60.92165     58.13477               60.92165         45.30801
+#&gt; 10           65.89286     70.91875               65.89286         49.10820
+#&gt; 11           74.14731     77.39782               74.14731         54.27520
+#&gt; 12           60.41632     64.44988               60.41632         44.71582
+#&gt; 13           75.15470     78.16335               75.15470         54.94192
+#&gt; 14           69.90947     74.40140               69.90947         51.41913
+#&gt; 15           63.47656     67.62031               63.47656         46.48043
+#&gt;       CUGerm GermSynchrony GermUncertainty
+#&gt; 1  0.7092199     0.2666667        2.062987
+#&gt; 2  0.5051546     0.2346109        2.321514
+#&gt; 3  0.3975265     0.2242424        2.462012
+#&gt; 4  0.4672113     0.2502415        2.279215
+#&gt; 5  0.4312184     0.2606383        2.146051
+#&gt; 6  0.4934701     0.2792271        2.160545
+#&gt; 7  0.7371500     0.2729384        2.040796
+#&gt; 8  0.4855842     0.2256410        2.357249
+#&gt; 9  0.4446640     0.2494949        2.321080
+#&gt; 10 0.5584666     0.2555556        2.187983
+#&gt; 11 0.4288905     0.2686170        2.128670
+#&gt; 12 0.4760266     0.2737844        2.185245
+#&gt; 13 0.4023679     0.2506938        2.241181
+#&gt; 14 0.5383760     0.2991543        2.037680
+#&gt; 15 0.6133519     0.2497096        2.185028</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

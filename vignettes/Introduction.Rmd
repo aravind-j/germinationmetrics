@@ -165,7 +165,7 @@ knitr::kable(data)
 
 ```
 
-The time-course of germination can be plotted as follows:
+The time-course of germination can be plotted as follows.
 
 ```{r, eval = TRUE}
 data <- data.frame(intervals = 1:14,
@@ -196,7 +196,7 @@ The details about the single-value germination indices implemented in `germinati
 ```{r, echo = FALSE, eval = TRUE}
 load("Indices.rda")
 
-indices$`function` <- paste("`", indices$`function`, "`", sep = "")
+indices$`Function` <- paste("`", indices$`Function`, "`", sep = "")
 
 # indices$Details <- gsub("\\r\\n\\r\\n", "$$\\\\, $$", indices$Details)
 # indices$Details <- gsub("$$\\, $$$$", "$$", indices$Details, fixed = TRUE)
@@ -285,6 +285,14 @@ require(germinationmetrics)
 ```{r, runCode, code = getCode("TimsonsIndex", "germinationmetrics")}
 ```
 
+#### `GermIndex() `
+```{r, runCode, code = getCode("GermIndex", "germinationmetrics")}
+```
+
+#### `EmergenceRateIndex() `
+```{r, runCode, code = getCode("EmergenceRateIndex", "germinationmetrics")}
+```
+
 #### `PeakValue(), GermValue()`
 ```{r, runCode, code = getCode("PeakValue", "germinationmetrics")}
 ```
@@ -297,12 +305,12 @@ require(germinationmetrics)
 ```{r, runCode, code = getCode("GermSynchrony", "germinationmetrics")}
 ```
 
-## Curve fitting
+## Non-linear regression analysis
 
-Several mathematical functions have been used to fit the cumulative germination count data and describe the germination process such as Richard's, Weibull, logistic, log-logistic, gaussian, four-parameter hill function etc. Currently `germinationmetrics` implements the four-parameter hill function to fit the count data and computed various associated metrics.
+Several mathematical functions have been used to fit the cumulative germination count data and describe the germination process  by non-linear regression analysis. They include functions such as Richard's, Weibull, logistic, log-logistic, gaussian, four-parameter hill function etc. Currently `germinationmetrics` implements the four-parameter hill function to fit the count data and computed various associated metrics.
 
 ### Four-parameter hill function
-The four-parameter hill function defined as follows [@el-kassaby_seed_2008]:
+The four-parameter hill function defined as follows [@el-kassaby_seed_2008].
 
 $$
 f(x) = y = y_0 + \frac{ax^b}{x^b+c^b}

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Synchrony and uncertainty of germination — GermSynchrony • germinationmetrics</title>
+<title>Germination Index — GermIndex • germinationmetrics</title>
 
 
 <!-- jquery -->
@@ -43,21 +43,17 @@
   <link href="../extra.css" rel="stylesheet">
   
 
-<meta property="og:title" content="Synchrony and uncertainty of germination — GermSynchrony" />
-<meta property="og:description" content="Compute the following metrics:
-GermSynchronySynchrony of germination (Z index)
-(Primack 1985; Ranal and de
+<meta property="og:title" content="Germination Index — GermIndex" />
+<meta property="og:description" content="Compute the Germination index according to
+Melville et al. (1980)
+ and
+its modification by
+de
+Santana and Ranal (2004)
+
+(Ranal and de
 Santana 2006)
-.
-GermUncertaintySynchronization index
-(E) or Uncertainty of the
-germination process (U) or Informational
-entropy (H)
-(Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
-.
-
-
-" />
+." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -162,32 +158,31 @@ entropy (H)
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Synchrony and uncertainty of germination</h1>
-    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermSynchrony.R'><code>R/GermSynchrony.R</code></a></small>
-    <div class="hidden name"><code>GermSynchrony.Rd</code></div>
+    <h1>Germination Index</h1>
+    <small class="dont-index">Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/R/GermIndex.R'><code>R/GermIndex.R</code></a></small>
+    <div class="hidden name"><code>GermIndex.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>Compute the following metrics:</p><dl class='dl-horizontal'>
-<dt><code>GermSynchrony</code></dt><dd><p>Synchrony of germination (<i>Z</i> index)
-(Primack 1985; Ranal and de
+    <p>Compute the Germination index according to
+Melville et al. (1980)
+ and
+its modification by
+de
+Santana and Ranal (2004)
+
+(Ranal and de
 Santana 2006)
-.</p></dd>
-<dt><code>GermUncertainty</code></dt><dd><p>Synchronization index
-(<em><span style="text-decoration:
-overline">E</span></em>) or Uncertainty of the
-germination process (<i>U</i>) or Informational
-entropy (<i>H</i>)
-(Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
-.</p></dd>
-
-</dl>
-
+.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>GermSynchrony</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
-
-<span class='fu'>GermUncertainty</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+    <pre class="usage"><span class='fu'>GermIndex</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='no'>total.seeds</span>,
+  <span class='kw'>modification</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"none"</span>, <span class='st'>"santanaranal"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -207,71 +202,78 @@ or cumulative as specified in the argument <code>partial</code>.</p></td>
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></td>
     </tr>
+    <tr>
+      <th>total.seeds</th>
+      <td><p>Total number of seeds.</p></td>
+    </tr>
+    <tr>
+      <th>modification</th>
+      <td><p>The modification to be applied. Either <code>"none"</code> or
+<code>"santanaranal"</code>. Default is <code>"none"</code> (see <strong>Details</strong>).</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>For <code>GermUncertainty</code>, the value of uncertainty of germination
-  process.</p>
-<p>For <code>GermSynchrony</code>, the value of synchrony of germination.</p>
+    <p>The value of the Germination index.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p><code>GermSynchrony</code> computes the value of synchrony of germination
-(<i>Z</i> index) as follows
-(Primack 1985; Ranal and de
+    <p>Germination index (<i>GI</i>) is computed as
+follows (Melville et al. 1980)
+.</p>
+<p><p style="text-align: center;"><em>GI =
+&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+<sup>|(T<sub>k</sub> &minus; T<sub>i</sub>)N<sub>i</sub>|</sup> &frasl;
+<sub>N<sub>t</sub></sub></em></p></p>
+<p>Where, <i>T<sub>i</sub></i> is the time
+from the start of the experiment to the
+<i>i</i>th interval (day for the example),
+<i>N<sub>i</sub></i> is the number of seeds
+germinated in the <i>i</i>th time interval (not
+the accumulated number, but the number corresponding to the
+<i>i</i>th interval),
+<i>N<sub>t</sub></i> is the total number of
+seeds used in the test, and <i>k</i> is the
+total number of time intervals.</p>
+<p>A modified germination index
+(<i>GI<sub>mod</sub></i>) was proposed
+by (de
+Santana and Ranal 2004)
+ where total number
+of seeds tested (<i>N<sub>t</sub></i>) is
+replaced by the total number of germinated seeds
+(<i>N<sub>g</sub></i>) in the expression of
+Melville et al. (1980)
+ to
+remove the effect of sample size
+(Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>Z =
-<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>C<sub>N<sub>i</sub>,2</sub></sup>
-&frasl;<sub>C<sub>&sum;N<sub>i</sub>,2</sub></sub></em></p></p>
-<p>Where,
-<i>C<sub>N<sub>i</sub>,2</sub></i> is
-the partial combination of the two germinated seeds from among
-N<sub>i</sub>, the number of seeds
-germinated on the <i>i</i>th time interval (estimated as
-<em>C<sub>N<sub>i</sub>,2</sub> =
-<sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
-<sub>2</sub></em>), and
-<em>C<sub>&sum;N<sub>i</sub>,2</sub></em> is the partial combination of the two germinated seeds from among
-the total number of seeds germinated at the final count, assuming that all
-seeds that germinated did so simultaneously.</p>
-<p><code>GermUncertainty</code> computes the value of synchronization index
-(<em><span style="text-decoration:
-overline">E</span></em>) or uncertainty of the
-germination process (<i>U</i>) or informational
-entropy (<i>H</i>) as follows
-(Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
+<p><p style="text-align: center;"><em>GI =
+&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+<sup>|(T<sub>k</sub> &minus; T<sub>i</sub>)N<sub>i</sub>|</sup> &frasl;
+<sub>N<sub>g</sub></sub></em></p></p>
+<p>The term Germination index (<i>GI</i>) has
+also been used to describe the mathematical expression for Speed of
+germination (<code><a href='GermSpeed.html'>GermSpeed</a></code>) by
+AOSA (1983)
 .</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">E</span> = &minus;&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub> f<sub>i</sub></em>log
-<sub>2</sub><em>f<sub>i</sub></em></p></p>
-<p>Where, <i>f<sub>i</sub></i> is the relative
-frequency of germination (estimated as <em>f<sub>i</sub> =
-<sup>N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>N<sub>i</sub></sub></em>),
-<i>N<sub>i</sub></i> is the number of seeds
-germinated on the <i>i</i>th time interval, and
-<i>k</i> is the total number of time intervals.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
-    <p>Labouriau LG (1983).
-&#8220;Uma nova linha de pesquisa na fisiologia da germinacao das sementes.&#8221;
-<em>Anais do XXXIV Congresso Nacional de Botanica. SBB, Porto Alegre</em>, 11--50.<br /><br /> Labouriau LG, Valadares MEB (1976).
-&#8220;On the germination of seeds of <em>Calotropis procera</em> (Ait.) Ait. f.&#8221;
-<em>Anais da Academia Brasileira de Ciencias</em>, <b>48</b>(263-284).<br /><br /> Primack RB (1985).
-&#8220;Longevity of individual flowers.&#8221;
-<em>Annual Review of Ecology and Systematics</em>, <b>16</b>(1), 15--37.<br /><br /> Ranal MA, de
+    <p>AOSA (1983).
+<em>Seed Vigor Testing Handbook</em>.
+Association of Official Seed Analysts, Ithaca, NY, USA.<br /><br /> de
+Santana DG, Ranal MA (2004).
+<em>Analise Da Germinacao: Um Enfoque Estatistico</em>.
+Universidade de Brasilia, Brasilia.<br /><br /> Melville AH, Galletta GJ, Draper AD, Ng TJ (1980).
+&#8220;Seed germination and early seedling vigor in progenies of inbred strawberry selections.&#8221;
+<em>HortScience</em>, <b>15</b>(6, I), 749--750.<br /><br /> Ranal MA, de
 Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
-<em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Shannon CE (1948).
-&#8220;A mathematical theory of communication.&#8221;
-<em>Bell System Technical Journal</em>, <b>27</b>(3), 379--423.</p>
+<em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.</p>
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
-    <div class='dont-index'><p><code><a href='CUGerm.html'>CUGerm</a></code></p></div>
+    <div class='dont-index'><p><code><a href='GermSpeed.html'>GermSpeed</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
@@ -280,10 +282,17 @@ Santana DG (2006).
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>GermSynchrony</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.2666667</div><div class='input'><span class='fu'>GermUncertainty</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 2.062987</div><div class='input'>
+<span class='fu'>GermIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>)</div><div class='output co'>#&gt; [1] 5.84</div><div class='input'><span class='fu'>GermIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>,
+          <span class='kw'>modification</span> <span class='kw'>=</span> <span class='st'>"none"</span>)</div><div class='output co'>#&gt; [1] 5.84</div><div class='input'><span class='fu'>GermIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>,
+          <span class='kw'>modification</span> <span class='kw'>=</span> <span class='st'>"santanaranal"</span>)</div><div class='output co'>#&gt; [1] 7.3</div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>GermSynchrony</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.2666667</div><div class='input'><span class='fu'>GermUncertainty</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 2.062987</div><div class='input'>
+<span class='fu'>GermIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+          <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>)</div><div class='output co'>#&gt; [1] 5.84</div><div class='input'><span class='fu'>GermIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+          <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>,
+          <span class='kw'>modification</span> <span class='kw'>=</span> <span class='st'>"none"</span>)</div><div class='output co'>#&gt; [1] 5.84</div><div class='input'><span class='fu'>GermIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+          <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>,
+          <span class='kw'>modification</span> <span class='kw'>=</span> <span class='st'>"santanaranal"</span>)</div><div class='output co'>#&gt; [1] 7.3</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">

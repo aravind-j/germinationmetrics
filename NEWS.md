@@ -2,10 +2,14 @@
 
 ## NEW FUNCTIONS:
 * `FourPHFfit.bulk` - Wrapper function around `FourPHFfit` for multiple samples.
+* `GermIndex` - Compute germination index according to Melville et al., (1980).
+* `EmergenceRateIndex` - Compute emergence rate index according to Shmueli and
+Goldberg (1971), Bilbro and Wanjura (1982), and Fakorede and Ayoola (1980).
 
 ## UPDATED FUNCTIONS:
 * `FourPHFfit` - Added more checks for the input arguments `umax`, `umin`, `xp`, `tries` and `tmax`.
-* `MeanGermPercent`, `MeanGermNumber`, `GermSynchrony`, `GermUncertainty`, `TimsonsIndex`, `GermRateGeorge`, `GermSpeed`, `GermSpeedAccumulated`, `FirstGermTime`, `GermValue`, `PeakValue`, `WeightGermPercent`, `t50`, `MeanGermRate`, `MeanGermTime`, `germination.indices`, `FourPHFfit` and `FourPHFfit.bulk` - Fixed the check for uniformity of intervals to handle non-integer values correclty. Closes issue #3.(Thanks to Jonas Ohlsson [@jonasoh])
+* `MeanGermPercent`, `MeanGermNumber`, `GermSynchrony`, `GermUncertainty`, `TimsonsIndex`, `GermRateGeorge`, `GermSpeed`, `GermSpeedAccumulated`, `FirstGermTime`, `GermValue`, `PeakValue`, `WeightGermPercent`, `t50`, `MeanGermRate`, `MeanGermTime`, `germination.indices`, `FourPHFfit` and `FourPHFfit.bulk` - Fixed the check for uniformity of intervals to handle non-integer values correctly. Closes issue #3.(Thanks to Jonas Ohlsson [@jonasoh])
+* `TimsonsIndex` and `GermRateGeorge`- Fixed to handle interval data other than days.
 
 ## VIGNETTE:
 * Fixed details of Median germination time in Table 3.
@@ -14,7 +18,8 @@
 
 ## OTHER NOTES: 
 * Error in case of non-uniform intervals converted to warning.
-* Fixed documentation errors in `FourPHFfit` and `t50`.
+* Fixed documentation errors in `FourPHFfit` and `CVGermTime`.
+* Updated documentation for `GermSpeed`, `GermSpeedAccumulated`, `CUGerm` `MeanGermRate`, `SEGermRate`, `CVG`, `MeanGermTime`, `VarGermTime`, `SEGermTime`, `GermUncertainty`, `GermSynchrony`, `MeanGermPercent`, `MeanGermNumber`,   `WeightGermPercent`, `TimsonsIndex`, `GermRateGeorge` and `GermSynchrony`.
 
 # germinationmetrics  0.1.3
 

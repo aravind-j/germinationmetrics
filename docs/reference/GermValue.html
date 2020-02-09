@@ -172,8 +172,15 @@ and Germination value (<i>GV</i>)
 
     <pre class="usage"><span class='fu'>PeakValue</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>GermValue</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"czabator"</span>, <span class='st'>"dp"</span>), <span class='kw'>from.onset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>10</span>)</pre>
+<span class='fu'>GermValue</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='no'>total.seeds</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"czabator"</span>, <span class='st'>"dp"</span>),
+  <span class='kw'>from.onset</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>k</span> <span class='kw'>=</span> <span class='fl'>10</span>
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -226,8 +233,20 @@ test is considered. Default is <code>TRUE</code>.</p></td>
     <p>Peak value (<i>PV</i>) is the maximum quotient
 obtained by dividing successive cumulative germination values by the relevant
 incubation time (Czabator 1962)
-.
-It represents the mean daily germination of the most vigorous component of
+.</p>
+<p><p style="text-align: center;"><em>PV = </em>max
+<em><big>( </big><sup>G<sub>1</sub></sup> &frasl; <sub>T<sub>1</sub></sub> ,
+<sup>G<sub>2</sub></sup> &frasl; <sub>T<sub>2</sub></sub>, &hellip;
+<sup>G<sub>k</sub></sup> &frasl; <sub>T<sub>k</sub></sub><big>
+)</big></em></p></p>
+<p>Where, <i>T<sub>i</sub></i> is the time
+from the start of the experiment to the
+<i>i</i>th interval,
+<i>G<sub>i</sub></i> is the cumulative
+germination percentage in the <i>i</i>th time
+interval, and <i>k</i> is the total number of
+time intervals.</p>
+<p>It represents the mean daily germination of the most vigorous component of
 the seed lot, and is a mathematical expression of the break, or shoulder, of
 a typical sigmoid  germination curve
 (Djavanshir and Pourbeik 1976)
@@ -242,7 +261,7 @@ Emergence energy (Bonner 1967)
 .</p>
 <p><p style="text-align: center;"><em>GV = PV &times;
 MDG</em></p></p>
-<p>Where, <i>PV</i> is the peak value and
+<p>Where, <i>PV</i> is the peak value, and
 <i>MDG</i> is the mean daily germination
 percentage from the onset of germination.</p>
 <p>Germination value (<i>GV</i>) can also be
@@ -253,22 +272,22 @@ style="text-decoration:overline">GP</span></em>).</p>
 <p>A new estimation of germination value was given by
 Djavanshir and Pourbeik (1976)
  as
-follows:</p>
+follows.</p>
 <p><p style="text-align: center;"><i>GV =
 [<sup>&sum;DGS</sup> &frasl; <sub>N</sub>] &times; GP &times;
-k</i></p></p>
+c</i></p></p>
 <p>Where, <i>DGS</i> is the daily germination
 speed computed by dividing cumulative germination percentage by the number of
 days since the onset of germination, <i>N</i>
 is the frequency or number of DGS calculated during the test, \(GP\) is the
-germination percentage expressed over 100 and
-<i>k</i> is a constant. The value of
-<i>k</i> is decided on the basis of average
+germination percentage expressed over 100, and
+<i>c</i> is a constant. The value of
+<i>c</i> is decided on the basis of average
 daily speed of germination (<em><sup>&sum;DGS</sup>
 &frasl; <sub>N</sub></em>). If it is less than
-10, then <i>k</i> value of 10 can be used and
+10, then <i>c</i> value of 10 can be used and
 if it is more than 10, then value of 7 or 8 can be used for
-<i>k</i>.</p>
+<i>c</i>.</p>
 <p>For both methods of computing <i>GV</i>, only
 the duration from the onset of germination is considered by default.
 Alternatively, modified <i>GV</i>

@@ -47,8 +47,8 @@
 <meta property="og:description" content="Compute the following metrics:
 GermSpeedSpeed of
 germination or Germination rate index or Index of velocity of germination or
-Germination index or Emergence Rate Index
-(Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; AOSA 1983; Khandakar and Bradbeer 1983; Bradbeer 1988; Wardle et al. 1991)
+Germination index or Emergence rate index
+(Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; Erbach 1982; AOSA 1983; Khandakar and Bradbeer 1983; Hsu and Nelson 1986; Bradbeer 1988; Wardle et al. 1991)
 . GermSpeedAccumulatedSpeed of accumulated germination
 (Bradbeer 1988; Wardle et al. 1991; Haugland and Brandsaeter 1996; de
 Santana and Ranal 2004)
@@ -171,8 +171,8 @@ Corrected germination rate index
     <p>Compute the following metrics:</p><dl class='dl-horizontal'>
 <dt><code>GermSpeed</code></dt><dd><p>Speed of
 germination or Germination rate index or Index of velocity of germination or
-Germination index or Emergence Rate Index
-(Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; AOSA 1983; Khandakar and Bradbeer 1983; Bradbeer 1988; Wardle et al. 1991)
+Germination index or Emergence rate index
+(Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; Erbach 1982; AOSA 1983; Khandakar and Bradbeer 1983; Hsu and Nelson 1986; Bradbeer 1988; Wardle et al. 1991)
 .</p></dd> <dt><code>GermSpeedAccumulated</code></dt><dd><p>Speed of accumulated germination
 (Bradbeer 1988; Wardle et al. 1991; Haugland and Brandsaeter 1996; de
 Santana and Ranal 2004)
@@ -184,14 +184,29 @@ Corrected germination rate index
 
     </div>
 
-    <pre class="usage"><span class='fu'>GermSpeed</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>percent</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+    <pre class="usage"><span class='fu'>GermSpeed</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>percent</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)
 
-<span class='fu'>GermSpeedAccumulated</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>percent</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)
+<span class='fu'>GermSpeedAccumulated</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>percent</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
+  <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>
+)
 
-<span class='fu'>GermSpeedCorrected</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='no'>total.seeds</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"normal"</span>, <span class='st'>"accumulated"</span>))</pre>
+<span class='fu'>GermSpeedCorrected</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='no'>total.seeds</span>,
+  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"normal"</span>, <span class='st'>"accumulated"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -213,8 +228,8 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
     </tr>
     <tr>
       <th>percent</th>
-      <td><p>logical. If <code>TRUE</code>, germination percentage is used instead of
-counts for computation. Default is <code>FALSE</code>.</p></td>
+      <td><p>logical. If <code>TRUE</code>, germination percentage is used
+instead of counts for computation. Default is <code>FALSE</code>.</p></td>
     </tr>
     <tr>
       <th>total.seeds</th>
@@ -240,24 +255,49 @@ counts for computation. Default is <code>FALSE</code>.</p></td>
 
     <p><code>GermSpeed</code> computes the speed of germination according to the following
 formula
-(Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; AOSA 1983; Khandakar and Bradbeer 1983; Bradbeer 1988; Wardle et al. 1991)
+(Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; Erbach 1982; AOSA 1983; Khandakar and Bradbeer 1983; Hsu and Nelson 1986; Bradbeer 1988; Wardle et al. 1991)
 .</p>
 <p><p style="text-align: center;"><i>S =
 <sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
-&hellip;+<sup>N<sub>n</sub></sup>&frasl;<sub>T<sub>n</sub></sub></i></p></p>
-<p>Where, N<sub>1</sub>,
-N<sub>2</sub>,
-N<sub>3</sub>,
+&hellip;+<sup>N<sub>k</sub></sup>&frasl;<sub>T<sub>k</sub></sub></i></p></p>
+<p>Where, <i>N<sub>1</sub></i>,
+<i>N<sub>2</sub></i>,
+<i>N<sub>3</sub></i>,
 &hellip;,
-N<sub>n</sub> are the number of germinated
-seeds observed at time (days or hours)
-T<sub>1</sub>,
-T<sub>2</sub>,
-T<sub>3</sub>,
+N<i><sub>k</sub></i> are the number of
+germinated seeds observed at time (days or hours)
+<i>T<sub>1</sub></i>,
+<i>T<sub>2</sub></i>,
+<i>T<sub>3</sub></i>,
 &hellip;,
-T<sub>n</sub> after sowing. (Not
+<i>T<sub>k</sub></i> after sowing (Not
 accumulated/cumulative number, but the number of seeds that germinated at the
-specific time).</p>
+specific time) and <i>k</i> is the total number
+of time intervals.</p>
+<p>It is the same as Emergence Rate Index
+(<i>ERI</i>) described by
+Allan et al. (1962)
+,
+Erbach (1982)
+ and
+Hsu and Nelson (1986)
+ as well
+as Germination Index (<i>GI</i>) according to
+AOSA (1983)
+.</p>
+<p>The formula can also be described as follows.</p>
+<p><p style="text-align: center;"><i>S =
+&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
+[ <sup>N<sub>i</sub></sup> &frasl; <sub>T<sub>i</sub></sub> ]
+</i></p></p>
+<p>Where, <i>T<sub>i</sub></i> is the time
+from the start of the experiment to the
+<i>i</i>th interval,
+<i>N<sub>i</sub></i> is the number of seeds
+germinated in the <i>i</i>th time interval (not
+the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
 <p><code>GermSpeedAccumulated</code> computes the speed of accumulated germination as
 follows
 (Bradbeer 1988; Wardle et al. 1991; Haugland and Brandsaeter 1996; de
@@ -268,20 +308,35 @@ Santana and Ranal 2004)
 <sup>[N<sub>1</sub>+N<sub>2</sub>]</sup>&frasl;<sub>T<sub>2</sub></sub> +
 <sup>[N<sub>1</sub>+N<sub>2</sub>+N<sub>3</sub>]</sup>&frasl;<sub>T<sub>3</sub></sub>
 + &hellip;+ <sup>[N<sub>1</sub>+N<sub>2</sub>+
-&hellip;+N<sub>n</sub>]</sup>&frasl;<sub>T<sub>n</sub></sub></i></p></p>
-<p>Where, N<sub>1</sub>,
-N<sub>2</sub>,
-N<sub>3</sub>,
+&hellip;+N<sub>k</sub>]</sup>&frasl;<sub>T<sub>k</sub></sub></i></p></p>
+<p>Where, <i>N<sub>1</sub></i>,
+<i>N<sub>2</sub></i>,
+<i>N<sub>3</sub></i>,
 &hellip;,
-N<sub>n</sub> are the number of germinated
-seeds observed at time (days or hours)
-T<sub>1</sub>,
-T<sub>2</sub>,
-T<sub>3</sub>,
+<i>N<sub>k</sub></i> are the number of
+germinated seeds observed at time (days or hours)
+<i>T<sub>1</sub></i>,
+<i>T<sub>2</sub></i>,
+<i>T<sub>3</sub></i>,
 &hellip;,
-T<sub>n</sub> after sowing. (Not
+<i>T<sub>k</sub></i> after sowing (Not
 accumulated/cumulative number, but the number of seeds that germinated at the
-specific time).</p>
+specific time), and <i>k</i> is the total number
+of time intervals.</p>
+<p>The formula can also be described as follows.</p>
+<p><p style="text-align: center;"><i>S<sub>accumulated</sub>
+= &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
+-1ex;">i=1</sub> [ <sup>(&sum;<sup>i</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">j=1</sub>N<sub>j</sub>)</sup> &frasl;
+<sub>T<sub>i</sub></sub> ] </i></p></p>
+<p>Where, <i>T<sub>i</sub></i> is the time
+from the start of the experiment to the
+<i>i</i>th interval,
+<i>&sum;<sup>i</sup><sub style="line-height: 1.8;
+margin-left: -1ex;">j=1</sub>N<sub>j</sub></i>
+is the cumuative/accumulated number of seeds germinated in the
+<i>i</i>th time interval, and
+<i>k</i> is the total number of time intervals.</p>
 <p>Speed of germination expresses the rate of germination in terms of the total
 number of seeds that germinate in a time interval. Higher values indicate
 greater and faster germination. This is useful for comparisons only when
@@ -310,11 +365,15 @@ Association of Official Seed Analysts, Ithaca, NY, USA.<br /><br /> Bouton JH, D
 Blackie, Glasgow and London.<br /><br /> de
 Santana DG, Ranal MA (2004).
 <em>Analise Da Germinacao: Um Enfoque Estatistico</em>.
-Universidade de Brasilia, Brasilia.<br /><br /> Evetts LL, Burnside OC (1972).
+Universidade de Brasilia, Brasilia.<br /><br /> Erbach DC (1982).
+&#8220;Tillage for continuous corn and corn-soybean rotation.&#8221;
+<em>Transactions of the ASAE</em>, <b>25</b>(4), 906--0911.<br /><br /> Evetts LL, Burnside OC (1972).
 &#8220;Germination and seedling development of common milkweed and other species.&#8221;
 <em>Weed Science</em>, <b>20</b>(4), 371--378.<br /><br /> Haugland E, Brandsaeter LO (1996).
 &#8220;Experiments on bioassay sensitivity in the study of allelopathy.&#8221;
-<em>Journal of Chemical Ecology</em>, <b>22</b>(10), 1845--1859.<br /><br /> Kendrick RE, Frankland B (1969).
+<em>Journal of Chemical Ecology</em>, <b>22</b>(10), 1845--1859.<br /><br /> Hsu FH, Nelson CJ (1986).
+&#8220;Planting date effects on seedling development of perennial warm-season forage grasses. I. Field emergence.&#8221;
+<em>Agronomy Journal</em>, <b>78</b>(1), 33--38.<br /><br /> Kendrick RE, Frankland B (1969).
 &#8220;Photocontrol of germination in <em>Amaranthus caudatus</em>.&#8221;
 <em>Planta</em>, <b>85</b>(4), 326--339.<br /><br /> Khandakar AL, Bradbeer JW (1983).
 &#8220;Jute seed quality.&#8221;

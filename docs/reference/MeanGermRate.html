@@ -223,8 +223,12 @@ Santana 2006)
 
 <span class='fu'>SEGermRate</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>GermRateRecip</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"coolbear"</span>, <span class='st'>"farooq"</span>))</pre>
+<span class='fu'>GermRateRecip</span>(
+  <span class='no'>germ.counts</span>,
+  <span class='no'>intervals</span>,
+  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
+  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"coolbear"</span>, <span class='st'>"farooq"</span>)
+)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -280,12 +284,12 @@ style="line-height: 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sup>
 N<sub>i</sub>T<sub>i</sub></sub></em></p></p>
 <p>Where, <i>T<sub>i</sub></i> is the time
 from the start of the experiment to the
-<i>i</i>th observation,
+<i>i</i>th interval,
 <i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time (not the
-accumulated number, but the number correspondent to the
-<i>i</i>th observation) and
-<i>k</i> is the last time of germination.</p>
+germinated in the <i>i</i>th time interval (not
+the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
 <p>It is the inverse of mean germination time (<em><span
 style="text-decoration:overline">T</span></em>).</p>
 <p><p style="text-align: center;"><em><span
@@ -321,10 +325,10 @@ style="text-decoration: overline;">V</span></sub> = &radic;[
 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
 ]</em></p></p>
 <p>Where, <i>N<sub>i</sub></i> is the number
-of seeds germinated in the <i>i</i>th time (not
-the accumulated number, but the number correspondent to the
-<i>i</i>th observation) and
-<i>k</i> is the last time of germination.</p>
+of seeds germinated in the <i>i</i>th time
+interval (not the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
 <p><code>CVG</code> computes the coefficient of velocity/rate of germination or
 Kotowski's coefficient of velocity
 (<i>CVG</i>) according to the following
@@ -340,12 +344,12 @@ N<sub>i</sub>T<sub>i</sub></sub>] &times; 100</em></p></p>
 style="text-decoration: overline;">V</span> &times; 100</em></p></p>
 <p>Where, <i>T<sub>i</sub></i> is the time
 from the start of the experiment to the
-<i>i</i>th observation,
+<i>i</i>th interval,
 <i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time (not the
-accumulated number, but the number correspondent to the
-<i>i</i>th observation) and
-<i>k</i> is the last time of germination.</p>
+germinated in the <i>i</i>th time interval (not
+the accumulated number, but the number corresponding to the
+<i>i</i>th interval), and
+<i>k</i> is the total number of time intervals.</p>
 <p><code>GermRateRecip</code> computes the germination rate
 (<em>v<sub>50</sub></em>) as the
 reciprocal of the median germination time
@@ -357,7 +361,7 @@ computed according to the methods of
 Coolbear et al. (1984)
  or
 Farooq et al. (2005)
- as follows:</p>
+ as follows.</p>
 <p><p style="text-align: center;"><em>v<sub>50</sub> =
 <sup>1</sup> &frasl;
 <sub><em>t<sub>50</sub></em></sub></em></p></p>
