@@ -101,6 +101,8 @@
 #' @param CVG logical. If \code{TRUE}, the Coefficient of velocity/rate of
 #'   germination or Kotowski's coefficient of velocity
 #'   (\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
+#'
+#'
 #'   \insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 #'    is computed. Default is \code{TRUE}.
 #' @param GermRateRecip logical. If \code{TRUE}, the Germination rate as
@@ -124,7 +126,8 @@
 #' @param WeightGermPercent logical. If \code{TRUE}, the Weighted germination
 #'   percentage \ifelse{html}{\out{<i>WGP</i>}}{\eqn{WGP}} or Weighted
 #'   germination index \ifelse{html}{\out{<i>WGI</i>}}{\eqn{WGI}}
-#'   \insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics} is computed.
+#'   \insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics} is
+#'   computed.
 #' @param MeanGermPercent logical. If \code{TRUE}, the Mean/average germination
 #'   percentage per unit time (\ifelse{html}{\out{<em><span
 #'   style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}})
@@ -143,6 +146,23 @@
 #'   \insertCite{george_influence_1961;textual}{germinationmetrics} is computed.
 #' @param max.int The maximum interval value up to which Timson's index/George's
 #'   germination rate is to be computed.
+#' @param GermIndex logical. If \code{TRUE}, the Germination index according to
+#'   \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics}
+#'   and its modification by
+#'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
+#'   \insertCite{ranal_how_2006}{germinationmetrics} are computed.
+#' @param EmergenceRateIndex logical. If \code{TRUE}, the Emergence rate index or
+#'   Germination rate index are computed according to \itemize{ \item
+#'   \insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics}
+#'   and it's modification by
+#'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
+#'   \insertCite{ranal_how_2006}{germinationmetrics}; \item
+#'   \insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}; and
+#'   \item
+#'   \insertCite{fakoredeRelationSeedlingVigor1980;textual}{germinationmetrics},
+#'   \insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
+#'    and
+#'   \insertCite{fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}.}
 #' @param PeakValue logical. If \code{TRUE}, the Peak value
 #'   (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) or Emergence Energy
 #'   (\ifelse{html}{\out{<i>EE</i>}}{\eqn{EE}})
@@ -214,6 +234,8 @@
 #'   \code{\link[germinationmetrics:GermSpeed]{MeanGermPercent}},
 #'   \code{\link[germinationmetrics]{TimsonsIndex}},
 #'   \code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}},
+#'   \code{\link[germinationmetrics]{GermIndex}},
+#'   \code{\link[germinationmetrics]{EmergenceRateIndex}},
 #'   \code{\link[germinationmetrics]{GermValue}},
 #'   \code{\link[germinationmetrics:GermValue]{PeakValue}},
 #'   \code{\link[germinationmetrics]{CUGerm}},
@@ -236,8 +258,9 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
                                 WeightGermPercent = TRUE,
                                 MeanGermPercent = TRUE, MeanGermNumber = TRUE,
                                 TimsonsIndex = TRUE, GermRateGeorge = TRUE,
-                                max.int, PeakValue = TRUE, GermValue = TRUE,
-                                gv.k = 10,
+                                max.int, GermIndex = TRUE,
+                                EmergenceRateIndex = TRUE, PeakValue = TRUE,
+                                GermValue = TRUE, gv.k = 10,
                                 CUGerm = TRUE, GermSynchrony = TRUE,
                                 GermUncertainty = TRUE) {
   # Check if data.frame
@@ -545,6 +568,47 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
                                             intervals = intervals,
                                             partial = TRUE, max = max.int),
          by = 1:nrow(data)]
+  }
+
+  if (GermIndex) {
+    data[, GermIndex := GermIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                  intervals = intervals, partial = TRUE,
+                                  total.seeds = unlist(mget(total.seeds.col)),
+                                  modification = "none"),
+         by = 1:nrow(data)]
+
+    data[, GermIndex_mod := GermIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                      intervals = intervals, partial = TRUE,
+                                      total.seeds = unlist(mget(total.seeds.col)),
+                                      modification = "santanaranal"),
+         by = 1:nrow(data)]
+  }
+
+  if (EmergenceRateIndex) {
+    data[, EmergenceRateIndex_Melville := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                  intervals = intervals, partial = TRUE,
+                                  total.seeds = unlist(mget(total.seeds.col)),
+                                  method = "melville"),
+         by = 1:nrow(data)]
+
+    data[, EmergenceRateIndex_Melville_mod := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                    intervals = intervals, partial = TRUE,
+                                                    total.seeds = unlist(mget(total.seeds.col)),
+                                                    method = "melvillesantanaranal"),
+         by = 1:nrow(data)]
+
+    data[, EmergenceRateIndex_BilbroWanjura := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                    intervals = intervals, partial = TRUE,
+                                                    total.seeds = unlist(mget(total.seeds.col)),
+                                                    method = "bilbrowanjura"),
+         by = 1:nrow(data)]
+
+    data[, EmergenceRateIndex_Fakorede := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                    intervals = intervals, partial = TRUE,
+                                                    total.seeds = unlist(mget(total.seeds.col)),
+                                                    method = "fakorede"),
+         by = 1:nrow(data)]
+
   }
 
   if (PeakValue) {
