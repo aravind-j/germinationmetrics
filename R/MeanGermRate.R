@@ -283,7 +283,15 @@ GermRateRecip <- function(germ.counts, intervals, partial = TRUE,
   # Check method argument
   method <-  match.arg(method)
 
-  t50 <- t50(germ.counts, intervals, partial, method)
+  warn <- NULL
+  withCallingHandlers(t50 <- t50(germ.counts, intervals, partial, method),
+           warning = function(w) {
+             warn <<- w
+             invokeRestart("muffleWarning")})
+
+  if (!is.null(warn)) {
+    warning(gsub("t50", "GermRateRecip", warn$message))
+  }
 
   GR <- 1/t50
 

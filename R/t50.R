@@ -141,16 +141,31 @@ t50 <- function(germ.counts, intervals, partial = TRUE,
     xhalf <- sum(x)/2
   }
 
-  nearest <- c(match(max(csx[csx <= xhalf]), csx), match(min(csx[csx >= xhalf]), csx))
+  if (x[1] < xhalf) {
+    nearest <- c(match(max(csx[csx <= xhalf]), csx), match(min(csx[csx >= xhalf]), csx))
 
-  if (nearest[2] == nearest[1]) {
-    t50 <- as.numeric(intervals[nearest[1]])
-  } else {
-    if (nearest[2] > nearest[1]) {
-      t50 <- intervals[nearest[1]] + ((xhalf - csx[nearest[1]])*(intervals[nearest[2]] - intervals[nearest[1]]))/(csx[nearest[2]] - csx[nearest[1]])
+    if (nearest[2] == nearest[1]) {
+      t50 <- as.numeric(intervals[nearest[1]])
     } else {
-      t50 <- NA_real_
+      if (nearest[2] > nearest[1]) {
+        t50 <- intervals[nearest[1]] + ((xhalf - csx[nearest[1]])*(intervals[nearest[2]] - intervals[nearest[1]]))/(csx[nearest[2]] - csx[nearest[1]])
+      } else {
+        t50 <- NA_real_
+      }
     }
+  } else {
+    if (method == "coolbear") {
+      cmt <- "((N + 1)/2) "
+    }
+
+    if (method == "farooq") {
+      cmt <- "(N/2) "
+    }
+
+    warning("'t50' cannot be computed as more than half the seeds ",
+            cmt,
+            "have germinated at first interval.")
+    t50 <- NA_real_
   }
 
   return(unname(t50))
