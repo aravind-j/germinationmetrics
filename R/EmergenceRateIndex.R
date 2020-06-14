@@ -23,7 +23,8 @@
 #' it's modification by
 #' \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 #' \insertCite{ranal_how_2006}{germinationmetrics}; \item
-#' \insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}; and \item
+#' \insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}; and
+#' \item
 #' \insertCite{fakoredeRelationSeedlingVigor1980;textual}{germinationmetrics},
 #' \insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
 #' and
@@ -51,9 +52,9 @@
 #'
 #'   A modification for the same was suggested by
 #'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
-#'   \insertCite{ranal_how_2006}{germinationmetrics} and is estimated by dividing
-#'   Emergence rate index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) by total
-#'   number of emerged seedlings (or germinated seeds) as follows.
+#'   \insertCite{ranal_how_2006}{germinationmetrics} and is estimated by
+#'   dividing Emergence rate index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}})
+#'   by total number of emerged seedlings (or germinated seeds) as follows.
 #'
 #'   \ifelse{html}{\out{<p style="text-align: center;"><em>ERI<sub>mod</sub> =
 #'   <sup>&sum;<sup>k-1</sup><sub style="line-height: 1.8; margin-left:
@@ -106,14 +107,15 @@
 #'   Mean germination time and \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the
 #'   final germination time. }
 #'
-#'   \subsection{Others}{ Apart from the above the above, the name Emergence rate
-#'   index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) has also been used to for
-#'   the mathematical expressions for Speed of germination
+#'   \subsection{Others}{ Apart from the above the above, the name Emergence
+#'   rate index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) has also been used
+#'   to for the mathematical expressions for Speed of germination
 #'   (\code{\link[germinationmetrics]{GermSpeed}})
 #'   \insertCite{allan_seedling_1962,erbachTillageContinuousCorn1982}{germinationmetrics},
 #'    Timson's index (\code{\link[germinationmetrics]{TimsonsIndex}})
 #'   \insertCite{chaudharyEffectTemperatureAssociated1970}{germinationmetrics},
-#'   and George's index (\code{\link[germinationmetrics]{GermRateGeorge}})
+#'   and George's index
+#'   (\code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}})
 #'   \insertCite{chopraEffectSoilTemperature1980}{germinationmetrics}. }
 #'
 #' @inheritParams MeanGermTime
@@ -159,7 +161,7 @@
 #'
 #' @seealso \code{\link[germinationmetrics]{GermSpeed}},
 #'   \code{\link[germinationmetrics]{TimsonsIndex}},
-#'   \code{\link[germinationmetrics]{GermRateGeorge}}
+#'   \code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}}
 #'
 #' @rdname EmergenceRateIndex
 #' @export

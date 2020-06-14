@@ -102,6 +102,8 @@
 #'
 #' @seealso \code{\link[germinationmetrics]{GermSpeed}}
 #'
+#' @importFrom utils tail
+#'
 #' @rdname GermIndex
 #' @export
 GermIndex <- function(germ.counts, intervals, partial = TRUE,

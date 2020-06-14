@@ -15,6 +15,7 @@ Goldberg (1971), Bilbro and Wanjura (1982), and Fakorede and Ayoola (1980).
 * Fixed details of Median germination time in Table 3.
 * Fixed typo in formula for CUG in Table 3.
 * Added reference for Coefficient of variation of the germination time in Table 3.
+* Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (ripley@stats.ox.ac.uk).
 
 ## OTHER NOTES: 
 * Error in case of non-uniform intervals converted to warning.
