@@ -19,7 +19,7 @@
 #' Germination Indices
 #'
 #' Compute germination indices from a data frame of germination counts recorded
-#' at specific time intervals for multiple samples in batch.
+#' at specific time intervals for multiple samples in batch. \loadmathjax
 #'
 #' @param data A data frame with the germination count data. It should possess
 #'   columns with \itemize{ \item Partial or cumulative germination counts per
@@ -38,12 +38,11 @@
 #'   \code{counts.intervals.cols} is considered as partial and if \code{FALSE},
 #'   it is considered as cumulative. Default is \code{TRUE}.
 #' @param FirstGermTime logical. If \code{TRUE}, the Time of first germination
-#'   or Germination time lag
-#'   (\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}})
+#'   or Germination time lag (\mjseqn{t_{0}})
 #'   \insertCite{edwards_temperature_1932,czabator_germination_1962,goloff_germination_1975,labouriau_germinacao_1983,ranal_effects_1999,quintanilla_effect_2000}{germinationmetrics}
 #'    is computed. Default is \code{TRUE}.
 #' @param LastGermTime logical. If \code{TRUE}, the Time of last germination
-#'   (\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}})
+#'   (\mjseqn{t_{g}})
 #'   \insertCite{edwards_temperature_1932,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
 #'    is computed. Default is \code{TRUE}.
 #' @param TimeSpreadGerm logical. If \code{TRUE}, the Time spread of germination
@@ -55,59 +54,47 @@
 #'   Modal time of germination \insertCite{ranal_how_2006}{germinationmetrics}
 #'   is computed. Default is \code{TRUE}.
 #' @param t50 logical. If \code{TRUE}, the Median germination time
-#'   (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}})
+#'   (\mjseqn{t_{50}})
 #'   \insertCite{coolbear_effect_1984,farooq_thermal_2005}{germinationmetrics}
 #'   is computed. Default is \code{TRUE}.
 #' @param MeanGermTime logical. If \code{TRUE}, the Mean germination time
-#'   (\ifelse{html}{\out{<em><span
-#'   style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or
-#'   Mean length of incubation time
+#'   (\mjseqn{\overline{T}}) or Mean length of incubation time
 #'   \insertCite{edmond_effects_1958,czabator_germination_1962,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
-#'    or Sprouting index (\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}})
+#'    or Sprouting index (\mjseqn{SI})
 #'   \insertCite{smith_germinating_1964}{germinationmetrics} or Germination
-#'   Resistance (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}})
+#'   Resistance (\mjseqn{GR})
 #'   \insertCite{gordon_observations_1969,gordon_germination_1971;textual}{germinationmetrics}
 #'    is computed. Default is \code{TRUE}.
 #' @param VarGermTime logical. If \code{TRUE}, the Variance of germination time
-#'   (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-#'   margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}})
+#'   (\mjseqn{s_{T}^{2}})
 #'   \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}
 #'   is computed. Default is \code{TRUE}.
 #' @param SEGermTime logical. If \code{TRUE}, the Standard error of germination
-#'   time (\ifelse{html}{\out{<em>s<sub><span
-#'   style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
-#'    \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
+#'   time (\mjseqn{s_{\overline{T}}})
+#'   \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
 #'   is computed. Default is \code{TRUE}.
 #' @param CVGermTime logical. If \code{TRUE}, the Coefficient of variation of
-#'   the germination time
-#'   (\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
+#'   the germination time (\mjseqn{CV_{T}})
 #'   \insertCite{ranal_how_2006}{germinationmetrics} is computed. Default is
 #'   \code{TRUE}.
 #' @param MeanGermRate logical. If \code{TRUE}, the Mean germination rate
-#'   (\ifelse{html}{\out{<em><span
-#'   style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
+#'   (\mjseqn{\overline{V}})
 #'   \insertCite{labouriau_germination_1976,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 #'    is computed. Default is \code{TRUE}.
 #' @param VarGermRate logical. If \code{TRUE}, the Variance of germination rate
-#'   (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-#'   margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}})
+#'   (\mjseqn{s_{V}^{2}})
 #'   \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics} is
 #'   computed. Default is \code{TRUE}.
 #' @param SEGermRate logical. If \code{TRUE}, the Standard error of germination
-#'   rate (\ifelse{html}{\out{<em>s<sub><span
-#'   style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
-#'    \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics} is
+#'   rate (\mjseqn{s_{\overline{V}}})
+#'   \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics} is
 #'   computed. Default is \code{TRUE}.
 #' @param CVG logical. If \code{TRUE}, the Coefficient of velocity/rate of
-#'   germination or Kotowski's coefficient of velocity
-#'   (\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
-#'
-#'
+#'   germination or Kotowski's coefficient of velocity (\mjseqn{CVG})
 #'   \insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 #'    is computed. Default is \code{TRUE}.
 #' @param GermRateRecip logical. If \code{TRUE}, the Germination rate as
-#'   reciprocal of median time
-#'   (\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}})
+#'   reciprocal of median time (\mjseqn{v_{50}})
 #'   \insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}
 #'    is computed.
 #' @param GermSpeed logical. If \code{TRUE}, the Speed of germination or
@@ -124,17 +111,14 @@
 #'   accumulated germination
 #'   \insertCite{evetts_germination_1972}{germinationmetrics} is computed.
 #' @param WeightGermPercent logical. If \code{TRUE}, the Weighted germination
-#'   percentage \ifelse{html}{\out{<i>WGP</i>}}{\eqn{WGP}} or Weighted
-#'   germination index \ifelse{html}{\out{<i>WGI</i>}}{\eqn{WGI}}
+#'   percentage \mjseqn{WGP} or Weighted germination index \mjseqn{WGI}
 #'   \insertCite{reddy_effect_1978,reddy_effect_1985}{germinationmetrics} is
 #'   computed.
 #' @param MeanGermPercent logical. If \code{TRUE}, the Mean/average germination
-#'   percentage per unit time (\ifelse{html}{\out{<em><span
-#'   style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}})
+#'   percentage per unit time (\mjseqn{\overline{GP}})
 #'   \insertCite{czabator_germination_1962}{germinationmetrics} is computed.
 #' @param MeanGermNumber logical. If \code{TRUE}, the Number of seeds germinated
-#'   per unit time (\ifelse{html}{\out{<em><span style="text-decoration:
-#'   overline">N</span></em>}}{\eqn{\overline{N}}})
+#'   per unit time (\mjseqn{\overline{N}})
 #'   \insertCite{khamassi_optimal_2013}{germinationmetrics} is computed.
 #' @param TimsonsIndex logical. If \code{TRUE}, the Timson's index or Timson's
 #'   germination velocity index
@@ -151,8 +135,8 @@
 #'   and its modification by
 #'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 #'   \insertCite{ranal_how_2006}{germinationmetrics} are computed.
-#' @param EmergenceRateIndex logical. If \code{TRUE}, the Emergence rate index or
-#'   Germination rate index are computed according to \itemize{ \item
+#' @param EmergenceRateIndex logical. If \code{TRUE}, the Emergence rate index
+#'   or Germination rate index are computed according to \itemize{ \item
 #'   \insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics}
 #'   and it's modification by
 #'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
@@ -163,9 +147,9 @@
 #'   \insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
 #'    and
 #'   \insertCite{fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}.}
-#' @param PeakValue logical. If \code{TRUE}, the Peak value
-#'   (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) or Emergence Energy
-#'   (\ifelse{html}{\out{<i>EE</i>}}{\eqn{EE}})
+#'
+#' @param PeakValue logical. If \code{TRUE}, the Peak value (\mjseqn{PV}) or
+#'   Emergence Energy (\mjseqn{EE})
 #'   \insertCite{czabator_germination_1962,bonner_ideal_1967}{germinationmetrics}
 #'    is computed.
 #' @param GermValue logical. If \code{TRUE}, the Germination value
@@ -180,14 +164,12 @@
 #'   \insertCite{heydecker_seed_1972,bewley_seeds_1994}{germinationmetrics} is
 #'   computed.
 #' @param GermSynchrony logical. If \code{TRUE}, the Synchrony of germination
-#'   (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index)
+#'   (\mjseqn{Z} index)
 #'   \insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics} is
 #'   computed.
 #' @param GermUncertainty logical. If \code{TRUE}, the Synchronization index
-#'   (\ifelse{html}{\out{<em><span style="text-decoration:
-#'   overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
-#'   germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or
-#'   Informational entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}})
+#'   (\mjseqn{\overline{E}}) or Uncertainty of the germination process
+#'   (\mjseqn{U}) or Informational entropy (\mjseqn{H})
 #'   \insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}
 #'    is computed.
 #'

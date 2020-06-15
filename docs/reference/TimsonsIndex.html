@@ -59,7 +59,7 @@ and it's modifications by Labouriau
 Santana 2006)
  and
 (Khan and Ungar 1984)
-." />
+. " />
 
 
 
@@ -180,7 +180,7 @@ and it's modifications by Labouriau
 Santana 2006)
  and
 (Khan and Ungar 1984)
-.</p>
+. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>TimsonsIndex</span>(
@@ -240,25 +240,16 @@ germination rate is to be computed.</p></td>
 as follows
 (Grose and Zimmer 1958; Brown and Mayer 1988; Baskin and Baskin 1998)
 .</p>
-<p><p style="text-align: center;"><em>&Sigma;k =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1
-</sub>G<sub>i</sub></em></p></p>
-<p>Where, <i>G<sub>i</sub></i> is the
-cumulative germination percentage in time interval
-<i>i</i> and
-<i>k</i> is the total number of time intervals.</p>
-<p>For example ten summation (<i>&Sigma;10</i>) is expressed as follows.</p>
-<p><p style="text-align: center;"><em>&Sigma; 10 =
-G<sub>1</sub> + G<sub>2</sub> + G<sub>3</sub> +&hellip;+
-G<sub>10</sub></em></p></p>
-<p>Where <em>G<sub>1</sub>, G<sub>2</sub>, G<sub>3</sub>,
-&hellip; G<sub>10</sub></em> are the
-cumulative germination percentage at day 1, 2, 3,
-&hellip;, 10 respectively.</p>
-<p>Similarly <i>&Sigma;5</i> or
-<i>&Sigma;20</i> can be estimated. For
-<i>&Sigma;10</i>, the value can range
-from 0 (no germination) to 1,000 (100% germination after 24 hours).</p>
+<p>\[\Sigma k = \sum_{i=1}^{k}G_{i}\]</p>
+<p>Where, \(G_{i}\) is the cumulative germination percentage in time
+interval \(i\) and \(k\) is the total number of time intervals.</p>
+<p>For example ten summation (\(\Sigma 10\)) is expressed as follows.</p>
+<p>\[\Sigma 10 = G_{1}+G_{2}+\cdots+G_{10}\]</p>
+<p>Where \(G_{1},G_{2},\cdots G_{10}\) are the cumulative germination
+percentage at day 1, 2, 3, \(\cdots\), 10 respectively.</p>
+<p>Similarly \(\Sigma 5\) or \(\Sigma 20\) can be estimated. For
+\(\Sigma 10\), the value can range from 0 (no germination) to 1,000
+(100% germination after 24 hours).</p>
 <p>It is the progressive total of cumulative germination percentage recorded at
 specific intervals for a set period of time.  It combines onset, rate and
 total percentage of germination and estimates the area under the cumulative
@@ -269,80 +260,52 @@ Lyon and Coffelt (1966)
 well as
 Negm and Smith (1978)
 . It is
-also described as Emergence Rate Index
-(<i>ERI</i>) by
+also described as Emergence Rate Index (\(ERI\)) by
 Chaudhary and Ghildyal (1970)
 .</p>
 <p>Goodchild and Walker (1971)
 , described the
 same in terms of partial germination percentage as follows.</p>
-<p><p style="text-align: center;"><em>&Sigma;k =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-g<sub>i</sub>(k-j)</em></p></p>
-<p>Where, <i>g<sub>i</sub></i> is the
-germination (not cumulative, but partial germination) in time interval
-<i>i</i>
-(<i>i</i> varying from
-<i>0</i> to
-<i>k</i>),
-<i>k</i> is the total number of time intervals,
-and <i>j = i - 1</i>.</p>
-<p>Timson's index is equivalent to the Germination Energy Index
-<i>GEI</i> proposed by
-Grose and Zimmer (1958)
+<p>\[\Sigma k = \sum_{i=1}^{k}g_{i}(k-j)\]</p>
+<p>Where, \(g_{i}\) is the germination (not cumulative, but partial
+germination) in time interval \(i\) (\(i\) varying from \(0\)
+to \(k\)), \(k\) is the total number of time intervals, and
+\(j = i - 1\).</p>
+<p>Timson's index is equivalent to the Germination Energy Index \(GEI\)
+proposed by Grose and Zimmer (1958)
 .</p>
 <p>As Timson's index is useful for comparison only when samples have similar
 germinabilities or final germination percentage, the following modification
 was suggested by Labouriau (Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><i>&Sigma;k<sub>mod</sub> =
-<sup>&Sigma;k</sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-1.8; margin-left: -1ex;">i=1 </sub>g<sub>i</sub></sub></i></p></p>
-<p>Here Timson's index (<i>&Sigma;k</i>) is
-divided by the sum of partial germination percentages.</p>
+<p>\[\Sigma k_{mod} = \frac{\Sigma k}{\sum_{i=1}^{k}g_{i}}\]</p>
+<p>Here Timson's index (\(\Sigma k\)) is divided by the sum of partial
+germination percentages.</p>
 <p>Similarly another modification was proposed by
 (Khan and Ungar 1984)
 , where Timson's index
-(<i>&Sigma;k</i>) is divided by the
-total time period of germination
-(<i>T<sub>k</sub></i>).</p>
-<p><p style="text-align: center;"><i>&Sigma;k<sub>mod</sub> =
-<sup>&Sigma;k</sup> &frasl; <sub>T<sub>k</sub></sub></i></p></p>
-<p>Timson's index is similar to the Germination Rate
-(<i>GR</i>) proposed by
+(\(\Sigma k\)) is divided by the total time period of germination
+(\(T_{k}\)).</p>
+<p>\[\Sigma k_{mod} = \frac{\Sigma k}{T_{k}}\]</p>
+<p>Timson's index is similar to the Germination Rate (\(GR\)) proposed by
 George (1961)
  as follows
 (Tucker and Wright 1965; Nichols and Heydecker 1968)
 .</p>
-<p><p style="text-align: center;"><em>GR =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-N<sub>i</sub>K<sub>i</sub></em></p></p>
-<p>Where <em>N<sub>i</sub></em> is the number
-of seeds germinated by <i>i</i>th interval,
-<em>K<sub>i</sub></em> is the number of
-intervals(e.g. days) until the end of the test, and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[GR = \sum_{i=1}^{k}N_{i}K_{i}\]</p>
+<p>Where \(N_{i}\) is the number of seeds germinated by \(i\)th
+interval, \(K_{i}\) is the number of intervals(e.g. days) until the end
+of the test, and \(k\) is the total number of time intervals.</p>
 <p>This index uses number of seeds germinated instead of germination percentage.
-It is also described as Emergence Rate Index
-(<i>ERI</i>) by
+It is also described as Emergence Rate Index (\(ERI\)) by
 Chopra and Chaudhary (1980)
 .</p>
-<p>So germination rate (<i>GR</i>) can also be
-described in terms of partial
-(<i>N<sub>i</sub></i>) and cumulative
-(<em>&sum;<sup>i</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">j=1
-</sub>N<sub>j</sub></em>) number of seeds
-germinated in each time interval (<i>i</i>) as
-follows.</p>
-<p><p style="text-align: center;"><em>GR =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-&sum;<sup>i</sup><sub style="line-height: 1.8; margin-left: -1ex;">j=1
-</sub>N<sub>j</sub></em></p></p>
-<p><p style="text-align: center;"><em>GR =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-N<sub>i</sub>(k-j)</em></p></p>
+<p>So germination rate (\(GR\)) can also be described in terms of partial
+(\(N_{i}\)) and cumulative (\(\sum_{j=1}^{i}N_{j}\)) number of
+seeds germinated in each time interval (\(i\)) as follows.</p>
+<p>\[GR = \sum_{i=1}^{k}\sum_{j=1}^{i}N_{j}\]</p>
+<p>\[GR = \sum_{i=1}^{k}N_{i}(k-j)\]</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Baskin CC, Baskin JM (1998).

@@ -22,25 +22,26 @@
 #' cumulative germination curve (FPHF curve) from a \code{FourPHFfit} object as
 #' an object of class \code{ggplot}. Further, the rate of germination curve (RoG
 #' curve) is plotted and different parameters annotated as specified in the
-#' different arguments.
+#' different arguments. \loadmathjax
 #'
 #' @param x An object of class \code{FourPHFfit} obtained as output from the
 #'   \code{\link[germinationmetrics]{FourPHFfit}} function.
 #' @param rog If \code{TRUE}, plots the Rate of Germination curve (RoG). Default
 #'   is \code{TRUE}.
 #' @param t50.total If \code{TRUE}, highlights the time required for 50\% of
-#'   total seeds to germinate (\ifelse{html}{\out{t<sub>50<sub>Total</sub></sub>}}{\eqn{\textrm{t}_{\textrm{50}_\textrm{Germ}}}}) as a vertical line. Default is \code{TRUE}.
+#'   total seeds to germinate (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Germ}}})
+#'   as a vertical line. Default is \code{TRUE}.
 #' @param t50.germ If \code{TRUE}, highlights the time required for 50\% of
 #'   viable/germinated seeds to germinate
-#'   (\ifelse{html}{\out{t<sub>50<sub>Germ</sub></sub>}}{\eqn{\textrm{t}_{\textrm{50}_\textrm{Total}}}}) as a
-#'   vertical line. Default is \code{TRUE}.
+#'   (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Total}}}) as a vertical line.
+#'   Default is \code{TRUE}.
 #' @param tmgr If \code{TRUE}, highlights the Time at Maximum Germination Rate
 #'   (TMGR) as a vertical line. Default is \code{TRUE}.
 #' @param mgt If \code{TRUE}, highlights the Mean Germination Time (MGT) as a
 #'   vertical line. Default is \code{TRUE}.
 #' @param uniformity If \code{TRUE}, highlights the uniformity value
-#'   (\ifelse{html}{\out{U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub>}}{\eqn{\textrm{U}_{\textrm{t}_{\textrm{max}}-\textrm{t}_{\textrm{min}}}}})
-#'    as a horizontal line. Default is \code{TRUE}.
+#'   (\mjseqn{\textrm{U}_{\textrm{t}_{\textrm{max}}-\textrm{t}_{\textrm{min}}}})
+#'   as a horizontal line. Default is \code{TRUE}.
 #' @param limits logical. If \code{TRUE}, set the limits of y axis (germination
 #'   percentage) between 0 and 100 in the germination curve plot. If
 #'   \code{FALSE}, limits are set according to the data. Default is \code{TRUE}.

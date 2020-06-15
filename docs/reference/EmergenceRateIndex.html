@@ -67,7 +67,6 @@ Fakorede and Ojo (1981)
 and
 Fakorede and Agbana (1983)
 .
-
 " />
 
 
@@ -197,8 +196,7 @@ Fakorede and Ojo (1981)
 and
 Fakorede and Agbana (1983)
 .</p></li>
-</ul>
-
+</ul><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>EmergenceRateIndex</span>(
@@ -245,20 +243,15 @@ Default is <code>"melville"</code> (see <strong>Details</strong>).</p></td>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>Several germination indices are referred to as Emergence
-  rate Index (<i>ERI</i>).</p>
+  rate Index (\(ERI\)).</p>
 <p></p><h3>Shmueli and Goldberg (1971)
 </h3>
 <p>It is estimated as follows.</p>
-<p><p style="text-align: center;"><em>ERI =
-  &sum;<sup>k-1</sup><sub style="line-height: 1.8; margin-left:
-  -3ex;">i=i<sub>0</sub></sub> N<sub>i</sub>(k-i)</em></p></p>
-<p>Where, <i>N<sub>i</sub></i> is the number
-  of seeds germinated in the <i>i</i>th time
-  interval (not the accumulated number, but the number corresponding to the
-  <i>i</i>th interval),
-  <i>i<sub>0</sub></i> is the time interval
-  when emergence/germination started, and
-  <i>k</i> is the total number of time
+<p>\[ERI = \sum_{i=i_{0}}^{k-1}N_{i}(k-i)\]</p>
+<p>Where, \(N_{i}\) is the number of seeds germinated in the \(i\)th
+  time interval (not the accumulated number, but the number corresponding to
+  the \(i\)th interval), \(i_{0}\) is the time interval when
+  emergence/germination started, and \(k\) is the total number of time
   intervals.</p>
 <p>A modification for the same was suggested by
   de
@@ -267,58 +260,39 @@ Santana and Ranal (2004)
   (Ranal and de
 Santana 2006)
  and is estimated by
-  dividing Emergence rate index (<i>ERI</i>)
-  by total number of emerged seedlings (or germinated seeds) as follows.</p>
-<p><p style="text-align: center;"><em>ERI<sub>mod</sub> =
-  <sup>&sum;<sup>k-1</sup><sub style="line-height: 1.8; margin-left:
-  -3ex;">i=i<sub>0</sub></sub> N<sub>i</sub>(k-i)</sup> &frasl;
-  <sub>N<sub>g</sub></sub> = <sup>ERI</sup> &frasl;
-  <sub>N<sub>g</sub></sub></em></p></p>
-<p>Where, <i>N<sub>g</sub></i> is the total
-  number of germinated seeds at the end of the test,
-  <i>N<sub>i</sub></i> is the number of
-  seeds germinated in the <i>i</i>th time
-  interval (not the accumulated number, but the number corresponding to the
-  <i>i</i>th interval),
-  <i>i<sub>0</sub></i> is the time interval
-  when emergence/germination started, and
-  <i>k</i> is the total number of time
-  intervals.</p>
+  dividing Emergence rate index (\(ERI\)) by total number of emerged
+  seedlings (or germinated seeds) as follows.</p>
+<p>\[ERI_{mod} = \frac{\sum_{i=i_{0}}^{k-1}N_{i}(k-i)}{N_{g}} =
+  \frac{ERI}{N_{g}}\]</p>
+<p>Where, \(N_{g}\) is the total number of germinated seeds at the end of
+  the test, \(N_{i}\) is the number of seeds germinated in the
+  \(i\)th time interval (not the accumulated number, but the number
+  corresponding to the \(i\)th interval), \(i_{0}\) is the time
+  interval when emergence/germination started, and \(k\) is the total
+  number of time intervals.</p>
 
 <p></p><h3>Bilbro and Wanjura (1982)
 </h3>
 <p>It is the estimated as follows.</p>
-<p><p style="text-align: center;"><em>ERI =
-  <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-  -1ex;">i=1</sub>N<sub>i</sub></sup> &frasl; <sub><span
-  style="text-decoration:overline">T</span></sub> = <sup>N<sub>g</sub></sup>
-  &frasl; <sub><span
-  style="text-decoration:overline">T</span></sub></em></p></p>
-<p>Where, <i>N<sub>g</sub></i> is the total
-  number of germinated seeds at the end of the test,
-  <i>N<sub>i</sub></i> is the number of
-  seeds germinated in the <i>i</i>th time
-  interval (not the accumulated number, but the number corresponding to the
-  <i>i</i>th interval), and
-  <em><span
-  style="text-decoration:overline">T</span></em> is the
-  mean germination time or mean emergence time.</p>
+<p>\[ERI = \frac{\sum_{i=1}^{k}N_{i}}{\overline{T}} =
+  \frac{N_{g}}{\overline{T}}\]</p>
+<p>Where, \(N_{g}\) is the total number of germinated seeds at the end of
+  the test, \(N_{i}\) is the number of seeds germinated in the
+  \(i\)th time interval (not the accumulated number, but the number
+  corresponding to the \(i\)th interval), and \(\overline{T}\) is
+  the mean germination time or mean emergence time.</p>
 
 <p></p><h3>Fakorede and Ayoola (1980); Fakorede and Ojo (1981); Fakorede and Agbana (1983)
 </h3>
 <p>It is estimated as follows.</p>
-<p><p style="text-align: center;"><em>ERI = <sup><span
-  style="text-decoration: overline;">T</span></sup> &frasl; <sub>(FGP &frasl;
-  100)</sub></em></p></p>
-<p>Where, <em><span
-  style="text-decoration:overline">T</span></em> is the
-  Mean germination time and <i>FGP</i> is the
-  final germination time.</p>
+<p>\[ERI = \frac{\overline{T}}{FGP/100}\]</p>
+<p>Where, \(\overline{T}\) is the Mean germination time and \(FGP\)
+  is the final germination time.</p>
 
 <p></p><h3>Others</h3>
 <p>Apart from the above the above, the name Emergence
-  rate index (<i>ERI</i>) has also been used
-  to for the mathematical expressions for Speed of germination
+  rate index (\(ERI\)) has also been used to for the mathematical
+  expressions for Speed of germination
   (<code><a href='GermSpeed.html'>GermSpeed</a></code>)
   (Allan et al. 1962; Erbach 1982)
 ,

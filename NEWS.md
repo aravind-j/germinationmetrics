@@ -21,6 +21,7 @@ Goldberg (1971), Bilbro and Wanjura (1982), and Fakorede and Ayoola (1980).
 * Error in case of non-uniform intervals converted to warning.
 * Fixed documentation errors in `FourPHFfit` and `CVGermTime`.
 * Updated documentation for `GermSpeed`, `GermSpeedAccumulated`, `CUGerm` `MeanGermRate`, `SEGermRate`, `CVG`, `MeanGermTime`, `VarGermTime`, `SEGermTime`, `GermUncertainty`, `GermSynchrony`, `MeanGermPercent`, `MeanGermNumber`,   `WeightGermPercent`, `TimsonsIndex`, `GermRateGeorge` and `GermSynchrony`.
+* Converted all equations in Rd files to `MathJax`using `mathjaxr`
 
 # germinationmetrics  0.1.3
 

@@ -23,37 +23,27 @@
 #' \insertCite{grose_laboratory_1958,timson_new_1965,lyonRapidMethodDetermining1966,chaudharyEffectTemperatureAssociated1970,negmEffectsEthyleneCarbon1978,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}
 #' and it's modifications by Labouriau
 #' \insertCite{ranal_how_2006}{germinationmetrics} and
-#' \insertCite{khan_effect_1984}{germinationmetrics}.
+#' \insertCite{khan_effect_1984}{germinationmetrics}. \loadmathjax
 #'
 #' Timson's index \insertCite{timson_new_1965}{germinationmetrics} is computed
 #' as follows
 #' \insertCite{grose_laboratory_1958,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>&Sigma;k =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1
-#' </sub>G<sub>i</sub></em></p>}}{\deqn{\Sigma k = \sum_{i=1}^{k}G_{i}}}
+#' \mjsdeqn{\Sigma k = \sum_{i=1}^{k}G_{i}}
 #'
-#' Where, \ifelse{html}{\out{<i>G<sub>i</sub></i>}}{\eqn{G_{i}}} is the
-#' cumulative germination percentage in time interval
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}} and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+#' Where, \mjseqn{G_{i}} is the cumulative germination percentage in time
+#' interval \mjseqn{i} and \mjseqn{k} is the total number of time intervals.
 #'
-#' For example ten summation (\ifelse{html}{\out{<i>&Sigma;10</i>}}{\eqn{\Sigma
-#' 10}}) is expressed as follows.
+#' For example ten summation (\mjseqn{\Sigma 10}) is expressed as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>&Sigma; 10 =
-#' G<sub>1</sub> + G<sub>2</sub> + G<sub>3</sub> +&hellip;+
-#' G<sub>10</sub></em></p>}}{\deqn{\Sigma 10 = G_{1}+G_{2}+\cdots+G_{10}}}
+#' \mjsdeqn{\Sigma 10 = G_{1}+G_{2}+\cdots+G_{10}}
 #'
-#' Where \ifelse{html}{\out{<em>G<sub>1</sub>, G<sub>2</sub>, G<sub>3</sub>,
-#' &hellip; G<sub>10</sub></em>}}{\eqn{G_{1},G_{2},\cdots G_{10}}} are the
-#' cumulative germination percentage at day 1, 2, 3,
-#' \ifelse{html}{\out{&hellip;}}{\eqn{\cdots}}, 10 respectively.
+#' Where \mjseqn{G_{1},G_{2},\cdots G_{10}} are the cumulative germination
+#' percentage at day 1, 2, 3, \mjseqn{\cdots}, 10 respectively.
 #'
-#' Similarly \ifelse{html}{\out{<i>&Sigma;5</i>}}{\eqn{\Sigma 5}} or
-#' \ifelse{html}{\out{<i>&Sigma;20</i>}}{\eqn{\Sigma 20}} can be estimated. For
-#' \ifelse{html}{\out{<i>&Sigma;10</i>}}{\eqn{\Sigma 10}}, the value can range
-#' from 0 (no germination) to 1,000 (100\% germination after 24 hours).
+#' Similarly \mjseqn{\Sigma 5} or \mjseqn{\Sigma 20} can be estimated. For
+#' \mjseqn{\Sigma 10}, the value can range from 0 (no germination) to 1,000
+#' (100\% germination after 24 hours).
 #'
 #' It is the progressive total of cumulative germination percentage recorded at
 #' specific intervals for a set period of time.  It combines onset, rate and
@@ -63,89 +53,59 @@
 #' \insertCite{lyonRapidMethodDetermining1966;textual}{germinationmetrics} as
 #' well as
 #' \insertCite{negmEffectsEthyleneCarbon1978;textual}{germinationmetrics}. It is
-#' also described as Emergence Rate Index
-#' (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) by
+#' also described as Emergence Rate Index (\mjseqn{ERI}) by
 #' \insertCite{chaudharyEffectTemperatureAssociated1970;textual}{germinationmetrics}.
 #'
 #' \insertCite{goodchild_method_1971;textual}{germinationmetrics}, described the
 #' same in terms of partial germination percentage as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>&Sigma;k =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-#' g<sub>i</sub>(k-j)</em></p>}}{\deqn{\Sigma k = \sum_{i=1}^{k}g_{i}(k-j)}}
+#' \mjsdeqn{\Sigma k = \sum_{i=1}^{k}g_{i}(k-j)}
 #'
-#' Where, \ifelse{html}{\out{<i>g<sub>i</sub></i>}}{\eqn{g_{i}}} is the
-#' germination (not cumulative, but partial germination) in time interval
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}
-#' (\ifelse{html}{\out{<i>i</i>}}{\eqn{i}} varying from
-#' \ifelse{html}{\out{<i>0</i>}}{\eqn{0}} to
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}}),
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals,
-#' and \ifelse{html}{\out{<i>j = i - 1</i>}}{\eqn{j = i - 1}}.
+#' Where, \mjseqn{g_{i}} is the germination (not cumulative, but partial
+#' germination) in time interval \mjseqn{i} (\mjseqn{i} varying from \mjseqn{0}
+#' to \mjseqn{k}), \mjseqn{k} is the total number of time intervals, and
+#' \mjseqn{j = i - 1}.
 #'
-#' Timson's index is equivalent to the Germination Energy Index
-#' \ifelse{html}{\out{<i>GEI</i>}}{\eqn{GEI}} proposed by
-#' \insertCite{grose_laboratory_1958;textual}{germinationmetrics}.
+#' Timson's index is equivalent to the Germination Energy Index \mjseqn{GEI}
+#' proposed by \insertCite{grose_laboratory_1958;textual}{germinationmetrics}.
 #'
 #' As Timson's index is useful for comparison only when samples have similar
 #' germinabilities or final germination percentage, the following modification
 #' was suggested by Labouriau \insertCite{ranal_how_2006}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>&Sigma;k<sub>mod</sub> =
-#' <sup>&Sigma;k</sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-#' 1.8; margin-left: -1ex;">i=1 </sub>g<sub>i</sub></sub></i></p>}}{\deqn{\Sigma
-#' k_{mod} = \frac{\Sigma k}{\sum_{i=1}^{k}g_{i}}}}
+#' \mjsdeqn{\Sigma k_{mod} = \frac{\Sigma k}{\sum_{i=1}^{k}g_{i}}}
 #'
-#' Here Timson's index (\ifelse{html}{\out{<i>&Sigma;k</i>}}{\eqn{\Sigma k}}) is
-#' divided by the sum of partial germination percentages.
+#' Here Timson's index (\mjseqn{\Sigma k}) is divided by the sum of partial
+#' germination percentages.
 #'
 #' Similarly another modification was proposed by
 #' \insertCite{khan_effect_1984}{germinationmetrics}, where Timson's index
-#' (\ifelse{html}{\out{<i>&Sigma;k</i>}}{\eqn{\Sigma k}}) is divided by the
-#' total time period of germination
-#' (\ifelse{html}{\out{<i>T<sub>k</sub></i>}}{\eqn{T_{k}}}).
+#' (\mjseqn{\Sigma k}) is divided by the total time period of germination
+#' (\mjseqn{T_{k}}).
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>&Sigma;k<sub>mod</sub> =
-#' <sup>&Sigma;k</sup> &frasl; <sub>T<sub>k</sub></sub></i></p>}}{\deqn{\Sigma
-#' k_{mod} = \frac{\Sigma k}{T_{k}}}}
+#' \mjsdeqn{\Sigma k_{mod} = \frac{\Sigma k}{T_{k}}}
 #'
-#' Timson's index is similar to the Germination Rate
-#' (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}}) proposed by
+#' Timson's index is similar to the Germination Rate (\mjseqn{GR}) proposed by
 #' \insertCite{george_influence_1961;textual}{germinationmetrics} as follows
 #' \insertCite{tucker_estimating_1965,nichols_two_1968}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>GR =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-#' N<sub>i</sub>K<sub>i</sub></em></p>}}{\deqn{GR = \sum_{i=1}^{k}N_{i}K_{i}}}
+#' \mjsdeqn{GR = \sum_{i=1}^{k}N_{i}K_{i}}
 #'
-#' Where \ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} is the number
-#' of seeds germinated by \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
-#' \ifelse{html}{\out{<em>K<sub>i</sub></em>}}{\eqn{K_{i}}} is the number of
-#' intervals(e.g. days) until the end of the test, and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+#' Where \mjseqn{N_{i}} is the number of seeds germinated by \mjseqn{i}th
+#' interval, \mjseqn{K_{i}} is the number of intervals(e.g. days) until the end
+#' of the test, and \mjseqn{k} is the total number of time intervals.
 #'
 #' This index uses number of seeds germinated instead of germination percentage.
-#' It is also described as Emergence Rate Index
-#' (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) by
+#' It is also described as Emergence Rate Index (\mjseqn{ERI}) by
 #' \insertCite{chopraEffectSoilTemperature1980;textual}{germinationmetrics}.
 #'
-#' So germination rate (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}}) can also be
-#' described in terms of partial
-#' (\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}}) and cumulative
-#' (\ifelse{html}{\out{<em>&sum;<sup>i</sup><sub style="line-height: 1.8;
-#' margin-left: -1ex;">j=1
-#' </sub>N<sub>j</sub></em>}}{\eqn{\sum_{j=1}^{i}N_{j}}}) number of seeds
-#' germinated in each time interval (\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}) as
-#' follows.
+#' So germination rate (\mjseqn{GR}) can also be described in terms of partial
+#' (\mjseqn{N_{i}}) and cumulative (\mjseqn{\sum_{j=1}^{i}N_{j}}) number of
+#' seeds germinated in each time interval (\mjseqn{i}) as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>GR =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-#' &sum;<sup>i</sup><sub style="line-height: 1.8; margin-left: -1ex;">j=1
-#' </sub>N<sub>j</sub></em></p>}}{\deqn{GR = \sum_{i=1}^{k}\sum_{j=1}^{i}N_{j}}}
+#' \mjsdeqn{GR = \sum_{i=1}^{k}\sum_{j=1}^{i}N_{j}}
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>GR =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1 </sub>
-#' N<sub>i</sub>(k-j)</em></p>}}{\deqn{GR = \sum_{i=1}^{k}N_{i}(k-j)}}
+#' \mjsdeqn{GR = \sum_{i=1}^{k}N_{i}(k-j)}
 #'
 #' @inheritParams MeanGermTime
 #' @param total.seeds Total number of seeds.

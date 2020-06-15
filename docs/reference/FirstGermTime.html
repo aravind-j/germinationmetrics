@@ -50,23 +50,21 @@
 <meta property="og:title" content="Time for first, last and peak germination — FirstGermTime" />
 <meta property="og:description" content="Compute the following metrics:
 FirstGermTimeTime of
-first germination or Germination time lag
-(t0)
+first germination or Germination time lag (\(t_{0}\))
 (Edwards 1932; Czabator 1962; Goloff and Bazzaz 1975; Labouriau 1983; Ranal 1999; Quintanilla et al. 2000)
 .
-LastGermTimeTime of last germination
-(tg)
+LastGermTimeTime of last germination (\(t_{g}\))
 (Edwards 1932; Labouriau 1983; Ranal and de
 Santana 2006)
 .
 TimeSpreadGermTime spread of germination
-(Al-Mudaris 1998; Kader 2005)or Germination distribution (Schrader and Graves 2000)
+(Al-Mudaris 1998; Kader 2005)or Germination distribution
+(Schrader and Graves 2000)
 .
 PeakGermTimePeak time of germination or Modal time of
 germination (Ranal and de
 Santana 2006)
 . 
-
 " />
 
 
@@ -179,24 +177,22 @@ Santana 2006)
     <div class="ref-description">
     <p>Compute the following metrics:</p><dl'>
 <dt><code>FirstGermTime</code></dt><dd><p>Time of
-first germination or Germination time lag
-(<i>t<sub>0</sub></i>)
+first germination or Germination time lag (\(t_{0}\))
 (Edwards 1932; Czabator 1962; Goloff and Bazzaz 1975; Labouriau 1983; Ranal 1999; Quintanilla et al. 2000)
 .</p></dd>
-<dt><code>LastGermTime</code></dt><dd><p>Time of last germination
-(<i>t<sub>g</sub></i>)
+<dt><code>LastGermTime</code></dt><dd><p>Time of last germination (\(t_{g}\))
 (Edwards 1932; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 <dt><code>TimeSpreadGerm</code></dt><dd><p>Time spread of germination
-(Al-Mudaris 1998; Kader 2005)or Germination distribution (Schrader and Graves 2000)
+(Al-Mudaris 1998; Kader 2005)or Germination distribution
+(Schrader and Graves 2000)
 .</p></dd>
 <dt><code>PeakGermTime</code></dt><dd><p>Peak time of germination or Modal time of
 germination (Ranal and de
 Santana 2006)
 .</p></dd> 
-</dl>
-
+</dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>FirstGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
@@ -245,9 +241,8 @@ in a seedlot.</p>
 <p>Lower value of time of first germination indicates faster initiation of
 germination and lower value of time of last germination indicates faster
 termination of germination.</p>
-<p>Time spread of germination (<i>t<sub>g</sub> &minus;
-t<sub>0</sub></i>) indicates difference between faster
-and slower germinating members of a sample.</p>
+<p>Time spread of germination (\(t_{g}-t_{0}\)) indicates difference
+between faster and slower germinating members of a sample.</p>
 <p>Peak time of germination is the time in which highest frequency of germinated
 seeds are observed. Multiple peak times of germination are possible and if
 detected are indicated by a warning message.</p>

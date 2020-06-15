@@ -20,59 +20,38 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 \code{"coolbear"} or \code{"farooq"}.}
 }
 \value{
-The median germination time
-  (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}) value in the
-  same unit of time as specified in the argument \code{intervals}.
+The median germination time (\mjseqn{t_{50}}) value in the same unit
+  of time as specified in the argument \code{intervals}.
 }
 \description{
-Compute the median germination time
-(\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}). Median
-germination time is the time to reach 50\% of final/maximum germination.
+Compute the median germination time (\mjseqn{t_{50}}). Median germination
+time is the time to reach 50\% of final/maximum germination. \loadmathjax
 }
 \details{
 With argument \code{method} specified as \code{"coolbear"}, median
 germination time is computed according to the formula by
 \insertCite{coolbear_effect_1984;textual}{germinationmetrics} as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>t<sub>50</sub> =
-T<sub>i</sub> + [ <sup>(((<sup>(N+1)</sup> &frasl; <sub>2</sub> ) &minus;
-N<sub>i</sub>)(T<sub>j</sub> &minus; T<sub>i</sub>))</sup> &frasl;
-<sub>(N<sub>j</sub> &minus;
-N<sub>i</sub>)</sub>]</em></p>}}{\deqn{t_{50}=T_{i}+
-\frac{(\frac{N+1}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}}}
+\mjsdeqn{t_{50}=T_{i}+
+\frac{(\frac{N+1}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}}
 
-Where, \ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}} is the
-median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final
-number of germinated seeds, and
-\ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} and
-\ifelse{html}{\out{<em>N<sub>j</sub></em>}}{\eqn{N_{j}}} are the total number
-of seeds germinated in adjacent counts at time
-\ifelse{html}{\out{<em>T<sub>i</sub></em>}}{\eqn{T_{i}}} and
-\ifelse{html}{\out{<em>T<sub>j</sub></em>}}{\eqn{T_{j}}} respectively, when
-\ifelse{html}{\out{<em>N<sub>i</sub>&nbsp;&lt;&nbsp;<sup>(N+1)</sup>&nbsp;&frasl;&nbsp;<sub>2</sub>&nbsp;&lt;&nbsp;N<sub>j</sub></em>}}{\eqn{N_{i}
-< \frac{N + 1}{2} < N_{j}}}.
+Where, \mjseqn{t_{50}} is the median germination time, \mjseqn{N} is the
+final number of germinated seeds, and \mjseqn{N_{i}} and \mjseqn{N_{j}} are
+the total number of seeds germinated in adjacent counts at time
+\mjseqn{T_{i}} and \mjseqn{T_{j}} respectively, when \mjseqn{N_{i} < \frac{N
++ 1}{2} < N_{j}}.
 
 Similarly with argument \code{method} specified as \code{"farooq"}, median
 germination time is computed according to the formula by  by
 \insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>t<sub>50</sub> =
-T<sub>i</sub> + [ <sup>(((<sup>N</sup> &frasl; <sub>2</sub> ) &minus;
-N<sub>i</sub>)(T<sub>j</sub> &minus; T<sub>i</sub>))</sup> &frasl;&nbsp;
-<sub>(N<sub>j</sub> &minus;
-N<sub>i</sub>)</sub>]</em></p>}}{\deqn{t_{50}=T_{i}+
-\frac{(\frac{N}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}}}
+\mjsdeqn{t_{50}=T_{i}+ \frac{(\frac{N}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}}
 
-Where, \ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}} is the
-median germination time, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}} is the final
-number of germinated seeds, and
-\ifelse{html}{\out{<em>N<sub>i</sub></em>}}{\eqn{N_{i}}} and
-\ifelse{html}{\out{<em>N<sub>j</sub></em>}}{\eqn{N_{j}}} are the total number
-of seeds germinated in adjacent counts at time
-\ifelse{html}{\out{<em>T<sub>i</sub></em>}}{\eqn{T_{i}}} and
-\ifelse{html}{\out{<em>T<sub>j</sub></em>}}{\eqn{T_{j}}} respectively, when
-\ifelse{html}{\out{<em>N<sub>i</sub>&nbsp;&lt;&nbsp;<sup>N</sup>&frasl;<sub>2</sub>&nbsp;&lt;&nbsp;N<sub>j</sub></em>}}{\eqn{N_{i}
-< \frac{N}{2} < N_{j}}}.
+Where, \mjseqn{t_{50}} is the median germination time, \mjseqn{N} is the
+final number of germinated seeds, and \mjseqn{N_{i}} and \mjseqn{N_{j}} are
+the total number of seeds germinated in adjacent counts at time
+\mjseqn{T_{i}} and \mjseqn{T_{j}} respectively, when \mjseqn{N_{i} <
+\frac{N}{2} < N_{j}}.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

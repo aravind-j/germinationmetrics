@@ -49,7 +49,7 @@
 
 <meta property="og:title" content="Germination Indices — germination.indices" />
 <meta property="og:description" content="Compute germination indices from a data frame of germination counts recorded
-at specific time intervals for multiple samples in batch." />
+at specific time intervals for multiple samples in batch. " />
 
 
 
@@ -160,7 +160,7 @@ at specific time intervals for multiple samples in batch." />
 
     <div class="ref-description">
     <p>Compute germination indices from a data frame of germination counts recorded
-at specific time intervals for multiple samples in batch.</p>
+at specific time intervals for multiple samples in batch. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>germination.indices</span>(
@@ -242,8 +242,7 @@ it is considered as cumulative. Default is <code>TRUE</code>.</p></td>
     <tr>
       <th>FirstGermTime</th>
       <td><p>logical. If <code>TRUE</code>, the Time of first germination
-or Germination time lag
-(<i>t<sub>0</sub></i>)
+or Germination time lag (\(t_{0}\))
 (Edwards 1932; Czabator 1962; Goloff and Bazzaz 1975; Labouriau 1983; Ranal 1999; Quintanilla et al. 2000)
 
  is computed. Default is <code>TRUE</code>.</p></td>
@@ -251,7 +250,7 @@ or Germination time lag
     <tr>
       <th>LastGermTime</th>
       <td><p>logical. If <code>TRUE</code>, the Time of last germination
-(<i>t<sub>g</sub></i>)
+(\(t_{g}\))
 (Edwards 1932; Labouriau 1983; Ranal and de
 Santana 2006)
 .
@@ -278,7 +277,7 @@ is <code>TRUE</code>.</p></td>
     <tr>
       <th>t50</th>
       <td><p>logical. If <code>TRUE</code>, the Median germination time
-(<em>t<sub>50</sub></em>)
+(\(t_{50}\))
 (Coolbear et al. 1984; Farooq et al. 2005)
 
 is computed. Default is <code>TRUE</code>.</p></td>
@@ -286,16 +285,14 @@ is computed. Default is <code>TRUE</code>.</p></td>
     <tr>
       <th>MeanGermTime</th>
       <td><p>logical. If <code>TRUE</code>, the Mean germination time
-(<em><span
-style="text-decoration:overline">T</span></em>) or
-Mean length of incubation time
+(\(\overline{T}\)) or Mean length of incubation time
 (Edmond and Drapala 1958; Czabator 1962; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .
- or Sprouting index (<i>SI</i>)
+ or Sprouting index (\(SI\))
 (Smith and Millet 1964)
  or Germination
-Resistance (<i>GR</i>)
+Resistance (\(GR\))
 Gordon (1969, 1971)
 
  is computed. Default is <code>TRUE</code>.</p></td>
@@ -303,8 +300,7 @@ Gordon (1969, 1971)
     <tr>
       <th>VarGermTime</th>
       <td><p>logical. If <code>TRUE</code>, the Variance of germination time
-(<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">T</sub></em>)
+(\(s_{T}^{2}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 
@@ -313,9 +309,8 @@ is computed. Default is <code>TRUE</code>.</p></td>
     <tr>
       <th>SEGermTime</th>
       <td><p>logical. If <code>TRUE</code>, the Standard error of germination
-time (<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>)
- (Labouriau 1983; Ranal and de
+time (\(s_{\overline{T}}\))
+(Labouriau 1983; Ranal and de
 Santana 2006)
 .
 is computed. Default is <code>TRUE</code>.</p></td>
@@ -323,8 +318,7 @@ is computed. Default is <code>TRUE</code>.</p></td>
     <tr>
       <th>CVGermTime</th>
       <td><p>logical. If <code>TRUE</code>, the Coefficient of variation of
-the germination time
-(<i>CV<sub>T</sub></i>)
+the germination time (\(CV_{T}\))
 (Ranal and de
 Santana 2006)
  is computed. Default is
@@ -333,8 +327,7 @@ Santana 2006)
     <tr>
       <th>MeanGermRate</th>
       <td><p>logical. If <code>TRUE</code>, the Mean germination rate
-(<em><span
-style="text-decoration:overline">V</span></em>)
+(\(\overline{V}\))
 (Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
 Santana 2006)
 .
@@ -343,18 +336,15 @@ Santana 2006)
     <tr>
       <th>CVG</th>
       <td><p>logical. If <code>TRUE</code>, the Coefficient of velocity/rate of
-  germination or Kotowski's coefficient of velocity
-  (<i>CVG</i>)</p>
-
-<p>(Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
+germination or Kotowski's coefficient of velocity (\(CVG\))
+(Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 .
-   is computed. Default is <code>TRUE</code>.</p></td>
+ is computed. Default is <code>TRUE</code>.</p></td>
     </tr>
     <tr>
       <th>VarGermRate</th>
       <td><p>logical. If <code>TRUE</code>, the Variance of germination rate
-(<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">V</sub></em>)
+(\(s_{V}^{2}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
  is
@@ -363,9 +353,8 @@ computed. Default is <code>TRUE</code>.</p></td>
     <tr>
       <th>SEGermRate</th>
       <td><p>logical. If <code>TRUE</code>, the Standard error of germination
-rate (<em>s<sub><span
-style="text-decoration:overline">V</span></sub></em>)
- (Labouriau 1983; Ranal and de
+rate (\(s_{\overline{V}}\))
+(Labouriau 1983; Ranal and de
 Santana 2006)
  is
 computed. Default is <code>TRUE</code>.</p></td>
@@ -373,8 +362,7 @@ computed. Default is <code>TRUE</code>.</p></td>
     <tr>
       <th>GermRateRecip</th>
       <td><p>logical. If <code>TRUE</code>, the Germination rate as
-reciprocal of median time
-(<i>v<sub>50</sub></i>)
+reciprocal of median time (\(v_{50}\))
 (Went 1957; Labouriau 1983; Ranal and de
 Santana 2006)
 
@@ -409,8 +397,7 @@ accumulated germination
     <tr>
       <th>WeightGermPercent</th>
       <td><p>logical. If <code>TRUE</code>, the Weighted germination
-percentage <i>WGP</i> or Weighted
-germination index <i>WGI</i>
+percentage \(WGP\) or Weighted germination index \(WGI\)
 (Reddy 1978; Reddy et al. 1985)
  is
 computed.</p></td>
@@ -418,16 +405,14 @@ computed.</p></td>
     <tr>
       <th>MeanGermPercent</th>
       <td><p>logical. If <code>TRUE</code>, the Mean/average germination
-percentage per unit time (<em><span
-style="text-decoration:overline">GP</span></em>)
+percentage per unit time (\(\overline{GP}\))
 (Czabator 1962)
  is computed.</p></td>
     </tr>
     <tr>
       <th>MeanGermNumber</th>
       <td><p>logical. If <code>TRUE</code>, the Number of seeds germinated
-per unit time (<em><span style="text-decoration:
-overline">N</span></em>)
+per unit time (\(\overline{N}\))
 (Khamassi et al. 2013)
  is computed.</p></td>
     </tr>
@@ -470,8 +455,8 @@ Santana 2006)
     </tr>
     <tr>
       <th>EmergenceRateIndex</th>
-      <td><p>logical. If <code>TRUE</code>, the Emergence rate index or
-Germination rate index are computed according to</p><ul>
+      <td><p>logical. If <code>TRUE</code>, the Emergence rate index
+or Germination rate index are computed according to</p><ul>
 <li><p>Shmueli and Goldberg (1971)
 
 and it's modification by
@@ -494,9 +479,8 @@ Fakorede and Agbana (1983)
     </tr>
     <tr>
       <th>PeakValue</th>
-      <td><p>logical. If <code>TRUE</code>, the Peak value
-(<i>PV</i>) or Emergence Energy
-(<i>EE</i>)
+      <td><p>logical. If <code>TRUE</code>, the Peak value (\(PV\)) or
+Emergence Energy (\(EE\))
 (Czabator 1962; Bonner 1967)
 
  is computed.</p></td>
@@ -527,7 +511,7 @@ computed.</p></td>
     <tr>
       <th>GermSynchrony</th>
       <td><p>logical. If <code>TRUE</code>, the Synchrony of germination
-(<i>Z</i> index)
+(\(Z\) index)
 (Primack 1985; Ranal and de
 Santana 2006)
  is
@@ -536,10 +520,8 @@ computed.</p></td>
     <tr>
       <th>GermUncertainty</th>
       <td><p>logical. If <code>TRUE</code>, the Synchronization index
-(<em><span style="text-decoration:
-overline">E</span></em>) or Uncertainty of the
-germination process (<i>U</i>) or
-Informational entropy (<i>H</i>)
+(\(\overline{E}\)) or Uncertainty of the germination process
+(\(U\)) or Informational entropy (\(H\))
 (Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
 
  is computed.</p></td>

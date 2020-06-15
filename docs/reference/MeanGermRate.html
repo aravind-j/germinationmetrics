@@ -50,30 +50,27 @@
 <meta property="og:title" content="Germination rate — MeanGermRate" />
 <meta property="og:description" content="Compute the following metrics:
 MeanGermRateMean
-germination rate (V)
+germination rate (\(\overline{V}\))
 (Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
 Santana 2006)
 .
-VarGermRateVariance of germination rate
-(s2V)
+VarGermRateVariance of germination rate (\(s_{V}^{2}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .
 SEGermRateStandard error of germination rate
-(sV)
+(\(s_{\overline{V}}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .
 CVGCoefficient of velocity/rate of germination or Kotowski's
-coefficient of velocity
-(CVG)
+coefficient of velocity (\(CVG\))
 (Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 . GermRateRecipGermination rate as reciprocal of median time
-(v50)
+(\(v_{50}\))
 (Went 1957; Labouriau 1983; Ranal and de
 Santana 2006)
 .
-
 
 " />
 
@@ -187,35 +184,29 @@ Santana 2006)
     <div class="ref-description">
     <p>Compute the following metrics:</p><dl'>
 <dt><code>MeanGermRate</code></dt><dd><p>Mean
-germination rate (<em><span
-style="text-decoration:overline">V</span></em>)
+germination rate (\(\overline{V}\))
 (Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
-<dt><code>VarGermRate</code></dt><dd><p>Variance of germination rate
-(<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">V</sub></em>)
+<dt><code>VarGermRate</code></dt><dd><p>Variance of germination rate (\(s_{V}^{2}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 <dt><code>SEGermRate</code></dt><dd><p>Standard error of germination rate
-(<em>s<sub><span
-style="text-decoration:overline">V</span></sub></em>)
+(\(s_{\overline{V}}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 <dt><code>CVG</code></dt><dd><p>Coefficient of velocity/rate of germination or Kotowski's
-coefficient of velocity
-(<i>CVG</i>)
+coefficient of velocity (\(CVG\))
 (Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 .</p></dd> <dt><code>GermRateRecip</code></dt><dd><p>Germination rate as reciprocal of median time
-(<i>v<sub>50</sub></i>)
+(\(v_{50}\))
 (Went 1957; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 
-</dl>
-
+</dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>MeanGermRate</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
@@ -261,102 +252,62 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>For <code>MeanGermRate</code>, the mean germination rate value as
-  time<sup>-1</sup>.</p>
+  \(\mathrm{time^{-1}}\).</p>
 <p>For <code>VarGermTime</code>, the variance of germination rate value as
-  time<sup>-2</sup>.</p>
+  \(\mathrm{time^{-2}}\).</p>
 <p>For <code>SEGermTime</code>, the standard error of germination rate as
-  time<sup>-1</sup>.</p>
+  \(\mathrm{time^{-1}}\).</p>
 <p>For <code>CVG</code>, the value of Coefficient of of velocity/rate of germination
   or Kotowski's coefficient of velocity.</p>
 <p>For <code>GermRateRecip</code>, the value of germination rate as
-  time<sup>-1</sup>.</p>
+  \(\mathrm{time^{-1}}\).</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>MeanGermRate</code> computes the mean germination rate
-(<em><span
-style="text-decoration:overline">V</span></em>)
-according to the following formula
+(\(\overline{V}\)) according to the following formula
 (Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">V</span> = <sup>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sup>
-&frasl; <sub>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>
-N<sub>i</sub>T<sub>i</sub></sub></em></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time interval (not
-the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
-<p>It is the inverse of mean germination time (<em><span
-style="text-decoration:overline">T</span></em>).</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">V</span> = <sup>1</sup> &frasl; <sub><span
-style="text-decoration:
-overline;">T</span></sub></em></p></p>
+<p>\[\overline{V} = \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(N_{i}\) is the number of seeds germinated in
+the \(i\)th time interval (not the accumulated number, but the number
+corresponding to the \(i\)th interval), and \(k\) is the total
+number of time intervals.</p>
+<p>It is the inverse of mean germination time (\(\overline{T}\)).</p>
+<p>\[\overline{V} = \frac{1}{\overline{T}}\]</p>
 <p><code>VarGermRate</code> computes the variance of germination rate
-(<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">V</sub></em>) according to the
-following formula
+(\(s_{V}^{2}\)) according to the following formula
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>s<sup>2</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">V</sub> = <span
-style="text-decoration: overline;">V</span><sup>4</sup> &times;
-s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">T</sub></em></p></p>
-<p>Where, <em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">T</sub></em> is the variance of
-germination time.</p>
+<p>\[s_{V}^{2} = \overline{V}^{4} \times s_{T}^{2}\]</p>
+<p>Where, \(s_{T}^{2}\) is the variance of germination time.</p>
 <p><code>SEGermRate</code> computes the standard error of germination time
-(<em>s<sub><span
-style="text-decoration:overline">V</span></sub></em>)
-according to the following formula
+(\(s_{\overline{V}}\)) according to the following formula
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>s<sub><span
-style="text-decoration: overline;">V</span></sub> = &radic;[
-<sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">V</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
-]</em></p></p>
-<p>Where, <i>N<sub>i</sub></i> is the number
-of seeds germinated in the <i>i</i>th time
-interval (not the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[s_{\overline{V}} = \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}\]</p>
+<p>Where, \(N_{i}\) is the number of seeds germinated in the \(i\)th
+time interval (not the accumulated number, but the number corresponding to
+the \(i\)th interval), and \(k\) is the total number of time
+intervals.</p>
 <p><code>CVG</code> computes the coefficient of velocity/rate of germination or
-Kotowski's coefficient of velocity
-(<i>CVG</i>) according to the following
+Kotowski's coefficient of velocity (\(CVG\)) according to the following
 formula
 (Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 .</p>
-<p><p style="text-align: center;"><em>CVG =
-[<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub> N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub>T<sub>i</sub></sub>] &times; 100</em></p></p>
-<p><p style="text-align: center;"><em>CVG = <span
-style="text-decoration: overline;">V</span> &times; 100</em></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time interval (not
-the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
-<p><code>GermRateRecip</code> computes the germination rate
-(<em>v<sub>50</sub></em>) as the
-reciprocal of the median germination time
-(<em>t<sub>50</sub></em>)
+<p>\[CVG = \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}} \times
+100\]</p>
+<p>\[CVG = \overline{V} \times 100\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(N_{i}\) is the number of seeds germinated in
+the \(i\)th time interval (not the accumulated number, but the number
+corresponding to the \(i\)th interval), and \(k\) is the total
+number of time intervals.</p>
+<p><code>GermRateRecip</code> computes the germination rate \(v_{50}\)) as the
+reciprocal of the median germination time (\(t_{50}\))
 (Went 1957; Labouriau 1983; Ranal and de
 Santana 2006)
 
@@ -365,9 +316,7 @@ Coolbear et al. (1984)
  or
 Farooq et al. (2005)
  as follows.</p>
-<p><p style="text-align: center;"><em>v<sub>50</sub> =
-<sup>1</sup> &frasl;
-<sub><em>t<sub>50</sub></em></sub></em></p></p>
+<p>\[v_{50} = \frac{1}{t_{50}}\]</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Bewley JD, Black M (1994).

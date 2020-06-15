@@ -57,7 +57,7 @@ Santana and Ranal (2004)
 
 (Ranal and de
 Santana 2006)
-." />
+. " />
 
 
 
@@ -176,7 +176,7 @@ Santana and Ranal (2004)
 
 (Ranal and de
 Santana 2006)
-.</p>
+. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>GermIndex</span>(
@@ -221,44 +221,34 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
     <p>The value of the Germination index.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Germination index (<i>GI</i>) is computed as
-follows (Melville et al. 1980)
+    <p>Germination index (\(GI\)) is computed as follows
+(Melville et al. 1980)
 .</p>
-<p><p style="text-align: center;"><em>GI =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-<sup>|(T<sub>k</sub> &minus; T<sub>i</sub>)N<sub>i</sub>|</sup> &frasl;
-<sub>N<sub>t</sub></sub></em></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval (day for the example),
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time interval (not
-the accumulated number, but the number corresponding to the
-<i>i</i>th interval),
-<i>N<sub>t</sub></i> is the total number of
-seeds used in the test, and <i>k</i> is the
-total number of time intervals.</p>
-<p>A modified germination index
-(<i>GI<sub>mod</sub></i>) was proposed
-by (de
+<p>\[GI = \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right )
+N_{i}\right |}{N_{t}}\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval (day for the example), \(N_{i}\) is the number of
+seeds germinated in the \(i\)th time interval (not the accumulated
+number, but the number corresponding to the \(i\)th interval),
+\(N_{t}\) is the total number of seeds used in the test, and \(k\)
+is the total number of time intervals.</p>
+<p>A modified germination index (\(GI_{mod}\)) was proposed by
+(de
 Santana and Ranal 2004)
- where total number
-of seeds tested (<i>N<sub>t</sub></i>) is
-replaced by the total number of germinated seeds
-(<i>N<sub>g</sub></i>) in the expression of
+ where total number of
+seeds tested (\(N{t}\)) is replaced by the total number of germinated
+seeds (\(N{g}\)) in the expression of
 Melville et al. (1980)
  to
 remove the effect of sample size
 (Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>GI =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-<sup>|(T<sub>k</sub> &minus; T<sub>i</sub>)N<sub>i</sub>|</sup> &frasl;
-<sub>N<sub>g</sub></sub></em></p></p>
-<p>The term Germination index (<i>GI</i>) has
-also been used to describe the mathematical expression for Speed of
-germination (<code><a href='GermSpeed.html'>GermSpeed</a></code>) by
+<p>\[GI_{mod} = \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right
+) N_{i}\right |}{N_{g}}\]</p>
+<p>The term Germination index (\(GI\)) has also been used to describe the
+mathematical expression for Speed of germination
+(<code><a href='GermSpeed.html'>GermSpeed</a></code>) by
 AOSA (1983)
 .</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>

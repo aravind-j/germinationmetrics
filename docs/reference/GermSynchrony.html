@@ -49,17 +49,15 @@
 
 <meta property="og:title" content="Synchrony and uncertainty of germination — GermSynchrony" />
 <meta property="og:description" content="Compute the following metrics:
-GermSynchronySynchrony of germination (Z index)
+GermSynchronySynchrony of germination (\(Z\) index)
 (Primack 1985; Ranal and de
 Santana 2006)
 .
-GermUncertaintySynchronization index
-(E) or Uncertainty of the
-germination process (U) or Informational
-entropy (H)
+GermUncertaintySynchronization index (\(\overline{E}\))
+or Uncertainty of the germination process (\(U\)) or Informational
+entropy (\(H\))
 (Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
 .
-
 
 " />
 
@@ -172,20 +170,17 @@ entropy (H)
 
     <div class="ref-description">
     <p>Compute the following metrics:</p><dl'>
-<dt><code>GermSynchrony</code></dt><dd><p>Synchrony of germination (<i>Z</i> index)
+<dt><code>GermSynchrony</code></dt><dd><p>Synchrony of germination (\(Z\) index)
 (Primack 1985; Ranal and de
 Santana 2006)
 .</p></dd>
-<dt><code>GermUncertainty</code></dt><dd><p>Synchronization index
-(<em><span style="text-decoration:
-overline">E</span></em>) or Uncertainty of the
-germination process (<i>U</i>) or Informational
-entropy (<i>H</i>)
+<dt><code>GermUncertainty</code></dt><dd><p>Synchronization index (\(\overline{E}\))
+or Uncertainty of the germination process (\(U\)) or Informational
+entropy (\(H\))
 (Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
 .</p></dd>
 
-</dl>
-
+</dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>GermSynchrony</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
@@ -220,44 +215,28 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p><code>GermSynchrony</code> computes the value of synchrony of germination
-(<i>Z</i> index) as follows
+(\(Z\) index) as follows
 (Primack 1985; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>Z =
-<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>C<sub>N<sub>i</sub>,2</sub></sup>
-&frasl;<sub>C<sub>&sum;N<sub>i</sub>,2</sub></sub></em></p></p>
-<p>Where,
-<i>C<sub>N<sub>i</sub>,2</sub></i> is
-the partial combination of the two germinated seeds from among
-N<sub>i</sub>, the number of seeds
-germinated on the <i>i</i>th time interval (estimated as
-<em>C<sub>N<sub>i</sub>,2</sub> =
-<sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
-<sub>2</sub></em>), and
-<em>C<sub>&sum;N<sub>i</sub>,2</sub></em> is the partial combination of the two germinated seeds from among
+<p>\[Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma N_{i},2}}\]</p>
+<p>Where, \(C_{N_{i},2}\) is the partial combination of the two germinated
+seeds from among \(N_{i}\), the number of seeds germinated on the
+\(i\)th time interval (estimated as
+\(C_{N_{i},2}=\frac{N_{i}(N_{i}-1)}{2}\)), and \(C_{\Sigma
+N_{i},2}\) is the partial combination of the two germinated seeds from among
 the total number of seeds germinated at the final count, assuming that all
 seeds that germinated did so simultaneously.</p>
 <p><code>GermUncertainty</code> computes the value of synchronization index
-(<em><span style="text-decoration:
-overline">E</span></em>) or uncertainty of the
-germination process (<i>U</i>) or informational
-entropy (<i>H</i>) as follows
+(\(\overline{E}\)) or uncertainty of the germination process
+(\(U\)) or informational entropy (\(H\)) as follows
 (Shannon 1948; Labouriau and Valadares 1976; Labouriau 1983)
 .</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">E</span> = &minus;&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub> f<sub>i</sub></em>log
-<sub>2</sub><em>f<sub>i</sub></em></p></p>
-<p>Where, <i>f<sub>i</sub></i> is the relative
-frequency of germination (estimated as <em>f<sub>i</sub> =
-<sup>N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>N<sub>i</sub></sub></em>),
-<i>N<sub>i</sub></i> is the number of seeds
-germinated on the <i>i</i>th time interval, and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[\overline{E} = -\sum_{i=1}^{k}f_{i}\log_{2}f_{i}\]</p>
+<p>Where, \(f_{i}\) is the relative frequency of germination (estimated as
+\(f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}\)), \(N_{i}\) is the
+number of seeds germinated on the \(i\)th time interval, and \(k\)
+is the total number of time intervals.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Labouriau LG (1983).

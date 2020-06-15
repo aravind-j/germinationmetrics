@@ -48,9 +48,8 @@
   
 
 <meta property="og:title" content="Median germination time — t50" />
-<meta property="og:description" content="Compute the median germination time
-(t50). Median
-germination time is the time to reach 50% of final/maximum germination." />
+<meta property="og:description" content="Compute the median germination time (\(t_{50}\)). Median germination
+time is the time to reach 50% of final/maximum germination. " />
 
 
 
@@ -160,9 +159,8 @@ germination time is the time to reach 50% of final/maximum germination." />
     </div>
 
     <div class="ref-description">
-    <p>Compute the median germination time
-(<em>t<sub>50</sub></em>). Median
-germination time is the time to reach 50% of final/maximum germination.</p>
+    <p>Compute the median germination time (\(t_{50}\)). Median germination
+time is the time to reach 50% of final/maximum germination. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>t50</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"coolbear"</span>, <span class='st'>"farooq"</span>))</pre>
@@ -194,47 +192,31 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The median germination time
-  (<em>t<sub>50</sub></em>) value in the
-  same unit of time as specified in the argument <code>intervals</code>.</p>
+    <p>The median germination time (\(t_{50}\)) value in the same unit
+  of time as specified in the argument <code>intervals</code>.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>With argument <code>method</code> specified as <code>"coolbear"</code>, median
 germination time is computed according to the formula by
 Coolbear et al. (1984)
  as follows.</p>
-<p><p style="text-align: center;"><em>t<sub>50</sub> =
-T<sub>i</sub> + [ <sup>(((<sup>(N+1)</sup> &frasl; <sub>2</sub> ) &minus;
-N<sub>i</sub>)(T<sub>j</sub> &minus; T<sub>i</sub>))</sup> &frasl;
-<sub>(N<sub>j</sub> &minus;
-N<sub>i</sub>)</sub>]</em></p></p>
-<p>Where, <em>t<sub>50</sub></em> is the
-median germination time, <i>N</i> is the final
-number of germinated seeds, and
-<em>N<sub>i</sub></em> and
-<em>N<sub>j</sub></em> are the total number
-of seeds germinated in adjacent counts at time
-<em>T<sub>i</sub></em> and
-<em>T<sub>j</sub></em> respectively, when
-<em>N<sub>i</sub>&nbsp;&lt;&nbsp;<sup>(N+1)</sup>&nbsp;&frasl;&nbsp;<sub>2</sub>&nbsp;&lt;&nbsp;N<sub>j</sub></em>.</p>
+<p>\[t_{50}=T_{i}+
+\frac{(\frac{N+1}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}\]</p>
+<p>Where, \(t_{50}\) is the median germination time, \(N\) is the
+final number of germinated seeds, and \(N_{i}\) and \(N_{j}\) are
+the total number of seeds germinated in adjacent counts at time
+\(T_{i}\) and \(T_{j}\) respectively, when \(N_{i} < \frac{N
++ 1}{2} < N_{j}\).</p>
 <p>Similarly with argument <code>method</code> specified as <code>"farooq"</code>, median
 germination time is computed according to the formula by  by
 Farooq et al. (2005)
  as follows.</p>
-<p><p style="text-align: center;"><em>t<sub>50</sub> =
-T<sub>i</sub> + [ <sup>(((<sup>N</sup> &frasl; <sub>2</sub> ) &minus;
-N<sub>i</sub>)(T<sub>j</sub> &minus; T<sub>i</sub>))</sup> &frasl;&nbsp;
-<sub>(N<sub>j</sub> &minus;
-N<sub>i</sub>)</sub>]</em></p></p>
-<p>Where, <em>t<sub>50</sub></em> is the
-median germination time, <i>N</i> is the final
-number of germinated seeds, and
-<em>N<sub>i</sub></em> and
-<em>N<sub>j</sub></em> are the total number
-of seeds germinated in adjacent counts at time
-<em>T<sub>i</sub></em> and
-<em>T<sub>j</sub></em> respectively, when
-<em>N<sub>i</sub>&nbsp;&lt;&nbsp;<sup>N</sup>&frasl;<sub>2</sub>&nbsp;&lt;&nbsp;N<sub>j</sub></em>.</p>
+<p>\[t_{50}=T_{i}+ \frac{(\frac{N}{2}-N_{i})(T_{j}-T_{i})}{N_{j}-N_{i}}\]</p>
+<p>Where, \(t_{50}\) is the median germination time, \(N\) is the
+final number of germinated seeds, and \(N_{i}\) and \(N_{j}\) are
+the total number of seeds germinated in adjacent counts at time
+\(T_{i}\) and \(T_{j}\) respectively, when \(N_{i} <
+\frac{N}{2} < N_{j}\).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Coolbear P, Francis A, Grierson D (1984).

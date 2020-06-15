@@ -50,27 +50,24 @@
 <meta property="og:title" content="Germination time — MeanGermTime" />
 <meta property="og:description" content="Compute the following metrics:
 MeanGermTimeMean
-germination time (T) or Mean
-length of incubation time
+germination time (\(\overline{T}\)) or Mean length of incubation time
 (Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .
-VarGermTimeVariance of germination time
-(s2T)
+VarGermTimeVariance of germination time (\(s_{T}^{2}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .
 SEGermTimeStandard error of germination time
-(sT)
+(\(s_{\overline{T}}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .
 CVGermTimeCoefficient of variation of the germination time
-(CVT)
+(\(CV_{T}\))
 (Gomes 1960; Ranal and de
 Santana 2006)
 . 
-
 " />
 
 
@@ -183,31 +180,25 @@ Santana 2006)
     <div class="ref-description">
     <p>Compute the following metrics:</p><dl'>
 <dt><code>MeanGermTime</code></dt><dd><p>Mean
-germination time (<em><span
-style="text-decoration:overline">T</span></em>) or Mean
-length of incubation time
+germination time (\(\overline{T}\)) or Mean length of incubation time
 (Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
-<dt><code>VarGermTime</code></dt><dd><p>Variance of germination time
-(<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">T</sub></em>)
+<dt><code>VarGermTime</code></dt><dd><p>Variance of germination time (\(s_{T}^{2}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 <dt><code>SEGermTime</code></dt><dd><p>Standard error of germination time
-(<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>)
+(\(s_{\overline{T}}\))
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p></dd>
 <dt><code>CVGermTime</code></dt><dd><p>Coefficient of variation of the germination time
-(<i>CV<sub>T</sub></i>)
+(\(CV_{T}\))
 (Gomes 1960; Ranal and de
 Santana 2006)
 .</p></dd> 
-</dl>
-
+</dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>MeanGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
@@ -243,7 +234,7 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
     <p>For <code>MeanGermTime</code>, the mean germination time value in the same
   unit of time as specified in the argument <code>intervals</code>.</p>
 <p>For <code>VarGermTime</code>, the variance of germination time value as
-  time<sup>2</sup>.</p>
+  \(\mathrm{time^{2}}\).</p>
 <p>For <code>SEGermTime</code>, the standard error of germination time in the same
   unit of time specified in the argument <code>intervals</code>.</p>
 <p>For <code>CVGermTime</code>, the value of coefficient of variation of the
@@ -255,93 +246,58 @@ following formula
 (Edmond and Drapala 1958; Czabator 1962; Smith and Millet 1964; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">T</span> = <sup>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub>T<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub></sub></em></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time interval (not
-the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
-<p>It is the same as Sprouting Index (<i>SI</i>)
-or Emergence Index (<i>EI</i>) described by
+<p>\[\overline{T} = \frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(N_{i}\) is the number of seeds germinated in
+the \(i\)th time interval (not the accumulated number, but the number
+corresponding to the \(i\)th interval), and \(k\) is the total
+number of time intervals.</p>
+<p>It is the same as Sprouting Index (\(SI\)) or Emergence Index
+(\(EI\)) described by
 Smith and Millet (1964)
  and
 Mock and Eberhart (1972)
  as well
-as Germination Resistance (<i>GR</i>)
-described by
+as Germination Resistance (\(GR\)) described by
 Gordon (1969, 1971)
 .</p>
-<p>It is the inverse of mean germination rate (<em><span
-style="text-decoration:overline">V</span></em>).</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">T</span> = <sup>1</sup> &frasl; <sub><span
-style="text-decoration:
-overline;">V</span></sub></em></p></p>
+<p>It is the inverse of mean germination rate (\(\overline{V}\)).</p>
+<p>\[\overline{T} = \frac{1}{\overline{V}}\]</p>
 <p>It indicates the average length of time required for maximum germination of a
-seed lot. Lower the <em><span
-style="text-decoration:overline">T</span></em>, faster
-the sample has germinated and reflects seed vigor.</p>
+seed lot. Lower the \(\overline{T}\), faster the sample has germinated
+and reflects seed vigor.</p>
 <p><code>VarGermTime</code> computes the variance of germination time according to the
 following formula
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>s<sup>2</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">T</sub> =
-<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub> N<sub>i</sub>(T<sub>i</sub> &minus; <span
-style="text-decoration: overline;">T</span>)<sup>2</sup></sup> &frasl; <sub>
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub> &minus; 1</sub></em></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time interval (not
-the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[s_{T}^{2} =
+\frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(N_{i}\) is the number of seeds germinated in
+the \(i\)th time interval (not the accumulated number, but the number
+corresponding to the \(i\)th interval), and \(k\) is the total
+number of time intervals.</p>
 <p><code>SEGermTime</code> computes the standard error of germination time
-(<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>)
-according to the following formula
+(\(s_{\overline{T}}\)) according to the following formula
 (Labouriau 1983; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>s<sub><span
-style="text-decoration: overline;">T</span></sub> = &radic;[
-<sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">T</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
-]</em></p></p>
-<p>Where, <i>N<sub>i</sub></i> is the number
-of seeds germinated in the <i>i</i>th time
-interval (not the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[s_{\overline{T}} = \sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}\]</p>
+<p>Where, \(N_{i}\) is the number of seeds germinated in the \(i\)th
+time interval (not the accumulated number, but the number corresponding to
+the \(i\)th interval), and \(k\) is the total number of time
+intervals.</p>
 <p>It signifies the accuracy of the calculation of the mean germination time.</p>
 <p><code>CVGermTime</code> computes the coefficient of variation of germination time
-(<i>CV<sub>T</sub></i>) according to the
-following formula
+(\(CV_{T}\)) according to the following formula
 (Gomes 1960; Ranal and de
 Santana 2006)
 .</p>
-<p><p style="text-align: center;"><em>CV<sub>T</sub> =
-<sup>&radic;[s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">T</sub>]</sup> &frasl; <sub><span style="text-decoration:
-overline;">T</span></sub> </em></p></p>
+<p>\[CV_{T} = \frac{\sqrt{s_{T}^{2}}}{\overline{T}}\]</p>
 <p>This indicates the uniformity of germination and permits comparisons
 irrespective of the magnitude of mean germination time
-(<em><span
-style="text-decoration:overline">T</span></em>).</p>
+(\(\overline{T}\)).</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Czabator FJ (1962).

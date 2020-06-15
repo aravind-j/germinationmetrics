@@ -26,12 +26,13 @@ from a \code{FourPHFfit} object}
 is \code{TRUE}.}
 
 \item{t50.total}{If \code{TRUE}, highlights the time required for 50\% of
-total seeds to germinate (\ifelse{html}{\out{t<sub>50<sub>Total</sub></sub>}}{\eqn{\textrm{t}_{\textrm{50}_\textrm{Germ}}}}) as a vertical line. Default is \code{TRUE}.}
+total seeds to germinate (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Germ}}})
+as a vertical line. Default is \code{TRUE}.}
 
 \item{t50.germ}{If \code{TRUE}, highlights the time required for 50\% of
 viable/germinated seeds to germinate
-(\ifelse{html}{\out{t<sub>50<sub>Germ</sub></sub>}}{\eqn{\textrm{t}_{\textrm{50}_\textrm{Total}}}}) as a
-vertical line. Default is \code{TRUE}.}
+(\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Total}}}) as a vertical line.
+Default is \code{TRUE}.}
 
 \item{tmgr}{If \code{TRUE}, highlights the Time at Maximum Germination Rate
 (TMGR) as a vertical line. Default is \code{TRUE}.}
@@ -40,8 +41,8 @@ vertical line. Default is \code{TRUE}.}
 vertical line. Default is \code{TRUE}.}
 
 \item{uniformity}{If \code{TRUE}, highlights the uniformity value
-(\ifelse{html}{\out{U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub>}}{\eqn{\textrm{U}_{\textrm{t}_{\textrm{max}}-\textrm{t}_{\textrm{min}}}}})
- as a horizontal line. Default is \code{TRUE}.}
+(\mjseqn{\textrm{U}_{\textrm{t}_{\textrm{max}}-\textrm{t}_{\textrm{min}}}})
+as a horizontal line. Default is \code{TRUE}.}
 
 \item{limits}{logical. If \code{TRUE}, set the limits of y axis (germination
 percentage) between 0 and 100 in the germination curve plot. If
@@ -61,7 +62,7 @@ The plot of the cumulative germination curve as an object of class
 cumulative germination curve (FPHF curve) from a \code{FourPHFfit} object as
 an object of class \code{ggplot}. Further, the rate of germination curve (RoG
 curve) is plotted and different parameters annotated as specified in the
-different arguments.
+different arguments. \loadmathjax
 }
 \examples{
 

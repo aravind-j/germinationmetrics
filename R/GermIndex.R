@@ -21,48 +21,35 @@
 #' \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} and
 #' its modification by
 #' \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
-#' \insertCite{ranal_how_2006}{germinationmetrics}.
+#' \insertCite{ranal_how_2006}{germinationmetrics}. \loadmathjax
 #'
-#' Germination index (\ifelse{html}{\out{<i>GI</i>}}{\eqn{GI}}) is computed as
-#' follows \insertCite{melvilleSeedGerminationEarly1980}{germinationmetrics}.
+#' Germination index (\mjseqn{GI}) is computed as follows
+#' \insertCite{melvilleSeedGerminationEarly1980}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>GI =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-#' <sup>|(T<sub>k</sub> &minus; T<sub>i</sub>)N<sub>i</sub>|</sup> &frasl;
-#' <sub>N<sub>t</sub></sub></em></p>}}{\deqn{GI = \sum_{i=1}^{k}\frac{\left |
-#' \left ( T_{k} - T_{i} \right ) N_{i}\right |}{N_{t}}}}
+#' \mjsdeqn{GI = \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right )
+#' N_{i}\right |}{N_{t}}}
 #'
-#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
-#' from the start of the experiment to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval (day for the example),
-#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
-#' the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval),
-#' \ifelse{html}{\out{<i>N<sub>t</sub></i>}}{\eqn{N_{t}}} is the total number of
-#' seeds used in the test, and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the
-#' total number of time intervals.
+#' Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+#' \mjseqn{i}th interval (day for the example), \mjseqn{N_{i}} is the number of
+#' seeds germinated in the \mjseqn{i}th time interval (not the accumulated
+#' number, but the number corresponding to the \mjseqn{i}th interval),
+#' \mjseqn{N_{t}} is the total number of seeds used in the test, and \mjseqn{k}
+#' is the total number of time intervals.
 #'
-#' A modified germination index
-#' (\ifelse{html}{\out{<i>GI<sub>mod</sub></i>}}{\eqn{GI_{mod}}}) was proposed
-#' by \insertCite{de_santana_alise_2004}{germinationmetrics} where total number
-#' of seeds tested (\ifelse{html}{\out{<i>N<sub>t</sub></i>}}{\eqn{N{t}}}) is
-#' replaced by the total number of germinated seeds
-#' (\ifelse{html}{\out{<i>N<sub>g</sub></i>}}{\eqn{N{g}}}) in the expression of
+#' A modified germination index (\mjseqn{GI_{mod}}) was proposed by
+#' \insertCite{de_santana_alise_2004}{germinationmetrics} where total number of
+#' seeds tested (\mjseqn{N{t}}) is replaced by the total number of germinated
+#' seeds (\mjseqn{N{g}}) in the expression of
 #' \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} to
 #' remove the effect of sample size
 #' \insertCite{ranal_how_2006}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>GI =
-#' &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-#' <sup>|(T<sub>k</sub> &minus; T<sub>i</sub>)N<sub>i</sub>|</sup> &frasl;
-#' <sub>N<sub>g</sub></sub></em></p>}}{\deqn{GI_{mod} =
-#' \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right ) N_{i}\right
-#' |}{N_{g}}}}
+#' \mjsdeqn{GI_{mod} = \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right
+#' ) N_{i}\right |}{N_{g}}}
 #'
-#' The term Germination index (\ifelse{html}{\out{<i>GI</i>}}{\eqn{GI}}) has
-#' also been used to describe the mathematical expression for Speed of
-#' germination (\code{\link[germinationmetrics]{GermSpeed}}) by
+#' The term Germination index (\mjseqn{GI}) has also been used to describe the
+#' mathematical expression for Speed of germination
+#' (\code{\link[germinationmetrics]{GermSpeed}}) by
 #' \insertCite{aosa_seed_1983;textual}{germinationmetrics}.
 #'
 #' @inheritParams MeanGermTime

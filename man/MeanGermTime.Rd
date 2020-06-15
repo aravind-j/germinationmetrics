@@ -30,7 +30,7 @@ For \code{MeanGermTime}, the mean germination time value in the same
   unit of time as specified in the argument \code{intervals}.
 
   For \code{VarGermTime}, the variance of germination time value as
-  \ifelse{html}{\out{time<sup>2</sup>}}{\eqn{\mathrm{time^{2}}}}.
+  \mjseqn{\mathrm{time^{2}}}.
 
   For \code{SEGermTime}, the standard error of germination time in the same
   unit of time specified in the argument \code{intervals}.
@@ -40,125 +40,81 @@ For \code{MeanGermTime}, the mean germination time value in the same
 }
 \description{
 Compute the following metrics:\describe{ \item{\code{MeanGermTime}}{Mean
-germination time (\ifelse{html}{\out{<em><span
-style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}) or Mean
-length of incubation time
+germination time (\mjseqn{\overline{T}}) or Mean length of incubation time
 \insertCite{edmond_effects_1958,czabator_germination_1962,mockColdToleranceAdapted1972,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
-\item{\code{VarGermTime}}{Variance of germination time
-(\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}})
+\item{\code{VarGermTime}}{Variance of germination time (\mjseqn{s_{T}^{2}})
 \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
 \item{\code{SEGermTime}}{Standard error of germination time
-(\ifelse{html}{\out{<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
+(\mjseqn{s_{\overline{T}}})
 \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
 \item{\code{CVGermTime}}{Coefficient of variation of the germination time
-(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}})
+(\mjseqn{CV_{T}})
 \insertCite{gomes_curso_1960,ranal_how_2006}{germinationmetrics}.} }
+\loadmathjax
 }
 \details{
 \code{MeanGermTime} computes the mean germination time according to the
 following formula
 \insertCite{edmond_effects_1958,czabator_germination_1962,smith_germinating_1964,ellis_improved_1980,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em><span
-style="text-decoration: overline;">T</span> = <sup>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub>T<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub></sub></em></p>}}{\deqn{\overline{T} =
-\frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}}}
+\mjsdeqn{\overline{T} = \frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}}
 
-Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
-from the start of the experiment to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
-\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
-the accumulated number, but the number corresponding to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+\mjseqn{i}th interval, \mjseqn{N_{i}} is the number of seeds germinated in
+the \mjseqn{i}th time interval (not the accumulated number, but the number
+corresponding to the \mjseqn{i}th interval), and \mjseqn{k} is the total
+number of time intervals.
 
-It is the same as Sprouting Index (\ifelse{html}{\out{<i>SI</i>}}{\eqn{SI}})
-or Emergence Index (\ifelse{html}{\out{<i>EI</i>}}{\eqn{EI}}) described by
+It is the same as Sprouting Index (\mjseqn{SI}) or Emergence Index
+(\mjseqn{EI}) described by
 \insertCite{smith_germinating_1964;textual}{germinationmetrics} and
 \insertCite{mockColdToleranceAdapted1972;textual}{germinationmetrics} as well
-as Germination Resistance (\ifelse{html}{\out{<i>GR</i>}}{\eqn{GR}})
-described by
+as Germination Resistance (\mjseqn{GR}) described by
 \insertCite{gordon_observations_1969,gordon_germination_1971;textual}{germinationmetrics}.
 
-It is the inverse of mean germination rate (\ifelse{html}{\out{<em><span
-style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}}).
+It is the inverse of mean germination rate (\mjseqn{\overline{V}}).
 
-\ifelse{html}{\out{<p style="text-align: center;"><em><span
-style="text-decoration: overline;">T</span> = <sup>1</sup> &frasl; <sub><span
-style="text-decoration:
-overline;">V</span></sub></em></p>}}{\deqn{\overline{T} =
-\frac{1}{\overline{V}}}}
+\mjsdeqn{\overline{T} = \frac{1}{\overline{V}}}
 
 It indicates the average length of time required for maximum germination of a
-seed lot. Lower the \ifelse{html}{\out{<em><span
-style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}, faster
-the sample has germinated and reflects seed vigor.
+seed lot. Lower the \mjseqn{\overline{T}}, faster the sample has germinated
+and reflects seed vigor.
 
 \code{VarGermTime} computes the variance of germination time according to the
 following formula
 \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>s<sup>2</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">T</sub> =
-<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub> N<sub>i</sub>(T<sub>i</sub> &minus; <span
-style="text-decoration: overline;">T</span>)<sup>2</sup></sup> &frasl; <sub>
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-N<sub>i</sub> &minus; 1</sub></em></p>}}{\deqn{s_{T}^{2} =
-\frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}}}
+\mjsdeqn{s_{T}^{2} =
+\frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}}
 
-Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
-from the start of the experiment to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
-\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
-the accumulated number, but the number corresponding to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+\mjseqn{i}th interval, \mjseqn{N_{i}} is the number of seeds germinated in
+the \mjseqn{i}th time interval (not the accumulated number, but the number
+corresponding to the \mjseqn{i}th interval), and \mjseqn{k} is the total
+number of time intervals.
 
 \code{SEGermTime} computes the standard error of germination time
-(\ifelse{html}{\out{<em>s<sub><span
-style="text-decoration:overline">T</span></sub></em>}}{\eqn{s_{\overline{T}}}})
-according to the following formula
+(\mjseqn{s_{\overline{T}}}) according to the following formula
 \insertCite{labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>s<sub><span
-style="text-decoration: overline;">T</span></sub> = &radic;[
-<sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">T</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
-]</em></p>}}{\deqn{s_{\overline{T}} =
-\sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
+\mjsdeqn{s_{\overline{T}} = \sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}}
 
-Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
-of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-interval (not the accumulated number, but the number corresponding to the
-\ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+Where, \mjseqn{N_{i}} is the number of seeds germinated in the \mjseqn{i}th
+time interval (not the accumulated number, but the number corresponding to
+the \mjseqn{i}th interval), and \mjseqn{k} is the total number of time
+intervals.
 
 It signifies the accuracy of the calculation of the mean germination time.
 
 \code{CVGermTime} computes the coefficient of variation of germination time
-(\ifelse{html}{\out{<i>CV<sub>T</sub></i>}}{\eqn{CV_{T}}}) according to the
-following formula
+(\mjseqn{CV_{T}}) according to the following formula
 \insertCite{gomes_curso_1960,ranal_how_2006}{germinationmetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>CV<sub>T</sub> =
-<sup>&radic;[s<sup>2</sup><sub style="line-height: 1.8; margin-left:
--1ex;">T</sub>]</sup> &frasl; <sub><span style="text-decoration:
-overline;">T</span></sub> </em></p>}}{\deqn{CV_{T} =
-\frac{\sqrt{s_{T}^{2}}}{\overline{T}}}}
+\mjsdeqn{CV_{T} = \frac{\sqrt{s_{T}^{2}}}{\overline{T}}}
 
 This indicates the uniformity of germination and permits comparisons
 irrespective of the magnitude of mean germination time
-(\ifelse{html}{\out{<em><span
-style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}).
+(\mjseqn{\overline{T}}).
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

@@ -27,61 +27,40 @@ For \code{GermUncertainty}, the value of uncertainty of germination
 }
 \description{
 Compute the following metrics:\describe{ \item{\code{GermSynchrony}}{
-Synchrony of germination (\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index)
+Synchrony of germination (\mjseqn{Z} index)
 \insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics}. }
-\item{\code{GermUncertainty}}{Synchronization index
-(\ifelse{html}{\out{<em><span style="text-decoration:
-overline">E</span></em>}}{\eqn{\overline{E}}}) or Uncertainty of the
-germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or Informational
-entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}})
+\item{\code{GermUncertainty}}{Synchronization index (\mjseqn{\overline{E}})
+or Uncertainty of the germination process (\mjseqn{U}) or Informational
+entropy (\mjseqn{H})
 \insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}.}
-}
+} \loadmathjax
 }
 \details{
 \code{GermSynchrony} computes the value of synchrony of germination
-(\ifelse{html}{\out{<i>Z</i>}}{\eqn{Z}} index) as follows
+(\mjseqn{Z} index) as follows
 \insertCite{primack_longevity_1985,ranal_how_2006}{germinationmetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em>Z =
-<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>C<sub>N<sub>i</sub>,2</sub></sup>
-&frasl;<sub>C<sub>&sum;N<sub>i</sub>,2</sub></sub></em></p>}}{\deqn{Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma
-N_{i},2}}}}
+\mjsdeqn{Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma N_{i},2}}}
 
-Where,
-\ifelse{html}{\out{<i>C<sub>N<sub>i</sub>,2</sub></i>}}{\eqn{C_{N_{i},2}}} is
-the partial combination of the two germinated seeds from among
-\ifelse{html}{\out{N<sub>i</sub>}}{\eqn{N_{i}}}, the number of seeds
-germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (estimated as
-\ifelse{html}{\out{<em>C<sub>N<sub>i</sub>,2</sub> =
-<sup>[N<sub>i</sub>(N<sub>i</sub>-1)]</sup> &frasl;
-<sub>2</sub></em>}}{\eqn{C_{N_{i},2}=\frac{N_{i}(N_{i}-1)}{2}}}), and
-\ifelse{html}{\out{<em>C<sub>&sum;N<sub>i</sub>,2</sub></em>}}{\eqn{C_{\Sigma
-N_{i},2}}} is the partial combination of the two germinated seeds from among
+Where, \mjseqn{C_{N_{i},2}} is the partial combination of the two germinated
+seeds from among \mjseqn{N_{i}}, the number of seeds germinated on the
+\mjseqn{i}th time interval (estimated as
+\mjseqn{C_{N_{i},2}=\frac{N_{i}(N_{i}-1)}{2}}), and \mjseqn{C_{\Sigma
+N_{i},2}} is the partial combination of the two germinated seeds from among
 the total number of seeds germinated at the final count, assuming that all
 seeds that germinated did so simultaneously.
 
 \code{GermUncertainty} computes the value of synchronization index
-(\ifelse{html}{\out{<em><span style="text-decoration:
-overline">E</span></em>}}{\eqn{\overline{E}}}) or uncertainty of the
-germination process (\ifelse{html}{\out{<i>U</i>}}{\eqn{U}}) or informational
-entropy (\ifelse{html}{\out{<i>H</i>}}{\eqn{H}}) as follows
+(\mjseqn{\overline{E}}) or uncertainty of the germination process
+(\mjseqn{U}) or informational entropy (\mjseqn{H}) as follows
 \insertCite{shannon_mathematical_1948,labouriau_germination_1976,labouriau_uma_1983}{germinationmetrics}.
 
-\ifelse{html}{\out{<p style="text-align: center;"><em><span
-style="text-decoration: overline;">E</span> = &minus;&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left: -1ex;">i=1</sub> f<sub>i</sub></em>log
-<sub>2</sub><em>f<sub>i</sub></em></p>}}{\deqn{\overline{E} =
--\sum_{i=1}^{k}f_{i}\log_{2}f_{i}}}
+\mjsdeqn{\overline{E} = -\sum_{i=1}^{k}f_{i}\log_{2}f_{i}}
 
-Where, \ifelse{html}{\out{<i>f<sub>i</sub></i>}}{\eqn{f_{i}}} is the relative
-frequency of germination (estimated as \ifelse{html}{\out{<em>f<sub>i</sub> =
-<sup>N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-style="line-height: 1.8; margin-left:
--1ex;">i=1</sub>N<sub>i</sub></sub></em>}}{\eqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}}),
-\ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-germinated on the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval, and
-\ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+Where, \mjseqn{f_{i}} is the relative frequency of germination (estimated as
+\mjseqn{f_{i}=\frac{N_{i}}{\sum_{i=1}^{k}N_{i}}}), \mjseqn{N_{i}} is the
+number of seeds germinated on the \mjseqn{i}th time interval, and \mjseqn{k}
+is the total number of time intervals.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

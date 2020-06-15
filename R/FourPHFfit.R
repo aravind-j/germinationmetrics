@@ -19,30 +19,24 @@
 #'
 #' Fit a four-parameter hill function
 #' \insertCite{el-kassaby_seed_2008}{germinationmetrics} to cumulative
-#' germination count data and compute the associated parameters.
+#' germination count data and compute the associated parameters. \loadmathjax
 #'
 #' The cumulative germination count data of a seed lot can be modelled to fit a
 #' four-parameter hill function defined as follows
 #' \insertCite{el-kassaby_seed_2008}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>y = y<sub>0</sub> +
-#' [<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
-#' x<sup>b</sup>)</sub>]</em></p>}}{\deqn{y = y_{0}+\frac{ax^{b}}{c^{b}+x^{b}}}}
+#' \mjsdeqn{y = y_{0}+\frac{ax^{b}}{c^{b}+x^{b}}}
 #'
-#' Where, \ifelse{html}{\out{<i>y</i>}}{\eqn{y}} is the cumulative germination
-#' percentage at time \ifelse{html}{\out{<i>x</i>}}{\eqn{x}},
-#' \ifelse{html}{\out{<i>y<sub>0</sub></i>}}{\eqn{y_{0}}} is the intercept on
-#' the y axis, \ifelse{html}{\out{<i>a</i>}}{\eqn{a}} is the asymptote, or
-#' maximum cumulative germination percentage, which is equivalent to germination
-#' capacity, \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} is a mathematical parameter
-#' controlling the shape and steepness of the germination curve (the larger the
-#' \ifelse{html}{\out{<i>b</i>}}{\eqn{b}} parameter, the steeper the rise toward
-#' the asymptote \ifelse{html}{\out{<i>a</i>}}{\eqn{a}}, and the shorter the
-#' time between germination onset and maximum germination), and
-#' \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is the "half-maximal activation level"
-#' which represents the time required for 50\% of viable seeds to germinate
-#' (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is equivalent to the germination
-#' speed).
+#' Where, \mjseqn{y} is the cumulative germination percentage at time
+#' \mjseqn{x}, \mjseqn{y_{0}} is the intercept on the y axis, \mjseqn{a} is the
+#' asymptote, or maximum cumulative germination percentage, which is equivalent
+#' to germination capacity, \mjseqn{b} is a mathematical parameter controlling
+#' the shape and steepness of the germination curve (the larger the \mjseqn{b}
+#' parameter, the steeper the rise toward the asymptote \mjseqn{a}, and the
+#' shorter the time between germination onset and maximum germination), and
+#' \mjseqn{c} is the "half-maximal activation level" which represents the time
+#' required for 50\% of viable seeds to germinate (\mjseqn{c} is equivalent to
+#' the germination speed).
 #'
 #' Once this function is fitted to the curve, \code{FourPHFfit} computes the
 #' time to 50\% germination of total seeds (\code{t50.total}) or viable seeds
@@ -50,63 +44,42 @@
 #' (in terms of both total and viable seeds) as specified in argument \code{xp}
 #' can be computed.
 #'
-#' The time at germination onset (\ifelse{html}{\out{<i>lag</i>}}{\eqn{lag}})
-#' can be computed as follows.
+#' The time at germination onset (\mjseqn{lag}) can be computed as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>lag = b
-#' &radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
-#' y<sub>0</sub>)</sub>]<br /></em></p>}}{\deqn{lag =
-#' b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}}}
+#' \mjsdeqn{lag = b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}}
 #'
-#' The value
-#' \ifelse{html}{\out{<i>D<sub>lag&minus;50</sub></i>}}{\eqn{D_{lag-50}}} is
-#' defined as the duration between the time at germination onset (lag) and that
-#' at 50\% germination (\ifelse{html}{\out{<i>c</i>}}{\eqn{c}}).
+#' The value \mjseqn{D_{lag-50}} is defined as the duration between the time at
+#' germination onset (lag) and that at 50\% germination (\mjseqn{c}).
 #'
 #' The time interval between the percentages of viable seeds specified in the
 #' arguments \code{umin} and \code{umin} to germinate is computed as uniformity
-#' (\ifelse{html}{\out{<em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub></em>}}{\eqn{U_{t_{max}-t_{min}}}}).
+#' (\mjseqn{U_{t_{max}-t_{min}}}).
 #'
-#' \ifelse{html}{\out{<p style="text-align:
-#' center;"><em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub> =
-#' t<sub>max</sub> &minus; t<sub>min</sub></em></p>}}{\deqn{U_{t_{max}-t_{min}}
-#' = t_{max} - t_{min}}}
+#' \mjsdeqn{U_{t_{max}-t_{min}} = t_{max} - t_{min}}
 #'
 #' The partial derivative of the four-parameter hill function gives the
-#' instantaneous rate of germination (\ifelse{html}{\out{<i>s</i>}}{\eqn{s}}) as
-#' follows.
+#' instantaneous rate of germination (\mjseqn{s}) as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>s =
-#' <sup>&part;y</sup>&frasl;<sub>&part;x</sub> =
-#' <sup>abc<sup>b</sup>x<sup>b-1</sup></sup>&frasl;<sub>&radic;[(c<sup>b</sup> +
-#' x<sup>b</sup>)<sup>2</sup>]</sub></em></p>}}{\deqn{s = \frac{\partial
-#' y}{\partial x} = \frac{abc^{b}x^{b-1}}{(c^{b}+x^{b})^{2}}}}
+#' \mjsdeqn{s = \frac{\partial y}{\partial x} =
+#' \frac{abc^{b}x^{b-1}}{(c^{b}+x^{b})^{2}}}
 #'
 #' From this function for instantaneous rate of germination, the time at maximum
-#' germination rate (\ifelse{html}{\out{<i>TMGR</i>}}{\eqn{TMGR}}) can be
-#' estimated as follows.
+#' germination rate (\mjseqn{TMGR}) can be estimated as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>TMGR = b
-#' &radic;[<sup>c<sup>b</sup>(b &minus; 1)</sup> &frasl;
-#' <sub>(b+1)</sub>]</em></p>}}{\deqn{TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}}}
+#' \mjsdeqn{TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}}
 #'
 #' TMGR represents the point in time when the instantaneous rate of germination
 #' starts to decline.
 #'
-#' The area under the curve (\ifelse{html}{\out{<i>AUC</i>}}{\eqn{AUC}}) is
-#' obtained by integration of the fitted curve between time 0 and time specified
-#' in the argument `tmax`.
+#' The area under the curve (\mjseqn{AUC}) is obtained by integration of the
+#' fitted curve between time 0 and time specified in the argument `tmax`.
 #'
 #' Integration of the fitted curve gives the value of mean germination time
-#' (\ifelse{html}{\out{<i>MGT</i>}}{\eqn{MGT}}) and the skewness of the
-#' germination curve is computed as the ratio of
-#' \ifelse{html}{\out{<i>MGT</i>}}{\eqn{MGT}} and the time for 50\% of viable
-#' seeds to germinate
-#' (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}}).
+#' (\mjseqn{MGT}) and the skewness of the germination curve is computed as the
+#' ratio of \mjseqn{MGT} and the time for 50\% of viable seeds to germinate
+#' (\mjseqn{t_{50}}).
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>Skewness =
-#' <sup>MGT</sup> &frasl; <sub>t<sub>50</sub></sub></em></p>}}{\deqn{Skewness =
-#' \frac{MGT}{t_{50}}}}
+#' \mjsdeqn{Skewness = \frac{MGT}{t_{50}}}
 #'
 #' If final germination percentage is less than 10\%, a warning is given, as the
 #' results may not be informative.
@@ -127,8 +100,8 @@
 #'   3.
 #'
 #' @return A list with the following components: \item{data}{A data frame with
-#'   the data used for computing the model} \item{Parameters}{A data.frame
-#'   of parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
+#'   the data used for computing the model} \item{Parameters}{A data.frame of
+#'   parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
 #'   data frame with estimates of model fitness such as log likelyhoods, Akaike
 #'   Information Criterion, Bayesian Information Criterion, deviance and
 #'   residual degrees of freedom.}  \item{a}{The asymptote or the maximum

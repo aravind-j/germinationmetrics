@@ -60,7 +60,6 @@ Santana and Ranal 2004)
 Corrected germination rate index
 (Evetts and Burnside 1972)
 . 
-
 " />
 
 
@@ -183,8 +182,7 @@ Santana and Ranal 2004)
 Corrected germination rate index
 (Evetts and Burnside 1972)
 .</p></dd> 
-</dl>
-
+</dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>GermSpeed</span>(
@@ -250,9 +248,9 @@ instead of counts for computation. Default is <code>FALSE</code>.</p></td>
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
     <p>For <code>GermSpeed</code>, the value of germination speed as %
-  time<sup>-1</sup>.</p>
+  \(\mathrm{time^{-1}}\).</p>
 <p>For <code>GermSpeedAccumulated</code>, the value of accumulated germination speed
-  as % time<sup>-1</sup>.</p>
+  as % \(\mathrm{time^{-1}}\).</p>
 <p>For <code>GermSpeedCorrected</code>, the corrected speed of germination.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
@@ -260,86 +258,51 @@ instead of counts for computation. Default is <code>FALSE</code>.</p></td>
 formula
 (Throneberry and Smith 1955; Maguire 1962; Allan et al. 1962; Kendrick and Frankland 1969; Bouton et al. 1976; Erbach 1982; AOSA 1983; Khandakar and Bradbeer 1983; Hsu and Nelson 1986; Bradbeer 1988; Wardle et al. 1991)
 .</p>
-<p><p style="text-align: center;"><i>S =
-<sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub>+<sup>N<sub>2</sub></sup>&frasl;<sub>T<sub>2</sub></sub>+<sup>N<sub>3</sub></sup>&frasl;<sub>T<sub>3</sub></sub>+
-&hellip;+<sup>N<sub>k</sub></sup>&frasl;<sub>T<sub>k</sub></sub></i></p></p>
-<p>Where, <i>N<sub>1</sub></i>,
-<i>N<sub>2</sub></i>,
-<i>N<sub>3</sub></i>,
-&hellip;,
-N<i><sub>k</sub></i> are the number of
-germinated seeds observed at time (days or hours)
-<i>T<sub>1</sub></i>,
-<i>T<sub>2</sub></i>,
-<i>T<sub>3</sub></i>,
-&hellip;,
-<i>T<sub>k</sub></i> after sowing (Not
-accumulated/cumulative number, but the number of seeds that germinated at the
-specific time) and <i>k</i> is the total number
-of time intervals.</p>
-<p>It is the same as Emergence Rate Index
-(<i>ERI</i>) described by
+<p>\[S = \frac{N_{1}}{T_{1}} + \frac{N_{2}}{T_{2}} + \frac{N_{3}}{T_{3}}
++ \cdots + \frac{N_{k}}{T_{k}}\]</p>
+<p>Where, \(N_{1}\), \(N_{2}\), \(N_{3}\), \(\cdots\),
+\(N_{k}\) are the number of germinated seeds observed at time (days or
+hours) \(T_{1}\), \(T_{2}\), \(T_{3}\), \(\cdots\),
+\(T_{k}\) after sowing (Not accumulated/cumulative number, but the
+number of seeds that germinated at the specific time) and \(k\) is the
+total number of time intervals.</p>
+<p>It is the same as Emergence Rate Index (\(ERI\)) described by
 Allan et al. (1962)
 ,
 Erbach (1982)
  and
 Hsu and Nelson (1986)
  as well
-as Germination Index (<i>GI</i>) according to
+as Germination Index (\(GI\)) according to
 AOSA (1983)
 .</p>
 <p>The formula can also be described as follows.</p>
-<p><p style="text-align: center;"><i>S =
-&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-[ <sup>N<sub>i</sub></sup> &frasl; <sub>T<sub>i</sub></sub> ]
-</i></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>N<sub>i</sub></i> is the number of seeds
-germinated in the <i>i</i>th time interval (not
-the accumulated number, but the number corresponding to the
-<i>i</i>th interval), and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[S = \sum_{i=1}^{k}\frac{N_{i}}{T_{i}}\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(N_{i}\) is the number of seeds germinated in
+the \(i\)th time interval (not the accumulated number, but the number
+corresponding to the \(i\)th interval), and \(k\) is the total
+number of time intervals.</p>
 <p><code>GermSpeedAccumulated</code> computes the speed of accumulated germination as
 follows
 (Bradbeer 1988; Wardle et al. 1991; Haugland and Brandsaeter 1996; de
 Santana and Ranal 2004)
 .</p>
-<p><p style="text-align: center;"><i>S =
-<sup>N<sub>1</sub></sup>&frasl;<sub>T<sub>1</sub></sub> +
-<sup>[N<sub>1</sub>+N<sub>2</sub>]</sup>&frasl;<sub>T<sub>2</sub></sub> +
-<sup>[N<sub>1</sub>+N<sub>2</sub>+N<sub>3</sub>]</sup>&frasl;<sub>T<sub>3</sub></sub>
-+ &hellip;+ <sup>[N<sub>1</sub>+N<sub>2</sub>+
-&hellip;+N<sub>k</sub>]</sup>&frasl;<sub>T<sub>k</sub></sub></i></p></p>
-<p>Where, <i>N<sub>1</sub></i>,
-<i>N<sub>2</sub></i>,
-<i>N<sub>3</sub></i>,
-&hellip;,
-<i>N<sub>k</sub></i> are the number of
-germinated seeds observed at time (days or hours)
-<i>T<sub>1</sub></i>,
-<i>T<sub>2</sub></i>,
-<i>T<sub>3</sub></i>,
-&hellip;,
-<i>T<sub>k</sub></i> after sowing (Not
-accumulated/cumulative number, but the number of seeds that germinated at the
-specific time), and <i>k</i> is the total number
-of time intervals.</p>
+<p>\[S_{accumulated} = \frac{N_{1}}{T_{1}} + \frac{N_{1} + N_{2}}{T_{2}}
++ \frac{N_{1} + N_{2} + N_{3}}{T_{3}} + \cdots +\frac{N_{1} + N_{2} + \cdots
++ N_{k}}{T_{k}}\]</p>
+<p>Where, \(N_{1}\), \(N_{2}\), \(N_{3}\), \(\cdots\),
+\(N_{k}\) are the number of germinated seeds observed at time (days or
+hours) \(T_{1}\), \(T_{2}\), \(T_{3}\), \(\cdots\),
+\(T_{k}\) after sowing (Not accumulated/cumulative number, but the
+number of seeds that germinated at the specific time), and \(k\) is the
+total number of time intervals.</p>
 <p>The formula can also be described as follows.</p>
-<p><p style="text-align: center;"><i>S<sub>accumulated</sub>
-= &sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub> [ <sup>(&sum;<sup>i</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">j=1</sub>N<sub>j</sub>)</sup> &frasl;
-<sub>T<sub>i</sub></sub> ] </i></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>&sum;<sup>i</sup><sub style="line-height: 1.8;
-margin-left: -1ex;">j=1</sub>N<sub>j</sub></i>
-is the cumuative/accumulated number of seeds germinated in the
-<i>i</i>th time interval, and
-<i>k</i> is the total number of time intervals.</p>
+<p>\[S_{accumulated} = \sum_{i=1}^{k}\frac{\sum_{j=1}^{i}N_{j}}{T_{i}}\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(\sum_{j=1}^{i}N_{j}\) is the
+cumuative/accumulated number of seeds germinated in the \(i\)th time
+interval, and \(k\) is the total number of time intervals.</p>
 <p>Speed of germination expresses the rate of germination in terms of the total
 number of seeds that germinate in a time interval. Higher values indicate
 greater and faster germination. This is useful for comparisons only when
@@ -349,10 +312,8 @@ percentages instead of counts for computing speed.</p>
 <p><code>GermSpeedCorrected</code> computes the corrected speed of germination as
 follows (Evetts and Burnside 1972)
 .</p>
-<p><p style="text-align: center;"><i>S<sub>corrected</sub> =
-<sup>S</sup>&frasl;<sub>FGP</sub></i><p></p>
-<p>Where, <i>FGP</i> is the final germination
-percentage or germinability.</p>
+<p>\[S_{corrected} = \frac{S}{FGP}\]</p>
+<p>Where, \(FGP\) is the final germination percentage or germinability.</p>
 <p>With <code>percent = TRUE</code>, germination percentage is used instead of counts
 for computation in <code>GermSpeed</code> and <code>GermSpeedAccumulated</code>.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>

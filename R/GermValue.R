@@ -17,30 +17,23 @@
 
 #' Peak value and germination value
 #'
-#' Compute the Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) or
-#' Emergence Energy (\ifelse{html}{\out{<i>EE</i>}}{\eqn{EE}})
+#' Compute the Peak value (\mjseqn{PV}) or Emergence Energy (\mjseqn{EE})
 #' \insertCite{czabator_germination_1962,bonner_ideal_1967}{germinationmetrics}
-#' and Germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}})
+#' and Germination value (\mjseqn{GV})
 #' \insertCite{czabator_germination_1962,djavanshir_germination_1976,brown_representing_1988}{germinationmetrics}.
+#' \loadmathjax
 #'
-#' Peak value (\ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}}) is the maximum quotient
-#' obtained by dividing successive cumulative germination values by the relevant
-#' incubation time \insertCite{czabator_germination_1962}{germinationmetrics}.
+#' Peak value (\mjseqn{PV}) is the maximum quotient obtained by dividing
+#' successive cumulative germination values by the relevant incubation time
+#' \insertCite{czabator_germination_1962}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>PV = </em>max
-#' <em><big>( </big><sup>G<sub>1</sub></sup> &frasl; <sub>T<sub>1</sub></sub> ,
-#' <sup>G<sub>2</sub></sup> &frasl; <sub>T<sub>2</sub></sub>, &hellip;
-#' <sup>G<sub>k</sub></sup> &frasl; <sub>T<sub>k</sub></sub><big>
-#' )</big></em></p>}}{\deqn{PV = \max\left (
-#' \frac{G_{1}}{T_{1}},\frac{G_{2}}{T_{2}},\cdots \frac{G_{k}}{T_{k}} \right )}}
+#' \mjsdeqn{PV = \max\left ( \frac{G_{1}}{T_{1}},\frac{G_{2}}{T_{2}},\cdots
+#' \frac{G_{k}}{T_{k}} \right )}
 #'
-#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
-#' from the start of the experiment to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
-#' \ifelse{html}{\out{<i>G<sub>i</sub></i>}}{\eqn{G_{i}}} is the cumulative
-#' germination percentage in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-#' interval, and \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of
-#' time intervals.
+#' Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+#' \mjseqn{i}th interval, \mjseqn{G_{i}} is the cumulative germination
+#' percentage in the \mjseqn{i}th time interval, and \mjseqn{k} is the total
+#' number of time intervals.
 #'
 #' It represents the mean daily germination of the most vigorous component of
 #' the seed lot, and is a mathematical expression of the break, or shoulder, of
@@ -50,50 +43,37 @@
 #' at which the rate of germination starts to decrease. It is also described as
 #' Emergence energy \insertCite{bonner_ideal_1967}{germinationmetrics}.
 #'
-#' For daily germination counts, germination value
-#' (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) is computed as follows
-#' \insertCite{czabator_germination_1962}{germinationmetrics}.
+#' For daily germination counts, germination value (\mjseqn{GV}) is computed as
+#' follows \insertCite{czabator_germination_1962}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>GV = PV &times;
-#' MDG</em></p>}}{\deqn{GV = PV \times MDG}}
+#' \mjsdeqn{GV = PV \times MDG}
 #'
-#' Where, \ifelse{html}{\out{<i>PV</i>}}{\eqn{PV}} is the peak value, and
-#' \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} is the mean daily germination
-#' percentage from the onset of germination.
+#' Where, \mjseqn{PV} is the peak value, and \mjseqn{MDG} is the mean daily
+#' germination percentage from the onset of germination.
 #'
-#' Germination value (\ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}) can also be
-#' computed for other time intervals of successive germination counts, by
-#' replacing \ifelse{html}{\out{<i>MDG</i>}}{\eqn{MDG}} with the mean
-#' germination percentage per unit time (\ifelse{html}{\out{<em><span
-#' style="text-decoration:overline">GP</span></em>}}{\eqn{\overline{GP}}}).
+#' Germination value (\mjseqn{GV}) can also be computed for other time intervals
+#' of successive germination counts, by replacing \mjseqn{MDG} with the mean
+#' germination percentage per unit time (\mjseqn{\overline{GP}}).
 #'
 #' A new estimation of germination value was given by
 #' \insertCite{djavanshir_germination_1976;textual}{germinationmetrics} as
 #' follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>GV =
-#' [<sup>&sum;DGS</sup> &frasl; <sub>N</sub>] &times; GP &times;
-#' c</i></p>}}{\deqn{GV = \frac{\sum DGS}{N} \times GP \times c}}
+#' \mjsdeqn{GV = \frac{\sum DGS}{N} \times GP \times c}
 #'
-#' Where, \ifelse{html}{\out{<i>DGS</i>}}{\eqn{DGS}} is the daily germination
-#' speed computed by dividing cumulative germination percentage by the number of
-#' days since the onset of germination, \ifelse{html}{\out{<i>N</i>}}{\eqn{N}}
-#' is the frequency or number of DGS calculated during the test, \eqn{GP} is the
-#' germination percentage expressed over 100, and
-#' \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is a constant. The value of
-#' \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} is decided on the basis of average
-#' daily speed of germination (\ifelse{html}{\out{<em><sup>&sum;DGS</sup>
-#' &frasl; <sub>N</sub></em>}}{\eqn{\frac{\sum DGS}{N}}}). If it is less than
-#' 10, then \ifelse{html}{\out{<i>c</i>}}{\eqn{c}} value of 10 can be used and
-#' if it is more than 10, then value of 7 or 8 can be used for
-#' \ifelse{html}{\out{<i>c</i>}}{\eqn{c}}.
+#' Where, \mjseqn{DGS} is the daily germination speed computed by dividing
+#' cumulative germination percentage by the number of days since the onset of
+#' germination, \mjseqn{N} is the frequency or number of DGS calculated during
+#' the test, \mjseqn{GP} is the germination percentage expressed over 100, and
+#' \mjseqn{c} is a constant. The value of \mjseqn{c} is decided on the basis of
+#' average daily speed of germination (\mjseqn{\frac{\sum DGS}{N}}). If it is
+#' less than 10, then \mjseqn{c} value of 10 can be used and if it is more than
+#' 10, then value of 7 or 8 can be used for \mjseqn{c}.
 #'
-#' For both methods of computing \ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}, only
-#' the duration from the onset of germination is considered by default.
-#' Alternatively, modified \ifelse{html}{\out{<i>GV</i>}}{\eqn{GV}}
-#' (\ifelse{html}{\out{<i>GV</sub>mod<sub></i>}}{\eqn{GV_{mod}}}), where the
-#' entire duration from the beginning of the test is considered can be obtained
-#' by using the argument \code{from.onset = FALSE}
+#' For both methods of computing \mjseqn{GV}, only the duration from the onset
+#' of germination is considered by default. Alternatively, modified \mjseqn{GV}
+#' (\mjseqn{GV_{mod}}), where the entire duration from the beginning of the test
+#' is considered can be obtained by using the argument \code{from.onset = FALSE}
 #' \insertCite{brown_representing_1988}{germinationmetrics}.
 #'
 #' @inheritParams MeanGermTime

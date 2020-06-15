@@ -41,17 +41,16 @@ For \code{FirstGermTime}, the time of first germination value in the
 }
 \description{
 Compute the following metrics: \describe{ \item{\code{FirstGermTime}}{Time of
-first germination or Germination time lag
-(\ifelse{html}{\out{<i>t<sub>0</sub></i>}}{\eqn{t_{0}}})
+first germination or Germination time lag (\mjseqn{t_{0}})
 \insertCite{edwards_temperature_1932,czabator_germination_1962,goloff_germination_1975,labouriau_germinacao_1983,ranal_effects_1999,quintanilla_effect_2000}{germinationmetrics}.}
-\item{\code{LastGermTime}}{Time of last germination
-(\ifelse{html}{\out{<i>t<sub>g</sub></i>}}{\eqn{t_{g}}})
+\item{\code{LastGermTime}}{Time of last germination (\mjseqn{t_{g}})
 \insertCite{edwards_temperature_1932,labouriau_germinacao_1983,ranal_how_2006}{germinationmetrics}.}
 \item{\code{TimeSpreadGerm}}{Time spread of germination
 \insertCite{al-mudaris_notes_1998,kader_comparison_2005}{germinationmetrics}
-or Germination distribution \insertCite{schrader_seed_2000}{germinationmetrics}.}
+or Germination distribution
+\insertCite{schrader_seed_2000}{germinationmetrics}.}
 \item{\code{PeakGermTime}}{Peak time of germination or Modal time of
-germination \insertCite{ranal_how_2006}{germinationmetrics}.} }
+germination \insertCite{ranal_how_2006}{germinationmetrics}.} } \loadmathjax
 }
 \details{
 Time of first germination indicates time of germination of the faster seeds
@@ -61,9 +60,8 @@ Lower value of time of first germination indicates faster initiation of
 germination and lower value of time of last germination indicates faster
 termination of germination.
 
-Time spread of germination (\ifelse{html}{\out{<i>t<sub>g</sub> &minus;
-t<sub>0</sub></i>}}{\eqn{t_{g}-t_{0}}}) indicates difference between faster
-and slower germinating members of a sample.
+Time spread of germination (\mjseqn{t_{g}-t_{0}}) indicates difference
+between faster and slower germinating members of a sample.
 
 Peak time of germination is the time in which highest frequency of germinated
 seeds are observed. Multiple peak times of germination are possible and if

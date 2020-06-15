@@ -18,153 +18,99 @@
 #' Germination rate
 #'
 #' Compute the following metrics: \describe{ \item{\code{MeanGermRate}}{Mean
-#' germination rate (\ifelse{html}{\out{<em><span
-#' style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
+#' germination rate (\mjseqn{\overline{V}})
 #' \insertCite{labouriau_germination_1976,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.}
-#' \item{\code{VarGermRate}}{Variance of germination rate
-#' (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-#' margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}})
+#' \item{\code{VarGermRate}}{Variance of germination rate (\mjseqn{s_{V}^{2}})
 #' \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}. }
 #' \item{\code{SEGermRate}}{Standard error of germination rate
-#' (\ifelse{html}{\out{<em>s<sub><span
-#' style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
+#' (\mjseqn{s_{\overline{V}}})
 #' \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}. }
 #' \item{\code{CVG}}{Coefficient of velocity/rate of germination or Kotowski's
-#' coefficient of velocity
-#' (\ifelse{html}{\out{<i>CVG</i>}}{\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}})
+#' coefficient of velocity (\mjseqn{CVG})
 #' \insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 #' } \item{\code{GermRateRecip}}{Germination rate as reciprocal of median time
-#' (\ifelse{html}{\out{<i>v<sub>50</sub></i>}}{\eqn{v_{50}}})
+#' (\mjseqn{v_{50}})
 #' \insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.}
-#' }
+#' } \loadmathjax
 #'
 #' \code{MeanGermRate} computes the mean germination rate
-#' (\ifelse{html}{\out{<em><span
-#' style="text-decoration:overline">V</span></em>}}{\eqn{\overline{V}}})
-#' according to the following formula
+#' (\mjseqn{\overline{V}}) according to the following formula
 #' \insertCite{labouriau_germination_1976,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
-#' style="text-decoration: overline;">V</span> = <sup>&sum;<sup>k</sup><sub
-#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sup>
-#' &frasl; <sub>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">i=1</sub>
-#' N<sub>i</sub>T<sub>i</sub></sub></em></p>}}{\deqn{\overline{V} =
-#' \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}}}
+#' \mjsdeqn{\overline{V} = \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}}
 #'
-#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
-#' from the start of the experiment to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
-#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
-#' the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+#' Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+#' \mjseqn{i}th interval, \mjseqn{N_{i}} is the number of seeds germinated in
+#' the \mjseqn{i}th time interval (not the accumulated number, but the number
+#' corresponding to the \mjseqn{i}th interval), and \mjseqn{k} is the total
+#' number of time intervals.
 #'
-#' It is the inverse of mean germination time (\ifelse{html}{\out{<em><span
-#' style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}}).
+#' It is the inverse of mean germination time (\mjseqn{\overline{T}}).
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em><span
-#' style="text-decoration: overline;">V</span> = <sup>1</sup> &frasl; <sub><span
-#' style="text-decoration:
-#' overline;">T</span></sub></em></p>}}{\deqn{\overline{V} =
-#' \frac{1}{\overline{T}}}}
+#' \mjsdeqn{\overline{V} = \frac{1}{\overline{T}}}
 #'
 #' \code{VarGermRate} computes the variance of germination rate
-#' (\ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-#' margin-left: -1ex;">V</sub></em>}}{\eqn{s_{V}^{2}}}) according to the
-#' following formula
+#' (\mjseqn{s_{V}^{2}}) according to the following formula
 #' \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>s<sup>2</sup><sub
-#' style="line-height: 1.8; margin-left: -1ex;">V</sub> = <span
-#' style="text-decoration: overline;">V</span><sup>4</sup> &times;
-#' s<sup>2</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">T</sub></em></p>}}{\deqn{s_{V}^{2} = \overline{V}^{4} \times
-#' s_{T}^{2}}}
+#' \mjsdeqn{s_{V}^{2} = \overline{V}^{4} \times s_{T}^{2}}
 #'
-#' Where, \ifelse{html}{\out{<em>s<sup>2</sup><sub style="line-height: 1.8;
-#' margin-left: -1ex;">T</sub></em>}}{\eqn{s_{T}^{2}}} is the variance of
-#' germination time.
+#' Where, \mjseqn{s_{T}^{2}} is the variance of germination time.
 #'
 #' \code{SEGermRate} computes the standard error of germination time
-#' (\ifelse{html}{\out{<em>s<sub><span
-#' style="text-decoration:overline">V</span></sub></em>}}{\eqn{s_{\overline{V}}}})
-#' according to the following formula
+#' (\mjseqn{s_{\overline{V}}}) according to the following formula
 #' \insertCite{labouriau_uma_1983,ranal_how_2006}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>s<sub><span
-#' style="text-decoration: overline;">V</span></sub> = &radic;[
-#' <sup>s<sup>2</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">V</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub style="line-height:
-#' 1.8; margin-left: -1ex;">i=1</sub> N<sub>i</sub></sub>
-#' ]</em></p>}}{\deqn{s_{\overline{V}} =
-#' \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}}}
+#' \mjsdeqn{s_{\overline{V}} = \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}}
 #'
-#' Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
-#' of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-#' interval (not the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+#' Where, \mjseqn{N_{i}} is the number of seeds germinated in the \mjseqn{i}th
+#' time interval (not the accumulated number, but the number corresponding to
+#' the \mjseqn{i}th interval), and \mjseqn{k} is the total number of time
+#' intervals.
 #'
 #' \code{CVG} computes the coefficient of velocity/rate of germination or
-#' Kotowski's coefficient of velocity
-#' (\ifelse{html}{\out{<i>CVG</i>}}{\eqn{CVG}}) according to the following
+#' Kotowski's coefficient of velocity (\mjseqn{CVG}) according to the following
 #' formula
 #' \insertCite{kotowski_temperature_1926,nichols_two_1968,labouriau_uma_1983,scott_review_1984,bewley_seeds_1994}{germinationmetrics}.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>CVG =
-#' [<sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">i=1</sub> N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub>
-#' N<sub>i</sub>T<sub>i</sub></sub>] &times; 100</em></p>}}{\deqn{CVG =
-#' \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}} \times 100}}
+#' \mjsdeqn{CVG = \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}} \times
+#' 100}
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>CVG = <span
-#' style="text-decoration: overline;">V</span> &times; 100</em></p>}}{\deqn{CVG
-#' = \overline{V} \times 100}}
+#' \mjsdeqn{CVG = \overline{V} \times 100}
 #'
-#' Where, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time
-#' from the start of the experiment to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval,
-#' \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of seeds
-#' germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time interval (not
-#' the accumulated number, but the number corresponding to the
-#' \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+#' Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+#' \mjseqn{i}th interval, \mjseqn{N_{i}} is the number of seeds germinated in
+#' the \mjseqn{i}th time interval (not the accumulated number, but the number
+#' corresponding to the \mjseqn{i}th interval), and \mjseqn{k} is the total
+#' number of time intervals.
 #'
-#' \code{GermRateRecip} computes the germination rate
-#' (\ifelse{html}{\out{<em>v<sub>50</sub></em>}}{\eqn{v_{50}}}) as the
-#' reciprocal of the median germination time
-#' (\ifelse{html}{\out{<em>t<sub>50</sub></em>}}{\eqn{t_{50}}})
+#' \code{GermRateRecip} computes the germination rate \mjseqn{v_{50}}) as the
+#' reciprocal of the median germination time (\mjseqn{t_{50}})
 #' \insertCite{went_experimental_1957,labouriau_uma_1983,ranal_how_2006}{germinationmetrics}
 #' computed according to the methods of
 #' \insertCite{coolbear_effect_1984;textual}{germinationmetrics} or
 #' \insertCite{farooq_thermal_2005;textual}{germinationmetrics} as follows.
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><em>v<sub>50</sub> =
-#' <sup>1</sup> &frasl;
-#' <sub><em>t<sub>50</sub></em></sub></em></p>}}{\deqn{v_{50} =
-#' \frac{1}{t_{50}}}}
+#' \mjsdeqn{v_{50} = \frac{1}{t_{50}}}
 #'
 #' @inheritParams MeanGermTime
 #' @param method The method for computing median germination time. Either
 #'   \code{"coolbear"} or \code{"farooq"}.
 #'
 #' @return For \code{MeanGermRate}, the mean germination rate value as
-#'   \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+#'   \mjseqn{\mathrm{time^{-1}}}.
 #'
 #'   For \code{VarGermTime}, the variance of germination rate value as
-#'   \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
+#'   \mjseqn{\mathrm{time^{-2}}}.
 #'
 #'   For \code{SEGermTime}, the standard error of germination rate as
-#'   \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+#'   \mjseqn{\mathrm{time^{-1}}}.
 #'
 #'   For \code{CVG}, the value of Coefficient of of velocity/rate of germination
 #'   or Kotowski's coefficient of velocity.
 #'
 #'   For \code{GermRateRecip}, the value of germination rate as
-#'   \ifelse{html}{\out{time<sup>-1</sup>}}{\eqn{\mathrm{time^{-1}}}}.
+#'   \mjseqn{\mathrm{time^{-1}}}.
 #'
 #' @references
 #'

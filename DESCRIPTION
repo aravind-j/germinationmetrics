@@ -42,6 +42,7 @@ Imports:
     data.table,
     ggplot2,
     ggrepel,
+    mathjaxr,
     minpack.lm,
     plyr,
     Rdpack,
@@ -55,7 +56,9 @@ Suggests:
     XML,
     httr,
     RCurl
-RdMacros: Rdpack
+RdMacros:
+    mathjaxr,
+    Rdpack
 URL: https://github.com/aravind-j/germinationmetrics,
     https://aravind-j.github.io/germinationmetrics/
     https://CRAN.R-project.org/package=germinationmetrics

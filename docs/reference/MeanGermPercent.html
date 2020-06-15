@@ -49,15 +49,13 @@
 
 <meta property="og:title" content="Mean germination percentage and number of seeds per time interval — MeanGermPercent" />
 <meta property="og:description" content="Compute the following metrics:
-MeanGermPercentMean/average germination percentage per unit time
-(GP)
+MeanGermPercentMean/average germination percentage per unit time (\(\overline{GP}\))
 (Czabator 1962)
 .
 MeanGermNumberNumber of seeds germinated per unit time
-(N)
+(\(\overline{N}\))
 (Khamassi et al. 2013)
 .
-
 " />
 
 
@@ -169,18 +167,14 @@ MeanGermNumberNumber of seeds germinated per unit time
 
     <div class="ref-description">
     <p>Compute the following metrics:</p><dl'>
-<dt><code>MeanGermPercent</code></dt><dd><p>Mean/average germination percentage per unit time
-(<em><span
-style="text-decoration:overline">GP</span></em>)
+<dt><code>MeanGermPercent</code></dt><dd><p>Mean/average germination percentage per unit time (\(\overline{GP}\))
 (Czabator 1962)
 .</p></dd>
 <dt><code>MeanGermNumber</code></dt><dd><p>Number of seeds germinated per unit time
-(<em><span style="text-decoration:
-overline">N</span></em>)
+(\(\overline{N}\))
 (Khamassi et al. 2013)
 .</p></dd>
-</dl>
-
+</dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>MeanGermPercent</span>(
@@ -227,32 +221,22 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
   time interval.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Mean germination percentage per unit time (<em><span
-style="text-decoration:overline">GP</span></em>) is
+    <p>Mean germination percentage per unit time (\(\overline{GP}\)) is
 computed as follows
 (Czabator 1962)
 .</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">GP</span> = <sup>GP</sup> &frasl;
-<sub>T<sub>k</sub></sub></em></p></p>
-<p>Where, <i>GP</i> is the final germination
-percentage, <em>T<sub>k</sub></em> is the
-time at the <em>k</em>th time interval, and
-<em>k</em> is the total number of time
-intervals required for final germination.</p>
-<p>Mean number of seeds germinated per unit time (<em><span
-style="text-decoration: overline">N</span></em>) is
+<p>\[\overline{GP} = \frac{GP}{T_{k}}\]</p>
+<p>Where, \(GP\) is the final germination percentage, \(T_{k}\) is the
+time at the \(k\)th time interval, and \(k\) is the total number of
+time intervals required for final germination.</p>
+<p>Mean number of seeds germinated per unit time (\(\overline{N}\)) is
 computed as follows (Khamassi et al. 2013)
 .</p>
-<p><p style="text-align: center;"><em><span
-style="text-decoration: overline;">N</span> = <sup>N<sub>g</sub></sup>
-&frasl; <sub>T<sub>k</sub></sub></em></p></p>
-<p>Where, <em>N<sub>g</sub></em> is the number
-of germinated seeds at the end of the germination test,
-<em>T<sub>k</sub></em> is the time at the
-<em>k</em>th time interval, and
-<em>k</em> is the total number of time
-intervals required for final germination.</p>
+<p>\[\overline{N} = \frac{N_{g}}{T_{k}}\]</p>
+<p>Where, \(N_{g}\) is the number of germinated seeds at the end of the
+germination test, \(T_{k}\) is the time at the \(k\)th time
+interval, and \(k\) is the total number of time intervals required for
+final germination.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
     <p>Czabator FJ (1962).

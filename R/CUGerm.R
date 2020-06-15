@@ -22,34 +22,27 @@
 #'
 #' CUG is computed as follows
 #' \insertCite{heydecker_seed_1972,bewley_seeds_1994}{germinationmetrics}.
+#' \loadmathjax
 #'
-#' \ifelse{html}{\out{<p style="text-align: center;"><i>CUG =
-#' <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-#' -1ex;">i=1</sub> N<sub>i</sub></sup> &frasl; <sub>&sum;<sup>k</sup><sub
-#' style="line-height: 1.8; margin-left: -1ex;">i=1</sub>(<span
-#' style="text-decoration:overline">T</span> &minus;
-#' T<sub>i</sub>)<sup>2</sup>N<sub>i</sub></sub></i></p>}}{\deqn{CUG =
-#' \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}(\overline{T}-T_{i})^{2}N_{i}}}}
+#' \mjsdeqn{CUG =
+#' \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}(\overline{T}-T_{i})^{2}N_{i}}}
 #'
-#' Where, \ifelse{html}{\out{<i><span style="text-decoration:
-#' overline">T</span></i>}}{\eqn{\overline{T}}} is the the mean germination
-#' time, \ifelse{html}{\out{<i>T<sub>i</sub></i>}}{\eqn{T_{i}}} is the time from
-#' the start of the experiment to the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-#' interval, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the
-#' number of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th
-#' time interval (not the accumulated number, but the number corresponding to
-#' the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-#' \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time intervals.
+#' Where, \mjseqn{\overline{T}} is the the mean germination time, \mjseqn{T_{i}}
+#' is the time from the start of the experiment to the \mjseqn{i}th interval,
+#' \mjseqn{N_{i}} is the number of seeds germinated in the \mjseqn{i}th time
+#' interval (not the accumulated number, but the number corresponding to the
+#' \mjseqn{i}th interval), and \mjseqn{k} is the total number of time intervals.
 #'
 #' @inheritParams MeanGermTime
 #'
 #' @return The value of the coefficient of uniformity of germination as
-#'   \ifelse{html}{\out{time<sup>-2</sup>}}{\eqn{\mathrm{time^{-2}}}}.
+#'   \mjseqn{\mathrm{time^{-2}}}.
 #'
 #' @references
 #'
 #' \insertAllCited{}
 #'
+#' @import mathjaxr
 #' @export
 #'
 #' @examples

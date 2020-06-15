@@ -44,88 +44,62 @@ it's modification by
 \insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
 and
 \insertCite{fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}.}
+\loadmathjax
 }
 \section{Details}{
  Several germination indices are referred to as Emergence
-  rate Index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}).
+  rate Index (\mjseqn{ERI}).
 
   \subsection{\insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics}}{
    It is estimated as follows.
 
-  \ifelse{html}{\out{<p style="text-align: center;"><em>ERI =
-  &sum;<sup>k-1</sup><sub style="line-height: 1.8; margin-left:
-  -3ex;">i=i<sub>0</sub></sub> N<sub>i</sub>(k-i)</em></p>}}{\deqn{ERI =
-  \sum_{i=i_{0}}^{k-1}N_{i}(k-i)}}
+  \mjsdeqn{ERI = \sum_{i=i_{0}}^{k-1}N_{i}(k-i)}
 
-  Where, \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number
-  of seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-  interval (not the accumulated number, but the number corresponding to the
-  \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval),
-  \ifelse{html}{\out{<i>i<sub>0</sub></i>}}{\eqn{i_{0}}} is the time interval
-  when emergence/germination started, and
-  \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time
+  Where, \mjseqn{N_{i}} is the number of seeds germinated in the \mjseqn{i}th
+  time interval (not the accumulated number, but the number corresponding to
+  the \mjseqn{i}th interval), \mjseqn{i_{0}} is the time interval when
+  emergence/germination started, and \mjseqn{k} is the total number of time
   intervals.
 
   A modification for the same was suggested by
   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
   \insertCite{ranal_how_2006}{germinationmetrics} and is estimated by
-  dividing Emergence rate index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}})
-  by total number of emerged seedlings (or germinated seeds) as follows.
+  dividing Emergence rate index (\mjseqn{ERI}) by total number of emerged
+  seedlings (or germinated seeds) as follows.
 
-  \ifelse{html}{\out{<p style="text-align: center;"><em>ERI<sub>mod</sub> =
-  <sup>&sum;<sup>k-1</sup><sub style="line-height: 1.8; margin-left:
-  -3ex;">i=i<sub>0</sub></sub> N<sub>i</sub>(k-i)</sup> &frasl;
-  <sub>N<sub>g</sub></sub> = <sup>ERI</sup> &frasl;
-  <sub>N<sub>g</sub></sub></em></p>}}{\deqn{ERI_{mod} =
-  \frac{\sum_{i=i_{0}}^{k-1}N_{i}(k-i)}{N_{g}} = \frac{ERI}{N_{g}}}}
+  \mjsdeqn{ERI_{mod} = \frac{\sum_{i=i_{0}}^{k-1}N_{i}(k-i)}{N_{g}} =
+  \frac{ERI}{N_{g}}}
 
-  Where, \ifelse{html}{\out{<i>N<sub>g</sub></i>}}{\eqn{N_{g}}} is the total
-  number of germinated seeds at the end of the test,
-  \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of
-  seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-  interval (not the accumulated number, but the number corresponding to the
-  \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval),
-  \ifelse{html}{\out{<i>i<sub>0</sub></i>}}{\eqn{i_{0}}} is the time interval
-  when emergence/germination started, and
-  \ifelse{html}{\out{<i>k</i>}}{\eqn{k}} is the total number of time
-  intervals. }
+  Where, \mjseqn{N_{g}} is the total number of germinated seeds at the end of
+  the test, \mjseqn{N_{i}} is the number of seeds germinated in the
+  \mjseqn{i}th time interval (not the accumulated number, but the number
+  corresponding to the \mjseqn{i}th interval), \mjseqn{i_{0}} is the time
+  interval when emergence/germination started, and \mjseqn{k} is the total
+  number of time intervals. }
 
   \subsection{\insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}}{
    It is the estimated as follows.
 
-  \ifelse{html}{\out{<p style="text-align: center;"><em>ERI =
-  <sup>&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
-  -1ex;">i=1</sub>N<sub>i</sub></sup> &frasl; <sub><span
-  style="text-decoration:overline">T</span></sub> = <sup>N<sub>g</sub></sup>
-  &frasl; <sub><span
-  style="text-decoration:overline">T</span></sub></em></p>}}{\deqn{ERI =
-  \frac{\sum_{i=1}^{k}N_{i}}{\overline{T}} = \frac{N_{g}}{\overline{T}}}}
+  \mjsdeqn{ERI = \frac{\sum_{i=1}^{k}N_{i}}{\overline{T}} =
+  \frac{N_{g}}{\overline{T}}}
 
-  Where, \ifelse{html}{\out{<i>N<sub>g</sub></i>}}{\eqn{N_{g}}} is the total
-  number of germinated seeds at the end of the test,
-  \ifelse{html}{\out{<i>N<sub>i</sub></i>}}{\eqn{N_{i}}} is the number of
-  seeds germinated in the \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th time
-  interval (not the accumulated number, but the number corresponding to the
-  \ifelse{html}{\out{<i>i</i>}}{\eqn{i}}th interval), and
-  \ifelse{html}{\out{<em><span
-  style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}} is the
-  mean germination time or mean emergence time. }
+  Where, \mjseqn{N_{g}} is the total number of germinated seeds at the end of
+  the test, \mjseqn{N_{i}} is the number of seeds germinated in the
+  \mjseqn{i}th time interval (not the accumulated number, but the number
+  corresponding to the \mjseqn{i}th interval), and \mjseqn{\overline{T}} is
+  the mean germination time or mean emergence time. }
 
   \subsection{\insertCite{fakoredeRelationSeedlingVigor1980,fakoredeVariabilitySeedlingVigour1981,fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}}{
    It is estimated as follows.
 
-  \ifelse{html}{\out{<p style="text-align: center;"><em>ERI = <sup><span
-  style="text-decoration: overline;">T</span></sup> &frasl; <sub>(FGP &frasl;
-  100)</sub></em></p>}}{\deqn{ERI = \frac{\overline{T}}{FGP/100}}}
+  \mjsdeqn{ERI = \frac{\overline{T}}{FGP/100}}
 
-  Where, \ifelse{html}{\out{<em><span
-  style="text-decoration:overline">T</span></em>}}{\eqn{\overline{T}}} is the
-  Mean germination time and \ifelse{html}{\out{<i>FGP</i>}}{\eqn{FGP}} is the
-  final germination time. }
+  Where, \mjseqn{\overline{T}} is the Mean germination time and \mjseqn{FGP}
+  is the final germination time. }
 
   \subsection{Others}{ Apart from the above the above, the name Emergence
-  rate index (\ifelse{html}{\out{<i>ERI</i>}}{\eqn{ERI}}) has also been used
-  to for the mathematical expressions for Speed of germination
+  rate index (\mjseqn{ERI}) has also been used to for the mathematical
+  expressions for Speed of germination
   (\code{\link[germinationmetrics]{GermSpeed}})
   \insertCite{allan_seedling_1962,erbachTillageContinuousCorn1982}{germinationmetrics},
    Timson's index (\code{\link[germinationmetrics]{TimsonsIndex}})

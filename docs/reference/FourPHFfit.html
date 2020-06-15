@@ -51,7 +51,7 @@
 <meta property="og:description" content="Fit a four-parameter hill function
 (El-Kassaby et al. 2008)
  to cumulative
-germination count data and compute the associated parameters." />
+germination count data and compute the associated parameters. " />
 
 
 
@@ -164,7 +164,7 @@ germination count data and compute the associated parameters." />
     <p>Fit a four-parameter hill function
 (El-Kassaby et al. 2008)
  to cumulative
-germination count data and compute the associated parameters.</p>
+germination count data and compute the associated parameters. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>FourPHFfit</span>(
@@ -242,8 +242,8 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
 
     <p>A list with the following components:</p>
 <dt>data</dt><dd><p>A data frame with
-  the data used for computing the model</p></dd> <dt>Parameters</dt><dd><p>A data.frame
-  of parameter estimates, standard errors and p value.</p></dd>  <dt>Fit</dt><dd><p>A one-row
+  the data used for computing the model</p></dd> <dt>Parameters</dt><dd><p>A data.frame of
+  parameter estimates, standard errors and p value.</p></dd>  <dt>Fit</dt><dd><p>A one-row
   data frame with estimates of model fitness such as log likelyhoods, Akaike
   Information Criterion, Bayesian Information Criterion, deviance and
   residual degrees of freedom.</p></dd>  <dt>a</dt><dd><p>The asymptote or the maximum
@@ -270,69 +270,46 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
 four-parameter hill function defined as follows
 (El-Kassaby et al. 2008)
 .</p>
-<p><p style="text-align: center;"><em>y = y<sub>0</sub> +
-[<sup>ax<sup>b</sup></sup> &frasl; <sub>(c<sup>b</sup> +
-x<sup>b</sup>)</sub>]</em></p></p>
-<p>Where, <i>y</i> is the cumulative germination
-percentage at time <i>x</i>,
-<i>y<sub>0</sub></i> is the intercept on
-the y axis, <i>a</i> is the asymptote, or
-maximum cumulative germination percentage, which is equivalent to germination
-capacity, <i>b</i> is a mathematical parameter
-controlling the shape and steepness of the germination curve (the larger the
-<i>b</i> parameter, the steeper the rise toward
-the asymptote <i>a</i>, and the shorter the
-time between germination onset and maximum germination), and
-<i>c</i> is the "half-maximal activation level"
-which represents the time required for 50% of viable seeds to germinate
-(<i>c</i> is equivalent to the germination
-speed).</p>
+<p>\[y = y_{0}+\frac{ax^{b}}{c^{b}+x^{b}}\]</p>
+<p>Where, \(y\) is the cumulative germination percentage at time
+\(x\), \(y_{0}\) is the intercept on the y axis, \(a\) is the
+asymptote, or maximum cumulative germination percentage, which is equivalent
+to germination capacity, \(b\) is a mathematical parameter controlling
+the shape and steepness of the germination curve (the larger the \(b\)
+parameter, the steeper the rise toward the asymptote \(a\), and the
+shorter the time between germination onset and maximum germination), and
+\(c\) is the "half-maximal activation level" which represents the time
+required for 50% of viable seeds to germinate (\(c\) is equivalent to
+the germination speed).</p>
 <p>Once this function is fitted to the curve, <code>FourPHFfit</code> computes the
 time to 50% germination of total seeds (<code>t50.total</code>) or viable seeds
 (<code>t50.Germinated</code>). Similarly the time at any percentage of germination
 (in terms of both total and viable seeds) as specified in argument <code>xp</code>
 can be computed.</p>
-<p>The time at germination onset (<i>lag</i>)
-can be computed as follows.</p>
-<p><p style="text-align: center;"><em>lag = b
-&radic;[<sup>&minus;y<sub>0</sub>c<sup>b</sup></sup> &frasl; <sub>(a +
-y<sub>0</sub>)</sub>]<br /></em></p></p>
-<p>The value
-<i>D<sub>lag&minus;50</sub></i> is
-defined as the duration between the time at germination onset (lag) and that
-at 50% germination (<i>c</i>).</p>
+<p>The time at germination onset (\(lag\)) can be computed as follows.</p>
+<p>\[lag = b\sqrt{\frac{-y_{0}c^{b}}{a + y_{0}}}\]</p>
+<p>The value \(D_{lag-50}\) is defined as the duration between the time at
+germination onset (lag) and that at 50% germination (\(c\)).</p>
 <p>The time interval between the percentages of viable seeds specified in the
 arguments <code>umin</code> and <code>umin</code> to germinate is computed as uniformity
-(<em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub></em>).</p>
-<p><p style="text-align:
-center;"><em>U<sub>t<sub>max</sub>&minus;t<sub>min</sub></sub> =
-t<sub>max</sub> &minus; t<sub>min</sub></em></p></p>
+(\(U_{t_{max}-t_{min}}\)).</p>
+<p>\[U_{t_{max}-t_{min}} = t_{max} - t_{min}\]</p>
 <p>The partial derivative of the four-parameter hill function gives the
-instantaneous rate of germination (<i>s</i>) as
-follows.</p>
-<p><p style="text-align: center;"><em>s =
-<sup>&part;y</sup>&frasl;<sub>&part;x</sub> =
-<sup>abc<sup>b</sup>x<sup>b-1</sup></sup>&frasl;<sub>&radic;[(c<sup>b</sup> +
-x<sup>b</sup>)<sup>2</sup>]</sub></em></p></p>
+instantaneous rate of germination (\(s\)) as follows.</p>
+<p>\[s = \frac{\partial y}{\partial x} =
+\frac{abc^{b}x^{b-1}}{(c^{b}+x^{b})^{2}}\]</p>
 <p>From this function for instantaneous rate of germination, the time at maximum
-germination rate (<i>TMGR</i>) can be
-estimated as follows.</p>
-<p><p style="text-align: center;"><em>TMGR = b
-&radic;[<sup>c<sup>b</sup>(b &minus; 1)</sup> &frasl;
-<sub>(b+1)</sub>]</em></p></p>
+germination rate (\(TMGR\)) can be estimated as follows.</p>
+<p>\[TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}\]</p>
 <p>TMGR represents the point in time when the instantaneous rate of germination
 starts to decline.</p>
-<p>The area under the curve (<i>AUC</i>) is
-obtained by integration of the fitted curve between time 0 and time specified
-in the argument `tmax`.</p>
+<p>The area under the curve (\(AUC\)) is obtained by integration of the
+fitted curve between time 0 and time specified in the argument `tmax`.</p>
 <p>Integration of the fitted curve gives the value of mean germination time
-(<i>MGT</i>) and the skewness of the
-germination curve is computed as the ratio of
-<i>MGT</i> and the time for 50% of viable
-seeds to germinate
-(<em>t<sub>50</sub></em>).</p>
-<p><p style="text-align: center;"><em>Skewness =
-<sup>MGT</sup> &frasl; <sub>t<sub>50</sub></sub></em></p></p>
+(\(MGT\)) and the skewness of the germination curve is computed as the
+ratio of \(MGT\) and the time for 50% of viable seeds to germinate
+(\(t_{50}\)).</p>
+<p>\[Skewness = \frac{MGT}{t_{50}}\]</p>
 <p>If final germination percentage is less than 10%, a warning is given, as the
 results may not be informative.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
@@ -369,9 +346,9 @@ results may not be informative.</p>
 #&gt; 
 #&gt; $Parameters
 #&gt;   term  estimate  std.error statistic      p.value
-#&gt; 1    a 80.000000 1.24158597  64.43372 1.973240e-14
-#&gt; 2    b  9.881947 0.70779381  13.96162 6.952324e-08
-#&gt; 3    c  6.034954 0.04952654 121.85294 3.399384e-17
+#&gt; 1    a 80.000000 1.24158595  64.43372 1.973240e-14
+#&gt; 2    b  9.881947 0.70779379  13.96162 6.952322e-08
+#&gt; 3    c  6.034954 0.04952654 121.85294 3.399385e-17
 #&gt; 4   y0  0.000000 0.91607007   0.00000 1.000000e+00
 #&gt; 
 #&gt; $Fit

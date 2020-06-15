@@ -27,20 +27,15 @@ germinability.
 }
 \details{
 Germination percentage is computed as follows
-\insertCite{ista_chapter_2015}{germinationmetrics}.
+\insertCite{ista_chapter_2015}{germinationmetrics}. \loadmathjax
 
-\ifelse{html}{\out{<p style="text-align: center;"><i>GP = [N<sub>g</sub>
-&frasl; N<sub>t</sub>] &times; 100</i><p>}}{\deqn{GP = \frac{N_{g}}{N_{t}}
-\times 100}}
+\mjsdeqn{GP = \frac{N_{g}}{N_{t}} \times 100}
 
-Where, \ifelse{html}{\out{<i>N<sub>g</sub></i>}}{\eqn{N_{g}}} is the number
-of germinated seeds and
-\ifelse{html}{\out{<i>N<sub>t</sub></i>}}{\eqn{N_{t}}} is the total number of
-seeds.
+Where, \mjseqn{N_{g}} is the number of germinated seeds and \mjseqn{N_{t}} is
+the total number of seeds.
 
-The value of \ifelse{html}{\out{<i>N<sub>g</sub></i>}}{\eqn{N_{g}}} can be
-either specified using the argument \code{germinated.seeds} or is computed
-from the \code{germ.counts} argument.
+The value of \mjseqn{N_{g}} can be either specified using the argument
+\code{germinated.seeds} or is computed from the \code{germ.counts} argument.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)

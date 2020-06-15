@@ -49,10 +49,10 @@
 
 <meta property="og:title" content="Weighted germination percentage — WeightGermPercent" />
 <meta property="og:description" content="Compute the Weighted germination percentage
-WGP or Weighted germination index
-WGI
+\(WGP\) or Weighted germination index
+\(WGI\)
 (Reddy 1978; Reddy et al. 1985)
-." />
+. " />
 
 
 
@@ -163,10 +163,10 @@ WGI
 
     <div class="ref-description">
     <p>Compute the Weighted germination percentage
-<i>WGP</i> or Weighted germination index
-<i>WGI</i>
+\(WGP\) or Weighted germination index
+\(WGI\)
 (Reddy 1978; Reddy et al. 1985)
-.</p>
+. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>WeightGermPercent</span>(<span class='no'>germ.counts</span>, <span class='no'>total.seeds</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
@@ -205,15 +205,13 @@ the seeds that germinate first and decreasing weight to the seeds that
 germinate subsequently. It is computed as follows
 (Reddy 1978; Reddy et al. 1985)
 .</p>
-<p><p style="text-align: center;"><em>WGP =   <big>[</big>
-<sup> [&sum;<sup>k</sup><sub style="line-height: 1.8; margin-left:
--1ex;">i=1</sub> (k &minus; i + 1)N<sub>i</sub>]</sup> &frasl; <sub>k &times;
-N</sub> <big>]</big> &times; 100 </em></p></p>
-<p>Where, <i>N<sub>i</sub></i>  is the  number
+<p>\[WGP =
+\frac{\sum_{i=1}^{k}(k-i+1)N_{i}}{k \times N} \times 100\]</p>
+<p>Where, \(N_{i}\)  is the  number
 of seeds that germinated in the time interval
-<i>i</i> (not cumulative, but partial count),
-<i>N</i> is the total number of seeds tested,
-and <i>k</i> is the  total number of time
+\(i\) (not cumulative, but partial count),
+\(N\) is the total number of seeds tested,
+and \(k\) is the  total number of time
 intervals.</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 

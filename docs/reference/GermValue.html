@@ -48,13 +48,13 @@
   
 
 <meta property="og:title" content="Peak value and germination value — GermValue" />
-<meta property="og:description" content="Compute the Peak value (PV) or
-Emergence Energy (EE)
+<meta property="og:description" content="Compute the Peak value (\(PV\)) or Emergence Energy (\(EE\))
 (Czabator 1962; Bonner 1967)
 
-and Germination value (GV)
+and Germination value (\(GV\))
 (Czabator 1962; Djavanshir and Pourbeik 1976; Brown and Mayer 1988)
-." />
+.
+" />
 
 
 
@@ -164,13 +164,13 @@ and Germination value (GV)
     </div>
 
     <div class="ref-description">
-    <p>Compute the Peak value (<i>PV</i>) or
-Emergence Energy (<i>EE</i>)
+    <p>Compute the Peak value (\(PV\)) or Emergence Energy (\(EE\))
 (Czabator 1962; Bonner 1967)
 
-and Germination value (<i>GV</i>)
+and Germination value (\(GV\))
 (Czabator 1962; Djavanshir and Pourbeik 1976; Brown and Mayer 1988)
-.</p>
+.
+<script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
     <pre class="usage"><span class='fu'>PeakValue</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='no'>total.seeds</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
@@ -233,22 +233,16 @@ test is considered. Default is <code>TRUE</code>.</p></td>
 
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>Peak value (<i>PV</i>) is the maximum quotient
-obtained by dividing successive cumulative germination values by the relevant
-incubation time (Czabator 1962)
+    <p>Peak value (\(PV\)) is the maximum quotient obtained by dividing
+successive cumulative germination values by the relevant incubation time
+(Czabator 1962)
 .</p>
-<p><p style="text-align: center;"><em>PV = </em>max
-<em><big>( </big><sup>G<sub>1</sub></sup> &frasl; <sub>T<sub>1</sub></sub> ,
-<sup>G<sub>2</sub></sup> &frasl; <sub>T<sub>2</sub></sub>, &hellip;
-<sup>G<sub>k</sub></sup> &frasl; <sub>T<sub>k</sub></sub><big>
-)</big></em></p></p>
-<p>Where, <i>T<sub>i</sub></i> is the time
-from the start of the experiment to the
-<i>i</i>th interval,
-<i>G<sub>i</sub></i> is the cumulative
-germination percentage in the <i>i</i>th time
-interval, and <i>k</i> is the total number of
-time intervals.</p>
+<p>\[PV = \max\left ( \frac{G_{1}}{T_{1}},\frac{G_{2}}{T_{2}},\cdots
+\frac{G_{k}}{T_{k}} \right )\]</p>
+<p>Where, \(T_{i}\) is the time from the start of the experiment to the
+\(i\)th interval, \(G_{i}\) is the cumulative germination
+percentage in the \(i\)th time interval, and \(k\) is the total
+number of time intervals.</p>
 <p>It represents the mean daily germination of the most vigorous component of
 the seed lot, and is a mathematical expression of the break, or shoulder, of
 a typical sigmoid  germination curve
@@ -258,45 +252,32 @@ accumulated number of seeds germinated at the point on the germination curve
 at which the rate of germination starts to decrease. It is also described as
 Emergence energy (Bonner 1967)
 .</p>
-<p>For daily germination counts, germination value
-(<i>GV</i>) is computed as follows
-(Czabator 1962)
+<p>For daily germination counts, germination value (\(GV\)) is computed as
+follows (Czabator 1962)
 .</p>
-<p><p style="text-align: center;"><em>GV = PV &times;
-MDG</em></p></p>
-<p>Where, <i>PV</i> is the peak value, and
-<i>MDG</i> is the mean daily germination
-percentage from the onset of germination.</p>
-<p>Germination value (<i>GV</i>) can also be
-computed for other time intervals of successive germination counts, by
-replacing <i>MDG</i> with the mean
-germination percentage per unit time (<em><span
-style="text-decoration:overline">GP</span></em>).</p>
+<p>\[GV = PV \times MDG\]</p>
+<p>Where, \(PV\) is the peak value, and \(MDG\) is the mean daily
+germination percentage from the onset of germination.</p>
+<p>Germination value (\(GV\)) can also be computed for other time intervals
+of successive germination counts, by replacing \(MDG\) with the mean
+germination percentage per unit time (\(\overline{GP}\)).</p>
 <p>A new estimation of germination value was given by
 Djavanshir and Pourbeik (1976)
  as
 follows.</p>
-<p><p style="text-align: center;"><i>GV =
-[<sup>&sum;DGS</sup> &frasl; <sub>N</sub>] &times; GP &times;
-c</i></p></p>
-<p>Where, <i>DGS</i> is the daily germination
-speed computed by dividing cumulative germination percentage by the number of
-days since the onset of germination, <i>N</i>
-is the frequency or number of DGS calculated during the test, \(GP\) is the
-germination percentage expressed over 100, and
-<i>c</i> is a constant. The value of
-<i>c</i> is decided on the basis of average
-daily speed of germination (<em><sup>&sum;DGS</sup>
-&frasl; <sub>N</sub></em>). If it is less than
-10, then <i>c</i> value of 10 can be used and
-if it is more than 10, then value of 7 or 8 can be used for
-<i>c</i>.</p>
-<p>For both methods of computing <i>GV</i>, only
-the duration from the onset of germination is considered by default.
-Alternatively, modified <i>GV</i>
-(<i>GV</sub>mod<sub></i>), where the
-entire duration from the beginning of the test is considered can be obtained
-by using the argument <code>from.onset = FALSE</code>
+<p>\[GV = \frac{\sum DGS}{N} \times GP \times c\]</p>
+<p>Where, \(DGS\) is the daily germination speed computed by dividing
+cumulative germination percentage by the number of days since the onset of
+germination, \(N\) is the frequency or number of DGS calculated during
+the test, \(GP\) is the germination percentage expressed over 100, and
+\(c\) is a constant. The value of \(c\) is decided on the basis of
+average daily speed of germination (\(\frac{\sum DGS}{N}\)). If it is
+less than 10, then \(c\) value of 10 can be used and if it is more than
+10, then value of 7 or 8 can be used for \(c\).</p>
+<p>For both methods of computing \(GV\), only the duration from the onset
+of germination is considered by default. Alternatively, modified \(GV\)
+(\(GV_{mod}\)), where the entire duration from the beginning of the test
+is considered can be obtained by using the argument <code>from.onset = FALSE</code>
 (Brown and Mayer 1988)
 .</p>
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
