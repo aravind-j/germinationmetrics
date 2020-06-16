@@ -33,6 +33,7 @@ An example germination count dataset. It includes germination count data over
 }
 \examples{
 
+\donttest{
 data(gcdata)
 library(ggplot2)
 library(reshape2)
@@ -83,6 +84,7 @@ counts.per.intervals <- c("Day01", "Day02", "Day03", "Day04", "Day05",
 germination.indices(gcdata, total.seeds.col = "Total Seeds",
                     counts.intervals.cols = counts.per.intervals,
                     intervals = 1:14, partial = TRUE, max.int = 5)
+}
 
 }
 \keyword{datasets}

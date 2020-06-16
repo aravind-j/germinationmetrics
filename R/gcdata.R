@@ -41,6 +41,7 @@
 #'
 #' @examples
 #'
+#' \donttest{
 #' data(gcdata)
 #' library(ggplot2)
 #' library(reshape2)
@@ -91,5 +92,6 @@
 #' germination.indices(gcdata, total.seeds.col = "Total Seeds",
 #'                     counts.intervals.cols = counts.per.intervals,
 #'                     intervals = 1:14, partial = TRUE, max.int = 5)
+#' }
 #'
 "gcdata"

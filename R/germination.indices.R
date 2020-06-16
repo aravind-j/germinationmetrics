@@ -182,6 +182,7 @@
 #'
 #' @examples
 #'
+#' \donttest{
 #' data(gcdata)
 #'
 #' counts.per.intervals <- c("Day01", "Day02", "Day03", "Day04", "Day05",
@@ -190,6 +191,7 @@
 #' germination.indices(gcdata, total.seeds.col = "Total Seeds",
 #'                     counts.intervals.cols = counts.per.intervals,
 #'                     intervals = 1:14, partial = TRUE, max.int = 5)
+#' }
 #'
 #' @seealso This function is a wrapper around the different functions for
 #'   computation of single-value germination indices in

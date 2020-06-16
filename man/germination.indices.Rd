@@ -240,6 +240,7 @@ at specific time intervals for multiple samples in batch. \loadmathjax
 }
 \examples{
 
+\donttest{
 data(gcdata)
 
 counts.per.intervals <- c("Day01", "Day02", "Day03", "Day04", "Day05",
@@ -248,6 +249,7 @@ counts.per.intervals <- c("Day01", "Day02", "Day03", "Day04", "Day05",
 germination.indices(gcdata, total.seeds.col = "Total Seeds",
                     counts.intervals.cols = counts.per.intervals,
                     intervals = 1:14, partial = TRUE, max.int = 5)
+}
 
 }
 \references{

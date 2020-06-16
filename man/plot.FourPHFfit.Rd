@@ -66,6 +66,7 @@ different arguments. \loadmathjax
 }
 \examples{
 
+\donttest{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
 y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
 int <- 1:length(x)
@@ -98,6 +99,7 @@ plot(fit2, rog = FALSE, t50.total = FALSE, t50.germ = FALSE,
 # Without y axis limits adjustment
 plot(fit1, limits = FALSE)
 plot(fit2, limits = FALSE)
+}
 
 }
 \seealso{

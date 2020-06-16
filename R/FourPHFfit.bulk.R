@@ -48,6 +48,7 @@
 #'
 #' @examples
 #'
+#' \donttest{
 #' data(gcdata)
 #'
 #' counts.per.intervals <- c("Day01", "Day02", "Day03", "Day04", "Day05",
@@ -59,6 +60,7 @@
 #'                     intervals = 1:14, partial = TRUE,
 #'                     fix.y0 = TRUE, fix.a = TRUE, xp = c(10, 60),
 #'                     tmax = 20, tries = 3, umax = 90, umin = 10)
+#' }
 #'
 FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
                             intervals, partial = TRUE,

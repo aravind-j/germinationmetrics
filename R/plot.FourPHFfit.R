@@ -61,6 +61,7 @@
 #'
 #' @examples
 #'
+#' \donttest{
 #' x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
 #' y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
 #' int <- 1:length(x)
@@ -93,6 +94,7 @@
 #' # Without y axis limits adjustment
 #' plot(fit1, limits = FALSE)
 #' plot(fit2, limits = FALSE)
+#' }
 #'
 plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
                             tmgr = TRUE, mgt = TRUE, uniformity = TRUE,

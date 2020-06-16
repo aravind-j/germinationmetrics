@@ -22,6 +22,7 @@ Goldberg (1971), Bilbro and Wanjura (1982), and Fakorede and Ayoola (1980).
 * Fixed documentation errors in `FourPHFfit` and `CVGermTime`.
 * Updated documentation for `GermSpeed`, `GermSpeedAccumulated`, `CUGerm` `MeanGermRate`, `SEGermRate`, `CVG`, `MeanGermTime`, `VarGermTime`, `SEGermTime`, `GermUncertainty`, `GermSynchrony`, `MeanGermPercent`, `MeanGermNumber`,   `WeightGermPercent`, `TimsonsIndex`, `GermRateGeorge` and `GermSynchrony`.
 * Converted all equations in Rd files to `MathJax`using `mathjaxr`
+* Added long running examples to `\donttest` in `germination.indices`, `plot.FourPHFfit`, `gcdata` and `FourPHFfit.bulk`.
 
 # germinationmetrics  0.1.3
 
