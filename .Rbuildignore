@@ -26,3 +26,4 @@
 ^_pkgdown\.yml$
 ^pkgdown$
 ^.Rd2pdf*$
+^CRAN-RELEASE$
