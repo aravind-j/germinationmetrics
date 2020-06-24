@@ -13,10 +13,16 @@
     <loc>https://aravind-j.github.io/germinationmetrics//reference/FirstGermTime.html</loc>
   </url>
   <url>
+    <loc>https://aravind-j.github.io/germinationmetrics//reference/FourPHFfit.bulk.html</loc>
+  </url>
+  <url>
     <loc>https://aravind-j.github.io/germinationmetrics//reference/FourPHFfit.html</loc>
   </url>
   <url>
-    <loc>https://aravind-j.github.io/germinationmetrics//reference/FourPHFfit.bulk.html</loc>
+    <loc>https://aravind-j.github.io/germinationmetrics//reference/gcdata.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/germinationmetrics//reference/germination.indices.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/germinationmetrics//reference/GermIndex.html</loc>
@@ -43,22 +49,16 @@
     <loc>https://aravind-j.github.io/germinationmetrics//reference/MeanGermTime.html</loc>
   </url>
   <url>
-    <loc>https://aravind-j.github.io/germinationmetrics//reference/TimsonsIndex.html</loc>
-  </url>
-  <url>
-    <loc>https://aravind-j.github.io/germinationmetrics//reference/WeightGermPercent.html</loc>
-  </url>
-  <url>
-    <loc>https://aravind-j.github.io/germinationmetrics//reference/gcdata.html</loc>
-  </url>
-  <url>
-    <loc>https://aravind-j.github.io/germinationmetrics//reference/germination.indices.html</loc>
-  </url>
-  <url>
     <loc>https://aravind-j.github.io/germinationmetrics//reference/plot.FourPHFfit.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/germinationmetrics//reference/t50.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/germinationmetrics//reference/TimsonsIndex.html</loc>
+  </url>
+  <url>
+    <loc>https://aravind-j.github.io/germinationmetrics//reference/WeightGermPercent.html</loc>
   </url>
   <url>
     <loc>https://aravind-j.github.io/germinationmetrics//articles/Introduction.html</loc>

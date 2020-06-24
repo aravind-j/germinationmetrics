@@ -40,7 +40,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
       </span>
     </div>
 
@@ -105,7 +105,7 @@
       <h1 data-toc-skip>The <code>germinationmetrics</code> Package: A Brief Introduction</h1>
                         <h4 class="author">Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan</h4>
             
-            <h4 class="date">2020-06-16</h4>
+            <h4 class="date">2020-06-24</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -185,6 +185,10 @@ Welcome to germinationmetrics version 0.1.4
 <tr class="even">
 <td align="left">0.1.2</td>
 <td align="left">2018-10-31</td>
+</tr>
+<tr class="odd">
+<td align="left">0.1.3</td>
+<td align="left">2019-01-19</td>
 </tr>
 </tbody>
 </table>
@@ -1795,9 +1799,9 @@ It represents the point in time when the instantaneous rate of germination start
 
 $Parameters
   term  estimate  std.error statistic      p.value
-1    a 80.000000 1.24158597  64.43372 1.973240e-14
-2    b  9.881947 0.70779381  13.96162 6.952324e-08
-3    c  6.034954 0.04952654 121.85294 3.399384e-17
+1    a 80.000000 1.24158595  64.43372 1.973240e-14
+2    b  9.881947 0.70779379  13.96162 6.952322e-08
+3    c  6.034954 0.04952654 121.85294 3.399385e-17
 4   y0  0.000000 0.91607007   0.00000 1.000000e+00
 
 $Fit
@@ -1948,40 +1952,43 @@ $isConv
 
 attr(,"class")
 [1] "FourPHFfit"</code></pre>
-<div class="sourceCode" id="cb255"><html><body><pre class="r">## No test: 
-##D x &lt;- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
-##D y &lt;- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
-##D int &lt;- 1:length(x)
-##D total.seeds = 50
-##D 
-##D # From partial germination counts
-##D #----------------------------------------------------------------------------
-##D fit1 &lt;- FourPHFfit(germ.counts = x, intervals = int,
-##D                    total.seeds = 50, tmax = 20)
-##D 
-##D # From cumulative germination counts
-##D #----------------------------------------------------------------------------
-##D fit2 &lt;- FourPHFfit(germ.counts = y, intervals = int,
-##D                    total.seeds = 50, tmax = 20, partial = FALSE)
-##D 
-##D # Default plots
-##D plot(fit1)
-##D plot(fit2)
-##D 
-##D # No labels
-##D plot(fit1, plotlabels = FALSE)
-##D plot(fit2, plotlabels = FALSE)
-##D 
-##D # Only the FPHF curve
-##D plot(fit1, rog = FALSE, t50.total = FALSE, t50.germ = FALSE,
-##D      tmgr = FALSE, mgt = FALSE, uniformity = FALSE)
-##D plot(fit2, rog = FALSE, t50.total = FALSE, t50.germ = FALSE,
-##D      tmgr = FALSE, mgt = FALSE, uniformity = FALSE)
-##D 
-##D # Without y axis limits adjustment
-##D plot(fit1, limits = FALSE)
-##D plot(fit2, limits = FALSE)
-## End(No test)</pre></body></html></div>
+<div class="sourceCode" id="cb255"><html><body><pre class="r"><span class="no">x</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">17</span>, <span class="fl">10</span>, <span class="fl">7</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>)
+<span class="no">y</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">21</span>, <span class="fl">31</span>, <span class="fl">38</span>, <span class="fl">39</span>, <span class="fl">39</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span>)
+<span class="no">int</span> <span class="kw">&lt;-</span> <span class="fl">1</span>:<span class="fu"><a href="https://rdrr.io/r/base/length.html">length</a></span>(<span class="no">x</span>)
+<span class="no">total.seeds</span> <span class="kw">=</span> <span class="fl">50</span>
+
+<span class="co"># From partial germination counts</span>
+<span class="co">#----------------------------------------------------------------------------</span>
+<span class="no">fit1</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="kw">germ.counts</span> <span class="kw">=</span> <span class="no">x</span>, <span class="kw">intervals</span> <span class="kw">=</span> <span class="no">int</span>,
+                   <span class="kw">total.seeds</span> <span class="kw">=</span> <span class="fl">50</span>, <span class="kw">tmax</span> <span class="kw">=</span> <span class="fl">20</span>)
+
+<span class="co"># From cumulative germination counts</span>
+<span class="co">#----------------------------------------------------------------------------</span>
+<span class="no">fit2</span> <span class="kw">&lt;-</span> <span class="fu"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span>(<span class="kw">germ.counts</span> <span class="kw">=</span> <span class="no">y</span>, <span class="kw">intervals</span> <span class="kw">=</span> <span class="no">int</span>,
+                   <span class="kw">total.seeds</span> <span class="kw">=</span> <span class="fl">50</span>, <span class="kw">tmax</span> <span class="kw">=</span> <span class="fl">20</span>, <span class="kw">partial</span> <span class="kw">=</span> <span class="fl">FALSE</span>)
+
+<span class="co"># Default plots</span>
+<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit1</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-1.png" width="576"></p>
+<div class="sourceCode" id="cb256"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit2</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-2.png" width="576"></p>
+<div class="sourceCode" id="cb257"><html><body><pre class="r"><span class="co"># No labels</span>
+<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit1</span>, <span class="kw">plotlabels</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-3.png" width="576"></p>
+<div class="sourceCode" id="cb258"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit2</span>, <span class="kw">plotlabels</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-4.png" width="576"></p>
+<div class="sourceCode" id="cb259"><html><body><pre class="r"><span class="co"># Only the FPHF curve</span>
+<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit1</span>, <span class="kw">rog</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">t50.total</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">t50.germ</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+     <span class="kw">tmgr</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">mgt</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">uniformity</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-5.png" width="576"></p>
+<div class="sourceCode" id="cb260"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit2</span>, <span class="kw">rog</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">t50.total</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">t50.germ</span> <span class="kw">=</span> <span class="fl">FALSE</span>,
+     <span class="kw">tmgr</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">mgt</span> <span class="kw">=</span> <span class="fl">FALSE</span>, <span class="kw">uniformity</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-6.png" width="576"></p>
+<div class="sourceCode" id="cb261"><html><body><pre class="r"><span class="co"># Without y axis limits adjustment</span>
+<span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit1</span>, <span class="kw">limits</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-7.png" width="576"></p>
+<div class="sourceCode" id="cb262"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/plot.html">plot</a></span>(<span class="no">fit2</span>, <span class="kw">limits</span> <span class="kw">=</span> <span class="fl">FALSE</span>)</pre></body></html></div>
+<p><img src="Introduction_files/figure-html/runCode-8.png" width="576"></p>
 </div>
 </div>
 </div>
@@ -1994,35 +2001,319 @@ attr(,"class")
 <a href="#germination-indices" class="anchor"></a><code>germination.indices()</code>
 </h4>
 <p>This wrapper function can be used to compute several germination indices simultaneously for multiple samples in batch.</p>
-<div class="sourceCode" id="cb256"><html><body><pre class="r">## No test: 
-##D data(gcdata)
-##D 
-##D counts.per.intervals &lt;- c("Day01", "Day02", "Day03", "Day04", "Day05",
-##D                           "Day06", "Day07", "Day08", "Day09", "Day10",
-##D                           "Day11", "Day12", "Day13", "Day14")
-##D germination.indices(gcdata, total.seeds.col = "Total Seeds",
-##D                     counts.intervals.cols = counts.per.intervals,
-##D                     intervals = 1:14, partial = TRUE, max.int = 5)
-## End(No test)</pre></body></html></div>
+<div class="sourceCode" id="cb263"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">gcdata</span>)
+
+<span class="no">counts.per.intervals</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,
+                          <span class="st">"Day06"</span>, <span class="st">"Day07"</span>, <span class="st">"Day08"</span>, <span class="st">"Day09"</span>, <span class="st">"Day10"</span>,
+                          <span class="st">"Day11"</span>, <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span>)
+<span class="fu"><a href="../reference/germination.indices.html">germination.indices</a></span>(<span class="no">gcdata</span>, <span class="kw">total.seeds.col</span> <span class="kw">=</span> <span class="st">"Total Seeds"</span>,
+                    <span class="kw">counts.intervals.cols</span> <span class="kw">=</span> <span class="no">counts.per.intervals</span>,
+                    <span class="kw">intervals</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">14</span>, <span class="kw">partial</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">max.int</span> <span class="kw">=</span> <span class="fl">5</span>)</pre></body></html></div>
+<pre><code>   Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
+1        G1   1     0     0     0     0     4    17    10     7     1     0
+2        G2   1     0     0     0     1     3    15    13     6     2     1
+3        G3   1     0     0     0     2     3    18     9     8     2     1
+4        G4   1     0     0     0     0     4    19    12     6     2     1
+5        G5   1     0     0     0     0     5    20    12     8     1     0
+6        G1   2     0     0     0     0     3    21    11     7     1     1
+7        G2   2     0     0     0     0     4    18    11     7     1     0
+8        G3   2     0     0     0     1     3    14    12     6     2     1
+9        G4   2     0     0     0     1     3    19    10     8     1     1
+10       G5   2     0     0     0     0     4    18    13     6     2     1
+11       G1   3     0     0     0     0     5    21    11     8     1     0
+12       G2   3     0     0     0     0     3    20    10     7     1     1
+13       G3   3     0     0     0     0     4    19    12     8     1     1
+14       G4   3     0     0     0     0     3    21    11     6     1     0
+15       G5   3     0     0     0     0     4    17    10     8     1     1
+   Day11 Day12 Day13 Day14 Total Seeds GermPercent FirstGermTime LastGermTime
+1      1     0     0     0          50    80.00000             5           11
+2      0     1     0     0          51    82.35294             4           12
+3      1     1     0     0          48    93.75000             4           12
+4      1     1     0     0          51    90.19608             5           12
+5      0     1     1     0          50    96.00000             5           13
+6      1     1     0     0          49    93.87755             5           12
+7      1     0     0     0          48    87.50000             5           11
+8      0     1     0     0          47    85.10638             4           12
+9      1     1     0     0          52    86.53846             4           12
+10     0     1     0     0          50    90.00000             5           12
+11     0     1     1     0          51    94.11765             5           13
+12     1     1     0     0          51    86.27451             5           12
+13     0     1     1     0          49    95.91837             5           13
+14     1     1     0     0          48    91.66667             5           12
+15     1     0     0     0          48    87.50000             5           11
+   PeakGermTime TimeSpreadGerm t50_Coolbear t50_Farooq MeanGermTime VarGermTime
+1             6              6     5.970588   5.941176     6.700000    1.446154
+2             6              8     6.192308   6.153846     6.857143    2.027875
+3             6              8     6.000000   5.972222     6.866667    2.572727
+4             6              7     6.041667   6.000000     6.891304    2.187923
+5             6              8     5.975000   5.950000     6.812500    2.368351
+6             6              7     5.976190   5.952381     6.869565    2.071498
+7             6              6     5.972222   5.944444     6.690476    1.389663
+8             6              8     6.208333   6.166667     6.875000    2.112179
+9             6              8     6.000000   5.973684     6.866667    2.300000
+10            6              7     6.076923   6.038462     6.822222    1.831313
+11            6              8     5.928571   5.904762     6.791667    2.381206
+12            6              7     5.975000   5.950000     6.886364    2.149577
+13            6              8     6.083333   6.041667     6.936170    2.539315
+14            6              7     5.928571   5.904762     6.772727    1.900634
+15            6              6     6.050000   6.000000     6.809524    1.670151
+   SEGermTime CVGermTime MeanGermRate  VarGermRate  SEGermRate      CVG
+1   0.1901416  0.1794868    0.1492537 0.0007176543 0.004235724 14.92537
+2   0.2197333  0.2076717    0.1458333 0.0009172090 0.004673148 14.58333
+3   0.2391061  0.2335882    0.1456311 0.0011572039 0.005071059 14.56311
+4   0.2180907  0.2146419    0.1451104 0.0009701218 0.004592342 14.51104
+5   0.2221275  0.2259002    0.1467890 0.0010995627 0.004786184 14.67890
+6   0.2122088  0.2095140    0.1455696 0.0009301809 0.004496813 14.55696
+7   0.1818989  0.1761967    0.1494662 0.0006935558 0.004063648 14.94662
+8   0.2297923  0.2113940    0.1454545 0.0009454531 0.004861721 14.54545
+9   0.2260777  0.2208604    0.1456311 0.0010345321 0.004794747 14.56311
+10  0.2017321  0.1983606    0.1465798 0.0008453940 0.004334343 14.65798
+11  0.2227295  0.2272072    0.1472393 0.0011191581 0.004828643 14.72393
+12  0.2210295  0.2129053    0.1452145 0.0009558577 0.004660905 14.52145
+13  0.2324392  0.2297410    0.1441718 0.0010970785 0.004831366 14.41718
+14  0.2078370  0.2035568    0.1476510 0.0009033254 0.004531018 14.76510
+15  0.1994129  0.1897847    0.1468531 0.0007767634 0.004300508 14.68531
+   GermRateRecip_Coolbear GermRateRecip_Farooq GermSpeed_Count
+1               0.1674877            0.1683168        6.138925
+2               0.1614907            0.1625000        6.362698
+3               0.1666667            0.1674419        6.882179
+4               0.1655172            0.1666667        6.927417
+5               0.1673640            0.1680672        7.318987
+6               0.1673307            0.1680000        6.931782
+7               0.1674419            0.1682243        6.448449
+8               0.1610738            0.1621622        6.053175
+9               0.1666667            0.1674009        6.830592
+10              0.1645570            0.1656051        6.812698
+11              0.1686747            0.1693548        7.342796
+12              0.1673640            0.1680672        6.622258
+13              0.1643836            0.1655172        7.052320
+14              0.1686747            0.1693548        6.706782
+15              0.1652893            0.1666667        6.363925
+   GermSpeed_Percent GermSpeedAccumulated_Count GermSpeedAccumulated_Percent
+1           12.27785                   34.61567                     69.23134
+2           12.47588                   35.54058                     69.68741
+3           14.33787                   38.29725                     79.78594
+4           13.58317                   38.68453                     75.85202
+5           14.63797                   41.00786                     82.01571
+6           14.14649                   38.77620                     79.13509
+7           13.43427                   36.38546                     75.80304
+8           12.87909                   33.77079                     71.85275
+9           13.13575                   38.11511                     73.29829
+10          13.62540                   38.19527                     76.39054
+11          14.39764                   41.17452                     80.73436
+12          12.98482                   37.00640                     72.56158
+13          14.39249                   39.29399                     80.19182
+14          13.97246                   37.69490                     78.53103
+15          13.25818                   35.69697                     74.36868
+   GermSpeedCorrected_Normal GermSpeedCorrected_Accumulated WeightGermPercent
+1                 0.07673656                      0.4326958          47.42857
+2                 0.07726134                      0.4315642          47.89916
+3                 0.07340991                      0.4085040          54.46429
+4                 0.07680397                      0.4288937          52.24090
+5                 0.07623944                      0.4271652          56.14286
+6                 0.07383855                      0.4130508          54.51895
+7                 0.07369656                      0.4158338          51.93452
+8                 0.07112480                      0.3968068          49.39210
+9                 0.07893128                      0.4404413          50.27473
+10                0.07569665                      0.4243919          52.57143
+11                0.07801721                      0.4374793          55.18207
+12                0.07675799                      0.4289379          50.00000
+13                0.07352419                      0.4096608          55.24781
+14                0.07316490                      0.4112171          53.86905
+15                0.07273057                      0.4079653          51.19048
+   MeanGermPercent MeanGermNumber TimsonsIndex TimsonsIndex_Labouriau
+1         5.714286       2.857143     8.000000                   1.00
+2         5.882353       3.000000     9.803922                   1.25
+3         6.696429       3.214286    14.583333                   1.40
+4         6.442577       3.285714     7.843137                   1.00
+5         6.857143       3.428571    10.000000                   1.00
+6         6.705539       3.285714     6.122449                   1.00
+7         6.250000       3.000000     8.333333                   1.00
+8         6.079027       2.857143    10.638298                   1.25
+9         6.181319       3.214286     9.615385                   1.25
+10        6.428571       3.214286     8.000000                   1.00
+11        6.722689       3.428571     9.803922                   1.00
+12        6.162465       3.142857     5.882353                   1.00
+13        6.851312       3.357143     8.163265                   1.00
+14        6.547619       3.142857     6.250000                   1.00
+15        6.250000       3.000000     8.333333                   1.00
+   TimsonsIndex_KhanUngar GermRateGeorge GermIndex GermIndex_mod
+1               0.5714286              4  5.840000      7.300000
+2               0.7002801              5  5.882353      7.142857
+3               1.0416667              7  6.687500      7.133333
+4               0.5602241              4  6.411765      7.108696
+5               0.7142857              5  6.900000      7.187500
+6               0.4373178              3  6.693878      7.130435
+7               0.5952381              4  6.395833      7.309524
+8               0.7598784              5  6.063830      7.125000
+9               0.6868132              5  6.173077      7.133333
+10              0.5714286              4  6.460000      7.177778
+11              0.7002801              5  6.784314      7.208333
+12              0.4201681              3  6.137255      7.113636
+13              0.5830904              4  6.775510      7.063830
+14              0.4464286              3  6.625000      7.227273
+15              0.5952381              4  6.291667      7.190476
+   EmergenceRateIndex_Melville EmergenceRateIndex_Melville_mod
+1                          292                        7.300000
+2                          300                        7.142857
+3                          321                        7.133333
+4                          327                        7.108696
+5                          345                        7.187500
+6                          328                        7.130435
+7                          307                        7.309524
+8                          285                        7.125000
+9                          321                        7.133333
+10                         323                        7.177778
+11                         346                        7.208333
+12                         313                        7.113636
+13                         332                        7.063830
+14                         318                        7.227273
+15                         302                        7.190476
+   EmergenceRateIndex_BilbroWanjura EmergenceRateIndex_Fakorede PeakValue
+1                          5.970149                    8.375000  9.500000
+2                          6.125000                    8.326531  9.313725
+3                          6.553398                    7.324444 10.416667
+4                          6.675079                    7.640359 10.049020
+5                          7.045872                    7.096354 11.250000
+6                          6.696203                    7.317580 10.714286
+7                          6.277580                    7.646259 10.416667
+8                          5.818182                    8.078125  9.574468
+9                          6.553398                    7.934815  9.855769
+10                         6.596091                    7.580247 10.250000
+11                         7.067485                    7.216146 11.029412
+12                         6.389439                    7.981921  9.803922
+13                         6.776074                    7.231326 10.969388
+14                         6.496644                    7.388430 10.677083
+15                         6.167832                    7.782313 10.156250
+   GermValue_Czabator GermValue_DP GermValue_Czabator_mod GermValue_DP_mod
+1            54.28571     57.93890               54.28571         39.56076
+2            54.78662     52.58713               54.78662         40.99260
+3            69.75446     68.62289               69.75446         53.42809
+4            64.74158     70.43331               64.74158         48.86825
+5            77.14286     80.16914               77.14286         56.23935
+6            71.84506     76.51983               71.84506         53.06435
+7            65.10417     69.41325               65.10417         47.37690
+8            58.20345     56.00669               58.20345         43.67948
+9            60.92165     58.13477               60.92165         45.30801
+10           65.89286     70.91875               65.89286         49.10820
+11           74.14731     77.39782               74.14731         54.27520
+12           60.41632     64.44988               60.41632         44.71582
+13           75.15470     78.16335               75.15470         54.94192
+14           69.90947     74.40140               69.90947         51.41913
+15           63.47656     67.62031               63.47656         46.48043
+      CUGerm GermSynchrony GermUncertainty
+1  0.7092199     0.2666667        2.062987
+2  0.5051546     0.2346109        2.321514
+3  0.3975265     0.2242424        2.462012
+4  0.4672113     0.2502415        2.279215
+5  0.4312184     0.2606383        2.146051
+6  0.4934701     0.2792271        2.160545
+7  0.7371500     0.2729384        2.040796
+8  0.4855842     0.2256410        2.357249
+9  0.4446640     0.2494949        2.321080
+10 0.5584666     0.2555556        2.187983
+11 0.4288905     0.2686170        2.128670
+12 0.4760266     0.2737844        2.185245
+13 0.4023679     0.2506938        2.241181
+14 0.5383760     0.2991543        2.037680
+15 0.6133519     0.2497096        2.185028</code></pre>
 </div>
 <div id="fourphffit-bulk" class="section level4">
 <h4 class="hasAnchor">
 <a href="#fourphffit-bulk" class="anchor"></a><code>FourPHFfit.bulk()</code>
 </h4>
 <p>This wrapper function can be used to fit the four-parameter hill function for multiple samples in batch.</p>
-<div class="sourceCode" id="cb257"><html><body><pre class="r">## No test: 
-##D data(gcdata)
-##D 
-##D counts.per.intervals &lt;- c("Day01", "Day02", "Day03", "Day04", "Day05",
-##D                           "Day06", "Day07", "Day08", "Day09", "Day10",
-##D                           "Day11", "Day12", "Day13", "Day14")
-##D 
-##D FourPHFfit.bulk(gcdata, total.seeds.col = "Total Seeds",
-##D                     counts.intervals.cols = counts.per.intervals,
-##D                     intervals = 1:14, partial = TRUE,
-##D                     fix.y0 = TRUE, fix.a = TRUE, xp = c(10, 60),
-##D                     tmax = 20, tries = 3, umax = 90, umin = 10)
-## End(No test)</pre></body></html></div>
+<div class="sourceCode" id="cb265"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/data.html">data</a></span>(<span class="no">gcdata</span>)
+
+<span class="no">counts.per.intervals</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,
+                          <span class="st">"Day06"</span>, <span class="st">"Day07"</span>, <span class="st">"Day08"</span>, <span class="st">"Day09"</span>, <span class="st">"Day10"</span>,
+                          <span class="st">"Day11"</span>, <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span>)
+
+<span class="fu"><a href="../reference/FourPHFfit.bulk.html">FourPHFfit.bulk</a></span>(<span class="no">gcdata</span>, <span class="kw">total.seeds.col</span> <span class="kw">=</span> <span class="st">"Total Seeds"</span>,
+                    <span class="kw">counts.intervals.cols</span> <span class="kw">=</span> <span class="no">counts.per.intervals</span>,
+                    <span class="kw">intervals</span> <span class="kw">=</span> <span class="fl">1</span>:<span class="fl">14</span>, <span class="kw">partial</span> <span class="kw">=</span> <span class="fl">TRUE</span>,
+                    <span class="kw">fix.y0</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">fix.a</span> <span class="kw">=</span> <span class="fl">TRUE</span>, <span class="kw">xp</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span>(<span class="fl">10</span>, <span class="fl">60</span>),
+                    <span class="kw">tmax</span> <span class="kw">=</span> <span class="fl">20</span>, <span class="kw">tries</span> <span class="kw">=</span> <span class="fl">3</span>, <span class="kw">umax</span> <span class="kw">=</span> <span class="fl">90</span>, <span class="kw">umin</span> <span class="kw">=</span> <span class="fl">10</span>)</pre></body></html></div>
+<pre><code>    Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
+ 1:       G1   1     0     0     0     0     4    17    10     7     1     0
+ 2:       G2   1     0     0     0     1     3    15    13     6     2     1
+ 3:       G3   1     0     0     0     2     3    18     9     8     2     1
+ 4:       G4   1     0     0     0     0     4    19    12     6     2     1
+ 5:       G5   1     0     0     0     0     5    20    12     8     1     0
+ 6:       G1   2     0     0     0     0     3    21    11     7     1     1
+ 7:       G2   2     0     0     0     0     4    18    11     7     1     0
+ 8:       G3   2     0     0     0     1     3    14    12     6     2     1
+ 9:       G4   2     0     0     0     1     3    19    10     8     1     1
+10:       G5   2     0     0     0     0     4    18    13     6     2     1
+11:       G1   3     0     0     0     0     5    21    11     8     1     0
+12:       G2   3     0     0     0     0     3    20    10     7     1     1
+13:       G3   3     0     0     0     0     4    19    12     8     1     1
+14:       G4   3     0     0     0     0     3    21    11     6     1     0
+15:       G5   3     0     0     0     0     4    17    10     8     1     1
+    Day11 Day12 Day13 Day14 Total Seeds        a         b        c y0 lag
+ 1:     1     0     0     0          50 80.00000  9.881947 6.034954  0   0
+ 2:     0     1     0     0          51 82.35294  9.227667 6.175193  0   0
+ 3:     1     1     0     0          48 93.75000  7.793055 6.138110  0   0
+ 4:     1     1     0     0          51 90.19608  8.925668 6.125172  0   0
+ 5:     0     1     1     0          50 96.00000  9.419194 6.049641  0   0
+ 6:     1     1     0     0          49 93.87755  9.450187 6.097412  0   0
+ 7:     1     0     0     0          48 87.50000 10.172466 6.029851  0   0
+ 8:     0     1     0     0          47 85.10638  8.940702 6.189774  0   0
+ 9:     1     1     0     0          52 86.53846  8.617395 6.125121  0   0
+10:     0     1     0     0          50 90.00000  9.608849 6.109503  0   0
+11:     0     1     1     0          51 94.11765  9.400248 6.018759  0   0
+12:     1     1     0     0          51 86.27451  9.162558 6.108449  0   0
+13:     0     1     1     0          49 95.91837  8.995233 6.149011  0   0
+14:     1     1     0     0          48 91.66667 10.391898 6.015907  0   0
+15:     1     0     0     0          48 87.50000  9.136762 6.121580  0   0
+      Dlag50 t50.total t50.Germinated     TMGR      AUC      MGT Skewness
+ 1: 6.034954  6.355122       6.034954 5.912195 1108.975 6.632252 1.098973
+ 2: 6.175193  6.473490       6.175193 6.031282 1128.559 6.784407 1.098655
+ 3: 6.138110  6.244190       6.138110 5.938179 1283.693 6.772742 1.103392
+ 4: 6.125172  6.276793       6.125172 5.972686 1239.887 6.739665 1.100323
+ 5: 6.049641  6.103433       6.049641 5.914289 1328.328 6.654980 1.100062
+ 6: 6.097412  6.182276       6.097412 5.961877 1294.463 6.702470 1.099232
+ 7: 6.029851  6.202812       6.029851 5.914057 1213.908 6.622417 1.098272
+ 8: 6.189774  6.439510       6.189774 6.036193 1164.346 6.804000 1.099232
+ 9: 6.125121  6.352172       6.125121 5.961631 1188.793 6.745241 1.101242
+10: 6.109503  6.253042       6.109503 5.978115 1240.227 6.711899 1.098600
+11: 6.018759  6.099434       6.018759 5.883558 1305.200 6.624247 1.100600
+12: 6.108449  6.326181       6.108449 5.964079 1188.021 6.718636 1.099892
+13: 6.149011  6.207500       6.149011 5.998270 1316.407 6.762272 1.099733
+14: 6.015907  6.122385       6.015907 5.905179 1273.386 6.604963 1.097916
+15: 6.121580  6.317392       6.121580 5.976088 1203.664 6.732267 1.099760
+                                                             msg isConv
+ 1: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 2: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 3: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 4: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 5: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 6: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 7: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 8: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+ 9: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+10: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+11: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+12: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+13: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+14: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+15: #1. Relative error in the sum of squares is at most `ftol'.    TRUE
+    txp.total_10 txp.total_60 Uniformity_90 Uniformity_10 Uniformity
+ 1:     4.956266     6.744598      7.537688      4.831809   2.705880
+ 2:     4.983236     6.872603      7.835407      4.866755   2.968652
+ 3:     4.673022     6.608437      8.137340      4.630062   3.507277
+ 4:     4.850876     6.614967      7.834806      4.788598   3.046208
+ 5:     4.814126     6.386788      7.639025      4.790947   2.848078
+ 6:     4.868635     6.477594      7.693458      4.832474   2.860984
+ 7:     4.930423     6.510495      7.483642      4.858477   2.625165
+ 8:     4.940058     6.823299      7.914162      4.841106   3.073056
+ 9:     4.836659     6.733275      7.904040      4.746574   3.157466
+10:     4.920629     6.566505      7.679176      4.860681   2.818494
+11:     4.798630     6.391288      7.603603      4.764249   2.839354
+12:     4.893597     6.684521      7.763844      4.806015   2.957830
+13:     4.841310     6.509952      7.850339      4.816395   3.033943
+14:     4.915143     6.397486      7.432360      4.869401   2.562960
+15:     4.892505     6.667247      7.785804      4.813086   2.972718</code></pre>
 </div>
 </div>
 <div id="citing-germinationmetrics" class="section level2">
@@ -2055,22 +2346,17 @@ citing the package.</code></pre>
 <div id="session-info" class="section level2">
 <h2 class="hasAnchor">
 <a href="#session-info" class="anchor"></a>Session Info</h2>
-<div class="sourceCode" id="cb259"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
-<pre><code>R version 4.0.1 (2020-06-06)
-Platform: x86_64-pc-linux-gnu (64-bit)
-Running under: Ubuntu 18.04.4 LTS
+<div class="sourceCode" id="cb268"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span>()</pre></body></html></div>
+<pre><code>R Under development (unstable) (2020-06-10 r78678)
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+Running under: Windows 10 x64 (build 19041)
 
 Matrix products: default
-BLAS:   /usr/lib/x86_64-linux-gnu/atlas/libblas.so.3.10.3
-LAPACK: /usr/lib/x86_64-linux-gnu/atlas/liblapack.so.3.10.3
 
 locale:
- [1] LC_CTYPE=en_US.UTF-8       LC_NUMERIC=C              
- [3] LC_TIME=en_IN.UTF-8        LC_COLLATE=en_US.UTF-8    
- [5] LC_MONETARY=en_IN.UTF-8    LC_MESSAGES=en_US.UTF-8   
- [7] LC_PAPER=en_IN.UTF-8       LC_NAME=C                 
- [9] LC_ADDRESS=C               LC_TELEPHONE=C            
-[11] LC_MEASUREMENT=en_IN.UTF-8 LC_IDENTIFICATION=C       
+[1] LC_COLLATE=English_India.1252  LC_CTYPE=English_India.1252   
+[3] LC_MONETARY=English_India.1252 LC_NUMERIC=C                  
+[5] LC_TIME=English_India.1252    
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
@@ -2079,22 +2365,27 @@ other attached packages:
 [1] germinationmetrics_0.1.4
 
 loaded via a namespace (and not attached):
- [1] minpack.lm_1.2-1  tidyselect_1.1.0  xfun_0.14         pander_0.6.3     
- [5] purrr_0.3.4       lattice_0.20-41   colorspace_1.4-1  vctrs_0.3.1      
- [9] generics_0.0.2    htmltools_0.4.0   yaml_2.2.1        XML_3.99-0.3     
-[13] rlang_0.4.6       pkgdown_1.5.1     pillar_1.4.4      glue_1.4.1       
-[17] lifecycle_0.2.0   plyr_1.8.6        stringr_1.4.0     munsell_0.5.0    
-[21] gtable_0.3.0      memoise_1.1.0     evaluate_0.14     knitr_1.28       
-[25] gbRd_0.4-11       curl_4.3          highr_0.8         broom_0.5.6      
-[29] Rcpp_1.0.4.6      scales_1.1.1      backports_1.1.7   desc_1.2.0       
-[33] fs_1.4.1          ggplot2_3.3.1     digest_0.6.25     stringi_1.4.6    
-[37] dplyr_1.0.0       ggrepel_0.8.2     grid_4.0.1        rprojroot_1.3-2  
-[41] bibtex_0.4.2.2    mathjaxr_0.8-3    Rdpack_0.11-1     tools_4.0.1      
-[45] bitops_1.0-6      magrittr_1.5      RCurl_1.98-1.2    tibble_3.0.1     
-[49] crayon_1.3.4      tidyr_1.1.0       pkgconfig_2.0.3   MASS_7.3-51.6    
-[53] ellipsis_0.3.1    data.table_1.12.8 assertthat_0.2.1  rmarkdown_2.2    
-[57] httr_1.4.1        rstudioapi_0.11   R6_2.4.1          nlme_3.1-147     
-[61] compiler_4.0.1   </code></pre>
+ [1] minpack.lm_1.2-1       tidyselect_1.1.0       xfun_0.14             
+ [4] pander_0.6.3           purrr_0.3.4            lattice_0.20-41       
+ [7] colorspace_1.4-1       vctrs_0.3.1            generics_0.0.2        
+[10] htmltools_0.4.0        yaml_2.2.1             XML_3.99-0.3          
+[13] rlang_0.4.6            pkgdown_1.5.1          pillar_1.4.4          
+[16] glue_1.4.1             lifecycle_0.2.0        plyr_1.8.6            
+[19] stringr_1.4.0          munsell_0.5.0          gtable_0.3.0          
+[22] memoise_1.1.0          evaluate_0.14          labeling_0.3          
+[25] knitr_1.28             gbRd_0.4-11            curl_4.3              
+[28] highr_0.8              broom_0.5.6            Rcpp_1.0.4.6          
+[31] scales_1.1.1           backports_1.1.7        desc_1.2.0            
+[34] farver_2.0.3           fs_1.4.1               ggplot2_3.3.1         
+[37] digest_0.6.25          stringi_1.4.6          dplyr_1.0.0           
+[40] ggrepel_0.8.2          grid_4.1.0             rprojroot_1.3-2       
+[43] bibtex_0.4.2.2         mathjaxr_1.0-0         Rdpack_0.11-2         
+[46] tools_4.1.0            bitops_1.0-6           magrittr_1.5          
+[49] RCurl_1.98-1.2         tibble_3.0.1           crayon_1.3.4          
+[52] tidyr_1.1.0            pkgconfig_2.0.3        MASS_7.3-51.6         
+[55] ellipsis_0.3.1         data.table_1.12.8      assertthat_0.2.1      
+[58] rmarkdown_2.2          httr_1.4.1             rstudioapi_0.11.0-9000
+[61] R6_2.4.1               nlme_3.1-148           compiler_4.1.0        </code></pre>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="hasAnchor">
