@@ -29,11 +29,11 @@
 #' @param rog If \code{TRUE}, plots the Rate of Germination curve (RoG). Default
 #'   is \code{TRUE}.
 #' @param t50.total If \code{TRUE}, highlights the time required for 50\% of
-#'   total seeds to germinate (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Germ}}})
+#'   total seeds to germinate (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Total}}})
 #'   as a vertical line. Default is \code{TRUE}.
 #' @param t50.germ If \code{TRUE}, highlights the time required for 50\% of
 #'   viable/germinated seeds to germinate
-#'   (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Total}}}) as a vertical line.
+#'   (\mjseqn{\textrm{t}_{\textrm{50}_\textrm{Germ}}}) as a vertical line.
 #'   Default is \code{TRUE}.
 #' @param tmgr If \code{TRUE}, highlights the Time at Maximum Germination Rate
 #'   (TMGR) as a vertical line. Default is \code{TRUE}.

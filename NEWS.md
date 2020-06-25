@@ -1,5 +1,8 @@
 # germinationmetrics  0.1.5
 
+## NEW FUNCTIONS:
+* `plot.FourPHFfit.bulk` - Wrapper function around `FourPHFfit` for multiple samples.
+
 # germinationmetrics  0.1.4
 
 ## NEW FUNCTIONS:

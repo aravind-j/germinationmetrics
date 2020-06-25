@@ -190,7 +190,8 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
                                             total.seeds = unlist(mget(total.seeds.col)))["Uniformity"])),
                 by=1:nrow(data)]
 
-  ulist <- rbindlist(lapply(ulist$Ulist, function(x) as.data.frame.list(unlist(x))))
+  ulist <- rbindlist(lapply(ulist$Ulist,
+                            function(x) as.data.frame.list(unlist(x))))
 
   xptlist <- data[, .(xptlist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
                                                 intervals = intervals,
@@ -200,7 +201,8 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
                                                 total.seeds = unlist(mget(total.seeds.col)))["txp.total"])),
                   by=1:nrow(data)]
 
-  xptlist <- rbindlist(lapply(xptlist$xptlist, function(x) as.data.frame.list(unlist(x))))
+  xptlist <- rbindlist(lapply(xptlist$xptlist,
+                              function(x) as.data.frame.list(unlist(x))))
 
   xpglist <- data[, .(xpglist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
                                                 intervals = intervals,
@@ -210,7 +212,8 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
                                                 total.seeds = unlist(mget(total.seeds.col)))["txp.germinated"])),
                   by=1:nrow(data)]
 
-  xpglist <- rbindlist(lapply(xpglist$xpglist, function(x) as.data.frame.list(unlist(x))))
+  xpglist <- rbindlist(lapply(xpglist$xpglist,
+                              function(x) as.data.frame.list(unlist(x))))
 
   data <- cbind(data, xptlist, xpglist, ulist)
 
@@ -222,7 +225,17 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
   setnames(data, old = colnames(data),
            new = gsub("txp.Germinated.", "txp.Germinated_", colnames(data)))
 
-  return(data)
+  setDF(data)
 
+  arguments <- list(total.seeds.col = total.seeds.col,
+                    counts.intervals.cols = counts.intervals.cols,
+                    intervals = intervals, partial = partial, fix.y0 = fix.y0,
+                    fix.a = fix.a, tmax = tmax, xp = xp,
+                    umin = umin, umax = umax)
+
+  attr(data, "arguments") <- arguments
+
+  class(data) <- c("FourPHFfit.bulk", class(data))
+  return(data)
 
 }

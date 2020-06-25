@@ -59,6 +59,7 @@ reference:
       contents:
          - '`germination.indices`'
          - '`FourPHFfit.bulk`'
+         - '`plot.FourPHFfit.bulk`'
 
     - title: Data
       contents:

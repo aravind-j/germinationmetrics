@@ -456,7 +456,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
 
   # Set Class
-  class(output) <- "FourPHFfit"
+  class(output) <- c("FourPHFfit", class(output))
 
   return(output)
   rm(mod)
