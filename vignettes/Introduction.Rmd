@@ -20,13 +20,13 @@ header-includes:
 - \newcommand{\elandscape}{\end{landscape}}
 - \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 output:
-  html_document:
-    df_print: paged
-    toc: yes
   pdf_document:
     dev: cairo_pdf
     fig_caption: no
     toc: no
+  html_document:
+    df_print: paged
+    toc: yes
 csl: frontiers.csl
 bibliography: REFERENCES.bib
 link-citations: yes
@@ -242,6 +242,8 @@ getCode <- function(myFunction, myPackage) {
   
   out <- out[!(out %in% c("## No test: ", "## End(No test)"))]
   
+  out <- gsub("^##D ", "", out)
+  
   return(out)
 }
 library(germinationmetrics)
@@ -350,6 +352,8 @@ getCode <- function(myFunction, myPackage) {
   out <- out[-(1:maxn)]
   
   out <- out[!(out %in% c("## No test: ", "## End(No test)"))]
+  
+  out <- gsub("^##D ", "", out)
   
   return(out)
 }

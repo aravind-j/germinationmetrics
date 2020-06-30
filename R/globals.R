@@ -26,6 +26,7 @@ if (getRversion() >= "2.15.1")  {
       "TimsonsIndex_Labouriau", "TimsonsIndex_KhanUngar", "GermValue_Czabator",
       "GermValue_DP", "GermValue_Czabator_mod", "GermValue_DP_mod","GermIndex_mod",
       "EmergenceRateIndex_Melville", "EmergenceRateIndex_Melville_mod",
-      "EmergenceRateIndex_BilbroWanjura", "EmergenceRateIndex_Fakorede", ".")
+      "EmergenceRateIndex_BilbroWanjura", "EmergenceRateIndex_Fakorede", ".",
+      "a", "b", "curve", "dfgp", "gp", "y0")
   )
 }

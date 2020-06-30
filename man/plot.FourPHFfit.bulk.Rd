@@ -8,7 +8,7 @@ curves from a \code{FourPHFfit.bulk} object}
 \method{plot}{FourPHFfit.bulk}(
   x,
   rog = FALSE,
-  annotate = c("t50.total", "t50.germ", "tmgr", "mgt", "uniformity"),
+  annotate = c("none", "t50.total", "t50.germ", "tmgr", "mgt", "uniformity"),
   limits = TRUE,
   group.col,
   show.points = FALSE,
@@ -63,7 +63,6 @@ can also be annotated in the plot as specified in the \code{annotate}
 argument. \loadmathjax
 }
 \examples{
-
 \donttest{
 data(gcdata)
 
@@ -86,6 +85,22 @@ plot(fits, rog = TRUE, group.col = "Genotype")
 # Plot FPHF curves with points
 plot(fits, group.col = "Genotype", show.points = TRUE)
 
+# Plot FPHF curves with annotations
+plot(fits, group.col = "Genotype", annotate = "t50.total")
+plot(fits, group.col = "Genotype", annotate = "t50.germ")
+plot(fits, group.col = "Genotype", annotate = "tmgr")
+plot(fits, group.col = "Genotype", annotate = "mgt")
+plot(fits, group.col = "Genotype", annotate = "uniformity")
+
+# Plot ROG curves with annotations
+plot(fits, rog = TRUE, group.col = "Genotype", annotate = "t50.total")
+plot(fits, rog = TRUE, group.col = "Genotype", annotate = "t50.germ")
+plot(fits, rog = TRUE, group.col = "Genotype", annotate = "tmgr")
+plot(fits, rog = TRUE, group.col = "Genotype", annotate = "mgt")
+plot(fits, rog = TRUE, group.col = "Genotype", annotate = "uniformity")
+
+
+
 # Change colour of curves using ggplot2 options
 library(ggplot2)
 curvesplot <- plot(fits, group.col = "Genotype")
@@ -98,6 +113,7 @@ curvesplot +
   scale_colour_manual(values = c("Coral", "Brown", "Blue",
                                  "Aquamarine", "Red"))
 }
+
 }
 \seealso{
 \code{\link[germinationmetrics]{FourPHFfit.bulk}}

@@ -65,7 +65,6 @@
 #' @export
 #'
 #' @examples
-#'
 #' \donttest{
 #' data(gcdata)
 #'
@@ -88,6 +87,22 @@
 #' # Plot FPHF curves with points
 #' plot(fits, group.col = "Genotype", show.points = TRUE)
 #'
+#' # Plot FPHF curves with annotations
+#' plot(fits, group.col = "Genotype", annotate = "t50.total")
+#' plot(fits, group.col = "Genotype", annotate = "t50.germ")
+#' plot(fits, group.col = "Genotype", annotate = "tmgr")
+#' plot(fits, group.col = "Genotype", annotate = "mgt")
+#' plot(fits, group.col = "Genotype", annotate = "uniformity")
+#'
+#' # Plot ROG curves with annotations
+#' plot(fits, rog = TRUE, group.col = "Genotype", annotate = "t50.total")
+#' plot(fits, rog = TRUE, group.col = "Genotype", annotate = "t50.germ")
+#' plot(fits, rog = TRUE, group.col = "Genotype", annotate = "tmgr")
+#' plot(fits, rog = TRUE, group.col = "Genotype", annotate = "mgt")
+#' plot(fits, rog = TRUE, group.col = "Genotype", annotate = "uniformity")
+#'
+#'
+#'
 #' # Change colour of curves using ggplot2 options
 #' library(ggplot2)
 #' curvesplot <- plot(fits, group.col = "Genotype")
@@ -100,11 +115,17 @@
 #'   scale_colour_manual(values = c("Coral", "Brown", "Blue",
 #'                                  "Aquamarine", "Red"))
 #' }
+#'
+
 plot.FourPHFfit.bulk <- function(x, rog = FALSE,
-                                 annotate = c("t50.total", "t50.germ",
+                                 annotate = c("none", "t50.total", "t50.germ",
                                               "tmgr", "mgt", "uniformity"),
                                  limits = TRUE, group.col,
                                  show.points = FALSE, ...){
+
+  if (is.null(annotate)) {
+    annotate == "none"
+  }
 
   # checks
   annotate <- match.arg(annotate)
@@ -116,23 +137,20 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
                sep = ""))
   }
 
-  acol <- c("a", "b", "c", "y0")
-
   if (annotate == "mgt") {
-    acol <- c(acol, "MGT")
+    acol <- "MGT"
   }
   if (annotate == "t50.total") {
-    acol <- c(acol, "t50.total")
+    acol <- "t50.total"
   }
   if (annotate == "t50.germ") {
-    acol <- c(acol, "t50.Germinated")
+    acol <- "t50.Germinated"
   }
   if (annotate == "tmgr") {
-    acol <- c(acol, "TMGR")
+    acol <- "TMGR"
   }
   if (annotate == "uniformity") {
-    ucol <- colnames(x)[grepl("Uniformity_", colnames(x))]
-    acol <- c(acol, ucol)
+    acol <- colnames(x)[grepl("Uniformity_", colnames(x))]
   }
 
   partial <- attributes(x)$arguments$partial
@@ -228,6 +246,41 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
       #            alpha = 0.5, inherit.aes = FALSE) +
       labs(x = "Time", y = "Germination (%)") +
       theme_bw()
+  }
+
+  if (annotate != "none") {
+    dfannotate <- x[, c(group.col, acol)]
+
+    if (annotate != "uniformity") {
+      Gplot <- Gplot +
+        geom_vline(data = dfannotate,
+                   aes_string(xintercept = acol, colour = group.col),
+                   linetype = "dashed")
+    } else {
+      Gplot <- Gplot +
+        geom_point(data = dfannotate,
+                       aes_string(x = acol[1],
+                                  y = ypos2, colour = group.col),
+                       inherit.aes = FALSE, pch = 18,
+                       position = position_dodge(5)) +
+        geom_point(data = dfannotate,
+                   aes_string(x = acol[2],
+                              y = ypos2, colour = group.col),
+                   inherit.aes = FALSE, pch = 18,
+                   position = position_dodge(5)) +
+        geom_linerange(data = dfannotate,
+                     aes_string(xmin = acol[1], xmax = acol[2],
+                                y = ypos2, colour = group.col),
+                     inherit.aes = FALSE,
+                     position = position_dodge(5))
+    }
+
+  }
+
+  # plot limits
+  if (limits == TRUE) {
+    Gplot <- Gplot + coord_cartesian(xlim = c(0, max(intervals)),
+                                     ylim = c(0, 100))
   }
 
   Gplot <- Gplot +
