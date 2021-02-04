@@ -21,7 +21,6 @@ header-includes:
 - \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
 output:
   pdf_document:
-    dev: cairo_pdf
     fig_caption: no
     toc: no
   html_document:
