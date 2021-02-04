@@ -159,8 +159,12 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   GP <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
               partial = partial)
 
-  if (GP < 10) {
-    warning("Final germination percentage is less than 10%.\nThe computation may not be appropriate.")
+  if (GP == 0) {
+    warning("Final germination percentage is 0%.\nThe computation is not possible.")
+  } else {
+    if (GP < 10) {
+      warning("Final germination percentage is less than 10%.\nThe computation may not be appropriate.")
+    }
   }
 
   # Check if argument germ.counts is of type numeric
@@ -270,189 +274,257 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
   df <- data.frame(gp, csgp, intervals)
 
-  # Starting values for nls
-  starta <- max(csgp)
-  startb <- 20
-  startc <- t50(germ.counts, intervals, partial, method = "coolbear")
-  starty0 <- 0
+  if (GP > 0) {
+    # Starting values for nls
+    starta <- max(csgp)
+    peakg <- suppressWarnings(PeakGermTime(germ.counts, intervals, partial))
+    startb <- 20
+    startc <- t50(germ.counts, intervals, partial, method = "coolbear")
+    starty0 <- 0
 
-  msg <- ""
+    msg <- ""
 
-  lowera <- lowerb <- lowerc <- lowery0 <- -Inf
-  uppera <- upperb <- upperc <- uppery0 <- Inf
+    lowera <- lowerb <- lowerc <- lowery0 <- -Inf
+    uppera <- upperb <- upperc <- uppery0 <- Inf
 
-  if (TRUE %in% c(fix.y0, fix.a)) {
+    if (TRUE %in% c(fix.y0, fix.a)) {
 
-    if (fix.y0 == TRUE) {
-      lowery0 <- uppery0 <- 0
+      if (fix.y0 == TRUE) {
+        lowery0 <- uppery0 <- 0
       }
-    if (fix.a == TRUE) {
-      lowera <- uppera <- max(csgp)
+      if (fix.a == TRUE) {
+        lowera <- uppera <- max(csgp)
       }
-  }
+    }
 
-  #=============================================================================
-  # Fit the model - using nlsLM
-  #------------------------------
-  for (i in 1:tries) {
-    # check if convergence possible with start values
-    possibleError <- tryCatch(
+    if (mean(peakg) <= 3) {
+      csgp2 <- c(csgp, rep(max(csgp), 20))
+      intervals2 <- seq_along(csgp2)
+      df2 <- data.frame(csgp2, intervals2)
 
-      nlsLM(
-        csgp ~ FourPHF(x = intervals, a, b, c, y0),
-        data = df,
-        start = list(a = starta, b = startb, c = startc, y0 = starty0),
-        lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
-        upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
-        control = list(maxiter = 1024, warnOnly = FALSE)),
+      # grd <- data.frame(a=c(starta, starta),
+      #                   b=c(55,85),
+      #                   c=c(startc-1, startc+1),
+      #                   y0=c(starty0, starty0))
 
-      error = function(e) e)
+      tmod <- tryCatch(
 
-    if (!inherits(possibleError, "error")) {
+        suppressWarnings(nlsLM(
+          csgp2 ~ FourPHF(x = intervals2, a, b, c, y0),
+          data = df2,
+          start = list(a = starta, b = startb, c = startc, y0 = starty0),
+          lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
+          upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
+          control = list(maxiter = 1024, warnOnly = FALSE))),
 
-      mod <- possibleError
-      rm(possibleError)
-      msg <- paste(msg, "#", i, ". ", mod$convInfo$stopMessage, " ", sep = "")
-      break # break out of loop if convergence is successful
+        # suppressWarnings(nls2(csgp ~ FourPHF(x = intervals, a, b, c, y0),
+        #      data = df,
+        #      start = grd,
+        #      algorithm = "random",
+        #      control = nls.control(maxiter = 20000), all = TRUE)),
 
-    } else {# In case of convergence failure with initial start values
+        error = function(e) e)
 
-      # suppress warnings and rerun above with warnOnly = TRUE
-      mod <- suppressWarnings(nlsLM(
-        csgp ~ FourPHF(x = intervals, a, b, c, y0),
-        data = df,
-        start = list(a = starta, b = startb, c = startc, y0 = starty0),
-        lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
-        upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
-        control = list(maxiter = 1024, warnOnly = TRUE)))
-
-      # Extract convergence msg
-      msg <- paste(msg, "#", i, ". ", mod$convInfo$stopMessage, " ", sep = "")
-
-      # Get new start values
-      starta <- coef(mod)["a"]
-      startb <- coef(mod)["b"]
-      startc <- coef(mod)["c"]
-      starty0 <- 0
+      if (!inherits(tmod, "error")) {
+        startb <-  unname(coef(tmod)["b"])
+        # startc <-  unname(coef(tmod)["c"])
+      }
 
     }
-  }
-  #=============================================================================
 
-  isConv <-  mod$convInfo$isConv
+    #=============================================================================
+    # Fit the model - using nlsLM
+    #------------------------------
+    for (i in 1:tries) {
+      # check if convergence possible with start values
+      possibleError <- tryCatch(
 
-  # Parameters estimates
-  parameters <- tidy(mod)
+        nlsLM(
+          csgp ~ FourPHF(x = intervals, a, b, c, y0),
+          data = df,
+          start = list(a = starta, b = startb, c = startc, y0 = starty0),
+          lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
+          upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
+          control = list(maxiter = 1024, warnOnly = FALSE)),
 
-  # Fit quality
-  fit <- glance(mod)
+        error = function(e) e)
 
-  # Asymptote or maximum cumulative germination percentage
-  a <- unname(unlist(parameters[parameters$term == "a", "estimate"]))
-  # Shape and steepness
-  b <- unname(unlist(parameters[parameters$term == "b", "estimate"]))
-  # Half-maximal activation level
-  # Time required for 50% of viable seeds to germinate
-  c <- unname(unlist(parameters[parameters$term == "c", "estimate"]))
-  # Intercept on the y axis
-  y0 <- unname(unlist(parameters[parameters$term == "y0", "estimate"]))
+      if (!inherits(possibleError, "error")) {
 
-  # Time at germination onset (lag); will be 0 if y0 is constrained to zero
-  lag <- ((-y0*(c^b))/(a + y0))^(1/b)
+        mod <- possibleError
+        rm(possibleError)
+        msg <- paste(msg, "#", i, ". ", mod$convInfo$stopMessage, " ", sep = "")
+        break # break out of loop if convergence is successful
 
-  # Duration between the time at germination onset (lag)
-  # and that at 50% germination (c)
-  Dlag50 <- c - lag
+      } else {# In case of convergence failure with initial start values
 
-  # #---------------------------------------------------------------------------
-  # findInt <- function(model, value) {
-  #   function(x) {
-  #     predict(mod, data.frame(intervals = x), type="response") - value
-  #   }
-  # }
-  #
-  # txp.total <- uniroot(findInt(model, xp), range(intervals))$root
-  #
-  # t50.total <- uniroot(findInt(model, 50), range(intervals))$root
+        # suppress warnings and rerun above with warnOnly = TRUE
+        mod <- suppressWarnings(nlsLM(
+          csgp ~ FourPHF(x = intervals, a, b, c, y0),
+          data = df,
+          start = list(a = starta, b = startb, c = startc, y0 = starty0),
+          lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
+          upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
+          control = list(maxiter = 1024, warnOnly = TRUE)))
 
-  # txp.Germinated <- uniroot(findInt(model, (xp * max(csgp)/100)),
-  #                           range(intervals))$root
+        # Extract convergence msg
+        msg <- paste(msg, "#", i, ". ", mod$convInfo$stopMessage, " ", sep = "")
 
-  # #---------------------------------------------------------------------------
+        # Get new start values
+        starta <- coef(mod)["a"]
+        startb <- coef(mod)["b"]
+        startc <- coef(mod)["c"]
+        starty0 <- 0
 
-  # Time required for 50% of total seeds to germinate
-  t50.total <- (((((50 - y0)/a))*(c^b))/(1 - (((50 - y0)/a))))^(1/b)
+      }
+    }
+    #=============================================================================
 
-  # Time required for x% of total seeds to germinate
-  txp.total <- (((((xp - y0)/a))*(c^b))/(1 - (((xp - y0)/a))))^(1/b)
+    isConv <-  mod$convInfo$isConv
+
+    # Parameters estimates
+    parameters <- tidy(mod)
+
+    # Fit quality
+    fit <- glance(mod)
+
+    # Asymptote or maximum cumulative germination percentage
+    a <- unname(unlist(parameters[parameters$term == "a", "estimate"]))
+    # Shape and steepness
+    b <- unname(unlist(parameters[parameters$term == "b", "estimate"]))
+    # Half-maximal activation level
+    # Time required for 50% of viable seeds to germinate
+    c <- unname(unlist(parameters[parameters$term == "c", "estimate"]))
+    # Intercept on the y axis
+    y0 <- unname(unlist(parameters[parameters$term == "y0", "estimate"]))
+
+    # Time at germination onset (lag); will be 0 if y0 is constrained to zero
+    lag <- ((-y0*(c^b))/(a + y0))^(1/b)
+
+    # Duration between the time at germination onset (lag)
+    # and that at 50% germination (c)
+    Dlag50 <- c - lag
+
+    # #---------------------------------------------------------------------------
+    # findInt <- function(model, value) {
+    #   function(x) {
+    #     predict(mod, data.frame(intervals = x), type="response") - value
+    #   }
+    # }
+    #
+    # txp.total <- uniroot(findInt(model, xp), range(intervals))$root
+    #
+    # t50.total <- uniroot(findInt(model, 50), range(intervals))$root
+
+    # txp.Germinated <- uniroot(findInt(model, (xp * max(csgp)/100)),
+    #                           range(intervals))$root
+
+    # #---------------------------------------------------------------------------
+
+    # Time required for 50% of total seeds to germinate
+    t50.total <- (((((50 - y0)/a))*(c^b))/(1 - (((50 - y0)/a))))^(1/b)
+
+    # Time required for x% of total seeds to germinate
+    txp.total <- (((((xp - y0)/a))*(c^b))/(1 - (((xp - y0)/a))))^(1/b)
 
 
-  # Time required for 50%  of germinated/viable seeds to germinate
-  t50.Germinated <- (((50 - y0)/100*(c^b))/(1 - ((50 - y0)/100)))^(1/b)
+    # Time required for 50%  of germinated/viable seeds to germinate
+    t50.Germinated <- (((50 - y0)/100*(c^b))/(1 - ((50 - y0)/100)))^(1/b)
 
-  # Time required for x%  of germinated/viable seeds to germinate
-  # or time to reach x%  of germination
-  txp.Germinated <- (((xp - y0)/100*(c^b))/(1 - ((xp - y0)/100)))^(1/b)
+    # Time required for x%  of germinated/viable seeds to germinate
+    # or time to reach x%  of germination
+    txp.Germinated <- (((xp - y0)/100*(c^b))/(1 - ((xp - y0)/100)))^(1/b)
 
-  # Uniformity
-  UfmMax <- (((umax - y0)/100*(c^b))/(1 - ((umax - y0)/100)))^(1/b)
-  UfmMin <- (((umin - y0)/100*(c^b))/(1 - ((umin - y0)/100)))^(1/b)
-  Ufm <- UfmMax - UfmMin
-  uniformity = c(max = UfmMax, min = UfmMin, uniformity = Ufm)
-  names(uniformity) <- c(umax, umin, "uniformity")
+    # Uniformity
+    UfmMax <- (((umax - y0)/100*(c^b))/(1 - ((umax - y0)/100)))^(1/b)
+    UfmMin <- (((umin - y0)/100*(c^b))/(1 - ((umin - y0)/100)))^(1/b)
+    Ufm <- UfmMax - UfmMin
+    uniformity = c(max = UfmMax, min = UfmMin, uniformity = Ufm)
+    names(uniformity) <- c(umax, umin, "uniformity")
 
-  # Time at maximum germination rate - peak of plot of daily rate of germination
-  TMGR <- (((c^b)*(b - 1))/(b + 1))^(1/b)
-
-
-  # Area under the curve - add argument max time
-  AUC <- integrate(FourPHF, lower = 0, upper = tmax,
-                   a = a, b = b, c = c, y0 = y0)$value
+    # Time at maximum germination rate - peak of plot of daily rate of germination
+    TMGR <- (((c^b)*(b - 1))/(b + 1))^(1/b)
 
 
-  # Mean Germination time
-  FourPHFMGT <- function(x, a, b, c, y0)
-  {
-    ((y0 + a*(x^b)/(c^b + x^b)) - (y0 + a*((x - 1)^b)/(c^b + (x - 1)^b)))*x
-  }
+    # Area under the curve - add argument max time
+    AUC <- integrate(FourPHF, lower = 0, upper = tmax,
+                     a = a, b = b, c = c, y0 = y0)$value
 
-  MGT <- integrate(FourPHFMGT, lower = 1, upper = max(intervals),
-                   a = a, b = b, c = c, y0 = y0)$value/a
 
-  #-----------------------------------------------------------------------------
-  # Mean Germination time
-  # tmax <- max(intervals)
-  # x <- 1
-  # MGTg1 <- (y0 + ((a * ((x / 1000)^b)) / ((c^b) + (((x - 1) / 1000)^b)))) * 0.001
-  # x <- 2:(1000 * tmax)
-  # z <- (y0 + ((a * ((x / 1000)^b)) / ((c^b) + (((x - 1) / 1000)^b))) - (y0 + ((a * (((x - 1) / 1000)^b)) / ((c^b) + (((x - 2) / 1000)^b))))) * (x / 1000)
-  # MGTg <- sum(c(MGTg1, z)) / a
-  # rm(x, MGTg1, z)
-  #-----------------------------------------------------------------------------
-  # plot(df$intervals, df$csgp, xlab = "Time", ylab = "Germination (%)")
-  # abline(h = 50)
-  # abline(v = c)
-  # lines(predict(mod)~df$intervals, col="red")
-  #
-  # abline(h = xp, col="green")
-  # abline(v = txp.total, col="green")
-  # abline(v = t50.total , col="red")
-  #
-  # abline(v = TMGR, col = "blue")
-  # curve(RateofGerm(x, a=a, b=b, c=c), xlim = c(0, 13), type = "l",
-  #       add = TRUE, col = "blue")
+    # Mean Germination time
+    FourPHFMGT <- function(x, a, b, c, y0)
+    {
+      ((y0 + a*(x^b)/(c^b + x^b)) - (y0 + a*((x - 1)^b)/(c^b + (x - 1)^b)))*x
+    }
 
-  output <- list(data = df, Parameters = data.frame(parameters),
-                 Fit = as.data.frame(fit),
-                 a = a, b = b, c = c, y0 = y0,
-                 lag = lag, Dlag50 = Dlag50,
-                 t50.total = t50.total, txp.total = txp.total,
-                 t50.Germinated = t50.Germinated,
-                 txp.Germinated = txp.Germinated,
-                 Uniformity = uniformity, TMGR = TMGR, AUC = AUC, MGT = MGT,
-                 #MGTg = MGTg,
-                 Skewness = MGT/t50.Germinated,
-                 msg = msg, isConv = isConv)
+    MGT <- integrate(FourPHFMGT, lower = 1, upper = max(intervals),
+                     a = a, b = b, c = c, y0 = y0)$value/a
+
+    #-----------------------------------------------------------------------------
+    # Mean Germination time
+    # tmax <- max(intervals)
+    # x <- 1
+    # MGTg1 <- (y0 + ((a * ((x / 1000)^b)) / ((c^b) + (((x - 1) / 1000)^b)))) * 0.001
+    # x <- 2:(1000 * tmax)
+    # z <- (y0 + ((a * ((x / 1000)^b)) / ((c^b) + (((x - 1) / 1000)^b))) - (y0 + ((a * (((x - 1) / 1000)^b)) / ((c^b) + (((x - 2) / 1000)^b))))) * (x / 1000)
+    # MGTg <- sum(c(MGTg1, z)) / a
+    # rm(x, MGTg1, z)
+    #-----------------------------------------------------------------------------
+    # plot(df$intervals, df$csgp, xlab = "Time", ylab = "Germination (%)")
+    # abline(h = 50)
+    # abline(v = c)
+    # lines(predict(mod)~df$intervals, col="red")
+    #
+    # abline(h = xp, col="green")
+    # abline(v = txp.total, col="green")
+    # abline(v = t50.total , col="red")
+    #
+    # abline(v = TMGR, col = "blue")
+    # curve(RateofGerm(x, a=a, b=b, c=c), xlim = c(0, 13), type = "l",
+    #       add = TRUE, col = "blue")
+
+    output <- list(data = df, Parameters = data.frame(parameters),
+                   Fit = as.data.frame(fit),
+                   a = a, b = b, c = c, y0 = y0,
+                   lag = lag, Dlag50 = Dlag50,
+                   t50.total = t50.total, txp.total = txp.total,
+                   t50.Germinated = t50.Germinated,
+                   txp.Germinated = txp.Germinated,
+                   Uniformity = uniformity, TMGR = TMGR, AUC = AUC, MGT = MGT,
+                   #MGTg = MGTg,
+                   Skewness = MGT/t50.Germinated,
+                   msg = msg, isConv = isConv)
+  } else {
+
+    parameters <- data.frame(term = c("a", "b", "c", "y0"),
+                             estimate = rep(NA_integer_),
+                             std.error = rep(NA_integer_, 4),
+                             statistic       = rep(NA_integer_, 4),
+                             p.value = rep(NA_integer_, 4))
+
+    fit <- data.frame(sigma = NA_integer_, isConv = NA, finTol = NA_integer_,
+               logLik = NA_integer_, AIC = NA_integer_, BIC = NA_integer_,
+               deviance = NA_integer_, df.residual = NA_integer_, nobs = NA_integer_)
+
+    uniformity = c(NA_integer_, NA_integer_, NA_integer_)
+    names(uniformity) <- c(umax, umin, "uniformity")
+
+    txp.total <-  txp.Germinated <- rep(NA_integer_, length(xp))
+    names(txp.total) <- xp
+    names(txp.Germinated) <- xp
+
+    output <- list(data = df, Parameters = parameters,
+                   Fit = fit,
+                   a = NA_integer_, b = NA_integer_, c = NA_integer_, y0 = NA_integer_,
+                   lag = NA_integer_, Dlag50 = NA_integer_,
+                   t50.total = NA_integer_, txp.total = txp.total,
+                   t50.Germinated = NA_integer_,
+                   txp.Germinated = txp.Germinated,
+                   Uniformity = uniformity, TMGR = NA_integer_, AUC = NA_integer_, MGT = NA_integer_,
+                   #MGTg = MGTg,
+                   Skewness = NA_integer_,
+                   msg = NA_integer_, isConv = NA)
+    }
 
 
   # Set Class

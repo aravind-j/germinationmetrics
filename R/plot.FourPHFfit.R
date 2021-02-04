@@ -126,56 +126,104 @@ plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
     ypos2 <- plyr::round_any(max(df$csgp), 10, floor)
   }
 
-  # curves + TMGR + MGT + t50.G + Ufm
-  # Plot points + FPHF fit curve
-  Gplot <- ggplot(data = df, aes(x = intervals, y = csgp)) +
-    geom_point(alpha = 0.5) +
-    stat_function(fun = FourPHF, colour = "red2",
-                  args = list(a = a, b = b, c = c, y0 = y0)) +
-    labs(x = "Time", y = "Germination (%)") +
-    theme_bw()
+  if (max(df$csgp) == 0) {
+    Gplot <- ggplot(data = df, aes(x = intervals, y = csgp)) +
+      geom_point(alpha = 0.5) +
+      labs(x = "Time", y = "Germination (%)") +
+      theme_bw()
+  } else {
 
-  # Plot RoG curve
-  if (rog == TRUE) {
-    Gplot <- Gplot +
-      stat_function(fun = RateofGerm, colour = "royalblue4",
-                    args = list(a = a, b = b, c = c))
-  }
+    # curves + TMGR + MGT + t50.G + Ufm
+    # Plot points + FPHF fit curve
+    Gplot <- ggplot(data = df, aes(x = intervals, y = csgp)) +
+      geom_point(alpha = 0.5) +
+      stat_function(fun = FourPHF, colour = "red2",
+                    args = list(a = a, b = b, c = c, y0 = y0)) +
+      labs(x = "Time", y = "Germination (%)") +
+      theme_bw()
 
-  # Plot TMGR
-  if (tmgr == TRUE) {
-    Gplot <- Gplot +
-      geom_vline(xintercept = TMGR, colour = "royalblue4", linetype = "dashed")
-  }
-
-  # Plot MGT
-  if (mgt == TRUE) {
-    Gplot <- Gplot +
-      geom_vline(xintercept = MGT, colour = "green4", linetype = "dashed")
-  }
-
-  # Plot uniformity
-  if (uniformity == TRUE) {
-    Gplot <- Gplot +
-      geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2),
-                   colour = "gray15", arrow = arrow(length = unit(0.2,"cm"))) +
-      geom_segment(aes(x = UfmMax, xend = UfmMin, y = ypos2, yend = ypos2),
-                   colour = "gray15", arrow = arrow(length = unit(0.2,"cm")))
-  }
-
-  # t50s
-  if (t50.germ == TRUE | t50.total == TRUE ) {
-    Gplot <- Gplot +
-      geom_hline(yintercept = 50, colour = "black", linetype = "dotted")
-    if (t50.germ == TRUE) {
+    # Plot RoG curve
+    if (rog == TRUE) {
       Gplot <- Gplot +
-      geom_vline(xintercept = t50.Germinated, colour = "deeppink3",
-                 linetype = "dashed")
+        stat_function(fun = RateofGerm, colour = "royalblue4",
+                      args = list(a = a, b = b, c = c))
     }
-    if (t50.total == TRUE & max(df$csgp) >= 50) {
+
+    # Plot TMGR
+    if (tmgr == TRUE) {
       Gplot <- Gplot +
-      geom_vline(xintercept = t50.totalseeds, colour = "red2", linetype = "dashed")
+        geom_vline(xintercept = TMGR, colour = "royalblue4", linetype = "dashed")
     }
+
+    # Plot MGT
+    if (mgt == TRUE) {
+      Gplot <- Gplot +
+        geom_vline(xintercept = MGT, colour = "green4", linetype = "dashed")
+    }
+
+    # Plot uniformity
+    if (uniformity == TRUE) {
+      Gplot <- Gplot +
+        geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2),
+                     colour = "gray15", arrow = arrow(length = unit(0.2,"cm"))) +
+        geom_segment(aes(x = UfmMax, xend = UfmMin, y = ypos2, yend = ypos2),
+                     colour = "gray15", arrow = arrow(length = unit(0.2,"cm")))
+    }
+
+    # t50s
+    if (t50.germ == TRUE | t50.total == TRUE ) {
+      Gplot <- Gplot +
+        geom_hline(yintercept = 50, colour = "black", linetype = "dotted")
+      if (t50.germ == TRUE) {
+        Gplot <- Gplot +
+          geom_vline(xintercept = t50.Germinated, colour = "deeppink3",
+                     linetype = "dashed")
+      }
+      if (t50.total == TRUE & max(df$csgp) >= 50) {
+        Gplot <- Gplot +
+          geom_vline(xintercept = t50.totalseeds, colour = "red2", linetype = "dashed")
+      }
+    }
+
+    if (plotlabels == TRUE) {
+      labdf <- data.frame(rbind(c(x = max(df$intervals), y = max(df$csgp),
+                                  lab = "FPHF~curve", col = "red2")),
+                          stringsAsFactors = F)
+      if (rog == TRUE) {
+        labdf <- rbind(labdf, c(x = max(df$intervals),
+                                y = RateofGerm(x = max(df$intervals),
+                                               a = a, b = b, c = c),
+                                lab = "RoG~curve", col = "royalblue4"))
+      }
+      if (tmgr == TRUE) {
+        labdf <- rbind(labdf, c(x = TMGR, y = ypos, lab = "TMGR",
+                                col = "royalblue4"))
+      }
+      if (mgt == TRUE) {
+        labdf <- rbind(labdf, c(x = MGT, y = ypos, lab = "MGT",col = "green4"))
+      }
+      if (uniformity == TRUE) {
+        labdf <- rbind(labdf, c(x = UfmMid, y = ypos2,
+                                lab =  paste("U","[", umax, "-", umin,"]",
+                                             sep = ""), col = "gray15"))
+      }
+      if (t50.germ == TRUE) {
+        labdf <- rbind(labdf, c(x = t50.Germinated, y = ypos,
+                                lab = "t[50[Germ]]", col = "deeppink3"))
+      }
+      if (t50.total == TRUE & max(df$csgp) >= 50) {
+        labdf <- rbind(labdf, c(x = t50.totalseeds, y = ypos, lab = "t[50[Total]]",
+                                col = "red2"))
+      }
+      labdf$x <- as.numeric(as.character(as.factor((labdf$x))))
+      labdf$y <- as.numeric(as.character(as.factor((labdf$y))))
+
+      Gplot <- Gplot +
+        geom_label_repel(data = labdf, aes(x, y, label = lab), size = 3,
+                         nudge_x = 0, nudge_y = 0, colour = labdf$col,
+                         na.rm = TRUE, parse = TRUE)
+    }
+
   }
 
 
@@ -185,44 +233,7 @@ plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
                                      ylim = c(0, 100))
   }
 
-  if (plotlabels == TRUE) {
-    labdf <- data.frame(rbind(c(x = max(df$intervals), y = max(df$csgp),
-                                lab = "FPHF~curve", col = "red2")),
-                        stringsAsFactors = F)
-    if (rog == TRUE) {
-      labdf <- rbind(labdf, c(x = max(df$intervals),
-                              y = RateofGerm(x = max(df$intervals),
-                                             a = a, b = b, c = c),
-                              lab = "RoG~curve", col = "royalblue4"))
-    }
-    if (tmgr == TRUE) {
-      labdf <- rbind(labdf, c(x = TMGR, y = ypos, lab = "TMGR",
-                              col = "royalblue4"))
-    }
-    if (mgt == TRUE) {
-      labdf <- rbind(labdf, c(x = MGT, y = ypos, lab = "MGT",col = "green4"))
-    }
-    if (uniformity == TRUE) {
-      labdf <- rbind(labdf, c(x = UfmMid, y = ypos2,
-                              lab =  paste("U","[", umax, "-", umin,"]",
-                                           sep = ""), col = "gray15"))
-    }
-    if (t50.germ == TRUE) {
-      labdf <- rbind(labdf, c(x = t50.Germinated, y = ypos,
-                              lab = "t[50[Germ]]", col = "deeppink3"))
-    }
-    if (t50.total == TRUE & max(df$csgp) >= 50) {
-      labdf <- rbind(labdf, c(x = t50.totalseeds, y = ypos, lab = "t[50[Total]]",
-                              col = "red2"))
-    }
-    labdf$x <- as.numeric(as.character(as.factor((labdf$x))))
-    labdf$y <- as.numeric(as.character(as.factor((labdf$y))))
 
-    Gplot <- Gplot +
-      geom_label_repel(data = labdf, aes(x, y, label = lab), size = 3,
-                       nudge_x = 0, nudge_y = 0, colour = labdf$col,
-                       na.rm = TRUE, parse = TRUE)
-  }
 
   Gplot <- Gplot +
     theme(axis.text = element_text(colour = "black"))
