@@ -52,11 +52,9 @@
 Shmueli and Goldberg (1971)
  and
 it's modification by
-de
-Santana and Ranal (2004)
+de Santana and Ranal (2004)
 
-(Ranal and de
-Santana 2006)
+(Ranal and de Santana 2006)
 ;
 Bilbro and Wanjura (1982)
 ; and
@@ -109,7 +107,7 @@ Fakorede and Agbana (1983)
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -117,28 +115,28 @@ Fakorede and Agbana (1983)
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -147,7 +145,7 @@ Fakorede and Agbana (1983)
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -181,11 +179,9 @@ Fakorede and Agbana (1983)
 <li><p>Shmueli and Goldberg (1971)
  and
 it's modification by
-de
-Santana and Ranal (2004)
+de Santana and Ranal (2004)
 
-(Ranal and de
-Santana 2006)
+(Ranal and de Santana 2006)
 ;</p></li>
 <li><p>Bilbro and Wanjura (1982)
 ; and</p></li>
@@ -199,13 +195,13 @@ Fakorede and Agbana (1983)
 </ul><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
-    <pre class="usage"><span class='fu'>EmergenceRateIndex</span>(
-  <span class='no'>germ.counts</span>,
-  <span class='no'>intervals</span>,
-  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"melville"</span>, <span class='st'>"melvillesantanaranal"</span>, <span class='st'>"bilbrowanjura"</span>, <span class='st'>"fakorede"</span>)
-)</pre>
+    <pre class="usage"><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>
+  <span class='va'>germ.counts</span>,
+  <span class='va'>intervals</span>,
+  partial <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  total.seeds <span class='op'>=</span> <span class='cn'>NULL</span>,
+  method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"melville"</span>, <span class='st'>"melvillesantanaranal"</span>, <span class='st'>"bilbrowanjura"</span>, <span class='st'>"fakorede"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -244,7 +240,7 @@ Default is <code>"melville"</code> (see <strong>Details</strong>).</p></td>
 
     <p>Several germination indices are referred to as Emergence
   rate Index (\(ERI\)).</p>
-<p></p><h3>Shmueli and Goldberg (1971)
+<p></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Shmueli and Goldberg (1971)
 </h3>
 <p>It is estimated as follows.</p>
 <p>\[ERI = \sum_{i=i_{0}}^{k-1}N_{i}(k-i)\]</p>
@@ -254,11 +250,9 @@ Default is <code>"melville"</code> (see <strong>Details</strong>).</p></td>
   emergence/germination started, and \(k\) is the total number of time
   intervals.</p>
 <p>A modification for the same was suggested by
-  de
-Santana and Ranal (2004)
+  de Santana and Ranal (2004)
 
-  (Ranal and de
-Santana 2006)
+  (Ranal and de Santana 2006)
  and is estimated by
   dividing Emergence rate index (\(ERI\)) by total number of emerged
   seedlings (or germinated seeds) as follows.</p>
@@ -271,7 +265,7 @@ Santana 2006)
   interval when emergence/germination started, and \(k\) is the total
   number of time intervals.</p>
 
-<p></p><h3>Bilbro and Wanjura (1982)
+<p></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Bilbro and Wanjura (1982)
 </h3>
 <p>It is the estimated as follows.</p>
 <p>\[ERI = \frac{\sum_{i=1}^{k}N_{i}}{\overline{T}} =
@@ -282,14 +276,14 @@ Santana 2006)
   corresponding to the \(i\)th interval), and \(\overline{T}\) is
   the mean germination time or mean emergence time.</p>
 
-<p></p><h3>Fakorede and Ayoola (1980); Fakorede and Ojo (1981); Fakorede and Agbana (1983)
+<p></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Fakorede and Ayoola (1980); Fakorede and Ojo (1981); Fakorede and Agbana (1983)
 </h3>
 <p>It is estimated as follows.</p>
 <p>\[ERI = \frac{\overline{T}}{FGP/100}\]</p>
 <p>Where, \(\overline{T}\) is the Mean germination time and \(FGP\)
   is the final germination time.</p>
 
-<p></p><h3>Others</h3>
+<p></p><h3 class='hasAnchor' id='arguments'><a class='anchor' href='#arguments'></a>Others</h3>
 <p>Apart from the above the above, the name Emergence
   rate index (\(ERI\)) has also been used to for the mathematical
   expressions for Speed of germination
@@ -314,8 +308,7 @@ Santana 2006)
 &#8220;Effect of temperature associated with levels of bulk density on rice seedling emergence.&#8221;
 <em>Plant and Soil</em>, <b>33</b>(1), 87--90.<br /><br /> Chopra UK, Chaudhary TN (1980).
 &#8220;Effect of soil temperature alteration by soil covers on seedling emergence of wheat (<em>Triticum aestivum</em> L.) sown on two dates.&#8221;
-<em>Plant and Soil</em>, <b>57</b>(1), 125--129.<br /><br /> de
-Santana DG, Ranal MA (2004).
+<em>Plant and Soil</em>, <b>57</b>(1), 125--129.<br /><br /> de Santana DG, Ranal MA (2004).
 <em>Analise Da Germinacao: Um Enfoque Estatistico</em>.
 Universidade de Brasilia, Brasilia.<br /><br /> Erbach DC (1982).
 &#8220;Tillage for continuous corn and corn-soybean rotation.&#8221;
@@ -325,8 +318,7 @@ Universidade de Brasilia, Brasilia.<br /><br /> Erbach DC (1982).
 &#8220;Relation between seedling vigor and selection for yield improvement in maize.&#8221;
 <em>Maydica</em>, <b>25</b>(3), 135--147.<br /><br /> Fakorede MAB, Ojo DK (1981).
 &#8220;Variability for seedling vigour in maize.&#8221;
-<em>Experimental Agriculture</em>, <b>17</b>(2), 195--201.<br /><br /> Ranal MA, de
-Santana DG (2006).
+<em>Experimental Agriculture</em>, <b>17</b>(2), 195--201.<br /><br /> Ranal MA, de Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
 <em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Shmueli M, Goldberg D (1971).
 &#8220;Emergence, early growth, and salinity of five vegetable crops germinated by sprinkle and trickle irrigation in an arid zone.&#8221;
@@ -338,24 +330,34 @@ Santana DG (2006).
   <code><a href='TimsonsIndex.html'>GermRateGeorge</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span><span class='op'>)</span>
+<span class='va'>int</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>,
-                   <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"melville"</span>)</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>,
-                   <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"melvillesantanaranal"</span>)</div><div class='output co'>#&gt; [1] 7.3</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>,
-                   <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"bilbrowanjura"</span>)</div><div class='output co'>#&gt; [1] 5.970149</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>,
-                   <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"fakorede"</span>)</div><div class='output co'>#&gt; [1] 8.375</div><div class='input'>
+<span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>,
+                   method <span class='op'>=</span> <span class='st'>"melville"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>,
+                   method <span class='op'>=</span> <span class='st'>"melvillesantanaranal"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 7.3</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>,
+                   method <span class='op'>=</span> <span class='st'>"bilbrowanjura"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 5.970149</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>,
+                   total.seeds <span class='op'>=</span> <span class='fl'>50</span>, method <span class='op'>=</span> <span class='st'>"fakorede"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 8.375</div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,)</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-                   <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"melville"</span>)</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-                   <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"melvillesantanaranal"</span>)</div><div class='output co'>#&gt; [1] 7.3</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-                   <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"bilbrowanjura"</span>)</div><div class='output co'>#&gt; [1] 5.970149</div><div class='input'><span class='fu'>EmergenceRateIndex</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-                   <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"fakorede"</span>)</div><div class='output co'>#&gt; [1] 8.375</div><div class='input'>
+<span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span>,<span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span>,
+                   method <span class='op'>=</span> <span class='st'>"melville"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 292</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span>,
+                   method <span class='op'>=</span> <span class='st'>"melvillesantanaranal"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 7.3</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span>,
+                   method <span class='op'>=</span> <span class='st'>"bilbrowanjura"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 5.970149</div><div class='input'><span class='fu'>EmergenceRateIndex</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span>,
+                   total.seeds <span class='op'>=</span> <span class='fl'>50</span>, method <span class='op'>=</span> <span class='st'>"fakorede"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 8.375</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -372,7 +374,7 @@ Santana DG (2006).
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

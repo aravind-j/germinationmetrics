@@ -3,6 +3,9 @@
 ## NEW FUNCTIONS:
 * `plot.FourPHFfit.bulk` - Wrapper function around `FourPHFfit` for multiple samples.
 
+## UPDATED FUNCTIONS:
+* `FourPHFfit` - Added warning for low germination percentages. Modified to return `NA` output for zero total germination inputs with non-converging fits so as not to break `FourPHFfit.bulk`.
+
 # germinationmetrics  0.1.4
 
 ## NEW FUNCTIONS:

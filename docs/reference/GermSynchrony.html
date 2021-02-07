@@ -50,8 +50,7 @@
 <meta property="og:title" content="Synchrony and uncertainty of germination — GermSynchrony" />
 <meta property="og:description" content="Compute the following metrics:
 GermSynchronySynchrony of germination (\(Z\) index)
-(Primack 1985; Ranal and de
-Santana 2006)
+(Primack 1985; Ranal and de Santana 2006)
 .
 GermUncertaintySynchronization index (\(\overline{E}\))
 or Uncertainty of the germination process (\(U\)) or Informational
@@ -101,7 +100,7 @@ entropy (\(H\))
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -109,28 +108,28 @@ entropy (\(H\))
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -139,7 +138,7 @@ entropy (\(H\))
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -169,10 +168,9 @@ entropy (\(H\))
     </div>
 
     <div class="ref-description">
-    <p>Compute the following metrics:</p><dl'>
+    <p>Compute the following metrics:</p><dl>
 <dt><code>GermSynchrony</code></dt><dd><p>Synchrony of germination (\(Z\) index)
-(Primack 1985; Ranal and de
-Santana 2006)
+(Primack 1985; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>GermUncertainty</code></dt><dd><p>Synchronization index (\(\overline{E}\))
 or Uncertainty of the germination process (\(U\)) or Informational
@@ -183,9 +181,9 @@ entropy (\(H\))
 </dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
-    <pre class="usage"><span class='fu'>GermSynchrony</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>GermSynchrony</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>GermUncertainty</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>GermUncertainty</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -216,8 +214,7 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 
     <p><code>GermSynchrony</code> computes the value of synchrony of germination
 (\(Z\) index) as follows
-(Primack 1985; Ranal and de
-Santana 2006)
+(Primack 1985; Ranal and de Santana 2006)
 .</p>
 <p>\[Z=\frac{\sum_{i=1}^{k}C_{N_{i},2}}{C_{\Sigma N_{i},2}}\]</p>
 <p>Where, \(C_{N_{i},2}\) is the partial combination of the two germinated
@@ -245,8 +242,7 @@ is the total number of time intervals.</p>
 &#8220;On the germination of seeds of <em>Calotropis procera</em> (Ait.) Ait. f.&#8221;
 <em>Anais da Academia Brasileira de Ciencias</em>, <b>48</b>(263-284).<br /><br /> Primack RB (1985).
 &#8220;Longevity of individual flowers.&#8221;
-<em>Annual Review of Ecology and Systematics</em>, <b>16</b>(1), 15--37.<br /><br /> Ranal MA, de
-Santana DG (2006).
+<em>Annual Review of Ecology and Systematics</em>, <b>16</b>(1), 15--37.<br /><br /> Ranal MA, de Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
 <em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Shannon CE (1948).
 &#8220;A mathematical theory of communication.&#8221;
@@ -256,16 +252,20 @@ Santana DG (2006).
     <div class='dont-index'><p><code><a href='CUGerm.html'>CUGerm</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span><span class='op'>)</span>
+<span class='va'>int</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>GermSynchrony</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.2666667</div><div class='input'><span class='fu'>GermUncertainty</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 2.062987</div><div class='input'>
+<span class='fu'>GermSynchrony</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.2666667</div><div class='input'><span class='fu'>GermUncertainty</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 2.062987</div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>GermSynchrony</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.2666667</div><div class='input'><span class='fu'>GermUncertainty</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 2.062987</div><div class='input'>
+<span class='fu'>GermSynchrony</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.2666667</div><div class='input'><span class='fu'>GermUncertainty</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 2.062987</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -282,7 +282,7 @@ Santana DG (2006).
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

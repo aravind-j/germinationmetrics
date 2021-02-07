@@ -93,7 +93,7 @@ germination count data and compute the associated parameters. " />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -101,28 +101,28 @@ germination count data and compute the associated parameters. " />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -131,7 +131,7 @@ germination count data and compute the associated parameters. " />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -167,19 +167,19 @@ germination count data and compute the associated parameters. " />
 germination count data and compute the associated parameters. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
-    <pre class="usage"><span class='fu'>FourPHFfit</span>(
-  <span class='no'>germ.counts</span>,
-  <span class='no'>intervals</span>,
-  <span class='no'>total.seeds</span>,
-  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>tmax</span>,
-  <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>),
-  <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>,
-  <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>
-)</pre>
+    <pre class="usage"><span class='fu'>FourPHFfit</span><span class='op'>(</span>
+  <span class='va'>germ.counts</span>,
+  <span class='va'>intervals</span>,
+  <span class='va'>total.seeds</span>,
+  partial <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.y0 <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.a <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>tmax</span>,
+  xp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>, <span class='fl'>60</span><span class='op'>)</span>,
+  umin <span class='op'>=</span> <span class='fl'>10</span>,
+  umax <span class='op'>=</span> <span class='fl'>90</span>,
+  tries <span class='op'>=</span> <span class='fl'>3</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -320,14 +320,15 @@ results may not be informative.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
-<span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
-<span class='no'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>
+<span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span><span class='op'>)</span>
+<span class='va'>int</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
+<span class='va'>total.seeds</span> <span class='op'>=</span> <span class='fl'>50</span>
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>FourPHFfit</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>20</span>)</div><div class='output co'>#&gt; $data
+<span class='fu'>FourPHFfit</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, total.seeds <span class='op'>=</span> <span class='fl'>50</span>, tmax <span class='op'>=</span> <span class='fl'>20</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $data
 #&gt;    gp csgp intervals
 #&gt; 1   0    0         1
 #&gt; 2   0    0         2
@@ -354,6 +355,8 @@ results may not be informative.</p>
 #&gt; $Fit
 #&gt;      sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
 #&gt; 1 1.769385   TRUE 1.490116e-08 -25.49868 60.99736 64.19265 31.30723          10
+#&gt;   nobs
+#&gt; 1   14
 #&gt; 
 #&gt; $a
 #&gt; [1] 80
@@ -413,8 +416,9 @@ results may not be informative.</p>
 #&gt; [1] "FourPHFfit" "list"      </div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>FourPHFfit</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>total.seeds</span> <span class='kw'>=</span> <span class='fl'>50</span>, <span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>20</span>,
-<span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; $data
+<span class='fu'>FourPHFfit</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, total.seeds <span class='op'>=</span> <span class='fl'>50</span>, tmax <span class='op'>=</span> <span class='fl'>20</span>,
+partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; $data
 #&gt;    gp csgp intervals
 #&gt; 1   0    0         1
 #&gt; 2   0    0         2
@@ -441,6 +445,8 @@ results may not be informative.</p>
 #&gt; $Fit
 #&gt;      sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
 #&gt; 1 1.769385   TRUE 1.490116e-08 -25.49868 60.99736 64.19265 31.30723          10
+#&gt;   nobs
+#&gt; 1   14
 #&gt; 
 #&gt; $a
 #&gt; [1] 80
@@ -514,7 +520,7 @@ results may not be informative.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

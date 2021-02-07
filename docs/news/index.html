@@ -89,7 +89,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -97,28 +97,28 @@
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -127,7 +127,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -167,6 +167,14 @@
 <code>plot.FourPHFfit.bulk</code> - Wrapper function around <code>FourPHFfit</code> for multiple samples.</li>
 </ul>
 </div>
+<div id="updated-functions" class="section level2">
+<h2 class="hasAnchor">
+<a href="#updated-functions" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<ul>
+<li>
+<code>FourPHFfit</code> - Added warning for low germination percentages. Modified to return <code>NA</code> output for zero total germination inputs with non-converging fits so as not to break <code>FourPHFfit.bulk</code>.</li>
+</ul>
+</div>
 </div>
     <div id="germinationmetrics-014" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.4">
@@ -184,9 +192,9 @@
 <code>EmergenceRateIndex</code> - Compute emergence rate index according to Shmueli and Goldberg (1971), Bilbro and Wanjura (1982), and Fakorede and Ayoola (1980).</li>
 </ul>
 </div>
-<div id="updated-functions" class="section level2">
+<div id="updated-functions-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-1" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>FourPHFfit</code> - Added more checks for the input arguments <code>umax</code>, <code>umin</code>, <code>xp</code>, <code>tries</code> and <code>tmax</code>.</li>
@@ -233,9 +241,9 @@
 <code>germination.indices</code> - wrapper function to compute germination indices in batch.</li>
 </ul>
 </div>
-<div id="updated-functions-1" class="section level2">
+<div id="updated-functions-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions-1" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-2" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>CVGermTime</code> - Fixed error in function name (<code>CVSEGermTime</code>).</li>
@@ -292,9 +300,9 @@
 <code>plot.FourPHFfit</code> - plot method for <code>FourPHFfit</code>.</li>
 </ul>
 </div>
-<div id="updated-functions-2" class="section level2">
+<div id="updated-functions-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#updated-functions-2" class="anchor"></a>UPDATED FUNCTIONS:</h2>
+<a href="#updated-functions-3" class="anchor"></a>UPDATED FUNCTIONS:</h2>
 <ul>
 <li>
 <code>FourPHFfit</code> - Fixed code to accommodate changes in the new release of <code>broom</code> package.</li>
@@ -354,7 +362,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -51,22 +51,18 @@
 <meta property="og:description" content="Compute the following metrics:
 MeanGermTimeMean
 germination time (\(\overline{T}\)) or Mean length of incubation time
-(Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
-Santana 2006)
+(Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de Santana 2006)
 .
 VarGermTimeVariance of germination time (\(s_{T}^{2}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .
 SEGermTimeStandard error of germination time
 (\(s_{\overline{T}}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .
 CVGermTimeCoefficient of variation of the germination time
 (\(CV_{T}\))
-(Gomes 1960; Ranal and de
-Santana 2006)
+(Gomes 1960; Ranal and de Santana 2006)
 . 
 " />
 
@@ -110,7 +106,7 @@ Santana 2006)
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -118,28 +114,28 @@ Santana 2006)
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -148,7 +144,7 @@ Santana 2006)
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -178,36 +174,32 @@ Santana 2006)
     </div>
 
     <div class="ref-description">
-    <p>Compute the following metrics:</p><dl'>
+    <p>Compute the following metrics:</p><dl>
 <dt><code>MeanGermTime</code></dt><dd><p>Mean
 germination time (\(\overline{T}\)) or Mean length of incubation time
-(Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
-Santana 2006)
+(Edmond and Drapala 1958; Czabator 1962; Mock and Eberhart 1972; Ellis and Roberts 1980; Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>VarGermTime</code></dt><dd><p>Variance of germination time (\(s_{T}^{2}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>SEGermTime</code></dt><dd><p>Standard error of germination time
 (\(s_{\overline{T}}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>CVGermTime</code></dt><dd><p>Coefficient of variation of the germination time
 (\(CV_{T}\))
-(Gomes 1960; Ranal and de
-Santana 2006)
+(Gomes 1960; Ranal and de Santana 2006)
 .</p></dd> 
 </dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
-    <pre class="usage"><span class='fu'>MeanGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>MeanGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>VarGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>VarGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>SEGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>SEGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>CVGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>CVGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -243,8 +235,7 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 
     <p><code>MeanGermTime</code> computes the mean germination time according to the
 following formula
-(Edmond and Drapala 1958; Czabator 1962; Smith and Millet 1964; Ellis and Roberts 1980; Labouriau 1983; Ranal and de
-Santana 2006)
+(Edmond and Drapala 1958; Czabator 1962; Smith and Millet 1964; Ellis and Roberts 1980; Labouriau 1983; Ranal and de Santana 2006)
 .</p>
 <p>\[\overline{T} = \frac{\sum_{i=1}^{k}N_{i}T_{i}}{\sum_{i=1}^{k}N_{i}}\]</p>
 <p>Where, \(T_{i}\) is the time from the start of the experiment to the
@@ -268,8 +259,7 @@ seed lot. Lower the \(\overline{T}\), faster the sample has germinated
 and reflects seed vigor.</p>
 <p><code>VarGermTime</code> computes the variance of germination time according to the
 following formula
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p>
 <p>\[s_{T}^{2} =
 \frac{\sum_{i=1}^{k}N_{i}(T_{i}-\overline{T})^{2}}{\sum_{i=1}^{k}N_{i}-1}\]</p>
@@ -280,8 +270,7 @@ corresponding to the \(i\)th interval), and \(k\) is the total
 number of time intervals.</p>
 <p><code>SEGermTime</code> computes the standard error of germination time
 (\(s_{\overline{T}}\)) according to the following formula
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p>
 <p>\[s_{\overline{T}} = \sqrt{\frac{s_{T}^{2}}{\sum_{i=1}^{k}N_{i}}}\]</p>
 <p>Where, \(N_{i}\) is the number of seeds germinated in the \(i\)th
@@ -291,8 +280,7 @@ intervals.</p>
 <p>It signifies the accuracy of the calculation of the mean germination time.</p>
 <p><code>CVGermTime</code> computes the coefficient of variation of germination time
 (\(CV_{T}\)) according to the following formula
-(Gomes 1960; Ranal and de
-Santana 2006)
+(Gomes 1960; Ranal and de Santana 2006)
 .</p>
 <p>\[CV_{T} = \frac{\sqrt{s_{T}^{2}}}{\overline{T}}\]</p>
 <p>This indicates the uniformity of germination and permits comparisons
@@ -316,8 +304,7 @@ Escola Superior de Agricultura Luiz de Queiroz, Universidade de Sao Paulo.<br />
 <em>A Germinacao Das Sementes</em>.
 Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientifico e Tecnologico. Serie de Biologia. Monografia 24.<br /><br /> Mock JJ, Eberhart SA (1972).
 &#8220;Cold tolerance in adapted maize populations.&#8221;
-<em>Crop Science</em>, <b>12</b>(4), 466--469.<br /><br /> Ranal MA, de
-Santana DG (2006).
+<em>Crop Science</em>, <b>12</b>(4), 466--469.<br /><br /> Ranal MA, de Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
 <em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Smith PG, Millet AH (1964).
 &#8220;Germinating and sprouting responses of the tomato at low temperatures.&#8221;
@@ -327,16 +314,24 @@ Santana DG (2006).
     <div class='dont-index'><p><code><a href='MeanGermRate.html'>MeanGermRate</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span><span class='op'>)</span>
+<span class='va'>int</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>MeanGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 6.7</div><div class='input'><span class='fu'>VarGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 1.446154</div><div class='input'><span class='fu'>SEGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.1901416</div><div class='input'><span class='fu'>CVGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.1794868</div><div class='input'>
+<span class='fu'>MeanGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6.7</div><div class='input'><span class='fu'>VarGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 1.446154</div><div class='input'><span class='fu'>SEGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1901416</div><div class='input'><span class='fu'>CVGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1794868</div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>MeanGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 6.7</div><div class='input'><span class='fu'>VarGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 19.04012</div><div class='input'><span class='fu'>SEGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.2394781</div><div class='input'><span class='fu'>CVGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.6512685</div><div class='input'>
+<span class='fu'>MeanGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6.7</div><div class='input'><span class='fu'>VarGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 19.04012</div><div class='input'><span class='fu'>SEGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.2394781</div><div class='input'><span class='fu'>CVGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.6512685</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -353,7 +348,7 @@ Santana DG (2006).
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

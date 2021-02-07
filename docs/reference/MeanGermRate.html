@@ -51,25 +51,21 @@
 <meta property="og:description" content="Compute the following metrics:
 MeanGermRateMean
 germination rate (\(\overline{V}\))
-(Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau and Valadares 1976; Labouriau 1983; Ranal and de Santana 2006)
 .
 VarGermRateVariance of germination rate (\(s_{V}^{2}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .
 SEGermRateStandard error of germination rate
 (\(s_{\overline{V}}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .
 CVGCoefficient of velocity/rate of germination or Kotowski's
 coefficient of velocity (\(CVG\))
 (Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 . GermRateRecipGermination rate as reciprocal of median time
 (\(v_{50}\))
-(Went 1957; Labouriau 1983; Ranal and de
-Santana 2006)
+(Went 1957; Labouriau 1983; Ranal and de Santana 2006)
 .
 
 " />
@@ -114,7 +110,7 @@ Santana 2006)
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -122,28 +118,28 @@ Santana 2006)
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -152,7 +148,7 @@ Santana 2006)
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -182,47 +178,43 @@ Santana 2006)
     </div>
 
     <div class="ref-description">
-    <p>Compute the following metrics:</p><dl'>
+    <p>Compute the following metrics:</p><dl>
 <dt><code>MeanGermRate</code></dt><dd><p>Mean
 germination rate (\(\overline{V}\))
-(Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau and Valadares 1976; Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>VarGermRate</code></dt><dd><p>Variance of germination rate (\(s_{V}^{2}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>SEGermRate</code></dt><dd><p>Standard error of germination rate
 (\(s_{\overline{V}}\))
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>CVG</code></dt><dd><p>Coefficient of velocity/rate of germination or Kotowski's
 coefficient of velocity (\(CVG\))
 (Kotowski 1926; Nichols and Heydecker 1968; Labouriau 1983; Scott et al. 1984; Bewley and Black 1994)
 .</p></dd> <dt><code>GermRateRecip</code></dt><dd><p>Germination rate as reciprocal of median time
 (\(v_{50}\))
-(Went 1957; Labouriau 1983; Ranal and de
-Santana 2006)
+(Went 1957; Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 
 </dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
-    <pre class="usage"><span class='fu'>MeanGermRate</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>MeanGermRate</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>CVG</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>CVG</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>VarGermRate</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>VarGermRate</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>SEGermRate</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>SEGermRate</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>GermRateRecip</span>(
-  <span class='no'>germ.counts</span>,
-  <span class='no'>intervals</span>,
-  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>method</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"coolbear"</span>, <span class='st'>"farooq"</span>)
-)</pre>
+<span class='fu'>GermRateRecip</span><span class='op'>(</span>
+  <span class='va'>germ.counts</span>,
+  <span class='va'>intervals</span>,
+  partial <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  method <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"coolbear"</span>, <span class='st'>"farooq"</span><span class='op'>)</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -265,8 +257,7 @@ partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 
     <p><code>MeanGermRate</code> computes the mean germination rate
 (\(\overline{V}\)) according to the following formula
-(Labouriau and Valadares 1976; Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau and Valadares 1976; Labouriau 1983; Ranal and de Santana 2006)
 .</p>
 <p>\[\overline{V} = \frac{\sum_{i=1}^{k}N_{i}}{\sum_{i=1}^{k}N_{i}T_{i}}\]</p>
 <p>Where, \(T_{i}\) is the time from the start of the experiment to the
@@ -278,15 +269,13 @@ number of time intervals.</p>
 <p>\[\overline{V} = \frac{1}{\overline{T}}\]</p>
 <p><code>VarGermRate</code> computes the variance of germination rate
 (\(s_{V}^{2}\)) according to the following formula
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p>
 <p>\[s_{V}^{2} = \overline{V}^{4} \times s_{T}^{2}\]</p>
 <p>Where, \(s_{T}^{2}\) is the variance of germination time.</p>
 <p><code>SEGermRate</code> computes the standard error of germination time
 (\(s_{\overline{V}}\)) according to the following formula
-(Labouriau 1983; Ranal and de
-Santana 2006)
+(Labouriau 1983; Ranal and de Santana 2006)
 .</p>
 <p>\[s_{\overline{V}} = \sqrt{\frac{s_{V}^{2}}{\sum_{i=1}^{k}N_{i}}}\]</p>
 <p>Where, \(N_{i}\) is the number of seeds germinated in the \(i\)th
@@ -308,8 +297,7 @@ corresponding to the \(i\)th interval), and \(k\) is the total
 number of time intervals.</p>
 <p><code>GermRateRecip</code> computes the germination rate \(v_{50}\)) as the
 reciprocal of the median germination time (\(t_{50}\))
-(Went 1957; Labouriau 1983; Ranal and de
-Santana 2006)
+(Went 1957; Labouriau 1983; Ranal and de Santana 2006)
 
 computed according to the methods of
 Coolbear et al. (1984)
@@ -334,8 +322,7 @@ ISBN 0-306-44748-7.<br /><br /> Coolbear P, Francis A, Grierson D (1984).
 &#8220;On the germination of seeds of <em>Calotropis procera</em> (Ait.) Ait. f.&#8221;
 <em>Anais da Academia Brasileira de Ciencias</em>, <b>48</b>(263-284).<br /><br /> Nichols MA, Heydecker W (1968).
 &#8220;Two approaches to the study of germination data.&#8221;
-<em>Proceedings of the International Seed Testing Association</em>, <b>33</b>(3), 531--540.<br /><br /> Ranal MA, de
-Santana DG (2006).
+<em>Proceedings of the International Seed Testing Association</em>, <b>33</b>(3), 531--540.<br /><br /> Ranal MA, de Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
 <em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Scott SJ, Jones RA, Williams WA (1984).
 &#8220;Review of data analysis methods for seed germination.&#8221;
@@ -348,18 +335,30 @@ Chronica Botanica Co., Waltham, Mass., USA and The Ronald Press Co., New York.</
   <code><a href='t50.html'>t50</a></code></p></div>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span><span class='op'>)</span>
+<span class='va'>int</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>MeanGermRate</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.1492537</div><div class='input'><span class='fu'>CVG</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 14.92537</div><div class='input'><span class='fu'>VarGermRate</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.0007176543</div><div class='input'><span class='fu'>SEGermRate</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 0.004235724</div><div class='input'><span class='fu'>GermRateRecip</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"coolbear"</span>)</div><div class='output co'>#&gt; [1] 0.1674877</div><div class='input'><span class='fu'>GermRateRecip</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"farooq"</span>)</div><div class='output co'>#&gt; [1] 0.1683168</div><div class='input'>
+<span class='fu'>MeanGermRate</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1492537</div><div class='input'><span class='fu'>CVG</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 14.92537</div><div class='input'><span class='fu'>VarGermRate</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.0007176543</div><div class='input'><span class='fu'>SEGermRate</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.004235724</div><div class='input'><span class='fu'>GermRateRecip</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, method <span class='op'>=</span> <span class='st'>"coolbear"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1674877</div><div class='input'><span class='fu'>GermRateRecip</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, method <span class='op'>=</span> <span class='st'>"farooq"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1683168</div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>MeanGermRate</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.1492537</div><div class='input'><span class='fu'>CVG</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 14.92537</div><div class='input'><span class='fu'>VarGermRate</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.009448666</div><div class='input'><span class='fu'>SEGermRate</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.005334776</div><div class='input'><span class='fu'>GermRateRecip</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>,
-              <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"coolbear"</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.1674877</div><div class='input'><span class='fu'>GermRateRecip</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>,
-              <span class='kw'>method</span> <span class='kw'>=</span> <span class='st'>"farooq"</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 0.1683168</div><div class='input'>
+<span class='fu'>MeanGermRate</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1492537</div><div class='input'><span class='fu'>CVG</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 14.92537</div><div class='input'><span class='fu'>VarGermRate</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.009448666</div><div class='input'><span class='fu'>SEGermRate</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.005334776</div><div class='input'><span class='fu'>GermRateRecip</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>,
+              method <span class='op'>=</span> <span class='st'>"coolbear"</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1674877</div><div class='input'><span class='fu'>GermRateRecip</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>,
+              method <span class='op'>=</span> <span class='st'>"farooq"</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 0.1683168</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -376,7 +375,7 @@ Chronica Botanica Co., Waltham, Mass., USA and The Ronald Press Co., New York.</
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

@@ -111,9 +111,10 @@ library(germinationmetrics)
 ## Version History
 ```{r, results='asis', echo=FALSE}
 # Fetch release version
-rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germinationmetrics")) == "",
-               yes = getNamespaceVersion("germinationmetrics"),
-               no = as.vector(available.packages()["germinationmetrics",]["Version"]))
+# rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germinationmetrics")) == "",
+#                yes = getNamespaceVersion("germinationmetrics"),
+#                no = as.vector(available.packages()["germinationmetrics",]["Version"]))
+rver <- "0.1.5"
 ```
 The current version of the package is `r rver`. The previous versions are as follows.
 

@@ -91,7 +91,7 @@ recorded at specific time intervals for multiple samples in batch." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -99,28 +99,28 @@ recorded at specific time intervals for multiple samples in batch." />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -129,7 +129,7 @@ recorded at specific time intervals for multiple samples in batch." />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -163,20 +163,20 @@ recorded at specific time intervals for multiple samples in batch." />
 recorded at specific time intervals for multiple samples in batch.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>FourPHFfit.bulk</span>(
-  <span class='no'>data</span>,
-  <span class='no'>total.seeds.col</span>,
-  <span class='no'>counts.intervals.cols</span>,
-  <span class='no'>intervals</span>,
-  <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>tmax</span>,
-  <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>),
-  <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>,
-  <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>,
-  <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>
-)</pre>
+    <pre class="usage"><span class='fu'>FourPHFfit.bulk</span><span class='op'>(</span>
+  <span class='va'>data</span>,
+  <span class='va'>total.seeds.col</span>,
+  <span class='va'>counts.intervals.cols</span>,
+  <span class='va'>intervals</span>,
+  partial <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.y0 <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  fix.a <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>tmax</span>,
+  xp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>, <span class='fl'>60</span><span class='op'>)</span>,
+  umin <span class='op'>=</span> <span class='fl'>10</span>,
+  umax <span class='op'>=</span> <span class='fl'>90</span>,
+  tries <span class='op'>=</span> <span class='fl'>3</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -267,17 +267,18 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'>
 <span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>gcdata</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>gcdata</span><span class='op'>)</span>
 
-<span class='no'>counts.per.intervals</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Day01"</span>, <span class='st'>"Day02"</span>, <span class='st'>"Day03"</span>, <span class='st'>"Day04"</span>, <span class='st'>"Day05"</span>,
+<span class='va'>counts.per.intervals</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Day01"</span>, <span class='st'>"Day02"</span>, <span class='st'>"Day03"</span>, <span class='st'>"Day04"</span>, <span class='st'>"Day05"</span>,
                           <span class='st'>"Day06"</span>, <span class='st'>"Day07"</span>, <span class='st'>"Day08"</span>, <span class='st'>"Day09"</span>, <span class='st'>"Day10"</span>,
-                          <span class='st'>"Day11"</span>, <span class='st'>"Day12"</span>, <span class='st'>"Day13"</span>, <span class='st'>"Day14"</span>)
+                          <span class='st'>"Day11"</span>, <span class='st'>"Day12"</span>, <span class='st'>"Day13"</span>, <span class='st'>"Day14"</span><span class='op'>)</span>
 
-<span class='fu'>FourPHFfit.bulk</span>(<span class='no'>gcdata</span>, <span class='kw'>total.seeds.col</span> <span class='kw'>=</span> <span class='st'>"Total Seeds"</span>,
-                    <span class='kw'>counts.intervals.cols</span> <span class='kw'>=</span> <span class='no'>counts.per.intervals</span>,
-                    <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>14</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-                    <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>),
-                    <span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>)</div><div class='output co'>#&gt;    Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
+<span class='fu'>FourPHFfit.bulk</span><span class='op'>(</span><span class='va'>gcdata</span>, total.seeds.col <span class='op'>=</span> <span class='st'>"Total Seeds"</span>,
+                    counts.intervals.cols <span class='op'>=</span> <span class='va'>counts.per.intervals</span>,
+                    intervals <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>14</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span>,
+                    fix.y0 <span class='op'>=</span> <span class='cn'>TRUE</span>, fix.a <span class='op'>=</span> <span class='cn'>TRUE</span>, xp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>, <span class='fl'>60</span><span class='op'>)</span>,
+                    tmax <span class='op'>=</span> <span class='fl'>20</span>, tries <span class='op'>=</span> <span class='fl'>3</span>, umax <span class='op'>=</span> <span class='fl'>90</span>, umin <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
+</div><div class='output co'>#&gt;    Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
 #&gt; 1        G1   1     0     0     0     0     4    17    10     7     1     0
 #&gt; 2        G2   1     0     0     0     1     3    15    13     6     2     1
 #&gt; 3        G3   1     0     0     0     2     3    18     9     8     2     1
@@ -356,7 +357,7 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
 #&gt; 12     4.893597     6.684521      7.763844      4.806015   2.957830
 #&gt; 13     4.841310     6.509952      7.850339      4.816395   3.033943
 #&gt; 14     4.915143     6.397486      7.432360      4.869401   2.562960
-#&gt; 15     4.892505     6.667247      7.785804      4.813086   2.972718</div><div class='input'># }
+#&gt; 15     4.892505     6.667247      7.785804      4.813086   2.972718</div><div class='input'><span class='co'># }</span>
 
 </div></pre>
   </div>
@@ -374,7 +375,7 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

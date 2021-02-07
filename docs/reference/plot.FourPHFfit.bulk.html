@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Plot the multiple four-parameter hill function fitted cumulative germination
-curves from a <code>FourPHFfit.bulk</code> object — plot.FourPHFfit.bulk • germinationmetrics</title>
+curves from a FourPHFfit.bulk object — plot.FourPHFfit.bulk • germinationmetrics</title>
 
 
 <!-- jquery -->
@@ -49,7 +49,7 @@ curves from a <code>FourPHFfit.bulk</code> object — plot.FourPHFfit.bulk • g
   
 
 <meta property="og:title" content="Plot the multiple four-parameter hill function fitted cumulative germination
-curves from a <code>FourPHFfit.bulk</code> object — plot.FourPHFfit.bulk" />
+curves from a FourPHFfit.bulk object — plot.FourPHFfit.bulk" />
 <meta property="og:description" content="plot.FourPHFfit plots multiple four-parameter hill function fitted
 cumulative germination curves (FPHF curves) or  the rate of germination
 curves (RoG curves) from a FourPHFfit.bulk object as an object of
@@ -103,7 +103,7 @@ argument. " />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -111,28 +111,28 @@ argument. " />
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -141,7 +141,7 @@ argument. " />
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -187,15 +187,15 @@ argument. <script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/
     </div>
 
     <pre class="usage"><span class='co'># S3 method for FourPHFfit.bulk</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(
-  <span class='no'>x</span>,
-  <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"none"</span>, <span class='st'>"t50.total"</span>, <span class='st'>"t50.germ"</span>, <span class='st'>"tmgr"</span>, <span class='st'>"mgt"</span>, <span class='st'>"uniformity"</span>),
-  <span class='kw'>limits</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-  <span class='no'>group.col</span>,
-  <span class='kw'>show.points</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>,
-  <span class='no'>...</span>
-)</pre>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span>
+  <span class='va'>x</span>,
+  rog <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  annotate <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"none"</span>, <span class='st'>"t50.total"</span>, <span class='st'>"t50.germ"</span>, <span class='st'>"tmgr"</span>, <span class='st'>"mgt"</span>, <span class='st'>"uniformity"</span><span class='op'>)</span>,
+  limits <span class='op'>=</span> <span class='cn'>TRUE</span>,
+  <span class='va'>group.col</span>,
+  show.points <span class='op'>=</span> <span class='cn'>FALSE</span>,
+  <span class='va'>...</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -254,40 +254,55 @@ which grouping has to be done.</p></td>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><div class='input'><span class='co'># \donttest{</span>
-<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span>(<span class='no'>gcdata</span>)
+<span class='fu'><a href='https://rdrr.io/r/utils/data.html'>data</a></span><span class='op'>(</span><span class='va'>gcdata</span><span class='op'>)</span>
 
-<span class='no'>counts.per.intervals</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Day01"</span>, <span class='st'>"Day02"</span>, <span class='st'>"Day03"</span>, <span class='st'>"Day04"</span>, <span class='st'>"Day05"</span>,
+<span class='va'>counts.per.intervals</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Day01"</span>, <span class='st'>"Day02"</span>, <span class='st'>"Day03"</span>, <span class='st'>"Day04"</span>, <span class='st'>"Day05"</span>,
                           <span class='st'>"Day06"</span>, <span class='st'>"Day07"</span>, <span class='st'>"Day08"</span>, <span class='st'>"Day09"</span>, <span class='st'>"Day10"</span>,
-                          <span class='st'>"Day11"</span>, <span class='st'>"Day12"</span>, <span class='st'>"Day13"</span>, <span class='st'>"Day14"</span>)
+                          <span class='st'>"Day11"</span>, <span class='st'>"Day12"</span>, <span class='st'>"Day13"</span>, <span class='st'>"Day14"</span><span class='op'>)</span>
 
-<span class='no'>fits</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='FourPHFfit.bulk.html'>FourPHFfit.bulk</a></span>(<span class='no'>gcdata</span>, <span class='kw'>total.seeds.col</span> <span class='kw'>=</span> <span class='st'>"Total Seeds"</span>,
-                    <span class='kw'>counts.intervals.cols</span> <span class='kw'>=</span> <span class='no'>counts.per.intervals</span>,
-                    <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='fl'>1</span>:<span class='fl'>14</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>,
-                    <span class='kw'>fix.y0</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>fix.a</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>xp</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>10</span>, <span class='fl'>60</span>),
-                    <span class='kw'>tmax</span> <span class='kw'>=</span> <span class='fl'>20</span>, <span class='kw'>tries</span> <span class='kw'>=</span> <span class='fl'>3</span>, <span class='kw'>umax</span> <span class='kw'>=</span> <span class='fl'>90</span>, <span class='kw'>umin</span> <span class='kw'>=</span> <span class='fl'>10</span>)
+<span class='va'>fits</span> <span class='op'>&lt;-</span> <span class='fu'><a href='FourPHFfit.bulk.html'>FourPHFfit.bulk</a></span><span class='op'>(</span><span class='va'>gcdata</span>, total.seeds.col <span class='op'>=</span> <span class='st'>"Total Seeds"</span>,
+                    counts.intervals.cols <span class='op'>=</span> <span class='va'>counts.per.intervals</span>,
+                    intervals <span class='op'>=</span> <span class='fl'>1</span><span class='op'>:</span><span class='fl'>14</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span>,
+                    fix.y0 <span class='op'>=</span> <span class='cn'>TRUE</span>, fix.a <span class='op'>=</span> <span class='cn'>TRUE</span>, xp <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>10</span>, <span class='fl'>60</span><span class='op'>)</span>,
+                    tmax <span class='op'>=</span> <span class='fl'>20</span>, tries <span class='op'>=</span> <span class='fl'>3</span>, umax <span class='op'>=</span> <span class='fl'>90</span>, umin <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span>
 
 <span class='co'># Plot FPHF curves</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-1.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot ROG curves</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-2.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, rog <span class='op'>=</span> <span class='cn'>TRUE</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-2.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot FPHF curves with points</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>show.points</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-3.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, show.points <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-3.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot FPHF curves with annotations</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"t50.total"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"t50.germ"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"tmgr"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-6.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"mgt"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-7.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"uniformity"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-8.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"t50.total"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-4.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"t50.germ"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-5.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"tmgr"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-6.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"mgt"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-7.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"uniformity"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: position_dodge requires non-overlapping x intervals</span></div><div class='output co'>#&gt; <span class='warning'>Warning: position_dodge requires non-overlapping x intervals</span></div><div class='img'><img src='plot.FourPHFfit.bulk-8.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Plot ROG curves with annotations</span>
-<span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"t50.total"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-9.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"t50.germ"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-10.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"tmgr"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-11.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"mgt"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-12.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>rog</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>, <span class='kw'>annotate</span> <span class='kw'>=</span> <span class='st'>"uniformity"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-13.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, rog <span class='op'>=</span> <span class='cn'>TRUE</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"t50.total"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-9.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, rog <span class='op'>=</span> <span class='cn'>TRUE</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"t50.germ"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-10.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, rog <span class='op'>=</span> <span class='cn'>TRUE</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"tmgr"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-11.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, rog <span class='op'>=</span> <span class='cn'>TRUE</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"mgt"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-12.png' alt='' width='700' height='433' /></div><div class='input'><span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, rog <span class='op'>=</span> <span class='cn'>TRUE</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span>, annotate <span class='op'>=</span> <span class='st'>"uniformity"</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: position_dodge requires non-overlapping x intervals</span></div><div class='output co'>#&gt; <span class='warning'>Warning: position_dodge requires non-overlapping x intervals</span></div><div class='img'><img src='plot.FourPHFfit.bulk-13.png' alt='' width='700' height='433' /></div><div class='input'>
 
 
 <span class='co'># Change colour of curves using ggplot2 options</span>
-<span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='no'>ggplot2</span>)
-<span class='no'>curvesplot</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/plot.html'>plot</a></span>(<span class='no'>fits</span>, <span class='kw'>group.col</span> <span class='kw'>=</span> <span class='st'>"Genotype"</span>)
+<span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span>
+<span class='va'>curvesplot</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/graphics/plot.default.html'>plot</a></span><span class='op'>(</span><span class='va'>fits</span>, group.col <span class='op'>=</span> <span class='st'>"Genotype"</span><span class='op'>)</span>
 
 <span class='co'># 'Dark2' palette from RColorBrewer</span>
-<span class='no'>curvesplot</span> + <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_brewer.html'>scale_colour_brewer</a></span>(<span class='kw'>palette</span> <span class='kw'>=</span> <span class='st'>"Dark2"</span>)</div><div class='img'><img src='plot.FourPHFfit.bulk-14.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='va'>curvesplot</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_brewer.html'>scale_colour_brewer</a></span><span class='op'>(</span>palette <span class='op'>=</span> <span class='st'>"Dark2"</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-14.png' alt='' width='700' height='433' /></div><div class='input'>
 <span class='co'># Manual colours</span>
-<span class='no'>curvesplot</span> +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span>(<span class='kw'>values</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='st'>"Coral"</span>, <span class='st'>"Brown"</span>, <span class='st'>"Blue"</span>,
-                                 <span class='st'>"Aquamarine"</span>, <span class='st'>"Red"</span>))</div><div class='img'><img src='plot.FourPHFfit.bulk-15.png' alt='' width='700' height='433' /></div><div class='input'># }
+<span class='va'>curvesplot</span> <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/scale_manual.html'>scale_colour_manual</a></span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Coral"</span>, <span class='st'>"Brown"</span>, <span class='st'>"Blue"</span>,
+                                 <span class='st'>"Aquamarine"</span>, <span class='st'>"Red"</span><span class='op'>)</span><span class='op'>)</span>
+</div><div class='img'><img src='plot.FourPHFfit.bulk-15.png' alt='' width='700' height='433' /></div><div class='input'><span class='co'># }</span>
 
 </div></pre>
   </div>
@@ -305,7 +320,7 @@ which grouping has to be done.</p></td>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>

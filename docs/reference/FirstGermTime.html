@@ -54,16 +54,14 @@ first germination or Germination time lag (\(t_{0}\))
 (Edwards 1932; Czabator 1962; Goloff and Bazzaz 1975; Labouriau 1983; Ranal 1999; Quintanilla et al. 2000)
 .
 LastGermTimeTime of last germination (\(t_{g}\))
-(Edwards 1932; Labouriau 1983; Ranal and de
-Santana 2006)
+(Edwards 1932; Labouriau 1983; Ranal and de Santana 2006)
 .
 TimeSpreadGermTime spread of germination
 (Al-Mudaris 1998; Kader 2005)or Germination distribution
 (Schrader and Graves 2000)
 .
 PeakGermTimePeak time of germination or Modal time of
-germination (Ranal and de
-Santana 2006)
+germination (Ranal and de Santana 2006)
 . 
 " />
 
@@ -107,7 +105,7 @@ Santana 2006)
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.4.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
       </span>
     </div>
 
@@ -115,28 +113,28 @@ Santana 2006)
       <ul class="nav navbar-nav">
         <li>
   <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa-home fa-lg"></span>
      
     Home
   </a>
 </li>
 <li>
   <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
+    <span class="fas fa-code"></span>
      
     Reference
   </a>
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fa fa-file-o"></span>
+    <span class="fas fa-file-o"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fa fa-newspaper-o"></span>
+    <span class="fas fa-newspaper-o"></span>
      
     News
   </a>
@@ -145,7 +143,7 @@ Santana 2006)
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fa fa-github-alt"></span>
+    <span class="fas fa-github-alt"></span>
      
     Github
   </a>
@@ -175,33 +173,31 @@ Santana 2006)
     </div>
 
     <div class="ref-description">
-    <p>Compute the following metrics:</p><dl'>
+    <p>Compute the following metrics:</p><dl>
 <dt><code>FirstGermTime</code></dt><dd><p>Time of
 first germination or Germination time lag (\(t_{0}\))
 (Edwards 1932; Czabator 1962; Goloff and Bazzaz 1975; Labouriau 1983; Ranal 1999; Quintanilla et al. 2000)
 .</p></dd>
 <dt><code>LastGermTime</code></dt><dd><p>Time of last germination (\(t_{g}\))
-(Edwards 1932; Labouriau 1983; Ranal and de
-Santana 2006)
+(Edwards 1932; Labouriau 1983; Ranal and de Santana 2006)
 .</p></dd>
 <dt><code>TimeSpreadGerm</code></dt><dd><p>Time spread of germination
 (Al-Mudaris 1998; Kader 2005)or Germination distribution
 (Schrader and Graves 2000)
 .</p></dd>
 <dt><code>PeakGermTime</code></dt><dd><p>Peak time of germination or Modal time of
-germination (Ranal and de
-Santana 2006)
+germination (Ranal and de Santana 2006)
 .</p></dd> 
 </dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
     </div>
 
-    <pre class="usage"><span class='fu'>FirstGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>FirstGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>LastGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>LastGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>PeakGermTime</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>PeakGermTime</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>
 
-<span class='fu'>TimeSpreadGerm</span>(<span class='no'>germ.counts</span>, <span class='no'>intervals</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)</pre>
+<span class='fu'>TimeSpreadGerm</span><span class='op'>(</span><span class='va'>germ.counts</span>, <span class='va'>intervals</span>, partial <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -264,27 +260,36 @@ Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientif
 &#8220;Effect of temperature on germination in northernmost populations of <em>Culcita macrocarpa</em> and <em>Woodwardia radicans</em>.&#8221;
 <em>Plant Biology</em>, <b>2</b>(6), 612--617.<br /><br /> Ranal MA (1999).
 &#8220;Effects of temperature on spore germination in some fern species from semideciduous mesophytic forest.&#8221;
-<em>American Fern Journal</em>, <b>89</b>(2), 149.<br /><br /> Ranal MA, de
-Santana DG (2006).
+<em>American Fern Journal</em>, <b>89</b>(2), 149.<br /><br /> Ranal MA, de Santana DG (2006).
 &#8220;How and why to measure the germination process?&#8221;
 <em>Brazilian Journal of Botany</em>, <b>29</b>(1), 1--11.<br /><br /> Schrader JA, Graves WR (2000).
 &#8220;Seed germination and seedling growth of <em>Alnus maritima</em> from its three disjunct populations.&#8221;
 <em>Journal of the American Society for Horticultural Science</em>, <b>125</b>(1), 128--134.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='no'>x</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>y</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>)
-<span class='no'>z</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>11</span>, <span class='fl'>11</span>, <span class='fl'>9</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>)
-<span class='no'>int</span> <span class='kw'>&lt;-</span> <span class='fl'>1</span>:<span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span>(<span class='no'>x</span>)
+    <pre class="examples"><div class='input'><span class='va'>x</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>17</span>, <span class='fl'>10</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>y</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>4</span>, <span class='fl'>21</span>, <span class='fl'>31</span>, <span class='fl'>38</span>, <span class='fl'>39</span>, <span class='fl'>39</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span>, <span class='fl'>40</span><span class='op'>)</span>
+<span class='va'>z</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>11</span>, <span class='fl'>11</span>, <span class='fl'>9</span>, <span class='fl'>7</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>0</span><span class='op'>)</span>
+<span class='va'>int</span> <span class='op'>&lt;-</span> <span class='fl'>1</span><span class='op'>:</span><span class='fu'><a href='https://rdrr.io/r/base/length.html'>length</a></span><span class='op'>(</span><span class='va'>x</span><span class='op'>)</span>
 
 <span class='co'># From partial germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>FirstGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'>LastGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 11</div><div class='input'><span class='fu'>TimeSpreadGerm</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>PeakGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>x</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='co'># For multiple peak germination times</span>
-<span class='fu'>PeakGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>z</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Multiple peak germination times exist.</span></div><div class='output co'>#&gt; [1] 5 6</div><div class='input'>
+<span class='fu'>FirstGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'>LastGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 11</div><div class='input'><span class='fu'>TimeSpreadGerm</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>PeakGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>x</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='co'># For multiple peak germination times</span>
+<span class='fu'>PeakGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>z</span>, intervals <span class='op'>=</span> <span class='va'>int</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Multiple peak germination times exist.</span></div><div class='output co'>#&gt; [1] 5 6</div><div class='input'>
 <span class='co'># From cumulative germination counts</span>
 <span class='co'>#----------------------------------------------------------------------------</span>
-<span class='fu'>FirstGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'>LastGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 11</div><div class='input'><span class='fu'>TimeSpreadGerm</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>PeakGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='no'>y</span>, <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='co'># For multiple peak germination time</span>
-<span class='fu'>PeakGermTime</span>(<span class='kw'>germ.counts</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/cumsum.html'>cumsum</a></span>(<span class='no'>z</span>), <span class='kw'>intervals</span> <span class='kw'>=</span> <span class='no'>int</span>, <span class='kw'>partial</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>)</div><div class='output co'>#&gt; <span class='warning'>Warning: Multiple peak germination times exist.</span></div><div class='output co'>#&gt; [1] 5 6</div><div class='input'>
+<span class='fu'>FirstGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 5</div><div class='input'><span class='fu'>LastGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 11</div><div class='input'><span class='fu'>TimeSpreadGerm</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='fu'>PeakGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='va'>y</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] 6</div><div class='input'><span class='co'># For multiple peak germination time</span>
+<span class='fu'>PeakGermTime</span><span class='op'>(</span>germ.counts <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/cumsum.html'>cumsum</a></span><span class='op'>(</span><span class='va'>z</span><span class='op'>)</span>, intervals <span class='op'>=</span> <span class='va'>int</span>, partial <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; <span class='warning'>Warning: Multiple peak germination times exist.</span></div><div class='output co'>#&gt; [1] 5 6</div><div class='input'>
 </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
@@ -301,7 +306,7 @@ Santana DG (2006).
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.5.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
