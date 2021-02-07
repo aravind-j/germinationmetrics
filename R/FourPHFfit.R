@@ -297,7 +297,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       }
     }
 
-    if (mean(peakg) <= 3) {
+    if (mean(peakg) <= 1) {
       csgp2 <- c(csgp, rep(max(csgp), 20))
       intervals2 <- seq_along(csgp2)
       df2 <- data.frame(csgp2, intervals2)
@@ -307,6 +307,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       #                   c=c(startc-1, startc+1),
       #                   y0=c(starty0, starty0))
 
+      # Modify start values v1
       tmod <- tryCatch(
 
         suppressWarnings(nlsLM(
@@ -331,6 +332,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       }
 
     }
+
 
     #=============================================================================
     # Fit the model - using nlsLM
@@ -378,6 +380,8 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
       }
     }
+
+
     #=============================================================================
 
     isConv <-  mod$convInfo$isConv
