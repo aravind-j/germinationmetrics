@@ -1,4 +1,15 @@
-# Version 0.1.5 - First submission
+# Version 0.1.5 - Third submission
+
+* Added prebuilt PDF due to use of `\Sexpr{}` expressions in Rd Files.
+* As the references are too many, I have added all the citations in the package vignette with the doi or isbn.
+
+### Test environments
+* local Windows 10 Home v1803, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* win-builder, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+
+
+# Version 0.1.5 - Second submission
 
 * Fixed `cairo_pdf` unconditional use.
 * Compressed vignetted using both `gs` and `qpdf`.

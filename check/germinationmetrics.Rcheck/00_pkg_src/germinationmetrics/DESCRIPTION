@@ -1,0 +1,57 @@
+Package: germinationmetrics
+Title: Seed Germination Indices and Curve Fitting
+Version: 0.1.5
+Authors@R: c(
+    person(given = "J.", family = "Aravind",
+           email = "j.aravind@icar.gov.in",
+           role = c("aut", "cre"),
+		       comment = c(ORCID = "0000-0002-4791-442X")),
+	  person(given = "S.", family = "Vimala Devi",
+           email = "vimala.devi@icar.gov.in",
+		       role = "aut"),
+    person(given = "J.", family = "Radhamani",
+           email = "jalli.radhamani@icar.gov.in",
+		       role = "aut"),
+	  person(given = c("Sherry", "Rachel"), family = "Jacob",
+           email = "sherry.jacob@icar.gov.in",
+		       role = "aut"),
+    person(given = c("Kalyani", "Srinivasan"),
+           email = "kalyani.srinivasan@icar.gov.in",
+		       role = "aut"),
+    person("ICAR-NBGPR",
+           role = "cph",
+		       comment = c(url = "www.nbpgr.ernet.in")))
+Description: Provides functions to compute various germination indices such as
+    germinability, median germination time, mean germination time, mean
+    germination rate, speed of germination, Timson's index, germination value,
+    coefficient of uniformity of germination, uncertainty of germination
+    process, synchrony of germination etc. from germination count data. Includes
+    functions for fitting cumulative seed germination curves using
+    four-parameter hill function and computation of associated parameters. See
+    the vignette for more, including full list of citations for the methods
+    implemented.
+Copyright: 2017-2018, ICAR-NBPGR
+License: GPL-2 | GPL-3
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 3.5.0)
+VignetteBuilder: knitr
+RoxygenNote: 7.1.1
+Imports: broom, data.table, ggplot2, ggrepel, mathjaxr, minpack.lm,
+        plyr, Rdpack, utils, stats
+Suggests: knitr, rmarkdown, reshape2, pander, XML, httr, RCurl
+RdMacros: mathjaxr, Rdpack
+URL: https://github.com/aravind-j/germinationmetrics,
+        https://aravind-j.github.io/germinationmetrics/
+        https://CRAN.R-project.org/package=germinationmetrics
+        https://doi.org/10.5281/zenodo.1219630
+BugReports: https://github.com/aravind-j/germinationmetrics/issues
+NeedsCompilation: no
+Packaged: 2021-02-08 09:06:51 UTC; J. Aravind
+Author: J. Aravind [aut, cre] (<https://orcid.org/0000-0002-4791-442X>),
+  S. Vimala Devi [aut],
+  J. Radhamani [aut],
+  Sherry Rachel Jacob [aut],
+  Kalyani Srinivasan [aut],
+  ICAR-NBGPR [cph] (www.nbpgr.ernet.in)
+Maintainer: J. Aravind <j.aravind@icar.gov.in>

@@ -1,0 +1,30 @@
+* using log directory 'G:/Dropbox/R packages/germinationmetrics/check/germinationmetrics.Rcheck'
+* using R Under development (unstable) (2021-02-02 r79929)
+* using platform: x86_64-w64-mingw32 (64-bit)
+* using session charset: ISO8859-1
+* using option '--as-cran'
+* checking for file 'germinationmetrics/DESCRIPTION' ... OK
+* this is package 'germinationmetrics' version '0.1.5'
+* package encoding: UTF-8
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'J. Aravind <j.aravind@icar.gov.in>'
+
+New submission
+
+Package was archived on CRAN
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2021-01-21 as check problems were not
+    corrected in time.
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking whether package 'germinationmetrics' can be installed ... ERROR
+Installation failed.
+See 'G:/Dropbox/R packages/germinationmetrics/check/germinationmetrics.Rcheck/00install.out' for details.
+* DONE
+Status: 1 ERROR, 1 NOTE

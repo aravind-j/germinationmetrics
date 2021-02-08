@@ -1,0 +1,451 @@
+---
+title: "The `germinationmetrics` Package: A Brief Introduction"
+author: "Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan"
+date: "`r Sys.Date()`"
+classoption: table
+header-includes:
+- \usepackage{fancyhdr}
+- \usepackage{wrapfig}
+- \pagestyle{fancy}
+- \fancyhead[LE,RO]{\slshape \rightmark}
+- \fancyfoot[C]{\thepage}
+- \usepackage{xcolor}
+- \usepackage{hyperref}
+- \hypersetup{colorlinks=true}
+- \hypersetup{linktoc=all}
+- \hypersetup{linkcolor=blue}
+- \usepackage{pdflscape}
+- \usepackage{booktabs}
+- \newcommand{\blandscape}{\begin{landscape}}
+- \newcommand{\elandscape}{\end{landscape}}
+- \fancyhead[LO,RE]{The \texttt{germinationmetrics} Package{:} A Brief Introduction}
+output:
+  pdf_document:
+    fig_caption: no
+    toc: no
+  html_document:
+    df_print: paged
+    toc: yes
+csl: frontiers.csl
+bibliography: REFERENCES.bib
+link-citations: yes
+vignette: |
+  %\VignetteIndexEntry{Introduction}
+  %\usepackage[utf8]{inputenc}
+  %\VignetteEngine{knitr::rmarkdown_notangle}
+---
+
+```{r, echo=FALSE}
+out_type <- knitr::opts_knit$get("rmarkdown.pandoc.to")
+
+r = getOption("repos")
+r["CRAN"] = "https://cran.rstudio.com/"
+#r["CRAN"] = "https://cloud.r-project.org/"
+#r["CRAN"] = "https://ftp.iitm.ac.in/cran/"
+options(repos = r)
+
+# Workaround for missing pandoc in CRAN OSX build machines
+out_type <- ifelse(out_type == "", "latex", out_type)
+```
+
+```{r, results='asis', echo=FALSE}
+switch(out_type,
+    html = {cat("<p> ICAR-National Bureau of Plant Genetic Resources, New Delhi.</p>")},
+    latex = cat("\\begin{center}
+ ICAR-National Bureau of Plant Genetic Resources, New Delhi.
+
+\\end{center}" )
+)
+```
+
+\begin{center}
+\vspace{6pt}
+\hrule
+\end{center}
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  comment = "",
+  fig.cap = ""
+)
+
+```
+
+\tableofcontents
+
+\begin{wrapfigure}{r}{0.35\textwidth}
+  \vspace{-20pt}
+  \begin{center}
+    \includegraphics[width=0.33\textwidth]{`r system.file("extdata", "germinationmetrics.png", package = "germinationmetrics")`}
+  \end{center}
+    \vspace{-20pt}
+\end{wrapfigure}
+
+<img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
+
+## Overview
+
+The package `germinationmetrics` is a collection of functions which implements various methods for describing the time-course of germination in terms of single-value germination indices as well as fitted curves.
+
+The goal of this vignette is to introduce the users to these functions and get started in describing sequentially recorded germination count data. This document assumes a basic knowledge of `R` programming language.
+
+## Installation
+The package can be installed using the following functions:
+
+```{r, eval=FALSE}
+# Install from CRAN
+install.packages('germinationmetrics', dependencies=TRUE)
+
+# Install development version from Github
+devtools::install_github("aravind-j/germinationmetrics")
+
+```
+
+Then the package can be loaded using the function
+```{r}
+library(germinationmetrics)
+```
+
+\clearpage
+
+## Version History
+```{r, results='asis', echo=FALSE}
+# Fetch release version
+# rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germinationmetrics")) == "",
+#                yes = getNamespaceVersion("germinationmetrics"),
+#                no = as.vector(available.packages()["germinationmetrics",]["Version"]))
+rver <- "0.1.5"
+```
+The current version of the package is `r rver`. The previous versions are as follows.
+
+**Table 1.** Version history of `germinationmetrics` `R` package.
+
+```{r, echo=FALSE, message=FALSE}
+if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
+pkg <- "germinationmetrics"
+link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
+# cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+# page <- httr::GET(link, httr::config(cainfo = cafile))
+page <- httr::GET(link)
+page <- httr::content(page, as = 'text')
+# page <- RCurl::getURL(link)
+
+VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
+colnames(VerHistory) <- c("Version", "Date")
+VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
+VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
+VerHistory$Date <- as.Date(VerHistory$Date)
+VerHistory$Version <- gsub("germinationmetrics_", "", VerHistory$Version)
+VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
+
+VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
+rownames(VerHistory) <- NULL
+} else {
+print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table")
+}
+
+knitr::kable(VerHistory)
+
+```
+
+To know detailed history of changes use `news(package='germinationmetrics')`.
+
+
+## Germination count data
+
+Typically in a germination test, the germination count data of a fixed number of seeds is recorded at regular intervals for a definite period of time or until all the seeds have germinated. These germination count data can be either partial or cumulative (Table 2).
+
+**Table 2 :** A typical germination count data.
+
+```{r, echo = FALSE}
+data <- data.frame(intervals = 1:14,
+                   counts = c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0))
+data$cumulative.counts = cumsum(data$counts)
+
+knitr::kable(data)
+
+```
+
+The time-course of germination can be plotted as follows.
+
+```{r, eval = TRUE}
+data <- data.frame(intervals = 1:14,
+                   counts = c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0))
+
+# Partial germination counts
+x <- data$counts
+# Cumulative germination counts
+y <- cumsum(x)
+# Time intervals of observations
+int <- data$intervals
+
+plot(int, cumsum(x))
+```
+
+## Single-value germination indices
+
+The details about the single-value germination indices implemented in `germinationmetrics` are described in Table 3.
+
+\newpage
+\blandscape
+
+\rowcolors{2}{gray!25}{white}
+\renewcommand{\arraystretch}{1.3}
+
+**Table 3 :** Single-value germination indices implemented in `germinationmetrics`.
+\footnotesize
+```{r, echo = FALSE, eval = TRUE}
+load("Indices.rda")
+
+indices$`Function` <- paste("`", indices$`Function`, "`", sep = "")
+
+# indices$Details <- gsub("\\r\\n\\r\\n", "$$\\\\, $$", indices$Details)
+# indices$Details <- gsub("$$\\, $$$$", "$$", indices$Details, fixed = TRUE)
+# indices$Details <- paste(indices$Details, "$$\\\\, $$", sep = "")
+
+indices$Details <- gsub("\\r\\n", "\\\\\n", indices$Details)
+
+#indices$Details <- gsub("\\r\\n\\r\\n", "##", indices$Details)
+#indices$Details <- gsub("##", "\\\n", indices$Details)
+
+indices$Reference <- gsub("\\[|\\]", "", indices$Reference)
+#indices <- indices[-27,]
+
+```
+
+
+```{r, echo = FALSE, eval = TRUE}
+if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+  pander::pander(indices, style='grid',
+               split.cell = c(15, 18, 50, 10, 12, 8),
+               justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
+               use.hyphening = FALSE, missing = "")
+} else {
+  print("Package 'pander' and pandoc are required to generate this table")
+}
+
+```
+
+\elandscape
+
+\newpage
+
+#### Examples
+
+```{r, echo = FALSE}
+# Function saved in functions.R file
+getCode <- function(myFunction, myPackage) {
+  out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
+          prompt.prefix = "", give.lines = TRUE)
+  maxn <- grep(pattern = "### ** Examples", x = out, fixed = TRUE)
+  out <- out[-(1:maxn)]
+  
+  out <- out[!(out %in% c("## No test: ", "## End(No test)"))]
+  
+  out <- gsub("^##D ", "", out)
+  
+  return(out)
+}
+library(germinationmetrics)
+require(germinationmetrics)
+```
+
+#### `GermPercent()`
+```{r, runCode, code = getCode("GermPercent", "germinationmetrics")}
+```
+
+#### `FirstGermTime(), LastGermTime(), PeakGermTime(), TimeSpreadGerm()`
+```{r, runCode, code = getCode("FirstGermTime", "germinationmetrics")}
+```
+
+#### `t50()`
+```{r, runCode, code = getCode("t50", "germinationmetrics")}
+```
+
+#### `MeanGermTime(), VarGermTime(), SEGermTime(), CVGermTime()`
+```{r, runCode, code = getCode("MeanGermTime", "germinationmetrics")}
+```
+
+#### `MeanGermRate(), CVG(), VarGermRate(), SEGermRate(), GermRateRecip()`
+```{r, runCode, code = getCode("MeanGermRate", "germinationmetrics")}
+```
+
+#### `GermSpeed(), GermSpeedAccumulated(), GermSpeedCorrected() `
+```{r, runCode, code = getCode("GermSpeed", "germinationmetrics")}
+```
+
+#### `GermSpeed(), GermSpeedAccumulated(), GermSpeedCorrected() `
+```{r, runCode, code = getCode("GermSpeed", "germinationmetrics")}
+```
+
+#### `WeightGermPercent()`
+```{r, runCode, code = getCode("WeightGermPercent", "germinationmetrics")}
+```
+
+#### `MeanGermPercent(), MeanGermNumber()`
+```{r, runCode, code = getCode("MeanGermPercent", "germinationmetrics")}
+```
+
+#### `TimsonsIndex(), GermRateGeorge() `
+```{r, runCode, code = getCode("TimsonsIndex", "germinationmetrics")}
+```
+
+#### `GermIndex() `
+```{r, runCode, code = getCode("GermIndex", "germinationmetrics")}
+```
+
+#### `EmergenceRateIndex() `
+```{r, runCode, code = getCode("EmergenceRateIndex", "germinationmetrics")}
+```
+
+#### `PeakValue(), GermValue()`
+```{r, runCode, code = getCode("PeakValue", "germinationmetrics")}
+```
+
+#### `CUGerm()`
+```{r, runCode, code = getCode("CUGerm", "germinationmetrics")}
+```
+
+#### `GermSynchrony(), GermUncertainty()`
+```{r, runCode, code = getCode("GermSynchrony", "germinationmetrics")}
+```
+
+## Non-linear regression analysis
+
+Several mathematical functions have been used to fit the cumulative germination count data and describe the germination process  by non-linear regression analysis. They include functions such as Richard's, Weibull, logistic, log-logistic, gaussian, four-parameter hill function etc. Currently `germinationmetrics` implements the four-parameter hill function to fit the count data and computed various associated metrics.
+
+### Four-parameter hill function
+The four-parameter hill function defined as follows [@el-kassaby_seed_2008].
+
+$$
+f(x) = y = y_0 + \frac{ax^b}{x^b+c^b}
+$$
+Where, $y$ is the cumulative germination percentage at time $x$, $y_{0}$ is the intercept on the y axis, $a$ is the asymptote, $b$ is a mathematical parameter controlling the shape and steepness of the germination curve and $c$ is the "half-maximal activation level".
+
+The details of various parameters that are computed from this function are given in Table 4.
+
+**Table 4** Germination parameters estimated from the four-parameter hill function.
+
+\rowcolors{2}{gray!25}{white}
+\renewcommand{\arraystretch}{1.3}
+```{r, echo = FALSE, eval = TRUE}
+load("Indices.rda")
+fphf$Details <- gsub("\\r\\n", "\\\\\n", fphf$Details)
+if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+  pander::pander(fphf, style='grid',
+               split.cell = c(15, 50, 10, 10),
+               justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
+               use.hyphening = FALSE, missing = "")
+} else {
+  print("Package 'pander' and pandoc are required to generate this table")
+}
+```
+
+#### Examples
+
+```{r, echo = FALSE}
+# Function saved in functions.R file
+getCode <- function(myFunction, myPackage) {
+  out <- example(myFunction, myPackage, ask = FALSE, character.only = TRUE,
+          prompt.prefix = "", give.lines = TRUE)
+  maxn <- grep(pattern = "### ** Examples", x = out, fixed = TRUE)
+  out <- out[-(1:maxn)]
+  
+  out <- out[!(out %in% c("## No test: ", "## End(No test)"))]
+  
+  out <- gsub("^##D ", "", out)
+  
+  return(out)
+}
+library(germinationmetrics)
+require(germinationmetrics)
+```
+
+#### `FourPHFfit()`
+```{r, runCode, code = getCode("FourPHFfit", "germinationmetrics")}
+```
+
+```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit", "germinationmetrics"), eval =FALSE, echo = FALSE}
+```
+
+```{r, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit", "germinationmetrics")}
+x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
+y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
+int <- 1:length(x)
+total.seeds = 50
+
+# From partial germination counts
+#----------------------------------------------------------------------------
+fit1 <- FourPHFfit(germ.counts = x, intervals = int,
+                   total.seeds = 50, tmax = 20)
+
+# From cumulative germination counts
+#----------------------------------------------------------------------------
+fit2 <- FourPHFfit(germ.counts = y, intervals = int,
+                   total.seeds = 50, tmax = 20, partial = FALSE)
+
+# Default plots
+plot(fit1)
+plot(fit2)
+
+# No labels
+plot(fit1, plotlabels = FALSE)
+plot(fit2, plotlabels = FALSE)
+
+# Only the FPHF curve
+plot(fit1, rog = FALSE, t50.total = FALSE, t50.germ = FALSE,
+     tmgr = FALSE, mgt = FALSE, uniformity = FALSE)
+plot(fit2, rog = FALSE, t50.total = FALSE, t50.germ = FALSE,
+     tmgr = FALSE, mgt = FALSE, uniformity = FALSE)
+
+# Without y axis limits adjustment
+plot(fit1, limits = FALSE)
+plot(fit2, limits = FALSE)
+```
+
+## Wrapper functions
+
+Wrapper functions `germination.indices()` and `FourPHFfit.bulk()` are available in the package for computing results for multiple samples in batch from a data frame of germination counts recorded at specific time intervals.
+
+#### `germination.indices()`
+This wrapper function can be used to compute several germination indices simultaneously for multiple samples in batch.
+
+```{r, runCode, code = getCode("germination.indices", "germinationmetrics")}
+```
+
+#### `FourPHFfit.bulk()`
+This wrapper function can be used to fit the four-parameter hill function for multiple samples in batch.
+
+```{r, runCode, code = getCode("FourPHFfit.bulk", "germinationmetrics")}
+```
+
+Multiple fitted curves generated in batch can also be plotted.
+
+```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit.bulk", "germinationmetrics")}
+```
+
+## Citing `germinationmetrics`
+
+```{r, echo = FALSE, collapse = TRUE}
+detach("package:germinationmetrics", unload=TRUE)
+suppressPackageStartupMessages(library(germinationmetrics))
+cit <- citation("germinationmetrics")
+# yr <- format(Sys.Date(), "%Y")
+# cit[1]$year <- yr
+# oc <- class(cit)
+# 
+# cit <- unclass(cit)
+# attr(cit[[1]],"textVersion") <- gsub("\\(\\)",
+#                                      paste("\\(", yr, "\\)", sep = ""),
+#                                      attr(cit[[1]],"textVersion"))
+# class(cit) <- oc
+cit
+```
+
+## Session Info
+
+```{r}
+sessionInfo()
+```
+
+## References
