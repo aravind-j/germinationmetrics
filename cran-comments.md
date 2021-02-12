@@ -1,7 +1,20 @@
+# Version 0.1.5 - Fourth submission
+
+* Fixed issue with vignette in Solaris build.
+
+### Test environments
+* local Windows 10 Home v1803, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* win-builder, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
+* rhub:solaris-x86-patched - i386-pc-solaris2.10 (32-bit), R-release (R 4.0.3).
+* rhub:solaris-x86-patched-ods - i386-pc-solaris2.10 (32-bit), R-release (R 4.0.3).
+* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.0.3).
+
 # Version 0.1.5 - Third submission
 
 * Added prebuilt PDF due to use of `\Sexpr{}` expressions in Rd Files.
-* As the references are too many, I have added all the citations in the package vignette with the doi or isbn.
+> Is there some reference about the method you can add in the Description field in the form Authors (year) <doi:.....>?
+* As the references are too many, I have added all the citations in the package vignette with the doi or isbn. This was pointed out in the first submission too (0.1.0) accordingly where I have added a sentence pointing to references of methods implemented in package documented in the vignette.
 
 ### Test environments
 * local Windows 10 Home v1803, R-release (R 4.0.3) & R-devel (R 4.1.0 Pre-release).
