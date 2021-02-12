@@ -6,6 +6,9 @@
 ## UPDATED FUNCTIONS:
 * `FourPHFfit` - Added warning for low germination percentages. Modified to return `NA` output for zero total germination inputs with non-converging fits so as not to break `FourPHFfit.bulk`.
 
+## VIGNETTE:
+* Removed cairo dependency.
+
 # germinationmetrics  0.1.4
 
 ## NEW FUNCTIONS:
