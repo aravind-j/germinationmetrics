@@ -52,8 +52,6 @@
 
 
 
-
-
 <!-- mathjax -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script>
@@ -91,7 +89,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5.9000</span>
       </span>
     </div>
 
@@ -113,14 +111,14 @@
 </li>
 <li>
   <a href="../articles/Introduction.html">
-    <span class="fas fa-file-o"></span>
+    <span class="far fa-file"></span>
      
     Introduction
   </a>
 </li>
 <li>
   <a href="../news/index.html">
-    <span class="fas fa-newspaper-o"></span>
+    <span class="far fa-newspaper"></span>
      
     News
   </a>
@@ -129,7 +127,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li>
   <a href="https://github.com/aravind-j/germinationmetrics">
-    <span class="fas fa-github-alt"></span>
+    <span class="fab fa-github-alt"></span>
      
     Github
   </a>
@@ -157,9 +155,14 @@
       <small>Source: <a href='https://github.com/aravind-j/germinationmetrics/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="germinationmetrics-016" class="section level1">
+<h1 class="page-header" data-toc-text="0.1.6">
+<a href="#germinationmetrics-016" class="anchor"></a>germinationmetrics 0.1.6<small> Unreleased </small>
+</h1>
+</div>
     <div id="germinationmetrics-015" class="section level1">
 <h1 class="page-header" data-toc-text="0.1.5">
-<a href="#germinationmetrics-015" class="anchor"></a>germinationmetrics 0.1.5<small> Unreleased </small>
+<a href="#germinationmetrics-015" class="anchor"></a>germinationmetrics 0.1.5<small> 2021-02-17 </small>
 </h1>
 <div id="new-functions" class="section level2">
 <h2 class="hasAnchor">
@@ -175,6 +178,13 @@
 <ul>
 <li>
 <code>FourPHFfit</code> - Added warning for low germination percentages. Modified to return <code>NA</code> output for zero total germination inputs with non-converging fits so as not to break <code>FourPHFfit.bulk</code>.</li>
+</ul>
+</div>
+<div id="vignette" class="section level2">
+<h2 class="hasAnchor">
+<a href="#vignette" class="anchor"></a>VIGNETTE:</h2>
+<ul>
+<li>Removed cairo dependency.</li>
 </ul>
 </div>
 </div>
@@ -206,14 +216,14 @@
 <code>TimsonsIndex</code> and <code>GermRateGeorge</code>- Fixed to handle interval data other than days.</li>
 </ul>
 </div>
-<div id="vignette" class="section level2">
+<div id="vignette-1" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vignette" class="anchor"></a>VIGNETTE:</h2>
+<a href="#vignette-1" class="anchor"></a>VIGNETTE:</h2>
 <ul>
 <li>Fixed details of Median germination time in Table 3.</li>
 <li>Fixed typo in formula for CUG in Table 3.</li>
 <li>Added reference for Coefficient of variation of the germination time in Table 3.</li>
-<li>Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (ripley@stats.ox.ac.uk).</li>
+<li>Reverted to using system certificates instead of RCurl ones for fetching and displaying version history as suggested by Prof. Brian Ripley (<a href="mailto:ripley@stats.ox.ac.uk" class="email">ripley@stats.ox.ac.uk</a>).</li>
 </ul>
 </div>
 <div id="other-notes" class="section level2">
@@ -259,9 +269,9 @@
 <code>GermValue</code> - Updated with option to consider time from start of test in addition to time from onset of germination.</li>
 </ul>
 </div>
-<div id="vignette-1" class="section level2">
+<div id="vignette-2" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vignette-1" class="anchor"></a>VIGNETTE:</h2>
+<a href="#vignette-2" class="anchor"></a>VIGNETTE:</h2>
 <ul>
 <li>Fixed LATEX xcolor options clash issue in vignette.</li>
 </ul>
@@ -312,9 +322,9 @@
 <code>FourPHFfit</code> - Separated plot method to new function <code>plot.FourPHFfit</code>.</li>
 </ul>
 </div>
-<div id="vignette-2" class="section level2">
+<div id="vignette-3" class="section level2">
 <h2 class="hasAnchor">
-<a href="#vignette-2" class="anchor"></a>VIGNETTE:</h2>
+<a href="#vignette-3" class="anchor"></a>VIGNETTE:</h2>
 <ul>
 <li>Fixed LATEX xcolor options clash issue in vignette.</li>
 <li>Fixed issue with missing pandoc in case of r-release-osx-x86_64.</li>
@@ -364,7 +374,7 @@
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.6.1.</p>
 </div>
 
       </footer>
