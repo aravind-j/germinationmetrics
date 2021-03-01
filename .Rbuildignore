@@ -27,3 +27,4 @@
 ^pkgdown$
 ^.Rd2pdf*$
 ^CRAN-RELEASE$
+^\.github$
