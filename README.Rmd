@@ -1,5 +1,6 @@
 ---
 output: rmarkdown::github_document
+always_allow_html: true
 ---
 
 ```{r, echo = FALSE}
@@ -29,8 +30,8 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi
 [![minimal R version](https://img.shields.io/badge/R>%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
+[![Dependencies](https://tinyverse.netlify.com/badge/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
 [![rstudio mirror downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics)
-<!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
 ```{r, results='asis', echo=FALSE}
 dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germinationmetrics")) != "",
                yes = getNamespaceVersion("germinationmetrics"),
@@ -38,14 +39,17 @@ dver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germin
 
 cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver, "-orange.svg)](https://github.com/aravind-j/germinationmetrics)", sep = ""))
 ```
-<!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
+[![Github Code Size](https://img.shields.io/github/languages/code-size/aravind-j/germinationmetrics.svg)](https://github.com/aravind-j/germinationmetrics)
 [![R-CMD-check](https://github.com/aravind-j/germinationmetrics/workflows/R-CMD-check/badge.svg)](https://github.com/aravind-j/germinationmetrics/actions)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
 [![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
-[![Rdoc](https://www.rdocumentation.org/badges/version/germinationmetrics)](https://www.rdocumentation.org/packages/germinationmetrics)
 [![Zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
+[![Website - pkgdown](https://img.shields.io/website-up-down-green-red/https/aravind-j.github.io/germinationmetrics.svg)](https://aravind-j.github.io/germinationmetrics/)
 [![.](https://pro-pulsar-193905.appspot.com/UA-116205606-1/welcome-page)](https://github.com/aravind-j/google-analytics-beacon)
+<!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
+<!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
+<!-- [![Rdoc](https://www.rdocumentation.org/badges/version/germinationmetrics)](https://www.rdocumentation.org/packages/germinationmetrics) -->
 
 ***
 
@@ -91,6 +95,54 @@ news(package='germinationmetrics')
 [Documentation website](https://aravind-j.github.io/germinationmetrics/)
 
 [Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
+
+## CRAN checks
+
+
+```{r, echo = FALSE}
+pkgname <- "germinationmetrics"
+
+osdf <-
+  rbind(data.frame(OS = "Linux", 
+           Flavour = c("r-devel-linux-x86_64-debian-clang",
+                       "r-devel-linux-x86_64-debian-gcc", 
+                       "r-devel-linux-x86_64-fedora-clang",
+                       "r-devel-linux-x86_64-fedora-gcc", 
+                       "r-patched-linux-x86_64",
+                       "r-release-linux-x86_64")),
+data.frame(OS = "Solaris", 
+           Flavour = c("r-patched-solaris-x86")),
+data.frame(OS = "Windows", 
+           Flavour = c("r-devel-windows-ix86+x86_64", 
+                       "r-release-windows-ix86+x86_64",
+                       "r-oldrel-windows-ix86+x86_64")),
+data.frame(OS = "macOS", 
+           Flavour = c("r-release-macos-x86_64", 
+                       "r-oldrel-macos-x86_64")))
+
+osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
+                    "(https://cranchecks.info/badges/flavor/",
+                    osdf$Flavour, "/", pkgname, ")]",
+                    "(https://cran.r-project.org/web/checks/check_results_",
+                    pkgname, ".html)",
+                    sep = "")
+```
+
+
+```{r, echo = FALSE, results='asis'}
+library(kableExtra)
+
+kosdf <- kbl(osdf[, c("Flavour", "CRAN check")], row.names = FALSE)
+
+kosdf2 <- kable_styling(kosdf, bootstrap_options = c("striped", "hover"),
+              full_width = F, position = "left")
+
+pack_rows(kosdf2, index = c("[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)" = 6,
+                            "[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)" = 1,
+                            "[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)" = 3,
+                            "[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)" = 2))
+
+```
 
 ## Citing `germinationmetrics`
 To cite the methods in the package use:
