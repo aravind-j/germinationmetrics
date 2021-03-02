@@ -1,7 +1,8 @@
 on:
   push:
-    paths:
-      - '**.Rmd'
+    branches:
+      - main
+      - master
 
 name: Render Rmarkdown files
 
