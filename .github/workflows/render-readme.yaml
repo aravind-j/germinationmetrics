@@ -1,21 +1,24 @@
+# Modified from
+# - https://github.com/r-lib/actions/tree/master/examples#render-rmarkdown
+# - https://github.com/gavinsimpson/gratia/blob/master/.github/workflows/readme-renderer.yaml
+
 on:
   push:
     branches:
       - main
       - master
 
-name: Render Rmarkdown files
+name: Render Readme
 
 jobs:
   render:
-    name: Render Rmarkdown files
+    name: Render Readme
     runs-on: macOS-latest
     env:
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 2 # This is important to set for `git diff-tree` to work below
       - uses: r-lib/actions/setup-r@v1
       - uses: r-lib/actions/setup-pandoc@v1
       - name: Install rmarkdown, remotes, and the local package
@@ -26,13 +29,12 @@ jobs:
           remotes::install_cran("devtools")
           remotes::install_cran("kableExtra")
         shell: Rscript {0}
-      - name: Render Rmarkdown files
-        run: |
-          RMD_PATH=($(git diff-tree --no-commit-id --name-only -r HEAD | grep '[.]Rmd$'))
-          Rscript -e 'for (file in commandArgs(TRUE)) rmarkdown::render(file)' ${RMD_PATH[*]}
-      - name: Commit results
+      - name: Render README.md using rmarkdown
+        run: Rscript -e 'rmarkdown::render("README.Rmd", output_format = "md_document")'
+      - name: Commit rendered README
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
-          git commit ${RMD_PATH[*]/.Rmd/.md} -m 'Re-build Rmarkdown files' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+          git add README.md
+          git commit -m "Re-build README.md" || echo "No changes to commit"
+          git push origin master || echo "No changes to commit"
