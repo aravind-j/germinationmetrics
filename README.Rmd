@@ -130,7 +130,7 @@ osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
 
 
 ```{r, echo = FALSE, results='asis'}
-library(kableExtra)
+library(kableExtra, warn.conflicts = FALSE)
 
 kosdf <- kbl(osdf[, c("Flavour", "CRAN check")], row.names = FALSE)
 
