@@ -1,16 +1,16 @@
 
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.5.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2021: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.5.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2021: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
 ICAR-National Bureau of Plant Genetic Resources, New Delhi
 
------
+------------------------------------------------------------------------
 
 [![minimal R
-version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg)](https://cran.r-project.org/)
+version](https://img.shields.io/badge/R%3E%3D-3.0.2-6666ff.svg?logo=R)](https://cran.r-project.org/)
 [![License: GPL
 v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
@@ -24,7 +24,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/germinationmet
 [![Project Status:
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2021--03--02-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2021--03--06-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
 [![Website -
@@ -34,7 +34,7 @@ pkgdown](https://img.shields.io/website-up-down-green-red/https/aravind-j.github
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 <!-- [![Rdoc](https://www.rdocumentation.org/badges/version/germinationmetrics)](https://www.rdocumentation.org/packages/germinationmetrics) -->
 
------
+------------------------------------------------------------------------
 
 ## Description
 
@@ -90,282 +90,151 @@ news(package='germinationmetrics')
 
 [Documentation website](https://aravind-j.github.io/germinationmetrics/)
 
-[Zenodo
-DOI](https://doi.org/10.5281/zenodo.1219630)
+[Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
 
 ## CRAN checks
 
 <table class="table table-striped table-hover" style="width: auto !important; ">
-
 <thead>
-
 <tr>
-
 <th style="text-align:left;">
-
 Flavour
-
 </th>
-
 <th style="text-align:left;">
-
-CRAN
-check
-
+CRAN check
 </th>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr grouplength="6">
-
 <td colspan="2" style="border-bottom: 1px solid;">
-
 <strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-devel-linux-x86\_64-debian-clang
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-devel-linux-x86\_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-devel-linux-x86\_64-debian-gcc
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-devel-linux-x86\_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-devel-linux-x86\_64-fedora-clang
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-devel-linux-x86\_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-devel-linux-x86\_64-fedora-gcc
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-devel-linux-x86\_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-patched-linux-x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-patched-linux-x86\_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-release-linux-x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-release-linux-x86\_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr grouplength="1">
-
 <td colspan="2" style="border-bottom: 1px solid;">
-
 <strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-patched-solaris-x86
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x86/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr grouplength="3">
-
 <td colspan="2" style="border-bottom: 1px solid;">
-
 <strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-devel-windows-ix86+x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-devel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-devel-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-release-windows-ix86+x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-release-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-release-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-oldrel-windows-ix86+x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-oldrel-windows-ix86+x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr grouplength="2">
-
 <td colspan="2" style="border-bottom: 1px solid;">
-
 <strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_ammistability.html)</strong>
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-release-macos-x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-release-macos-x86\_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 <tr>
-
 <td style="text-align:left;padding-left: 2em;" indentlevel="1">
-
 r-oldrel-macos-x86\_64
-
 </td>
-
 <td style="text-align:left;">
-
 [![CRAN check -
 r-oldrel-macos-x86\_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-
 </td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 ## Citing `germinationmetrics`
@@ -376,25 +245,24 @@ To cite the methods in the package use:
 citation("germinationmetrics")
 ```
 
-``` 
 
-To cite the R package 'germinationmetrics' in publications use:
+    To cite the R package 'germinationmetrics' in publications use:
 
-  Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2021).
-  germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.5.9000,
-  https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
+      Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan
+      (2021).  germinationmetrics: Seed Germination Indices and Curve Fitting. R package
+      version 0.1.5,
+      https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
-A BibTeX entry for LaTeX users is
+    A BibTeX entry for LaTeX users is
 
-  @Manual{,
-    title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
-    author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-    year = {2021},
-    note = {R package version 0.1.5.9000},
-    note = {https://github.com/aravind-j/germinationmetrics},
-    note = {https://cran.r-project.org/package=germinationmetrics},
-  }
+      @Manual{,
+        title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
+        author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
+        year = {2021},
+        note = {R package version 0.1.5},
+        note = {https://github.com/aravind-j/germinationmetrics},
+        note = {https://cran.r-project.org/package=germinationmetrics},
+      }
 
-This free and open-source software implements academic research by the authors and co-workers. If you use
-it, please support the project by citing the package.
-```
+    This free and open-source software implements academic research by the authors and
+    co-workers. If you use it, please support the project by citing the package.
