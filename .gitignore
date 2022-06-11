@@ -12,3 +12,6 @@ vignettes/Introduction.html
 vignettes/Introduction.toc
 vignettes/Introduction_files/
 dat.xlsx
+RoughWork
+.DS_Store
+.httr-oauth

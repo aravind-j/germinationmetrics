@@ -28,3 +28,4 @@
 ^.Rd2pdf*$
 ^CRAN-RELEASE$
 ^\.github$
+^RoughWork$
