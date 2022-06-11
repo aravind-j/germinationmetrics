@@ -44,7 +44,7 @@ For \code{TimsonsIndex} The value of Timson's index.
 Compute George's index
 \insertCite{george_influence_1961,tucker_estimating_1965,nichols_two_1968,chopraEffectSoilTemperature1980}{germinationmetrics},
 Timson's index or Timson's germination velocity index
-\insertCite{grose_laboratory_1958,timson_new_1965,lyonRapidMethodDetermining1966,chaudharyEffectTemperatureAssociated1970,negmEffectsEthyleneCarbon1978,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}
+\insertCite{grose_laboratory_1958,timson_new_1965,lyonRapidMethodDetermining1966,chaudharyEffectTemperatureAssociated1970,negm_effects_1978,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}
 and it's modifications by Labouriau
 \insertCite{ranal_how_2006}{germinationmetrics} and
 \insertCite{khan_effect_1984}{germinationmetrics}. \loadmathjax
@@ -77,7 +77,7 @@ germination percentage curve. It is same as the indices for area under time
 course curve of germination described by
 \insertCite{lyonRapidMethodDetermining1966;textual}{germinationmetrics} as
 well as
-\insertCite{negmEffectsEthyleneCarbon1978;textual}{germinationmetrics}. It is
+\insertCite{negm_effects_1978;textual}{germinationmetrics}. It is
 also described as Emergence Rate Index (\mjseqn{ERI}) by
 \insertCite{chaudharyEffectTemperatureAssociated1970;textual}{germinationmetrics}.
 
