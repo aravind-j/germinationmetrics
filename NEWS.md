@@ -1,5 +1,8 @@
 # germinationmetrics  0.1.6
 
+## VIGNETTE:
+* Fixed fetching CRAN page for version history to fail gracefully when access is down.
+
 # germinationmetrics  0.1.5
 
 ## NEW FUNCTIONS:
