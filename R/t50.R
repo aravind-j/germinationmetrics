@@ -112,6 +112,9 @@ t50 <- function(germ.counts, intervals, partial = TRUE,
   x <- germ.counts
   csx <- cumsum(x)
 
+  # Check method
+  method <- match.arg(method)
+
   if (method == "coolbear") {
     xhalf <- (sum(x) + 1)/2
   }

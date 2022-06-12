@@ -278,6 +278,7 @@ GermSpeedCorrected <- function(germ.counts, intervals, partial = TRUE,
     stop("'total.seeds' should be a numeric vector of length 1.")
   }
 
+  # Check method
   method <- match.arg(method)
 
   if (method == "normal") {
