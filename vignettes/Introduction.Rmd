@@ -136,7 +136,9 @@ The current version of the package is `r rver`. The previous versions are as fol
 if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
 pkg <- "germinationmetrics"
 link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
-# cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+
+if (RCurl::url.exists(link)) {
+  # cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
 # page <- httr::GET(link, httr::config(cainfo = cafile))
 page <- httr::GET(link)
 page <- httr::content(page, as = 'text')
@@ -152,11 +154,16 @@ VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
 
 VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
 rownames(VerHistory) <- NULL
+
+knitr::kable(VerHistory)
+
+} else {
+  print("Access to CRAN page for 'germinationmetrics is required to generate this table.'")
+}
+
 } else {
 print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table.")
 }
-
-knitr::kable(VerHistory)
 
 ```
 
