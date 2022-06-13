@@ -116,17 +116,12 @@ library(germinationmetrics)
 ## Version History
 ```{r, results='asis', echo=FALSE}
 
-if (as.logical(Sys.getenv("NETWORK_UP", unset = TRUE)) &
-  "germinationmetrics" %in% available.packages()[, 1]) {
-  # Fetch release version
+# Fetch release version
 rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germinationmetrics")) == "",
                yes = getNamespaceVersion("germinationmetrics"),
-               no = as.vector(available.packages()["germinationmetrics",]["Version"]))
-} else {
-  rver <- getNamespaceVersion("germinationmetrics")
-  print("Unable to fetch release version from CRAN.")
-}
-
+               no = ifelse("germinationmetrics" %in% available.packages()[, 1],
+                           as.vector(available.packages()["germinationmetrics",]["Version"]),
+                           getNamespaceVersion("germinationmetrics")))
 
 ```
 
