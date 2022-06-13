@@ -10,6 +10,7 @@ germination.indices(
   counts.intervals.cols,
   intervals,
   partial = TRUE,
+  PeakGermPercent = TRUE,
   FirstGermTime = TRUE,
   LastGermTime = TRUE,
   PeakGermTime = TRUE,

@@ -1,5 +1,11 @@
 # germinationmetrics  0.1.6
 
+## NEW FUNCTIONS:
+* `PeakGermPercent` - 
+
+## UPDATED FUNCTIONS:
+`FirstGermTime`, `LastGermTime` and `PeakGermTime` - Updated documentation with formula.
+
 ## VIGNETTE:
 * Fixed fetching CRAN page for version history to fail gracefully when access is down.
 

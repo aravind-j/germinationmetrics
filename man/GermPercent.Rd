@@ -2,9 +2,12 @@
 % Please edit documentation in R/GermPercent.R
 \name{GermPercent}
 \alias{GermPercent}
+\alias{PeakGermPercent}
 \title{Germination percentage}
 \usage{
 GermPercent(germinated.seeds, germ.counts, total.seeds, partial = TRUE)
+
+PeakGermPercent(germ.counts, intervals, total.seeds, partial = TRUE)
 }
 \arguments{
 \item{germinated.seeds}{Number of germinated seeds}
@@ -22,8 +25,11 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 The germination percentage (\%) value.
 }
 \description{
-Compute the germination percentage or final germination percentage or
-germinability.
+Compute the following metrics: \describe{ \item{\code{GermPercent}}{
+Germination percentage or Final germination percentage or Germinability
+\insertCite{ista_chapter_2015}{germinationmetrics}.}
+\item{\code{PeakGermPercent}}{Peak germination percentage
+\insertCite{vallance_studies_1950,roh_maturity_2004}{germinationmetrics}.} }
 }
 \details{
 Germination percentage is computed as follows
@@ -36,18 +42,39 @@ the total number of seeds.
 
 The value of \mjseqn{N_{g}} can be either specified using the argument
 \code{germinated.seeds} or is computed from the \code{germ.counts} argument.
+
+Peak germination percentage is computed as follows
+\insertCite{vallance_studies_1950,roh_maturity_2004}{germinationmetrics}.
+
+\mjsdeqn{PGP = \frac{N_{max}}{N_{t}} \times 100}
+
+Where, \mjseqn{N_{max}} is the maximum number of seeds germinated per
+interval.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
 y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
+z <- c(0, 0, 0, 0, 11, 11, 9, 7, 1, 0, 1, 0, 0, 0)
+int <- 1:length(x)
 
 # From partial germination counts
+#----------------------------------------------------------------------------
 GermPercent(germ.counts = x, total.seeds = 50)
+PeakGermPercent(germ.counts = x, intervals = int, total.seeds = 50)
+# For multiple peak germination times
+PeakGermPercent(germ.counts = z, intervals = int, total.seeds = 50)
 
 # From cumulative germination counts
+#----------------------------------------------------------------------------
 GermPercent(germ.counts = y, total.seeds = 50, partial = FALSE)
+PeakGermPercent(germ.counts = y, intervals = int, total.seeds = 50,
+                partial = FALSE)
+# For multiple peak germination times
+PeakGermPercent(germ.counts = cumsum(z), intervals = int, total.seeds = 50,
+                partial = FALSE)
 
 # From number of germinated seeds
+#----------------------------------------------------------------------------
 GermPercent(germinated.seeds = 40, total.seeds = 50)
 
 }

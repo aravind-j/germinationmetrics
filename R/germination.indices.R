@@ -230,6 +230,7 @@
 #' @export
 germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
                                 intervals, partial = TRUE,
+                                PeakGermPercent = TRUE,
                                 FirstGermTime = TRUE, LastGermTime = TRUE,
                                 PeakGermTime = TRUE, TimeSpreadGerm = TRUE,
                                 t50 = TRUE, MeanGermTime = TRUE,
@@ -351,6 +352,13 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
   data[, GermPercent := GermPercent(germ.counts = unlist(mget(counts.intervals.cols)),
                                     total.seeds = unlist(mget(total.seeds.col)),
                                     partial = TRUE), by = 1:nrow(data)]
+
+  if (PeakGermPercent) {
+    data[, PeakGermPercent := PeakGermPercent(germ.counts = unlist(mget(counts.intervals.cols)),
+                                              intervals = intervals,
+                                              total.seeds = unlist(mget(total.seeds.col)),
+                                              partial = TRUE), by = 1:nrow(data)]
+  }
 
   if (FirstGermTime) {
     data[, FirstGermTime := FirstGermTime(germ.counts = unlist(mget(counts.intervals.cols)),
