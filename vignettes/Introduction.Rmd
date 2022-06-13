@@ -23,6 +23,7 @@ output:
   pdf_document:
     fig_caption: no
     toc: no
+    keep_tex:  true
   html_document:
     df_print: paged
     toc: yes
@@ -128,6 +129,7 @@ rver <- ifelse(test = gsub("(.\\.)(\\d+)(\\..)", "", getNamespaceVersion("germin
 
 
 ```
+
 The current version of the package is `r rver`. The previous versions are as follows.
 
 **Table 1.** Version history of `germinationmetrics` `R` package.
@@ -212,7 +214,9 @@ The details about the single-value germination indices implemented in `germinati
 \renewcommand{\arraystretch}{1.3}
 
 **Table 3 :** Single-value germination indices implemented in `germinationmetrics`.
+
 \footnotesize
+
 ```{r, echo = FALSE, eval = TRUE}
 load("Indices.rda")
 
@@ -244,6 +248,7 @@ if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys
 }
 
 ```
+
 
 \elandscape
 

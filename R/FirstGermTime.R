@@ -27,7 +27,8 @@
 #' or Germination distribution
 #' \insertCite{schrader_seed_2000}{germinationmetrics}.}
 #' \item{\code{PeakGermTime}}{Peak time of germination or Modal time of
-#' germination \insertCite{ranal_how_2006}{germinationmetrics}.} } \loadmathjax
+#' germination (\mjseqn{t_{peak}})
+#' \insertCite{ranal_how_2006}{germinationmetrics}.} } \loadmathjax
 #'
 #' Time of first germination indicates time of germination of the faster seeds
 #' in a seedlot.
@@ -36,12 +37,27 @@
 #' germination and lower value of time of last germination indicates faster
 #' termination of germination.
 #'
+#' \mjsdeqn{t_{0} = \min \lbrace T_{i} : N_{i} \neq  0 \rbrace}
+#'
+#' \mjsdeqn{t_{g} = \max \lbrace T_{i} : N_{i} \neq  0 \rbrace}
+#'
+#' Where, \mjseqn{T_{i}} is the time from the start of the experiment to the
+#' \mjseqn{i}th interval and \mjseqn{N_{i}} is the number of seeds germinated in
+#' the \mjseqn{i}th time interval (not the accumulated number, but the number
+#' corresponding to the \mjseqn{i}th interval).
+#'
+#'
 #' Time spread of germination (\mjseqn{t_{g}-t_{0}}) indicates difference
 #' between faster and slower germinating members of a sample.
 #'
 #' Peak time of germination is the time in which highest frequency of germinated
 #' seeds are observed. Multiple peak times of germination are possible and if
 #' detected are indicated by a warning message.
+#'
+#' \mjsdeqn{t_{peak} = \lbrace T_{i} : N_{i} = N_{max} \rbrace}
+#'
+#' Where, \mjseqn{N_{max}} is the maximum number of seeds germinated per
+#' interval.
 #'
 #' @inheritParams MeanGermTime
 #' @return For \code{FirstGermTime}, the time of first germination value in the
