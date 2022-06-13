@@ -2,7 +2,7 @@
 title: "The `germinationmetrics` Package: A Brief Introduction"
 author: "Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan"
 date: "`r Sys.Date()`"
-classoption: table
+classoption: table, twoside
 header-includes:
 - \usepackage{fancyhdr}
 - \usepackage{wrapfig}
