@@ -51,8 +51,7 @@
 #' germination percentage curve. It is same as the indices for area under time
 #' course curve of germination described by
 #' \insertCite{lyonRapidMethodDetermining1966;textual}{germinationmetrics} as
-#' well as
-#' \insertCite{negm_effects_1978;textual}{germinationmetrics}. It is
+#' well as \insertCite{negm_effects_1978;textual}{germinationmetrics}. It is
 #' also described as Emergence Rate Index (\mjseqn{ERI}) by
 #' \insertCite{chaudharyEffectTemperatureAssociated1970;textual}{germinationmetrics}.
 #'
@@ -115,9 +114,13 @@
 #'   \code{"labouriau"} or \code{"khanungar"}. Default is \code{"none"} (see
 #'   \strong{Details}).
 #'
-#' @return For \code{TimsonsIndex} The value of Timson's index.
+#' @return For \code{TimsonsIndex}, the value of Timson's index (\%) if
+#'   \code{modification = "none"}. If \code{modification = "labouriau"}, then
+#'   value with no unit and if \code{modification = "khanungar"}, then value as
+#'   \% \mjseqn{\mathrm{time^{-1}}}.
 #'
-#'   For \code{GermRateGeorge} The value of George's germination rate.
+#'   For \code{GermRateGeorge} The value of George's germination rate as
+#'   \mjseqn{count time}.
 #'
 #' @references
 #'

@@ -55,7 +55,7 @@
 #' @inheritParams MeanGermTime
 #'
 #' @return For \code{GermUncertainty}, the value of uncertainty of germination
-#'   process.
+#'   process in \mjseqn{\mathrm{bit}}.
 #'
 #'   For \code{GermSynchrony}, the value of synchrony of germination.
 #'

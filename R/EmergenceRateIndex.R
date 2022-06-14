@@ -98,7 +98,15 @@
 #'   Default is \code{"melville"} (see \strong{Details}).
 #' @param total.seeds Total number of seeds.
 #'
-#' @return The value of the Emergence rate index.
+#' @return The value of the Emergence rate index with the units according to
+#'   \code{method}.
+#'
+#'   \describe{
+#'     \item{\code{melville}}{\mjseqn{\mathrm{count}}}
+#'     \item{\code{melvillesantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
+#'     \item{\code{bilbrowanjura}}{\mjseqn{\mathrm{count} \, time^{-1}}}
+#'     \item{\code{fakorede}}{\mjseqn{time \, \mathrm{count}^{-1}}}
+#'   }
 #'
 #' @references
 #'

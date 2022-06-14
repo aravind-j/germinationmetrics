@@ -29,7 +29,15 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 Default is \code{"melville"} (see \strong{Details}).}
 }
 \value{
-The value of the Emergence rate index.
+The value of the Emergence rate index with the units according to
+  \code{method}.
+
+  \describe{
+    \item{\code{melville}}{\mjseqn{\mathrm{count}}}
+    \item{\code{melvillesantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
+    \item{\code{bilbrowanjura}}{\mjseqn{\mathrm{count} \, time^{-1}}}
+    \item{\code{fakorede}}{\mjseqn{time \, \mathrm{count}^{-1}}}
+  }
 }
 \description{
 Compute the Emergence rate index or Germination rate index according to

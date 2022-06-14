@@ -21,7 +21,7 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 }
 \value{
 For \code{GermUncertainty}, the value of uncertainty of germination
-  process.
+  process in \mjseqn{\mathrm{bit}}.
 
   For \code{GermSynchrony}, the value of synchrony of germination.
 }

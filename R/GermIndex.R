@@ -57,7 +57,8 @@
 #'   \code{"santanaranal"}. Default is \code{"none"} (see \strong{Details}).
 #' @param total.seeds Total number of seeds.
 #'
-#' @return The value of the Germination index.
+#' @return The value of the Germination index in the same unit of time as
+#'   specified in the argument \code{intervals}.
 #'
 #' @references
 #'

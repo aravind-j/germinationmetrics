@@ -28,7 +28,8 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 \code{"santanaranal"}. Default is \code{"none"} (see \strong{Details}).}
 }
 \value{
-The value of the Germination index.
+The value of the Germination index in the same unit of time as
+  specified in the argument \code{intervals}.
 }
 \description{
 Compute the Germination index according to

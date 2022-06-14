@@ -44,8 +44,8 @@
 #' It is the same as Emergence Rate Index (\mjseqn{ERI}) described by
 #' \insertCite{allan_seedling_1962;textual}{germinationmetrics},
 #' \insertCite{erbachTillageContinuousCorn1982;textual}{germinationmetrics} and
-#' \insertCite{hsu_planting_1986;textual}{germinationmetrics} as well
-#' as Germination Index (\mjseqn{GI}) according to
+#' \insertCite{hsu_planting_1986;textual}{germinationmetrics} as well as
+#' Germination Index (\mjseqn{GI}) according to
 #' \insertCite{aosa_seed_1983;textual}{germinationmetrics}.
 #'
 #' The formula can also be described as follows.
@@ -108,13 +108,14 @@
 #'   \code{GermSpeedCorrected}. Either \code{"normal"} (\code{GermSpeed}) or
 #'   \code{"accumulated"} (\code{GermSpeedAccumulated}).
 #'
-#' @return For \code{GermSpeed}, the value of germination speed as \%
-#'   \mjseqn{\mathrm{time^{-1}}}.
+#' @return For \code{GermSpeed}, the value of germination speed as
+#'   \mjseqn{\mathrm{count \, time^{-1}}} or \% \mjseqn{\mathrm{time^{-1}}}.
 #'
 #'   For \code{GermSpeedAccumulated}, the value of accumulated germination speed
-#'   as \% \mjseqn{\mathrm{time^{-1}}}.
+#'   as \mjseqn{\mathrm{count \, time^{-1}}} or \% \mjseqn{\mathrm{time^{-1}}}.
 #'
-#'   For \code{GermSpeedCorrected}, the corrected speed of germination.
+#'   For \code{GermSpeedCorrected}, the corrected speed of germination as
+#'   \mjseqn{\mathrm{time^{-1}}}.
 #'
 #' @references
 #'

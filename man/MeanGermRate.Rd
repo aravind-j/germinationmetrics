@@ -47,7 +47,7 @@ For \code{MeanGermRate}, the mean germination rate value as
   \mjseqn{\mathrm{time^{-1}}}.
 
   For \code{CVG}, the value of Coefficient of of velocity/rate of germination
-  or Kotowski's coefficient of velocity.
+  or Kotowski's coefficient of velocity as \% \mjseqn{\mathrm{time^{-1}}}.
 
   For \code{GermRateRecip}, the value of germination rate as
   \mjseqn{\mathrm{time^{-1}}}.

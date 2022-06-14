@@ -48,8 +48,9 @@
 #' @inheritParams GermPercent
 #' @inheritParams MeanGermTime
 #'
-#' @return The value of mean germination percentage or mean number of seeds per
-#'   time interval.
+#' @return The value of mean germination percentage as \%
+#'   \mjseqn{\mathrm{time^{-1}}} or mean number of seeds per time interval as
+#'   \mjseqn{\mathrm{count \, time^{-1}}}.
 #'
 #' @references
 #'

@@ -40,7 +40,7 @@ test is considered. Default is \code{TRUE}.}
 }
 \value{
 A list with the following components:  \item{Germination Value}{The
-  germination value} \item{Calculations}{The data frame of calculations.}
+  germination value.} \item{Calculations}{The data frame of calculations.}
   \item{testend}{The end of test value (Only for method \code{dp}).}
 }
 \description{
