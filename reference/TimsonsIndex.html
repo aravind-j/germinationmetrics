@@ -124,26 +124,47 @@ and it's modifications by Labouriau
     <dl><dt>germ.counts</dt>
 <dd><p>Germination counts at each time interval. Can be partial
 or cumulative as specified in the argument <code>partial</code>.</p></dd>
+
+
 <dt>intervals</dt>
 <dd><p>The time intervals.</p></dd>
+
+
 <dt>partial</dt>
 <dd><p>logical. If <code>TRUE</code>, <code>germ.counts</code> is considered as
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></dd>
+
+
 <dt>total.seeds</dt>
 <dd><p>Total number of seeds.</p></dd>
+
+
 <dt>max</dt>
 <dd><p>The maximum interval value up to which Timson's index/George's
 germination rate is to be computed.</p></dd>
+
+
 <dt>modification</dt>
 <dd><p>The modification to be applied. Either <code>"none"</code>,
 <code>"labouriau"</code> or <code>"khanungar"</code>. Default is <code>"none"</code> (see
 <strong>Details</strong>).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>For <code>TimsonsIndex</code> The value of Timson's index.
-  For <code>GermRateGeorge</code> The value of George's germination rate.</p>
+    
+
+<p>For <code>TimsonsIndex</code>, the value of Timson's index (%) if</p>
+<p></p>
+<p><code>modification = "none"</code>. If <code>modification = "labouriau"</code>, then
+  value with no unit and if <code>modification = "khanungar"</code>, then value as
+  % <em></em>\(\mathrm{time^{-1}}\).</p>
+
+
+<p>For <code>GermRateGeorge</code> The value of George's germination rate as</p>
+<p></p>
+<p><em></em>\(count time\).</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -169,8 +190,7 @@ germination percentage curve. It is same as the indices for area under time
 course curve of germination described by
 Lyon and Coffelt (1966)
  as
-well as
-Negm and Smith (1978)
+well as Negm and Smith (1978)
 . It is
 also described as Emergence Rate Index (<em></em>\(ERI\)) by
 Chaudhary and Ghildyal (1970)
@@ -350,7 +370,7 @@ ISBN 0-12-080260-0.<br><br> Brown RF, Mayer DG (1988).
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>

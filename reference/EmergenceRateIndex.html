@@ -134,23 +134,50 @@ Fakorede and Agbana (1983)
     <dl><dt>germ.counts</dt>
 <dd><p>Germination counts at each time interval. Can be partial
 or cumulative as specified in the argument <code>partial</code>.</p></dd>
+
+
 <dt>intervals</dt>
 <dd><p>The time intervals.</p></dd>
+
+
 <dt>partial</dt>
 <dd><p>logical. If <code>TRUE</code>, <code>germ.counts</code> is considered as
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></dd>
+
+
 <dt>total.seeds</dt>
 <dd><p>Total number of seeds.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>The method to be used. Either <code>"melville"</code>,
 <code>"melvillesantanaranal"</code>, <code>"bilbrowanjura"</code> or <code>"fakorede"</code>.
 Default is <code>"melville"</code> (see <strong>Details</strong>).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>The value of the Emergence rate index.</p>
-    </div>
+    
+
+<p>The value of the Emergence rate index with the units according to</p>
+<p></p>
+<p><code>method</code>.</p>
+<p></p>
+<dl><dt><code>melville</code></dt>
+<dd><p><em></em>\(\mathrm{count}\)</p></dd>
+
+    <dt><code>melvillesantanaranal</code></dt>
+<dd><p><em></em>\(\mathrm{no \, unit}\)</p></dd>
+
+    <dt><code>bilbrowanjura</code></dt>
+<dd><p><em></em>\(\mathrm{count} \, time^{-1}\)</p></dd>
+
+    <dt><code>fakorede</code></dt>
+<dd><p><em></em>\(time \, \mathrm{count}^{-1}\)</p></dd>
+
+  
+</dl></div>
     <div id="details">
     <h2>Details</h2>
     <p>Several germination indices are referred to as Emergence
@@ -309,7 +336,7 @@ Universidade de Brasilia, Brasilia.<br><br> Erbach DC (1982).
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>

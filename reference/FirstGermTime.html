@@ -21,7 +21,8 @@ or Germination distribution
 
 PeakGermTime
 Peak time of germination or Modal time of
-germination (Ranal and de Santana 2006)
+germination (\(t_{peak}\))
+(Ranal and de Santana 2006)
 .
  
 "><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
@@ -129,7 +130,8 @@ or Germination distribution
 
 <dt><code>PeakGermTime</code></dt>
 <dd><p>Peak time of germination or Modal time of
-germination (Ranal and de Santana 2006)
+germination (<em></em>\(t_{peak}\))
+(Ranal and de Santana 2006)
 .</p></dd>
  
 </dl><p><script id="MathJax-script" async src="../../mathjaxr/doc/mathjax/es5/tex-chtml-full.js"></script></p>
@@ -150,24 +152,38 @@ germination (Ranal and de Santana 2006)
     <dl><dt>germ.counts</dt>
 <dd><p>Germination counts at each time interval. Can be partial
 or cumulative as specified in the argument <code>partial</code>.</p></dd>
+
+
 <dt>intervals</dt>
 <dd><p>The time intervals.</p></dd>
+
+
 <dt>partial</dt>
 <dd><p>logical. If <code>TRUE</code>, <code>germ.counts</code> is considered as
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>For <code>FirstGermTime</code>, the time of first germination value in the
-  same unit of time as specified in the argument <code>intervals</code>.
-  For <code>LastGermTime</code>, the time of last germination value in the same
-  unit of time as specified in the argument <code>intervals</code>.
-  For <code>TimeSpreadGerm</code>, the time spread of germination value in the same
-  unit of time as specified in the argument <code>intervals</code>.
-  For <code>PeakGermTime</code>, the time(s) of peak germination value(s) as a
-  numeric vector in the same unit of time as specified in the argument
-<code>intervals</code>.</p>
+    
+
+<p>For <code>FirstGermTime</code>, the time of first germination value in the
+  same unit of time as specified in the argument <code>intervals</code>.</p>
+
+
+<p>For <code>LastGermTime</code>, the time of last germination value in the same
+  unit of time as specified in the argument <code>intervals</code>.</p>
+
+
+<p>For <code>TimeSpreadGerm</code>, the time spread of germination value in the same
+  unit of time as specified in the argument <code>intervals</code>.</p>
+
+
+<p>For <code>PeakGermTime</code>, the time(s) of peak germination value(s) as a
+  numeric vector in the same unit of time as specified in the argument</p>
+<p></p>
+<p><code>intervals</code>.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -176,11 +192,21 @@ in a seedlot.</p>
 <p>Lower value of time of first germination indicates faster initiation of
 germination and lower value of time of last germination indicates faster
 termination of germination.</p>
+<p>\[t_{0} = \min \lbrace T_{i} : N_{i} \neq  0 \rbrace\]</p>
+<p>\[t_{g} = \max \lbrace T_{i} : N_{i} \neq  0 \rbrace\]</p>
+<p>Where, <em></em>\(T_{i}\) is the time from the start of the experiment to the
+<em></em>\(i\)th interval and <em></em>\(N_{i}\) is the number of seeds germinated in
+the <em></em>\(i\)th time interval (not the accumulated number, but the number
+corresponding to the <em></em>\(i\)th interval).</p>
+
 <p>Time spread of germination (<em></em>\(t_{g}-t_{0}\)) indicates difference
 between faster and slower germinating members of a sample.</p>
 <p>Peak time of germination is the time in which highest frequency of germinated
 seeds are observed. Multiple peak times of germination are possible and if
 detected are indicated by a warning message.</p>
+<p>\[t_{peak} = \lbrace T_{i} : N_{i} = N_{max} \rbrace\]</p>
+<p>Where, <em></em>\(N_{max}\) is the maximum number of seeds germinated per
+interval.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -258,7 +284,7 @@ Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientif
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>

@@ -117,34 +117,51 @@ and Germination value (<em></em>\(GV\))
     <dl><dt>germ.counts</dt>
 <dd><p>Germination counts at each time interval. Can be partial
 or cumulative as specified in the argument <code>partial</code>.</p></dd>
+
+
 <dt>intervals</dt>
 <dd><p>The time intervals.</p></dd>
+
+
 <dt>total.seeds</dt>
 <dd><p>Total number of seeds.</p></dd>
+
+
 <dt>partial</dt>
 <dd><p>logical. If <code>TRUE</code>, <code>germ.counts</code> is considered as
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>The method for computing germination value. Either
 <code>"czabator"</code> or <code>"dp"</code>.</p></dd>
+
+
 <dt>from.onset</dt>
 <dd><p>logical. If <code>TRUE</code>, duration is considered only from
 the onset of germination. If <code>FALSE</code>, full duration of germination
 test is considered. Default is <code>TRUE</code>.</p></dd>
+
+
 <dt>k</dt>
 <dd><p>Constant (See <strong>Details</strong>). Default is 10.</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>A list with the following components:</p>
+    
+
+<p>A list with the following components:</p>
 <dl><dt>Germination Value</dt>
 <dd><p>The
-  germination value</p></dd>
-<dt>Calculations</dt>
+  germination value.</p></dd>
+ <dt>Calculations</dt>
 <dd><p>The data frame of calculations.</p></dd>
-<dt>testend</dt>
+
+  <dt>testend</dt>
 <dd><p>The end of test value (Only for method <code>dp</code>).</p></dd>
+
 </dl></div>
     <div id="details">
     <h2>Details</h2>
@@ -206,7 +223,7 @@ is considered can be obtained by using the argument <code>from.onset = FALSE</co
 “Germination value: An index combining speed and completeness of pine seed germination.”
 <em>Forest Science</em>, <b>8</b>(4), 386--396.<br><br> Djavanshir K, Pourbeik H (1976).
 “Germination value-A new formula.”
-<em>Silvae genetica</em>, <b>25</b>(2), 79--83.</p>
+<em>Silvae Genetica</em>, <b>25</b>(2), 79--83.</p>
     </div>
 
     <div id="ref-examples">
@@ -631,7 +648,7 @@ is considered can be obtained by using the argument <code>from.onset = FALSE</co
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>

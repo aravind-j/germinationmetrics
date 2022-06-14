@@ -150,30 +150,50 @@ Corrected germination rate index
     <dl><dt>germ.counts</dt>
 <dd><p>Germination counts at each time interval. Can be partial
 or cumulative as specified in the argument <code>partial</code>.</p></dd>
+
+
 <dt>intervals</dt>
 <dd><p>The time intervals.</p></dd>
+
+
 <dt>partial</dt>
 <dd><p>logical. If <code>TRUE</code>, <code>germ.counts</code> is considered as
 partial and if <code>FALSE</code>, it is considered as cumulative. Default is
 <code>TRUE</code>.</p></dd>
+
+
 <dt>percent</dt>
 <dd><p>logical. If <code>TRUE</code>, germination percentage is used
 instead of counts for computation. Default is <code>FALSE</code>.</p></dd>
+
+
 <dt>total.seeds</dt>
 <dd><p>Total number of seeds. Mandatory for computation when
 <code>percent = TRUE</code>.</p></dd>
+
+
 <dt>method</dt>
 <dd><p>The method for computing germination speed in
 <code>GermSpeedCorrected</code>. Either <code>"normal"</code> (<code>GermSpeed</code>) or
 <code>"accumulated"</code> (<code>GermSpeedAccumulated</code>).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>For <code>GermSpeed</code>, the value of germination speed as %
-<em></em>\(\mathrm{time^{-1}}\).
-  For <code>GermSpeedAccumulated</code>, the value of accumulated germination speed
-  as % <em></em>\(\mathrm{time^{-1}}\).
-  For <code>GermSpeedCorrected</code>, the corrected speed of germination.</p>
+    
+
+<p>For <code>GermSpeed</code>, the value of germination speed as</p>
+<p></p>
+<p><em></em>\(\mathrm{count \, time^{-1}}\) or % <em></em>\(\mathrm{time^{-1}}\).</p>
+
+
+<p>For <code>GermSpeedAccumulated</code>, the value of accumulated germination speed
+  as <em></em>\(\mathrm{count \, time^{-1}}\) or % <em></em>\(\mathrm{time^{-1}}\).</p>
+
+
+<p>For <code>GermSpeedCorrected</code>, the corrected speed of germination as</p>
+<p></p>
+<p><em></em>\(\mathrm{time^{-1}}\).</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -195,8 +215,8 @@ Allan et al. (1962)
 Erbach (1982)
  and
 Hsu and Nelson (1986)
- as well
-as Germination Index (<em></em>\(GI\)) according to
+ as well as
+Germination Index (<em></em>\(GI\)) according to
 AOSA (1983)
 .</p>
 <p>The formula can also be described as follows.</p>
@@ -262,8 +282,8 @@ Universidade de Brasilia, Brasilia.<br><br> Erbach DC (1982).
 <em>Agronomy Journal</em>, <b>78</b>(1), 33--38.<br><br> Kendrick RE, Frankland B (1969).
 “Photocontrol of germination in <em>Amaranthus caudatus</em>.”
 <em>Planta</em>, <b>85</b>(4), 326--339.<br><br> Khandakar AL, Bradbeer JW (1983).
-“Jute seed quality.”
-<em>Bangladesh Agricultural Research Council, Dhaka</em>.<br><br> Maguire JD (1962).
+<em>Jute seed quality</em>.
+Bangladesh Agricultural Research Council, Dhaka.<br><br> Maguire JD (1962).
 “Speed of germination - Aid in selection and evaluation for seedling emergence and vigor.”
 <em>Crop Science</em>, <b>2</b>(2), 176--177.<br><br> Throneberry GO, Smith FG (1955).
 “Relation of respiratory and enzymatic activity to corn seed viability.”
@@ -335,7 +355,7 @@ Universidade de Brasilia, Brasilia.<br><br> Erbach DC (1982).
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.4.</p>
 </div>
 
       </footer></div>
