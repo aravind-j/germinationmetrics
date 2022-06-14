@@ -45,6 +45,7 @@
 #' @param germinated.seeds Number of germinated seeds
 #' @param germ.counts Germination counts at each time interval. Can be partial
 #'   or cumulative as specified in the argument \code{partial}.
+#' @param intervals The time intervals.
 #' @param total.seeds Total number of seeds.
 #' @param partial logical. If \code{TRUE}, \code{germ.counts} is considered as
 #'   partial and if \code{FALSE}, it is considered as cumulative. Default is

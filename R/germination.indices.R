@@ -37,6 +37,10 @@
 #' @param partial logical. If \code{TRUE}, germination counts in
 #'   \code{counts.intervals.cols} is considered as partial and if \code{FALSE},
 #'   it is considered as cumulative. Default is \code{TRUE}.
+#' @param PeakGermPercent logical. If \code{TRUE}, then the Peak germination
+#'   percentage
+#'   \insertCite{vallance_studies_1950,roh_maturity_2004}{germinationmetrics} is
+#'   computed. Default is \code{TRUE}.
 #' @param FirstGermTime logical. If \code{TRUE}, the Time of first germination
 #'   or Germination time lag (\mjseqn{t_{0}})
 #'   \insertCite{edwards_temperature_1932,czabator_germination_1962,goloff_germination_1975,labouriau_germinacao_1983,ranal_effects_1999,quintanilla_effect_2000}{germinationmetrics}
@@ -147,6 +151,7 @@
 #'   \insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
 #'    and
 #'   \insertCite{fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}.}
+#'
 #'
 #' @param PeakValue logical. If \code{TRUE}, the Peak value (\mjseqn{PV}) or
 #'   Emergence Energy (\mjseqn{EE})

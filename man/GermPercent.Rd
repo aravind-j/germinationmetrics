@@ -20,6 +20,8 @@ or cumulative as specified in the argument \code{partial}.}
 \item{partial}{logical. If \code{TRUE}, \code{germ.counts} is considered as
 partial and if \code{FALSE}, it is considered as cumulative. Default is
 \code{TRUE}.}
+
+\item{intervals}{The time intervals.}
 }
 \value{
 The germination percentage (\%) value.

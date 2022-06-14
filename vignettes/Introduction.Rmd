@@ -23,7 +23,7 @@ output:
   pdf_document:
     fig_caption: no
     toc: no
-    keep_tex:  true
+    keep_tex:  no
   html_document:
     df_print: paged
     toc: yes
