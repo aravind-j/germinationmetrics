@@ -94,10 +94,14 @@
 #'
 #' \mjsdeqn{S_{corrected} = \frac{S}{FGP}}
 #'
-#' Where, \mjseqn{FGP} is the final germination percentage or germinability.
+#' Where, \mjseqn{S} is the germination speed computed with germination
+#' percentage instead of counts and \mjseqn{FGP} is the final germination
+#' percentage or germinability.
 #'
 #' With \code{percent = TRUE}, germination percentage is used instead of counts
-#' for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}.
+#' for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}. In case
+#' of \code{GermSpeedCorrected}, germination percentage is always used for the
+#' numerator.
 #'
 #' @inheritParams MeanGermTime
 #' @param percent logical. If \code{TRUE}, germination percentage is used
@@ -283,11 +287,13 @@ GermSpeedCorrected <- function(germ.counts, intervals, partial = TRUE,
   method <- match.arg(method)
 
   if (method == "normal") {
-    speed <- GermSpeed(germ.counts, intervals, partial)
+    speed <- GermSpeed(germ.counts, intervals, partial,
+                       total.seeds = total.seeds, percent = TRUE)
   }
 
   if (method == "accumulated") {
-    speed <- GermSpeedAccumulated(germ.counts, intervals, partial)
+    speed <- GermSpeedAccumulated(germ.counts, intervals, partial,
+                                  total.seeds = total.seeds, percent = TRUE)
   }
 
   gp <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,

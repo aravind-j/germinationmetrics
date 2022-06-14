@@ -139,10 +139,14 @@ follows \insertCite{evetts_germination_1972}{germinationmetrics}.
 
 \mjsdeqn{S_{corrected} = \frac{S}{FGP}}
 
-Where, \mjseqn{FGP} is the final germination percentage or germinability.
+Where, \mjseqn{S} is the germination speed computed with germination
+percentage instead of counts and \mjseqn{FGP} is the final germination
+percentage or germinability.
 
 With \code{percent = TRUE}, germination percentage is used instead of counts
-for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}.
+for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}. In case
+of \code{GermSpeedCorrected}, germination percentage is always used for the
+numerator.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
