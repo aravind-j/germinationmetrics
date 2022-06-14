@@ -9,7 +9,7 @@ EmergenceRateIndex(
   intervals,
   partial = TRUE,
   total.seeds = NULL,
-  method = c("melville", "melvillesantanaranal", "bilbrowanjura", "fakorede")
+  method = c("shmueligoldberg", "sgsantanaranal", "bilbrowanjura", "fakorede")
 )
 }
 \arguments{
@@ -24,17 +24,17 @@ partial and if \code{FALSE}, it is considered as cumulative. Default is
 
 \item{total.seeds}{Total number of seeds.}
 
-\item{method}{The method to be used. Either \code{"melville"},
-\code{"melvillesantanaranal"}, \code{"bilbrowanjura"} or \code{"fakorede"}.
-Default is \code{"melville"} (see \strong{Details}).}
+\item{method}{The method to be used. Either \code{"shmueligoldberg"},
+\code{"sgsantanaranal"}, \code{"bilbrowanjura"} or \code{"fakorede"}.
+Default is \code{"shmueligoldberg"} (see \strong{Details}).}
 }
 \value{
 The value of the Emergence rate index with the units according to
   \code{method}.
 
   \describe{
-    \item{\code{melville}}{\mjseqn{\mathrm{count}}}
-    \item{\code{melvillesantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
+    \item{\code{shmueligoldberg}}{\mjseqn{\mathrm{count}}}
+    \item{\code{sgsantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
     \item{\code{bilbrowanjura}}{\mjseqn{\mathrm{count} \, time^{-1}}}
     \item{\code{fakorede}}{\mjseqn{time \, \mathrm{count}^{-1}}}
   }
@@ -126,9 +126,9 @@ int <- 1:length(x)
 #----------------------------------------------------------------------------
 EmergenceRateIndex(germ.counts = x, intervals = int)
 EmergenceRateIndex(germ.counts = x, intervals = int,
-                   method = "melville")
+                   method = "shmueligoldberg")
 EmergenceRateIndex(germ.counts = x, intervals = int,
-                   method = "melvillesantanaranal")
+                   method = "sgsantanaranal")
 EmergenceRateIndex(germ.counts = x, intervals = int,
                    method = "bilbrowanjura")
 EmergenceRateIndex(germ.counts = x, intervals = int,
@@ -138,9 +138,9 @@ EmergenceRateIndex(germ.counts = x, intervals = int,
 #----------------------------------------------------------------------------
 EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,)
 EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
-                   method = "melville")
+                   method = "shmueligoldberg")
 EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
-                   method = "melvillesantanaranal")
+                   method = "sgsantanaranal")
 EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
                    method = "bilbrowanjura")
 EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,

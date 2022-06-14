@@ -1,10 +1,11 @@
 # germinationmetrics  0.1.6
 
 ## NEW FUNCTIONS:
-* `PeakGermPercent` - 
+* `PeakGermPercent` - Compute peak germination percentage.
 
 ## UPDATED FUNCTIONS:
-`FirstGermTime`, `LastGermTime` and `PeakGermTime` - Updated documentation with formula.
+* `FirstGermTime`, `LastGermTime` and `PeakGermTime` - Updated documentation with formula.
+* `EmergenceRateIndex` - Depreciate erroneous `method` argument options of `melville` and `melvillesantanaranal` and replace them with `shmueligoldberg` and `sgsantanaranal` respectively.
 
 ## VIGNETTE:
 * Fixed fetching CRAN page for version history to fail gracefully when access is down.

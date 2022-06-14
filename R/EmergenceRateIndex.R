@@ -93,17 +93,17 @@
 #'   \insertCite{chopraEffectSoilTemperature1980}{germinationmetrics}. }
 #'
 #' @inheritParams MeanGermTime
-#' @param method The method to be used. Either \code{"melville"},
-#'   \code{"melvillesantanaranal"}, \code{"bilbrowanjura"} or \code{"fakorede"}.
-#'   Default is \code{"melville"} (see \strong{Details}).
+#' @param method The method to be used. Either \code{"shmueligoldberg"},
+#'   \code{"sgsantanaranal"}, \code{"bilbrowanjura"} or \code{"fakorede"}.
+#'   Default is \code{"shmueligoldberg"} (see \strong{Details}).
 #' @param total.seeds Total number of seeds.
 #'
 #' @return The value of the Emergence rate index with the units according to
 #'   \code{method}.
 #'
 #'   \describe{
-#'     \item{\code{melville}}{\mjseqn{\mathrm{count}}}
-#'     \item{\code{melvillesantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
+#'     \item{\code{shmueligoldberg}}{\mjseqn{\mathrm{count}}}
+#'     \item{\code{sgsantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
 #'     \item{\code{bilbrowanjura}}{\mjseqn{\mathrm{count} \, time^{-1}}}
 #'     \item{\code{fakorede}}{\mjseqn{time \, \mathrm{count}^{-1}}}
 #'   }
@@ -121,9 +121,9 @@
 #' #----------------------------------------------------------------------------
 #' EmergenceRateIndex(germ.counts = x, intervals = int)
 #' EmergenceRateIndex(germ.counts = x, intervals = int,
-#'                    method = "melville")
+#'                    method = "shmueligoldberg")
 #' EmergenceRateIndex(germ.counts = x, intervals = int,
-#'                    method = "melvillesantanaranal")
+#'                    method = "sgsantanaranal")
 #' EmergenceRateIndex(germ.counts = x, intervals = int,
 #'                    method = "bilbrowanjura")
 #' EmergenceRateIndex(germ.counts = x, intervals = int,
@@ -133,9 +133,9 @@
 #' #----------------------------------------------------------------------------
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,)
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
-#'                    method = "melville")
+#'                    method = "shmueligoldberg")
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
-#'                    method = "melvillesantanaranal")
+#'                    method = "sgsantanaranal")
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
 #'                    method = "bilbrowanjura")
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
@@ -149,8 +149,8 @@
 #' @export
 EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
                                total.seeds = NULL,
-                               method = c("melville",
-                                          "melvillesantanaranal",
+                               method = c("shmueligoldberg",
+                                          "sgsantanaranal",
                                           "bilbrowanjura",
                                           "fakorede")) {
 
@@ -185,6 +185,19 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
     germ.counts <- c(germ.counts[1], diff(germ.counts))
   }
 
+  # Warning for depreciated method choices
+  if (length(method) == 1 && method == "melville") {
+    method <- "shmueligoldberg"
+    warning('Argument `method = "melville"` is depreciated as of 0.1.6\n',
+            'Please use `method = "shmueligoldberg"` instead.')
+  }
+
+  if (length(method) == 1 && method == "melvillesantanaranal") {
+    method <- "sgsantanaranal"
+    warning('Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6\n',
+            'Please use `method = "sgsantanaranal"` instead.')
+  }
+
   # Check method
   method <- match.arg(method)
 
@@ -195,7 +208,7 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
     }
   }
 
-  if (method == "melville") {
+  if (method == "shmueligoldberg") {
     startindex <- min(which(germ.counts != 0))
     Ni <- germ.counts[startindex:(length(germ.counts) - 1)]
     kminusi <- (length(germ.counts) - seq_along(intervals))
@@ -203,7 +216,7 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
     ERI <- sum(Ni * kminusi)
   }
 
-  if (method == "melvillesantanaranal") {
+  if (method == "sgsantanaranal") {
     startindex <- min(which(germ.counts != 0))
     Ni <- germ.counts[startindex:(length(germ.counts) - 1)]
     kminusi <- (length(germ.counts) - seq_along(intervals))
