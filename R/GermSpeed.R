@@ -94,9 +94,10 @@
 #'
 #' \mjsdeqn{S_{corrected} = \frac{S}{FGP}}
 #'
-#' Where, \mjseqn{S} is the germination speed computed with germination
-#' percentage instead of counts and \mjseqn{FGP} is the final germination
-#' percentage or germinability.
+#' Where, \mjseqn{S} is the germination speed (either standard or accumulated as
+#' specified by the argument  \code{method = "normal"} or \code{method =
+#' "accumulated"} respectively) computed with germination percentage instead of
+#' counts and \mjseqn{FGP} is the final germination percentage or germinability.
 #'
 #' With \code{percent = TRUE}, germination percentage is used instead of counts
 #' for computation in \code{GermSpeed} and \code{GermSpeedAccumulated}. In case

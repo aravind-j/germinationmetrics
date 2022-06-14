@@ -70,7 +70,8 @@
 #'
 #' As Timson's index is useful for comparison only when samples have similar
 #' germinabilities or final germination percentage, the following modification
-#' was suggested by Labouriau \insertCite{ranal_how_2006}{germinationmetrics}.
+#' was suggested by Labouriau \insertCite{ranal_how_2006}{germinationmetrics}
+#' (Specified by the argument \code{modification = "labouriau"}).
 #'
 #' \mjsdeqn{\Sigma k_{mod} = \frac{\Sigma k}{\sum_{i=1}^{k}g_{i}}}
 #'
@@ -80,7 +81,8 @@
 #' Similarly another modification was proposed by
 #' \insertCite{khan_effect_1984}{germinationmetrics}, where Timson's index
 #' (\mjseqn{\Sigma k}) is divided by the total time period of germination
-#' (\mjseqn{T_{k}}).
+#' (\mjseqn{T_{k}}) (Specified by the argument \code{modification =
+#' "khanungar"}).
 #'
 #' \mjsdeqn{\Sigma k_{mod} = \frac{\Sigma k}{T_{k}}}
 #'

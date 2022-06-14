@@ -201,7 +201,8 @@
 #' @seealso This function is a wrapper around the different functions for
 #'   computation of single-value germination indices in
 #'   \href{https://cran.r-project.org/package=germinationmetrics}{germinationmetrics}
-#'    (\code{\link[germinationmetrics]{FirstGermTime}},
+#'    (\code{\link[germinationmetrics]{PeakGermPercent}},
+#'   \code{\link[germinationmetrics]{FirstGermTime}},
 #'   \code{\link[germinationmetrics:FirstGermTime]{LastGermTime}},
 #'   \code{\link[germinationmetrics:FirstGermTime]{PeakGermTime}},
 #'   \code{\link[germinationmetrics:FirstGermTime]{TimeSpreadGerm}},
@@ -582,28 +583,28 @@ germination.indices <- function(data, total.seeds.col, counts.intervals.cols,
   }
 
   if (EmergenceRateIndex) {
-    data[, EmergenceRateIndex_Melville := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
-                                  intervals = intervals, partial = TRUE,
-                                  total.seeds = unlist(mget(total.seeds.col)),
-                                  method = "melville"),
+    data[, EmergenceRateIndex_SG := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                       intervals = intervals, partial = TRUE,
+                                                       total.seeds = unlist(mget(total.seeds.col)),
+                                                       method = "shmueligoldberg"),
          by = 1:nrow(data)]
 
-    data[, EmergenceRateIndex_Melville_mod := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
-                                                    intervals = intervals, partial = TRUE,
-                                                    total.seeds = unlist(mget(total.seeds.col)),
-                                                    method = "melvillesantanaranal"),
+    data[, EmergenceRateIndex_SG_mod := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
+                                                           intervals = intervals, partial = TRUE,
+                                                           total.seeds = unlist(mget(total.seeds.col)),
+                                                           method = "sgsantanaranal"),
          by = 1:nrow(data)]
 
     data[, EmergenceRateIndex_BilbroWanjura := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
-                                                    intervals = intervals, partial = TRUE,
-                                                    total.seeds = unlist(mget(total.seeds.col)),
-                                                    method = "bilbrowanjura"),
+                                                                  intervals = intervals, partial = TRUE,
+                                                                  total.seeds = unlist(mget(total.seeds.col)),
+                                                                  method = "bilbrowanjura"),
          by = 1:nrow(data)]
 
     data[, EmergenceRateIndex_Fakorede := EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)),
-                                                    intervals = intervals, partial = TRUE,
-                                                    total.seeds = unlist(mget(total.seeds.col)),
-                                                    method = "fakorede"),
+                                                             intervals = intervals, partial = TRUE,
+                                                             total.seeds = unlist(mget(total.seeds.col)),
+                                                             method = "fakorede"),
          by = 1:nrow(data)]
 
   }

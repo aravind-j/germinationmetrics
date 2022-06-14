@@ -38,11 +38,12 @@
 #'
 #' A modified germination index (\mjseqn{GI_{mod}}) was proposed by
 #' \insertCite{de_santana_alise_2004}{germinationmetrics} where total number of
-#' seeds tested (\mjseqn{N{t}}) is replaced by the total number of germinated
-#' seeds (\mjseqn{N{g}}) in the expression of
+#' seeds tested (\mjseqn{N_{t}}) is replaced by the total number of germinated
+#' seeds (\mjseqn{N_{g}}) in the expression of
 #' \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} to
 #' remove the effect of sample size
-#' \insertCite{ranal_how_2006}{germinationmetrics}.
+#' \insertCite{ranal_how_2006}{germinationmetrics}. It is computed as follows
+#' (Specified by the argument \code{modification = "santanaranal"}).
 #'
 #' \mjsdeqn{GI_{mod} = \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right
 #' ) N_{i}\right |}{N_{g}}}

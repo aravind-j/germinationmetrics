@@ -7,9 +7,11 @@
 * `FirstGermTime`, `LastGermTime` and `PeakGermTime` - Updated documentation with formula.
 * `EmergenceRateIndex` - Depreciate erroneous `method` argument options of `melville` and `melvillesantanaranal` and replace them with `shmueligoldberg` and `sgsantanaranal` respectively.
  `GermSpeedCorrected` - Use germination percentage instead of counts.
+* `EmergenceRateIndex`, `GermIndex`, `GermSpeedCorrected`, `GermValue`, `GermRateRecip` and `TimsonsIndex` - Minor documentation update.
 
 ## VIGNETTE:
 * Fixed fetching CRAN page for version history to fail gracefully when access is down.
+* Updated units in Table 3.
 
 # germinationmetrics  0.1.5
 

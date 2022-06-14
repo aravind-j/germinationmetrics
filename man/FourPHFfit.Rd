@@ -51,15 +51,15 @@ uniformity. Default is \code{90}. Seed \strong{\code{Details}}.}
 }
 \value{
 A list with the following components: \item{data}{A data frame with
-  the data used for computing the model} \item{Parameters}{A data.frame of
+  the data used for computing the model.} \item{Parameters}{A data frame of
   parameter estimates, standard errors and p value.}  \item{Fit}{A one-row
   data frame with estimates of model fitness such as log likelyhoods, Akaike
   Information Criterion, Bayesian Information Criterion, deviance and
   residual degrees of freedom.}  \item{a}{The asymptote or the maximum
   cumulative germination percentage.}  \item{b}{The mathematical parameter
   controlling the shape and steepness of the germination curve.} \item{c}{The
-  half-maximal activation level}  \item{y0}{The intercept on the y axis.}
-  \item{lag}{Time at germination onset} \item{Dlag50}{duration between the
+  half-maximal activation level.}  \item{y0}{The intercept on the y axis.}
+  \item{lag}{Time at germination onset.} \item{Dlag50}{duration between the
   time at germination onset (lag) and that at 50\% germination.}
   \item{t50.total}{time required for 50\% of total seeds to germinate.}
   \item{txp.total}{time required for x\% (as specified in argument \code{xp})
@@ -69,8 +69,8 @@ A list with the following components: \item{data}{A data frame with
   seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
   and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
   maximum germination rate.} \item{AUC}{The estimate of area under the
-  curve.} \item{MGT}{Mean germination time} \item{Skewness}{Skewness of mean
-  germination time} \item{msg}{The message from \code{nls.lm}}
+  curve.} \item{MGT}{Mean germination time.} \item{Skewness}{Skewness of mean
+  germination time.} \item{msg}{The message from \code{nls.lm}.}
   \item{isConv}{Logical value indicating whether convergence was achieved.}
 }
 \description{

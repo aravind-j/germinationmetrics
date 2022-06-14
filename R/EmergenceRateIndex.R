@@ -35,7 +35,8 @@
 #'   rate Index (\mjseqn{ERI}).
 #'
 #'   \subsection{\insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics}}{
-#'    It is estimated as follows.
+#'    With argument \code{method} specified as \code{"shmueligoldberg"}
+#'   \mjseqn{ERI} is estimated as follows.
 #'
 #'   \mjsdeqn{ERI = \sum_{i=i_{0}}^{k-1}N_{i}(k-i)}
 #'
@@ -49,7 +50,8 @@
 #'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 #'   \insertCite{ranal_how_2006}{germinationmetrics} and is estimated by
 #'   dividing Emergence rate index (\mjseqn{ERI}) by total number of emerged
-#'   seedlings (or germinated seeds) as follows.
+#'   seedlings (or germinated seeds) as follows with argument \code{method}
+#'   specified as \code{"sgsantanaranal"}).
 #'
 #'   \mjsdeqn{ERI_{mod} = \frac{\sum_{i=i_{0}}^{k-1}N_{i}(k-i)}{N_{g}} =
 #'   \frac{ERI}{N_{g}}}
@@ -62,7 +64,8 @@
 #'   number of time intervals. }
 #'
 #'   \subsection{\insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}}{
-#'    It is the estimated as follows.
+#'    With argument \code{method} specified as \code{"bilbrowanjura"}
+#'   \mjseqn{ERI} is the estimated as follows.
 #'
 #'   \mjsdeqn{ERI = \frac{\sum_{i=1}^{k}N_{i}}{\overline{T}} =
 #'   \frac{N_{g}}{\overline{T}}}
@@ -74,7 +77,8 @@
 #'   the mean germination time or mean emergence time. }
 #'
 #'   \subsection{\insertCite{fakoredeRelationSeedlingVigor1980,fakoredeVariabilitySeedlingVigour1981,fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}}{
-#'    It is estimated as follows.
+#'    With argument \code{method} specified as \code{"fakorede"} \mjseqn{ERI} is
+#'   the estimated as follows.
 #'
 #'   \mjsdeqn{ERI = \frac{\overline{T}}{FGP/100}}
 #'
@@ -99,14 +103,12 @@
 #' @param total.seeds Total number of seeds.
 #'
 #' @return The value of the Emergence rate index with the units according to
-#'   \code{method}.
+#'   \code{method} as follows.
 #'
-#'   \describe{
-#'     \item{\code{shmueligoldberg}}{\mjseqn{\mathrm{count}}}
-#'     \item{\code{sgsantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
-#'     \item{\code{bilbrowanjura}}{\mjseqn{\mathrm{count} \, time^{-1}}}
-#'     \item{\code{fakorede}}{\mjseqn{time \, \mathrm{count}^{-1}}}
-#'   }
+#'   \item{\code{shmueligoldberg}}{\mjseqn{\mathrm{count}}}
+#'   \item{\code{sgsantanaranal}}{\mjseqn{\mathrm{no \, unit}}}
+#'   \item{\code{bilbrowanjura}}{\mjseqn{\mathrm{count} \, time^{-1}}}
+#'   \item{\code{fakorede}}{\mjseqn{time \, \mathrm{count}^{-1}}}
 #'
 #' @references
 #'

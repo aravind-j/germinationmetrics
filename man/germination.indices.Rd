@@ -265,7 +265,8 @@ germination.indices(gcdata, total.seeds.col = "Total Seeds",
 This function is a wrapper around the different functions for
   computation of single-value germination indices in
   \href{https://cran.r-project.org/package=germinationmetrics}{germinationmetrics}
-   (\code{\link[germinationmetrics]{FirstGermTime}},
+   (\code{\link[germinationmetrics]{PeakGermPercent}},
+  \code{\link[germinationmetrics]{FirstGermTime}},
   \code{\link[germinationmetrics:FirstGermTime]{LastGermTime}},
   \code{\link[germinationmetrics:FirstGermTime]{PeakGermTime}},
   \code{\link[germinationmetrics:FirstGermTime]{TimeSpreadGerm}},
