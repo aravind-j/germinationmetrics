@@ -255,9 +255,13 @@ percentages instead of counts for computing speed.</p>
 follows (Evetts and Burnside 1972)
 .</p>
 <p>\[S_{corrected} = \frac{S}{FGP}\]</p>
-<p>Where, <em></em>\(FGP\) is the final germination percentage or germinability.</p>
+<p>Where, <em></em>\(S\) is the germination speed computed with germination
+percentage instead of counts and <em></em>\(FGP\) is the final germination
+percentage or germinability.</p>
 <p>With <code>percent = TRUE</code>, germination percentage is used instead of counts
-for computation in <code>GermSpeed</code> and <code>GermSpeedAccumulated</code>.</p>
+for computation in <code>GermSpeed</code> and <code>GermSpeedAccumulated</code>. In case
+of <code>GermSpeedCorrected</code>, germination percentage is always used for the
+numerator.</p>
     </div>
     <div id="references">
     <h2>References</h2>
@@ -306,10 +310,10 @@ Bangladesh Agricultural Research Council, Dhaka.<br><br> Maguire JD (1962).
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 34.61567</span>
 <span class="r-in"><span class="fu">GermSpeedCorrected</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
 <span class="r-in">                   method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.07673656</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.1534731</span>
 <span class="r-in"><span class="fu">GermSpeedCorrected</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
 <span class="r-in">                   method <span class="op">=</span> <span class="st">"accumulated"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.4326958</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8653917</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># From partial germination counts (with percentages instead of counts)</span></span>
 <span class="r-in"><span class="co">#----------------------------------------------------------------------------</span></span>
@@ -328,10 +332,10 @@ Bangladesh Agricultural Research Council, Dhaka.<br><br> Maguire JD (1962).
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 34.61567</span>
 <span class="r-in"><span class="fu">GermSpeedCorrected</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
 <span class="r-in">                   partial <span class="op">=</span> <span class="cn">FALSE</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.07673656</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.1534731</span>
 <span class="r-in"><span class="fu">GermSpeedCorrected</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
 <span class="r-in">                   partial <span class="op">=</span> <span class="cn">FALSE</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"accumulated"</span><span class="op">)</span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.4326958</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.8653917</span>
 <span class="r-in"></span>
 <span class="r-in"><span class="co"># From cumulative germination counts (with percentages instead of counts)</span></span>
 <span class="r-in"><span class="co">#----------------------------------------------------------------------------</span></span>
