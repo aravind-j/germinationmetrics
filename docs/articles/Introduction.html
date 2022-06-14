@@ -691,8 +691,9 @@ and Ranal (<a href="#ref-de_santana_alise_2004" role="doc-biblioref">2004</a>)</
 <td><code>GermSpeedCorrected</code></td>
 <td>It is computed as follows.<br><span class="math display">\[S_{corrected} =
 \frac{S}{FGP}\]</span><br>
-Where, <span class="math inline">\(FGP\)</span> is the final germination
-percentage or germinability.</td>
+Where, <span class="math inline">\(S\)</span> is the germination speed
+computed with germination percentage instead of counts and <span class="math inline">\(FGP\)</span> is the final germination percentage
+or germinability.</td>
 <td>time<sup>-1</sup>
 </td>
 <td>Mixed</td>
@@ -1309,11 +1310,11 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,
                    method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.07673656</code></pre>
+<pre><code>[1] 0.1534731</code></pre>
 <div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,
                    method <span class="op">=</span> <span class="st">"accumulated"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.4326958</code></pre>
+<pre><code>[1] 0.8653917</code></pre>
 <div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># From partial germination counts (with percentages instead of counts)</span>
 <span class="co">#----------------------------------------------------------------------------</span>
@@ -1335,11 +1336,11 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,
                    partial <span class="op">=</span> <span class="cn">FALSE</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.07673656</code></pre>
+<pre><code>[1] 0.1534731</code></pre>
 <div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,
                    partial <span class="op">=</span> <span class="cn">FALSE</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"accumulated"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.4326958</code></pre>
+<pre><code>[1] 0.8653917</code></pre>
 <div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># From cumulative germination counts (with percentages instead of counts)</span>
 <span class="co">#----------------------------------------------------------------------------</span>
@@ -1370,11 +1371,11 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <div class="sourceCode" id="cb119"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,
                    method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.07673656</code></pre>
+<pre><code>[1] 0.1534731</code></pre>
 <div class="sourceCode" id="cb121"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,
                    method <span class="op">=</span> <span class="st">"accumulated"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.4326958</code></pre>
+<pre><code>[1] 0.8653917</code></pre>
 <div class="sourceCode" id="cb123"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># From partial germination counts (with percentages instead of counts)</span>
 <span class="co">#----------------------------------------------------------------------------</span>
@@ -1396,11 +1397,11 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <div class="sourceCode" id="cb131"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,
                    partial <span class="op">=</span> <span class="cn">FALSE</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"normal"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.07673656</code></pre>
+<pre><code>[1] 0.1534731</code></pre>
 <div class="sourceCode" id="cb133"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/GermSpeed.html">GermSpeedCorrected</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,
                    partial <span class="op">=</span> <span class="cn">FALSE</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"accumulated"</span><span class="op">)</span></code></pre></div>
-<pre><code>[1] 0.4326958</code></pre>
+<pre><code>[1] 0.8653917</code></pre>
 <div class="sourceCode" id="cb135"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># From cumulative germination counts (with percentages instead of counts)</span>
 <span class="co">#----------------------------------------------------------------------------</span>
@@ -1620,11 +1621,11 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb211"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,
-                   method <span class="op">=</span> <span class="st">"melville"</span><span class="op">)</span></code></pre></div>
+                   method <span class="op">=</span> <span class="st">"shmueligoldberg"</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb213"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,
-                   method <span class="op">=</span> <span class="st">"melvillesantanaranal"</span><span class="op">)</span></code></pre></div>
+                   method <span class="op">=</span> <span class="st">"sgsantanaranal"</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] 7.3</code></pre>
 <div class="sourceCode" id="cb215"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,
@@ -1641,11 +1642,11 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb221"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,
-                   method <span class="op">=</span> <span class="st">"melville"</span><span class="op">)</span></code></pre></div>
+                   method <span class="op">=</span> <span class="st">"shmueligoldberg"</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb223"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,
-                   method <span class="op">=</span> <span class="st">"melvillesantanaranal"</span><span class="op">)</span></code></pre></div>
+                   method <span class="op">=</span> <span class="st">"sgsantanaranal"</span><span class="op">)</span></code></pre></div>
 <pre><code>[1] 7.3</code></pre>
 <div class="sourceCode" id="cb225"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,
@@ -2526,6 +2527,94 @@ indices simultaneously for multiple samples in batch.</p>
 <span class="fu"><a href="../reference/germination.indices.html">germination.indices</a></span><span class="op">(</span><span class="va">gcdata</span>, total.seeds.col <span class="op">=</span> <span class="st">"Total Seeds"</span>,
                     counts.intervals.cols <span class="op">=</span> <span class="va">counts.per.intervals</span>,
                     intervals <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>, partial <span class="op">=</span> <span class="cn">TRUE</span>, max.int <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></code></pre></div>
+<pre><code>Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
+Please use `method = "shmueligoldberg"` instead.</code></pre>
+<pre><code>Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.
+
+Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
+Please use `method = "sgsantanaranal"` instead.</code></pre>
 <pre><code>   Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
 1        G1   1     0     0     0     0     4    17    10     7     1     0
 2        G2   1     0     0     0     1     3    15    13     6     2     1
@@ -2639,21 +2728,21 @@ indices simultaneously for multiple samples in batch.</p>
 14                   37.69490                     78.53103
 15                   35.69697                     74.36868
    GermSpeedCorrected_Normal GermSpeedCorrected_Accumulated WeightGermPercent
-1                 0.07673656                      0.4326958          47.42857
-2                 0.07726134                      0.4315642          47.89916
-3                 0.07340991                      0.4085040          54.46429
-4                 0.07680397                      0.4288937          52.24090
-5                 0.07623944                      0.4271652          56.14286
-6                 0.07383855                      0.4130508          54.51895
-7                 0.07369656                      0.4158338          51.93452
-8                 0.07112480                      0.3968068          49.39210
-9                 0.07893128                      0.4404413          50.27473
-10                0.07569665                      0.4243919          52.57143
-11                0.07801721                      0.4374793          55.18207
-12                0.07675799                      0.4289379          50.00000
-13                0.07352419                      0.4096608          55.24781
-14                0.07316490                      0.4112171          53.86905
-15                0.07273057                      0.4079653          51.19048
+1                  0.1534731                      0.8653917          47.42857
+2                  0.1514928                      0.8462043          47.89916
+3                  0.1529373                      0.8510501          54.46429
+4                  0.1505960                      0.8409680          52.24090
+5                  0.1524789                      0.8543303          56.14286
+6                  0.1506909                      0.8429608          54.51895
+7                  0.1535345                      0.8663205          51.93452
+8                  0.1513294                      0.8442698          49.39210
+9                  0.1517909                      0.8470024          50.27473
+10                 0.1513933                      0.8487837          52.57143
+11                 0.1529749                      0.8578026          55.18207
+12                 0.1505059                      0.8410547          50.00000
+13                 0.1500494                      0.8360424          55.24781
+14                 0.1524269                      0.8567022          53.86905
+15                 0.1515220                      0.8499278          51.19048
    MeanGermPercent MeanGermNumber TimsonsIndex TimsonsIndex_Labouriau
 1         5.714286       2.857143     8.000000                   1.00
 2         5.882353       3.000000     9.803922                   1.25
@@ -2757,7 +2846,7 @@ indices simultaneously for multiple samples in batch.</p>
 </h4>
 <p>This wrapper function can be used to fit the four-parameter hill
 function for multiple samples in batch.</p>
-<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span>
 
 <span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,
@@ -2850,7 +2939,7 @@ function for multiple samples in batch.</p>
 14     4.915143     6.397486      7.432360      4.869401   2.562960
 15     4.892505     6.667247      7.785804      4.813086   2.972718</code></pre>
 <p>Multiple fitted curves generated in batch can also be plotted.</p>
-<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span>
 
 <span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,
@@ -2866,51 +2955,51 @@ function for multiple samples in batch.</p>
 <span class="co"># Plot FPHF curves</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-1.png" width="576"></p>
-<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot ROG curves</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-2.png" width="576"></p>
-<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot FPHF curves with points</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, show.points <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-3.png" width="576"></p>
-<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot FPHF curves with annotations</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.total"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-4.png" width="576"></p>
-<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.germ"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-5.png" width="576"></p>
-<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"tmgr"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-6.png" width="576"></p>
-<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"mgt"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-7.png" width="576"></p>
-<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"uniformity"</span><span class="op">)</span></code></pre></div>
 <pre><code>Warning: position_dodge requires non-overlapping x intervals
 position_dodge requires non-overlapping x intervals</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-8.png" width="576"></p>
-<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot ROG curves with annotations</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.total"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-9.png" width="576"></p>
-<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.germ"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-10.png" width="576"></p>
-<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"tmgr"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-11.png" width="576"></p>
-<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"mgt"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-12.png" width="576"></p>
-<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"uniformity"</span><span class="op">)</span></code></pre></div>
 <pre><code>Warning: position_dodge requires non-overlapping x intervals
 position_dodge requires non-overlapping x intervals</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-13.png" width="576"></p>
-<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Change colour of curves using ggplot2 options</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
 <span class="va">curvesplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span>
@@ -2918,7 +3007,7 @@ position_dodge requires non-overlapping x intervals</code></pre>
 <span class="co"># 'Dark2' palette from RColorBrewer</span>
 <span class="va">curvesplot</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html" class="external-link">scale_colour_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dark2"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-14.png" width="576"></p>
-<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Manual colours</span>
 <span class="va">curvesplot</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Coral"</span>, <span class="st">"Brown"</span>, <span class="st">"Blue"</span>,
@@ -2955,7 +3044,7 @@ citing the package.</code></pre>
 <div class="section level2">
 <h2 id="session-info">Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>R Under development (unstable) (2022-06-05 r82452 ucrt)
 Platform: x86_64-w64-mingw32/x64 (64-bit)
