@@ -1,3 +1,19 @@
+# Version 0.1.6 - First submission
+
+* Fixed fetching CRAN page for version history to fail gracefully when access is down to comply with the CRAN policy "Packages which use Internet resources should fail gracefully with an informative message if the resource is not available or has changed (and not give a check warning nor error).". The package was archived because of this.
+* As the references are too many, I have added all the citations in the package vignette with the doi or isbn. This was pointed out in the first submission too (0.1.0) accordingly where I have added a sentence pointing to references of methods implemented in package documented in the vignette.
+
+### Test environments
+* local Windows 10 Home v1803, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
+* local Ubuntu 16.04, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
+* win-builder, R-release (R 4.2.0) & R-devel (R 4.3.0 Pre-release).
+* rhub:solaris-x86-patched - i386-pc-solaris2.10 (32-bit), R-release (R 4.2.0).
+* rhub:solaris-x86-patched-ods - i386-pc-solaris2.10 (32-bit), R-release (R 4.2.0).
+* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.2.0).
+
+### R CMD check results
+Misspelled words in DESCRIPTION are false positives - Timson's; germinability; synchrony; indices.
+
 # Version 0.1.5 - Fourth submission
 
 * Fixed issue with vignette in Solaris build.

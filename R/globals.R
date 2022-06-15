@@ -24,8 +24,9 @@ if (getRversion() >= "2.15.1")  {
       "GermSpeedAccumulated_Count", "GermSpeedAccumulated_Percent",
       "GermSpeedCorrected_Normal", "GermSpeedCorrected_Accumulated",
       "TimsonsIndex_Labouriau", "TimsonsIndex_KhanUngar", "GermValue_Czabator",
-      "GermValue_DP", "GermValue_Czabator_mod", "GermValue_DP_mod","GermIndex_mod",
-      "EmergenceRateIndex_Melville", "EmergenceRateIndex_Melville_mod",
+      "GermValue_DP", "GermValue_Czabator_mod",
+      "GermValue_DP_mod","GermIndex_mod",
+      "EmergenceRateIndex_SG", "EmergenceRateIndex_SG_mod",
       "EmergenceRateIndex_BilbroWanjura", "EmergenceRateIndex_Fakorede", ".",
       "a", "b", "curve", "dfgp", "gp", "y0")
   )
