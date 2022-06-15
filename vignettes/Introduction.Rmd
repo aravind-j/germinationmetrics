@@ -155,7 +155,7 @@ rownames(VerHistory) <- NULL
 knitr::kable(VerHistory)
 
 } else {
-  print("Access to CRAN page for 'germinationmetrics is required to generate this table.'")
+  print("Access to CRAN page for 'germinationmetrics' is required to generate this table.'")
 }
 
 } else {

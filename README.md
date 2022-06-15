@@ -1,7 +1,7 @@
 
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.6](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2022: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.6.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2022: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
@@ -17,7 +17,7 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Dependencies](https://tinyverse.netlify.com/badge/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics)
-[![develVersion](https://img.shields.io/badge/devel%20version-0.1.5.9000-orange.svg)](https://github.com/aravind-j/germinationmetrics)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.6.9000-orange.svg)](https://github.com/aravind-j/germinationmetrics)
 [![Github Code
 Size](https://img.shields.io/github/languages/code-size/aravind-j/germinationmetrics.svg)](https://github.com/aravind-j/germinationmetrics)
 [![R-CMD-check](https://github.com/aravind-j/germinationmetrics/workflows/R-CMD-check/badge.svg)](https://github.com/aravind-j/germinationmetrics/actions)
@@ -108,7 +108,7 @@ CRAN check
 <tbody>
 <tr grouplength="6">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
 </td>
 </tr>
 <tr>
@@ -117,7 +117,7 @@ r-devel-linux-x86_64-debian-clang
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-devel-linux-x86_64-debian-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-clang/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -126,7 +126,7 @@ r-devel-linux-x86_64-debian-gcc
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-devel-linux-x86_64-debian-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-debian-gcc/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -135,7 +135,7 @@ r-devel-linux-x86_64-fedora-clang
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-devel-linux-x86_64-fedora-clang](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-clang/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -144,7 +144,7 @@ r-devel-linux-x86_64-fedora-gcc
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-linux-x86_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-devel-linux-x86_64-fedora-gcc](https://cranchecks.info/badges/flavor/r-devel-linux-x86_64-fedora-gcc/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -153,7 +153,7 @@ r-patched-linux-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-patched-linux-x86_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-patched-linux-x86_64](https://cranchecks.info/badges/flavor/r-patched-linux-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -162,12 +162,12 @@ r-release-linux-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-release-linux-x86_64](https://cranchecks.info/badges/flavor/r-release-linux-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr grouplength="1">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+<strong>[![Solaris](https://shields.io/badge/Solaris--9cf?logo=Oracle&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
 </td>
 </tr>
 <tr>
@@ -176,12 +176,12 @@ r-patched-solaris-x86
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x86/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-patched-solaris-x86](https://cranchecks.info/badges/flavor/r-patched-solaris-x86/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr grouplength="3">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
 </td>
 </tr>
 <tr>
@@ -190,7 +190,7 @@ r-devel-windows-ix86+x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-devel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-devel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-devel-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -199,7 +199,7 @@ r-release-windows-ix86+x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-release-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-release-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-release-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -208,12 +208,12 @@ r-oldrel-windows-ix86+x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-oldrel-windows-ix86+x86_64](https://cranchecks.info/badges/flavor/r-oldrel-windows-ix86+x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr grouplength="2">
 <td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)</strong>
+<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
 </td>
 </tr>
 <tr>
@@ -222,7 +222,7 @@ r-release-macos-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-release-macos-x86_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-release-macos-x86_64](https://cranchecks.info/badges/flavor/r-release-macos-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 <tr>
@@ -231,7 +231,7 @@ r-oldrel-macos-x86_64
 </td>
 <td style="text-align:left;">
 [![CRAN check -
-r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)
+r-oldrel-macos-x86_64](https://cranchecks.info/badges/flavor/r-oldrel-macos-x86_64/germinationmetrics)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
 </td>
 </tr>
 </tbody>
@@ -249,7 +249,7 @@ citation("germinationmetrics")
     To cite the R package 'germinationmetrics' in publications use:
 
       Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2022).
-      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.6,
+      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.6.9000,
       https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
     A BibTeX entry for LaTeX users is
@@ -258,7 +258,7 @@ citation("germinationmetrics")
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
         year = {2022},
-        note = {R package version 0.1.6},
+        note = {R package version 0.1.6.9000},
         note = {https://github.com/aravind-j/germinationmetrics},
         note = {https://cran.r-project.org/package=germinationmetrics},
       }
