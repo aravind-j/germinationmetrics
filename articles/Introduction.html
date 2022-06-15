@@ -6,6 +6,12 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The `germinationmetrics` Package: A Brief Introduction • germinationmetrics</title>
+<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
 <script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -42,7 +48,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.5.9000</span>
+        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.6.9000</span>
       </span>
     </div>
 
@@ -107,7 +113,7 @@
       <h1 data-toc-skip>The <code>germinationmetrics</code> Package: A Brief Introduction</h1>
                         <h4 data-toc-skip class="author">Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan</h4>
             
-            <h4 data-toc-skip class="date">2022-06-14</h4>
+            <h4 data-toc-skip class="date">2022-06-15</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -144,7 +150,7 @@ ICAR-National Bureau of Plant Genetic Resources, New Delhi.
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/aravind-j/germinationmetrics" class="external-link">germinationmetrics</a></span><span class="op">)</span></code></pre></div>
 <pre><code>
 --------------------------------------------------------------------------------
-Welcome to germinationmetrics version 0.1.5.9000
+Welcome to germinationmetrics version 0.1.6.9000
 
 
 # To know how to use this package type:
@@ -166,7 +172,7 @@ Welcome to germinationmetrics version 0.1.5.9000
 <div class="section level2">
 <h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
 </h2>
-<p>The current version of the package is 0.1.5.9000. The previous versions are as follows.</p>
+<p>The current version of the package is 0.1.6. The previous versions are as follows.</p>
 <p><strong>Table 1.</strong> Version history of <code>germinationmetrics</code> <code>R</code> package.</p>
 <table class="table">
 <thead><tr class="header">
@@ -2211,94 +2217,6 @@ attr(,"class")
 <span class="fu"><a href="../reference/germination.indices.html">germination.indices</a></span><span class="op">(</span><span class="va">gcdata</span>, total.seeds.col <span class="op">=</span> <span class="st">"Total Seeds"</span>,
                     counts.intervals.cols <span class="op">=</span> <span class="va">counts.per.intervals</span>,
                     intervals <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>, partial <span class="op">=</span> <span class="cn">TRUE</span>, max.int <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></code></pre></div>
-<pre><code>Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melville"` is depreciated as of 0.1.6
-Please use `method = "shmueligoldberg"` instead.</code></pre>
-<pre><code>Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.
-
-Warning in EmergenceRateIndex(germ.counts = unlist(mget(counts.intervals.cols)), : Argument `method = "melvillesantanaranal"` is depreciated as of 0.1.6
-Please use `method = "sgsantanaranal"` instead.</code></pre>
 <pre><code>   Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
 1        G1   1     0     0     0     0     4    17    10     7     1     0
 2        G2   1     0     0     0     1     3    15    13     6     2     1
@@ -2459,22 +2377,22 @@ Please use `method = "sgsantanaranal"` instead.</code></pre>
 13              0.5830904              4  6.775510      7.063830
 14              0.4464286              3  6.625000      7.227273
 15              0.5952381              4  6.291667      7.190476
-   EmergenceRateIndex_Melville EmergenceRateIndex_Melville_mod
-1                          292                        7.300000
-2                          300                        7.142857
-3                          321                        7.133333
-4                          327                        7.108696
-5                          345                        7.187500
-6                          328                        7.130435
-7                          307                        7.309524
-8                          285                        7.125000
-9                          321                        7.133333
-10                         323                        7.177778
-11                         346                        7.208333
-12                         313                        7.113636
-13                         332                        7.063830
-14                         318                        7.227273
-15                         302                        7.190476
+   EmergenceRateIndex_SG EmergenceRateIndex_SG_mod
+1                    292                  7.300000
+2                    300                  7.142857
+3                    321                  7.133333
+4                    327                  7.108696
+5                    345                  7.187500
+6                    328                  7.130435
+7                    307                  7.309524
+8                    285                  7.125000
+9                    321                  7.133333
+10                   323                  7.177778
+11                   346                  7.208333
+12                   313                  7.113636
+13                   332                  7.063830
+14                   318                  7.227273
+15                   302                  7.190476
    EmergenceRateIndex_BilbroWanjura EmergenceRateIndex_Fakorede PeakValue
 1                          5.970149                    8.375000  9.500000
 2                          6.125000                    8.326531  9.313725
@@ -2529,7 +2447,7 @@ Please use `method = "sgsantanaranal"` instead.</code></pre>
 <code>FourPHFfit.bulk()</code><a class="anchor" aria-label="anchor" href="#fourphffit-bulk"></a>
 </h4>
 <p>This wrapper function can be used to fit the four-parameter hill function for multiple samples in batch.</p>
-<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span>
 
 <span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,
@@ -2622,7 +2540,7 @@ Please use `method = "sgsantanaranal"` instead.</code></pre>
 14     4.915143     6.397486      7.432360      4.869401   2.562960
 15     4.892505     6.667247      7.785804      4.813086   2.972718</code></pre>
 <p>Multiple fitted curves generated in batch can also be plotted.</p>
-<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span>
 
 <span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,
@@ -2638,51 +2556,51 @@ Please use `method = "sgsantanaranal"` instead.</code></pre>
 <span class="co"># Plot FPHF curves</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-1.png" width="576"></p>
-<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb278"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot ROG curves</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-2.png" width="576"></p>
-<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb279"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot FPHF curves with points</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, show.points <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-3.png" width="576"></p>
-<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb280"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot FPHF curves with annotations</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.total"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-4.png" width="576"></p>
-<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb281"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.germ"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-5.png" width="576"></p>
-<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb282"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"tmgr"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-6.png" width="576"></p>
-<div class="sourceCode" id="cb285"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"mgt"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-7.png" width="576"></p>
-<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb284"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"uniformity"</span><span class="op">)</span></code></pre></div>
 <pre><code>Warning: position_dodge requires non-overlapping x intervals
 position_dodge requires non-overlapping x intervals</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-8.png" width="576"></p>
-<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb286"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Plot ROG curves with annotations</span>
 <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.total"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-9.png" width="576"></p>
-<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb287"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.germ"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-10.png" width="576"></p>
-<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb288"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"tmgr"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-11.png" width="576"></p>
-<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"mgt"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-12.png" width="576"></p>
-<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb290"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"uniformity"</span><span class="op">)</span></code></pre></div>
 <pre><code>Warning: position_dodge requires non-overlapping x intervals
 position_dodge requires non-overlapping x intervals</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-13.png" width="576"></p>
-<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb292"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Change colour of curves using ggplot2 options</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span>
 <span class="va">curvesplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span>
@@ -2690,7 +2608,7 @@ position_dodge requires non-overlapping x intervals</code></pre>
 <span class="co"># 'Dark2' palette from RColorBrewer</span>
 <span class="va">curvesplot</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html" class="external-link">scale_colour_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dark2"</span><span class="op">)</span></code></pre></div>
 <p><img src="Introduction_files/figure-html/runCode-14.png" width="576"></p>
-<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb293"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># Manual colours</span>
 <span class="va">curvesplot</span> <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Coral"</span>, <span class="st">"Brown"</span>, <span class="st">"Blue"</span>,
@@ -2706,7 +2624,7 @@ To cite the R package 'germinationmetrics' in publications use:
 
   Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
   Kalyani Srinivasan (2022).  germinationmetrics: Seed Germination
-  Indices and Curve Fitting. R package version 0.1.5.9000,
+  Indices and Curve Fitting. R package version 0.1.6.9000,
   https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
 A BibTeX entry for LaTeX users is
@@ -2715,7 +2633,7 @@ A BibTeX entry for LaTeX users is
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
     year = {2022},
-    note = {R package version 0.1.5.9000},
+    note = {R package version 0.1.6.9000},
     note = {https://github.com/aravind-j/germinationmetrics},
     note = {https://cran.r-project.org/package=germinationmetrics},
   }
@@ -2727,7 +2645,7 @@ citing the package.</code></pre>
 <div class="section level2">
 <h2 id="session-info">Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb297"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb295"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
 <pre><code>R version 4.2.0 (2022-04-22)
 Platform: x86_64-apple-darwin17.0 (64-bit)
@@ -2744,7 +2662,7 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] germinationmetrics_0.1.5.9000 ggplot2_3.3.6                
+[1] germinationmetrics_0.1.6.9000 ggplot2_3.3.6                
 
 loaded via a namespace (and not attached):
  [1] ggrepel_0.9.1      Rcpp_1.0.8.3       tidyr_1.2.0        rprojroot_2.0.3   
