@@ -88,6 +88,7 @@ jobs:
           _R_STOP_ON_XTFRM_DATA_FRAME_: true
           _R_COMPILE_AND_INSTALL_PACKAGES_: true
           _R_CHECK_CRAN_INCOMING_USE_ASPELL_: true
+          _R_CHECK_CRAN_INCOMING_: true
         with:
           args: 'c("--as-cran")'
           build_args: 'c("--compact-vignettes=gs+qpdf")'
