@@ -48,7 +48,11 @@ jobs:
       - name: Install Ghostscript on Windows
         if: runner.os == 'Windows'
         run: choco install ghostscript --no-progress
-
+        
+      - name: Install aspell on macos
+        if: runner.os == 'macOS'
+        run: brew install aspell
+        
       - name: Set R_GSCMD
         run: |
           system.partition = 'c:'
@@ -84,6 +88,8 @@ jobs:
           needs: check
 
       - uses: r-lib/actions/check-r-package@v2
+        env:
+          _R_CHECK_CRAN_INCOMING_USE_ASPELL_: true
         with:
           args: 'c("--as-cran")'
           build_args: 'c("--compact-vignettes=gs+qpdf")'
