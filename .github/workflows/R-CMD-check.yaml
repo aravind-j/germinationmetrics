@@ -97,14 +97,15 @@ jobs:
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_REMOTE_: false
-          _R_CHECK_CRAN_INCOMING_: true
+          _R_CHECK_CRAN_INCOMING_: false
           R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
         run: |
           options(crayon.enabled = TRUE)
-          rcmdcheck::rcmdcheck(args = c("--as-cran"), error_on = "warning", check_dir = "check",
-          env = c(`_R_CHECK_FORCE_SUGGESTS_` = "true",
-                  `_R_STOP_ON_XTFRM_DATA_FRAME_` = "true",
-                  `_R_COMPILE_AND_INSTALL_PACKAGES_` = "always",
-                  `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true"))
+          rcmdcheck::rcmdcheck(args = c("--as-cran"), build_args = c("--compact-vignettes=gs+qpdf"),
+                               error_on = "warning", check_dir = "check",
+                                         env = c(`_R_CHECK_FORCE_SUGGESTS_` = "true",
+                                                 `_R_STOP_ON_XTFRM_DATA_FRAME_` = "true",
+                                                 `_R_COMPILE_AND_INSTALL_PACKAGES_` = "always",
+                                                 `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true"))
         shell: Rscript {0}      
         
