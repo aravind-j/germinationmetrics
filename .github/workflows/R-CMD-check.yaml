@@ -49,6 +49,7 @@ jobs:
         run: choco install ghostscript --no-progress
         
       - name: Set R_GSCMD
+        if: runner.os == 'Windows'
         run: |
           system.partition = 'c:'
           dirs = c('Program Files', 'Program Files (x86)')
@@ -106,6 +107,7 @@ jobs:
                                          env = c(`_R_CHECK_FORCE_SUGGESTS_` = "true",
                                                  `_R_STOP_ON_XTFRM_DATA_FRAME_` = "true",
                                                  `_R_COMPILE_AND_INSTALL_PACKAGES_` = "always",
-                                                 `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true"))
+                                                 `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true",
+                                                 `R_GSCMD` = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe"))
         shell: Rscript {0}      
         
