@@ -22,11 +22,12 @@ jobs:
         config:
           - {os: macOS-latest,   r: 'release'}
           - {os: windows-latest, r: 'release'}
-          #- {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
-          #- {os: ubuntu-latest,   r: 'release'}
-          #- {os: ubuntu-latest,   r: 'oldrel-1'}
+          - {os: ubuntu-latest,   r: 'devel', http-user-agent: 'release'}
+          - {os: ubuntu-latest,   r: 'release'}
+          - {os: ubuntu-latest,   r: 'oldrel-1'}
 
     env:
+      R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
       R_KEEP_PKG_SOURCE: yes
 
@@ -46,31 +47,13 @@ jobs:
 
       - name: Install Ghostscript on Windows
         if: runner.os == 'Windows'
-        run: choco install ghostscript --no-progress
-        
-      - name: Set R_GSCMD
-        if: runner.os == 'Windows'
         run: |
-          system.partition = 'c:'
-          dirs = c('Program Files', 'Program Files (x86)')
-          for (dir in dirs) {
-              dir.list = list.dirs(file.path(system.partition, dir), recursive = FALSE)
-              GsinList = grepl(pattern = 'gs', x = dir.list)
-              if (sum(GsinList) > 0) {
-                  gsDirectory = which(GsinList == TRUE)
-                  GsExeFiles = list.files(
-                      dir.list[gsDirectory],
-                      recursive = TRUE,
-                      pattern = 'gswin',
-                      include.dirs = TRUE,
-                      full.names = TRUE
-                  )[1]
-                  message('Gs found! ~> ',GsExeFiles)
-                  Sys.setenv(R_GSCMD = GsExeFiles)
-                  break
-              }
-          }
-        shell: Rscript {0}
+          # Set up chocolatey profile so that refreshenv is an powershell alias
+          $env:ChocolateyInstall = Convert-Path "$((Get-Command choco).Path)\..\.."
+          Import-Module "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+          # Install ghostscript and update env
+          choco install ghostscript --no-progress
+          refreshenv
 
       - uses: r-lib/actions/setup-r@v2
         with:
@@ -83,31 +66,41 @@ jobs:
           extra-packages: any::rcmdcheck, any::XML
           needs: check
 
-#      - uses: r-lib/actions/check-r-package@v2
-#        env:
-#          R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
-#          _R_STOP_ON_XTFRM_DATA_FRAME_: true
-#          _R_COMPILE_AND_INSTALL_PACKAGES_: true
-#          _R_CHECK_CRAN_INCOMING_USE_ASPELL_: true
-#          _R_CHECK_CRAN_INCOMING_: true
-#        with:
-#          args: 'c("--as-cran")'
-#          build_args: 'c("--compact-vignettes=gs+qpdf")'
-#          upload-snapshots: false
-          
       - name: Check
-        env:
-          _R_CHECK_CRAN_INCOMING_REMOTE_: false
-          _R_CHECK_CRAN_INCOMING_: false
-          R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
         run: |
           options(crayon.enabled = TRUE)
-          rcmdcheck::rcmdcheck(args = c("--as-cran"), build_args = c("--compact-vignettes=gs+qpdf"),
+
+          Sys.info()['sysname']
+
+          # Set R_GSCMD in Windows
+          if (Sys.info()['sysname'] == "Windows") {
+            system.partition = 'c:'
+            dirs = c('Program Files', 'Program Files (x86)')
+            for (dir in dirs) {
+              dir.list = list.dirs(file.path(system.partition, dir), recursive = FALSE)
+              GsinList = grepl(pattern = 'gs', x = dir.list)
+              if (sum(GsinList) > 0) {
+                gsDirectory = which(GsinList == TRUE)
+                GsExeFiles = list.files(
+                  dir.list[gsDirectory],
+                  recursive = TRUE,
+                  pattern = 'gswin',
+                  include.dirs = TRUE,
+                  full.names = TRUE
+                )[1]
+                message('Gs found! ~> ',GsExeFiles)
+                Sys.setenv(R_GSCMD = GsExeFiles)
+                break
+              }
+            }
+          }
+
+          rcmdcheck::rcmdcheck(args = c("--as-cran", "--run-donttest"),
+                               build_args = c("--compact-vignettes=gs+qpdf"),
                                error_on = "warning", check_dir = "check",
-                                         env = c(`_R_CHECK_FORCE_SUGGESTS_` = "true",
-                                                 `_R_STOP_ON_XTFRM_DATA_FRAME_` = "true",
-                                                 `_R_COMPILE_AND_INSTALL_PACKAGES_` = "always",
-                                                 `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "true",
-                                                 `R_GSCMD` = "C:/Program Files/gs/gs9.56.1/bin/gswin64.exe"))
-        shell: Rscript {0}      
-        
+                               env = c(`NOT_CRAN` = "true",
+                                       `_R_CHECK_FORCE_SUGGESTS_` = "true",
+                                       `_R_STOP_ON_XTFRM_DATA_FRAME_` = "true",
+                                       `_R_COMPILE_AND_INSTALL_PACKAGES_` = "always",
+                                       `_R_CHECK_CRAN_INCOMING_USE_ASPELL_` = "false"))
+        shell: Rscript {0}
