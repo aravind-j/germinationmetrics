@@ -1,5 +1,8 @@
 # germinationmetrics  0.1.7
 
+## UPDATED FUNCTIONS:
+* `FourPHFfit.bulk` - Fixed false "`total number of seeds tested is less than the total number of germinated seeds`" warning when germination count data is cumulative (Thanks to D. Vijay for vijaydunna[at]gmail.com).
+
 # germinationmetrics  0.1.6
 
 ## NEW FUNCTIONS:

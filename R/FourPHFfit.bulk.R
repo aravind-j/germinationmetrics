@@ -119,17 +119,6 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
     warning('"total.seeds.col" possesses non-integer data.')
   }
 
-  # Check if total.seeds > no. of germinated seeds
-  if (any(apply(data[, counts.intervals.cols], 1,
-                sum) > data[, total.seeds.col])) {
-    inderrorrows <- (1:nrow(data))[apply(data[, counts.intervals.cols], 1,
-                                         sum) > data[, total.seeds.col]]
-    warning(paste('For the following rows in "data", the total',
-                  'number of seeds tested ("total.seeds.col")',
-                  'is less than the total number of germinated seeds:',
-                  paste(inderrorrows, collapse = ", ")))
-  }
-
   # Check for missing values
   missvcols <- unlist(lapply(data[, c(counts.intervals.cols,
                                       total.seeds.col)],
@@ -164,6 +153,17 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
   if (!partial) {
     data[, counts.intervals.cols] <- t(apply(data[, counts.intervals.cols], 1,
                                              function(x) c(x[1], diff(x))))
+  }
+
+  # Check if total.seeds > no. of germinated seeds
+  if (any(apply(data[, counts.intervals.cols], 1,
+                sum) > data[, total.seeds.col])) {
+    inderrorrows <- (1:nrow(data))[apply(data[, counts.intervals.cols], 1,
+                                         sum) > data[, total.seeds.col]]
+    warning(paste('For the following rows in "data", the total',
+                  'number of seeds tested ("total.seeds.col")',
+                  'is less than the total number of germinated seeds:',
+                  paste(inderrorrows, collapse = ", ")))
   }
 
 
