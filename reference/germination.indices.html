@@ -89,45 +89,45 @@ at specific time intervals for multiple samples in batch. <script id="MathJax-sc
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">germination.indices</span><span class="op">(</span>
-  <span class="va">data</span>,
-  <span class="va">total.seeds.col</span>,
-  <span class="va">counts.intervals.cols</span>,
-  <span class="va">intervals</span>,
-  partial <span class="op">=</span> <span class="cn">TRUE</span>,
-  PeakGermPercent <span class="op">=</span> <span class="cn">TRUE</span>,
-  FirstGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  LastGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  PeakGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  TimeSpreadGerm <span class="op">=</span> <span class="cn">TRUE</span>,
-  t50 <span class="op">=</span> <span class="cn">TRUE</span>,
-  MeanGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  VarGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  SEGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  CVGermTime <span class="op">=</span> <span class="cn">TRUE</span>,
-  MeanGermRate <span class="op">=</span> <span class="cn">TRUE</span>,
-  CVG <span class="op">=</span> <span class="cn">TRUE</span>,
-  VarGermRate <span class="op">=</span> <span class="cn">TRUE</span>,
-  SEGermRate <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermRateRecip <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermSpeed <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermSpeedAccumulated <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermSpeedCorrected <span class="op">=</span> <span class="cn">TRUE</span>,
-  WeightGermPercent <span class="op">=</span> <span class="cn">TRUE</span>,
-  MeanGermPercent <span class="op">=</span> <span class="cn">TRUE</span>,
-  MeanGermNumber <span class="op">=</span> <span class="cn">TRUE</span>,
-  TimsonsIndex <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermRateGeorge <span class="op">=</span> <span class="cn">TRUE</span>,
-  <span class="va">max.int</span>,
-  GermIndex <span class="op">=</span> <span class="cn">TRUE</span>,
-  EmergenceRateIndex <span class="op">=</span> <span class="cn">TRUE</span>,
-  PeakValue <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermValue <span class="op">=</span> <span class="cn">TRUE</span>,
-  gv.k <span class="op">=</span> <span class="fl">10</span>,
-  CUGerm <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermSynchrony <span class="op">=</span> <span class="cn">TRUE</span>,
-  GermUncertainty <span class="op">=</span> <span class="cn">TRUE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">germination.indices</span><span class="op">(</span></span>
+<span>  <span class="va">data</span>,</span>
+<span>  <span class="va">total.seeds.col</span>,</span>
+<span>  <span class="va">counts.intervals.cols</span>,</span>
+<span>  <span class="va">intervals</span>,</span>
+<span>  partial <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  PeakGermPercent <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  FirstGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  LastGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  PeakGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  TimeSpreadGerm <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  t50 <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  MeanGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  VarGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  SEGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  CVGermTime <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  MeanGermRate <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  CVG <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  VarGermRate <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  SEGermRate <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermRateRecip <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermSpeed <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermSpeedAccumulated <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermSpeedCorrected <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  WeightGermPercent <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  MeanGermPercent <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  MeanGermNumber <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  TimsonsIndex <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermRateGeorge <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  <span class="va">max.int</span>,</span>
+<span>  GermIndex <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  EmergenceRateIndex <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  PeakValue <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermValue <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  gv.k <span class="op">=</span> <span class="fl">10</span>,</span>
+<span>  CUGerm <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermSynchrony <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  GermUncertainty <span class="op">=</span> <span class="cn">TRUE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -610,16 +610,16 @@ Chronica Botanica Co., Waltham, Mass., USA and The Ronald Press Co., New York, U
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"></span>
-<span class="r-in"><span class="co"># \donttest{</span></span>
-<span class="r-in"><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</span>
-<span class="r-in">                          <span class="st">"Day06"</span>, <span class="st">"Day07"</span>, <span class="st">"Day08"</span>, <span class="st">"Day09"</span>, <span class="st">"Day10"</span>,</span>
-<span class="r-in">                          <span class="st">"Day11"</span>, <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">germination.indices</span><span class="op">(</span><span class="va">gcdata</span>, total.seeds.col <span class="op">=</span> <span class="st">"Total Seeds"</span>,</span>
-<span class="r-in">                    counts.intervals.cols <span class="op">=</span> <span class="va">counts.per.intervals</span>,</span>
-<span class="r-in">                    intervals <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>, partial <span class="op">=</span> <span class="cn">TRUE</span>, max.int <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</span></span>
+<span class="r-in"><span>                          <span class="st">"Day06"</span>, <span class="st">"Day07"</span>, <span class="st">"Day08"</span>, <span class="st">"Day09"</span>, <span class="st">"Day10"</span>,</span></span>
+<span class="r-in"><span>                          <span class="st">"Day11"</span>, <span class="st">"Day12"</span>, <span class="st">"Day13"</span>, <span class="st">"Day14"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">germination.indices</span><span class="op">(</span><span class="va">gcdata</span>, total.seeds.col <span class="op">=</span> <span class="st">"Total Seeds"</span>,</span></span>
+<span class="r-in"><span>                    counts.intervals.cols <span class="op">=</span> <span class="va">counts.per.intervals</span>,</span></span>
+<span class="r-in"><span>                    intervals <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>, partial <span class="op">=</span> <span class="cn">TRUE</span>, max.int <span class="op">=</span> <span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1        G1   1     0     0     0     0     4    17    10     7     1     0</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2        G2   1     0     0     0     1     3    15    13     6     2     1</span>
@@ -844,8 +844,8 @@ Chronica Botanica Co., Waltham, Mass., USA and The Ronald Press Co., New York, U
 <span class="r-out co"><span class="r-pr">#&gt;</span> 13 0.4023679     0.2506938        2.241181</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14 0.5383760     0.2991543        2.037680</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 15 0.6133519     0.2497096        2.185028</span>
-<span class="r-in"><span class="co"># }</span></span>
-<span class="r-in"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>

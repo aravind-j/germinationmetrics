@@ -134,13 +134,13 @@ germination time (<em></em>\(\overline{T}\)) or Mean length of incubation time
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">MeanGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu">VarGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu">SEGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
-
-<span class="fu">CVGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">MeanGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">VarGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">SEGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">CVGermTime</span><span class="op">(</span><span class="va">germ.counts</span>, <span class="va">intervals</span>, partial <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -267,32 +267,32 @@ Organizacao dos Estados Americanos. Programa Regional de Desenvolvimento Cientif
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">17</span>, <span class="fl">10</span>, <span class="fl">7</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">21</span>, <span class="fl">31</span>, <span class="fl">38</span>, <span class="fl">39</span>, <span class="fl">39</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span><span class="op">)</span></span>
-<span class="r-in"><span class="va">int</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># From partial germination counts</span></span>
-<span class="r-in"><span class="co">#----------------------------------------------------------------------------</span></span>
-<span class="r-in"><span class="fu">MeanGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">17</span>, <span class="fl">10</span>, <span class="fl">7</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">21</span>, <span class="fl">31</span>, <span class="fl">38</span>, <span class="fl">39</span>, <span class="fl">39</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">int</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># From partial germination counts</span></span></span>
+<span class="r-in"><span><span class="co">#----------------------------------------------------------------------------</span></span></span>
+<span class="r-in"><span><span class="fu">MeanGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.7</span>
-<span class="r-in"><span class="fu">VarGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">VarGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.446154</span>
-<span class="r-in"><span class="fu">SEGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">SEGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.1901416</span>
-<span class="r-in"><span class="fu">CVGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">CVGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.1794868</span>
-<span class="r-in"></span>
-<span class="r-in"><span class="co"># From cumulative germination counts</span></span>
-<span class="r-in"><span class="co">#----------------------------------------------------------------------------</span></span>
-<span class="r-in"><span class="fu">MeanGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># From cumulative germination counts</span></span></span>
+<span class="r-in"><span><span class="co">#----------------------------------------------------------------------------</span></span></span>
+<span class="r-in"><span><span class="fu">MeanGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.7</span>
-<span class="r-in"><span class="fu">VarGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">VarGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 19.04012</span>
-<span class="r-in"><span class="fu">SEGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">SEGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.2394781</span>
-<span class="r-in"><span class="fu">CVGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
+<span class="r-in"><span><span class="fu">CVGermTime</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0.6512685</span>
-<span class="r-in"></span>
+<span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
   </div>
