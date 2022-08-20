@@ -3,6 +3,9 @@
 ## UPDATED FUNCTIONS:
 * `FourPHFfit.bulk` - Fixed false "`total number of seeds tested is less than the total number of germinated seeds`" warning when germination count data is cumulative (Thanks to D. Vijay for vijaydunna[at]gmail.com).
 
+## OTHER NOTES: 
+* Updated documentation for `WeightGermPercent` and `germination.indices` to fix HTML validation problems.
+
 # germinationmetrics  0.1.6
 
 ## NEW FUNCTIONS:
