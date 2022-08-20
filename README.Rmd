@@ -20,13 +20,12 @@ devtools::load_all(".")
 
 ###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
-
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
 ICAR-National Bureau of Plant Genetic Resources, New Delhi
 
 ***
-
+<!-- badges: start -->
 [![minimal R version](https://img.shields.io/badge/R>%3D-3.0.2-6666ff.svg?logo=R)](https://cran.r-project.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![CRAN_Status_Badge](https://www.r-pkg.org/badges/version-last-release/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
@@ -50,7 +49,7 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 <!-- [![packageversion](https://img.shields.io/badge/Package%20version-0.2.3.3-orange.svg)](https://github.com/aravind-j/germinationmetrics) -->
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 <!-- [![Rdoc](https://www.rdocumentation.org/badges/version/germinationmetrics)](https://www.rdocumentation.org/packages/germinationmetrics) -->
-
+<!-- badges: end -->
 ***
 
 ## Description
