@@ -1,7 +1,31 @@
+# Version 0.1.6 - Second submission
+
+Fixed issues in documentation leading to HTML validation problems.
+Fixed missing vignette pdf in `inst/doc`.
+
+### Test environments
+* local Windows 10 Pro 21H2, R-release (R 4.2.1) & R-devel (R 4.3.0 Pre-release).
+* local Ubuntu 20.04, R-release (R 4.2.1) & R-devel (R 4.3.0 Pre-release).
+* win-builder, R-release (R 4.2.1) & R-devel (R 4.3.0 Pre-release).
+* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.1.1).
+* rhub:macos-m1-bigsur-release - aarch64-apple-darwin20 (64-bit), R-release (R 4.1.3).
+
+### R CMD check results
+* There were no ERRORs, NOTES or WARNINGs.
+
 # Version 0.1.6 - First submission
 
+Fixed issues in documentation leading to HTML validation problems.
 
+### Test environments
+* local Windows 10 Pro 21H2, R-release (R 4.2.1) & R-devel (R 4.3.0 Pre-release).
+* local Ubuntu 20.04, R-release (R 4.2.1) & R-devel (R 4.3.0 Pre-release).
+* win-builder, R-release (R 4.2.1) & R-devel (R 4.3.0 Pre-release).
+* rhub:macos-highsierra-release-cran - x86_64-apple-darwin17.0 (64-bit), R-release (R 4.1.1).
+* rhub:macos-m1-bigsur-release - aarch64-apple-darwin20 (64-bit), R-release (R 4.1.3).
 
+### R CMD check results
+* There were no ERRORs, NOTES or WARNINGs.
 
 # Version 0.1.6 - First submission
 
