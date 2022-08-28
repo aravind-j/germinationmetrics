@@ -270,63 +270,59 @@ require(germinationmetrics)
 ```
 
 #### `GermPercent()`
-```{r, runCode, code = getCode("GermPercent", "germinationmetrics")}
+```{r, runCode-GermPercent, code = getCode("GermPercent", "germinationmetrics")}
 ```
 
 #### `FirstGermTime(), LastGermTime(), PeakGermTime(), TimeSpreadGerm()`
-```{r, runCode, code = getCode("FirstGermTime", "germinationmetrics")}
+```{r, runCode-FirstGermTime, code = getCode("FirstGermTime", "germinationmetrics")}
 ```
 
 #### `t50()`
-```{r, runCode, code = getCode("t50", "germinationmetrics")}
+```{r, runCode-t50, code = getCode("t50", "germinationmetrics")}
 ```
 
 #### `MeanGermTime(), VarGermTime(), SEGermTime(), CVGermTime()`
-```{r, runCode, code = getCode("MeanGermTime", "germinationmetrics")}
+```{r, runCode-MeanGermTime, code = getCode("MeanGermTime", "germinationmetrics")}
 ```
 
 #### `MeanGermRate(), CVG(), VarGermRate(), SEGermRate(), GermRateRecip()`
-```{r, runCode, code = getCode("MeanGermRate", "germinationmetrics")}
+```{r, runCode-MeanGermRate, code = getCode("MeanGermRate", "germinationmetrics")}
 ```
 
 #### `GermSpeed(), GermSpeedAccumulated(), GermSpeedCorrected() `
-```{r, runCode, code = getCode("GermSpeed", "germinationmetrics")}
-```
-
-#### `GermSpeed(), GermSpeedAccumulated(), GermSpeedCorrected() `
-```{r, runCode, code = getCode("GermSpeed", "germinationmetrics")}
+```{r, runCode-GermSpeed, code = getCode("GermSpeed", "germinationmetrics")}
 ```
 
 #### `WeightGermPercent()`
-```{r, runCode, code = getCode("WeightGermPercent", "germinationmetrics")}
+```{r, runCode-WeightGermPercent, code = getCode("WeightGermPercent", "germinationmetrics")}
 ```
 
 #### `MeanGermPercent(), MeanGermNumber()`
-```{r, runCode, code = getCode("MeanGermPercent", "germinationmetrics")}
+```{r, runCode-MeanGermPercent, code = getCode("MeanGermPercent", "germinationmetrics")}
 ```
 
 #### `TimsonsIndex(), GermRateGeorge() `
-```{r, runCode, code = getCode("TimsonsIndex", "germinationmetrics")}
+```{r, runCode-TimsonsIndex, code = getCode("TimsonsIndex", "germinationmetrics")}
 ```
 
 #### `GermIndex() `
-```{r, runCode, code = getCode("GermIndex", "germinationmetrics")}
+```{r, runCode-GermIndex, code = getCode("GermIndex", "germinationmetrics")}
 ```
 
 #### `EmergenceRateIndex() `
-```{r, runCode, code = getCode("EmergenceRateIndex", "germinationmetrics")}
+```{r, runCode-EmergenceRateIndex, code = getCode("EmergenceRateIndex", "germinationmetrics")}
 ```
 
 #### `PeakValue(), GermValue()`
-```{r, runCode, code = getCode("PeakValue", "germinationmetrics")}
+```{r, runCode-PeakValue, code = getCode("PeakValue", "germinationmetrics")}
 ```
 
 #### `CUGerm()`
-```{r, runCode, code = getCode("CUGerm", "germinationmetrics")}
+```{r, runCode-CUGerm, code = getCode("CUGerm", "germinationmetrics")}
 ```
 
 #### `GermSynchrony(), GermUncertainty()`
-```{r, runCode, code = getCode("GermSynchrony", "germinationmetrics")}
+```{r, runCode-GermSynchrony, code = getCode("GermSynchrony", "germinationmetrics")}
 ```
 
 ## Non-linear regression analysis
@@ -381,7 +377,7 @@ require(germinationmetrics)
 ```
 
 #### `FourPHFfit()`
-```{r, runCode, code = getCode("FourPHFfit", "germinationmetrics")}
+```{r, runCode-FourPHFfit, code = getCode("FourPHFfit", "germinationmetrics")}
 ```
 
 ```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit", "germinationmetrics"), eval =FALSE, echo = FALSE}
@@ -429,18 +425,18 @@ Wrapper functions `germination.indices()` and `FourPHFfit.bulk()` are available 
 #### `germination.indices()`
 This wrapper function can be used to compute several germination indices simultaneously for multiple samples in batch.
 
-```{r, runCode, code = getCode("germination.indices", "germinationmetrics")}
+```{r, runCode-germination.indices, code = getCode("germination.indices", "germinationmetrics")}
 ```
 
 #### `FourPHFfit.bulk()`
 This wrapper function can be used to fit the four-parameter hill function for multiple samples in batch.
 
-```{r, runCode, code = getCode("FourPHFfit.bulk", "germinationmetrics")}
+```{r, runCode-FourPHFfit.bulk, code = getCode("FourPHFfit.bulk", "germinationmetrics")}
 ```
 
 Multiple fitted curves generated in batch can also be plotted.
 
-```{r, runCode, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit.bulk", "germinationmetrics")}
+```{r, runCode-plot.FourPHFfit.bulk, fig.width = 6, fig.height = 4, code = getCode("plot.FourPHFfit.bulk", "germinationmetrics")}
 ```
 
 ## Citing `germinationmetrics`
