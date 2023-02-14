@@ -30,7 +30,7 @@ Description: Provides functions to compute various germination indices such as
     four-parameter hill function and computation of associated parameters. See
     the vignette for more, including full list of citations for the methods
     implemented.
-Copyright: 2017-2022, ICAR-NBPGR
+Copyright: 2017-2023, ICAR-NBPGR
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
