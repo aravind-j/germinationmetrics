@@ -110,10 +110,12 @@
 #'   half-maximal activation level.}  \item{y0}{The intercept on the y axis.}
 #'   \item{lag}{Time at germination onset.} \item{Dlag50}{duration between the
 #'   time at germination onset (lag) and that at 50\% germination.}
-#'   \item{t50.total}{time required for 50\% of total seeds to germinate.}
-#'   \item{txp.total}{time required for x\% (as specified in argument \code{xp})
-#'   of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
-#'   of viable/germinated seeds to germinate.} \item{txp.Germinated}{time
+#'   \item{t50.total}{Time required for 50\% of total seeds to germinate.}. Will
+#'   be \code{NaN} if more than 50\% of total seeds do not germinate.
+#'   \item{txp.total}{Time required for x\% (as specified in argument \code{xp})
+#'   of total seeds to germinate. Will be \code{NaN} if more than x\% of total
+#'   seeds do not germinate.} \item{t50.Germinated}{Time required for 50\%
+#'   of viable/germinated seeds to germinate.} \item{txp.Germinated}{Time
 #'   required for x\% (as specified in argument \code{xp}) of viable/germinated
 #'   seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
 #'   and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
@@ -297,7 +299,20 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       }
     }
 
-    if (mean(peakg) <= 1) {
+    # test starting values
+    possibleError <- tryCatch(
+
+      nlsLM(
+        csgp ~ FourPHF(x = intervals, a, b, c, y0),
+        data = df,
+        start = list(a = starta, b = startb, c = startc, y0 = starty0),
+        lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
+        upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
+        control = list(maxiter = 1024, warnOnly = FALSE)),
+
+      error = function(e) e)
+
+    if (inherits(possibleError, "error") & mean(peakg) <= 3) {
       csgp2 <- c(csgp, rep(max(csgp), 20))
       intervals2 <- seq_along(csgp2)
       df2 <- data.frame(csgp2, intervals2)
@@ -327,11 +342,44 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
         error = function(e) e)
 
       if (!inherits(tmod, "error")) {
-        startb <-  unname(coef(tmod)["b"])
-        # startc <-  unname(coef(tmod)["c"])
+
+        tmod2 <- tryCatch(
+
+          suppressWarnings(nlsLM(
+            csgp ~ FourPHF(x = intervals, a, b, c, y0),
+            data = df,
+            start = list(a = starta, b = startb, c = startc, y0 = starty0),
+            lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
+            upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
+            control = list(maxiter = 1024, warnOnly = FALSE))),
+
+          error = function(e) e)
+
+        tmod3 <- tryCatch(
+
+          suppressWarnings(nlsLM(
+            csgp ~ FourPHF(x = intervals, a, b, c, y0),
+            data = df,
+            start = list(a = starta, b = startb/2, c = startc, y0 = starty0),
+            lower = c(a = lowera, b = lowerb, c = lowerc, y0 = lowery0),
+            upper = c(a = uppera, b = upperb, c = upperc, y0 = uppery0),
+            control = list(maxiter = 1024, warnOnly = FALSE))),
+
+          error = function(e) e)
+
+        if (!inherits(tmod2, "error")) {
+          startb <-  unname(coef(tmod2)["b"])
+          # startc <-  unname(coef(tmod)["c"])
+        }
+
+        if (!inherits(tmod3, "error")) {
+          startb <-  unname(coef(tmod3)["b"])
+        }
+
       }
 
     }
+    rm(possibleError)
 
 
     #=============================================================================

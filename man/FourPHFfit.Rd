@@ -61,10 +61,12 @@ A list with the following components: \item{data}{A data frame with
   half-maximal activation level.}  \item{y0}{The intercept on the y axis.}
   \item{lag}{Time at germination onset.} \item{Dlag50}{duration between the
   time at germination onset (lag) and that at 50\% germination.}
-  \item{t50.total}{time required for 50\% of total seeds to germinate.}
-  \item{txp.total}{time required for x\% (as specified in argument \code{xp})
-  of total seeds to germinate.} \item{t50.Germinated}{time required for 50\%
-  of viable/germinated seeds to germinate.} \item{txp.Germinated}{time
+  \item{t50.total}{Time required for 50\% of total seeds to germinate.}. Will
+  be \code{NaN} if more than 50\% of total seeds do not germinate.
+  \item{txp.total}{Time required for x\% (as specified in argument \code{xp})
+  of total seeds to germinate. Will be \code{NaN} if more than x\% of total
+  seeds do not germinate.} \item{t50.Germinated}{Time required for 50\%
+  of viable/germinated seeds to germinate.} \item{txp.Germinated}{Time
   required for x\% (as specified in argument \code{xp}) of viable/germinated
   seeds to germinate.} \item{Uniformity}{Time interval between \code{umin}\%
   and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
