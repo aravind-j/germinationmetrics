@@ -112,14 +112,14 @@ osdf <-
         # data.frame(OS = "Solaris", 
         #            Flavour = c("r-patched-solaris-x86")),
         data.frame(OS = "Windows", 
-                   Flavour = c("r-devel-windows-x86_64", 
-                               "r-release-windows-x86_64",
+                   Flavour = c("r-devel-windows-ix86+x86_64", 
+                               "r-release-windows-ix86+x86_64",
                                "r-oldrel-windows-ix86+x86_64")),
         data.frame(OS = "macOS", 
                    Flavour = c("r-release-macos-x86_64", 
-                               "r-oldrel-macos-x86_64",
-                               "r-release-macos-arm64",
-                               "r-oldrel-macos-arm64")))
+                               # "r-release-macos-arm64",
+                               # "r-oldrel-macos-arm64",
+                               "r-oldrel-macos-x86_64")))
 
 chkurl <- paste("https://cran.r-project.org/web/checks/check_results_",
                 pkgname, ".html", sep = "")
@@ -132,8 +132,8 @@ if (url.exists(chkurl)) {
 }
 
 osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
-                           "(https://cranchecks.info/badges/flavor/",
-                           osdf$Flavour, "/", pkgname, ")]",
+                           "(https://badges.cranchecks.info/flavor/",
+                           osdf$Flavour, "/", pkgname, ".svg)]",
                            chklink,
                            sep = "")
 ```
@@ -148,7 +148,7 @@ kosdf2 <- kable_styling(kosdf, bootstrap_options = c("striped", "hover"),
               full_width = F, position = "left")
 
 # os_index <- c(6, 1, 3, 2)
-os_index <- c(6, 3, 4)
+os_index <- c(6, 3, 2)
 
 names(os_index) <- c(paste("[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)]",
                            chklink, sep = ""),
