@@ -1,0 +1,318 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "identifier": "germinationmetrics",
+  "description": "Provides functions to compute various germination indices such as germinability, median germination time, mean germination time, mean germination rate, speed of germination, Timson's index, germination value, coefficient of uniformity of germination, uncertainty of germination process, synchrony of germination etc. from germination count data. Includes functions for fitting cumulative seed germination curves using four-parameter hill function and computation of associated parameters. See the vignette for more, including full list of citations for the methods implemented.",
+  "name": "germinationmetrics: Seed Germination Indices and Curve Fitting",
+  "relatedLink": ["https://aravind-j.github.io/germinationmetrics/", "https://CRAN.R-project.org/package=germinationmetrics", "https://doi.org/10.5281/zenodo.1219630"],
+  "codeRepository": "https://github.com/aravind-j/germinationmetrics",
+  "issueTracker": "https://github.com/aravind-j/germinationmetrics/issues",
+  "license": "https://spdx.org/licenses/GPL-2.0",
+  "version": "0.1.7",
+  "programmingLanguage": {
+    "@type": "ComputerLanguage",
+    "name": "R",
+    "url": "https://r-project.org"
+  },
+  "runtimePlatform": "R Under development (unstable) (2022-08-18 r82725 ucrt)",
+  "provider": {
+    "@id": "https://cran.r-project.org",
+    "@type": "Organization",
+    "name": "Comprehensive R Archive Network (CRAN)",
+    "url": "https://cran.r-project.org"
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "J.",
+      "familyName": "Aravind",
+      "email": "j.aravind@icar.gov.in",
+      "@id": "https://orcid.org/0000-0002-4791-442X"
+    },
+    {
+      "@type": "Person",
+      "givenName": "S.",
+      "familyName": "Vimala Devi",
+      "email": "vimala.devi@icar.gov.in"
+    },
+    {
+      "@type": "Person",
+      "givenName": "J.",
+      "familyName": "Radhamani",
+      "email": "jalli.radhamani@icar.gov.in"
+    },
+    {
+      "@type": "Person",
+      "givenName": ["Sherry", "Rachel"],
+      "familyName": "Jacob",
+      "email": "sherry.jacob@icar.gov.in"
+    },
+    {
+      "@type": "Organization",
+      "name": ["Kalyani", "Srinivasan"],
+      "email": "kalyani.srinivasan@icar.gov.in"
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Organization",
+      "name": "ICAR-NBGPR"
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "J.",
+      "familyName": "Aravind",
+      "email": "j.aravind@icar.gov.in",
+      "@id": "https://orcid.org/0000-0002-4791-442X"
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "httr",
+      "name": "httr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=httr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "knitr",
+      "name": "knitr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=knitr"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "pander",
+      "name": "pander",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=pander"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "RCurl",
+      "name": "RCurl",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=RCurl"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "reshape2",
+      "name": "reshape2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=reshape2"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "rmarkdown",
+      "name": "rmarkdown",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rmarkdown"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "XML",
+      "name": "XML",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=XML"
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "R",
+      "name": "R",
+      "version": ">= 3.5.0"
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "broom",
+      "name": "broom",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=broom"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
+      "identifier": "data.table",
+      "name": "data.table",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=data.table"
+    },
+    "4": {
+      "@type": "SoftwareApplication",
+      "identifier": "ggplot2",
+      "name": "ggplot2",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ggplot2"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
+      "identifier": "ggrepel",
+      "name": "ggrepel",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=ggrepel"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
+      "identifier": "mathjaxr",
+      "name": "mathjaxr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=mathjaxr"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
+      "identifier": "minpack.lm",
+      "name": "minpack.lm",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=minpack.lm"
+    },
+    "8": {
+      "@type": "SoftwareApplication",
+      "identifier": "plyr",
+      "name": "plyr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=plyr"
+    },
+    "9": {
+      "@type": "SoftwareApplication",
+      "identifier": "Rdpack",
+      "name": "Rdpack",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=Rdpack"
+    },
+    "10": {
+      "@type": "SoftwareApplication",
+      "identifier": "stats",
+      "name": "stats"
+    },
+    "11": {
+      "@type": "SoftwareApplication",
+      "identifier": "utils",
+      "name": "utils"
+    },
+    "SystemRequirements": null
+  },
+  "fileSize": "1656.593KB",
+  "citation": [
+    {
+      "@type": "SoftwareSourceCode",
+      "datePublished": "2022",
+      "author": [
+        {
+          "@type": "Person",
+          "givenName": "J.",
+          "familyName": "Aravind",
+          "email": "j.aravind@icar.gov.in",
+          "@id": "https://orcid.org/0000-0002-4791-442X"
+        },
+        {
+          "@type": "Person",
+          "givenName": "S.",
+          "familyName": "Vimala Devi",
+          "email": "vimala.devi@icar.gov.in"
+        },
+        {
+          "@type": "Person",
+          "givenName": "J.",
+          "familyName": "Radhamani",
+          "email": "jalli.radhamani@icar.gov.in"
+        },
+        {
+          "@type": "Person",
+          "givenName": ["Sherry", "Rachel"],
+          "familyName": "Jacob",
+          "email": "sherry.jacob@icar.gov.in"
+        },
+        {
+          "@type": "Organization",
+          "name": ["Kalyani", "Srinivasan"],
+          "email": "kalyani.srinivasan@icar.gov.in"
+        }
+      ],
+      "name": "germinationmetrics: Seed Germination Indices and Curve Fitting",
+      "description": ["R package version 0.1.7", "https://github.com/aravind-j/germinationmetrics", "https://cran.r-project.org/package=germinationmetrics"]
+    }
+  ],
+  "releaseNotes": "https://github.com/aravind-j/germinationmetrics/blob/master/NEWS.md",
+  "readme": "https://github.com/aravind-j/germinationmetrics/blob/master/README.md",
+  "contIntegration": "https://github.com/aravind-j/germinationmetrics/actions",
+  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#stable"],
+  "keywords": ["r", "seed-germination-indices", "seed", "germination", "seed-germination-curve", "germination-indices", "curve-fitting"]
+}

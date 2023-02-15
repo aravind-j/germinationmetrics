@@ -29,3 +29,5 @@
 ^CRAN-RELEASE$
 ^\.github$
 ^RoughWork$
+^CITATION\.cff$
+^codemeta\.json$
