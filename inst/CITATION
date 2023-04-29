@@ -1,3 +1,4 @@
+citHeader("To cite the R package 'germinationmetrics' in publications use:")
 
 if(!exists("meta") || is.null(meta)) meta <- packageDescription("germinationmetrics")
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
@@ -6,35 +7,32 @@ if (!length(year)) {
 }
 vers <- paste("R package version", meta$Version)
 
-hd <- "To cite the R package 'augmentedRCBD' in publications use:"
-ft <- paste("This free and open-source software implements academic",
-            "research by the authors and co-workers. If you use it, please support",
-            "the project by citing the package.", collapse = "\n")
-
-bibentry(header = hd,
-         bibtype = "Manual",
+bibentry(bibtype  = "Manual",
          title  = "germinationmetrics: Seed Germination Indices and Curve Fitting",
-         author = personList(person(given = "J.", family = "Aravind",
-                                    email = "j.aravind@icar.gov.in",
-                                    role = c("aut", "cre"),
-									                  comment = c(ORCID = "0000-0002-4791-442X")),
-							               person(given = "S.", family = "Vimala Devi",
-                                    email = "vimala.devi@icar.gov.in",
-									                  role = "aut"),
-                             person(given = "J.", family = "Radhamani",
-                                    email = "jalli.radhamani@icar.gov.in",
-									                  role = "aut"),
-							               person(given = c("Sherry", "Rachel"), family = "Jacob",
-                                    email = "sherry.jacob@icar.gov.in",
-									                  role = "aut"),
-                             person(given = c("Kalyani", "Srinivasan"),
-                                    email = "kalyani.srinivasan@icar.gov.in",
-									                  role = "aut")),
+         author = c(person(given = "J.", family = "Aravind",
+                           email = "j.aravind@icar.gov.in",
+                           role = c("aut", "cre"),
+									         comment = c(ORCID = "0000-0002-4791-442X")),
+							      person(given = "S.", family = "Vimala Devi",
+                           email = "vimala.devi@icar.gov.in",
+									         role = "aut"),
+                    person(given = "J.", family = "Radhamani",
+                           email = "jalli.radhamani@icar.gov.in",
+									         role = "aut"),
+							      person(given = c("Sherry", "Rachel"), family = "Jacob",
+                           email = "sherry.jacob@icar.gov.in",
+									         role = "aut"),
+                    person(given = c("Kalyani", "Srinivasan"),
+                           email = "kalyani.srinivasan@icar.gov.in",
+									         role = "aut")),
          year = year,
          textVersion = paste(
            "Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (",
            year, ").  germinationmetrics: Seed Germination Indices and Curve Fitting. ",
            vers, ", ", "https://github.com/aravind-j/germinationmetrics", "https://cran.r-project.org/package=germinationmetrics",
            ".", sep=""),
-         note = {c(paste(vers), "https://github.com/aravind-j/germinationmetrics", "https://cran.r-project.org/package=germinationmetrics")},
-         footer = ft)
+         note = {c(paste(vers), "https://aravind-j.github.io/germinationmetrics/", "https://CRAN.R-project.org/package=germinationmetrics")})
+
+citFooter("This free and open-source software implements academic
+research by the authors and co-workers. If you use it, please support
+the project by citing the package.")
