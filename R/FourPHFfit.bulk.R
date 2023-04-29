@@ -227,6 +227,12 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
 
   setDF(data)
 
+  # Convert partial back to cumulative if original data was cumulative
+  if (!partial) {
+    data[, counts.intervals.cols] <- t(apply(data[, counts.intervals.cols], 1,
+                                             function(x) cumsum(x)))
+  }
+
   arguments <- list(total.seeds.col = total.seeds.col,
                     counts.intervals.cols = counts.intervals.cols,
                     intervals = intervals, partial = partial, fix.y0 = fix.y0,

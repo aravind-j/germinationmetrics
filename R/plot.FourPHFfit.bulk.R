@@ -224,7 +224,7 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
           dfcsgp[, total.seeds.col] * 100
 
         levels(dfcsgp$intervals) <- intervals
-        dfcsgp$intervals <- as.numeric(as.character(dfgp$intervals))
+        dfcsgp$intervals <- as.numeric(as.character(dfcsgp$intervals))
       }
 
       Gplot <- Gplot +

@@ -143,7 +143,7 @@ FirstGermTime <- function(germ.counts, intervals, partial = TRUE) {
 
   df <- data.frame(germ.counts, intervals)
 
-  FGT <- min(which(df$germ.counts != 0))
+  FGT <- intervals[min(which(df$germ.counts != 0))]
 
   return(FGT)
 }
@@ -178,7 +178,7 @@ LastGermTime <-  function(germ.counts, intervals, partial = TRUE) {
 
   df <- data.frame(germ.counts, intervals)
 
-  LGT <- max(which(df$germ.counts != 0))
+  LGT <- intervals[max(which(df$germ.counts != 0))]
 
   return(LGT)
 }

@@ -1,7 +1,12 @@
+# germinationmetrics  0.1.8
+## UPDATED FUNCTIONS:
+* `FirstGermTime`, `LastGermTime`, `TimeSpreadGerm` - Fixed issue with incorrect display of results in case of intervals which are not in days (Thanks to D. Vijay for Dunna.Vijay[at]icar.gov.in).
+* `FourPHFfit.bulk` and `plot.FourPHFfit.bulk` - Fixed issue with plotting of cumulative data with `show.points = TRUE` (Thanks to D. Vijay for Dunna.Vijay[at]icar.gov.in).
+
 # germinationmetrics  0.1.7
 
 ## UPDATED FUNCTIONS:
-* `FourPHFfit.bulk` - Fixed false "`total number of seeds tested is less than the total number of germinated seeds`" warning when germination count data is cumulative (Thanks to D. Vijay for vijaydunna[at]gmail.com).
+* `FourPHFfit.bulk` - Fixed false "`total number of seeds tested is less than the total number of germinated seeds`" warning when germination count data is cumulative (Thanks to D. Vijay for Dunna.Vijay[at]icar.gov.in).
 * `FourPHFfit` - Updated computation of starting values.
 
 ## VIGNETTE:
