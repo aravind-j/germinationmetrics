@@ -3,7 +3,7 @@ pkgdown: 2.0.7
 pkgdown_sha: ~
 articles:
   Introduction: Introduction.html
-last_built: 2023-02-16T18:19Z
+last_built: 2023-05-13T05:00Z
 urls:
   reference: https://aravind-j.github.io/germinationmetrics/reference
   article: https://aravind-j.github.io/germinationmetrics/articles
