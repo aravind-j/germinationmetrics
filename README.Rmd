@@ -50,6 +50,7 @@ cat(paste("[![develVersion](https://img.shields.io/badge/devel%20version-", dver
 <!-- [![GitHub Download Count](https://github-basic-badges.herokuapp.com/downloads/aravind-j/germinationmetrics/total.svg)] -->
 <!-- [![Rdoc](https://www.rdocumentation.org/badges/version/germinationmetrics)](https://www.rdocumentation.org/packages/germinationmetrics) -->
 <!-- badges: end -->
+
 ***
 
 ## Description
@@ -112,9 +113,9 @@ osdf <-
         # data.frame(OS = "Solaris", 
         #            Flavour = c("r-patched-solaris-x86")),
         data.frame(OS = "Windows", 
-                   Flavour = c("r-devel-windows-ix86+x86_64", 
-                               "r-release-windows-ix86+x86_64",
-                               "r-oldrel-windows-ix86+x86_64")),
+                   Flavour = c("r-devel-windows-x86_64", 
+                               "r-release-windows-x86_64",
+                               "r-oldrel-windows-x86_64")),
         data.frame(OS = "macOS", 
                    Flavour = c("r-release-macos-x86_64", 
                                # "r-release-macos-arm64",
