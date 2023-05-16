@@ -26,7 +26,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/germinationmet
 [![Project Status:
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2023--05--16-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2023--05--17-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
 [![Website -
@@ -97,134 +97,31 @@ news(package='germinationmetrics')
 
 ## CRAN checks
 
-<table class="table table-striped table-hover" style="width: auto !important; ">
-<thead>
-<tr>
-<th style="text-align:left;">
-Flavour
-</th>
-<th style="text-align:left;">
-CRAN check
-</th>
-</tr>
-</thead>
-<tbody>
-<tr grouplength="6">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Linux](https://shields.io/badge/Linux--9cf?logo=Linux&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-debian-clang
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-debian-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-clang/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-debian-gcc
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-debian-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-gcc/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-fedora-clang
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-fedora-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-clang/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-linux-x86_64-fedora-gcc
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-linux-x86_64-fedora-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-gcc/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-patched-linux-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-patched-linux-x86_64](https://badges.cranchecks.info/flavor/r-patched-linux-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-linux-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-linux-x86_64](https://badges.cranchecks.info/flavor/r-release-linux-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr grouplength="3">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![Windows](https://shields.io/badge/Windows--9cf?logo=Windows&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-devel-windows-ix86+x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-devel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-devel-windows-ix86+x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-windows-ix86+x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-release-windows-ix86+x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-windows-ix86+x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-oldrel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-oldrel-windows-ix86+x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr grouplength="2">
-<td colspan="2" style="border-bottom: 1px solid;">
-<strong>[![MacOS](https://shields.io/badge/MacOS--9cf?logo=Apple&style=social)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)</strong>
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-release-macos-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-release-macos-x86_64](https://badges.cranchecks.info/flavor/r-release-macos-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-<tr>
-<td style="text-align:left;padding-left: 2em;" indentlevel="1">
-r-oldrel-macos-x86_64
-</td>
-<td style="text-align:left;">
-[![CRAN check -
-r-oldrel-macos-x86_64](https://badges.cranchecks.info/flavor/r-oldrel-macos-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
-</td>
-</tr>
-</tbody>
-</table>
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                                   |                                                                                                                                                                                                                                  |
+|:----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-linux-x86_64-debian-clang | [![CRAN check - r-devel-linux-x86_64-debian-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-clang/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-devel-linux-x86_64-debian-gcc   | [![CRAN check - r-devel-linux-x86_64-debian-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-gcc/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)     |
+| r-devel-linux-x86_64-fedora-clang | [![CRAN check - r-devel-linux-x86_64-fedora-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-clang/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-devel-linux-x86_64-fedora-gcc   | [![CRAN check - r-devel-linux-x86_64-fedora-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-gcc/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)     |
+| r-patched-linux-x86_64            | [![CRAN check - r-patched-linux-x86_64](https://badges.cranchecks.info/flavor/r-patched-linux-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)                       |
+| r-release-linux-x86_64            | [![CRAN check - r-release-linux-x86_64](https://badges.cranchecks.info/flavor/r-release-linux-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)                       |
+
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                               |                                                                                                                                                                                                                          |
+|:------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-windows-ix86+x86_64   | [![CRAN check - r-devel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-devel-windows-ix86+x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)     |
+| r-release-windows-ix86+x86_64 | [![CRAN check - r-release-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-release-windows-ix86+x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-oldrel-windows-ix86+x86_64  | [![CRAN check - r-oldrel-windows-ix86+x86_64](https://badges.cranchecks.info/flavor/r-oldrel-windows-ix86+x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)   |
+
+[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                        |                                                                                                                                                                                                            |
+|:-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-release-macos-x86_64 | [![CRAN check - r-release-macos-x86_64](https://badges.cranchecks.info/flavor/r-release-macos-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-oldrel-macos-x86_64  | [![CRAN check - r-oldrel-macos-x86_64](https://badges.cranchecks.info/flavor/r-oldrel-macos-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)   |
 
 ## Citing `germinationmetrics`
 
