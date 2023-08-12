@@ -143,21 +143,21 @@ osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",
 ```{r, echo = FALSE, results='asis'}
 cat("[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)", "\n")
 
-kable(osdf[osdf$OS == "Linux", c(2, 3)], format = "simple", 
-      col.names = c("", ""), 
-      row.names = FALSE)
+knitr::kable(osdf[osdf$OS == "Linux", c(2, 3)], format = "simple", 
+             col.names = c("", ""), 
+             row.names = FALSE)
 
 cat("[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)", "\n")
 
-kable(osdf[osdf$OS == "Windows", c(2, 3)], format = "simple", 
-      col.names = c("", ""),
-      row.names = FALSE)
+knitr::kable(osdf[osdf$OS == "Windows", c(2, 3)], format = "simple", 
+             col.names = c("", ""),
+             row.names = FALSE)
 
 cat("[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)", "\n")
 
-kable(osdf[osdf$OS == "macOS", c(2, 3)], format = "simple", 
-      col.names = c("", ""),
-      row.names = FALSE)
+knitr::kable(osdf[osdf$OS == "macOS", c(2, 3)], format = "simple", 
+             col.names = c("", ""),
+             row.names = FALSE)
 
 cat("\n")
 ```
