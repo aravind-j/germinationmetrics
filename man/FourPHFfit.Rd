@@ -61,8 +61,8 @@ A list with the following components: \item{data}{A data frame with
   half-maximal activation level.}  \item{y0}{The intercept on the y axis.}
   \item{lag}{Time at germination onset.} \item{Dlag50}{duration between the
   time at germination onset (lag) and that at 50\% germination.}
-  \item{t50.total}{Time required for 50\% of total seeds to germinate.}. Will
-  be \code{NaN} if more than 50\% of total seeds do not germinate.
+  \item{t50.total}{Time required for 50\% of total seeds to germinate. Will
+  be \code{NaN} if more than 50\% of total seeds do not germinate.}
   \item{txp.total}{Time required for x\% (as specified in argument \code{xp})
   of total seeds to germinate. Will be \code{NaN} if more than x\% of total
   seeds do not germinate.} \item{t50.Germinated}{Time required for 50\%
@@ -74,6 +74,8 @@ A list with the following components: \item{data}{A data frame with
   curve.} \item{MGT}{Mean germination time.} \item{Skewness}{Skewness of mean
   germination time.} \item{msg}{The message from \code{nls.lm}.}
   \item{isConv}{Logical value indicating whether convergence was achieved.}
+  \item{model}{The raw fitted model output as a list of class
+  \code{gsl_nls}.}
 }
 \description{
 Fit a four-parameter hill function
@@ -97,6 +99,20 @@ shorter the time between germination onset and maximum germination), and
 \mjseqn{c} is the "half-maximal activation level" which represents the time
 required for 50\% of viable seeds to germinate (\mjseqn{c} is equivalent to
 the germination speed).
+
+In \code{FourPHFfit}, this model has be reparameterized by substituting
+\mjseqn{b} with \mjseqn{e^{\beta}} to constraint \mjseqn{b} to positive
+values only.
+
+\mjsdeqn{y = y_{0}+\frac{ax^{e^{\beta}}}{c^{e^{\beta}}+x^{e^{\beta}}}}
+
+Where, \mjseqn{b = e^{\beta}} and \mjseqn{\beta = \log_{e}(b)}.
+
+The curve fitting is performed with nonlinear
+\code{\link[gslnls:gsl_nls]{gslnls}} package, a R interface to the
+least-squares optimization with the GNU Scientific Library (GSL) with the
+Levenberg-Marquardt algorithm
+\insertCite{galassi_gnu_2009,chau_gslnls_2023}{germinationmetrics}.
 
 Once this function is fitted to the curve, \code{FourPHFfit} computes the
 time to 50\% germination of total seeds (\code{t50.total}) or viable seeds
@@ -131,7 +147,7 @@ germination rate (\mjseqn{TMGR}) can be estimated as follows.
 TMGR represents the point in time when the instantaneous rate of germination
 starts to decline.
 
-The area under the curve (\mjseqn{AUC}) is obtained by integration of the
+The area under the curve (\mjseqn{AUC}) is obined by integration of the
 fitted curve between time 0 and time specified in the argument `tmax`.
 
 Integration of the fitted curve gives the value of mean germination time

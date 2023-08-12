@@ -138,7 +138,8 @@ plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
     Gplot <- ggplot(data = df, aes(x = intervals, y = csgp)) +
       geom_point(alpha = 0.5) +
       stat_function(fun = FourPHF, colour = "red2",
-                    args = list(a = a, b = b, c = c, y0 = y0)) +
+                    args = list(a = a, bta = log(b, base = exp(1)),
+                                c = c, y0 = y0)) +
       labs(x = "Time", y = "Germination (%)") +
       theme_bw()
 
