@@ -1,11 +1,7 @@
 citHeader("To cite the R package 'germinationmetrics' in publications use:")
 
-if(!exists("meta") || is.null(meta)) meta <- packageDescription("germinationmetrics")
-year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date)
-if (!length(year)) {
- year <- format(packageDate("germinationmetrics"), "%Y")
-}
-vers <- paste("R package version", meta$Version)
+year <- sub("-.*", "", meta$Date)
+vers <- sprintf("R package version %s", meta$Version)
 
 bibentry(bibtype  = "Manual",
          title  = "germinationmetrics: Seed Germination Indices and Curve Fitting",
