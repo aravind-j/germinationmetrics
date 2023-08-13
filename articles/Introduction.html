@@ -116,7 +116,7 @@ Brief Introduction</h1>
 Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani
 Srinivasan</h4>
             
-            <h4 data-toc-skip class="date">2023-05-16</h4>
+            <h4 data-toc-skip class="date">2023-08-13</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="hidden name"><code>Introduction.Rmd</code></div>
@@ -1328,6 +1328,11 @@ cumulative germination percentage at time <span class="math inline">\(x\)</span>
 <span class="math inline">\(a\)</span> is the asymptote, <span class="math inline">\(b\)</span> is a mathematical parameter controlling
 the shape and steepness of the germination curve and <span class="math inline">\(c\)</span> is the “half-maximal activation
 level”.</p>
+<p>this function can also be be reparameterized by substituting <span class="math inline">\(b\)</span> with <span class="math inline">\(e^{\beta}\)</span> to constraint <span class="math inline">\(b\)</span> to positive values only.</p>
+<p><span class="math display">\[
+y = y_{0}+\frac{ax^{e^{\beta}}}{c^{e^{\beta}}+x^{e^{\beta}}}
+\]</span> Where, <span class="math inline">\(b = e^{\beta}\)</span> and
+<span class="math inline">\(\beta = \log_{e}(b)\)</span>.</p>
 <p>The details of various parameters that are computed from this
 function are given in Table 4.</p>
 <p><strong>Table 4</strong> Germination parameters estimated from the
@@ -1350,6 +1355,8 @@ four-parameter hill function.</p>
 <span><span class="co"># From partial germination counts</span></span>
 <span><span class="co">#----------------------------------------------------------------------------</span></span>
 <span><span class="fu"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </code></pre>
 <pre><code>$data
    gp csgp intervals
 1   0    0         1
@@ -1368,79 +1375,82 @@ four-parameter hill function.</p>
 14  0   80        14
 
 $Parameters
-  term  estimate  std.error statistic      p.value
-1    a 80.000000 1.24158597  64.43372 1.973240e-14
-2    b  9.881947 0.70779381  13.96162 6.952324e-08
-3    c  6.034954 0.04952654 121.85294 3.399384e-17
-4   y0  0.000000 0.91607007   0.00000 1.000000e+00
+  term estimate std.error statistic p.value
+1    a       NA        NA        NA      NA
+2    b       NA        NA        NA      NA
+3    c       NA        NA        NA      NA
+4   y0       NA        NA        NA      NA
 
 $Fit
-     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-1 1.769385   TRUE 1.490116e-08 -25.49868 60.99736 64.19265 31.30723          10
-  nobs
-1   14
+  sigma isConv finTol logLik AIC BIC deviance df.residual nobs
+1    NA     NA     NA     NA  NA  NA       NA          NA   NA
 
 $a
-[1] 80
+[1] NA
 
 $b
-[1] 9.881947
+[1] NA
 
 $c
-[1] 6.034954
+[1] NA
 
 $y0
-[1] 0
+[1] NA
 
 $lag
-[1] 0
+[1] NA
 
 $Dlag50
-[1] 6.034954
+[1] NA
 
 $t50.total
-[1] 6.355122
+[1] NA
 
 $txp.total
-      10       60 
-4.956266 6.744598 
+10 60 
+NA NA 
 
 $t50.Germinated
-[1] 6.034954
+[1] NA
 
 $txp.Germinated
-      10       60 
-4.831809 6.287724 
+10 60 
+NA NA 
 
 $Uniformity
         90         10 uniformity 
-  7.537688   4.831809   2.705880 
+        NA         NA         NA 
 
 $TMGR
-[1] 5.912195
+[1] NA
 
 $AUC
-[1] 1108.975
+[1] NA
 
 $MGT
-[1] 6.632252
+[1] NA
 
 $Skewness
-[1] 1.098973
+[1] NA
 
 $msg
-[1] "#1. Relative error in the sum of squares is at most `ftol'. "
+[1] "#1. failed to evaluate 'fn' at starting values: could not find function \"FourPHF_fixa_fixy0\" "
 
 $isConv
-[1] TRUE
+[1] NA
+
+$model
+&lt;simpleError in gsl_nls.formula(csgp ~ FourPHF_fixa_fixy0(x = intervals, a = max(csgp),     bta, c), data = df, algorithm = "lm", start = list(bta = startbta,     c = startc), control = list(maxiter = 1024, warnOnly = FALSE,     scale = "levenberg")): failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0"&gt;
 
 attr(,"class")
 [1] "FourPHFfit" "list"      </code></pre>
-<div class="sourceCode" id="cb241"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb242"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># From cumulative germination counts</span></span>
 <span><span class="co">#----------------------------------------------------------------------------</span></span>
 <span><span class="fu"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span>,</span>
 <span>partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </code></pre>
 <pre><code>$data
    gp csgp intervals
 1   0    0         1
@@ -1459,75 +1469,76 @@ attr(,"class")
 14  0   80        14
 
 $Parameters
-  term  estimate std.error statistic      p.value
-1    a 80.000000 1.2415867  64.43368 1.973252e-14
-2    b  9.881927 0.7077918  13.96163 6.952270e-08
-3    c  6.034953 0.0495266 121.85275 3.399437e-17
-4   y0  0.000000 0.9160705   0.00000 1.000000e+00
+  term estimate std.error statistic p.value
+1    a       NA        NA        NA      NA
+2    b       NA        NA        NA      NA
+3    c       NA        NA        NA      NA
+4   y0       NA        NA        NA      NA
 
 $Fit
-     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-1 1.769385   TRUE 1.490116e-08 -25.49868 60.99736 64.19265 31.30723          10
-  nobs
-1   14
+  sigma isConv finTol logLik AIC BIC deviance df.residual nobs
+1    NA     NA     NA     NA  NA  NA       NA          NA   NA
 
 $a
-[1] 80
+[1] NA
 
 $b
-[1] 9.881927
+[1] NA
 
 $c
-[1] 6.034953
+[1] NA
 
 $y0
-[1] 0
+[1] NA
 
 $lag
-[1] 0
+[1] NA
 
 $Dlag50
-[1] 6.034953
+[1] NA
 
 $t50.total
-[1] 6.355121
+[1] NA
 
 $txp.total
-      10       60 
-4.956263 6.744599 
+10 60 
+NA NA 
 
 $t50.Germinated
-[1] 6.034953
+[1] NA
 
 $txp.Germinated
-      10       60 
-4.831806 6.287723 
+10 60 
+NA NA 
 
 $Uniformity
         90         10 uniformity 
-  7.537691   4.831806   2.705885 
+        NA         NA         NA 
 
 $TMGR
-[1] 5.912194
+[1] NA
 
 $AUC
-[1] 1108.976
+[1] NA
 
 $MGT
-[1] 6.632252
+[1] NA
 
 $Skewness
-[1] 1.098973
+[1] NA
 
 $msg
-[1] "#1. Relative error in the sum of squares is at most `ftol'. "
+[1] "#1. failed to evaluate 'fn' at starting values: could not find function \"FourPHF_fixa_fixy0\" "
 
 $isConv
-[1] TRUE
+[1] NA
+
+$model
+&lt;simpleError in gsl_nls.formula(csgp ~ FourPHF_fixa_fixy0(x = intervals, a = max(csgp),     bta, c), data = df, algorithm = "lm", start = list(bta = startbta,     c = startc), control = list(maxiter = 1024, warnOnly = FALSE,     scale = "levenberg")): failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0"&gt;
 
 attr(,"class")
 [1] "FourPHFfit" "list"      </code></pre>
-<div class="sourceCode" id="cb243"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">17</span>, <span class="fl">10</span>, <span class="fl">7</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span><span class="op">)</span></span>
 <span><span class="va">y</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">0</span>, <span class="fl">4</span>, <span class="fl">21</span>, <span class="fl">31</span>, <span class="fl">38</span>, <span class="fl">39</span>, <span class="fl">39</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span>, <span class="fl">40</span><span class="op">)</span></span>
 <span><span class="va">int</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fu"><a href="https://rdrr.io/r/base/length.html" class="external-link">length</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span></span>
@@ -1536,41 +1547,95 @@ attr(,"class")
 <span><span class="co"># From partial germination counts</span></span>
 <span><span class="co">#----------------------------------------------------------------------------</span></span>
 <span><span class="va">fit1</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
-<span>                   total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># From cumulative germination counts</span></span>
+<span>                   total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </code></pre>
+<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># From cumulative germination counts</span></span>
 <span><span class="co">#----------------------------------------------------------------------------</span></span>
 <span><span class="va">fit2</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/FourPHFfit.html">FourPHFfit</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
-<span>                   total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Default plots</span></span>
+<span>                   total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </code></pre>
+<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Default plots</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).
+ [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-1.png" width="576"></p>
-<div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).
+ [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-2.png" width="576"></p>
-<div class="sourceCode" id="cb245"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># No labels</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span>, plotlabels <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).
+ [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-3.png" width="576"></p>
-<div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span>, plotlabels <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).
+ [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-4.png" width="576"></p>
-<div class="sourceCode" id="cb247"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Only the FPHF curve</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span>, rog <span class="op">=</span> <span class="cn">FALSE</span>, t50.total <span class="op">=</span> <span class="cn">FALSE</span>, t50.germ <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>     tmgr <span class="op">=</span> <span class="cn">FALSE</span>, mgt <span class="op">=</span> <span class="cn">FALSE</span>, uniformity <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-5.png" width="576"></p>
-<div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb275"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span>, rog <span class="op">=</span> <span class="cn">FALSE</span>, t50.total <span class="op">=</span> <span class="cn">FALSE</span>, t50.germ <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>     tmgr <span class="op">=</span> <span class="cn">FALSE</span>, mgt <span class="op">=</span> <span class="cn">FALSE</span>, uniformity <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-6.png" width="576"></p>
-<div class="sourceCode" id="cb249"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb277"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Without y axis limits adjustment</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span>, limits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).
+ [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-7.png" width="576"></p>
-<div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb283"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span>, limits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 101 rows containing missing values (`geom_function()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).
+ [1m [22mRemoved 14 rows containing missing values (`geom_segment()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).
+ [1m [22mRemoved 1 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-8.png" width="576"></p>
 </div>
 </div>
@@ -1588,7 +1653,7 @@ germination counts recorded at specific time intervals.</p>
 </h4>
 <p>This wrapper function can be used to compute several germination
 indices simultaneously for multiple samples in batch.</p>
-<div class="sourceCode" id="cb251"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb289"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</span>
@@ -1828,7 +1893,7 @@ indices simultaneously for multiple samples in batch.</p>
 </h4>
 <p>This wrapper function can be used to fit the four-parameter hill
 function for multiple samples in batch.</p>
-<div class="sourceCode" id="cb253"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb291"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</span>
@@ -1840,6 +1905,50 @@ function for multiple samples in batch.</p>
 <span>                    intervals <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>, partial <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                    fix.y0 <span class="op">=</span> <span class="cn">TRUE</span>, fix.a <span class="op">=</span> <span class="cn">TRUE</span>, xp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">60</span><span class="op">)</span>,</span>
 <span>                    tmax <span class="op">=</span> <span class="fl">20</span>, tries <span class="op">=</span> <span class="fl">3</span>, umax <span class="op">=</span> <span class="fl">90</span>, umin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </code></pre>
 <pre><code>   Genotype Rep Day01 Day02 Day03 Day04 Day05 Day06 Day07 Day08 Day09 Day10
 1        G1   1     0     0     0     0     4    17    10     7     1     0
 2        G2   1     0     0     0     1     3    15    13     6     2     1
@@ -1856,72 +1965,120 @@ function for multiple samples in batch.</p>
 13       G3   3     0     0     0     0     4    19    12     8     1     1
 14       G4   3     0     0     0     0     3    21    11     6     1     0
 15       G5   3     0     0     0     0     4    17    10     8     1     1
-   Day11 Day12 Day13 Day14 Total Seeds        a         b        c y0 lag
-1      1     0     0     0          50 80.00000  9.881947 6.034954  0   0
-2      0     1     0     0          51 82.35294  9.227667 6.175193  0   0
-3      1     1     0     0          48 93.75000  7.793055 6.138110  0   0
-4      1     1     0     0          51 90.19608  8.925668 6.125172  0   0
-5      0     1     1     0          50 96.00000  9.419194 6.049641  0   0
-6      1     1     0     0          49 93.87755  9.450187 6.097412  0   0
-7      1     0     0     0          48 87.50000 10.172466 6.029851  0   0
-8      0     1     0     0          47 85.10638  8.940702 6.189774  0   0
-9      1     1     0     0          52 86.53846  8.617395 6.125121  0   0
-10     0     1     0     0          50 90.00000  9.608849 6.109503  0   0
-11     0     1     1     0          51 94.11765  9.400248 6.018759  0   0
-12     1     1     0     0          51 86.27451  9.162558 6.108449  0   0
-13     0     1     1     0          49 95.91837  8.995233 6.149011  0   0
-14     1     1     0     0          48 91.66667 10.391898 6.015907  0   0
-15     1     0     0     0          48 87.50000  9.136762 6.121580  0   0
-     Dlag50 t50.total t50.Germinated     TMGR      AUC      MGT Skewness
-1  6.034954  6.355122       6.034954 5.912195 1108.975 6.632252 1.098973
-2  6.175193  6.473490       6.175193 6.031282 1128.559 6.784407 1.098655
-3  6.138110  6.244190       6.138110 5.938179 1283.693 6.772742 1.103392
-4  6.125172  6.276793       6.125172 5.972686 1239.887 6.739665 1.100323
-5  6.049641  6.103433       6.049641 5.914289 1328.328 6.654980 1.100062
-6  6.097412  6.182276       6.097412 5.961877 1294.463 6.702470 1.099232
-7  6.029851  6.202812       6.029851 5.914057 1213.908 6.622417 1.098272
-8  6.189774  6.439510       6.189774 6.036193 1164.346 6.804000 1.099232
-9  6.125121  6.352172       6.125121 5.961631 1188.793 6.745241 1.101242
-10 6.109503  6.253042       6.109503 5.978115 1240.227 6.711899 1.098600
-11 6.018759  6.099434       6.018759 5.883558 1305.200 6.624247 1.100600
-12 6.108449  6.326181       6.108449 5.964079 1188.021 6.718636 1.099892
-13 6.149011  6.207500       6.149011 5.998270 1316.407 6.762272 1.099733
-14 6.015907  6.122385       6.015907 5.905179 1273.386 6.604963 1.097916
-15 6.121580  6.317392       6.121580 5.976088 1203.664 6.732267 1.099760
-                                                            msg isConv
-1  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-2  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-3  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-4  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-5  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-6  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-7  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-8  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-9  #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-10 #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-11 #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-12 #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-13 #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-14 #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-15 #1. Relative error in the sum of squares is at most `ftol'.    TRUE
-   txp.total_10 txp.total_60 Uniformity_90 Uniformity_10 Uniformity
-1      4.956266     6.744598      7.537688      4.831809   2.705880
-2      4.983236     6.872603      7.835407      4.866755   2.968652
-3      4.673022     6.608437      8.137340      4.630062   3.507277
-4      4.850876     6.614967      7.834806      4.788598   3.046208
-5      4.814126     6.386788      7.639025      4.790947   2.848078
-6      4.868635     6.477594      7.693458      4.832474   2.860984
-7      4.930423     6.510495      7.483642      4.858477   2.625165
-8      4.940058     6.823299      7.914162      4.841106   3.073056
-9      4.836659     6.733275      7.904040      4.746574   3.157466
-10     4.920629     6.566505      7.679176      4.860681   2.818494
-11     4.798630     6.391288      7.603603      4.764249   2.839354
-12     4.893597     6.684521      7.763844      4.806015   2.957830
-13     4.841310     6.509952      7.850339      4.816395   3.033943
-14     4.915143     6.397486      7.432360      4.869401   2.562960
-15     4.892505     6.667247      7.785804      4.813086   2.972718</code></pre>
+   Day11 Day12 Day13 Day14 Total Seeds    a    b    c   y0  lag Dlag50
+1      1     0     0     0          50 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+2      0     1     0     0          51 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+3      1     1     0     0          48 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+4      1     1     0     0          51 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+5      0     1     1     0          50 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+6      1     1     0     0          49 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+7      1     0     0     0          48 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+8      0     1     0     0          47 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+9      1     1     0     0          52 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+10     0     1     0     0          50 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+11     0     1     1     0          51 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+12     1     1     0     0          51 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+13     0     1     1     0          49 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+14     1     1     0     0          48 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+15     1     0     0     0          48 &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;   &lt;NA&gt;
+   t50.total txp.total_10 txp.total_60 t50.Germinated txp.Germinated_10
+1       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+2       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+3       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+4       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+5       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+6       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+7       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+8       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+9       &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+10      &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+11      &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+12      &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+13      &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+14      &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+15      &lt;NA&gt;         &lt;NA&gt;         &lt;NA&gt;           &lt;NA&gt;              &lt;NA&gt;
+   txp.Germinated_60 Uniformity_90 Uniformity_10 Uniformity TMGR  AUC  MGT
+1               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+2               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+3               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+4               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+5               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+6               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+7               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+8               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+9               &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+10              &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+11              &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+12              &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+13              &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+14              &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+15              &lt;NA&gt;          &lt;NA&gt;          &lt;NA&gt;       &lt;NA&gt; &lt;NA&gt; &lt;NA&gt; &lt;NA&gt;
+   Skewness
+1      &lt;NA&gt;
+2      &lt;NA&gt;
+3      &lt;NA&gt;
+4      &lt;NA&gt;
+5      &lt;NA&gt;
+6      &lt;NA&gt;
+7      &lt;NA&gt;
+8      &lt;NA&gt;
+9      &lt;NA&gt;
+10     &lt;NA&gt;
+11     &lt;NA&gt;
+12     &lt;NA&gt;
+13     &lt;NA&gt;
+14     &lt;NA&gt;
+15     &lt;NA&gt;
+                                                                                             msg
+1  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+2  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+3  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+4  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+5  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+6  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+7  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+8  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+9  #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+10 #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+11 #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+12 #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+13 #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+14 #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+15 #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+   Fit_sigma Fit_isConv Fit_finTol Fit_logLik Fit_AIC Fit_BIC Fit_deviance
+1       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+2       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+3       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+4       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+5       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+6       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+7       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+8       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+9       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+10      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+11      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+12      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+13      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+14      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+15      &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;       &lt;NA&gt;    &lt;NA&gt;    &lt;NA&gt;         &lt;NA&gt;
+   Fit_df.residual Fit_nobs
+1             &lt;NA&gt;     &lt;NA&gt;
+2             &lt;NA&gt;     &lt;NA&gt;
+3             &lt;NA&gt;     &lt;NA&gt;
+4             &lt;NA&gt;     &lt;NA&gt;
+5             &lt;NA&gt;     &lt;NA&gt;
+6             &lt;NA&gt;     &lt;NA&gt;
+7             &lt;NA&gt;     &lt;NA&gt;
+8             &lt;NA&gt;     &lt;NA&gt;
+9             &lt;NA&gt;     &lt;NA&gt;
+10            &lt;NA&gt;     &lt;NA&gt;
+11            &lt;NA&gt;     &lt;NA&gt;
+12            &lt;NA&gt;     &lt;NA&gt;
+13            &lt;NA&gt;     &lt;NA&gt;
+14            &lt;NA&gt;     &lt;NA&gt;
+15            &lt;NA&gt;     &lt;NA&gt;</code></pre>
 <p>Multiple fitted curves generated in batch can also be plotted.</p>
-<div class="sourceCode" id="cb255"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb294"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">counts.per.intervals</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Day01"</span>, <span class="st">"Day02"</span>, <span class="st">"Day03"</span>, <span class="st">"Day04"</span>, <span class="st">"Day05"</span>,</span>
@@ -1932,68 +2089,137 @@ function for multiple samples in batch.</p>
 <span>                    counts.intervals.cols <span class="op">=</span> <span class="va">counts.per.intervals</span>,</span>
 <span>                    intervals <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">14</span>, partial <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>                    fix.y0 <span class="op">=</span> <span class="cn">TRUE</span>, fix.a <span class="op">=</span> <span class="cn">TRUE</span>, xp <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">60</span><span class="op">)</span>,</span>
-<span>                    tmax <span class="op">=</span> <span class="fl">20</span>, tries <span class="op">=</span> <span class="fl">3</span>, umax <span class="op">=</span> <span class="fl">90</span>, umin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Plot FPHF curves</span></span>
+<span>                    tmax <span class="op">=</span> <span class="fl">20</span>, tries <span class="op">=</span> <span class="fl">3</span>, umax <span class="op">=</span> <span class="fl">90</span>, umin <span class="op">=</span> <span class="fl">10</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" 
+
+Warning in FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)), : Convergence Error
+#1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </code></pre>
+<div class="sourceCode" id="cb296"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Plot FPHF curves</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-1.png" width="576"></p>
-<div class="sourceCode" id="cb256"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb298"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot ROG curves</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-2.png" width="576"></p>
-<div class="sourceCode" id="cb257"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb300"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot FPHF curves with points</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, show.points <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-3.png" width="576"></p>
-<div class="sourceCode" id="cb258"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb302"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot FPHF curves with annotations</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.total"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-4.png" width="576"></p>
-<div class="sourceCode" id="cb259"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb305"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.germ"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-5.png" width="576"></p>
-<div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb307"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"tmgr"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-6.png" width="576"></p>
-<div class="sourceCode" id="cb261"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb309"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"mgt"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-7.png" width="576"></p>
-<div class="sourceCode" id="cb262"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb311"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"uniformity"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>Warning:  [1m [22m`position_dodge()` requires non-overlapping  [32mx [39m intervals
- [1m [22m`position_dodge()` requires non-overlapping  [32mx [39m intervals</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 15 rows containing missing values (`geom_point()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 15 rows containing missing values (`geom_segment()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-8.png" width="576"></p>
-<div class="sourceCode" id="cb264"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb315"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Plot ROG curves with annotations</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.total"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-9.png" width="576"></p>
-<div class="sourceCode" id="cb265"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb318"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"t50.germ"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-10.png" width="576"></p>
-<div class="sourceCode" id="cb266"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb320"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"tmgr"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-11.png" width="576"></p>
-<div class="sourceCode" id="cb267"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb322"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"mgt"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_vline()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-12.png" width="576"></p>
-<div class="sourceCode" id="cb268"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb324"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, rog <span class="op">=</span> <span class="cn">TRUE</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span>, annotate <span class="op">=</span> <span class="st">"uniformity"</span><span class="op">)</span></span></code></pre></div>
-<pre><code>Warning:  [1m [22m`position_dodge()` requires non-overlapping  [32mx [39m intervals
- [1m [22m`position_dodge()` requires non-overlapping  [32mx [39m intervals</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 15 rows containing missing values (`geom_point()`).
+ [1m [22mRemoved 15 rows containing missing values (`geom_point()`).</code></pre>
+<pre><code>Warning:  [1m [22mRemoved 15 rows containing missing values (`geom_segment()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-13.png" width="576"></p>
-<div class="sourceCode" id="cb270"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb328"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Change colour of curves using ggplot2 options</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="va">curvesplot</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fits</span>, group.col <span class="op">=</span> <span class="st">"Genotype"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># 'Dark2' palette from RColorBrewer</span></span>
 <span><span class="va">curvesplot</span> <span class="op">+</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_brewer.html" class="external-link">scale_colour_brewer</a></span><span class="op">(</span>palette <span class="op">=</span> <span class="st">"Dark2"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-14.png" width="576"></p>
-<div class="sourceCode" id="cb271"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb330"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Manual colours</span></span>
 <span><span class="va">curvesplot</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_manual.html" class="external-link">scale_colour_manual</a></span><span class="op">(</span>values <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"Coral"</span>, <span class="st">"Brown"</span>, <span class="st">"Blue"</span>,</span>
 <span>                                 <span class="st">"Aquamarine"</span>, <span class="st">"Red"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<pre><code>Warning:  [1m [22mRemoved 1965 rows containing missing values (`geom_line()`).</code></pre>
 <p><img src="Introduction_files/figure-html/runCode-plot.FourPHFfit.bulk-15.png" width="576"></p>
 </div>
 </div>
@@ -2003,8 +2229,8 @@ function for multiple samples in batch.</p>
 <pre><code>To cite the R package 'germinationmetrics' in publications use:
 
   Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
-  Kalyani Srinivasan (2023).  germinationmetrics: Seed Germination
-  Indices and Curve Fitting. R package version 0.1.7.9000,
+  Kalyani Srinivasan ().  germinationmetrics: Seed Germination Indices
+  and Curve Fitting. R package version 0.1.7.9000,
   https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
 A BibTeX entry for LaTeX users is
@@ -2012,10 +2238,7 @@ A BibTeX entry for LaTeX users is
   @Manual{,
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-    year = {2023},
-    note = {R package version 0.1.7.9000},
-    note = {https://aravind-j.github.io/germinationmetrics/},
-    note = {https://CRAN.R-project.org/package=germinationmetrics},
+    note = {R package version 0.1.7.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
   }
 
 This free and open-source software implements academic research by the
@@ -2025,11 +2248,11 @@ citing the package.</code></pre>
 <div class="section level2">
 <h2 id="session-info">Session Info<a class="anchor" aria-label="anchor" href="#session-info"></a>
 </h2>
-<div class="sourceCode" id="cb273"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb333"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>R version 4.3.0 (2023-04-21)
+<pre><code>R version 4.3.1 (2023-06-16)
 Platform: x86_64-apple-darwin20 (64-bit)
-Running under: macOS Monterey 12.6.5
+Running under: macOS Monterey 12.6.7
 
 Matrix products: default
 BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
@@ -2048,24 +2271,24 @@ other attached packages:
 [1] germinationmetrics_0.1.7.9000 ggplot2_3.4.2                
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.3       xfun_0.39          bslib_0.4.2        ggrepel_0.9.3     
- [5] mathjaxr_1.6-0     vctrs_0.6.2        tools_4.3.0        Rdpack_2.4        
- [9] bitops_1.0-7       generics_0.1.3     curl_5.0.0         tibble_3.2.1      
-[13] fansi_1.0.4        highr_0.10         pkgconfig_2.0.3    data.table_1.14.8 
-[17] RColorBrewer_1.1-3 desc_1.4.2         lifecycle_1.0.3    compiler_4.3.0    
-[21] farver_2.1.1       stringr_1.5.0      textshaping_0.3.6  munsell_0.5.0     
-[25] minpack.lm_1.2-3   htmltools_0.5.5    sass_0.4.6         RCurl_1.98-1.12   
-[29] yaml_2.3.7         pillar_1.9.0       pkgdown_2.0.7      jquerylib_0.1.4   
-[33] tidyr_1.3.0        cachem_1.0.8       tidyselect_1.2.0   digest_0.6.31     
-[37] stringi_1.7.12     dplyr_1.1.2        reshape2_1.4.4     purrr_1.0.1       
-[41] pander_0.6.5       labeling_0.4.2     rprojroot_2.0.3    fastmap_1.1.1     
-[45] grid_4.3.0         colorspace_2.1-0   cli_3.6.1          magrittr_2.0.3    
-[49] XML_3.99-0.14      utf8_1.2.3         broom_1.0.4        withr_2.5.0       
-[53] scales_1.2.1       backports_1.4.1    rmarkdown_2.21     httr_1.4.6        
-[57] ragg_1.2.5         memoise_2.0.1      evaluate_0.21      knitr_1.42        
-[61] rbibutils_2.2.13   rlang_1.1.1        Rcpp_1.0.10        glue_1.6.2        
-[65] jsonlite_1.8.4     R6_2.5.1           plyr_1.8.8         systemfonts_1.0.4 
-[69] fs_1.6.2          </code></pre>
+ [1] gtable_0.3.3       xfun_0.40          bslib_0.5.1        ggrepel_0.9.3     
+ [5] lattice_0.21-8     mathjaxr_1.6-0     vctrs_0.6.3        tools_4.3.1       
+ [9] Rdpack_2.4         bitops_1.0-7       generics_0.1.3     curl_5.0.1        
+[13] tibble_3.2.1       fansi_1.0.4        highr_0.10         pkgconfig_2.0.3   
+[17] gslnls_1.1.2       Matrix_1.5-4.1     data.table_1.14.8  RColorBrewer_1.1-3
+[21] desc_1.4.2         lifecycle_1.0.3    compiler_4.3.1     farver_2.1.1      
+[25] stringr_1.5.0      textshaping_0.3.6  munsell_0.5.0      htmltools_0.5.6   
+[29] sass_0.4.7         RCurl_1.98-1.12    yaml_2.3.7         pillar_1.9.0      
+[33] pkgdown_2.0.7      jquerylib_0.1.4    tidyr_1.3.0        cachem_1.0.8      
+[37] tidyselect_1.2.0   digest_0.6.33      stringi_1.7.12     dplyr_1.1.2       
+[41] reshape2_1.4.4     purrr_1.0.2        pander_0.6.5       labeling_0.4.2    
+[45] rprojroot_2.0.3    fastmap_1.1.1      grid_4.3.1         colorspace_2.1-0  
+[49] cli_3.6.1          magrittr_2.0.3     XML_3.99-0.14      utf8_1.2.3        
+[53] broom_1.0.5        withr_2.5.0        scales_1.2.1       backports_1.4.1   
+[57] rmarkdown_2.23     httr_1.4.6         ragg_1.2.5         memoise_2.0.1     
+[61] evaluate_0.21      knitr_1.43         rbibutils_2.2.14   rlang_1.1.1       
+[65] Rcpp_1.0.11        glue_1.6.2         jsonlite_1.8.7     R6_2.5.1          
+[69] plyr_1.8.8         systemfonts_1.0.4  fs_1.6.3          </code></pre>
 </div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>

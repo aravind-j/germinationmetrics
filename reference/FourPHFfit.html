@@ -197,10 +197,10 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
   time at germination onset (lag) and that at 50% germination.</p></dd>
 
   <dt>t50.total</dt>
-<dd><p>Time required for 50% of total seeds to germinate.</p></dd>
-</dl><p>. Will
-  be <code>NaN</code> if more than 50% of total seeds do not germinate.</p>
-<dl><dt>txp.total</dt>
+<dd><p>Time required for 50% of total seeds to germinate. Will
+  be <code>NaN</code> if more than 50% of total seeds do not germinate.</p></dd>
+
+  <dt>txp.total</dt>
 <dd><p>Time required for x% (as specified in argument <code>xp</code>)
   of total seeds to germinate. Will be <code>NaN</code> if more than x% of total
   seeds do not germinate.</p></dd>
@@ -226,10 +226,15 @@ uniformity. Default is <code>90</code>. Seed <strong><code>Details</code></stron
 <dd><p>Skewness of mean
   germination time.</p></dd>
  <dt>msg</dt>
-<dd><p>The message from <code>nls.lm</code>.</p></dd>
+<dd><p>The message from
+  <code><a href="https://rdrr.io/pkg/gslnls/man/gsl_nls.html" class="external-link">gsl_nls</a></code>.</p></dd>
+ <dt>isConv</dt>
+<dd><p>Logical value indicating
+  whether convergence was achieved.</p></dd>
 
-  <dt>isConv</dt>
-<dd><p>Logical value indicating whether convergence was achieved.</p></dd>
+  <dt>model</dt>
+<dd><p>The raw fitted model output as a list of class
+  <code>gsl_nls</code>.</p></dd>
 
 </dl></div>
     <div id="details">
@@ -249,6 +254,17 @@ shorter the time between germination onset and maximum germination), and
 <em></em>\(c\) is the "half-maximal activation level" which represents the time
 required for 50% of viable seeds to germinate (<em></em>\(c\) is equivalent to
 the germination speed).</p>
+<p>In <code>FourPHFfit</code>, this model has be reparameterized by substituting
+<em></em>\(b\) with <em></em>\(e^{\beta}\) to constraint <em></em>\(b\) to positive
+values only.</p>
+<p>\[y = y_{0}+\frac{ax^{e^{\beta}}}{c^{e^{\beta}}+x^{e^{\beta}}}\]</p>
+<p>Where, <em></em>\(b = e^{\beta}\) and <em></em>\(\beta = \log_{e}(b)\).</p>
+<p>The curve fitting is performed with nonlinear
+<code><a href="https://rdrr.io/pkg/gslnls/man/gsl_nls.html" class="external-link">gslnls</a></code> package, a R interface to the
+least-squares optimization with the GNU Scientific Library (GSL) with the
+Levenberg-Marquardt algorithm
+(Chau 2023)
+.</p>
 <p>Once this function is fitted to the curve, <code>FourPHFfit</code> computes the
 time to 50% germination of total seeds (<code>t50.total</code>) or viable seeds
 (<code>t50.Germinated</code>). Similarly the time at any percentage of germination
@@ -271,7 +287,7 @@ germination rate (<em></em>\(TMGR\)) can be estimated as follows.</p>
 <p>\[TMGR = b \sqrt{\frac{c^{b}(b-1)}{b+1}}\]</p>
 <p>TMGR represents the point in time when the instantaneous rate of germination
 starts to decline.</p>
-<p>The area under the curve (<em></em>\(AUC\)) is obtained by integration of the
+<p>The area under the curve (<em></em>\(AUC\)) is obined by integration of the
 fitted curve between time 0 and time specified in the argument `tmax`.</p>
 <p>Integration of the fitted curve gives the value of mean germination time
 (<em></em>\(MGT\)) and the skewness of the germination curve is computed as the
@@ -283,9 +299,13 @@ results may not be informative.</p>
     </div>
     <div id="references">
     <h2>References</h2>
-    <p>El-Kassaby YA, Moss I, Kolotelo D, Stoehr M (2008).
+    <p>Chau J (2023).
+“gslnls: GSL Nonlinear Least-Squares Fitting.”<br><br> El-Kassaby YA, Moss I, Kolotelo D, Stoehr M (2008).
 “Seed germination: Mathematical representation and parameters extraction.”
-<em>Forest Science</em>, <b>54</b>(2), 220--227.</p>
+<em>Forest Science</em>, <b>54</b>(2), 220--227.<br><br> Galassi M (ed.) (2009).
+<em>GNU Scientific Library Reference Manual: For GSL Version 1.12</em>, 3. ed edition.
+Network Theory, Bristol.
+ISBN 978-0-9546120-7-8.</p>
     </div>
 
     <div id="ref-examples">
@@ -299,6 +319,8 @@ results may not be informative.</p>
 <span class="r-in"><span><span class="co"># From partial germination counts</span></span></span>
 <span class="r-in"><span><span class="co">#----------------------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="fu">FourPHFfit</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Convergence Error</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    gp csgp intervals</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   0    0         1</span>
@@ -317,71 +339,72 @@ results may not be informative.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14  0   80        14</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Parameters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   term  estimate  std.error statistic      p.value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    a 80.000000 1.24158597  64.43372 1.973240e-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    b  9.881947 0.70779381  13.96162 6.952324e-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    c  6.034954 0.04952654 121.85294 3.399384e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   y0  0.000000 0.91607007   0.00000 1.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   term estimate std.error statistic p.value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    a       NA        NA        NA      NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    b       NA        NA        NA      NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    c       NA        NA        NA      NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   y0       NA        NA        NA      NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Fit</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      sigma isConv       finTol    logLik      AIC      BIC deviance df.residual</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.769385   TRUE 1.490116e-08 -25.49868 60.99736 64.19265 31.30723          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   nobs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   sigma isConv finTol logLik AIC BIC deviance df.residual nobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    NA     NA     NA     NA  NA  NA       NA          NA   NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 80</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 9.881947</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $c</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.034954</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $y0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $lag</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Dlag50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.034954</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $t50.total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.355122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $txp.total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       10       60 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4.956266 6.744598 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 60 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NA NA </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $t50.Germinated</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.034954</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $txp.Germinated</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       10       60 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4.831809 6.287724 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 60 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NA NA </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Uniformity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         90         10 uniformity </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   7.537688   4.831809   2.705880 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NA         NA         NA </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $TMGR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5.912195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $AUC</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1108.975</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MGT</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.632252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Skewness</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.098973</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $msg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#1. Relative error in the sum of squares is at most `ftol'. "</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#1. failed to evaluate 'fn' at starting values: could not find function \"FourPHF_fixa_fixy0\" "</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $isConv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $model</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;simpleError in gsl_nls.formula(csgp ~ FourPHF_fixa_fixy0(x = intervals, a = max(csgp),     bta, c), data = df, algorithm = "lm", start = list(bta = startbta,     c = startc), control = list(maxiter = 1024, warnOnly = FALSE,     scale = "levenberg")): failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "FourPHFfit" "list"      </span>
@@ -390,6 +413,8 @@ results may not be informative.</p>
 <span class="r-in"><span><span class="co">#----------------------------------------------------------------------------</span></span></span>
 <span class="r-in"><span><span class="fu">FourPHFfit</span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>, tmax <span class="op">=</span> <span class="fl">20</span>,</span></span>
 <span class="r-in"><span>partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Convergence Error</span>
+<span class="r-wrn co"><span class="r-pr">#&gt;</span> #1. failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0" </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $data</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>    gp csgp intervals</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1   0    0         1</span>
@@ -408,71 +433,72 @@ results may not be informative.</p>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 14  0   80        14</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Parameters</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   term  estimate std.error statistic      p.value</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1    a 80.000000 1.2415867  64.43368 1.973252e-14</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2    b  9.881927 0.7077918  13.96163 6.952270e-08</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3    c  6.034953 0.0495266 121.85275 3.399437e-17</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4   y0  0.000000 0.9160705   0.00000 1.000000e+00</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   term estimate std.error statistic p.value</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    a       NA        NA        NA      NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2    b       NA        NA        NA      NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3    c       NA        NA        NA      NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   y0       NA        NA        NA      NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Fit</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>      sigma isConv       finTol    logLik      AIC      BIC deviance df.residual</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 1.769385   TRUE 1.490116e-08 -25.49868 60.99736 64.19265 31.30723          10</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   nobs</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1   14</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   sigma isConv finTol logLik AIC BIC deviance df.residual nobs</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1    NA     NA     NA     NA  NA  NA       NA          NA   NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $a</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 80</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $b</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 9.881927</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $c</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.034953</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $y0</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $lag</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Dlag50</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.034953</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $t50.total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.355121</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $txp.total</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       10       60 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4.956263 6.744599 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 60 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NA NA </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $t50.Germinated</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.034953</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $txp.Germinated</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       10       60 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4.831806 6.287723 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10 60 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> NA NA </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Uniformity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>         90         10 uniformity </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   7.537691   4.831806   2.705885 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>         NA         NA         NA </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $TMGR</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 5.912194</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $AUC</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1108.976</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $MGT</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 6.632252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $Skewness</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 1.098973</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $msg</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#1. Relative error in the sum of squares is at most `ftol'. "</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "#1. failed to evaluate 'fn' at starting values: could not find function \"FourPHF_fixa_fixy0\" "</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> $isConv</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] TRUE</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] NA</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> $model</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> &lt;simpleError in gsl_nls.formula(csgp ~ FourPHF_fixa_fixy0(x = intervals, a = max(csgp),     bta, c), data = df, algorithm = "lm", start = list(bta = startbta,     c = startc), control = list(maxiter = 1024, warnOnly = FALSE,     scale = "levenberg")): failed to evaluate 'fn' at starting values: could not find function "FourPHF_fixa_fixy0"&gt;</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> attr(,"class")</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "FourPHFfit" "list"      </span>
