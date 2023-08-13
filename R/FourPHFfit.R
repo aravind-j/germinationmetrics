@@ -135,8 +135,9 @@
 #'   and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
 #'   maximum germination rate.} \item{AUC}{The estimate of area under the
 #'   curve.} \item{MGT}{Mean germination time.} \item{Skewness}{Skewness of mean
-#'   germination time.} \item{msg}{The message from \code{nls.lm}.}
-#'   \item{isConv}{Logical value indicating whether convergence was achieved.}
+#'   germination time.} \item{msg}{The message from
+#'   \code{\link[gslnls]{gsl_nls}}.} \item{isConv}{Logical value indicating
+#'   whether convergence was achieved.}
 #'   \item{model}{The raw fitted model output as a list of class
 #'   \code{gsl_nls}.}
 #'
@@ -336,7 +337,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     # Starting values for nls
     starta <- max(csgp)
     # startb <- 20
-    startb  <- CVG(germ.counts, intervals, partial)
+    startb  <- CVG(df$csgp, df$intervals, partial = TRUE)
     if (length(peakg) == 1 && peakg == 1 &&
         df[which(df$intervals == 1), ]$csgp >= 90) {
       startb <- 20

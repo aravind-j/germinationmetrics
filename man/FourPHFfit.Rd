@@ -72,8 +72,9 @@ A list with the following components: \item{data}{A data frame with
   and \code{umax}\% of viable seeds to germinate.} \item{TMGR}{Time at
   maximum germination rate.} \item{AUC}{The estimate of area under the
   curve.} \item{MGT}{Mean germination time.} \item{Skewness}{Skewness of mean
-  germination time.} \item{msg}{The message from \code{nls.lm}.}
-  \item{isConv}{Logical value indicating whether convergence was achieved.}
+  germination time.} \item{msg}{The message from
+  \code{\link[gslnls]{gsl_nls}}.} \item{isConv}{Logical value indicating
+  whether convergence was achieved.}
   \item{model}{The raw fitted model output as a list of class
   \code{gsl_nls}.}
 }
