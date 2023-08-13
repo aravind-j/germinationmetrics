@@ -285,6 +285,13 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     stop("'partial' should be a logical vector of length 1.")
   }
 
+  # Check if data is cumulative
+  if (!partial) {
+    if(is.unsorted(germ.counts)) {
+      stop("'germ.counts' is not cumulative.")
+    }
+  }
+
   # Convert cumulative to partial
   if (!partial) {
     germ.counts <- c(germ.counts[1], diff(germ.counts))
@@ -332,7 +339,8 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
   if (GP > 0) { # perform fit only if GP > 0
 
-    peakg <- suppressWarnings(PeakGermTime(germ.counts, intervals, partial))
+    peakg <- suppressWarnings(PeakGermTime(germ.counts, intervals,
+                                           partial = TRUE))
 
     # Starting values for nls
     starta <- max(csgp)
@@ -346,7 +354,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       startb <- 20
     }
     startbta <- log(startb, base = exp(1))
-    startc <- t50(germ.counts, intervals, partial, method = "coolbear")
+    startc <- t50(germ.counts, intervals, partial = TRUE, method = "coolbear")
     starty0 <- 0
 
     msg <- ""

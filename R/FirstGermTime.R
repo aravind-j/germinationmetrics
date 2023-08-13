@@ -136,6 +136,13 @@ FirstGermTime <- function(germ.counts, intervals, partial = TRUE) {
     stop("'partial' should be a logical vector of length 1.")
   }
 
+  # Check if data is cumulative
+  if (!partial) {
+    if(is.unsorted(germ.counts)) {
+      stop("'germ.counts' is not cumulative.")
+    }
+  }
+
   # Convert cumulative to partial
   if (!partial) {
     germ.counts <- c(germ.counts[1], diff(germ.counts))
@@ -171,6 +178,13 @@ LastGermTime <-  function(germ.counts, intervals, partial = TRUE) {
     stop("'partial' should be a logical vector of length 1.")
   }
 
+  # Check if data is cumulative
+  if (!partial) {
+    if(is.unsorted(germ.counts)) {
+      stop("'germ.counts' is not cumulative.")
+    }
+  }
+
   # Convert cumulative to partial
   if (!partial) {
     germ.counts <- c(germ.counts[1], diff(germ.counts))
@@ -204,6 +218,13 @@ PeakGermTime <- function(germ.counts, intervals, partial = TRUE) {
   # Check if argument partial is of type logical with unit length
   if (!is.logical(partial) || length(partial) != 1) {
     stop("'partial' should be a logical vector of length 1.")
+  }
+
+  # Check if data is cumulative
+  if (!partial) {
+    if(is.unsorted(germ.counts)) {
+      stop("'germ.counts' is not cumulative.")
+    }
   }
 
   # Convert cumulative to partial
