@@ -257,6 +257,7 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
 
   if (annotate != "none") {
     dfannotate <- x[, c(group.col, acol)]
+    dfannotate[, acol] <- sapply(dfannotate[, acol], as.numeric)
 
     if (annotate != "uniformity") {
       Gplot <- Gplot +
