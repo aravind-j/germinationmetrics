@@ -26,7 +26,7 @@ Size](https://img.shields.io/github/languages/code-size/aravind-j/germinationmet
 [![Project Status:
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2023--05--17-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2023--08--13-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
 [![Website -
@@ -133,8 +133,8 @@ citation("germinationmetrics")
 
     To cite the R package 'germinationmetrics' in publications use:
 
-      Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2023).  germinationmetrics: Seed
-      Germination Indices and Curve Fitting. R package version 0.1.7.9000,
+      Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan ().
+      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.7.9000,
       https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
 
     A BibTeX entry for LaTeX users is
@@ -142,11 +142,8 @@ citation("germinationmetrics")
       @Manual{,
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-        year = {2023},
-        note = {R package version 0.1.7.9000},
-        note = {https://aravind-j.github.io/germinationmetrics/},
-        note = {https://CRAN.R-project.org/package=germinationmetrics},
+        note = {R package version 0.1.7.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
       }
 
-    This free and open-source software implements academic research by the authors and co-workers. If you use it, please
-    support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use
+    it, please support the project by citing the package.
