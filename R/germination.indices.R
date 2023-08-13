@@ -135,22 +135,22 @@
 #' @param max.int The maximum interval value up to which Timson's index/George's
 #'   germination rate is to be computed.
 #' @param GermIndex logical. If \code{TRUE}, the Germination index according to
-#'   \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics}
+#'   \insertCite{melville_seed_1980;textual}{germinationmetrics}
 #'   and its modification by
 #'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 #'   \insertCite{ranal_how_2006}{germinationmetrics} are computed.
 #' @param EmergenceRateIndex logical. If \code{TRUE}, the Emergence rate index
 #'   or Germination rate index are computed according to \itemize{ \item
-#'   \insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics}
+#'   \insertCite{shmueli_emergence_1971;textual}{germinationmetrics}
 #'   and it's modification by
 #'   \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 #'   \insertCite{ranal_how_2006}{germinationmetrics}; \item
-#'   \insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}; and
+#'   \insertCite{bilbro_soil_1982;textual}{germinationmetrics}; and
 #'   \item
-#'   \insertCite{fakoredeRelationSeedlingVigor1980;textual}{germinationmetrics},
-#'   \insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
+#'   \insertCite{fakorede_relation_1980;textual}{germinationmetrics},
+#'   \insertCite{fakorede_variability_1981;textual}{germinationmetrics},
 #'    and
-#'   \insertCite{fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}.}
+#'   \insertCite{fakorede_heterotic_1983;textual}{germinationmetrics}.}
 #'
 #'
 #' @param PeakValue logical. If \code{TRUE}, the Peak value (\mjseqn{PV}) or

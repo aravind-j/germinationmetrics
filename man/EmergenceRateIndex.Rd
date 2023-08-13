@@ -40,23 +40,23 @@ The value of the Emergence rate index with the units according to
 \description{
 Compute the Emergence rate index or Germination rate index according to
 \itemize{ \item
-\insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics} and
+\insertCite{shmueli_emergence_1971;textual}{germinationmetrics} and
 it's modification by
 \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 \insertCite{ranal_how_2006}{germinationmetrics}; \item
-\insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}; and
+\insertCite{bilbro_soil_1982;textual}{germinationmetrics}; and
 \item
-\insertCite{fakoredeRelationSeedlingVigor1980;textual}{germinationmetrics},
-\insertCite{fakoredeVariabilitySeedlingVigour1981;textual}{germinationmetrics},
+\insertCite{fakorede_relation_1980;textual}{germinationmetrics},
+\insertCite{fakorede_variability_1981;textual}{germinationmetrics},
 and
-\insertCite{fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}.}
+\insertCite{fakorede_heterotic_1983;textual}{germinationmetrics}.}
 \loadmathjax
 }
 \section{Details}{
  Several germination indices are referred to as Emergence
   rate Index (\mjseqn{ERI}).
 
-  \subsection{\insertCite{shmueliEmergenceEarlyGrowth1971;textual}{germinationmetrics}}{
+  \subsection{\insertCite{shmueli_emergence_1971;textual}{germinationmetrics}}{
    With argument \code{method} specified as \code{"shmueligoldberg"}
   \mjseqn{ERI} is estimated as follows.
 
@@ -85,7 +85,7 @@ and
   interval when emergence/germination started, and \mjseqn{k} is the total
   number of time intervals. }
 
-  \subsection{\insertCite{bilbroSoilCrustsCotton1982;textual}{germinationmetrics}}{
+  \subsection{\insertCite{bilbro_soil_1982;textual}{germinationmetrics}}{
    With argument \code{method} specified as \code{"bilbrowanjura"}
   \mjseqn{ERI} is the estimated as follows.
 
@@ -98,7 +98,7 @@ and
   corresponding to the \mjseqn{i}th interval), and \mjseqn{\overline{T}} is
   the mean germination time or mean emergence time. }
 
-  \subsection{\insertCite{fakoredeRelationSeedlingVigor1980,fakoredeVariabilitySeedlingVigour1981,fakoredeHeteroticEffectsAssociation1983;textual}{germinationmetrics}}{
+  \subsection{\insertCite{fakorede_relation_1980,fakorede_variability_1981,fakorede_heterotic_1983;textual}{germinationmetrics}}{
    With argument \code{method} specified as \code{"fakorede"} \mjseqn{ERI} is
   the estimated as follows.
 
@@ -111,12 +111,12 @@ and
   rate index (\mjseqn{ERI}) has also been used to for the mathematical
   expressions for Speed of germination
   (\code{\link[germinationmetrics]{GermSpeed}})
-  \insertCite{allan_seedling_1962,erbachTillageContinuousCorn1982}{germinationmetrics},
+  \insertCite{allan_seedling_1962,erbach_tillage_1982}{germinationmetrics},
    Timson's index (\code{\link[germinationmetrics]{TimsonsIndex}})
-  \insertCite{chaudharyEffectTemperatureAssociated1970}{germinationmetrics},
+  \insertCite{chaudhary_effect_1970}{germinationmetrics},
   and George's index
   (\code{\link[germinationmetrics:TimsonsIndex]{GermRateGeorge}})
-  \insertCite{chopraEffectSoilTemperature1980}{germinationmetrics}. }
+  \insertCite{chopra_effect_1980}{germinationmetrics}. }
 }
 
 \examples{

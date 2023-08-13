@@ -46,9 +46,9 @@ For \code{TimsonsIndex}, the value of Timson's index (\%) if
 }
 \description{
 Compute George's index
-\insertCite{george_influence_1961,tucker_estimating_1965,nichols_two_1968,chopraEffectSoilTemperature1980}{germinationmetrics},
+\insertCite{george_influence_1961,tucker_estimating_1965,nichols_two_1968,chopra_effect_1980}{germinationmetrics},
 Timson's index or Timson's germination velocity index
-\insertCite{grose_laboratory_1958,timson_new_1965,lyonRapidMethodDetermining1966,chaudharyEffectTemperatureAssociated1970,negm_effects_1978,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}
+\insertCite{grose_laboratory_1958,timson_new_1965,lyon_rapid_1966,chaudhary_effect_1970,negm_effects_1978,brown_representing_1988,baskin_seeds_1998}{germinationmetrics}
 and it's modifications by Labouriau
 \insertCite{ranal_how_2006}{germinationmetrics} and
 \insertCite{khan_effect_1984}{germinationmetrics}. \loadmathjax
@@ -79,10 +79,10 @@ specific intervals for a set period of time.  It combines onset, rate and
 total percentage of germination and estimates the area under the cumulative
 germination percentage curve. It is same as the indices for area under time
 course curve of germination described by
-\insertCite{lyonRapidMethodDetermining1966;textual}{germinationmetrics} as
+\insertCite{lyon_rapid_1966;textual}{germinationmetrics} as
 well as \insertCite{negm_effects_1978;textual}{germinationmetrics}. It is
 also described as Emergence Rate Index (\mjseqn{ERI}) by
-\insertCite{chaudharyEffectTemperatureAssociated1970;textual}{germinationmetrics}.
+\insertCite{chaudhary_effect_1970;textual}{germinationmetrics}.
 
 \insertCite{goodchild_method_1971;textual}{germinationmetrics}, described the
 same in terms of partial germination percentage as follows.
@@ -127,7 +127,7 @@ of the test, and \mjseqn{k} is the total number of time intervals.
 
 This index uses number of seeds germinated instead of germination percentage.
 It is also described as Emergence Rate Index (\mjseqn{ERI}) by
-\insertCite{chopraEffectSoilTemperature1980;textual}{germinationmetrics}.
+\insertCite{chopra_effect_1980;textual}{germinationmetrics}.
 
 So germination rate (\mjseqn{GR}) can also be described in terms of partial
 (\mjseqn{N_{i}}) and cumulative (\mjseqn{\sum_{j=1}^{i}N_{j}}) number of

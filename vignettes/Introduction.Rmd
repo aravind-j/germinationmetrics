@@ -337,6 +337,13 @@ f(x) = y = y_0 + \frac{ax^b}{x^b+c^b}
 $$
 Where, $y$ is the cumulative germination percentage at time $x$, $y_{0}$ is the intercept on the y axis, $a$ is the asymptote, $b$ is a mathematical parameter controlling the shape and steepness of the germination curve and $c$ is the "half-maximal activation level".
 
+this function can also be be reparameterized by substituting $b$ with $e^{\beta}$ to constraint $b$ to positive values only.
+
+$$
+y = y_{0}+\frac{ax^{e^{\beta}}}{c^{e^{\beta}}+x^{e^{\beta}}}
+$$
+Where, $b = e^{\beta}$ and $\beta = \log_{e}(b)$.
+
 The details of various parameters that are computed from this function are given in Table 4.
 
 **Table 4** Germination parameters estimated from the four-parameter hill function.

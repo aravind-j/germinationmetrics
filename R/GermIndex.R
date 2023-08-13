@@ -18,13 +18,13 @@
 #' Germination Index
 #'
 #' Compute the Germination index according to
-#' \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} and
+#' \insertCite{melville_seed_1980;textual}{germinationmetrics} and
 #' its modification by
 #' \insertCite{de_santana_alise_2004;textual}{germinationmetrics}
 #' \insertCite{ranal_how_2006}{germinationmetrics}. \loadmathjax
 #'
 #' Germination index (\mjseqn{GI}) is computed as follows
-#' \insertCite{melvilleSeedGerminationEarly1980}{germinationmetrics}.
+#' \insertCite{melville_seed_1980}{germinationmetrics}.
 #'
 #' \mjsdeqn{GI = \sum_{i=1}^{k}\frac{\left | \left ( T_{k} - T_{i} \right )
 #' N_{i}\right |}{N_{t}}}
@@ -40,7 +40,7 @@
 #' \insertCite{de_santana_alise_2004}{germinationmetrics} where total number of
 #' seeds tested (\mjseqn{N_{t}}) is replaced by the total number of germinated
 #' seeds (\mjseqn{N_{g}}) in the expression of
-#' \insertCite{melvilleSeedGerminationEarly1980;textual}{germinationmetrics} to
+#' \insertCite{melville_seed_1980;textual}{germinationmetrics} to
 #' remove the effect of sample size
 #' \insertCite{ranal_how_2006}{germinationmetrics}. It is computed as follows
 #' (Specified by the argument \code{modification = "santanaranal"}).
