@@ -169,61 +169,40 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
 
   data <- data.table::as.data.table(data)
 
-  fphfnames1 <- c("a", "b", "c", "y0", "lag", "Dlag50", "t50.total",
-                  "t50.Germinated",
-                  "TMGR", "AUC", "MGT", "Skewness", "msg", "isConv")
+  fphfnames <- c("a", "b", "c", "y0", "lag", "Dlag50", "t50.total",
+                 "txp.total", #list
+                 "t50.Germinated",
+                 "txp.Germinated", "Uniformity", #list
+                 "TMGR", "AUC", "MGT", "Skewness",
+                 "msg", "isConv",
+                 "Fit" #list
+                 )
 
-  data[, (fphfnames1) := FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
-                                    intervals = intervals,
-                                    partial = TRUE, fix.y0 = fix.y0,
-                                    fix.a = fix.a, tmax = tmax,
-                                    xp = xp, umin = umin, umax = umax, tries = tries,
-                                    total.seeds = unlist(mget(total.seeds.col)))[fphfnames1],
-       by = 1:nrow(data)]
-
-
-  ulist <- data[, .(Ulist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
+  out <- data[, .(outlist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
                                             intervals = intervals,
                                             partial = TRUE, fix.y0 = fix.y0,
                                             fix.a = fix.a, tmax = tmax,
-                                            xp = xp, umin = umin, umax = umax, tries = tries,
-                                            total.seeds = unlist(mget(total.seeds.col)))["Uniformity"])),
-                by=1:nrow(data)]
+                                            xp = xp, umin = umin, umax = umax,
+                                            tries = tries,
+                                            total.seeds = unlist(mget(total.seeds.col)))[fphfnames])),
+              by=1:nrow(data)]
 
-  ulist <- rbindlist(lapply(ulist$Ulist,
+  out <- rbindlist(lapply(out$outlist,
                             function(x) as.data.frame.list(unlist(x))))
 
-  xptlist <- data[, .(xptlist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
-                                                intervals = intervals,
-                                                partial = TRUE, fix.y0 = fix.y0,
-                                                fix.a = fix.a, tmax = tmax,
-                                                xp = xp, umin = umin, umax = umax, tries = tries,
-                                                total.seeds = unlist(mget(total.seeds.col)))["txp.total"])),
-                  by=1:nrow(data)]
+  setnames(out, old = "Uniformity.uniformity", new = "Uniformity")
+  setnames(out, old = colnames(out),
+           new = gsub("Uniformity.", "Uniformity_", colnames(out)))
+  setnames(out, old = colnames(out),
+           new = gsub("txp.total.", "txp.total_", colnames(out)))
+  setnames(out, old = colnames(out),
+           new = gsub("txp.Germinated.", "txp.Germinated_", colnames(out)))
+  setnames(out, old = colnames(out),
+           new = gsub("Fit.", "Fit_", colnames(out)))
 
-  xptlist <- rbindlist(lapply(xptlist$xptlist,
-                              function(x) as.data.frame.list(unlist(x))))
+  out <- out[, isConv := NULL]
 
-  xpglist <- data[, .(xpglist = list(FourPHFfit(germ.counts = unlist(mget(counts.intervals.cols)),
-                                                intervals = intervals,
-                                                partial = TRUE, fix.y0 = fix.y0,
-                                                fix.a = fix.a, tmax = tmax,
-                                                xp = xp, umin = umin, umax = umax, tries = tries,
-                                                total.seeds = unlist(mget(total.seeds.col)))["txp.germinated"])),
-                  by=1:nrow(data)]
-
-  xpglist <- rbindlist(lapply(xpglist$xpglist,
-                              function(x) as.data.frame.list(unlist(x))))
-
-  data <- cbind(data, xptlist, xpglist, ulist)
-
-  setnames(data, old = "Uniformity.uniformity", new = "Uniformity")
-  setnames(data, old = colnames(data),
-           new = gsub("Uniformity.", "Uniformity_", colnames(data)))
-  setnames(data, old = colnames(data),
-           new = gsub("txp.total.", "txp.total_", colnames(data)))
-  setnames(data, old = colnames(data),
-           new = gsub("txp.Germinated.", "txp.Germinated_", colnames(data)))
+  data <- cbind(data, out)
 
   setDF(data)
 
