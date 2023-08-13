@@ -27,7 +27,7 @@ bibentry(bibtype  = "Manual",
            year, ").  germinationmetrics: Seed Germination Indices and Curve Fitting. ",
            vers, ", ", "https://github.com/aravind-j/germinationmetrics", "https://cran.r-project.org/package=germinationmetrics",
            ".", sep=""),
-         note = {c(paste(vers), "https://aravind-j.github.io/germinationmetrics/", "https://CRAN.R-project.org/package=germinationmetrics")})
+         note = paste(vers, "https://aravind-j.github.io/germinationmetrics/", "https://CRAN.R-project.org/package=germinationmetrics"))
 
 citFooter("This free and open-source software implements academic
 research by the authors and co-workers. If you use it, please support
