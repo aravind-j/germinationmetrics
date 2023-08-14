@@ -81,3 +81,30 @@ test_that("PeakGermPercent with multiple peaks works; Cumulative germination cou
                  regexp = "Multiple peak germination times exist.")
   expect_equal(object = out2, expected = c(5, 6))
 })
+
+test_that("Identical results with Cumulative and Partial germination counts", {
+
+  expect_identical(object = FirstGermTime(germ.counts = x, intervals = int),
+                   expected = FirstGermTime(germ.counts = y, intervals = int,
+                                            partial = FALSE))
+  expect_identical(object = LastGermTime(germ.counts = x, intervals = int),
+                   expected = LastGermTime(germ.counts = y, intervals = int,
+                                           partial = FALSE))
+  expect_identical(object = TimeSpreadGerm(germ.counts = x, intervals = int),
+                   expected = TimeSpreadGerm(germ.counts = y, intervals = int,
+                                             partial = FALSE))
+  expect_identical(object = PeakGermTime(germ.counts = x, intervals = int),
+                   expected = PeakGermTime(germ.counts = y, intervals = int,
+                                           partial = FALSE))
+
+  expect_warning(object = out1 <- PeakGermTime(germ.counts = z,
+                                               intervals = int),
+                 regexp = "Multiple peak germination times exist.")
+  expect_warning(object = out2 <- PeakGermTime(germ.counts = cumsum(z),
+                                               intervals = int,
+                                               partial = FALSE),
+                 regexp = "Multiple peak germination times exist.")
+  expect_identical(object = out1, expected = out2)
+
+})
+

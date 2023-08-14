@@ -3,25 +3,58 @@ y <- c(0, 0, 0, 0, 4, 21, 31, 38, 39, 39, 40, 40, 40, 40)
 z <- c(0, 0, 0, 0, 11, 11, 9, 7, 1, 0, 1, 0, 0, 0)
 int <- 1:length(x)
 
+test_that("GermPercent works; Number of germinated seeds", {
+
+  # From number of germinated seeds
+  expect_equal(GermPercent(germinated.seeds = 40, total.seeds = 50),
+               expected = 80)
+
+  #-----------------------------------------------------------------------------
+
+  # Error in case germinated.seeds' is not a numeric vector of length 1
+  expect_error(object = GermPercent(germinated.seeds = as.character(40),
+                                    total.seeds = 50),
+               regexp = "'germinated.seeds' should be a numeric vector of length 1.")
+  expect_error(object = GermPercent(germinated.seeds = c(20, 40),
+                                    total.seeds = 50),
+               regexp = "'germinated.seeds' should be a numeric vector of length 1.")
+
+  # Error in case total.seeds' is not a numeric vector of length 1
+  expect_error(object = GermPercent(germinated.seeds = 40,
+                                    total.seeds = as.character(50)),
+               regexp = "'total.seeds' should be a numeric vector of length 1.")
+  expect_error(object = GermPercent(germinated.seeds = 40,
+                                    total.seeds = c(50, 25)),
+               regexp = "'total.seeds' should be a numeric vector of length 1.")
+
+
+})
+
 test_that("GermPercent works; Partial germination counts", {
 
   # From partial germination counts
   expect_equal(object = GermPercent(germ.counts = x, total.seeds = 50),
                expected = 80)
 
-  # From number of germinated seeds
-  expect_equal(GermPercent(germinated.seeds = 40, total.seeds = 50),
-               expected = 80)
+  #-----------------------------------------------------------------------------
 
   # Error in case both germ.counts and germinated.seeds are provided
   expect_error(object = GermPercent(germ.counts = x, total.seeds = 50,
                                     germinated.seeds = 40),
                regexp = "Provide only either one of the two arguments\n'germinated.seeds' or 'germ.counts' and not both")
 
-  # Error in case germ.counts is not a numeric vector
+    # Error in case germ.counts is not a numeric vector
   expect_error(object = GermPercent(germ.counts = as.character(x),
                                     total.seeds = 50),
                regexp = "'germ.counts' should be a numeric vector.")
+
+  # Error in case total.seeds' is not a numeric vector of length 1
+  expect_error(object = GermPercent(germ.counts = x,
+                                    total.seeds = as.character(50)),
+               regexp = "'total.seeds' should be a numeric vector of length 1.")
+  expect_error(object = GermPercent(germ.counts = x,
+                                    total.seeds = c(50, 25)),
+               regexp = "'total.seeds' should be a numeric vector of length 1.")
 
   # Error in case partial is not a numeric vector of length 1
   expect_error(object = GermPercent(germ.counts = x, total.seeds = 50,
@@ -40,23 +73,27 @@ test_that("GermPercent works; Cumulative germination counts", {
                                     partial = FALSE),
                expected = 80)
 
+  #-----------------------------------------------------------------------------
+
   # Error in case both germ.counts and germinated.seeds are provided
   expect_error(object = GermPercent(germ.counts = y, total.seeds = 50,
-                                    germinated.seeds = 40),
+                                    germinated.seeds = 40, partial = FALSE),
                regexp = "Provide only either one of the two arguments\n'germinated.seeds' or 'germ.counts' and not both")
 
 
   # Error in case germ.counts is not a numeric vector
   expect_error(object = GermPercent(germ.counts = as.character(y),
-                                    total.seeds = 50),
+                                    total.seeds = 50, partial = FALSE),
                regexp = "'germ.counts' should be a numeric vector.")
 
   # Error in case total.seeds' is not a numeric vector of length 1
   expect_error(object = GermPercent(germ.counts = x,
-                                    total.seeds = as.character(50)),
+                                    total.seeds = as.character(50),
+                                    partial = FALSE),
                regexp = "'total.seeds' should be a numeric vector of length 1.")
   expect_error(object = GermPercent(germ.counts = x,
-                                    total.seeds = c(50, 25)),
+                                    total.seeds = c(50, 25),
+                                    partial = FALSE),
                regexp = "'total.seeds' should be a numeric vector of length 1.")
 
   # Error in case partial is not a numeric vector of length 1
@@ -79,6 +116,8 @@ test_that("PeakGermPercent works; Partial germination counts", {
   expect_equal(object = PeakGermPercent(germ.counts = x, intervals = int,
                                         total.seeds = 50),
                expected = 34)
+
+  #-----------------------------------------------------------------------------
 
   # Error in case germ.counts is not a numeric vector
   expect_error(object = PeakGermPercent(germ.counts = as.character(x),
@@ -125,6 +164,8 @@ test_that("PeakGermPercent works; Cumulative germination counts", {
   expect_equal(object = PeakGermPercent(germ.counts = y, intervals = int,
                                         total.seeds = 50, partial = FALSE),
                expected = 34)
+
+  #-----------------------------------------------------------------------------
 
   # Error in case germ.counts is not a numeric vector
   expect_error(object = PeakGermPercent(germ.counts = as.character(y),
@@ -182,6 +223,8 @@ test_that("PeakGermPercent with multiple peaks works; Partial germination counts
                  regexp = "Multiple peak germination times exist.")
   expect_equal(object = out1, expected = 22)
 
+  #-----------------------------------------------------------------------------
+
   # Error in case germ.counts is not a numeric vector
   expect_error(object = PeakGermPercent(germ.counts = as.character(z),
                                         intervals = int,
@@ -231,6 +274,8 @@ test_that("PeakGermPercent with multiple peaks works; Cumulative germination cou
                                                   partial = FALSE),
                  regexp = "Multiple peak germination times exist.")
   expect_equal(object = out2, expected = 22)
+
+  #-----------------------------------------------------------------------------
 
   # Error in case germ.counts is not a numeric vector
   expect_error(object = PeakGermPercent(germ.counts = as.character(cumsum(z)),
@@ -284,3 +329,28 @@ test_that("PeakGermPercent with multiple peaks works; Cumulative germination cou
                                         partial = FALSE),
                regexp = "'germ.counts' is not cumulative.")
 })
+
+
+test_that("Identical results with Cumulative and Partial germination counts", {
+
+  expect_identical(object = GermPercent(germ.counts = x, total.seeds = 50),
+                   expected = GermPercent(germ.counts = y, total.seeds = 50,
+                                          partial = FALSE))
+  expect_identical(object = PeakGermPercent(germ.counts = x, intervals = int,
+                                            total.seeds = 50),
+                   expected = PeakGermPercent(germ.counts = y, intervals = int,
+                                              total.seeds = 50,
+                                              partial = FALSE))
+
+  expect_warning(object = out1 <- PeakGermPercent(germ.counts = z,
+                                                  intervals = int,
+                                                  total.seeds = 50),
+                 regexp = "Multiple peak germination times exist.")
+  expect_warning(object = out2 <- PeakGermPercent(germ.counts = cumsum(z),
+                                                  intervals = int,
+                                                  total.seeds = 50,
+                                                  partial = FALSE),
+                 regexp = "Multiple peak germination times exist.")
+  expect_equal(object = out1, expected = out2)
+})
+

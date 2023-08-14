@@ -32,3 +32,23 @@ test_that("MeanGermRate works; Cumulative germination counts", {
                                   modification = "santanaranal"),
                expected = 7.3, tolerance = 1e-12)
 })
+
+
+test_that("Identical results with Cumulative and Partial germination counts", {
+
+  expect_identical(object = GermIndex(germ.counts = x, intervals = int,
+                                      total.seeds = 50),
+                   expected = GermIndex(germ.counts = y, intervals = int,
+                                        partial = FALSE, total.seeds = 50))
+  expect_identical(object = GermIndex(germ.counts = x, intervals = int,
+                                      total.seeds = 50, modification = "none"),
+                   expected = GermIndex(germ.counts = y, intervals = int,
+                                        partial = FALSE, total.seeds = 50,
+                                        modification = "none"))
+  expect_identical(object = GermIndex(germ.counts = x, intervals = int,
+                                      total.seeds = 50,
+                                      modification = "santanaranal"),
+                   expected = GermIndex(germ.counts = y, intervals = int,
+                                        partial = FALSE, total.seeds = 50,
+                                        modification = "santanaranal"))
+})

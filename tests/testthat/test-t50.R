@@ -15,11 +15,25 @@ test_that("t50 works; Partial germination counts", {
 
 test_that("t50 works; Cumulative germination counts", {
 
-  # From partial germination counts
+  # From cumulative germination counts
   expect_equal(object = t50(germ.counts = y, intervals = int,
                             partial = FALSE, method = "coolbear"),
                expected = 5.97058823529412, tolerance = 1e-12)
   expect_equal(object = t50(germ.counts = y, intervals = int,
                             partial = FALSE, method = "farooq"),
                expected = 5.94117647058824, tolerance = 1e-12)
+})
+
+test_that("Identical results with Cumulative and Partial germination counts", {
+
+  expect_identical(object = t50(germ.counts = x, intervals = int,
+                                method = "coolbear"),
+                   expected = t50(germ.counts = y, intervals = int,
+                                  partial = FALSE, method = "coolbear"))
+
+  expect_identical(object = t50(germ.counts = x, intervals = int,
+                                method = "farooq"),
+                   expected = t50(germ.counts = y, intervals = int,
+                                  partial = FALSE, method = "farooq"))
+
 })

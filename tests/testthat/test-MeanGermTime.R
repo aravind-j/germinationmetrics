@@ -36,7 +36,7 @@ test_that("SEGermTime works; Partial germination counts", {
 
   # From partial germination counts
   expect_equal(object = SEGermTime(germ.counts = x, intervals = int),
-               expected = 0.239478102514824, tolerance = 1e-12)
+               expected = 0.190141647604743, tolerance = 1e-12)
 })
 
 test_that("SEGermTime works; Cumulative germination counts", {
@@ -44,7 +44,7 @@ test_that("SEGermTime works; Cumulative germination counts", {
   # From partial germination counts
   expect_equal(object = SEGermTime(germ.counts = y, intervals = int,
                                     partial = FALSE),
-               expected = 0.239478102514824, tolerance = 1e-12)
+               expected = 0.190141647604743, tolerance = 1e-12)
 })
 
 test_that("CVGermTime works; Partial germination counts", {
@@ -61,4 +61,21 @@ test_that("CVGermTime works; Cumulative germination counts", {
                                    partial = FALSE),
                expected = 0.179486771488981, tolerance = 1e-12)
 })
+
+test_that("Identical results with Cumulative and Partial germination counts", {
+
+  expect_identical(object = MeanGermTime(germ.counts = x, intervals = int),
+                   expected = MeanGermTime(germ.counts = y, intervals = int,
+                                           partial = FALSE))
+  expect_identical(object = VarGermTime(germ.counts = x, intervals = int),
+                   expected = VarGermTime(germ.counts = y, intervals = int,
+                                          partial = FALSE))
+  expect_identical(object = SEGermTime(germ.counts = x, intervals = int),
+                   expected = SEGermTime(germ.counts = y, intervals = int,
+                                         partial = FALSE))
+  expect_identical(object = CVGermTime(germ.counts = x, intervals = int),
+                   expected = CVGermTime(germ.counts = y, intervals = int,
+                                         partial = FALSE))
+})
+
 

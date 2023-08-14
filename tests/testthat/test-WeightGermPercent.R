@@ -17,3 +17,14 @@ test_that("MeanGermRate works; Cumulative germination counts", {
                                           intervals = int, partial = FALSE),
                expected = 47.4285714285714, tolerance = 1e-12)
 })
+
+test_that("Identical results with Cumulative and Partial germination counts", {
+
+  expect_identical(object = WeightGermPercent(germ.counts = x,
+                                              total.seeds = 50,
+                                              intervals = int),
+                   expected = WeightGermPercent(germ.counts = y,
+                                                total.seeds = 50,
+                                                intervals = int,
+                                                partial = FALSE))
+})
