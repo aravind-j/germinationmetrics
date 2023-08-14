@@ -224,6 +224,12 @@ VarGermRate <- function(germ.counts, intervals, partial = TRUE) {
 SEGermRate <- function(germ.counts, intervals, partial = TRUE) {
 
   VGR <- VarGermRate(germ.counts, intervals, partial)
+
+  # Convert cumulative to partial
+  if (!partial) {
+    germ.counts <- c(germ.counts[1], diff(germ.counts))
+  }
+
   SEGR <- sqrt(VGR/sum(germ.counts))
 
   return(SEGR)

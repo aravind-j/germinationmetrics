@@ -193,6 +193,12 @@ VarGermTime <- function(germ.counts, intervals, partial = TRUE) {
 
   MGT <- MeanGermTime(germ.counts, intervals, partial)
   intervalsdiff <- (intervals - MGT)^2
+
+  # Convert cumulative to partial
+  if (!partial) {
+    germ.counts <- c(germ.counts[1], diff(germ.counts))
+  }
+
   VGT <- sum(germ.counts*intervalsdiff)/(sum(germ.counts) - 1)
 
   return(VGT)
@@ -203,6 +209,12 @@ VarGermTime <- function(germ.counts, intervals, partial = TRUE) {
 SEGermTime <- function(germ.counts, intervals, partial = TRUE) {
 
   VGT <- VarGermTime(germ.counts, intervals, partial)
+
+  # Convert cumulative to partial
+  if (!partial) {
+    germ.counts <- c(germ.counts[1], diff(germ.counts))
+  }
+
   SEGT <- sqrt(VGT/sum(germ.counts))
 
   return(SEGT)

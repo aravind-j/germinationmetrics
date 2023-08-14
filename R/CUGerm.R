@@ -65,6 +65,11 @@ CUGerm <- function(germ.counts, intervals, partial = TRUE) {
 
   MGT <- MeanGermTime(germ.counts, intervals, partial)
 
+  # Convert cumulative to partial
+  if (!partial) {
+    germ.counts <- c(germ.counts[1], diff(germ.counts))
+  }
+
   CUG <- sum(germ.counts)/sum((((MGT - intervals)^2)*germ.counts))
 
   return(CUG)
