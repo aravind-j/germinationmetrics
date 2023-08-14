@@ -144,7 +144,7 @@ int <- 1:length(x)
 
 # From partial germination counts
 #----------------------------------------------------------------------------
-# Wihout max specified
+# Without max specified
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50)
 TimsonsIndex(germ.counts = x, intervals = int, total.seeds = 50,
              modification = "none")
@@ -168,7 +168,7 @@ GermRateGeorge(germ.counts = x, intervals = int, max = 14)
 
 # From cumulative germination counts
 #----------------------------------------------------------------------------
-# Wihout max specified
+# Without max specified
 TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
              total.seeds = 50)
 TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
@@ -180,7 +180,7 @@ TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
 TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,
              total.seeds = 50,
              modification = "khanungar")
-GermRateGeorge(germ.counts = y, intervals = int, partial = FALSE,)
+GermRateGeorge(germ.counts = y, intervals = int, partial = FALSE)
 
 # With max specified
 TimsonsIndex(germ.counts = y, intervals = int, partial = FALSE,

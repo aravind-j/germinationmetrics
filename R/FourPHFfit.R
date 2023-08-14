@@ -168,7 +168,7 @@
 #' # From cumulative germination counts
 #' #----------------------------------------------------------------------------
 #' FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
-#' partial = FALSE)
+#'            partial = FALSE)
 #'
 #' @export
 FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
@@ -782,13 +782,13 @@ FourPHF_fixy0 <- function(x, a, bta, c)
   0 + ((a * (x ^ exp(bta))) /
          (c ^ exp(bta) + x ^ exp(bta)))
 }
+
 # FPHF with a fixed to max(csgp) & y0 fixed to 0
 FourPHF_fixa_fixy0 <- function(x, a = 100, bta, c)
 {
   0 + ((a * (x ^ exp(bta))) /
          (c ^ exp(bta) + x ^ exp(bta)))
 }
-
 
 # Daily rate of germination function - partial derivative of 4PHF
 RateofGerm <- function(x, a, b, c) {

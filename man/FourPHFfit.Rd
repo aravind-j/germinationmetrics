@@ -175,7 +175,7 @@ FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, tmax = 20)
 # From cumulative germination counts
 #----------------------------------------------------------------------------
 FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
-partial = FALSE)
+           partial = FALSE)
 
 }
 \references{

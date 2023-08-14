@@ -133,7 +133,7 @@
 #'
 #' # From cumulative germination counts
 #' #----------------------------------------------------------------------------
-#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,)
+#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE)
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
 #'                    method = "shmueligoldberg")
 #' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
