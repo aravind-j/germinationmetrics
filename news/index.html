@@ -88,7 +88,17 @@
 <ul><li>
 <code>FirstGermTime</code>, <code>LastGermTime</code>, <code>TimeSpreadGerm</code> - Fixed issue with incorrect display of results in case of intervals which are not in days (Thanks to D. Vijay for Dunna.Vijay[at]icar.gov.in).</li>
 <li>
+<code>FourPHFfit</code>, <code>plot.FourPHFfit</code> <code>FourPHFfit.bulk</code> and <code>plot.FourPHFfit.bulk</code> - Replaced fitting using <code>minpack.lm::nlsLM</code> with <code><a href="https://rdrr.io/pkg/gslnls/man/gsl_nls.html" class="external-link">gslnls::gsl_nls</a></code>.</li>
+<li>
 <code>FourPHFfit.bulk</code> and <code>plot.FourPHFfit.bulk</code> - Fixed issue with plotting of cumulative data with <code>show.points = TRUE</code> (Thanks to D. Vijay for Dunna.Vijay[at]icar.gov.in).</li>
+<li>
+<code>FourPHFfit.bulk</code> - Added fit quality evaluation in output.</li>
+<li>
+<code>VarGermTime</code>, <code>SEGermTime</code>, <code>SEGermRate</code>, <code>CUGerm</code> - Fixed calculation bug with cumulative data.</li>
+</ul></div>
+<div class="section level3">
+<h3 id="other-notes-0-1-8">OTHER NOTES:<a class="anchor" aria-label="anchor" href="#other-notes-0-1-8"></a></h3>
+<ul><li>Added unit tests with <code>testthat</code>.</li>
 </ul></div>
 </div>
     <div class="section level2">
