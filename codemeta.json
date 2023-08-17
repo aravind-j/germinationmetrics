@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/aravind-j/germinationmetrics",
   "issueTracker": "https://github.com/aravind-j/germinationmetrics/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.1.7",
+  "version": "0.1.7.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2022-08-18 r82725 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2023-06-17 r84564 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -143,6 +143,19 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "testthat",
+      "name": "testthat",
+      "version": ">= 3.0.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=testthat"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "XML",
       "name": "XML",
       "provider": {
@@ -223,15 +236,15 @@
     },
     "7": {
       "@type": "SoftwareApplication",
-      "identifier": "minpack.lm",
-      "name": "minpack.lm",
+      "identifier": "gslnls",
+      "name": "gslnls",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=minpack.lm"
+      "sameAs": "https://CRAN.R-project.org/package=gslnls"
     },
     "8": {
       "@type": "SoftwareApplication",
@@ -269,11 +282,10 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1656.593KB",
+  "fileSize": "1769.456KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
-      "datePublished": "2022",
       "author": [
         {
           "@type": "Person",
@@ -307,7 +319,7 @@
         }
       ],
       "name": "germinationmetrics: Seed Germination Indices and Curve Fitting",
-      "description": ["R package version 0.1.7", "https://github.com/aravind-j/germinationmetrics", "https://cran.r-project.org/package=germinationmetrics"]
+      "description": "R package version 0.1.7.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
     }
   ],
   "releaseNotes": "https://github.com/aravind-j/germinationmetrics/blob/master/NEWS.md",
