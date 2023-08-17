@@ -761,12 +761,11 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
 }
 
-# 4 paramter hill function : to be used with `FourPHFfit`
-# b = exp(bta) to enforce positivity of slope
+#' Four paramter hill function (FPHF)
 FourPHF <- function(x, a, bta, c, y0)
 {
   y0 + ((a * (x ^ exp(bta))) /
-          (c ^ exp(bta) + x ^ exp(bta)))
+          (c ^ exp(bta) + x ^ exp(bta))) # b = exp(bta) to enforce +ive slope
 }
 
 # FPHF with a fixed to fixed to max(csgp)
@@ -790,7 +789,7 @@ FourPHF_fixa_fixy0 <- function(x, a = 100, bta, c)
          (c ^ exp(bta) + x ^ exp(bta)))
 }
 
-# Daily rate of germination function - partial derivative of 4PHF
+# Daily rate of germination function - partial derivative of FPHF
 RateofGerm <- function(x, a, b, c) {
   (a * b * (c ^ b) * (x ^ (b - 1))) /
     (((c ^ b) + (x ^ b)) ^ 2)
