@@ -3,6 +3,7 @@
 # - https://github.com/gavinsimpson/gratia/blob/master/.github/workflows/readme-renderer.yaml
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
