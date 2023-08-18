@@ -761,13 +761,31 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
 }
 
-#' Four paramter hill function (FPHF)
+#' Four paramter hill function
+#'
+#' To be used by
+#' \code{\link[germinationmetrics]{FourPHFfit}}.
+#'
+#' @param x The explanatory/independent variable value.
+#' @param a Parameter \mjseqn{a}.
+#' @param bta Parameter \mjseqn{e^{\beta}}.
+#' @param b Parameter \mjseqn{b}.
+#' @param c Parameter \mjseqn{c}.
+#' @param y0 Parameter \mjseqn{y_{0}}.
+#'
+#' @return The calculated response/dependent value value.
+#'
+#' @export
+#'
+#'
 FourPHF <- function(x, a, bta, c, y0)
 {
   y0 + ((a * (x ^ exp(bta))) /
           (c ^ exp(bta) + x ^ exp(bta))) # b = exp(bta) to enforce +ive slope
 }
 
+#' @rdname FourPHF
+#' @export
 # FPHF with a fixed to fixed to max(csgp)
 FourPHF_fixa <- function(x, a = 100, bta, c, y0)
 {
@@ -775,6 +793,8 @@ FourPHF_fixa <- function(x, a = 100, bta, c, y0)
           (c ^ exp(bta) + x ^ exp(bta)))
 }
 
+#' @rdname FourPHF
+#' @export
 # FPHF with y0 fixed to 0
 FourPHF_fixy0 <- function(x, a, bta, c)
 {
@@ -782,6 +802,8 @@ FourPHF_fixy0 <- function(x, a, bta, c)
          (c ^ exp(bta) + x ^ exp(bta)))
 }
 
+#' @rdname FourPHF
+#' @export
 # FPHF with a fixed to max(csgp) & y0 fixed to 0
 FourPHF_fixa_fixy0 <- function(x, a = 100, bta, c)
 {
@@ -789,7 +811,9 @@ FourPHF_fixa_fixy0 <- function(x, a = 100, bta, c)
          (c ^ exp(bta) + x ^ exp(bta)))
 }
 
-# Daily rate of germination function - partial derivative of FPHF
+#' @rdname FourPHF
+#' @export
+# Daily rate of germination function - partial derivative of 4PHF
 RateofGerm <- function(x, a, b, c) {
   (a * b * (c ^ b) * (x ^ (b - 1))) /
     (((c ^ b) + (x ^ b)) ^ 2)
