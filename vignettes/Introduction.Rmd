@@ -231,6 +231,16 @@ indices$Reference <- gsub("\\[|\\]", "", indices$Reference)
 
 ```
 
+```{r}
+require("pander")
+tt <- requireNamespace("asdf", quietly = TRUE)
+tt
+rmarkdown::pandoc_available()
+Sys.which('pandoc')
+Sys.which('pandoc-citeproc')
+
+```
+
 
 ```{r, echo = FALSE, eval = TRUE}
 if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
