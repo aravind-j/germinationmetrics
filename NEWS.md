@@ -8,6 +8,7 @@
 
 ## OTHER NOTES: 
 * Added unit tests with `testthat`.
+* Fixed `inst/CITATION`.
 
 # germinationmetrics  0.1.7
 
