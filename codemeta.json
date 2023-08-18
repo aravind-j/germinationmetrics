@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/aravind-j/germinationmetrics",
   "issueTracker": "https://github.com/aravind-j/germinationmetrics/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.1.7.9000",
+  "version": "0.1.8",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2023-06-17 r84564 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2023-08-09 r84924 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -282,7 +282,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1769.456KB",
+  "fileSize": "1914.814KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -319,10 +319,9 @@
         }
       ],
       "name": "germinationmetrics: Seed Germination Indices and Curve Fitting",
-      "description": "R package version 0.1.7.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
+      "description": "R package version 0.1.8 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
     }
   ],
-  "releaseNotes": "https://github.com/aravind-j/germinationmetrics/blob/master/NEWS.md",
   "readme": "https://github.com/aravind-j/germinationmetrics/blob/master/README.md",
   "contIntegration": "https://github.com/aravind-j/germinationmetrics/actions",
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#stable"],
