@@ -26,9 +26,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           extra-packages: |
-            any::rmakrdown
             any::devtools
-            any::RCurl
             any::kableExtra
 
       - name: Render README.md using rmarkdown
