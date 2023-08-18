@@ -98,7 +98,6 @@ news(package='germinationmetrics')
 
 ## CRAN checks
 
-
 ```{r, echo = FALSE}
 pkgname <- "germinationmetrics"
 

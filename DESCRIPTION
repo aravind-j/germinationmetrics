@@ -1,4 +1,5 @@
 Package: germinationmetrics
+Type: Package
 Title: Seed Germination Indices and Curve Fitting
 Version: 0.1.8
 Authors@R: c(
