@@ -231,19 +231,9 @@ indices$Reference <- gsub("\\[|\\]", "", indices$Reference)
 
 ```
 
-```{r}
-require("pander")
-tt <- requireNamespace("asdf", quietly = TRUE)
-tt
-rmarkdown::pandoc_available()
-Sys.which('pandoc')
-Sys.which('pandoc-citeproc')
-
-```
-
-
 ```{r, echo = FALSE, eval = TRUE}
-if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+# if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+if (requireNamespace("pander", quietly = TRUE) & rmarkdown::pandoc_available()){
   pander::pander(indices, style='grid',
                split.cell = c(15, 18, 50, 10, 12, 8),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
@@ -253,7 +243,6 @@ if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys
 }
 
 ```
-
 
 \elandscape
 
@@ -363,7 +352,8 @@ The details of various parameters that are computed from this function are given
 ```{r, echo = FALSE, eval = TRUE}
 load("Indices.rda")
 fphf$Details <- gsub("\\r\\n", "\\\\\n", fphf$Details)
-if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
+if (requireNamespace("pander", quietly = TRUE) & rmarkdown::pandoc_available()){
+# if (requireNamespace("pander", quietly = TRUE) & Sys.which('pandoc') != "" & Sys.which('pandoc-citeproc') != ""){
   pander::pander(fphf, style='grid',
                split.cell = c(15, 50, 10, 10),
                justify = c('left'), split.table = Inf, keep.line.breaks = TRUE,
