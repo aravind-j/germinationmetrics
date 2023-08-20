@@ -1,4 +1,7 @@
+# germinationmetrics  0.1.9
+
 # germinationmetrics  0.1.8
+
 ## UPDATED FUNCTIONS:
 * `FirstGermTime`, `LastGermTime`, `TimeSpreadGerm` - Fixed issue with incorrect display of results in case of intervals which are not in days (Thanks to D. Vijay for Dunna.Vijay[at]icar.gov.in).
 * `FourPHFfit`, `plot.FourPHFfit` `FourPHFfit.bulk` and `plot.FourPHFfit.bulk` - Replaced fitting using `minpack.lm::nlsLM` with `gslnls::gsl_nls`.
