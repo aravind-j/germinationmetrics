@@ -199,7 +199,7 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
     # Plot
     Gplot <- ggplot(data = dfcurve, aes(x = intervals, y = csgp,
                                         group = curve)) +
-      geom_line(aes_string(colour = group.col)) +
+      geom_line(aes(colour = .data[[group.col]])) +
       labs(x = "Time", y = "Germination (%)") +
       theme_bw()
 
@@ -232,8 +232,11 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
       }
 
       Gplot <- Gplot +
-        geom_point(data = dfcsgp, aes_string(x = "intervals", y = "csgp",
-                                             colour = group.col),
+        # geom_point(data = dfcsgp, aes_string(x = "intervals", y = "csgp",
+        #                                      colour = group.col),
+        #            alpha = 0.5, inherit.aes = FALSE)
+        geom_point(data = dfcsgp, aes(x = intervals, y = csgp,
+                                      colour = .data[[group.col]]),
                    alpha = 0.5, inherit.aes = FALSE)
     }
 
@@ -247,7 +250,7 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
     dfcurve <- plyr::mutate(dfcurve, gp = RateofGerm(intervals, a, b, c))
 
     Gplot <- ggplot(data = dfcurve, aes(x = intervals, y = gp, group = curve)) +
-      geom_line(aes_string(colour = group.col))+
+      geom_line(aes(colour = .data[[group.col]])) +
       # geom_point(data = dfgp, aes_string(x = "intervals",
       #            y = "gp", colour = group.col),
       #            alpha = 0.5, inherit.aes = FALSE) +
@@ -262,23 +265,23 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
     if (annotate != "uniformity") {
       Gplot <- Gplot +
         geom_vline(data = dfannotate,
-                   aes_string(xintercept = acol, colour = group.col),
+                   aes(xintercept = .data[[acol]], colour = .data[[group.col]]),
                    linetype = "dashed")
     } else {
       Gplot <- Gplot +
         geom_point(data = dfannotate,
-                       aes_string(x = acol[1],
-                                  y = ypos2, colour = group.col),
+                       aes(x = .data[[acol[1]]],
+                           y = .data[[ypos2]], colour = .data[[group.col]]),
                        inherit.aes = FALSE, pch = 18,
                        position = position_dodge(5)) +
         geom_point(data = dfannotate,
-                   aes_string(x = acol[2],
-                              y = ypos2, colour = group.col),
+                   aes(x = .data[[acol[2]]],
+                       y = .data[[ypos2]], colour = .data[[group.col]]),
                    inherit.aes = FALSE, pch = 18,
                    position = position_dodge(5)) +
         geom_linerange(data = dfannotate,
-                     aes_string(xmin = acol[1], xmax = acol[2],
-                                y = ypos2, colour = group.col),
+                     aes(xmin = .data[[acol[1]]], xmax = .data[[acol[2]]],
+                         y = .data[[ypos2]], colour = .data[[group.col]]),
                      inherit.aes = FALSE,
                      position = position_dodge(5))
     }
