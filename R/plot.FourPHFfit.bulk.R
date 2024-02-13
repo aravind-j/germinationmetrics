@@ -180,10 +180,12 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
   #                     FUN = function(i) paste(i, collapse = ""))
   # }
 
+  x$curve <- 1:nrow(x)
+
   df <- x[, c(counts.intervals.cols,
-              total.seeds.col, group.col)]
-  coefs <- x[, c("a", "b", "c", "y0", group.col)]
-  coefs$curve <- 1:nrow(coefs)
+              total.seeds.col, group.col, "curve")]
+  coefs <- x[, c("a", "b", "c", "y0", group.col, "curve")]
+  # coefs$curve <- 1:nrow(coefs)
 
   if (rog == FALSE) { # Plot FPHF curve
     # Calculate curves
@@ -231,13 +233,24 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
         dfcsgp$intervals <- as.numeric(as.character(dfcsgp$intervals))
       }
 
-      Gplot <- Gplot +
-        # geom_point(data = dfcsgp, aes_string(x = "intervals", y = "csgp",
-        #                                      colour = group.col),
-        #            alpha = 0.5, inherit.aes = FALSE)
-        geom_point(data = dfcsgp, aes(x = intervals, y = csgp,
-                                      colour = .data[[group.col]]),
-                   alpha = 0.5, inherit.aes = FALSE)
+      dfcsgp$sel <- TRUE
+      dfcurve$sel <- FALSE
+      dfcurve2 <- dplyr::bind_rows(list(dfcurve, dfcsgp))
+
+      # Gplot <- Gplot +
+      #   # geom_point(data = dfcsgp, aes_string(x = "intervals", y = "csgp",
+      #   #                                      colour = group.col),
+      #   #            alpha = 0.5, inherit.aes = FALSE)
+      #   geom_point(data = dfcsgp, aes(x = intervals, y = csgp,
+      #                                 colour = .data[[group.col]]),
+      #              alpha = 0.5, inherit.aes = FALSE)
+      Gplot <-
+        ggplot(data = dfcurve2, aes(x = intervals, y = csgp,
+                                    group = curve)) +
+        geom_line2(mapping = aes(colour = Genotype),
+                   show.points = dfcurve2$sel, include.points = FALSE) +
+        labs(x = "Time", y = "Germination (%)") +
+        theme_bw()
     }
 
   } else { # Plot ROG curve
@@ -269,21 +282,11 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
                    linetype = "dashed")
     } else {
       Gplot <- Gplot +
-        geom_point(data = dfannotate,
-                       aes(x = .data[[acol[1]]],
-                           y = .data[[ypos2]], colour = .data[[group.col]]),
-                       inherit.aes = FALSE, pch = 18,
-                       position = position_dodge(5)) +
-        geom_point(data = dfannotate,
-                   aes(x = .data[[acol[2]]],
-                       y = .data[[ypos2]], colour = .data[[group.col]]),
-                   inherit.aes = FALSE, pch = 18,
-                   position = position_dodge(5)) +
-        geom_linerange(data = dfannotate,
-                     aes(xmin = .data[[acol[1]]], xmax = .data[[acol[2]]],
-                         y = .data[[ypos2]], colour = .data[[group.col]]),
-                     inherit.aes = FALSE,
-                     position = position_dodge(5))
+        geom_errorbar(data = dfannotate,
+                      aes(xmin = .data[[acol[1]]], xmax = .data[[acol[2]]],
+                          y = ypos2, colour = .data[[group.col]], width = 10),
+                      inherit.aes = FALSE,
+                      position = position_dodge(5))
     }
 
   }
