@@ -18,12 +18,12 @@
 #' Speed of germination
 #'
 #' Compute the following metrics: \describe{ \item{\code{GermSpeed}}{Speed of
-#' germination or Germination rate index or Index of velocity of germination or
+#' germination (\mjseqn{S}) or Germination rate index or Index of velocity of germination or
 #' Germination index or Emergence rate index
 #' \insertCite{throneberry_relation_1955,maguire_speed_1962,allan_seedling_1962,kendrick_photocontrol_1969,bouton_germination_1976,erbach_tillage_1982,aosa_seed_1983,khandakar_jute_1983,hsu_planting_1986,bradbeer_seed_1988,wardle_allelopathic_1991}{germinationmetrics}.
-#' } \item{\code{GermSpeedAccumulated}}{Speed of accumulated germination
+#' } \item{\code{GermSpeedAccumulated}}{Speed of accumulated germination (\mjseqn{S_{accumulated}})
 #' \insertCite{bradbeer_seed_1988,wardle_allelopathic_1991,haugland_experiments_1996,de_santana_alise_2004}{germinationmetrics}.
-#' } \item{\code{GermSpeedCorrected}}{Corrected speed of germination or
+#' } \item{\code{GermSpeedCorrected}}{Corrected speed of germination (\mjseqn{\hat{S}}) or
 #' Corrected germination rate index
 #' \insertCite{evetts_germination_1972}{germinationmetrics}.} } \loadmathjax
 #'
@@ -89,12 +89,16 @@
 #' either using the corrected speed of germination or by using germination
 #' percentages instead of counts for computing speed.
 #'
-#' \code{GermSpeedCorrected} computes the corrected speed of germination as
+#' \code{GermSpeedCorrected} computes the corrected speed of germination
+#' \mjseqn{S} or corrected speed of accumulated germination \mjseqn{\hat{S}} as
 #' follows \insertCite{evetts_germination_1972}{germinationmetrics}.
 #'
-#' \mjsdeqn{S_{corrected} = \frac{S}{FGP}}
+#' \mjsdeqn{\hat{S} = \frac{S}{FGP}}
 #'
-#' Where, \mjseqn{S} is the germination speed (either standard or accumulated as
+#' \mjsdeqn{\hat{S}_{accumulated} = \frac{S_{accumulated}}{FGP}}
+#'
+#' Where, \mjseqn{S} is the germination speed or \mjseqn{\hat{S}} is the
+#' accumulated speed of germination (as
 #' specified by the argument  \code{method = "normal"} or \code{method =
 #' "accumulated"} respectively) computed with germination percentage instead of
 #' counts and \mjseqn{FGP} is the final germination percentage or germinability.
