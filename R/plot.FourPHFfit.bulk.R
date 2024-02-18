@@ -213,7 +213,7 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
           t(apply(dfcsgp[, counts.intervals.cols],
                   1, cumsum))
         dfcsgp <- reshape2::melt(dfcsgp, id.vars = c(group.col,
-                                                     total.seeds.col),
+                                                     total.seeds.col, "curve"),
                                  measure.vars = counts.intervals.cols,
                                  variable.name = "intervals")
         dfcsgp$csgp <- dfcsgp$value /
@@ -223,7 +223,7 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
         dfcsgp$intervals <- as.numeric(as.character(dfcsgp$intervals))
       } else{
         dfcsgp <- reshape2::melt(df, id.vars = c(group.col,
-                                                 total.seeds.col),
+                                                 total.seeds.col, "curve"),
                                  measure.vars = counts.intervals.cols,
                                  variable.name = "intervals")
         dfcsgp$csgp <- dfcsgp$value /
@@ -233,9 +233,14 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
         dfcsgp$intervals <- as.numeric(as.character(dfcsgp$intervals))
       }
 
+      dfcurve$curve <- as.factor(dfcurve$curve)
+      dfcsgp$curve <- as.factor(dfcsgp$curve)
+
       dfcsgp$sel <- TRUE
       dfcurve$sel <- FALSE
       dfcurve2 <- dplyr::bind_rows(list(dfcurve, dfcsgp))
+
+      # dfcurve2$sel <- as.factor(dfcurve2$sel)
 
       # Gplot <- Gplot +
       #   # geom_point(data = dfcsgp, aes_string(x = "intervals", y = "csgp",
@@ -247,8 +252,8 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
       Gplot <-
         ggplot(data = dfcurve2, aes(x = intervals, y = csgp,
                                     group = curve)) +
-        geom_line2(mapping = aes(colour = Genotype),
-                   show.points = dfcurve2$sel, include.points = FALSE) +
+        geom_line2(mapping = aes(show.points = sel, colour = .data[[group.col]]),
+                   include.points = FALSE) +
         labs(x = "Time", y = "Germination (%)") +
         theme_bw()
     }

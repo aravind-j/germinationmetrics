@@ -21,7 +21,7 @@ draw_key_path2 <- function(data, params, size) {
   stroke_size[is.na(stroke_size)] <- 0
 
   grob <- segmentsGrob(0.1, 0.5, 0.9, 0.5,
-                       gp = gpar(
+                       gp = grid::gpar(
                          col = alpha(data$colour %||% data$fill %||% "black", data$alpha),
                          fill = alpha(params$arrow.fill %||% data$colour
                                       %||% data$fill %||% "black", data$alpha),
@@ -41,7 +41,7 @@ draw_key_path2 <- function(data, params, size) {
   pgrob <-
     pointsGrob(0.5, 0.5,
                pch = data$shape,
-               gp = gpar(
+               gp = grid::gpar(
                  col = alpha(data$colour %||% "black", data$alpha),
                  fill = fill_alpha(data$fill %||% "black", data$alpha),
                  fontsize = (data$size %||% 1.5) * .pt + stroke_size * .stroke / 2,
@@ -49,14 +49,15 @@ draw_key_path2 <- function(data, params, size) {
                )
     )
 
-  grid::gTree(children = gList(grob, pgrob))
+  grid::gTree(children = grid::gList(grob, pgrob))
 }
 
 
 #' @importFrom rlang list2
 #' @importFrom stats complete.cases ave
 #' @importFrom cli cli_warn cli_inform cli_abort
-#' @importFrom grid segmentsGrob pointsGrob pointsGrob polylineGrob gTree convertUnit
+#' @importFrom grid segmentsGrob pointsGrob pointsGrob polylineGrob gTree convertUnit gpar gList addGrob
+#' @importFrom gridGeometry grid.polyclip
 #' @export
 geom_path2 <- function(mapping = NULL, data = NULL,
                        stat = "identity", position = "identity",
@@ -89,17 +90,21 @@ geom_path2 <- function(mapping = NULL, data = NULL,
 
 #' @export
 GeomPath2 <- ggproto("GeomPath2", Geom,
-                     required_aes = c("x", "y"),
+                     required_aes = c("x", "y",
+                                      # MOD
+                                      "show.points"),
 
                      default_aes = aes(colour = "black", linewidth = 0.5, linetype = 1, alpha = NA,
                                        # geom-point.R
                                        size = 1.5, shape = 19, fill = NA, stroke = 0.5,
                                        # MOD
-                                       show.points = TRUE, include.points = TRUE),
+                                       include.points = TRUE),
 
                      non_missing_aes = c("linewidth", "colour", "linetype",
                                          # geom-point.R
-                                         "size", "shape"),
+                                         "size", "shape",
+                                         #MOD
+                                         "include.points"),
 
                      handle_na = function(self, data, params) {
                        # Drop missing values at the start or end of a line - can't drop in the
@@ -130,8 +135,11 @@ GeomPath2 <- ggproto("GeomPath2", Geom,
                          ))
                        }
 
+                       # browser()
+
                        # must be sorted on group
                        data <- data[order(data$group), , drop = FALSE]
+
                        munched <- coord_munch(coord, data, panel_params)
 
                        # MOD
@@ -166,6 +174,7 @@ GeomPath2 <- ggproto("GeomPath2", Geom,
                        end <-   c(group_diff, TRUE)
 
                        # geom-point.R
+                       # MOD
                        coords <- coord$transform(data, panel_params)
 
                        # MOD
@@ -175,75 +184,169 @@ GeomPath2 <- ggproto("GeomPath2", Geom,
                        stroke_size <- coords$stroke
                        stroke_size[is.na(stroke_size)] <- 0
 
-
                        if (!constant) {
 
-                         arrow <- repair_segment_arrow(arrow, munched$group)
+                         out <- gTree()
 
-                         lineg <-
-                           grid::segmentsGrob(
-                             munched$x[!end], munched$y[!end], munched$x[!start], munched$y[!start],
+                         for (i in seq_along(unique0(munched$group))) {
+
+                           munched_id <- munched[munched$group == i, ]
+
+                           arrow <- repair_segment_arrow(arrow, munched_id$group)
+
+                           lineg_id <- grid::segmentsGrob(
+                             munched_id$x[!end], munched_id$y[!end], munched_id$x[!start], munched_id$y[!start],
                              default.units = "native", arrow = arrow,
-                             gp = gpar(
-                               col = alpha(munched$colour, munched$alpha)[!end],
-                               fill = alpha(munched$colour, munched$alpha)[!end],
-                               lwd = munched$linewidth[!end] * .pt,
-                               lty = munched$linetype[!end],
+                             gp = grid::gpar(
+                               col = alpha(munched_id$colour, munched_id$alpha)[!end],
+                               fill = alpha(munched_id$colour, munched_id$alpha)[!end],
+                               lwd = munched_id$linewidth[!end] * .pt,
+                               lty = munched_id$linetype[!end],
                                lineend = lineend,
                                linejoin = linejoin,
                                linemitre = linemitre
                              )
                            )
 
-                         pointg <-
-                           # geom-point.R
-                           grid::pointsGrob(
-                             coords$x, coords$y,
-                             pch = coords$shape,
-                             gp = gpar(
-                               col = alpha(coords$colour, coords$alpha),
-                               fill = fill_alpha(coords$fill, coords$alpha),
-                               # Stroke is added around the outside of the point
-                               fontsize = coords$size * .pt + stroke_size * .stroke / 2,
-                               lwd = coords$stroke * .stroke / 2
+                           coords_id <- coords[coords$group == i, ]
+
+                           pointg_id <-
+                             # geom-point.R
+                             grid::pointsGrob(
+                               coords_id$x, coords_id$y,
+                               pch = coords_id$shape,
+                               gp = grid::gpar(
+                                 col = alpha(coords_id$colour, coords_id$alpha),
+                                 fill = fill_alpha(coords_id$fill, coords_id$alpha),
+                                 # Stroke is added around the outside of the point
+                                 fontsize = coords_id$size * .pt + stroke_size * .stroke / 2,
+                                 lwd = coords_id$stroke * .stroke / 2
+                               )
                              )
-                           )
-                         # MOD
-                         grid::gTree(children = gList(lineg, pointg))
+
+                           out <- addGrob(out, child = lineg_id)
+                           out <- addGrob(out, child = pointg_id)
+
+                           rm(munched_id, lineg_id, coords_id, pointg_id)
+
+                         }
+
+                         # arrow <- repair_segment_arrow(arrow, munched$group)
+                         #
+                         # lineg <-
+                         #   grid::segmentsGrob(
+                         #     munched$x[!end], munched$y[!end], munched$x[!start], munched$y[!start],
+                         #     default.units = "native", arrow = arrow,
+                         #     gp = grid::gpar(
+                         #       col = alpha(munched$colour, munched$alpha)[!end],
+                         #       fill = alpha(munched$colour, munched$alpha)[!end],
+                         #       lwd = munched$linewidth[!end] * .pt,
+                         #       lty = munched$linetype[!end],
+                         #       lineend = lineend,
+                         #       linejoin = linejoin,
+                         #       linemitre = linemitre
+                         #     )
+                         #   )
+
+                         # pointg <-
+                         #   # geom-point.R
+                         #   grid::pointsGrob(
+                         #     coords$x, coords$y,
+                         #     pch = coords$shape,
+                         #     gp = grid::gpar(
+                         #       col = alpha(coords$colour, coords$alpha),
+                         #       fill = fill_alpha(coords$fill, coords$alpha),
+                         #       # Stroke is added around the outside of the point
+                         #       fontsize = coords$size * .pt + stroke_size * .stroke / 2,
+                         #       lwd = coords$stroke * .stroke / 2
+                         #     )
+                         #   )
+                         # # MOD
+                         # grid::gTree(children = grid::gList(lineg, pointg))
+                         # # gridGeometry::grid.polyclip(lineg, pointg, "union")
+
+                         out
 
                        } else {
+
                          id <- match(munched$group, unique0(munched$group))
 
-                         lineg <-
-                           grid::polylineGrob(
-                             munched$x, munched$y, id = id,
+                         out <- gTree()
+
+                         for (i in seq_along(unique0(munched$group))) {
+
+                           munched_id <- munched[munched$group == i, ]
+
+                           lineg_id <- grid::polylineGrob(
+                             munched_id$x, munched_id$y, #id = id,
                              default.units = "native", arrow = arrow,
-                             gp = gpar(
-                               col = alpha(munched$colour, munched$alpha)[start],
-                               fill = alpha(munched$colour, munched$alpha)[start],
-                               lwd = munched$linewidth[start] * .pt,
-                               lty = munched$linetype[start],
+                             gp = grid::gpar(
+                               col = alpha(munched_id$colour, munched_id$alpha)[start],
+                               fill = alpha(munched_id$colour, munched_id$alpha)[start],
+                               lwd = munched_id$linewidth[start] * .pt,
+                               lty = munched_id$linetype[start],
                                lineend = lineend,
                                linejoin = linejoin,
                                linemitre = linemitre
                              )
                            )
 
-                         pointg <-
-                           # geom-point.R
-                           grid::pointsGrob(
-                             coords$x, coords$y,
-                             pch = coords$shape,
-                             gp = gpar(
-                               col = alpha(coords$colour, coords$alpha),
-                               fill = fill_alpha(coords$fill, coords$alpha),
-                               # Stroke is added around the outside of the point
-                               fontsize = coords$size * .pt + stroke_size * .stroke / 2,
-                               lwd = coords$stroke * .stroke / 2
+                           coords_id <- coords[coords$group == i, ]
+
+                           pointg_id <-
+                             # geom-point.R
+                             grid::pointsGrob(
+                               coords_id$x, coords_id$y,
+                               pch = coords_id$shape,
+                               gp = grid::gpar(
+                                 col = alpha(coords_id$colour, coords_id$alpha),
+                                 fill = fill_alpha(coords_id$fill, coords_id$alpha),
+                                 # Stroke is added around the outside of the point
+                                 fontsize = coords_id$size * .pt + stroke_size * .stroke / 2,
+                                 lwd = coords_id$stroke * .stroke / 2
+                               )
                              )
-                           )
-                         # MOD
-                         grid::gTree(children = gList(lineg, pointg))
+
+                           out <- addGrob(out, child = lineg_id)
+                           out <- addGrob(out, child = pointg_id)
+
+                           rm(munched_id, lineg_id, coords_id, pointg_id)
+
+                         }
+
+                         # lineg <-
+                         #   grid::polylineGrob(
+                         #     munched$x, munched$y, id = id,
+                         #     default.units = "native", arrow = arrow,
+                         #     gp = grid::gpar(
+                         #       col = alpha(munched$colour, munched$alpha)[start],
+                         #       fill = alpha(munched$colour, munched$alpha)[start],
+                         #       lwd = munched$linewidth[start] * .pt,
+                         #       lty = munched$linetype[start],
+                         #       lineend = lineend,
+                         #       linejoin = linejoin,
+                         #       linemitre = linemitre
+                         #     )
+                         #   )
+
+                         # pointg <-
+                         #   # geom-point.R
+                         #   grid::pointsGrob(
+                         #     coords$x, coords$y,
+                         #     pch = coords$shape,
+                         #     gp = grid::gpar(
+                         #       col = alpha(coords$colour, coords$alpha),
+                         #       fill = fill_alpha(coords$fill, coords$alpha),
+                         #       # Stroke is added around the outside of the point
+                         #       fontsize = coords$size * .pt + stroke_size * .stroke / 2,
+                         #       lwd = coords$stroke * .stroke / 2
+                         #     )
+                         #   )
+                         # # MOD
+                         # grid::gTree(children = gList(lineg, pointg))
+                         # # gridGeometry::grid.polyclip(lineg, pointg, "union")
+
+                         out
                        }
                      },
 
@@ -287,6 +390,7 @@ GeomLine2 <- ggproto("GeomLine2", GeomPath2,
                        data <- flip_data(data, params$flipped_aes)
                        data <- data[order(data$PANEL, data$group, data$x), ]
                        flip_data(data, params$flipped_aes)
+
                      }
 )
 

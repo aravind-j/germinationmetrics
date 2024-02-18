@@ -1,5 +1,12 @@
 # germinationmetrics  0.1.9
 
+## NEW FUNCTIONS:
+* `geom_line2` - A modification of `ggplot2::geom_line` to plot both lines and points together.
+
+## UPDATED FUNCTIONS:
+* `FourPHFfit.bulk` - Added better convergence error handling. Added grid search for finding starting values.
+* `plot.FourPHFfit.bulk` - Now uses `geom_errorbar` for showing uniformity. Added better plotting without overlap using `geom_line2`.
+
 # germinationmetrics  0.1.8
 
 ## UPDATED FUNCTIONS:
