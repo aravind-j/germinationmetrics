@@ -131,7 +131,8 @@ t50 <- function(germ.counts, intervals, partial = TRUE,
   }
 
   if (x[1] < xhalf) {
-    nearest <- c(match(max(csx[csx <= xhalf]), csx), match(min(csx[csx >= xhalf]), csx))
+    nearest <- c(max(which(max(csx[csx <= xhalf]) == csx)),
+                 min(which(min(csx[csx >= xhalf]) == csx)))
 
     if (nearest[2] == nearest[1]) {
       t50 <- as.numeric(intervals[nearest[1]])

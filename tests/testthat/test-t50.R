@@ -37,3 +37,20 @@ test_that("Identical results with Cumulative and Partial germination counts", {
                                   partial = FALSE, method = "farooq"))
 
 })
+
+test_that("Identical results with multiple matches of Ni & Nj present", {
+  y1 <- c(0 , 0 , 0 ,39 ,41, 41)
+  int1 <- c(0, 1, 2, 3, 4, 5)
+  y2 <- c( 0 , 0 ,39 ,41, 41)
+  int2 <- c( 1, 2, 3, 4, 5)
+
+  expect_identical(object = t50(germ.counts = y1, intervals = int1,
+                                partial = FALSE, method = "coolbear"),
+                   expected = t50(germ.counts = y2, intervals = int2,
+                                  partial = FALSE, method = "coolbear"))
+
+  expect_identical(object = t50(germ.counts = y1, intervals = int1,
+                                partial = FALSE, method = "farooq"),
+                   expected = t50(germ.counts = y2, intervals = int2,
+                                  partial = FALSE, method = "farooq"))
+})
