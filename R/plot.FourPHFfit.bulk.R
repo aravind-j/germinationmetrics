@@ -240,6 +240,8 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
       dfcurve$sel <- FALSE
       dfcurve2 <- dplyr::bind_rows(list(dfcurve, dfcsgp))
 
+      dfcurve2$inc <- FALSE
+
       # dfcurve2$sel <- as.factor(dfcurve2$sel)
 
       # Gplot <- Gplot +
@@ -251,9 +253,11 @@ plot.FourPHFfit.bulk <- function(x, rog = FALSE,
       #              alpha = 0.5, inherit.aes = FALSE)
       Gplot <-
         ggplot(data = dfcurve2, aes(x = intervals, y = csgp,
-                                    group = curve)) +
-        geom_line2(mapping = aes(show.points = sel, colour = .data[[group.col]]),
-                   include.points = FALSE) +
+                                    group = curve,
+                                    colour = .data[[group.col]],
+                                    show.points = sel,
+                                    include.points = inc)) +
+        geom_line2() +
         labs(x = "Time", y = "Germination (%)") +
         theme_bw()
     }
