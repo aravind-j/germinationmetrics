@@ -175,19 +175,6 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
                        fix.y0 = TRUE, fix.a = TRUE, tmax, xp = c(10, 60),
                        umin = 10, umax = 90, tries = 3) {
 
-  GP <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
-                    partial = partial)
-
-  if (GP == 0) {
-    warning("Final germination percentage is 0%.\n",
-            "The computation is not possible.")
-  } else {
-    if (GP < 10) {
-      warning("Final germination percentage is less than 10%.\n",
-              "The computation may not be appropriate.")
-    }
-  }
-
   # Check if argument germ.counts is of type numeric
   if (!is.numeric(germ.counts)) {
     stop("'germ.counts' should be a numeric vector.")
@@ -212,6 +199,20 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   # Check if argument total.seeds is of type numeric with unit length
   if (!is.numeric(total.seeds) || length(total.seeds) != 1) {
     stop("'total.seeds' should be a numeric vector of length 1.")
+  }
+
+  # Check GP
+  GP <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
+                    partial = partial)
+
+  if (GP == 0) {
+    warning("Final germination percentage is 0%.\n",
+            "The computation is not possible.")
+  } else {
+    if (GP < 10) {
+      warning("Final germination percentage is less than 10%.\n",
+              "The computation may not be appropriate.")
+    }
   }
 
   # Check if umax is of type numeric with unit length
@@ -328,7 +329,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
   #MGTg <- NA_integer_
   Skewness <- NA_integer_
   isConv <- NA
-  model <- NULL
+  mod <- NULL
 
   uniformity = c(NA_integer_, NA_integer_, NA_integer_)
   names(uniformity) <- c(umax, umin, "uniformity")

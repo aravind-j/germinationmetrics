@@ -4,6 +4,7 @@
 * `geom_line2` - A modification of `ggplot2::geom_line` to plot both lines and points together.
 
 ## UPDATED FUNCTIONS:
+* `FourPHFfit` - Added better error handling. Now gracefully fails by returning empty output due to convergence errors or when fitting is not possible.
 * `FourPHFfit.bulk` - Added better convergence error handling. Added grid search for finding starting values.
 * `plot.FourPHFfit.bulk` - Now uses `geom_errorbar` for showing uniformity. Added better plotting without overlap using `geom_line2`.
 * `t50` - Fixes bug causing incorrect results when multiple values of Ni and Nj are present (Thanks to Aude Maugarny @amaugarn).
