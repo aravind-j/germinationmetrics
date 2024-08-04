@@ -189,6 +189,10 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
     }
   }
 
+  # Check if GP is 0
+  GP <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
+                    partial = partial)
+
   # Convert cumulative to partial
   if (!partial) {
     germ.counts <- c(germ.counts[1], diff(germ.counts))
@@ -210,6 +214,22 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
   # Check method
   method <- match.arg(method)
 
+  # Warning when GP is 0
+  if (method == "sgsantanaranal") {
+    if (GP == 0) {
+      warning("Final germination percentage is 0%.\n",
+              "The computation of 'EmergenceRateIndex'",
+              "with method == 'shmueligoldberg' is not possible.")
+    }
+  }
+  if (method == "sgsantanaranal") {
+    if (GP == 0) {
+      warning("Final germination percentage is 0%.\n",
+              "The computation of 'EmergenceRateIndex'",
+              "with method == 'sgsantanaranal' is not possible.")
+    }
+  }
+
   if (method == "fakorede") {
     # Check if argument total.seeds is of type numeric with unit length
     if (!is.numeric(total.seeds) || length(total.seeds) != 1) {
@@ -217,20 +237,24 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
     }
   }
 
-  if (method == "shmueligoldberg") {
-    startindex <- min(which(germ.counts != 0))
-    Ni <- germ.counts[startindex:(length(germ.counts) - 1)]
-    kminusi <- (length(germ.counts) - seq_along(intervals))
-    kminusi <- kminusi[startindex:(length(germ.counts) - 1)]
-    ERI <- sum(Ni * kminusi)
-  }
+  ERI <- NA_integer_
 
-  if (method == "sgsantanaranal") {
-    startindex <- min(which(germ.counts != 0))
-    Ni <- germ.counts[startindex:(length(germ.counts) - 1)]
-    kminusi <- (length(germ.counts) - seq_along(intervals))
-    kminusi <- kminusi[startindex:(length(germ.counts) - 1)]
-    ERI <- sum(Ni * kminusi)/sum(germ.counts)
+  if (GP > 0) {
+    if (method == "shmueligoldberg") {
+      startindex <- min(which(germ.counts != 0))
+      Ni <- germ.counts[startindex:(length(germ.counts) - 1)]
+      kminusi <- (length(germ.counts) - seq_along(intervals))
+      kminusi <- kminusi[startindex:(length(germ.counts) - 1)]
+      ERI <- sum(Ni * kminusi)
+    }
+
+    if (method == "sgsantanaranal") {
+      startindex <- min(which(germ.counts != 0))
+      Ni <- germ.counts[startindex:(length(germ.counts) - 1)]
+      kminusi <- (length(germ.counts) - seq_along(intervals))
+      kminusi <- kminusi[startindex:(length(germ.counts) - 1)]
+      ERI <- sum(Ni * kminusi)/sum(germ.counts)
+    }
   }
 
   if (method == "bilbrowanjura") {
