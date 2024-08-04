@@ -79,3 +79,38 @@ test_that("Identical results with Cumulative and Partial germination counts", {
   expect_identical(object = fit_partial_fixa_fixy0[["Uniformity"]],
                    expected = fit_cumulative_fixa_fixy0[["Uniformity"]])
 })
+
+
+z <- c(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+
+test_that("Warning generation when germination % is 0 or less than 10%", {
+
+  expect_warning(object = FourPHFfit(germ.counts = z, intervals = int,
+                                     total.seeds = 50,
+                                     tmax = 20),
+                 regexp = "Final germination percentage is 0%.")
+  expect_warning(object = FourPHFfit(germ.counts = z, intervals = int,
+                                     total.seeds = 50, tmax = 20,
+                                     partial = FALSE),
+                 regexp = "Final germination percentage is 0%.")
+
+
+})
+
+m <- c(0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+n <- c(0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+
+test_that("Warning generation when germination % is 0 or less than 10%", {
+
+  expect_warning(object = FourPHFfit(germ.counts = m, intervals = int,
+                                     total.seeds = 50,
+                                     tmax = 20),
+                 regexp = "Final germination percentage is less than 10%.")
+  expect_warning(object = FourPHFfit(germ.counts = n, intervals = int,
+                                     total.seeds = 50, tmax = 20,
+                                     partial = FALSE),
+                 regexp = "Final germination percentage is less than 10%.")
+
+
+})
+
