@@ -221,6 +221,10 @@ GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     }
   }
 
+  # Check if GP is 0
+  GP <- GermPercent(germ.counts = germ.counts, total.seeds = total.seeds,
+                    partial = partial)
+
   # Convert cumulative to partial
   if (!partial) {
     germ.counts <- c(germ.counts[1], diff(germ.counts))
@@ -240,46 +244,73 @@ GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     stop("'k' should be a numeric vector of length 1.")
   }
 
-  df <- data.frame(germ.counts, intervals)
-
-  if (from.onset) {
-    # Fetch only data from start of germination
-    startindex <- min(which(df$germ.counts != 0))
-    df <- df[startindex:nrow(df), ]
+  if (GP == 0) {
+    warning("Final germination percentage is 0%.\n",
+            "Computation of 'GermValue' is not possible.")
   }
 
-  x <- df$germ.counts
-  csx <- cumsum(x)
-  csxp <- (csx/total.seeds) * 100
-  DGS <-  csxp/df$intervals
+  GV <- NA_integer_
+  Calculations <- NULL
+  GVdp <- NA_integer_
+  testend <- NA_integer_
+
+  if (GP > 0) {
+    df <- data.frame(germ.counts, intervals)
+
+    if (from.onset) {
+      # Fetch only data from start of germination
+      startindex <- min(which(df$germ.counts != 0))
+      df <- df[startindex:nrow(df), ]
+    }
+
+    x <- df$germ.counts
+    csx <- cumsum(x)
+    csxp <- (csx/total.seeds) * 100
+    DGS <-  csxp/df$intervals
+
+  }
 
   if (method == "czabator") {
-    PV <- PeakValue(germ.counts, intervals, total.seeds, partial)
-    MDG <-  MeanGermPercent(germ.counts = germ.counts, intervals = intervals,
-                            total.seeds = total.seeds, partial = partial)
 
-    GV <- MDG*PV
+    if (GP > 0) {
 
-    Calculations <- data.frame(df, Cumulative.germ.counts = csx,
-                              Cumulative.germ.percent = csxp,
-                              DGS)
-    #Calculations$GV <- Calculations$DGS*PV
+      PV <- PeakValue(germ.counts, intervals, total.seeds, partial)
+      MDG <-  MeanGermPercent(germ.counts = germ.counts, intervals = intervals,
+                              total.seeds = total.seeds, partial = partial)
+
+      GV <- MDG*PV
+
+      Calculations <- data.frame(df, Cumulative.germ.counts = csx,
+                                 Cumulative.germ.percent = csxp,
+                                 DGS)
+      #Calculations$GV <- Calculations$DGS*PV
+
+    }
+
     output <- list(`Germination Value` = GV, Calculations)
   }
 
   if (method == "dp") {
-    N <- seq_along(DGS)
-    SumDGSbyN <- cumsum(DGS)/N
 
-    GVdp <- SumDGSbyN*(csxp/100)*k
+    if (GP > 0) {
 
-    Calculations <- data.frame(df, Cumulative.germ.counts = csx,
-                              Cumulative.germ.percent = csxp,
-                              DGS, `SumDGSbyN` = SumDGSbyN,
-                              GV = GVdp)
+      N <- seq_along(DGS)
+      SumDGSbyN <- cumsum(DGS)/N
+
+      GVdp <- SumDGSbyN*(csxp/100)*k
+
+      Calculations <- data.frame(df, Cumulative.germ.counts = csx,
+                                 Cumulative.germ.percent = csxp,
+                                 DGS, `SumDGSbyN` = SumDGSbyN,
+                                 GV = GVdp)
+
+      testend <- Calculations[Calculations$GV ==  max(GVdp),]$intervals
+
+    }
+
     output <- list(`Germination Value` = max(GVdp), Calculations,
-                   testend = Calculations[Calculations$GV ==  max(GVdp),]$intervals)
+                   testend = testend)
   }
 
-  return(output)
+return(output)
 }
