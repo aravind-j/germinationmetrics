@@ -390,7 +390,16 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
                          starty0 = startgrid[i, "starty0"], maxiter = 1024)
       }
 
+
       isnls <- unlist(lapply(nls_fitlist, function(x) is(x, "nls")))
+
+      # Workaround for gls_nls summary error
+      isnlssumm <- unlist(lapply(nls_fitlist, function(x) {
+        out <- tryCatch(summary(x), error = function(e) e)
+        inherits(out, "error")
+      }))
+
+      isnls <- isnls & (!isnlssumm)
 
       if (any(isnls)) {
         nls_fitlist <- nls_fitlist[isnls]
