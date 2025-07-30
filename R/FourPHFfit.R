@@ -394,6 +394,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       isnls <- unlist(lapply(nls_fitlist, function(x) is(x, "nls")))
 
       # Workaround for gls_nls summary error
+      # when there is singular gradient matrix at parameter estimates
       isnlssumm <- unlist(lapply(nls_fitlist, function(x) {
         out <- tryCatch(summary(x), error = function(e) e)
         inherits(out, "error")
