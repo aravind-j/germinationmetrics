@@ -185,20 +185,41 @@ FourPHFfit.bulk <- function(data, total.seeds.col, counts.intervals.cols,
                                             xp = xp, umin = umin, umax = umax,
                                             tries = tries,
                                             total.seeds = unlist(mget(total.seeds.col)))[fphfnames])),
-              by=1:nrow(data)]
+              by = 1:nrow(data)]
 
-  out <- rbindlist(lapply(out$outlist,
-                            function(x) as.data.frame.list(unlist(x))))
+  out <-
+    rbindlist(lapply(out$outlist,
+                     function(x) {
 
-  setnames(out, old = "Uniformity.uniformity", new = "Uniformity")
-  setnames(out, old = colnames(out),
-           new = gsub("Uniformity.", "Uniformity_", colnames(out)))
-  setnames(out, old = colnames(out),
-           new = gsub("txp.total.", "txp.total_", colnames(out)))
-  setnames(out, old = colnames(out),
-           new = gsub("txp.Germinated.", "txp.Germinated_", colnames(out)))
-  setnames(out, old = colnames(out),
-           new = gsub("Fit.", "Fit_", colnames(out)))
+                       xptdf <- as.data.frame.list(x$txp.total)
+                       colnames(xptdf) <-
+                         gsub("(^X)(\\d+$)", "t\\2.total", colnames(xptdf))
+                       xpgdf <- as.data.frame.list(x$txp.Germinated)
+                       colnames(xpgdf) <-
+                         gsub("(^X)(\\d+$)", "t\\2.Germinated", colnames(xpgdf))
+                       udf <- as.data.frame.list(x$Uniformity)
+                       colnames(udf) <-
+                         gsub("(^X)(\\d+$)", "Uniformity_\\2", colnames(udf))
+
+                       fout <- cbind(
+                         data.frame(x[c("a", "b", "c", "y0", "lag",
+                                        "Dlag50", "t50.total")]),
+                         xptdf,
+                         data.frame(x[c("t50.Germinated")]),
+                         xpgdf,
+                         udf,
+                         data.frame(x[c("TMGR", "AUC",  "MGT", "Skewness")]),
+                         data.frame(x[c("msg")]),
+                         as.data.frame.list(x$Fit))
+
+                       return(fout)
+
+                     }
+    ))
+
+  setnames(out, old = "uniformity", new = "Uniformity")
+  # setnames(out, old = colnames(out),
+  #          new = gsub("Fit.", "Fit_", colnames(out)))
 
   out <- out[, isConv := NULL]
 
