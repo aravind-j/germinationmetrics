@@ -180,7 +180,7 @@ PeakValue <- function(germ.counts, intervals, total.seeds, partial = TRUE) {
   csx <- cumsum(x)
   csxp <- (csx/total.seeds) * 100
   DGS <- csxp/intervals
-  PV <- max(DGS)
+  PV <- max(DGS, na.rm = TRUE)
   return(PV)
 }
 
@@ -295,7 +295,9 @@ GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     if (GP > 0) {
 
       N <- seq_along(DGS)
-      SumDGSbyN <- cumsum(DGS)/N
+      # SumDGSbyN <- cumsum(DGS)/N
+      # SumDGSbyN <- collapse::fcumsum(DGS)
+      SumDGSbyN <- (cumsum(ifelse(is.na(DGS), 0, DGS)) + (DGS * 0)) / N
 
       GVdp <- SumDGSbyN*(csxp/100)*k
 
@@ -304,11 +306,13 @@ GermValue <- function(germ.counts, intervals, total.seeds, partial = TRUE,
                                  DGS, `SumDGSbyN` = SumDGSbyN,
                                  GV = GVdp)
 
-      testend <- Calculations[Calculations$GV ==  max(GVdp),]$intervals
+      testend <-
+        Calculations[!is.na(GVdp) &
+                       Calculations$GV ==  max(GVdp, na.rm = TRUE), ]$intervals
 
     }
 
-    output <- list(`Germination Value` = max(GVdp), Calculations,
+    output <- list(`Germination Value` = max(GVdp, na.rm = TRUE), Calculations,
                    testend = testend)
   }
 

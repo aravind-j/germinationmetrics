@@ -220,7 +220,7 @@ GermSpeed <- function(germ.counts, intervals, partial = TRUE,
   x <- (x / total.seeds) * 100
   }
 
-  speed <- sum(x/intervals)
+  speed <- sum(x/intervals, na.rm = TRUE)
   return(speed)
 }
 
@@ -274,7 +274,7 @@ GermSpeedAccumulated <- function(germ.counts, intervals, partial = TRUE,
     x <- (x / total.seeds) * 100
   }
 
-  aspeed <- sum(cumsum(x)/intervals)
+  aspeed <- sum(cumsum(x)/intervals, na.rm = TRUE)
   return(aspeed)
 }
 
