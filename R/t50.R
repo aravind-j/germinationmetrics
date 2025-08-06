@@ -131,18 +131,15 @@ t50 <- function(germ.counts, intervals, partial = TRUE,
   }
 
   if (x[1] < xhalf) {
-    nearest <- c(max(which(max(csx[csx <= xhalf]) == csx)),
-                 min(which(min(csx[csx >= xhalf]) == csx)))
+    nearest <- c(max(which(max(csx[csx < xhalf]) == csx)),
+                 min(which(min(csx[csx > xhalf]) == csx)))
+    flankg <- c(csx[nearest[1]], csx[nearest[2]])
+    fltime <- c(intervals[nearest[1]], intervals[nearest[2]])
 
-    if (nearest[2] == nearest[1]) {
-      t50 <- as.numeric(intervals[nearest[1]])
-    } else {
-      if (nearest[2] > nearest[1]) {
-        t50 <- intervals[nearest[1]] + ((xhalf - csx[nearest[1]])*(intervals[nearest[2]] - intervals[nearest[1]]))/(csx[nearest[2]] - csx[nearest[1]])
-      } else {
-        t50 <- NA_real_
-      }
-    }
+    t50 <- intervals[nearest[1]] +
+      ((xhalf - flankg[1]) * (fltime[2] - fltime[1])) /
+      (flankg[2] - flankg[1])
+
   } else {
     if (method == "coolbear") {
       cmt <- "((N + 1)/2) "
