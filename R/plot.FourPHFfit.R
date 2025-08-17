@@ -117,7 +117,7 @@ plot.FourPHFfit <- function(x, rog = TRUE, t50.total = TRUE, t50.germ = TRUE,
   umin = names(x$Uniformity)[2]
 
 
-  # labels and unifromity positions
+  # labels and uniformity positions
   if (limits == TRUE) {
     ypos <-  90
     ypos2 <-  80

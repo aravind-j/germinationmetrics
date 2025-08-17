@@ -587,6 +587,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       }
     }
 
+    # "exceeded max number of iterations"
     if (mod$convInfo$stopCode == 11) {
 
       starta <- ifelse(is.na(coef(mod)["a"]),
@@ -633,7 +634,6 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
                             starta = starta, startb = startbta,
                             startc = startc, starty0 = starty0,
                             maxiter = 2048, algorithm = "lmaccel")
-
       i = i + 1
       msg <- paste(msg, "\n#", i, ". ", mod$convInfo$stopMessage,
                    " ", sep = "")
@@ -796,7 +796,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 #'
 #' @param x The explanatory/independent variable value.
 #' @param a Parameter \mjseqn{a}.
-#' @param bta Parameter \mjseqn{e^{\beta}}.
+#' @param bta Parameter \mjseqn{\beta} where \mjseqn{b = e^{\beta}}.
 #' @param b Parameter \mjseqn{b}.
 #' @param c Parameter \mjseqn{c}.
 #' @param y0 Parameter \mjseqn{y_{0}}.
@@ -814,7 +814,7 @@ FourPHF <- function(x, a, bta, c, y0)
 
 #' @rdname FourPHF
 #' @export
-# FPHF with a fixed to fixed to max(csgp)
+# FPHF with a fixed to max(csgp)
 FourPHF_fixa <- function(x, a = 100, bta, c, y0)
 {
   y0 + ((a * (x ^ exp(bta))) /
