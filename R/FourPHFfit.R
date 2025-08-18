@@ -365,12 +365,17 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
     tryStart <-
       FourPHF_withWE(data = df,
                      fix.a = fix.a, fix.y0 = fix.y0,
-                     starta = starta, startb = startbta,
+                     starta = starta, startbta = startbta,
                      startc = startc, starty0 = starty0,
                      maxiter = 1024)
+    # To check for singular gradient matrix as in gsl_nls only a warning is
+    # shown instead of an error in gsl_nls and minpack.lm
+    tryStart_summ <-  tryCatch(summary(tryStart),
+                               error = function(e) e)
 
     # Test grid of starting values
-    if (inherits(tryStart, "error")) {
+    if (inherits(tryStart, "error") |
+        inherits(tryStart_summ, "error")) {
       startgrid <- expand.grid(starta = starta,
                                startb = c(0.0000001, 2, 5,
                                           seq(from = 10, to = 100, by = 10)),
@@ -413,7 +418,8 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
           })
 
         nls_fitdf <- do.call(rbind, nls_fitdf)
-        sel_ind <- which(nls_fitdf$deviance == min(nls_fitdf$deviance))[1]
+        nls_fitdf <- nls_fitdf[nls_fitdf$isConv == TRUE, ]
+        sel_ind <- which.min(nls_fitdf$deviance)
 
         starta <- ifelse("starta" %in% colnames(nls_fitdf),
                          nls_fitdf[sel_ind, "starta"],
@@ -536,7 +542,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
       possibleError <-
         FourPHF_withWE(data = df,
                        fix.a = fix.a, fix.y0 = fix.y0,
-                       starta = starta, startb = startbta,
+                       starta = starta, startbta = startbta,
                        startc = startc, starty0 = starty0,
                        maxiter = 1024)
 
@@ -558,7 +564,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
         mod <-
           FourPHF_withWE(data = df,
                          fix.a = fix.a, fix.y0 = fix.y0,
-                         starta = starta, startb = startbta,
+                         starta = starta, startbta = startbta,
                          startc = startc, starty0 = starty0,
                          maxiter = 1024, warnOnly = TRUE)
 
@@ -605,7 +611,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
       mod <- FourPHF_withWE(data = df,
                             fix.a = fix.a, fix.y0 = fix.y0,
-                            starta = starta, startb = startbta,
+                            starta = starta, startbta = startbta,
                             startc = startc, starty0 = starty0,
                             maxiter = 2048, algorithm = "lm")
       i = i + 1
@@ -631,7 +637,7 @@ FourPHFfit <- function(germ.counts, intervals, total.seeds, partial = TRUE,
 
       mod <- FourPHF_withWE(data = df,
                             fix.a = fix.a, fix.y0 = fix.y0,
-                            starta = starta, startb = startbta,
+                            starta = starta, startbta = startbta,
                             startc = startc, starty0 = starty0,
                             maxiter = 2048, algorithm = "lmaccel")
       i = i + 1

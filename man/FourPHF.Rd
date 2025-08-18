@@ -23,7 +23,7 @@ RateofGerm(x, a, b, c)
 
 \item{a}{Parameter \mjseqn{a}.}
 
-\item{bta}{Parameter \mjseqn{e^{\beta}}.}
+\item{bta}{Parameter \mjseqn{\beta} where \mjseqn{b = e^{\beta}}.}
 
 \item{c}{Parameter \mjseqn{c}.}
 
