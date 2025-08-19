@@ -1,0 +1,9 @@
+pandoc: 3.6.3
+pkgdown: 2.1.3.9000
+pkgdown_sha: 290661e6bf8dc6bcb4eb738939c5fcc2f52a3247
+articles:
+  Introduction: Introduction.html
+last_built: 2025-08-19T07:24Z
+urls:
+  reference: https://aravind-j.github.io/germinationmetrics/reference
+  article: https://aravind-j.github.io/germinationmetrics/articles
