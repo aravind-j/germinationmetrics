@@ -121,27 +121,32 @@
 #'
 #' # From partial germination counts
 #' #----------------------------------------------------------------------------
-#' EmergenceRateIndex(germ.counts = x, intervals = int)
-#' EmergenceRateIndex(germ.counts = x, intervals = int,
+#' EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50)
+#' EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
 #'                    method = "shmueligoldberg")
-#' EmergenceRateIndex(germ.counts = x, intervals = int,
+#' EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
 #'                    method = "sgsantanaranal")
-#' EmergenceRateIndex(germ.counts = x, intervals = int,
+#' EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
 #'                    method = "bilbrowanjura")
-#' EmergenceRateIndex(germ.counts = x, intervals = int,
-#'                    total.seeds = 50, method = "fakorede")
+#' EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
+#'                    method = "fakorede")
 #'
 #' # From cumulative germination counts
 #' #----------------------------------------------------------------------------
-#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE)
-#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
+#' EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+#'                    partial = FALSE)
+#' EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+#'                    partial = FALSE,
 #'                    method = "shmueligoldberg")
-#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
+#' EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+#'                    partial = FALSE,
 #'                    method = "sgsantanaranal")
-#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
+#' EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+#'                    partial = FALSE,
 #'                    method = "bilbrowanjura")
-#' EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
-#'                    total.seeds = 50, method = "fakorede")
+#' EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+#'                    partial = FALSE,
+#'                    method = "fakorede")
 #'
 #' @seealso \code{\link[germinationmetrics]{GermSpeed}},
 #'   \code{\link[germinationmetrics]{TimsonsIndex}},
@@ -180,6 +185,11 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
   # Check if argument partial is of type logical with unit length
   if (!is.logical(partial) || length(partial) != 1) {
     stop("'partial' should be a logical vector of length 1.")
+  }
+
+  # Check if argument total.seeds is of type numeric with unit length
+  if (!is.numeric(total.seeds) || length(total.seeds) != 1) {
+    stop("'total.seeds' should be a numeric vector of length 1.")
   }
 
   # Check if data is cumulative

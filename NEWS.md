@@ -9,6 +9,7 @@
 * `plot.FourPHFfit.bulk` - Now uses `geom_errorbar` for showing uniformity. Added better plotting without overlap using `geom_line2`.
 * `t50` - Fixes bug causing incorrect results when multiple values of Ni and Nj are present (Thanks to Aude Maugarny @amaugarn).
 * `GermValue` & `GermSpeed` - Updated calculations to ignroe `NaN` values.
+* `EmergenceRateIndex` - Fix error due to missing `total.seeds` argument.
 
 # germinationmetrics  0.1.8
 

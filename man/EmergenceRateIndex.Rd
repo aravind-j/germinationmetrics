@@ -126,27 +126,32 @@ int <- 1:length(x)
 
 # From partial germination counts
 #----------------------------------------------------------------------------
-EmergenceRateIndex(germ.counts = x, intervals = int)
-EmergenceRateIndex(germ.counts = x, intervals = int,
+EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50)
+EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
                    method = "shmueligoldberg")
-EmergenceRateIndex(germ.counts = x, intervals = int,
+EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
                    method = "sgsantanaranal")
-EmergenceRateIndex(germ.counts = x, intervals = int,
+EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
                    method = "bilbrowanjura")
-EmergenceRateIndex(germ.counts = x, intervals = int,
-                   total.seeds = 50, method = "fakorede")
+EmergenceRateIndex(germ.counts = x, intervals = int, total.seeds = 50,
+                   method = "fakorede")
 
 # From cumulative germination counts
 #----------------------------------------------------------------------------
-EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE)
-EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
+EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+                   partial = FALSE)
+EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+                   partial = FALSE,
                    method = "shmueligoldberg")
-EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
+EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+                   partial = FALSE,
                    method = "sgsantanaranal")
-EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
+EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+                   partial = FALSE,
                    method = "bilbrowanjura")
-EmergenceRateIndex(germ.counts = y, intervals = int, partial = FALSE,
-                   total.seeds = 50, method = "fakorede")
+EmergenceRateIndex(germ.counts = y, intervals = int, total.seeds = 50,
+                   partial = FALSE,
+                   method = "fakorede")
 
 }
 \references{
