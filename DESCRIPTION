@@ -42,7 +42,6 @@ Depends:
 Imports:
     broom,
     data.table,
-    ggplot2,
     ggrepel,
     mathjaxr,
     gslnls,
@@ -59,6 +58,7 @@ Suggests:
     rmarkdown,
     testthat (>= 3.0.0),
     XML
+Remotes: tidyverse/ggplot2
 VignetteBuilder: 
     knitr
 RdMacros:
