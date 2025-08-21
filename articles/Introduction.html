@@ -4,28 +4,27 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>The `germinationmetrics` Package: A Brief Introduction • germinationmetrics</title>
-<!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png">
-<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png">
-<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
-<link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
-<!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.4.0/united/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha256-nuL8/2cJ5NDSSwnKD8VqreErSWHtnEP9E7AySL+1ev4=" crossorigin="anonymous"></script><!-- bootstrap-toc --><link rel="stylesheet" href="../bootstrap-toc.css">
-<script src="../bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="../pkgdown.css" rel="stylesheet">
-<script src="../pkgdown.js"></script><!-- docsearch --><script src="../docsearch.js"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.3/docsearch.min.css" integrity="sha256-QOSRU/ra9ActyXkIBbiIB144aDBdtvXBcNc3OTNuX/Q=" crossorigin="anonymous">
-<link href="../docsearch.css" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js" integrity="sha256-4HLtjeVgH0eIB3aZ9mLYF6E8oU5chNdjU6p6rrXpl9U=" crossorigin="anonymous"></script><link href="../extra.css" rel="stylesheet">
-<meta property="og:title" content="The `germinationmetrics` Package: A Brief Introduction">
-<meta property="og:description" content="germinationmetrics">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]--><!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script><script>
+<!-- favicons --><link rel="icon" type="image/png" sizes="96x96" href="../favicon-96x96.png">
+<link rel="icon" type="”image/svg+xml”" href="../favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+<link rel="icon" sizes="any" href="../favicon.ico">
+<link rel="manifest" href="../site.webmanifest">
+<!-- mathjax math --><script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI=" crossorigin="anonymous"></script><script>
+  window.MathJax = {
+    chtml: {
+      fontURL: "https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/output/chtml/fonts/woff-v2"
+    }
+  };
+</script><script src="../lightswitch.js"></script><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/Oxygen-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/Oxygen_Mono-0.4.10/font.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="The `germinationmetrics` Package: A Brief Introduction">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-116205606-2"></script><script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
@@ -33,94 +32,63 @@
   gtag('config', 'UA-116205606-2');
 </script>
 </head>
-<body data-spy="scroll" data-target="#toc">
-    
+<body>
+    <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
 
-    <div class="container template-article">
-      <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <span class="navbar-brand">
-        <a class="navbar-link" href="../index.html">germinationmetrics</a>
-        <span class="version label label-danger" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.1.8.9000</span>
-      </span>
-    </div>
 
-    <div id="navbar" class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-<li>
-  <a href="../index.html">
-    <span class="fa fa-home fa-lg"></span>
-     
-    Home
-  </a>
-</li>
-<li>
-  <a href="../reference/index.html">
-    <span class="fa fa-code"></span>
-     
-    Reference
-  </a>
-</li>
-<li>
-  <a href="../articles/Introduction.html">
-    <span class="far fa-file"></span>
-     
-    Introduction
-  </a>
-</li>
-<li>
-  <a href="../news/index.html">
-    <span class="far fa-newspaper"></span>
-     
-    News
-  </a>
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
+
+    <a class="navbar-brand me-2" href="../index.html">germinationmetrics</a>
+
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.8.9000</small>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div id="navbar" class="collapse navbar-collapse ms-3">
+      <ul class="navbar-nav me-auto">
+<li class="nav-item"><a class="nav-link" href="../index.html"><span class="fa fa-home fa-lg"></span> Home</a></li>
+<li class="nav-item"><a class="nav-link" href="../reference/index.html"><span class="fa fa-code"></span> Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="../articles/Introduction.html"><span class="fa far fa-file"></span> Introduction</a></li>
+<li class="nav-item"><a class="nav-link" href="../news/index.html"><span class="fa far fa-newspaper"></span> News</a></li>
+      </ul>
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
+</form></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/aravind-j/germinationmetrics"><span class="fa fab fa-github-alt"></span> Github</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right">
-<li>
-  <a href="https://github.com/aravind-j/germinationmetrics" class="external-link">
-    <span class="fab fa-github-alt"></span>
-     
-    Github
-  </a>
-</li>
-      </ul>
-<form class="navbar-form navbar-right hidden-xs hidden-sm" role="search">
-        <div class="form-group">
-          <input type="search" class="form-control" name="search-input" id="search-input" placeholder="Search..." aria-label="Search for..." autocomplete="off">
 </div>
-      </form>
-      
-    </div>
-<!--/.nav-collapse -->
+
+
   </div>
-<!--/.container -->
-</div>
-<!--/.navbar -->
+</nav><div class="container template-article">
 
-      
 
-      </header><div class="row">
-  <div class="col-md-9 contents">
-    <div class="page-header toc-ignore">
-      <h1 data-toc-skip>The <code>germinationmetrics</code> Package: A
-Brief Introduction</h1>
+
+
+<div class="row">
+  <main id="main" class="col-md-9"><div class="page-header">
+
+      <h1>The `germinationmetrics` Package: A Brief Introduction</h1>
                         <h4 data-toc-skip class="author">Aravind, J.,
 Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani
 Srinivasan</h4>
             
-            <h4 data-toc-skip class="date">2024-02-24</h4>
+            <h4 data-toc-skip class="date">2025-08-21</h4>
       
-      <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/HEAD/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
-      <div class="hidden name"><code>Introduction.Rmd</code></div>
-
+      <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
+      <div class="d-none name"><code>Introduction.Rmd</code></div>
     </div>
 
     
@@ -366,7 +334,7 @@ germinated seeds and <span class="math inline">\(N_{t}\)</span> is the
 total number of seeds.</td>
 <td>Percentage (%)</td>
 <td>Germination capacity</td>
-<td><span class="citation">ISTA (<a href="#ref-ista_chapter_2015" role="doc-biblioref">2015</a>)</span></td>
+<td><span class="citation">ISTA (<a href="#ref-ista_chapter_2015">2015</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Peak germination percentage (<span class="math inline">\(PGP\)</span>)</td>
@@ -378,8 +346,7 @@ number of seeds germinated per interval.</td>
 <td>Percentage (%)</td>
 <td>Germination capacity</td>
 <td>
-<span class="citation">Vallance (<a href="#ref-vallance_studies_1950" role="doc-biblioref">1950</a>)</span>;
-<span class="citation">Roh et al. (<a href="#ref-roh_maturity_2004" role="doc-biblioref">2004</a>)</span>
+<span class="citation">Vallance (<a href="#ref-vallance_studies_1950">1950</a>)</span>; <span class="citation">Roh et al. (<a href="#ref-roh_maturity_2004">2004</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -397,11 +364,7 @@ the <span class="math inline">\(i\)</span>th interval)</td>
 <td>time</td>
 <td>Germination time</td>
 <td>
-<span class="citation">Edwards (<a href="#ref-edwards_temperature_1932" role="doc-biblioref">1932</a>)</span>; <span class="citation">Czabator
-(<a href="#ref-czabator_germination_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Goloff and
-Bazzaz (<a href="#ref-goloff_germination_1975" role="doc-biblioref">1975</a>)</span>; <span class="citation">Labouriau
-(<a href="#ref-labouriau_germinacao_1983" role="doc-biblioref">1983a</a>)</span>; <span class="citation">Ranal (<a href="#ref-ranal_effects_1999" role="doc-biblioref">1999</a>)</span>;
-<span class="citation">Quintanilla et al. (<a href="#ref-quintanilla_effect_2000" role="doc-biblioref">2000</a>)</span>
+<span class="citation">Edwards (<a href="#ref-edwards_temperature_1932">1932</a>)</span>; <span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Goloff and Bazzaz (<a href="#ref-goloff_germination_1975">1975</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983a</a>)</span>; <span class="citation">Ranal (<a href="#ref-ranal_effects_1999">1999</a>)</span>; <span class="citation">Quintanilla et al. (<a href="#ref-quintanilla_effect_2000">2000</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -418,7 +381,7 @@ interval (not the accumulated number, but the number corresponding to
 the <span class="math inline">\(i\)</span>th interval)</td>
 <td>time</td>
 <td>Germination time</td>
-<td><span class="citation">Edwards (<a href="#ref-edwards_temperature_1932" role="doc-biblioref">1932</a>)</span></td>
+<td><span class="citation">Edwards (<a href="#ref-edwards_temperature_1932">1932</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>Time spread of germination or Germination distribution</td>
@@ -430,9 +393,7 @@ t_{g}-t_{0}\]</span>
 <td>time</td>
 <td>Germination time</td>
 <td>
-<span class="citation">Al-Mudaris (<a href="#ref-al-mudaris_notes_1998" role="doc-biblioref">1998</a>)</span>;
-<span class="citation">Schrader and Graves (<a href="#ref-schrader_seed_2000" role="doc-biblioref">2000</a>)</span>;
-<span class="citation">Kader (<a href="#ref-kader_comparison_2005" role="doc-biblioref">2005</a>)</span>
+<span class="citation">Al-Mudaris (<a href="#ref-al-mudaris_notes_1998">1998</a>)</span>; <span class="citation">Schrader and Graves (<a href="#ref-schrader_seed_2000">2000</a>)</span>; <span class="citation">Kader (<a href="#ref-kader_comparison_2005">2005</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -450,7 +411,7 @@ the <span class="math inline">\(i\)</span>th interval) and <span class="math inl
 germinated per interval.</td>
 <td>time</td>
 <td>Germination time</td>
-<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span></td>
+<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>Median germination time (<span class="math inline">\(t_{50}\)</span>) (Coolbear)</td>
@@ -461,11 +422,11 @@ it is computed as follows.<br><span class="math display">\[t_{50}=T_{i}+\frac{(\
 Where, <span class="math inline">\(t_{50}\)</span> is the median
 germination time, <span class="math inline">\(N\)</span> is the final
 number of germinated seeds, and <span class="math inline">\(N_{i}\)</span> and <span class="math inline">\(N_{j}\)</span> are the total number of seeds
-germinated in adjacent counts at time <span class="math inline">\(T_{i}\)</span> and <span class="math inline">\(T_{j}\)</span> respectively, when <span class="math inline">\(N_{i} &lt; \frac{N + 1}{2} &lt;
-N_{j}\)</span>.</td>
+germinated in adjacent counts at time <span class="math inline">\(T_{i}\)</span> and <span class="math inline">\(T_{j}\)</span> respectively, when <span class="math inline">\(N_{i} &lt; \frac{N +
+1}{2} &lt; N_{j}\)</span>.</td>
 <td>time</td>
 <td>Germination time</td>
-<td><span class="citation">Coolbear et al. (<a href="#ref-coolbear_effect_1984" role="doc-biblioref">1984</a>)</span></td>
+<td><span class="citation">Coolbear et al. (<a href="#ref-coolbear_effect_1984">1984</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Median germination time (<span class="math inline">\(t_{50}\)</span>) (Farooq)</td>
@@ -475,10 +436,11 @@ N_{j}\)</span>.</td>
 Where, <span class="math inline">\(t_{50}\)</span> is the median
 germination time, <span class="math inline">\(N\)</span> is the final
 number of germinated seeds, and <span class="math inline">\(N_{i}\)</span> and <span class="math inline">\(N_{j}\)</span> are the total number of seeds
-germinated in adjacent counts at time <span class="math inline">\(T_{i}\)</span> and <span class="math inline">\(T_{j}\)</span> respectively, when <span class="math inline">\(N_{i} &lt; \frac{N}{2} &lt; N_{j}\)</span>.</td>
+germinated in adjacent counts at time <span class="math inline">\(T_{i}\)</span> and <span class="math inline">\(T_{j}\)</span> respectively, when <span class="math inline">\(N_{i} &lt; \frac{N}{2} &lt;
+N_{j}\)</span>.</td>
 <td>time</td>
 <td>Germination time</td>
-<td><span class="citation">Farooq et al. (<a href="#ref-farooq_thermal_2005" role="doc-biblioref">2005</a>)</span></td>
+<td><span class="citation">Farooq et al. (<a href="#ref-farooq_thermal_2005">2005</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>Mean germination time or Mean length of incubation time (<span class="math inline">\(\overline{T}\)</span>) or Germination resistance
@@ -500,13 +462,7 @@ It is the inverse of mean germination rate (<span class="math inline">\(\overlin
 <td>time</td>
 <td>Germination time</td>
 <td>
-<span class="citation">Edmond and Drapala (<a href="#ref-edmond_effects_1958" role="doc-biblioref">1958</a>)</span>;
-<span class="citation">Czabator (<a href="#ref-czabator_germination_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Smith and
-Millet (<a href="#ref-smith_germinating_1964" role="doc-biblioref">1964</a>)</span>; <span class="citation">Gordon (<a href="#ref-gordon_observations_1969" role="doc-biblioref">1969</a>)</span>; <span class="citation">Gordon (<a href="#ref-gordon_germination_1971" role="doc-biblioref">1971</a>)</span>; <span class="citation">Mock and
-Eberhart (<a href="#ref-mock_cold_1972" role="doc-biblioref">1972</a>)</span>; <span class="citation">Ellis and
-Roberts (<a href="#ref-ellis_improved_1980" role="doc-biblioref">1980</a>)</span> <span class="citation">Labouriau
-(<a href="#ref-labouriau_germinacao_1983" role="doc-biblioref">1983a</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Edmond and Drapala (<a href="#ref-edmond_effects_1958">1958</a>)</span>; <span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Smith and Millet (<a href="#ref-smith_germinating_1964">1964</a>)</span>; <span class="citation">Gordon (<a href="#ref-gordon_observations_1969">1969</a>)</span>; <span class="citation">Gordon (<a href="#ref-gordon_germination_1971">1971</a>)</span>; <span class="citation">Mock and Eberhart (<a href="#ref-mock_cold_1972">1972</a>)</span>; <span class="citation">Ellis and Roberts (<a href="#ref-ellis_improved_1980">1980</a>)</span> <span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983a</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -525,8 +481,7 @@ intervals.</td>
 </td>
 <td>Germination time</td>
 <td>
-<span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983" role="doc-biblioref">1983a</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983a</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -543,8 +498,7 @@ intervals.</td>
 <td>time</td>
 <td>Germination time</td>
 <td>
-<span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983" role="doc-biblioref">1983a</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Labouriau (<a href="#ref-labouriau_germinacao_1983">1983a</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -566,9 +520,7 @@ It is the inverse of mean germination time (<span class="math inline">\(\overlin
 </td>
 <td>Germination rate</td>
 <td>
-<span class="citation">Labouriau and Valadares (<a href="#ref-labouriau_germination_1976" role="doc-biblioref">1976</a>)</span>; <span class="citation">Labouriau
-(<a href="#ref-labouriau_uma_1983" role="doc-biblioref">1983b</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Labouriau and Valadares (<a href="#ref-labouriau_germination_1976">1976</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -591,11 +543,7 @@ intervals.</td>
 </td>
 <td>Germination rate</td>
 <td>
-<span class="citation">Kotowski (<a href="#ref-kotowski_temperature_1926" role="doc-biblioref">1926</a>)</span>, <span class="citation">Nichols
-and Heydecker (<a href="#ref-nichols_two_1968" role="doc-biblioref">1968</a>)</span>; <span class="citation">Bewley and
-Black (<a href="#ref-bewley_seeds_1994" role="doc-biblioref">1994</a>)</span>; <span class="citation">Labouriau
-(<a href="#ref-labouriau_uma_1983" role="doc-biblioref">1983b</a>)</span>; <span class="citation">Scott et
-al. (<a href="#ref-scott_review_1984" role="doc-biblioref">1984</a>)</span>
+<span class="citation">Kotowski (<a href="#ref-kotowski_temperature_1926">1926</a>)</span>, <span class="citation">Nichols and Heydecker (<a href="#ref-nichols_two_1968">1968</a>)</span>; <span class="citation">Bewley and Black (<a href="#ref-bewley_seeds_1994">1994</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983b</a>)</span>; <span class="citation">Scott et al. (<a href="#ref-scott_review_1984">1984</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -609,8 +557,7 @@ germination time.</td>
 </td>
 <td>Germination rate</td>
 <td>
-<span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983" role="doc-biblioref">1983b</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -626,8 +573,7 @@ intervals.</td>
 </td>
 <td>Germination rate</td>
 <td>
-<span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983" role="doc-biblioref">1983b</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -639,9 +585,7 @@ Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
 </td>
 <td>Germination rate</td>
 <td>
-<span class="citation">Went (<a href="#ref-went_experimental_1957" role="doc-biblioref">1957</a>)</span>; <span class="citation">Labouriau
-(<a href="#ref-labouriau_uma_1983" role="doc-biblioref">1983b</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Went (<a href="#ref-went_experimental_1957">1957</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983b</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -667,16 +611,8 @@ for computation of speed of germination.</td>
 </td>
 <td>Mixed</td>
 <td>
-<span class="citation">Throneberry and Smith (<a href="#ref-throneberry_relation_1955" role="doc-biblioref">1955</a>)</span>; <span class="citation">Maguire
-(<a href="#ref-maguire_speed_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Allan et
-al. (<a href="#ref-allan_seedling_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Kendrick
-and Frankland (<a href="#ref-kendrick_photocontrol_1969" role="doc-biblioref">1969</a>)</span>; <span class="citation">Bouton et
-al. (<a href="#ref-bouton_germination_1976" role="doc-biblioref">1976</a>)</span>; <span class="citation">Erbach (<a href="#ref-erbach_tillage_1982" role="doc-biblioref">1982</a>)</span>;
-<span class="citation">AOSA (<a href="#ref-aosa_seed_1983" role="doc-biblioref">1983</a>)</span>; <span class="citation">Khandakar
-and Bradbeer (<a href="#ref-khandakar_jute_1983" role="doc-biblioref">1983</a>)</span>; <span class="citation">Hsu and
-Nelson (<a href="#ref-hsu_planting_1986" role="doc-biblioref">1986</a>)</span>; <span class="citation">Bradbeer
-(<a href="#ref-bradbeer_seed_1988" role="doc-biblioref">1988</a>)</span>; <span class="citation">Wardle et
-al. (<a href="#ref-wardle_allelopathic_1991" role="doc-biblioref">1991</a>)</span>
+<span class="citation">Throneberry and Smith (<a href="#ref-throneberry_relation_1955">1955</a>)</span>; <span class="citation">Maguire (<a href="#ref-maguire_speed_1962">1962</a>)</span>; <span class="citation">Allan et al. (<a href="#ref-allan_seedling_1962">1962</a>)</span>; <span class="citation">Kendrick and Frankland (<a href="#ref-kendrick_photocontrol_1969">1969</a>)</span>; <span class="citation">Bouton et al. (<a href="#ref-bouton_germination_1976">1976</a>)</span>; <span class="citation">Erbach (<a href="#ref-erbach_tillage_1982">1982</a>)</span>; <span class="citation">AOSA (<a href="#ref-aosa_seed_1983">1983</a>)</span>;
+<span class="citation">Khandakar and Bradbeer (<a href="#ref-khandakar_jute_1983">1983</a>)</span>; <span class="citation">Hsu and Nelson (<a href="#ref-hsu_planting_1986">1986</a>)</span>; <span class="citation">Bradbeer (<a href="#ref-bradbeer_seed_1988">1988</a>)</span>; <span class="citation">Wardle et al. (<a href="#ref-wardle_allelopathic_1991">1991</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -697,10 +633,7 @@ for computation of speed of germination.</td>
 </td>
 <td>Mixed</td>
 <td>
-<span class="citation">Bradbeer (<a href="#ref-bradbeer_seed_1988" role="doc-biblioref">1988</a>)</span>; <span class="citation">Wardle et
-al. (<a href="#ref-wardle_allelopathic_1991" role="doc-biblioref">1991</a>)</span>; <span class="citation">Haugland
-and Brandsaeter (<a href="#ref-haugland_experiments_1996" role="doc-biblioref">1996</a>)</span>; <span class="citation">Santana
-and Ranal (<a href="#ref-de_santana_alise_2004" role="doc-biblioref">2004</a>)</span>
+<span class="citation">Bradbeer (<a href="#ref-bradbeer_seed_1988">1988</a>)</span>; <span class="citation">Wardle et al. (<a href="#ref-wardle_allelopathic_1991">1991</a>)</span>; <span class="citation">Haugland and Brandsaeter (<a href="#ref-haugland_experiments_1996">1996</a>)</span>; <span class="citation">Santana and Ranal (<a href="#ref-de_santana_alise_2004">2004</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -722,7 +655,7 @@ germination percentage or germinability.</td>
 <td>time<sup>-1</sup>
 </td>
 <td>Mixed</td>
-<td><span class="citation">Evetts and Burnside (<a href="#ref-evetts_germination_1972" role="doc-biblioref">1972</a>)</span></td>
+<td><span class="citation">Evetts and Burnside (<a href="#ref-evetts_germination_1972">1972</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Weighted germination percentage (<span class="math inline">\(WGP\)</span>)</td>
@@ -738,8 +671,7 @@ of time intervals.</td>
 <td>Percentage (%)</td>
 <td>Mixed</td>
 <td>
-<span class="citation">Reddy et al. (<a href="#ref-reddy_effect_1985" role="doc-biblioref">1985</a>)</span>;
-<span class="citation">Reddy (<a href="#ref-reddy_effect_1978" role="doc-biblioref">1978</a>)</span>
+<span class="citation">Reddy et al. (<a href="#ref-reddy_effect_1985">1985</a>)</span>; <span class="citation">Reddy (<a href="#ref-reddy_effect_1978">1978</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -754,7 +686,7 @@ required for final germination.</td>
 <td>% time<sup>-1</sup>
 </td>
 <td>Mixed</td>
-<td><span class="citation">Czabator (<a href="#ref-czabator_germination_1962" role="doc-biblioref">1962</a>)</span></td>
+<td><span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Number of seeds germinated per unit time <span class="math inline">\(\overline{N}\)</span>
@@ -768,7 +700,7 @@ required for final germination.</td>
 <td>count time<sup>-1</sup>
 </td>
 <td>Mixed</td>
-<td><span class="citation">Khamassi et al. (<a href="#ref-khamassi_optimal_2013" role="doc-biblioref">2013</a>)</span></td>
+<td><span class="citation">Khamassi et al. (<a href="#ref-khamassi_optimal_2013">2013</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>Timson’s index [<span class="math inline">\(\sum 10\)</span> (Ten
@@ -792,14 +724,7 @@ and <span class="math inline">\(j = i - 1\)</span>.</td>
 <td>Percentage (%)</td>
 <td>Mixed</td>
 <td>
-<span class="citation">Grose and Zimmer (<a href="#ref-grose_laboratory_1958" role="doc-biblioref">1958</a>)</span>;
-<span class="citation">Timson (<a href="#ref-timson_new_1965" role="doc-biblioref">1965</a>)</span>; <span class="citation">Lyon and
-Coffelt (<a href="#ref-lyon_rapid_1966" role="doc-biblioref">1966</a>)</span>; <span class="citation">Chaudhary
-and Ghildyal (<a href="#ref-chaudhary_effect_1970" role="doc-biblioref">1970</a>)</span>; <span class="citation">Negm and
-Smith (<a href="#ref-negm_effects_1978" role="doc-biblioref">1978</a>)</span>; <span class="citation">Brown and
-Mayer (<a href="#ref-brown_representing_1988" role="doc-biblioref">1988</a>)</span>; <span class="citation">Baskin and
-Baskin (<a href="#ref-baskin_seeds_1998" role="doc-biblioref">1998</a>)</span>; <span class="citation">Goodchild
-and Walker (<a href="#ref-goodchild_method_1971" role="doc-biblioref">1971</a>)</span>
+<span class="citation">Grose and Zimmer (<a href="#ref-grose_laboratory_1958">1958</a>)</span>; <span class="citation">Timson (<a href="#ref-timson_new_1965">1965</a>)</span>; <span class="citation">Lyon and Coffelt (<a href="#ref-lyon_rapid_1966">1966</a>)</span>; <span class="citation">Chaudhary and Ghildyal (<a href="#ref-chaudhary_effect_1970">1970</a>)</span>; <span class="citation">Negm and Smith (<a href="#ref-negm_effects_1978">1978</a>)</span>; <span class="citation">Brown and Mayer (<a href="#ref-brown_representing_1988">1988</a>)</span>; <span class="citation">Baskin and Baskin (<a href="#ref-baskin_seeds_1998">1998</a>)</span>; <span class="citation">Goodchild and Walker (<a href="#ref-goodchild_method_1971">1971</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -812,7 +737,7 @@ k}{\sum_{i=1}^{k}g_{i}}\]</span>
 </td>
 <td>no unit</td>
 <td>Mixed</td>
-<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span></td>
+<td><span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span></td>
 </tr>
 <tr class="odd">
 <td>Modified Timson’s index (<span class="math inline">\(\Sigma
@@ -825,7 +750,7 @@ k}{T_{k}}\]</span>
 <td>% time<sup>-1</sup>
 </td>
 <td>Mixed</td>
-<td><span class="citation">Khan and Ungar (<a href="#ref-khan_effect_1984" role="doc-biblioref">1984</a>)</span></td>
+<td><span class="citation">Khan and Ungar (<a href="#ref-khan_effect_1984">1984</a>)</span></td>
 </tr>
 <tr class="even">
 <td>George’s index (<span class="math inline">\(GR\)</span>)</td>
@@ -840,10 +765,7 @@ intervals.</td>
 <td>count time</td>
 <td>Mixed</td>
 <td>
-<span class="citation">George (<a href="#ref-george_influence_1961" role="doc-biblioref">1961</a>)</span>; <span class="citation">Tucker and
-Wright (<a href="#ref-tucker_estimating_1965" role="doc-biblioref">1965</a>)</span>; <span class="citation">Nichols
-and Heydecker (<a href="#ref-nichols_two_1968" role="doc-biblioref">1968</a>)</span>;<span class="citation">Chopra and
-Chaudhary (<a href="#ref-chopra_effect_1980" role="doc-biblioref">1980</a>)</span>
+<span class="citation">George (<a href="#ref-george_influence_1961">1961</a>)</span>; <span class="citation">Tucker and Wright (<a href="#ref-tucker_estimating_1965">1965</a>)</span>; <span class="citation">Nichols and Heydecker (<a href="#ref-nichols_two_1968">1968</a>)</span>;<span class="citation">Chopra and Chaudhary (<a href="#ref-chopra_effect_1980">1980</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -862,7 +784,7 @@ in the test, and <span class="math inline">\(k\)</span> is the total
 number of time intervals.</td>
 <td>time</td>
 <td>Mixed</td>
-<td><span class="citation">Melville et al. (<a href="#ref-melville_seed_1980" role="doc-biblioref">1980</a>)</span></td>
+<td><span class="citation">Melville et al. (<a href="#ref-melville_seed_1980">1980</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Germination Index (<span class="math inline">\(GI_{mod}\)</span>)
@@ -881,9 +803,7 @@ is the total number of time intervals.</td>
 <td>time</td>
 <td>Mixed</td>
 <td>
-<span class="citation">Melville et al. (<a href="#ref-melville_seed_1980" role="doc-biblioref">1980</a>)</span>;
-<span class="citation">Santana and Ranal (<a href="#ref-de_santana_alise_2004" role="doc-biblioref">2004</a>)</span>;
-<span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Melville et al. (<a href="#ref-melville_seed_1980">1980</a>)</span>; <span class="citation">Santana and Ranal (<a href="#ref-de_santana_alise_2004">2004</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -899,7 +819,7 @@ emergence/germination started, and <span class="math inline">\(k\)</span> is the
 intervals.</td>
 <td>count</td>
 <td>Mixed</td>
-<td><span class="citation">Shmueli and Goldberg (<a href="#ref-shmueli_emergence_1971" role="doc-biblioref">1971</a>)</span></td>
+<td><span class="citation">Shmueli and Goldberg (<a href="#ref-shmueli_emergence_1971">1971</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Modified Emergence Rate Index (<span class="math inline">\(ERI_{mod}\)</span>) or Modified Germination Rate
@@ -918,9 +838,7 @@ intervals.</td>
 <td>no unit</td>
 <td>Mixed</td>
 <td>
-<span class="citation">Shmueli and Goldberg (<a href="#ref-shmueli_emergence_1971" role="doc-biblioref">1971</a>)</span>; <span class="citation">Santana
-and Ranal (<a href="#ref-de_santana_alise_2004" role="doc-biblioref">2004</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Shmueli and Goldberg (<a href="#ref-shmueli_emergence_1971">1971</a>)</span>; <span class="citation">Santana and Ranal (<a href="#ref-de_santana_alise_2004">2004</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -938,7 +856,7 @@ or mean emergence time.</td>
 <td>count time<sup>-1</sup>
 </td>
 <td>Mixed</td>
-<td><span class="citation">Bilbro and Wanjura (<a href="#ref-bilbro_soil_1982" role="doc-biblioref">1982</a>)</span></td>
+<td><span class="citation">Bilbro and Wanjura (<a href="#ref-bilbro_soil_1982">1982</a>)</span></td>
 </tr>
 <tr class="even">
 <td>Emergence Rate Index (<span class="math inline">\(ERI\)</span>) or
@@ -953,9 +871,7 @@ final germination time.</td>
 </td>
 <td>Mixed</td>
 <td>
-<span class="citation">Fakorede and Ayoola (<a href="#ref-fakorede_relation_1980" role="doc-biblioref">1980</a>)</span>; <span class="citation">Fakorede
-and Ojo (<a href="#ref-fakorede_variability_1981" role="doc-biblioref">1981</a>)</span>; <span class="citation">Fakorede
-and Agbana (<a href="#ref-fakorede_heterotic_1983" role="doc-biblioref">1983</a>)</span>
+<span class="citation">Fakorede and Ayoola (<a href="#ref-fakorede_relation_1980">1980</a>)</span>; <span class="citation">Fakorede and Ojo (<a href="#ref-fakorede_variability_1981">1981</a>)</span>; <span class="citation">Fakorede and Agbana (<a href="#ref-fakorede_heterotic_1983">1983</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -978,7 +894,7 @@ number of time intervals.</td>
 </td>
 <td>Mixed</td>
 <td>
-<span class="citation">Czabator (<a href="#ref-czabator_germination_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Bonner (<a href="#ref-bonner_ideal_1967" role="doc-biblioref">1967</a>)</span>
+<span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Bonner (<a href="#ref-bonner_ideal_1967">1967</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -998,8 +914,7 @@ of germination.</td>
 </td>
 <td>Mixed</td>
 <td>
-<span class="citation">Czabator (<a href="#ref-czabator_germination_1962" role="doc-biblioref">1962</a>)</span>; <span class="citation">Brown and
-Mayer (<a href="#ref-brown_representing_1988" role="doc-biblioref">1988</a>)</span>
+<span class="citation">Czabator (<a href="#ref-czabator_germination_1962">1962</a>)</span>; <span class="citation">Brown and Mayer (<a href="#ref-brown_representing_1988">1988</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -1022,8 +937,7 @@ of germination.</td>
 </td>
 <td>Mixed</td>
 <td>
-<span class="citation">Djavanshir and Pourbeik (<a href="#ref-djavanshir_germination_1976" role="doc-biblioref">1976</a>)</span>; <span class="citation">Brown and
-Mayer (<a href="#ref-brown_representing_1988" role="doc-biblioref">1988</a>)</span>
+<span class="citation">Djavanshir and Pourbeik (<a href="#ref-djavanshir_germination_1976">1976</a>)</span>; <span class="citation">Brown and Mayer (<a href="#ref-brown_representing_1988">1988</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -1041,8 +955,7 @@ intervals.</td>
 </td>
 <td>Germination unifromity</td>
 <td>
-<span class="citation">Heydecker (<a href="#ref-heydecker_seed_1972" role="doc-biblioref">1972</a>)</span>; <span class="citation">Bewley and
-Black (<a href="#ref-bewley_seeds_1994" role="doc-biblioref">1994</a>)</span>
+<span class="citation">Heydecker (<a href="#ref-heydecker_seed_1972">1972</a>)</span>; <span class="citation">Bewley and Black (<a href="#ref-bewley_seeds_1994">1994</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -1056,8 +969,7 @@ is the mean germination time.</td>
 <td>no unit</td>
 <td>Germination unifromity</td>
 <td>
-<span class="citation">Gomes (<a href="#ref-gomes_curso_1960" role="doc-biblioref">1960</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Gomes (<a href="#ref-gomes_curso_1960">1960</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 <tr class="even">
@@ -1076,9 +988,7 @@ of time intervals.</td>
 <td>bit</td>
 <td>Germination synchrony</td>
 <td>
-<span class="citation">Shannon (<a href="#ref-shannon_mathematical_1948" role="doc-biblioref">1948</a>)</span>; <span class="citation">Labouriau
-and Valadares (<a href="#ref-labouriau_germination_1976" role="doc-biblioref">1976</a>)</span>; <span class="citation">Labouriau
-(<a href="#ref-labouriau_uma_1983" role="doc-biblioref">1983b</a>)</span>
+<span class="citation">Shannon (<a href="#ref-shannon_mathematical_1948">1948</a>)</span>; <span class="citation">Labouriau and Valadares (<a href="#ref-labouriau_germination_1976">1976</a>)</span>; <span class="citation">Labouriau (<a href="#ref-labouriau_uma_1983">1983b</a>)</span>
 </td>
 </tr>
 <tr class="odd">
@@ -1098,8 +1008,7 @@ that germinated did so simultaneously.</td>
 <td>no unit</td>
 <td>Germination synchrony</td>
 <td>
-<span class="citation">Primack (<a href="#ref-primack_longevity_1985" role="doc-biblioref">1985</a>)</span>; <span class="citation">Ranal and
-Santana (<a href="#ref-ranal_how_2006" role="doc-biblioref">2006</a>)</span>
+<span class="citation">Primack (<a href="#ref-primack_longevity_1985">1985</a>)</span>; <span class="citation">Ranal and Santana (<a href="#ref-ranal_how_2006">2006</a>)</span>
 </td>
 </tr>
 </tbody>
@@ -1582,44 +1491,49 @@ FALSE): Multiple peak germination times exist.</code></pre>
 <span></span>
 <span><span class="co"># From partial germination counts</span></span>
 <span><span class="co">#----------------------------------------------------------------------------</span></span>
-<span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb187"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>                   method <span class="op">=</span> <span class="st">"shmueligoldberg"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb189"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>                   method <span class="op">=</span> <span class="st">"sgsantanaranal"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 7.3</code></pre>
 <div class="sourceCode" id="cb191"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
 <span>                   method <span class="op">=</span> <span class="st">"bilbrowanjura"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 5.970149</code></pre>
 <div class="sourceCode" id="cb193"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>,</span>
-<span>                   total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"fakorede"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">x</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                   method <span class="op">=</span> <span class="st">"fakorede"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 8.375</code></pre>
 <div class="sourceCode" id="cb195"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># From cumulative germination counts</span></span>
 <span><span class="co">#----------------------------------------------------------------------------</span></span>
-<span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                   partial <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb197"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                   partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                   method <span class="op">=</span> <span class="st">"shmueligoldberg"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 292</code></pre>
 <div class="sourceCode" id="cb199"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                   partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                   method <span class="op">=</span> <span class="st">"sgsantanaranal"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 7.3</code></pre>
 <div class="sourceCode" id="cb201"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                   partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
 <span>                   method <span class="op">=</span> <span class="st">"bilbrowanjura"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 5.970149</code></pre>
 <div class="sourceCode" id="cb203"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
-<span>                   total.seeds <span class="op">=</span> <span class="fl">50</span>, method <span class="op">=</span> <span class="st">"fakorede"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/EmergenceRateIndex.html">EmergenceRateIndex</a></span><span class="op">(</span>germ.counts <span class="op">=</span> <span class="va">y</span>, intervals <span class="op">=</span> <span class="va">int</span>, total.seeds <span class="op">=</span> <span class="fl">50</span>,</span>
+<span>                   partial <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                   method <span class="op">=</span> <span class="st">"fakorede"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>[1] 8.375</code></pre>
 </div>
 <div class="section level4">
@@ -2090,7 +2004,8 @@ various associated metrics.</p>
 <div class="section level3">
 <h3 id="four-parameter-hill-function">Four-parameter hill function<a class="anchor" aria-label="anchor" href="#four-parameter-hill-function"></a>
 </h3>
-<p>The four-parameter hill function defined as follows <span class="citation">(<a href="#ref-el-kassaby_seed_2008" role="doc-biblioref">El-Kassaby et al., 2008</a>)</span>.</p>
+<p>The four-parameter hill function defined as follows <span class="citation">(<a href="#ref-el-kassaby_seed_2008">El-Kassaby et al.,
+2008</a>)</span>.</p>
 <p><span class="math display">\[
 f(x) = y = y_0 + \frac{ax^b}{x^b+c^b}
 \]</span> Where, <span class="math inline">\(y\)</span> is the
@@ -2274,7 +2189,7 @@ $Parameters
 
 $Fit
     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-1 1.61522   TRUE 2.852829e-12 -25.49868 56.99736 58.91453 31.30723          12
+1 1.61522   TRUE 6.039613e-14 -25.49868 56.99736 58.91453 31.30723          12
   nobs
 1   14
 
@@ -2342,8 +2257,8 @@ Nonlinear regression model
 
 Algorithm: multifit/levenberg-marquardt, (scaling: levenberg, solver: qr)
 
-Number of iterations to convergence: 8 
-Achieved convergence tolerance: 2.853e-12
+Number of iterations to convergence: 9 
+Achieved convergence tolerance: 6.04e-14
 
 attr(,"class")
 [1] "FourPHFfit" "list"      </code></pre>
@@ -2376,7 +2291,7 @@ $Parameters
 
 $Fit
     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-1 1.61522   TRUE 2.852829e-12 -25.49868 56.99736 58.91453 31.30723          12
+1 1.61522   TRUE 6.039613e-14 -25.49868 56.99736 58.91453 31.30723          12
   nobs
 1   14
 
@@ -2444,8 +2359,8 @@ Nonlinear regression model
 
 Algorithm: multifit/levenberg-marquardt, (scaling: levenberg, solver: qr)
 
-Number of iterations to convergence: 8 
-Achieved convergence tolerance: 2.853e-12
+Number of iterations to convergence: 9 
+Achieved convergence tolerance: 6.04e-14
 
 attr(,"class")
 [1] "FourPHFfit" "list"      </code></pre>
@@ -2468,31 +2383,39 @@ attr(,"class")
 <span><span class="co"># Default plots</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Warning in geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <pre><code>Warning in geom_segment(aes(x = UfmMax, xend = UfmMin, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-1.png" width="576"></p>
 <div class="sourceCode" id="cb244"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Warning in geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.
  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-2.png" width="576"></p>
 <div class="sourceCode" id="cb246"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># No labels</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span>, plotlabels <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Warning in geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.
  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-3.png" width="576"></p>
 <div class="sourceCode" id="cb248"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span>, plotlabels <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Warning in geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.
  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-4.png" width="576"></p>
 <div class="sourceCode" id="cb250"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Only the FPHF curve</span></span>
@@ -2507,16 +2430,20 @@ attr(,"class")
 <code class="sourceCode R"><span><span class="co"># Without y axis limits adjustment</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit1</span>, limits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Warning in geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.
  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-7.png" width="576"></p>
 <div class="sourceCode" id="cb254"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">fit2</span>, limits <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <pre><code>Warning in geom_segment(aes(x = UfmMin, xend = UfmMax, y = ypos2, yend = ypos2), :  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.
  [1m [22mAll aesthetics have length 1, but the data has 14 rows.
- [36mℹ [39m Did you mean to use `annotate()`?</code></pre>
+ [36mℹ [39m Please consider using `annotate()` or provide this layer with data containing
+  a single row.</code></pre>
 <p><img src="Introduction_files/figure-html/unnamed-chunk-15-8.png" width="576"></p>
 </div>
 </div>
@@ -2578,13 +2505,13 @@ indices simultaneously for multiple samples in batch.</p>
    FirstGermTime LastGermTime PeakGermTime TimeSpreadGerm t50_Coolbear
 1              5           11            6              6     5.970588
 2              4           12            6              8     6.192308
-3              4           12            6              8     6.000000
+3              4           12            6              8     6.333333
 4              5           12            6              7     6.041667
 5              5           13            6              8     5.975000
 6              5           12            6              7     5.976190
 7              5           11            6              6     5.972222
 8              4           12            6              8     6.208333
-9              4           12            6              8     6.000000
+9              4           12            6              8     6.310345
 10             5           12            6              7     6.076923
 11             5           13            6              8     5.928571
 12             5           12            6              7     5.975000
@@ -2595,7 +2522,7 @@ indices simultaneously for multiple samples in batch.</p>
 1    5.941176     6.700000    1.446154  0.1901416  0.1794868    0.1492537
 2    6.153846     6.857143    2.027875  0.2197333  0.2076717    0.1458333
 3    5.972222     6.866667    2.572727  0.2391061  0.2335882    0.1456311
-4    6.000000     6.891304    2.187923  0.2180907  0.2146419    0.1451104
+4    6.225806     6.891304    2.187923  0.2180907  0.2146419    0.1451104
 5    5.950000     6.812500    2.368351  0.2221275  0.2259002    0.1467890
 6    5.952381     6.869565    2.071498  0.2122088  0.2095140    0.1455696
 7    5.944444     6.690476    1.389663  0.1818989  0.1761967    0.1494662
@@ -2606,17 +2533,17 @@ indices simultaneously for multiple samples in batch.</p>
 12   5.950000     6.886364    2.149577  0.2210295  0.2129053    0.1452145
 13   6.041667     6.936170    2.539315  0.2324392  0.2297410    0.1441718
 14   5.904762     6.772727    1.900634  0.2078370  0.2035568    0.1476510
-15   6.000000     6.809524    1.670151  0.1994129  0.1897847    0.1468531
+15   6.259259     6.809524    1.670151  0.1994129  0.1897847    0.1468531
     VarGermRate  SEGermRate      CVG GermRateRecip_Coolbear
 1  0.0007176543 0.004235724 14.92537              0.1674877
 2  0.0009172090 0.004673148 14.58333              0.1614907
-3  0.0011572039 0.005071059 14.56311              0.1666667
+3  0.0011572039 0.005071059 14.56311              0.1578947
 4  0.0009701218 0.004592342 14.51104              0.1655172
 5  0.0010995627 0.004786184 14.67890              0.1673640
 6  0.0009301809 0.004496813 14.55696              0.1673307
 7  0.0006935558 0.004063648 14.94662              0.1674419
 8  0.0009454531 0.004861721 14.54545              0.1610738
-9  0.0010345321 0.004794747 14.56311              0.1666667
+9  0.0010345321 0.004794747 14.56311              0.1584699
 10 0.0008453940 0.004334343 14.65798              0.1645570
 11 0.0011191581 0.004828643 14.72393              0.1686747
 12 0.0009558577 0.004660905 14.52145              0.1673640
@@ -2627,7 +2554,7 @@ indices simultaneously for multiple samples in batch.</p>
 1             0.1683168        6.138925          12.27785
 2             0.1625000        6.362698          12.47588
 3             0.1674419        6.882179          14.33787
-4             0.1666667        6.927417          13.58317
+4             0.1606218        6.927417          13.58317
 5             0.1680672        7.318987          14.63797
 6             0.1680000        6.931782          14.14649
 7             0.1682243        6.448449          13.43427
@@ -2638,7 +2565,7 @@ indices simultaneously for multiple samples in batch.</p>
 12            0.1680672        6.622258          12.98482
 13            0.1655172        7.052320          14.39249
 14            0.1693548        6.706782          13.97246
-15            0.1666667        6.363925          13.25818
+15            0.1597633        6.363925          13.25818
    GermSpeedAccumulated_Count GermSpeedAccumulated_Percent
 1                    34.61567                     69.23134
 2                    35.54058                     69.68741
@@ -2802,118 +2729,86 @@ function for multiple samples in batch.</p>
 13       G3   3     0     0     0     0     4    19    12     8     1     1
 14       G4   3     0     0     0     0     3    21    11     6     1     0
 15       G5   3     0     0     0     0     4    17    10     8     1     1
-   Day11 Day12 Day13 Day14 Total Seeds                a                b
-1      1     0     0     0          50               80 9.88193689239939
-2      0     1     0     0          51 82.3529411764706 9.22766646359687
-3      1     1     0     0          48            93.75 7.79305096503615
-4      1     1     0     0          51 90.1960784313725 8.92565503394839
-5      0     1     1     0          50               96  9.4191816695981
-6      1     1     0     0          49 93.8775510204082 9.45014899129514
-7      1     0     0     0          48             87.5 10.1724586100529
-8      0     1     0     0          47 85.1063829787234 8.94069602989349
-9      1     1     0     0          52 86.5384615384615  8.6173913532163
-10     0     1     0     0          50               90 9.60884373087692
-11     0     1     1     0          51 94.1176470588235 9.40021183872586
-12     1     1     0     0          51 86.2745098039216 9.16252658054406
-13     0     1     1     0          49 95.9183673469388 8.99520959277319
-14     1     1     0     0          48 91.6666666666667 10.3918447990981
-15     1     0     0     0          48             87.5 9.13674439831543
-                  c y0 lag           Dlag50        t50.total     txp.total_10
-1  6.03495355423622  0   0 6.03495355423622 6.35512149738159 4.95626430996844
-2  6.17519294875847  0   0 6.17519294875847 6.47349043979169 4.98323617961634
-3  6.13811027323845  0   0 6.13811027323845 6.24419102980473 4.67302155333174
-4  6.12517308176588  0   0 6.12517308176588 6.27679437746254 4.85087548237175
-5  6.04964210720327  0   0 6.04964210720327 6.10343321091848 4.81412549010201
-6  6.09741485213496  0   0 6.09741485213496 6.18227860747235 4.86863251431733
-7  6.02985089631599  0   0 6.02985089631599 6.20281219696422 4.93042184740182
-8  6.18977354961439  0   0 6.18977354961439 6.43951015764455 4.94005695310539
-9  6.12512151399929  0   0 6.12512151399929 6.35217197764166 4.83665841861718
-10 6.10950363575767  0   0 6.10950363575767 6.25304320794668 4.92062915221628
-11 6.01875974061195  0   0 6.01875974061195 6.09943499335382 4.79862683383817
-12  6.1084516820797  0   0  6.1084516820797 6.32618435705024 4.89359557090626
-13 6.14901168803061  0   0 6.14901168803061 6.20750091288263 4.84130798267247
-14 6.01591019543247  0   0 6.01591019543247 6.12238872898609 4.91514013767951
-15 6.12157936163499  0   0 6.12157936163499 6.31739163301497 4.89250226946576
-       txp.total_60   t50.Germinated txp.Germinated_10 txp.Germinated_60
-1  6.74459834631771 6.03495355423622   4.8318073794034  6.28772357367188
-2  6.87260337968692 6.17519294875847  4.86675518549505  6.45258151256586
-3  6.60843809251509 6.13811027323845  4.63006208020014  6.46592435698387
-4  6.61496814302537 6.12517308176588  4.78859693817119  6.40983765941072
-5  6.38678874941426 6.04964210720327  4.79094574322756  6.31574586639992
-6  6.47759860932629 6.09741485213496  4.83247140619904  6.36472210249767
-7     6.51049505523 6.02985089631599  4.85847638047658   6.2750496018235
-8  6.82329908278267 6.18977354961439  4.84110536088622  6.47694540370958
-9  6.73327569782723 6.12512151399929  4.74657350251934  6.42020821882777
-10  6.5665061956458 6.10950363575767  4.86068135560336  6.37282341572477
-11  6.3912906236839 6.01875974061195  4.76424552194859   6.2840509537431
-12 6.68452626570581  6.1084516820797  4.80601279742022  6.38483647023757
-13 6.50995387022312  6.1490116880306  4.81639290881553  6.43252427366119
-14 6.39749097966013 6.01591019543247  4.86939775646343   6.2552761045868
-15 6.66724718740801 6.12157936163499  4.81308335438754  6.39935718177504
-      Uniformity_90    Uniformity_10       Uniformity             TMGR
-1  7.53768963494679  4.8318073794034 2.70588225554338 5.91219440465559
-2  7.83540706301571 4.86675518549505 2.96865187752066 6.03128155417137
-3  8.13734180531911 4.63006208020014 3.50727972511896 5.93817948829363
-4  7.83480960415051 4.78859693817119 3.04621266597932 5.97268622562109
-5  7.63902819750811 4.79094574322756 2.84808245428055 5.91428884333636
-6  7.69346877693759 4.83247140619904 2.86099737073854 5.96187868562603
-7  7.48364280989593 4.85847638047658 2.62516642941935 5.91405695229978
-8  7.91416293168472 4.84110536088622 3.07305757079851 6.03619216805867
-9  7.90404141879274 4.74657350251934  3.1574679162734  5.9616310497804
-10 7.67917745365204 4.86068135560336 2.81849609804867 5.97811533002658
-11 7.60361082322955 4.76424552194859 2.83936530128096 5.88355748786772
-12 7.76385405638773 4.80601279742022 2.95784125896751  5.9640804983933
-13 7.85034474042432 4.81639290881553 3.03395183160878 5.99827012388754
-14 7.43237198716613 4.86939775646343  2.5629742307027 5.90518049089766
-15 7.78580612916975 4.81308335438754 2.97272277478221 5.97608676470078
-                AUC              MGT         Skewness          msg
-1  1108.97550938753  6.6322519662712 1.09897315806444 #1. success 
-2  1128.55880088539 6.78440735640875 1.09865512101493 #1. success 
-3  1283.69307344325  6.7727423279724 1.10339209080373 #1. success 
-4  1239.88674124826 6.73966592721389 1.10032252758331 #1. success 
-5  1328.32820017628 6.65498075748102 1.10006189449736 #1. success 
-6  1294.46271443954 6.70247312592894  1.0992319349211 #1. success 
-7  1213.90764565674 6.62241708548249 1.09827211308468 #1. success 
-8  1164.34586106316 6.80400021213917 1.09923249333783 #1. success 
-9  1188.79304149759  6.7452410863068 1.10124200326315 #1. success 
-10 1240.22733172773 6.71189998816383 1.09859988442931 #1. success 
-11 1305.20007906005 6.62424817630914 1.10060020033889 #1. success 
-12  1188.0211599463 6.71863893649018 1.09989229450739 #1. success 
-13 1316.40687295539 6.76227360647556 1.09973341238539 #1. success 
-14 1273.38526597424 6.60496678828807  1.0979164538232 #1. success 
-15 1203.66421628837 6.73226579042194 1.09975961965212 #1. success 
-          Fit_sigma Fit_isConv           Fit_finTol        Fit_logLik
-1  1.61522002910957       TRUE  2.8528290840768e-12  -25.498681342686
-2  1.11537185901124       TRUE 5.11413134063332e-12 -20.3147146781893
-3  2.43270386985341       TRUE 8.43982661535847e-11 -31.2321314996742
-4  2.39658164351394       TRUE 3.38218342221808e-12 -31.0226924019787
-5  2.39966172990826       TRUE 6.74447164783487e-11 -31.0406736477542
-6  3.03496223650969       TRUE 3.95630195271224e-11  -34.328870450832
-7  1.66301938705135       TRUE 3.90798504668055e-12 -25.9069727183683
-8  1.12070433595621       TRUE 4.32720526077901e-12 -20.3814877326307
-9  2.42996010854989       TRUE 1.77209358298569e-11 -31.2163324798379
-10 1.68665620116432       TRUE 8.19966317067156e-12 -26.1045565628368
-11 2.62811272107047       TRUE 1.32729383039987e-11 -32.3138085946749
-12 2.87814601795845       TRUE 3.51434437106946e-11 -33.5861335093548
-13 2.60458797517776       TRUE 1.00897068477934e-11 -32.1879276469568
-14 2.76475621724483       TRUE 9.80548975348938e-13  -33.023419198233
-15 1.95400807212262       TRUE 8.73967564984923e-13 -28.1644422917083
-            Fit_AIC          Fit_BIC     Fit_deviance Fit_df.residual Fit_nobs
-1  56.9973626853719 58.9145346742177 31.3072289092405              12       14
-2  46.6294293563787 48.5466013452244 14.9286526064904              12       14
-3  68.4642629993484 70.3814349881942 71.0165774207973              12       14
-4  68.0453848039574 69.9625567928032  68.923242888336              12       14
-5  68.0813472955084 69.9985192843541 69.1005170158358              12       14
-6  74.6577409016639 76.5749128905097 110.531949324479              12       14
-7  57.8139454367367 59.7311174255824 33.1876017805038              12       14
-8  46.7629754652615 48.6801474541073 15.0717385035725              12       14
-9  68.4326649596759 70.3498369485217 70.8564735497253              12       14
-10 58.2091131256735 60.1262851145193 34.1377096911126              12       14
-11 70.6276171893498 72.5447891781956 82.8837176958294              12       14
-12 73.1722670187096 75.0894390075554 99.4046940082808              12       14
-13 70.3758552939136 72.2930272827594 81.4065422452872              12       14
-14 72.0468383964661 73.9640103853119 91.7265232895271              12       14
-15 62.3288845834165 64.2460565722623 45.8177705510444              12       14</code></pre>
+   Day11 Day12 Day13 Day14 Total Seeds        a         b        c y0 lag
+1      1     0     0     0          50 80.00000  9.881937 6.034954  0   0
+2      0     1     0     0          51 82.35294  9.227666 6.175193  0   0
+3      1     1     0     0          48 93.75000  7.793051 6.138110  0   0
+4      1     1     0     0          51 90.19608  8.925655 6.125173  0   0
+5      0     1     1     0          50 96.00000  9.419181 6.049642  0   0
+6      1     1     0     0          49 93.87755  9.450149 6.097415  0   0
+7      1     0     0     0          48 87.50000 10.172459 6.029851  0   0
+8      0     1     0     0          47 85.10638  8.940696 6.189774  0   0
+9      1     1     0     0          52 86.53846  8.617391 6.125122  0   0
+10     0     1     0     0          50 90.00000  9.608844 6.109504  0   0
+11     0     1     1     0          51 94.11765  9.400212 6.018760  0   0
+12     1     1     0     0          51 86.27451  9.162526 6.108452  0   0
+13     0     1     1     0          49 95.91837  8.995210 6.149012  0   0
+14     1     1     0     0          48 91.66667 10.391845 6.015910  0   0
+15     1     0     0     0          48 87.50000  9.136744 6.121579  0   0
+     Dlag50 t50.total t10.total t60.total t50.Germinated t10.Germinated
+1  6.034954  6.355121  4.956264  6.744598       6.034954       4.831807
+2  6.175193  6.473490  4.983236  6.872603       6.175193       4.866755
+3  6.138110  6.244191  4.673022  6.608438       6.138110       4.630062
+4  6.125173  6.276794  4.850875  6.614968       6.125173       4.788597
+5  6.049642  6.103433  4.814125  6.386789       6.049642       4.790946
+6  6.097415  6.182279  4.868632  6.477599       6.097415       4.832471
+7  6.029851  6.202812  4.930422  6.510495       6.029851       4.858476
+8  6.189774  6.439510  4.940057  6.823299       6.189774       4.841105
+9  6.125122  6.352172  4.836658  6.733276       6.125122       4.746573
+10 6.109504  6.253043  4.920629  6.566506       6.109504       4.860681
+11 6.018760  6.099435  4.798627  6.391291       6.018760       4.764246
+12 6.108452  6.326184  4.893596  6.684526       6.108452       4.806013
+13 6.149012  6.207501  4.841308  6.509954       6.149012       4.816393
+14 6.015910  6.122389  4.915140  6.397491       6.015910       4.869398
+15 6.121579  6.317392  4.892502  6.667247       6.121579       4.813083
+   t60.Germinated Uniformity_90 Uniformity_10 Uniformity     TMGR      AUC
+1        6.287724      7.537690      4.831807   2.705882 5.912194 1108.976
+2        6.452582      7.835407      4.866755   2.968652 6.031282 1128.559
+3        6.465924      8.137342      4.630062   3.507280 5.938180 1283.693
+4        6.409838      7.834810      4.788597   3.046213 5.972686 1239.887
+5        6.315746      7.639028      4.790946   2.848083 5.914289 1328.328
+6        6.364722      7.693469      4.832471   2.860997 5.961879 1294.463
+7        6.275050      7.483643      4.858476   2.625166 5.914057 1213.908
+8        6.476945      7.914163      4.841105   3.073058 6.036192 1164.346
+9        6.420208      7.904041      4.746573   3.157468 5.961631 1188.793
+10       6.372823      7.679177      4.860681   2.818496 5.978115 1240.227
+11       6.284051      7.603611      4.764246   2.839365 5.883557 1305.200
+12       6.384836      7.763854      4.806013   2.957841 5.964080 1188.021
+13       6.432524      7.850345      4.816393   3.033952 5.998270 1316.407
+14       6.255276      7.432372      4.869398   2.562974 5.905180 1273.385
+15       6.399357      7.785806      4.813083   2.972723 5.976087 1203.664
+        MGT Skewness          msg    sigma       finTol    logLik      AIC
+1  6.632252 1.098973 #1. success  1.615220 6.039613e-14 -25.49868 56.99736
+2  6.784407 1.098655 #1. success  1.115372 6.217249e-14 -20.31471 46.62943
+3  6.772742 1.103392 #1. success  2.432704 1.790568e-12 -31.23213 68.46426
+4  6.739666 1.100323 #1. success  2.396582 8.526513e-14 -31.02269 68.04538
+5  6.654981 1.100062 #1. success  2.399662 1.094236e-12 -31.04067 68.08135
+6  6.702473 1.099232 #1. success  3.034962 1.392664e-12 -34.32887 74.65774
+7  6.622417 1.098272 #1. success  1.663019 7.105427e-14 -25.90697 57.81395
+8  6.804000 1.099232 #1. success  1.120704 4.302336e-12 -20.38149 46.76298
+9  6.745241 1.101242 #1. success  2.429960 8.810730e-13 -31.21633 68.43266
+10 6.711900 1.098600 #1. success  1.686656 8.199663e-12 -26.10456 58.20911
+11 6.624248 1.100600 #1. success  2.628113 2.984279e-13 -32.31381 70.62762
+12 6.718639 1.099892 #1. success  2.878146 1.008971e-12 -33.58613 73.17227
+13 6.762274 1.099733 #1. success  2.604588 3.126388e-13 -32.18793 70.37586
+14 6.604967 1.097916 #1. success  2.764756 9.379164e-13 -33.02342 72.04684
+15 6.732266 1.099760 #1. success  1.954008 7.602807e-13 -28.16444 62.32888
+        BIC  deviance df.residual nobs
+1  58.91453  31.30723          12   14
+2  48.54660  14.92865          12   14
+3  70.38143  71.01658          12   14
+4  69.96256  68.92324          12   14
+5  69.99852  69.10052          12   14
+6  76.57491 110.53195          12   14
+7  59.73112  33.18760          12   14
+8  48.68015  15.07174          12   14
+9  70.34984  70.85647          12   14
+10 60.12629  34.13771          12   14
+11 72.54479  82.88372          12   14
+12 75.08944  99.40469          12   14
+13 72.29303  81.40654          12   14
+14 73.96401  91.72652          12   14
+15 64.24606  45.81777          12   14</code></pre>
 <p>Multiple fitted curves generated in batch can also be plotted.</p>
 <div class="sourceCode" id="cb260"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">gcdata</span><span class="op">)</span></span>
@@ -3014,13 +2909,13 @@ citing the package.</code></pre>
 </h2>
 <div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>R version 4.3.2 (2023-10-31)
-Platform: x86_64-apple-darwin20 (64-bit)
-Running under: macOS Monterey 12.7.3
+<pre><code>R version 4.5.1 (2025-06-13)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sequoia 15.5
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.3-x86_64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -3032,27 +2927,26 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] germinationmetrics_0.1.8.9000 ggplot2_3.5.0                
+[1] germinationmetrics_0.1.8.9000 ggplot2_3.5.2                
 
 loaded via a namespace (and not attached):
- [1] gtable_0.3.4       xfun_0.42          bslib_0.6.1        ggrepel_0.9.5     
- [5] lattice_0.21-9     mathjaxr_1.6-0     vctrs_0.6.5        tools_4.3.2       
- [9] Rdpack_2.6         bitops_1.0-7       generics_0.1.3     curl_5.2.0        
-[13] tibble_3.2.1       fansi_1.0.6        highr_0.10         pkgconfig_2.0.3   
-[17] gslnls_1.2.0       Matrix_1.6-1.1     data.table_1.15.0  RColorBrewer_1.1-3
-[21] desc_1.4.3         lifecycle_1.0.4    compiler_4.3.2     farver_2.1.1      
-[25] stringr_1.5.1      textshaping_0.3.7  munsell_0.5.0      htmltools_0.5.7   
-[29] sass_0.4.8         RCurl_1.98-1.14    yaml_2.3.8         pillar_1.9.0      
-[33] pkgdown_2.0.7      jquerylib_0.1.4    tidyr_1.3.1        cachem_1.0.8      
-[37] tidyselect_1.2.0   digest_0.6.34      stringi_1.8.3      dplyr_1.1.4       
-[41] reshape2_1.4.4     purrr_1.0.2        pander_0.6.5       labeling_0.4.3    
-[45] fastmap_1.1.1      grid_4.3.2         colorspace_2.1-0   cli_3.6.2         
-[49] magrittr_2.0.3     XML_3.99-0.16.1    utf8_1.2.4         broom_1.0.5       
-[53] withr_3.0.0        scales_1.3.0       backports_1.4.1    rmarkdown_2.25    
-[57] httr_1.4.7         ragg_1.2.7         memoise_2.0.1      evaluate_0.23     
-[61] knitr_1.45         rbibutils_2.2.16   rlang_1.1.3        Rcpp_1.0.12       
-[65] glue_1.7.0         jsonlite_1.8.8     R6_2.5.1           plyr_1.8.9        
-[69] systemfonts_1.0.5  fs_1.6.3          </code></pre>
+ [1] sass_0.4.10        generics_0.1.4     tidyr_1.3.1        bitops_1.0-9      
+ [5] stringi_1.8.7      lattice_0.22-7     digest_0.6.37      magrittr_2.0.3    
+ [9] evaluate_1.0.4     grid_4.5.1         RColorBrewer_1.1-3 fastmap_1.2.0     
+[13] plyr_1.8.9         jsonlite_2.0.0     Matrix_1.7-3       ggrepel_0.9.6     
+[17] backports_1.5.0    httr_1.4.7         pander_0.6.6       purrr_1.1.0       
+[21] scales_1.4.0       XML_3.99-0.18      textshaping_1.0.1  jquerylib_0.1.4   
+[25] Rdpack_2.6.4       cli_3.6.5          rlang_1.1.6        rbibutils_2.3     
+[29] withr_3.0.2        cachem_1.1.0       yaml_2.3.10        tools_4.5.1       
+[33] reshape2_1.4.4     dplyr_1.1.4        mathjaxr_1.8-0     curl_6.4.0        
+[37] broom_1.0.9        vctrs_0.6.5        R6_2.6.1           lifecycle_1.0.4   
+[41] gslnls_1.4.1       stringr_1.5.1      fs_1.6.6           htmlwidgets_1.6.4 
+[45] ragg_1.4.0         pkgconfig_2.0.3    desc_1.4.3         pkgdown_2.1.3     
+[49] pillar_1.11.0      bslib_0.9.0        gtable_0.3.6       data.table_1.17.8 
+[53] glue_1.8.0         Rcpp_1.1.0         systemfonts_1.2.3  xfun_0.52         
+[57] tibble_3.3.0       tidyselect_1.2.1   knitr_1.50         farver_2.1.2      
+[61] htmltools_0.5.8.1  labeling_0.4.3     rmarkdown_2.29     compiler_4.5.1    
+[65] RCurl_1.98-1.17   </code></pre>
 </div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
@@ -3117,7 +3011,7 @@ associated with levels of bulk density on rice seedling emergence.
 <div id="ref-chopra_effect_1980" class="csl-entry">
 Chopra, U. K., and Chaudhary, T. N. (1980). Effect of soil temperature
 alteration by soil covers on seedling emergence of wheat
-(<em><span>Triticum</span> aestivum</em> <span>L</span>.) Sown on two
+(<em><span>Triticum</span> aestivum</em> <span>L</span>.) sown on two
 dates. <em>Plant and Soil</em> 57, 125–129. doi:<a href="https://doi.org/10.1007/bf02139648" class="external-link">10.1007/bf02139648</a>.
 </div>
 <div id="ref-coolbear_effect_1984" class="csl-entry">
@@ -3422,7 +3316,7 @@ and after-ripening on germination. <em>Annals of Botany</em> 14,
 <div id="ref-wardle_allelopathic_1991" class="csl-entry">
 Wardle, D. A., Ahmed, M., and Nicholson, K. S. (1991). Allelopathic
 influence of nodding thistle (<em><span>Carduus</span> nutans</em>
-<span>L</span>.) Seeds on germination and radicle growth of pasture
+<span>L</span>.) seeds on germination and radicle growth of pasture
 plants. <em>New Zealand Journal of Agricultural Research</em> 34,
 185–191. doi:<a href="https://doi.org/10.1080/00288233.1991.10423358" class="external-link">10.1080/00288233.1991.10423358</a>.
 </div>
@@ -3433,46 +3327,26 @@ York, USA.
 </div>
 </div>
 </div>
-  </div>
-
-  <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-
-        <nav id="toc" data-toggle="toc"><h2 data-toc-skip>Contents</h2>
-    </nav>
-</div>
-
+  </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
+    </nav></aside>
 </div>
 
 
 
-      <footer><div class="copyright">
-  <p></p>
-<p>Developed by J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob, Kalyani Srinivasan.</p>
+    <footer><div class="pkgdown-footer-left">
+  <p>Developed by J. Aravind, S. Vimala Devi, J. Radhamani, Sherry Rachel Jacob, Kalyani Srinivasan.</p>
 </div>
 
-<div class="pkgdown">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
+<div class="pkgdown-footer-right">
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
-      </footer>
+    </footer>
 </div>
 
-  
-<script src="https://cdnjs.cloudflare.com/ajax/libs/docsearch.js/2.6.1/docsearch.min.js" integrity="sha256-GKvGqXDznoRYHCwKXGnuchvKSwmx9SRMrZOTh2g4Sb0=" crossorigin="anonymous"></script><script>
-  docsearch({
-    
-    
-    apiKey: '1d899a3e8f9113a338324d703da9745d',
-    indexName: 'germinationmetrics',
-    inputSelector: 'input#search-input.form-control',
-    transformData: function(hits) {
-      return hits.map(function (hit) {
-        hit.url = updateHitURL(hit);
-        return hit;
-      });
-    }
-  });
-</script>
-</body>
+
+
+
+
+  </body>
 </html>
