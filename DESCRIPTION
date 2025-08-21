@@ -43,6 +43,7 @@ Imports:
     broom,
     cli,
     data.table,
+    dplyr,
     ggplot2,
     ggrepel,
     gslnls,

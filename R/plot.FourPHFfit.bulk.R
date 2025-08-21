@@ -59,6 +59,7 @@
 #' @seealso \code{\link[germinationmetrics]{FourPHFfit.bulk}}
 #'
 #' @import ggplot2
+#' @importFrom dplyr bind_rows
 #' @importFrom plyr mutate
 #' @importFrom plyr round_any
 #' @method plot FourPHFfit.bulk
