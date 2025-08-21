@@ -225,7 +225,7 @@ EmergenceRateIndex <- function(germ.counts, intervals, partial = TRUE,
   method <- match.arg(method)
 
   # Warning when GP is 0
-  if (method == "sgsantanaranal") {
+  if (method == "shmueligoldberg") {
     if (GP == 0) {
       warning("Final germination percentage is 0%.\n",
               "The computation of 'EmergenceRateIndex'",
