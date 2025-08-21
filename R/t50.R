@@ -76,7 +76,7 @@
 #' @seealso \code{\link[germinationmetrics]{MeanGermRate}}
 #'
 t50 <- function(germ.counts, intervals, partial = TRUE,
-                        method = c("coolbear", "farooq")) {
+                method = c("coolbear", "farooq")) {
 
   # Check if argument germ.counts is of type numeric
   if (!is.numeric(germ.counts)) {
@@ -131,8 +131,14 @@ t50 <- function(germ.counts, intervals, partial = TRUE,
   }
 
   if (x[1] < xhalf) {
-    nearest <- c(max(which(max(csx[csx < xhalf]) == csx)),
-                 min(which(min(csx[csx > xhalf]) == csx)))
+    if (length(csx[csx > xhalf]) == 0 |
+        length(csx[csx < xhalf]) == 0) {
+      nearest <- c(max(which(max(csx[csx <= xhalf]) == csx)),
+                   min(which(min(csx[csx >= xhalf]) == csx)))
+    } else {
+      nearest <- c(max(which(max(csx[csx < xhalf]) == csx)),
+                   min(which(min(csx[csx > xhalf]) == csx)))
+    }
     flankg <- c(csx[nearest[1]], csx[nearest[2]])
     fltime <- c(intervals[nearest[1]], intervals[nearest[2]])
 
