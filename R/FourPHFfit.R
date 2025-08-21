@@ -144,6 +144,7 @@
 #' @import gslnls
 #' @importFrom broom glance
 #' @importFrom broom tidy
+#' @importFrom methods is
 #' @importFrom plyr round_any
 #' @importFrom stats coef df integrate predict
 #' @importFrom utils globalVariables

@@ -41,13 +41,16 @@ Depends:
     R (>= 3.5.0)
 Imports:
     broom,
+    cli,
     data.table,
     ggplot2,
     ggrepel,
-    mathjaxr,
     gslnls,
+    mathjaxr,
+    methods,
     plyr,
     Rdpack,
+    rlang,
     stats,
     utils
 Suggests:
