@@ -28,6 +28,6 @@ if (getRversion() >= "2.15.1")  {
       "GermValue_DP_mod","GermIndex_mod",
       "EmergenceRateIndex_SG", "EmergenceRateIndex_SG_mod",
       "EmergenceRateIndex_BilbroWanjura", "EmergenceRateIndex_Fakorede", ".",
-      "a", "b", "curve", "dfgp", "gp", "y0", "isConv")
+      "a", "b", "curve", "dfgp", "gp", "y0", "isConv", "sel", "inc")
   )
 }
