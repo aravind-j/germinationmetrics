@@ -139,7 +139,7 @@ GeomPath2 <- ggproto("GeomPath2", Geom,
                                            lineend = "butt", linejoin = "round", linemitre = 10,
                                            na.rm = FALSE) {
 
-                       data <- check_linewidth(data, snake_class(self))
+                       data <- fix_linewidth(data, snake_class(self))
                        if (!anyDuplicated(data$group)) {
                          cli::cli_inform(c(
                            "{.fn {snake_class(self)}}: Each group consists of only one observation.",
@@ -357,7 +357,7 @@ GeomLine2 <- ggproto("GeomLine2", GeomPath2,
 
 keep_mid_true <- getFromNamespace("keep_mid_true", "ggplot2")
 snake_class <- getFromNamespace("snake_class", "ggplot2")
-check_linewidth <- getFromNamespace("check_linewidth", "ggplot2")
+fix_linewidth <- getFromNamespace("fix_linewidth", "ggplot2")
 dapply <- getFromNamespace("dapply", "ggplot2")
 unique0 <- getFromNamespace("unique0", "ggplot2")
 data_frame0 <- getFromNamespace("data_frame0", "ggplot2")
