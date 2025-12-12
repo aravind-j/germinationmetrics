@@ -1,0 +1,122 @@
+## `germinationmetrics`: Seed Germination Indices and Curve Fitting ![logo](https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png)
+
+###### Version : [0.1.8.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2023: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
+
+##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
+
+ICAR-National Bureau of Plant Genetic Resources, New Delhi
+
+------------------------------------------------------------------------
+
+------------------------------------------------------------------------
+
+## Description
+
+Provides functions to compute various germination indices such as
+germinability, median germination time, mean germination time, mean
+germination rate, speed of germination, Timson’s index, germination
+value, coefficient of uniformity of germination, uncertainty of
+germination process, synchrony of germination etc. from germination
+count data. Includes functions for fitting cumulative seed germination
+curves using four-parameter hill function and computation of associated
+parameters. See the vignette for more, including full list of citations
+for the methods implemented.
+
+## Installation
+
+The package can be installed from CRAN as follows:
+
+``` r
+if (!require('devtools')) install.packages('devtools')
+install.packages('germinationmetrics', dependencies=TRUE)
+```
+
+The development version can be installed from github as follows:
+
+``` r
+devtools::install_github("aravind-j/germinationmetrics")
+```
+
+## Detailed tutorial
+
+For a detailed tutorial (vignette) on how to used this package type:
+
+``` r
+browseVignettes(package = 'germinationmetrics')
+```
+
+The vignette for the latest version is also available
+[online](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html).
+
+## What’s new
+
+To know whats new in this version type:
+
+``` r
+news(package='germinationmetrics')
+```
+
+## Links
+
+[CRAN page](https://cran.r-project.org/package=germinationmetrics)
+
+[Github page](https://github.com/aravind-j/germinationmetrics)
+
+[Documentation website](https://aravind-j.github.io/germinationmetrics/)
+
+[Zenodo DOI](https://doi.org/10.5281/zenodo.1219630)
+
+## CRAN checks
+
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                                   |                                                                                                                                                                                                                                  |
+|:----------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-linux-x86_64-debian-clang | [![CRAN check - r-devel-linux-x86_64-debian-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-clang/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-devel-linux-x86_64-debian-gcc   | [![CRAN check - r-devel-linux-x86_64-debian-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-debian-gcc/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)     |
+| r-devel-linux-x86_64-fedora-clang | [![CRAN check - r-devel-linux-x86_64-fedora-clang](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-clang/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-devel-linux-x86_64-fedora-gcc   | [![CRAN check - r-devel-linux-x86_64-fedora-gcc](https://badges.cranchecks.info/flavor/r-devel-linux-x86_64-fedora-gcc/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)     |
+| r-patched-linux-x86_64            | [![CRAN check - r-patched-linux-x86_64](https://badges.cranchecks.info/flavor/r-patched-linux-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)                       |
+| r-release-linux-x86_64            | [![CRAN check - r-release-linux-x86_64](https://badges.cranchecks.info/flavor/r-release-linux-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)                       |
+
+[![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                          |                                                                                                                                                                                                                |
+|:-------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-devel-windows-x86_64   | [![CRAN check - r-devel-windows-x86_64](https://badges.cranchecks.info/flavor/r-devel-windows-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)     |
+| r-release-windows-x86_64 | [![CRAN check - r-release-windows-x86_64](https://badges.cranchecks.info/flavor/r-release-windows-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-oldrel-windows-x86_64  | [![CRAN check - r-oldrel-windows-x86_64](https://badges.cranchecks.info/flavor/r-oldrel-windows-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)   |
+
+[![MacOS](https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=apple&logoColor=white)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
+
+|                        |                                                                                                                                                                                                            |
+|:-----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| r-release-macos-x86_64 | [![CRAN check - r-release-macos-x86_64](https://badges.cranchecks.info/flavor/r-release-macos-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html) |
+| r-oldrel-macos-x86_64  | [![CRAN check - r-oldrel-macos-x86_64](https://badges.cranchecks.info/flavor/r-oldrel-macos-x86_64/germinationmetrics.svg)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)   |
+
+## Citing `germinationmetrics`
+
+To cite the methods in the package use:
+
+``` r
+citation("germinationmetrics")
+```
+
+``` R
+To cite the R package 'germinationmetrics' in publications use:
+
+  Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan ().  germinationmetrics: Seed Germination Indices and
+  Curve Fitting. R package version 0.1.8.9000,
+  https://github.com/aravind-j/germinationmetricshttps://cran.r-project.org/package=germinationmetrics.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{,
+    title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
+    author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
+    note = {R package version 0.1.8.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
+  }
+
+This free and open-source software implements academic research by the authors and co-workers. If you use it, please support the project
+by citing the package.
+```
