@@ -25,7 +25,7 @@ bibentry(bibtype  = "Manual",
          textVersion = paste(
            "Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (",
            year, ").  germinationmetrics: Seed Germination Indices and Curve Fitting. ",
-           vers, ", ", "https://github.com/aravind-j/germinationmetrics", "https://cran.r-project.org/package=germinationmetrics",
+           vers, ", ", "https://github.com/aravind-j/germinationmetrics ", "https://cran.r-project.org/package=germinationmetrics",
            ".", sep=""),
          note = paste(vers, "https://aravind-j.github.io/germinationmetrics/", "https://CRAN.R-project.org/package=germinationmetrics"))
 
