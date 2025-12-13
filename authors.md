@@ -14,7 +14,7 @@
 - **Kalyani Srinivasan**. Author.
 
 - **ICAR-NBGPR**. Copyright holder.  
-  www.nbpgr.ernet.in
+  https://nbpgr.org.in/
 
 ## Citation
 
@@ -23,12 +23,12 @@ Source:
 
 Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani
 Srinivasan (). germinationmetrics: Seed Germination Indices and Curve
-Fitting. R package version 0.1.8.9000,
+Fitting. R package version 0.1.9,
 https://github.com/aravind-j/germinationmetrics
 https://cran.r-project.org/package=germinationmetrics.
 
     @Manual{,
       title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
       author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-      note = {R package version 0.1.8.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
+      note = {R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
     }

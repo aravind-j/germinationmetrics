@@ -34,7 +34,7 @@ library(germinationmetrics)
 ```
 
     --------------------------------------------------------------------------------
-    Welcome to germinationmetrics version 0.1.8.9000
+    Welcome to germinationmetrics version 0.1.9
 
 
     # To know how to use this package type:
@@ -54,7 +54,7 @@ library(germinationmetrics)
 
 ## Version History
 
-The current version of the package is 0.1.8. The previous versions are
+The current version of the package is 0.1.9. The previous versions are
 as follows.
 
 **Table 1.** Version history of `germinationmetrics` `R` package.
@@ -2261,7 +2261,7 @@ curvesplot +
 
       Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
       Kalyani Srinivasan (2025).  germinationmetrics: Seed Germination
-      Indices and Curve Fitting. R package version 0.1.8.9000,
+      Indices and Curve Fitting. R package version 0.1.9,
       https://github.com/aravind-j/germinationmetrics
       https://cran.r-project.org/package=germinationmetrics.
 
@@ -2270,7 +2270,7 @@ curvesplot +
       @Manual{,
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-        note = {R package version 0.1.8.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
+        note = {R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
         year = {2025},
       }
 
@@ -2302,7 +2302,7 @@ sessionInfo()
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     other attached packages:
-    [1] germinationmetrics_0.1.8.9000 ggplot2_4.0.1                
+    [1] germinationmetrics_0.1.9 ggplot2_4.0.1           
 
     loaded via a namespace (and not attached):
      [1] sass_0.4.10        generics_0.1.4     tidyr_1.3.1        bitops_1.0-9      

@@ -6,7 +6,7 @@
 
 - `geom_line2` - A modification of
   [`ggplot2::geom_line`](https://ggplot2.tidyverse.org/reference/geom_path.html)
-  to plot both lines and points together.
+  to plot both lines and points together as an internal function.
 
 ### UPDATED FUNCTIONS:
 
