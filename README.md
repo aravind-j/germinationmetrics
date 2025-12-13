@@ -1,7 +1,7 @@
 
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.8.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2025: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.8.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2025: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
@@ -134,8 +134,8 @@ citation("germinationmetrics")
     To cite the R package 'germinationmetrics' in publications use:
 
       Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2025).
-      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version
-      0.1.8.9000, https://github.com/aravind-j/germinationmetrics
+      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.8.9000,
+      https://github.com/aravind-j/germinationmetrics
       https://cran.r-project.org/package=germinationmetrics.
 
     A BibTeX entry for LaTeX users is
@@ -147,5 +147,5 @@ citation("germinationmetrics")
         year = {2025},
       }
 
-    This free and open-source software implements academic research by the authors and
-    co-workers. If you use it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If
+    you use it, please support the project by citing the package.

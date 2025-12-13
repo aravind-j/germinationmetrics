@@ -18,7 +18,7 @@ devtools::load_all(".")
 
 ```
 
-###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-NBPGR](http://www.nbpgr.ernet.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [`r getNamespaceVersion("germinationmetrics")`](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-`r  format(Sys.Date(), "%Y")`: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL2|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
@@ -128,7 +128,7 @@ library(RCurl)
 if (url.exists(chkurl)) {
   chklink <- paste("(", chkurl,  ")", sep = "")
 } else {
-  chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.gov.in.html)"
+  chklink <- "(https://cran.r-project.org/web/checks/check_results_j.aravind_at_icar.org.in.html)"
 }
 
 osdf$`CRAN check` <- paste("[![CRAN check - ", osdf$Flavour, "]",

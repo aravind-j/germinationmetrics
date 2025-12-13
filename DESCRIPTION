@@ -4,7 +4,7 @@ Title: Seed Germination Indices and Curve Fitting
 Version: 0.1.8.9000
 Authors@R: c(
     person(given = "J.", family = "Aravind",
-           email = "j.aravind@icar.gov.in",
+           email = "j.aravind@icar.org.in",
            role = c("aut", "cre"),
 		       comment = c(ORCID = "0000-0002-4791-442X")),
 	  person(given = "S.", family = "Vimala Devi",
@@ -14,14 +14,14 @@ Authors@R: c(
            email = "jalli.radhamani@icar.gov.in",
 		       role = "aut"),
 	  person(given = c("Sherry", "Rachel"), family = "Jacob",
-           email = "sherry.jacob@icar.gov.in",
+           email = "sherry.jacob@icar.org.in",
 		       role = "aut"),
     person(given = c("Kalyani", "Srinivasan"),
            email = "kalyani.srinivasan@icar.gov.in",
 		       role = "aut"),
     person("ICAR-NBGPR",
            role = "cph",
-		       comment = c(url = "www.nbpgr.ernet.in")))
+		       comment = c(url = "https://nbpgr.org.in/")))
 Description: Provides functions to compute various germination indices
     such as germinability, median germination time, mean germination time,
     mean germination rate, speed of germination, Timson's index,
