@@ -1,7 +1,7 @@
 # germinationmetrics  0.1.9
 
 ## NEW FUNCTIONS:
-* `geom_line2` - A modification of `ggplot2::geom_line` to plot both lines and points together.
+* `geom_line2` - A modification of `ggplot2::geom_line` to plot both lines and points together as an internal function.
 
 ## UPDATED FUNCTIONS:
 * `FourPHFfit` - Added better error handling. Now gracefully fails by returning empty output due to convergence errors or when fitting is not possible.

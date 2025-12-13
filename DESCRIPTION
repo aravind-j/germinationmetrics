@@ -1,7 +1,7 @@
 Package: germinationmetrics
 Type: Package
 Title: Seed Germination Indices and Curve Fitting
-Version: 0.1.8.9000
+Version: 0.1.9
 Authors@R: c(
     person(given = "J.", family = "Aravind",
            email = "j.aravind@icar.org.in",

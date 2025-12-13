@@ -1,7 +1,7 @@
-# -----------------------------------------------------------
-# CITATION file created with {cffr} R package, v0.5.0
+# --------------------------------------------
+# CITATION file created with {cffr} R package
 # See also: https://docs.ropensci.org/cffr/
-# -----------------------------------------------------------
+# --------------------------------------------
  
 cff-version: 1.2.0
 message: 'To cite package "germinationmetrics" in publications use:'
@@ -10,7 +10,14 @@ license:
 - GPL-2.0-only
 - GPL-3.0-only
 title: 'germinationmetrics: Seed Germination Indices and Curve Fitting'
-version: 0.1.8
+version: 0.1.9
+identifiers:
+- type: doi
+  value: 10.32614/CRAN.package.germinationmetrics
+- type: url
+  value: https://CRAN.R-project.org/package=germinationmetrics
+- type: url
+  value: https://doi.org/10.5281/zenodo.1219630
 abstract: Provides functions to compute various germination indices such as germinability,
   median germination time, mean germination time, mean germination rate, speed of
   germination, Timson's index, germination value, coefficient of uniformity of germination,
@@ -21,7 +28,7 @@ abstract: Provides functions to compute various germination indices such as germ
 authors:
 - family-names: Aravind
   given-names: J.
-  email: j.aravind@icar.gov.in
+  email: j.aravind@icar.org.in
   orcid: https://orcid.org/0000-0002-4791-442X
 - family-names: Vimala Devi
   given-names: S.
@@ -31,7 +38,7 @@ authors:
   email: jalli.radhamani@icar.gov.in
 - family-names: Jacob
   given-names: Sherry Rachel
-  email: sherry.jacob@icar.gov.in
+  email: sherry.jacob@icar.org.in
 - name: Kalyani Srinivasan
   email: kalyani.srinivasan@icar.gov.in
 preferred-citation:
@@ -40,7 +47,7 @@ preferred-citation:
   authors:
   - family-names: Aravind
     given-names: J.
-    email: j.aravind@icar.gov.in
+    email: j.aravind@icar.org.in
     orcid: https://orcid.org/0000-0002-4791-442X
   - family-names: Vimala Devi
     given-names: S.
@@ -50,17 +57,17 @@ preferred-citation:
     email: jalli.radhamani@icar.gov.in
   - family-names: Jacob
     given-names: Sherry Rachel
-    email: sherry.jacob@icar.gov.in
+    email: sherry.jacob@icar.org.in
   - name: Kalyani Srinivasan
     email: kalyani.srinivasan@icar.gov.in
-  notes: R package version 0.1.8 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics
+  notes: R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics
 repository: https://CRAN.R-project.org/package=germinationmetrics
 repository-code: https://github.com/aravind-j/germinationmetrics
 url: https://aravind-j.github.io/germinationmetrics/
 contact:
 - family-names: Aravind
   given-names: J.
-  email: j.aravind@icar.gov.in
+  email: j.aravind@icar.org.in
   orcid: https://orcid.org/0000-0002-4791-442X
 keywords:
 - curve-fitting
@@ -70,8 +77,4 @@ keywords:
 - seed
 - seed-germination-curve
 - seed-germination-indices
-identifiers:
-- type: url
-  value: https://CRAN.R-project.org/package=germinationmetrics
-- type: url
-  value: https://doi.org/10.5281/zenodo.1219630
+

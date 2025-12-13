@@ -1,7 +1,7 @@
 
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting <img src="https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png" align="right" alt="logo" width="173" height = "200" style = "padding: 10px; border: none; float: right;">
 
-###### Version : [0.1.8.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2025: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.9](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2025: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
@@ -19,14 +19,14 @@ v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org
 [![Dependencies](https://tinyverse.netlify.app/status/germinationmetrics)](https://cran.r-project.org/package=germinationmetrics)
 [![rstudio mirror
 downloads](https://cranlogs.r-pkg.org/badges/grand-total/germinationmetrics?color=green)](https://CRAN.R-project.org/package=germinationmetrics)
-[![develVersion](https://img.shields.io/badge/devel%20version-0.1.8.9000-orange.svg)](https://github.com/aravind-j/germinationmetrics)
+[![develVersion](https://img.shields.io/badge/devel%20version-0.1.9-orange.svg)](https://github.com/aravind-j/germinationmetrics)
 [![Github Code
 Size](https://img.shields.io/github/languages/code-size/aravind-j/germinationmetrics.svg)](https://github.com/aravind-j/germinationmetrics)
 [![R-CMD-check](https://github.com/aravind-j/germinationmetrics/workflows/R-CMD-check/badge.svg)](https://github.com/aravind-j/germinationmetrics/actions)
 [![Project Status:
 Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![lifecycle](https://img.shields.io/badge/lifecycle-stable-brightgreen.svg)](https://lifecycle.r-lib.org/articles/stages.html#stable)
-[![Last-changedate](https://img.shields.io/badge/last%20change-2025--12--13-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
+[![Last-changedate](https://img.shields.io/badge/last%20change-2025--12--14-yellowgreen.svg)](https://github.com/aravind-j/germinationmetrics/commits/master)
 [![Zenodo
 DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1219630.svg)](https://doi.org/10.5281/zenodo.1219630)
 [![Website -
@@ -134,18 +134,17 @@ citation("germinationmetrics")
     To cite the R package 'germinationmetrics' in publications use:
 
       Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2025).
-      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.8.9000,
-      https://github.com/aravind-j/germinationmetrics
-      https://cran.r-project.org/package=germinationmetrics.
+      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.9,
+      https://github.com/aravind-j/germinationmetrics https://cran.r-project.org/package=germinationmetrics.
 
     A BibTeX entry for LaTeX users is
 
       @Manual{,
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-        note = {R package version 0.1.8.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
+        note = {R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
         year = {2025},
       }
 
-    This free and open-source software implements academic research by the authors and co-workers. If
-    you use it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If you use
+    it, please support the project by citing the package.

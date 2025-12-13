@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/aravind-j/germinationmetrics",
   "issueTracker": "https://github.com/aravind-j/germinationmetrics/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2023-08-09 r84924 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2025-12-09 r89129 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -26,7 +26,7 @@
       "@type": "Person",
       "givenName": "J.",
       "familyName": "Aravind",
-      "email": "j.aravind@icar.gov.in",
+      "email": "j.aravind@icar.org.in",
       "@id": "https://orcid.org/0000-0002-4791-442X"
     },
     {
@@ -45,7 +45,7 @@
       "@type": "Person",
       "givenName": ["Sherry", "Rachel"],
       "familyName": "Jacob",
-      "email": "sherry.jacob@icar.gov.in"
+      "email": "sherry.jacob@icar.org.in"
     },
     {
       "@type": "Organization",
@@ -64,7 +64,7 @@
       "@type": "Person",
       "givenName": "J.",
       "familyName": "Aravind",
-      "email": "j.aravind@icar.gov.in",
+      "email": "j.aravind@icar.org.in",
       "@id": "https://orcid.org/0000-0002-4791-442X"
     }
   ],
@@ -188,6 +188,18 @@
     },
     "3": {
       "@type": "SoftwareApplication",
+      "identifier": "cli",
+      "name": "cli",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=cli"
+    },
+    "4": {
+      "@type": "SoftwareApplication",
       "identifier": "data.table",
       "name": "data.table",
       "provider": {
@@ -198,7 +210,19 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=data.table"
     },
-    "4": {
+    "5": {
+      "@type": "SoftwareApplication",
+      "identifier": "dplyr",
+      "name": "dplyr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=dplyr"
+    },
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "ggplot2",
       "name": "ggplot2",
@@ -210,7 +234,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=ggplot2"
     },
-    "5": {
+    "7": {
       "@type": "SoftwareApplication",
       "identifier": "ggrepel",
       "name": "ggrepel",
@@ -222,19 +246,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=ggrepel"
     },
-    "6": {
-      "@type": "SoftwareApplication",
-      "identifier": "mathjaxr",
-      "name": "mathjaxr",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=mathjaxr"
-    },
-    "7": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "gslnls",
       "name": "gslnls",
@@ -246,7 +258,24 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=gslnls"
     },
-    "8": {
+    "9": {
+      "@type": "SoftwareApplication",
+      "identifier": "mathjaxr",
+      "name": "mathjaxr",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=mathjaxr"
+    },
+    "10": {
+      "@type": "SoftwareApplication",
+      "identifier": "methods",
+      "name": "methods"
+    },
+    "11": {
       "@type": "SoftwareApplication",
       "identifier": "plyr",
       "name": "plyr",
@@ -258,7 +287,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=plyr"
     },
-    "9": {
+    "12": {
       "@type": "SoftwareApplication",
       "identifier": "Rdpack",
       "name": "Rdpack",
@@ -270,19 +299,31 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=Rdpack"
     },
-    "10": {
+    "13": {
+      "@type": "SoftwareApplication",
+      "identifier": "rlang",
+      "name": "rlang",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rlang"
+    },
+    "14": {
       "@type": "SoftwareApplication",
       "identifier": "stats",
       "name": "stats"
     },
-    "11": {
+    "15": {
       "@type": "SoftwareApplication",
       "identifier": "utils",
       "name": "utils"
     },
     "SystemRequirements": null
   },
-  "fileSize": "1914.814KB",
+  "fileSize": "1950.112KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -291,7 +332,7 @@
           "@type": "Person",
           "givenName": "J.",
           "familyName": "Aravind",
-          "email": "j.aravind@icar.gov.in",
+          "email": "j.aravind@icar.org.in",
           "@id": "https://orcid.org/0000-0002-4791-442X"
         },
         {
@@ -310,7 +351,7 @@
           "@type": "Person",
           "givenName": ["Sherry", "Rachel"],
           "familyName": "Jacob",
-          "email": "sherry.jacob@icar.gov.in"
+          "email": "sherry.jacob@icar.org.in"
         },
         {
           "@type": "Organization",
@@ -319,9 +360,10 @@
         }
       ],
       "name": "germinationmetrics: Seed Germination Indices and Curve Fitting",
-      "description": "R package version 0.1.8 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
+      "description": "R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
     }
   ],
+  "releaseNotes": "https://github.com/aravind-j/germinationmetrics/blob/main/NEWS.md",
   "readme": "https://github.com/aravind-j/germinationmetrics/blob/master/README.md",
   "contIntegration": "https://github.com/aravind-j/germinationmetrics/actions",
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#stable"],
