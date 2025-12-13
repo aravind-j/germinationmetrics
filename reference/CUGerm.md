@@ -44,10 +44,10 @@ the \\i\\th interval), and \\k\\ is the total number of time intervals.
 
 ## References
 
-Bewley JD, Black M (1994). *Physiology of Development and Germination*.
-Plenum Publishing Corporation, New York, USA. ISBN 0-306-44748-7,
-tex.ids= bewley\_ seeds:\_1994, bewley\_ seeds:\_1994-1, bewley\_
-seeds:\_1994-2 googlebooksid: W6EbrewcpDwC.  
+Bewley JD, Black M (1994). *Seeds: Physiology of Development and
+Germination*. Plenum Publishing Corporation, New York, USA. ISBN
+0-306-44748-7, tex.ids= bewley\_ seeds:\_1994, bewley\_ seeds:\_1994-1,
+bewley\_ seeds:\_1994-2 googlebooksid: W6EbrewcpDwC.  
   
 Heydecker W (1972). *Seed Ecology. Proceedings of the Nineteenth Easter
 School in Agricultural Science, University of Nottingham, 1972*.

@@ -2341,9 +2341,9 @@ of Official Seed Analysts.
 Baskin, C. C., and Baskin, J. M. (1998). *Seeds: Ecology, Biogeography,
 and Evolution of Dormancy and Germination*. San Diego: Academic Press.
 
-Bewley, J. D., and Black, M. (1994). *Physiology of Development and
-Germination*. New York, USA: Plenum Publishing Corporation Available at:
-<https://www.cabdirect.org/cabdirect/abstract/19950315483>.
+Bewley, J. D., and Black, M. (1994). *Seeds: Physiology of Development
+and Germination*. New York, USA: Plenum Publishing Corporation Available
+at: <https://link.springer.com/book/10.1007/978-1-4899-1002-8>.
 
 Bilbro, J. D., and Wanjura, D. F. (1982). Soil crusts and cotton
 emergence relationships. *Transactions of the ASAE* 25, 1484–1487.
@@ -2351,7 +2351,7 @@ doi:[10.13031/2013.33750](https://doi.org/10.13031/2013.33750).
 
 Bonner, F. T. (1967). Ideal sowing depth for sweetgum seed. *Tree
 Planters’ Notes* 18, 1–1. Available at:
-<https://www.fs.usda.gov/treesearch/pubs/download/42583.pdf>.
+<https://rngr.net/publications/tpn/18-1/pdf.2005-05-13.4925080024/>.
 
 Bouton, J. H., Dudeck, A. E., and Smith, R. L. (1976). Germination in
 freshly harvested seed of centipedegrass. *Agronomy Journal* 68, 991.
@@ -2359,8 +2359,8 @@ doi:[10.2134/agronj1976.00021962006800060040x](https://doi.org/10.2134/agronj197
 
 Bradbeer, J. W. (1988). *Seed Dormancy and Germination*. Glasgow;
 London: Blackie Available at:
-[www.springer.com/in/book/9780216916364](https://www.springer.com/in/book/9780216916364)
-\[Accessed January 15, 2018\].
+<https://link.springer.com/book/10.1007/978-1-4684-7747-4> \[Accessed
+January 15, 2018\].
 
 Brown, R. F., and Mayer, D. G. (1988). Representing cumulative
 germination. 1. A critical analysis of single-value germination indices.
@@ -2489,8 +2489,7 @@ Available at: <https://doi.org/10.15258/istarules.2015.05>.
 Kader, M. A. (2005). A comparison of seed germination calculation
 formulae and the associated interpretation of resulting data. *Journal
 and Proceedings of the Royal Society of New South Wales* 138, 65–75.
-Available at:
-<https://royalsoc.org.au/images/pdf/journal/138_Kader.pdf>.
+doi:[10.5962/p.361564](https://doi.org/10.5962/p.361564).
 
 Kendrick, R. E., and Frankland, B. (1969). Photocontrol of germination
 in *Amaranthus caudatus*. *Planta* 85, 326–339.

@@ -303,10 +303,10 @@ Baskin CC, Baskin JM (1998). *Seeds: Ecology, Biogeography, and
 Evolution of Dormancy and Germination*. Academic Press, San Diego. ISBN
 0-12-080260-0.  
   
-Bewley JD, Black M (1994). *Physiology of Development and Germination*.
-Plenum Publishing Corporation, New York, USA. ISBN 0-306-44748-7,
-tex.ids= bewley\_ seeds:\_1994, bewley\_ seeds:\_1994-1, bewley\_
-seeds:\_1994-2 googlebooksid: W6EbrewcpDwC.  
+Bewley JD, Black M (1994). *Seeds: Physiology of Development and
+Germination*. Plenum Publishing Corporation, New York, USA. ISBN
+0-306-44748-7, tex.ids= bewley\_ seeds:\_1994, bewley\_ seeds:\_1994-1,
+bewley\_ seeds:\_1994-2 googlebooksid: W6EbrewcpDwC.  
   
 Bilbro JD, Wanjura DF (1982). “Soil crusts and cotton emergence
 relationships.” *Transactions of the ASAE*, **25**(6), 1484–1487.  
