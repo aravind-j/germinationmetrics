@@ -16,6 +16,15 @@
 # A copy of the GNU General Public License is available at
 # https://www.r-project.org/Licenses/
 
+
+#' Modified geom_path and geom_line for Simultaneously Plot Points and Lines
+#'
+#' Not exported. Strictly internal
+#'
+#' @keywords internal
+#'
+#' @inheritParams ggplot2::draw_key_path
+#'
 #' @importFrom rlang `%||%`
 #' @export
 draw_key_path2 <- function(data, params, size) {
@@ -69,11 +78,19 @@ draw_key_path2 <- function(data, params, size) {
   grid::gTree(children = grid::gList(grob, pgrob))
 }
 
+
+
+
+#' @rdname draw_key_path2
+#'
+#' @inheritParams ggplot2::geom_path
+#'
 #' @importFrom rlang list2
 #' @importFrom stats complete.cases ave
 #' @importFrom cli cli_warn cli_inform cli_abort
 #' @importFrom grid segmentsGrob pointsGrob pointsGrob polylineGrob gTree convertUnit gpar gList addGrob
 #' @export
+#'
 geom_path2 <- function(mapping = NULL, data = NULL,
                        stat = "identity", position = "identity",
                        ...,
@@ -103,6 +120,9 @@ geom_path2 <- function(mapping = NULL, data = NULL,
   )
 }
 
+#' @rdname draw_key_path2
+#' @format NULL
+#' @usage NULL
 #' @export
 GeomPath2 <- ggproto("GeomPath2", Geom,
                      required_aes = c("x", "y"),
@@ -311,6 +331,11 @@ GeomPath2 <- ggproto("GeomPath2", Geom,
 )
 
 
+
+#' @rdname draw_key_path2
+#'
+#' @inheritParams ggplot2::geom_line
+#'
 #' @export
 geom_line2 <- function(mapping = NULL, data = NULL, stat = "identity",
                        position = "identity", na.rm = FALSE, orientation = NA,
@@ -333,7 +358,9 @@ geom_line2 <- function(mapping = NULL, data = NULL, stat = "identity",
   )
 }
 
-
+#' @rdname draw_key_path2
+#' @format NULL
+#' @usage NULL
 #' @export
 GeomLine2 <- ggproto("GeomLine2", GeomPath2,
                      setup_params = function(data, params) {
@@ -351,7 +378,6 @@ GeomLine2 <- ggproto("GeomLine2", GeomPath2,
                        flip_data(data, params$flipped_aes)
                      }
 )
-
 
 # Helper functions from ggplot2
 
