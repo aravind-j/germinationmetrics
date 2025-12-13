@@ -68,7 +68,7 @@ VignetteBuilder:
 RdMacros:
     mathjaxr,
     Rdpack
-Copyright: 2017-2023, ICAR-NBPGR
+Copyright: 2017-2025, ICAR-NBPGR
 Encoding: UTF-8
 LazyData: true
 Config/testthat/edition: 3
