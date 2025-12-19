@@ -130,36 +130,56 @@ The current version of the package is `r rver`. The previous versions are as fol
 **Table 1.** Version history of `germinationmetrics` `R` package.
 
 ```{r, echo=FALSE, message=FALSE}
-if (requireNamespace("RCurl", quietly = TRUE) & requireNamespace("httr", quietly = TRUE) & requireNamespace("XML", quietly = TRUE)) {
+if (requireNamespace("curl", quietly = TRUE) & 
+    requireNamespace("httr", quietly = TRUE) & 
+    requireNamespace("XML", quietly = TRUE)) {
+  
   pkg <- "germinationmetrics"
   link <- paste0("https://cran.r-project.org/src/contrib/Archive/", pkg, "/")
   
-  if (RCurl::url.exists(link)) {
-    # cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
-    # page <- httr::GET(link, httr::config(cainfo = cafile))
-    page <- httr::GET(link)
-    page <- httr::content(page, as = 'text')
-    # page <- RCurl::getURL(link)
-    
-    VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
-    colnames(VerHistory) <- c("Version", "Date")
-    VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
-    VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
-    VerHistory$Date <- as.Date(VerHistory$Date)
-    VerHistory$Version <- gsub("germinationmetrics_", "", VerHistory$Version)
-    VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
-    
-    VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
-    rownames(VerHistory) <- NULL
-    
-    knitr::kable(VerHistory)
-    
+  url_exists <- function(url) {
+    h <- curl::new_handle(nobody = TRUE)
+    tryCatch({
+      fetch <- curl::curl_fetch_memory(url, handle = h)
+      status <- fetch$status_code
+      status == 200 # Strict
+      # status >= 200 && status < 400 # Lenient
+    }, error = function(e) {
+      FALSE
+    })
+  }
+  
+  if (curl::has_internet()) {
+
+    if (url_exists(link)) {
+      # cafile <- system.file("CurlSSL", "cacert.pem", package = "RCurl")
+      # page <- httr::GET(link, httr::config(cainfo = cafile))
+      page <- httr::GET(link)
+      page <- httr::content(page, as = 'text')
+      # page <- RCurl::getURL(link)
+      
+      VerHistory <- XML::readHTMLTable(page)[[1]][,2:3]
+      colnames(VerHistory) <- c("Version", "Date")
+      VerHistory <- VerHistory[VerHistory$Version != "Parent Directory",]
+      VerHistory <- VerHistory[!is.na(VerHistory$Version), ]
+      VerHistory$Date <- as.Date(VerHistory$Date)
+      VerHistory$Version <- gsub("germinationmetrics_", "", VerHistory$Version)
+      VerHistory$Version <- gsub(".tar.gz", "", VerHistory$Version)
+      
+      VerHistory <- VerHistory[order(VerHistory$Date), c("Version", "Date")]
+      rownames(VerHistory) <- NULL
+      
+      knitr::kable(VerHistory)
+      
+    } else {
+      print("Access to CRAN page for 'germinationmetrics' is required to generate this table.'")
+    }
   } else {
-    print("Access to CRAN page for 'germinationmetrics' is required to generate this table.'")
+    "Internet connection is required to generate this table."
   }
   
 } else {
-  print("Packages 'RCurl', 'httr' and 'XML' are required to generate this table.")
+  print("Packages 'curl', 'httr' and 'XML' are required to generate this table.")
 }
 
 ```

@@ -133,9 +133,9 @@ citation("germinationmetrics")
 
     To cite the R package 'germinationmetrics' in publications use:
 
-      Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan
-      (2025).  germinationmetrics: Seed Germination Indices and Curve Fitting. R package
-      version 0.1.9.9000, https://github.com/aravind-j/germinationmetrics
+      Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2025).
+      germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.9.9000,
+      https://github.com/aravind-j/germinationmetrics
       https://cran.r-project.org/package=germinationmetrics.
 
     A BibTeX entry for LaTeX users is
@@ -147,5 +147,5 @@ citation("germinationmetrics")
         year = {2025},
       }
 
-    This free and open-source software implements academic research by the authors and
-    co-workers. If you use it, please support the project by citing the package.
+    This free and open-source software implements academic research by the authors and co-workers. If
+    you use it, please support the project by citing the package.

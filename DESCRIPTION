@@ -58,7 +58,7 @@ Suggests:
     httr,
     knitr,
     pander,
-    RCurl,
+    curl,
     reshape2,
     rmarkdown,
     testthat (>= 3.0.0),
