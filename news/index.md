@@ -2,6 +2,8 @@
 
 ## germinationmetrics 0.1.9
 
+CRAN release: 2025-12-14
+
 ### NEW FUNCTIONS:
 
 - `geom_line2` - A modification of

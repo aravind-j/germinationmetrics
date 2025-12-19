@@ -34,7 +34,7 @@ library(germinationmetrics)
 ```
 
     --------------------------------------------------------------------------------
-    Welcome to germinationmetrics version 0.1.9
+    Welcome to germinationmetrics version 0.1.9.9000
 
 
     # To know how to use this package type:
@@ -70,6 +70,7 @@ as follows.
 | 0.1.5   | 2021-02-17 |
 | 0.1.6   | 2022-06-15 |
 | 0.1.7   | 2022-08-28 |
+| 0.1.8   | 2023-08-18 |
 
 To know detailed history of changes use
 `news(package='germinationmetrics')`.
@@ -2261,7 +2262,7 @@ curvesplot +
 
       Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
       Kalyani Srinivasan (2025).  germinationmetrics: Seed Germination
-      Indices and Curve Fitting. R package version 0.1.9,
+      Indices and Curve Fitting. R package version 0.1.9.9000,
       https://github.com/aravind-j/germinationmetrics
       https://cran.r-project.org/package=germinationmetrics.
 
@@ -2270,7 +2271,7 @@ curvesplot +
       @Manual{,
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-        note = {R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
+        note = {R package version 0.1.9.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
         year = {2025},
       }
 
@@ -2302,7 +2303,7 @@ sessionInfo()
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     other attached packages:
-    [1] germinationmetrics_0.1.9 ggplot2_4.0.1           
+    [1] germinationmetrics_0.1.9.9000 ggplot2_4.0.1                
 
     loaded via a namespace (and not attached):
      [1] sass_0.4.10        generics_0.1.4     tidyr_1.3.1        bitops_1.0-9      
@@ -2318,7 +2319,7 @@ sessionInfo()
     [41] gslnls_1.4.2       stringr_1.6.0      fs_1.6.6           htmlwidgets_1.6.4 
     [45] ragg_1.5.0         pkgconfig_2.0.3    desc_1.4.3         pkgdown_2.2.0     
     [49] pillar_1.11.1      bslib_0.9.0        gtable_0.3.6       data.table_1.17.8 
-    [53] glue_1.8.0         Rcpp_1.1.0         systemfonts_1.3.1  xfun_0.54         
+    [53] glue_1.8.0         Rcpp_1.1.0         systemfonts_1.3.1  xfun_0.55         
     [57] tibble_3.3.0       tidyselect_1.2.1   knitr_1.50         farver_2.1.2      
     [61] htmltools_0.5.9    labeling_0.4.3     rmarkdown_2.30     compiler_4.5.2    
     [65] S7_0.2.1           RCurl_1.98-1.17   
