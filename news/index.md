@@ -1,5 +1,7 @@
 # Changelog
 
+## germinationmetrics 0.2.0
+
 ## germinationmetrics 0.1.9
 
 CRAN release: 2025-12-14
