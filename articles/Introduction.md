@@ -2261,7 +2261,7 @@ curvesplot +
     To cite the R package 'germinationmetrics' in publications use:
 
       Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
-      Kalyani Srinivasan (2025).  germinationmetrics: Seed Germination
+      Kalyani Srinivasan (2026).  germinationmetrics: Seed Germination
       Indices and Curve Fitting. R package version 0.1.9.9000,
       https://github.com/aravind-j/germinationmetrics
       https://cran.r-project.org/package=germinationmetrics.
@@ -2272,7 +2272,7 @@ curvesplot +
         title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
         author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
         note = {R package version 0.1.9.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
-        year = {2025},
+        year = {2026},
       }
 
     This free and open-source software implements academic research by the
@@ -2285,12 +2285,12 @@ curvesplot +
 sessionInfo()
 ```
 
-    R version 4.5.2 (2025-10-31)
+    R version 4.5.3 (2026-03-11)
     Platform: aarch64-apple-darwin20
-    Running under: macOS Sequoia 15.7.2
+    Running under: macOS Sequoia 15.7.4
 
     Matrix products: default
-    BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+    BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
     LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
     locale:
@@ -2303,25 +2303,31 @@ sessionInfo()
     [1] stats     graphics  grDevices utils     datasets  methods   base     
 
     other attached packages:
-    [1] germinationmetrics_0.1.9.9000 ggplot2_4.0.1                
+    [1] germinationmetrics_0.1.9.9000 ggplot2_4.0.2                
 
     loaded via a namespace (and not attached):
-     [1] sass_0.4.10        generics_0.1.4     tidyr_1.3.1        stringi_1.8.7     
-     [5] lattice_0.22-7     digest_0.6.39      magrittr_2.0.4     evaluate_1.0.5    
-     [9] grid_4.5.2         RColorBrewer_1.1-3 fastmap_1.2.0      plyr_1.8.9        
-    [13] jsonlite_2.0.0     Matrix_1.7-4       ggrepel_0.9.6      backports_1.5.0   
-    [17] httr_1.4.7         purrr_1.2.0        pander_0.6.6       scales_1.4.0      
-    [21] XML_3.99-0.20      textshaping_1.0.4  jquerylib_0.1.4    Rdpack_2.6.4      
-    [25] cli_3.6.5          rlang_1.1.6        rbibutils_2.4      withr_3.0.2       
-    [29] cachem_1.1.0       yaml_2.3.12        tools_4.5.2        reshape2_1.4.5    
-    [33] dplyr_1.1.4        mathjaxr_2.0-0     broom_1.0.11       curl_7.0.0        
-    [37] vctrs_0.6.5        R6_2.6.1           lifecycle_1.0.4    gslnls_1.4.2      
-    [41] stringr_1.6.0      fs_1.6.6           htmlwidgets_1.6.4  ragg_1.5.0        
-    [45] pkgconfig_2.0.3    desc_1.4.3         pkgdown_2.2.0      pillar_1.11.1     
-    [49] bslib_0.9.0        gtable_0.3.6       data.table_1.17.8  glue_1.8.0        
-    [53] Rcpp_1.1.0         systemfonts_1.3.1  xfun_0.55          tibble_3.3.0      
-    [57] tidyselect_1.2.1   knitr_1.50         farver_2.1.2       htmltools_0.5.9   
-    [61] labeling_0.4.3     rmarkdown_2.30     compiler_4.5.2     S7_0.2.1          
+     [1] sass_0.4.10         generics_0.1.4      tidyr_1.3.2        
+     [4] stringi_1.8.7       lattice_0.22-9      digest_0.6.39      
+     [7] magrittr_2.0.5      evaluate_1.0.5      grid_4.5.3         
+    [10] RColorBrewer_1.1-3  fastmap_1.2.0       plyr_1.8.9         
+    [13] jsonlite_2.0.0      Matrix_1.7-4        ggrepel_0.9.8      
+    [16] backports_1.5.1     httr_1.4.8          pander_0.6.6       
+    [19] purrr_1.2.2         scales_1.4.0        XML_3.99-0.23      
+    [22] textshaping_1.0.5   jquerylib_0.1.4     Rdpack_2.6.6       
+    [25] cli_3.6.6           rlang_1.2.0         rbibutils_2.4.1    
+    [28] withr_3.0.2         cachem_1.1.0        yaml_2.3.12        
+    [31] otel_0.2.0          tools_4.5.3         reshape2_1.4.5     
+    [34] dplyr_1.2.1         mathjaxr_2.0-0      broom_1.0.12       
+    [37] curl_7.0.0          vctrs_0.7.3         R6_2.6.1           
+    [40] lifecycle_1.0.5     gslnls_1.4.2        stringr_1.6.0      
+    [43] fs_2.0.1            htmlwidgets_1.6.4   ragg_1.5.2         
+    [46] pkgconfig_2.0.3     desc_1.4.3          pkgdown_2.2.0      
+    [49] pillar_1.11.1       bslib_0.10.0        gtable_0.3.6       
+    [52] data.table_1.18.2.1 glue_1.8.0          Rcpp_1.1.1         
+    [55] systemfonts_1.3.2   xfun_0.57           tibble_3.3.1       
+    [58] tidyselect_1.2.1    knitr_1.51          farver_2.1.2       
+    [61] htmltools_0.5.9     labeling_0.4.3      rmarkdown_2.31     
+    [64] compiler_4.5.3      S7_0.2.1           
 
 ## References
 

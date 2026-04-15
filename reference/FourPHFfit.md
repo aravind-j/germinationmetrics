@@ -62,16 +62,16 @@ FourPHFfit(
 - umin:
 
   The minimum germination percentage value for computing uniformity.
-  Default is `10`. Seed **`Details`**.
+  Default is `10`. See **`Details`**.
 
 - umax:
 
   The maximum germination percentage value for computing uniformity.
-  Default is `90`. Seed **`Details`**.
+  Default is `90`. See **`Details`**.
 
 - tries:
 
-  The number of tries to be attempted to fit the curve. Default is 3.
+  The number of tries to be attempted to fit the curve. Default is `3`.
 
 ## Value
 
