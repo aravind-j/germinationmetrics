@@ -51,13 +51,13 @@ the experiment.}
 to be computed as a numeric vector. Default is \code{c(10, 60)}.}
 
 \item{umin}{The minimum germination percentage value for computing
-uniformity. Default is \code{10}. Seed \strong{\code{Details}}.}
+uniformity. Default is \code{10}. See \strong{\code{Details}}.}
 
 \item{umax}{The maximum germination percentage value for computing
-uniformity. Default is \code{90}. Seed \strong{\code{Details}}.}
+uniformity. Default is \code{90}. See \strong{\code{Details}}.}
 
 \item{tries}{The number of tries to be attempted to fit the curve. Default is
-3.}
+\code{3}.}
 }
 \value{
 A data frame with the original data along with the various parameters

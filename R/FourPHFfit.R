@@ -107,11 +107,11 @@
 #' @param xp Germination percentage value(s) for which the corresponding time is
 #'   to be computed as a numeric vector. Default is \code{c(10, 60)}.
 #' @param umin The minimum germination percentage value for computing
-#'   uniformity. Default is \code{10}. Seed \strong{\code{Details}}.
+#'   uniformity. Default is \code{10}. See \strong{\code{Details}}.
 #' @param umax The maximum germination percentage value for computing
-#'   uniformity. Default is \code{90}. Seed \strong{\code{Details}}.
+#'   uniformity. Default is \code{90}. See \strong{\code{Details}}.
 #' @param tries The number of tries to be attempted to fit the curve. Default is
-#'   3.
+#'   \code{3}.
 #'
 #' @return A list with the following components: \item{data}{A data frame with
 #'   the data used for computing the model.} \item{Parameters}{A data frame of
