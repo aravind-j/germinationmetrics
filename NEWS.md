@@ -2,7 +2,7 @@
 
 ## OTHER NOTES: 
 * Added internet service checks using `curl` in vignettes.
-* Updated to use `curl` instead of `RCurl` for url existance checks.
+* Updated to use `curl` instead of `RCurl` for url existence checks.
 * Fixed `vnu` errors.
 
 # germinationmetrics  0.1.9

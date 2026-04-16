@@ -38,8 +38,9 @@ germination time is computed according to the formula by
 Where, \mjseqn{t_{50}} is the median germination time, \mjseqn{N} is the
 final number of germinated seeds, and \mjseqn{N_{i}} and \mjseqn{N_{j}} are
 the total number of seeds germinated in adjacent counts at time
-\mjseqn{T_{i}} and \mjseqn{T_{j}} respectively, when \mjseqn{N_{i} \lt
- \frac{N + 1}{2} \lt N_{j}}.
+\mjseqn{T_{i}} and \mjseqn{T_{j}} respectively, when \mjteqn{N_{i} < \frac{N
++ 1}{2} < N_{j}}{N_{i} &lt; \frac{N + 1}{2} &lt; N_{j}}{N_i < ((N + 1) / 2) <
+N_j}.
 
 Similarly with argument \code{method} specified as \code{"farooq"}, median
 germination time is computed according to the formula by  by
@@ -50,8 +51,8 @@ germination time is computed according to the formula by  by
 Where, \mjseqn{t_{50}} is the median germination time, \mjseqn{N} is the
 final number of germinated seeds, and \mjseqn{N_{i}} and \mjseqn{N_{j}} are
 the total number of seeds germinated in adjacent counts at time
-\mjseqn{T_{i}} and \mjseqn{T_{j}} respectively, when \mjseqn{N_{i} \lt
-\frac{N}{2} \lt N_{j}}.
+\mjseqn{T_{i}} and \mjseqn{T_{j}} respectively, when \mjteqn{N_{i} <
+\frac{N}{2} < N_{j}}{N_{i} &lt; \frac{N}{2} &lt; N_{j}}{N_i < (N / 2) < N_j}.
 }
 \examples{
 x <- c(0, 0, 0, 0, 4, 17, 10, 7, 1, 0, 1, 0, 0, 0)
