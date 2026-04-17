@@ -8,13 +8,13 @@
   "codeRepository": "https://github.com/aravind-j/germinationmetrics",
   "issueTracker": "https://github.com/aravind-j/germinationmetrics/issues",
   "license": "https://spdx.org/licenses/GPL-2.0",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R Under development (unstable) (2025-12-09 r89129 ucrt)",
+  "runtimePlatform": "R Under development (unstable) (2026-03-23 r89685 ucrt)",
   "provider": {
     "@id": "https://cran.r-project.org",
     "@type": "Organization",
@@ -107,15 +107,15 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "RCurl",
-      "name": "RCurl",
+      "identifier": "curl",
+      "name": "curl",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
         "name": "Comprehensive R Archive Network (CRAN)",
         "url": "https://cran.r-project.org"
       },
-      "sameAs": "https://CRAN.R-project.org/package=RCurl"
+      "sameAs": "https://CRAN.R-project.org/package=curl"
     },
     {
       "@type": "SoftwareApplication",
@@ -323,7 +323,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "1950.112KB",
+  "fileSize": "1964.204KB",
   "citation": [
     {
       "@type": "SoftwareSourceCode",
@@ -360,7 +360,7 @@
         }
       ],
       "name": "germinationmetrics: Seed Germination Indices and Curve Fitting",
-      "description": "R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
+      "description": "R package version 0.1.10 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics"
     }
   ],
   "releaseNotes": "https://github.com/aravind-j/germinationmetrics/blob/main/NEWS.md",

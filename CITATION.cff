@@ -10,7 +10,7 @@ license:
 - GPL-2.0-only
 - GPL-3.0-only
 title: 'germinationmetrics: Seed Germination Indices and Curve Fitting'
-version: 0.1.9
+version: 0.1.10
 identifiers:
 - type: doi
   value: 10.32614/CRAN.package.germinationmetrics
@@ -60,7 +60,8 @@ preferred-citation:
     email: sherry.jacob@icar.org.in
   - name: Kalyani Srinivasan
     email: kalyani.srinivasan@icar.gov.in
-  notes: R package version 0.1.9 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics
+  notes: R package version 0.1.10 https://aravind-j.github.io/germinationmetrics/
+    https://CRAN.R-project.org/package=germinationmetrics
 repository: https://CRAN.R-project.org/package=germinationmetrics
 repository-code: https://github.com/aravind-j/germinationmetrics
 url: https://aravind-j.github.io/germinationmetrics/
