@@ -17,8 +17,21 @@ template:
     navbar-light-brand-color: "#f7f8f8" # Navbar package name text colour
     navbar-light-brand-hover-color: "#f7f8f8" # Navbar package name text colour on hover
     link-color: "#006600" # Colour of links
-  params:
-    ganalytics: UA-116205606-2
+  includes:
+    in_header: |
+       <!-- Global site tag (gtag.js) - Google Analytics -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XTL9MSV3QS" ></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+
+         gtag('config', 'G-XTL9MSV3QS');
+       </script>
+       <!-- Google tag (gtag.js) -->
+    after_body: >
+      <script data-goatcounter="https://germinationmetrics.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 
 deploy:
   install_metadata: true
