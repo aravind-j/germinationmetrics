@@ -305,7 +305,7 @@ Evolution of Dormancy and Germination*. Academic Press, San Diego. ISBN
   
 Bewley JD, Black M (1994). *Seeds: Physiology of Development and
 Germination*. Plenum Publishing Corporation, New York, USA. ISBN
-0-306-44748-7, tex.ids= bewley\_ seeds:\_1994, bewley\_ seeds:\_1994-1,
+0-306-44748-7. tex.ids= bewley\_ seeds:\_1994, bewley\_ seeds:\_1994-1,
 bewley\_ seeds:\_1994-2 googlebooksid: W6EbrewcpDwC.  
   
 Bilbro JD, Wanjura DF (1982). “Soil crusts and cotton emergence

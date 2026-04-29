@@ -85,7 +85,7 @@
 Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani
 Srinivasan</h4>
             
-            <h4 data-toc-skip class="date">2026-04-17</h4>
+            <h4 data-toc-skip class="date">2026-04-29</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/aravind-j/germinationmetrics/blob/master/vignettes/Introduction.Rmd" class="external-link"><code>vignettes/Introduction.Rmd</code></a></small>
       <div class="d-none name"><code>Introduction.Rmd</code></div>
@@ -145,7 +145,7 @@ Welcome to germinationmetrics version 0.1.10
 <div class="section level2">
 <h2 id="version-history">Version History<a class="anchor" aria-label="anchor" href="#version-history"></a>
 </h2>
-<p>The current version of the package is 0.1.9. The previous versions
+<p>The current version of the package is 0.1.10. The previous versions
 are as follows.</p>
 <p><strong>Table 1.</strong> Version history of
 <code>germinationmetrics</code> <code>R</code> package.</p>
@@ -194,6 +194,10 @@ are as follows.</p>
 <tr class="even">
 <td align="left">0.1.8</td>
 <td align="left">2023-08-18</td>
+</tr>
+<tr class="odd">
+<td align="left">0.1.9</td>
+<td align="left">2025-12-14</td>
 </tr>
 </tbody>
 </table>
@@ -2193,7 +2197,7 @@ $Parameters
 
 $Fit
     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-1 1.61522   TRUE 6.039613e-14 -25.49868 56.99736 58.91453 31.30723          12
+1 1.61522   TRUE 7.105427e-14 -25.49868 56.99736 58.91453 31.30723          12
   nobs
 1   14
 
@@ -2262,7 +2266,7 @@ Nonlinear regression model
 Algorithm: multifit/levenberg-marquardt, (scaling: levenberg, solver: qr)
 
 Number of iterations to convergence: 9 
-Achieved convergence tolerance: 6.04e-14
+Achieved convergence tolerance: 7.105e-14
 
 attr(,"class")
 [1] "FourPHFfit" "list"      </code></pre>
@@ -2295,7 +2299,7 @@ $Parameters
 
 $Fit
     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-1 1.61522   TRUE 6.039613e-14 -25.49868 56.99736 58.91453 31.30723          12
+1 1.61522   TRUE 7.105427e-14 -25.49868 56.99736 58.91453 31.30723          12
   nobs
 1   14
 
@@ -2364,7 +2368,7 @@ Nonlinear regression model
 Algorithm: multifit/levenberg-marquardt, (scaling: levenberg, solver: qr)
 
 Number of iterations to convergence: 9 
-Achieved convergence tolerance: 6.04e-14
+Achieved convergence tolerance: 7.105e-14
 
 attr(,"class")
 [1] "FourPHFfit" "list"      </code></pre>
@@ -2782,21 +2786,21 @@ function for multiple samples in batch.</p>
 14       6.255276      7.432372      4.869398   2.562974 5.905180 1273.385
 15       6.399357      7.785806      4.813083   2.972723 5.976087 1203.664
         MGT Skewness          msg    sigma       finTol    logLik      AIC
-1  6.632252 1.098973 #1. success  1.615220 6.039613e-14 -25.49868 56.99736
+1  6.632252 1.098973 #1. success  1.615220 7.105427e-14 -25.49868 56.99736
 2  6.784407 1.098655 #1. success  1.115372 6.217249e-14 -20.31471 46.62943
 3  6.772742 1.103392 #1. success  2.432704 1.790568e-12 -31.23213 68.46426
 4  6.739666 1.100323 #1. success  2.396582 8.526513e-14 -31.02269 68.04538
 5  6.654981 1.100062 #1. success  2.399662 1.094236e-12 -31.04067 68.08135
 6  6.702473 1.099232 #1. success  3.034962 1.392664e-12 -34.32887 74.65774
-7  6.622417 1.098272 #1. success  1.663019 7.105427e-14 -25.90697 57.81395
+7  6.622417 1.098272 #1. success  1.663019 7.815970e-14 -25.90697 57.81395
 8  6.804000 1.099232 #1. success  1.120704 4.302336e-12 -20.38149 46.76298
 9  6.745241 1.101242 #1. success  2.429960 8.810730e-13 -31.21633 68.43266
 10 6.711900 1.098600 #1. success  1.686656 8.199663e-12 -26.10456 58.20911
 11 6.624248 1.100600 #1. success  2.628113 2.984279e-13 -32.31381 70.62762
-12 6.718639 1.099892 #1. success  2.878146 1.008971e-12 -33.58613 73.17227
+12 6.718639 1.099892 #1. success  2.878146 9.663381e-13 -33.58613 73.17227
 13 6.762274 1.099733 #1. success  2.604588 3.126388e-13 -32.18793 70.37586
 14 6.604967 1.097916 #1. success  2.764756 9.379164e-13 -33.02342 72.04684
-15 6.732266 1.099760 #1. success  1.954008 7.602807e-13 -28.16444 62.32888
+15 6.732266 1.099760 #1. success  1.954008 5.400125e-13 -28.16444 62.32888
         BIC  deviance df.residual nobs
 1  58.91453  31.30723          12   14
 2  48.54660  14.92865          12   14
@@ -2915,13 +2919,13 @@ citing the package.</code></pre>
 </h2>
 <div class="sourceCode" id="cb276"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<pre><code>R version 4.5.3 (2026-03-11)
-Platform: aarch64-apple-darwin20
+<pre><code>R version 4.6.0 (2026-04-24)
+Platform: aarch64-apple-darwin23
 Running under: macOS Sequoia 15.7.4
 
 Matrix products: default
-BLAS:   /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRblas.0.dylib 
-LAPACK: /Library/Frameworks/R.framework/Versions/4.5-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
+BLAS:   /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.6/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.1
 
 locale:
 [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
@@ -2933,31 +2937,31 @@ attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base     
 
 other attached packages:
-[1] germinationmetrics_0.1.10 ggplot2_4.0.2            
+[1] germinationmetrics_0.1.10 ggplot2_4.0.3            
 
 loaded via a namespace (and not attached):
  [1] sass_0.4.10         generics_0.1.4      tidyr_1.3.2        
  [4] stringi_1.8.7       lattice_0.22-9      digest_0.6.39      
- [7] magrittr_2.0.5      evaluate_1.0.5      grid_4.5.3         
+ [7] magrittr_2.0.5      evaluate_1.0.5      grid_4.6.0         
 [10] RColorBrewer_1.1-3  fastmap_1.2.0       plyr_1.8.9         
-[13] jsonlite_2.0.0      Matrix_1.7-4        ggrepel_0.9.8      
+[13] jsonlite_2.0.0      Matrix_1.7-5        ggrepel_0.9.8      
 [16] backports_1.5.1     httr_1.4.8          pander_0.6.6       
 [19] purrr_1.2.2         scales_1.4.0        XML_3.99-0.23      
 [22] textshaping_1.0.5   jquerylib_0.1.4     Rdpack_2.6.6       
 [25] cli_3.6.6           rlang_1.2.0         rbibutils_2.4.1    
 [28] withr_3.0.2         cachem_1.1.0        yaml_2.3.12        
-[31] otel_0.2.0          tools_4.5.3         reshape2_1.4.5     
+[31] otel_0.2.0          tools_4.6.0         reshape2_1.4.5     
 [34] dplyr_1.2.1         mathjaxr_2.0-0      broom_1.0.12       
-[37] curl_7.0.0          vctrs_0.7.3         R6_2.6.1           
-[40] lifecycle_1.0.5     gslnls_1.4.2        stringr_1.6.0      
-[43] fs_2.0.1            htmlwidgets_1.6.4   ragg_1.5.2         
-[46] pkgconfig_2.0.3     desc_1.4.3          pkgdown_2.2.0      
-[49] pillar_1.11.1       bslib_0.10.0        gtable_0.3.6       
-[52] data.table_1.18.2.1 glue_1.8.0          Rcpp_1.1.1         
-[55] systemfonts_1.3.2   xfun_0.57           tibble_3.3.1       
-[58] tidyselect_1.2.1    knitr_1.51          farver_2.1.2       
-[61] htmltools_0.5.9     labeling_0.4.3      rmarkdown_2.31     
-[64] compiler_4.5.3      S7_0.2.1           </code></pre>
+[37] curl_7.1.0          vctrs_0.7.3         R6_2.6.1           
+[40] stats4_4.6.0        lifecycle_1.0.5     gslnls_1.4.2       
+[43] stringr_1.6.0       fs_2.1.0            htmlwidgets_1.6.4  
+[46] ragg_1.5.2          pkgconfig_2.0.3     desc_1.4.3         
+[49] pkgdown_2.2.0       pillar_1.11.1       bslib_0.10.0       
+[52] gtable_0.3.6        data.table_1.18.2.1 glue_1.8.1         
+[55] Rcpp_1.1.1-1.1      systemfonts_1.3.2   xfun_0.57          
+[58] tibble_3.3.1        tidyselect_1.2.1    knitr_1.51         
+[61] farver_2.1.2        htmltools_0.5.9     labeling_0.4.3     
+[64] rmarkdown_2.31      compiler_4.6.0      S7_0.2.2           </code></pre>
 </div>
 <div class="section level2 unnumbered">
 <h2 class="unnumbered" id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>

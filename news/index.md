@@ -2,6 +2,8 @@
 
 ## germinationmetrics 0.1.10
 
+CRAN release: 2026-04-21
+
 ### OTHER NOTES:
 
 - Added internet service checks using `curl` in vignettes.

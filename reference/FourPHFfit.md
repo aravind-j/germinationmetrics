@@ -295,7 +295,7 @@ FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, tmax = 20)
 #> 
 #> $Fit
 #>     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-#> 1 1.61522   TRUE 6.039613e-14 -25.49868 56.99736 58.91453 31.30723          12
+#> 1 1.61522   TRUE 7.105427e-14 -25.49868 56.99736 58.91453 31.30723          12
 #>   nobs
 #> 1   14
 #> 
@@ -364,7 +364,7 @@ FourPHFfit(germ.counts = x, intervals = int, total.seeds = 50, tmax = 20)
 #> Algorithm: multifit/levenberg-marquardt, (scaling: levenberg, solver: qr)
 #> 
 #> Number of iterations to convergence: 9 
-#> Achieved convergence tolerance: 6.04e-14
+#> Achieved convergence tolerance: 7.105e-14
 #> 
 #> attr(,"class")
 #> [1] "FourPHFfit" "list"      
@@ -397,7 +397,7 @@ FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
 #> 
 #> $Fit
 #>     sigma isConv       finTol    logLik      AIC      BIC deviance df.residual
-#> 1 1.61522   TRUE 6.039613e-14 -25.49868 56.99736 58.91453 31.30723          12
+#> 1 1.61522   TRUE 7.105427e-14 -25.49868 56.99736 58.91453 31.30723          12
 #>   nobs
 #> 1   14
 #> 
@@ -466,7 +466,7 @@ FourPHFfit(germ.counts = y, intervals = int, total.seeds = 50, tmax = 20,
 #> Algorithm: multifit/levenberg-marquardt, (scaling: levenberg, solver: qr)
 #> 
 #> Number of iterations to convergence: 9 
-#> Achieved convergence tolerance: 6.04e-14
+#> Achieved convergence tolerance: 7.105e-14
 #> 
 #> attr(,"class")
 #> [1] "FourPHFfit" "list"      
