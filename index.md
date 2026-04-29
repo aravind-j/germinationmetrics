@@ -1,6 +1,6 @@
 ## `germinationmetrics`: Seed Germination Indices and Curve Fitting ![logo](https://raw.githubusercontent.com/aravind-j/germinationmetrics/master/inst/extdata/germinationmetrics.png)
 
-###### Version : [0.1.10](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2026: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
+###### Version : [0.1.10.9000](https://aravind-j.github.io/germinationmetrics/articles/Introduction.html#version-history); Copyright (C) 2017-2026: [ICAR-NBPGR](https://nbpgr.org.in/); License: [GPL2\|GPL-3](https://www.r-project.org/Licenses/)
 
 ##### *Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan*
 
@@ -69,7 +69,7 @@ news(package='germinationmetrics')
 ## CRAN checks
 
 ``` R
-Using libcurl 8.14.1 with Schannel
+Using libcurl 8.14.1 with LibreSSL/3.3.6 
 ```
 
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://cran.r-project.org/web/checks/check_results_germinationmetrics.html)
@@ -109,19 +109,22 @@ citation("germinationmetrics")
 ``` R
 To cite the R package 'germinationmetrics' in publications use:
 
-  Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and Kalyani Srinivasan (2026).
-  germinationmetrics: Seed Germination Indices and Curve Fitting. R package version 0.1.10,
-  https://github.com/aravind-j/germinationmetrics https://cran.r-project.org/package=germinationmetrics.
+  Aravind, J., Vimala Devi, S., Radhamani, J., Jacob, S. R., and
+  Kalyani Srinivasan (2026).  germinationmetrics: Seed Germination
+  Indices and Curve Fitting. R package version 0.1.10.9000,
+  https://github.com/aravind-j/germinationmetrics
+  https://cran.r-project.org/package=germinationmetrics.
 
 A BibTeX entry for LaTeX users is
 
   @Manual{,
     title = {germinationmetrics: Seed Germination Indices and Curve Fitting},
     author = {J. Aravind and S. {Vimala Devi} and J. Radhamani and Sherry Rachel Jacob and {Kalyani Srinivasan}},
-    note = {R package version 0.1.10 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
+    note = {R package version 0.1.10.9000 https://aravind-j.github.io/germinationmetrics/ https://CRAN.R-project.org/package=germinationmetrics},
     year = {2026},
   }
 
-This free and open-source software implements academic research by the authors and co-workers. If you use
-it, please support the project by citing the package.
+This free and open-source software implements academic research by the
+authors and co-workers. If you use it, please support the project by
+citing the package.
 ```
